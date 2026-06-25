@@ -1001,7 +1001,7 @@ const stateStatus = state.status as string | undefined
       if (text.length > 0) {
         const ts = getTextPartTime(lastTextPart as Record<string, unknown>)
         const info = detectCard(text)
-        // if (info) return [{ id: `card-${props.messageID}`, ...info, content: lastTextPart.text, createdAt: new Date(ts) }]
+        if (info) return [{ id: `card-${props.messageID}`, ...info, content: lastTextPart.text, createdAt: new Date(ts) }]
 
         // Before falling back to markdown, check if subtask artifacts exist for assembly
         const stForText = subtasks()

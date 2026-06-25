@@ -24,10 +24,57 @@ import { InstallationVersion } from "@opencode-ai/core/installation/version"
 import { EffectBridge } from "@/effect/bridge"
 import * as Option from "effect/Option"
 import * as OtelTracer from "@effect/opentelemetry/Tracer"
+import { writeFile, mkdir } from "fs/promises"
+import path from "path"
 
 const log = Log.create({ service: "llm" })
 export const OUTPUT_TOKEN_MAX = ProviderTransform.OUTPUT_TOKEN_MAX
 type Result = Awaited<ReturnType<typeof streamText>>
+
+const _llmRound = new Map<string, number>()
+const _llmTrace = new Map<string, { dir: string; base: string; agent: string; sessionID: string }>()
+
+function pad2(n: number) {
+  return String(n).padStart(2, "0")
+}
+
+async function writeTrace(dir: string, base: string, suffix: string, data: unknown) {
+  try {
+    await mkdir(dir, { recursive: true })
+    const file = path.join(dir, `${base}_${suffix}.json`)
+    await writeFile(file, JSON.stringify(data, (_k, v) => (typeof v === "function" ? "[Function]" : v), 2), "utf-8")
+    log.info("llm-trace written", { file })
+  } catch (e) {
+    log.warn("llm-trace write failed", { error: String(e) })
+  }
+}
+
+async function* tapOutput(
+  source: AsyncIterable<Event>,
+  trace: { dir: string; base: string; agent: string; sessionID: string },
+): AsyncGenerator<Event> {
+  let text = ""
+  for await (const event of source) {
+    const e = event as unknown as Record<string, unknown>
+    if (e.type === "text-delta" && typeof e.text === "string") text += e.text
+    yield event
+  }
+  void writeTrace(trace.dir, trace.base, "llm_output", {
+    agent: trace.agent,
+    sessionID: trace.sessionID,
+    timestamp: new Date().toISOString(),
+    text,
+  })
+}
+
+const REASONING_TYPES = new Set(["reasoning-start", "reasoning-delta", "reasoning-end"])
+
+async function* dropReasoning(source: AsyncIterable<Event>): AsyncGenerator<Event> {
+  for await (const event of source) {
+    if (REASONING_TYPES.has((event as { type: string }).type)) continue
+    yield event
+  }
+}
 
 // Avoid re-instantiating remeda's deep merge types in this hot LLM path; the runtime behavior is still mergeDeep.
 const mergeOptions = (target: Record<string, any>, source: Record<string, any> | undefined): Record<string, any> =>
@@ -141,6 +188,10 @@ const live: Layer.Layer<
       const options = mergeOptions(mergeOptions(mergeOptions(base, input.model.options), input.agent.options), variant)
       if (isOpenaiOauth) {
         options.instructions = system.join("\n")
+      }
+
+      if (input.agent.name.startsWith("proto_")) {
+        options.thinking = { type: "disabled" }
       }
 
       const isWorkflow = language instanceof GitLabWorkflowLanguageModel
@@ -332,6 +383,27 @@ const live: Layer.Layer<
       const opencodeProjectID = input.model.providerID.startsWith("opencode")
         ? (yield* InstanceState.context).project.id
         : undefined
+
+      if (input.agent.name.startsWith("proto_")) {
+        const workflowID = input.parentSessionID ?? input.sessionID
+        const round = (_llmRound.get(input.sessionID) ?? 0) + 1
+        _llmRound.set(input.sessionID, round)
+        const d = new Date()
+        const base = `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}_${pad2(d.getHours())}${pad2(d.getMinutes())}${pad2(d.getSeconds())}_${input.agent.name}_${input.sessionID.slice(-8)}_round${round}`
+        const traceDir = path.join(yield* InstanceState.directory, "pattern", "workflow", workflowID)
+        l.info("llm-trace", { agent: input.agent.name, sessionID: input.sessionID, workflowID, round, dir: traceDir })
+        _llmTrace.set(input.sessionID, { dir: traceDir, base, agent: input.agent.name, sessionID: input.sessionID })
+        void writeTrace(traceDir, base, "llm_input", {
+          agent: input.agent.name,
+          sessionID: input.sessionID,
+          model: { provider: input.model.providerID, model: input.model.id },
+          timestamp: new Date().toISOString(),
+          temperature: params.temperature,
+          topP: params.topP,
+          messages,
+        })
+      }
+
       return streamText({
         onError(error) {
           l.error("stream error", {
@@ -425,7 +497,12 @@ const live: Layer.Layer<
 
             const result = yield* run({ ...input, abort: ctrl.signal })
 
-            return Stream.fromAsyncIterable(result.fullStream, (e) => (e instanceof Error ? e : new Error(String(e))))
+            const trace = _llmTrace.get(input.sessionID)
+            const isProto = input.agent.name.startsWith("proto_")
+            let source: AsyncIterable<Event> = result.fullStream
+            if (trace) source = tapOutput(source, trace)
+            if (isProto) source = dropReasoning(source)
+            return Stream.fromAsyncIterable(source, (e) => (e instanceof Error ? e : new Error(String(e))))
           }),
         ),
       )
