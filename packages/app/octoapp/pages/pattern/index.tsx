@@ -752,6 +752,10 @@ function PatternContent() {
     const jsonStr = typeof data === "string" ? data : JSON.stringify(data)
     const buffer = new TextEncoder().encode(jsonStr).buffer
     await desktopApi.writeFileBuffer(`${dir}/live-data.json`, buffer)
+    await desktopApi.writeFileBuffer(
+      `${dir.replace(/[\\/]previewdist$/, "")}/app/octoapp/pages/pattern/vue-project/src/jsonStorage/data.json`,
+      buffer,
+    )
     window.open("http://127.0.0.1:51856?fetch=live-data.json")
   }
 

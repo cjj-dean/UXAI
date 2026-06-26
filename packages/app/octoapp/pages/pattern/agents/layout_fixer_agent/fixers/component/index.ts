@@ -1,0 +1,6 @@
+export { fixImageRadius } from "./fix_image_radius"
+export { fixChartHeight } from "./fix_chart_height"
+export { fixCircleProcessChart } from "./fix_circle_process_chart"
+export { fixTabContentDuplication } from "./fix_tab_content_duplication"
+export { fixTableSelectionColumn } from "./fix_table_selection_column"
+export { fixTableColumnWidth } from "./fix_table_column_width"

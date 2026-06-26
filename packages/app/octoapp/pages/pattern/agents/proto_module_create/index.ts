@@ -92,6 +92,13 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   let sectionDetailList = intentDescription.sectionDetailList ?? [];
   let sectionDetail = sectionDetailList.find((item: any) => item?.id === sectionId) ?? {};
   let sectionDetailStr = JSON.stringify(sectionDetail, null, 2);
+
+  // 提取 constraints 高亮显示，确保模型不遗漏
+  let constraints = sectionDetail.constraints ?? [];
+  let constraintsStr = constraints.length
+    ? constraints.map((c: any) => `${c.type}:${c.value} (${c.description})`).join("; ")
+    : "无";
+
   let humanMessage: string;
   humanMessage = `请为以下模块生成 A2UI JSON：
 
@@ -106,6 +113,9 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   - Root UI:
     ${slotElemnetStr}
     
+  [⚠️ 本模块约束（必须遵循）:] ==================================
+  ${constraintsStr}
+
   [需要被渲染的模块详细蓝图:] ==================================
   ${sectionDetailStr}
 

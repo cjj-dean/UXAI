@@ -3,6 +3,7 @@ import proto_intent_audit from "../agents/proto_intent_audit"
 import proto_planner_create from "../agents/proto_planner_create"
 import proto_module_create from "../agents/proto_module_create"
 import { mergeModules } from "../agents/merge"
+import layoutFixer from "../agents/layout_fixer_agent"
 
 type ProtoCreateJsonInput = {
   // 公共sdk
@@ -62,6 +63,9 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         planner.layout_planner.slots as any,
     )
 
+    // 第六步：布局修正（算法修正，非LLM）
+    const fixed = layoutFixer(merged as any)
+
     // 执行完成的回调
     await onFinshed({
         // 页面意图描述
@@ -71,6 +75,6 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         // 每个模块的 JSON
         modulesJson: modules,
         // 完整页面的 JSON
-        pageJson: merged
+        pageJson: fixed
     })    
 }

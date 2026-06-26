@@ -1,0 +1,8 @@
+工具调用次数已达上限。现在必须直接输出最终的 A2UI JSON 对象。
+
+严格要求：
+1. 不要调用任何工具
+2. 不要输出分析、总结、解释等自然语言
+3. 直接输出完整的 JSON（包含 state 和 elements）
+4. 第一个字符必须是 {，最后一个字符必须是 }
+5. 必须检查模块蓝图中的 constraints 约束：如果含 `{"type":"container","value":"Section"}`，对应的卡片/区块元素必须使用 `Section` 组件（内置 bg-surface-container-highest shadow-sm rounded-xl p-[1.5rem]，不要重复添加这些 class）

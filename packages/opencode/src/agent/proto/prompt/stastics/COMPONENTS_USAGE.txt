@@ -1,3 +1,68 @@
+# Pre-loaded Components (无需调用 load_components_docs)
+
+## Section
+> 页面框架专用布局容器，替代 `<div>` 构建内容区块。自带 bg-surface-container-highest + shadow-sm + rounded-xl。
+> className 只负责布局（flex/gap/padding/sizing/overflow）。
+> 适用范围：main、footer 等内容区块。Header 和 Sidebar 不用 Section，用 `<div>` + className。
+
+### props
+- `className?`: string — 布局类名（如 flex flex-col gap-[1rem] p-[2rem] flex-1 overflow-y-auto）
+
+### children
+类型: string[] — 子元素 ID 数组
+
+### Example: Main Content (Slot Parent)
+```json
+{
+  "id": "main",
+  "component": "Section",
+  "props": { "className": "flex flex-col flex-1 min-w-0 h-full gap-[1rem] p-[2rem] items-start overflow-y-auto" },
+  "children": []
+}
+```
+
+### Example: Horizontal KPI Row
+```json
+{
+  "id": "kpiRow",
+  "component": "Section",
+  "props": { "className": "flex flex-row gap-[1rem] items-start" },
+  "children": ["kpiCard1", "kpiCard2", "kpiCard3"]
+}
+```
+
+---
+
+## Icon
+> Lucide 图标组件。
+> id: string | component: "Icon" | props: object
+
+### props (required: name)
+- `name`: string | DataBinding — 合法 kebab-case Lucide 图标名（如 "circle-check", "search", "chevron-right"）
+- `color?`: "success" | "primary" | "error" | "default" | "warning" | "critical" | "inverse" | hex — 语义色
+- `shape?`: "outline" | "fill" | "square" | "circle" — 图标背景形状（自动配色）
+- `className?`: string — Tailwind 类，**必须显式指定 w- 和 h- 尺寸**
+
+### Example: Icon basic
+```json
+{
+  "id": "iconProcess",
+  "component": "Icon",
+  "props": { "name": "circle-check", "color": "primary", "shape": "circle", "className": "w-6 h-6" }
+}
+```
+
+### Example: Icon with state path
+```json
+{
+  "id": "iconStatus",
+  "component": "Icon",
+  "props": { "name": { "path": "/currentStatusIcon" }, "color": "primary", "className": "w-6 h-6" }
+}
+```
+
+---
+
 # Side Navigation
   - 侧边栏的菜单必须使用`Menu`组件，不要使用`Tab`组件
 

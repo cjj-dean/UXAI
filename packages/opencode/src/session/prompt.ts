@@ -20,6 +20,7 @@ import { Plugin } from "../plugin"
 import PROMPT_PLAN from "../session/prompt/plan.txt"
 import BUILD_SWITCH from "../session/prompt/build-switch.txt"
 import MAX_STEPS from "../session/prompt/max-steps.txt"
+import MAX_STEPS_PROTO from "../session/prompt/max-steps-proto.txt"
 import { ToolRegistry } from "@/tool/registry"
 import { MCP } from "../mcp"
 import { LSP } from "@/lsp/lsp"
@@ -1632,7 +1633,7 @@ NOTE: At any point in time through this workflow you should feel free to ask the
               sessionID,
               parentSessionID: session.parentID,
               system,
-              messages: [...modelMsgs, ...(isLastStep ? [{ role: "assistant" as const, content: MAX_STEPS }] : [])],
+              messages: [...modelMsgs, ...(isLastStep ? [{ role: "assistant" as const, content: agent.name.startsWith("proto_module") ? MAX_STEPS_PROTO : MAX_STEPS }] : [])],
               tools: activeTools,
               model,
               toolChoice: format.type === "json_schema" || studioImageGeneration ? "required" : undefined,

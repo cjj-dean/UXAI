@@ -213,8 +213,10 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - `circle`: Primarily for global status (Success/Error), empty states.
     - `square`: Primarily for data metrics, module entries, dashboard grid anchors, file types.
   - **Color (`<Icon color />`):** 
-    - default | primary | success | warning | error | inverse (Assign via UI semantics).
+    - **严禁使用纯黑 `default`(#191919) 和纯白 `inverse`(#FFFFFF)。**
+    - 中性/无语义图标统一用灰色 hex（`#777777` 或 `#939393`）。
+    - 有语义的图标按场景用 `primary | success | warning | critical | error`。
   - **Constraints:**
     - **NO Background shape**: `<Icon/>` component automatically generates its own internal container block. **DO NOT** manually wrap the icon inside any background shape.
     - **Size & Shape Sync:** At or below w-6 Must use `outline|fill`. Above w-6 Must use `circle|square`.
-    - inverse `color` Must used on dark background
+    - **禁止 default(黑)/inverse(白)**：独立 `<Icon>` 组件一律不得使用纯黑或纯白色值。

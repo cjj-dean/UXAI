@@ -14,6 +14,7 @@ mkdirSync(EXAMPLE_DIR, { recursive: true })
 import * as Log from "@opencode-ai/core/util/log"
 
 const COMPONENT_CATALOG: Record<string, string[]> = {
+  Layout: ["Section"],
   General: ["Button", "Icon"],
   Navigation: ["Tabs", "TabItem", "Steps", "StepItem", "Breadcrumb", "Dropdown", "Menu"],
   DataEntry: ["Checkbox", "CheckboxGroup", "RadioGroup", "Select", "Slider", "Switch", "Input", "InputNumber", "TextArea", "TimePicker", "DatePicker", "Rate"],

@@ -388,6 +388,7 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.0,
+            steps: 2,
           },
           proto_module_modify: {
             name: "proto_module_modify",

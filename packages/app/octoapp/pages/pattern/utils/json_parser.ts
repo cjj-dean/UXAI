@@ -1,24 +1,73 @@
 // 从 AI 返回的字符串中提取 JSON
 export function extractJson(text: string): Record<string, unknown> | null {
   if (!text || !text.trim()) return null
+
+  let raw = text
+  let match = text.match(/```(?:json)?\s*\n([\s\S]*?)\n?```/)
+  if (match) raw = match[1]
+  else {
+    let start = text.indexOf("{")
+    let end = text.lastIndexOf("}")
+    if (start !== -1 && end > start) raw = text.substring(start, end + 1)
+  }
+
   try {
-    let match = text.match(/```(?:json)?\s*\n([\s\S]*?)\n?```/)
-    let raw = match ? match[1] : text
     let parsed = JSON.parse(raw.trim())
     return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
-  } catch {
-    let start = text.indexOf("{");
-    if (start === -1) return null
-    let end = text.lastIndexOf("}");
-    if (end <= start) return null
-    try {
-      let rawjson = text.substring(start, end + 1);
-      let parsed = JSON.parse(rawjson.trim())
-      return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
-    } catch {
-      return null
+  } catch { }
+
+  try {
+    let repaired = repairUnescapedQuotes(raw)
+    let parsed = JSON.parse(repaired.trim())
+    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
+  } catch { }
+
+  return null
+}
+
+function repairUnescapedQuotes(text: string): string {
+  let result = ""
+  let inString = false
+  let escaped = false
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i]
+
+    if (escaped) {
+      result += char
+      escaped = false
+      continue
     }
+
+    if (char === "\\" && inString) {
+      result += char
+      escaped = true
+      continue
+    }
+
+    if (char === '"') {
+      if (!inString) {
+        inString = true
+        result += char
+        continue
+      }
+
+      let j = i + 1
+      while (j < text.length && /\s/.test(text[j])) j++
+
+      if (j < text.length && (text[j] === ":" || text[j] === "," || text[j] === "}" || text[j] === "]")) {
+        inString = false
+        result += char
+      } else {
+        result += '\\"'
+      }
+      continue
+    }
+
+    result += char
   }
+
+  return result
 }
 
 // 从 Session 中每2秒轮询, 取出最终结果
