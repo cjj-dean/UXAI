@@ -2,6 +2,9 @@
 export function extractJson(text: string): Record<string, unknown> | null {
   if (!text || !text.trim()) return null
 
+  // 预处理：LLM 有时会输出智能引号（\u201C\u201D\u201E\u2018\u2019）代替英文引号
+  text = text.replace(/[\u201C\u201D\u201E\u2018\u2019]/g, '"')
+
   let raw = text
   let match = text.match(/```(?:json)?\s*\n([\s\S]*?)\n?```/)
   if (match) raw = match[1]
