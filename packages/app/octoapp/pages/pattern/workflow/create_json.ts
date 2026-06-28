@@ -64,7 +64,8 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
     )
 
     // 第六步：布局修正（算法修正，非LLM）
-    const fixed = layoutFixer(merged as any)
+    const [fixed, fixerLog] = layoutFixer(merged as any)
+    if (fixerLog.length) console.log("[LayoutFixer] 日志:\n" + fixerLog.join("\n"))
 
     // 执行完成的回调
     await onFinshed({
@@ -75,6 +76,8 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         // 每个模块的 JSON
         modulesJson: modules,
         // 完整页面的 JSON
-        pageJson: fixed
+        pageJson: fixed,
+        // fixer 执行日志
+        fixerLog,
     })    
 }

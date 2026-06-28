@@ -476,11 +476,29 @@ function PatternContent() {
       // 开启本次调试日志
       logStartSession(sid, text)
       // 流程执行完毕后的回调
-      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson }: any) => {
+      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog }: any) => {
+          // 写入 fixer 日志、merged 数据、agent 调试日志到 {workspace}/pattern/workflow/{sid}/
+          const desktopApi = (window as unknown as {
+            api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
+          }).api
+          const debug = getDebugSnapshot()
+          if (desktopApi?.writeFileBuffer) {
+            const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+            const encoder = new TextEncoder()
+            if (fixerLog?.length) {
+              await desktopApi.writeFileBuffer(`${wfDir}/fixer.log`, encoder.encode(fixerLog.join("\n")).buffer)
+            }
+            if (pageJson) {
+              await desktopApi.writeFileBuffer(`${wfDir}/merged.json`, encoder.encode(JSON.stringify(pageJson, null, 2)).buffer)
+            }
+            if (debug) {
+              await desktopApi.writeFileBuffer(`${wfDir}/debug.json`, encoder.encode(JSON.stringify(debug, null, 2)).buffer)
+            }
+            console.log(`[LayoutFixer] workflow 数据已写入: ${wfDir}`)
+          }
           // 历史保存始终执行（与当前查看的 session 无关）
           const dir = patternHistoryDir()
           if (dir) {
-            const debug = getDebugSnapshot()
             const vid = await appendPatternVersion(dir, sid, {
                 lastIntent: pageIntent,
                 lastPlanner: layoutPlanner,
@@ -489,10 +507,10 @@ function PatternContent() {
                 debug,
             }, text.slice(0, 80))
             if (params.id === sid) {
-              setVersions((prev) => [...prev, { id: vid, createdAt: Date.now(), summary: text.slice(0, 80) }])
-              setCurrentVersionId(vid)
-              clearDebugLog()
-          }
+                setVersions((prev) => [...prev, { id: vid, createdAt: Date.now(), summary: text.slice(0, 80) }])
+                setCurrentVersionId(vid)
+                clearDebugLog()
+            }
           }
           // 视图状态仅在仍在该 session 时更新
           if (params.id !== sid) return
@@ -641,11 +659,11 @@ function PatternContent() {
     }
   }
 
-  // 生成完成后自动发送预览
+  // 生成完成后自动发送预览（onFinshed 已发送则跳过，避免 re-merge 覆盖 fixer 结果）
   let wasBusy = false
   createEffect(() => {
     const busy = isBusy() || sending()
-    if (wasBusy && !busy && lastModules().length > 0) {
+    if (wasBusy && !busy && lastModules().length > 0 && !hasPreviewContent()) {
       handleOpenPreview()
     }
     wasBusy = busy

@@ -17,18 +17,18 @@ export const COMPONENT_DESCRIPTIONS: Record<string, string> = {
   Icon: "MUST be use Lucide icon name",
   BarChart: "Compare values across discrete categories",
   LineChart: "Show continuous data changes over time",
-  PieChart: "Show parts-to-whole percentages, Pie chart or doughnut chart showing data proportions.",
+  PieChart: "Show parts-to-whole data proportions (e.g., budget allocation, category distribution). Supports pie (solid) and doughnut (ring) via option.type. Has legend.",
   GaugeChart: "Display one current value against a target or range",
   RadarChart: "Evaluate entities across 3+ attribute dimensions",
-  ProcessChart: "Rank top items (e.g., Top 5) by percentages, ratios",
-  HillChart: "Rank top items (e.g., Top 5) by absolute values",
+  ProcessChart: "Horizontal bar chart for TopN ranking or data distribution along a horizontal axis",
+  HillChart: "Mountain-peak area chart for TopN vertical ranking or data distribution along an X-axis (e.g., alarm count by duration range)",
   FunnelChart: "Show numerical changes (increasing or decreasing) across a multi-stage process",
   BubbleChart: "Plot 3 dimensions (X, Y, size) to identify correlations, clusters, and relative magnitudes",
   ScatterChart: "Plot 2 dimensions (X, Y) to identify trends, correlations, or outliers",
-  BulletChart: "Compare a single metric against status background zones",
+  BulletChart: "Compare a single metric against status background zones (error, warning, success)",
   AssembleBubbleChart: "Axis-free center-packed bubbles showing weight or tag popularity",
   JadeJueChart: "Compare independent percentages for top 3-6 items via concentric rings",
-  CircleProcessChart: "A circular chart showing percentage progress toward a goal,Multiple data percentages shown as segments on one progress ring.",
+  CircleProcessChart: "Ring progress chart for single-value utilization/progress (e.g., capacity used 82%, CPU usage 45%). No legend. Ideal for card-level metrics.",
 }
 
 export const DESKTOP_COMPONENTS = [
@@ -447,7 +447,7 @@ export const CARD_EXAMPLE = `{
     { "id": "mainCardContainer", "component": "div", "props": { "className": "p-4 bg-white rounded-lg shadow-sm border border-slate-200" }, "children": ["mainCardHeader", "mainCardBody", "mainCardFooter"] },
     { "id": "mainCardHeader", "component": "div", "props": { "className": "flex justify-between items-center mb-3" }, "children": ["mainCardTitle", "mainCardTag"] },
     { "id": "mainCardTitle", "component": "span", "props": { "value": { "path": "/title" }, "className": "text-base font-semibold text-slate-800" } },
-    { "id": "mainCardTag", "component": "Tag", "props": { "value": { "path": "/status" }, "color": "blue" } },
+    { "id": "mainCardTag", "component": "Tag", "props": { "value": { "path": "/status" }, "color": "processing" } },
     { "id": "mainCardBody", "component": "div", "props": { "className": "mb-3" }, "children": ["mainCardDesc"] },
     { "id": "mainCardDesc", "component": "span", "props": { "value": { "path": "/description" }, "className": "text-sm text-slate-500" } },
     { "id": "mainCardFooter", "component": "div", "props": { "className": "flex items-center gap-2" }, "children": ["mainCardProgress", "mainCardProgressText"] },
@@ -641,7 +641,7 @@ const COMPONENT_API_REFERENCE = `
 }
 \`\`\`
 **Menu items data shape**: \`{ key: string, title: string, icon?: string, children?: [...] }\`
-**CRITICAL**: Side nav and header nav MUST use Menu, NOT Tabs.
+**CRITICAL**: Side nav and header nav MUST use Menu, NOT Tabs. 仅一级菜单项设置 \`icon\`，二级及以下子菜单项禁止设置 \`icon\`。
 
 ### Tabs / TabItem (loop or explicit)
 \`\`\`
@@ -753,8 +753,9 @@ const COMPONENT_API_REFERENCE = `
 
 ### Tag
 \`\`\`
-{ "component": "Tag", "props": { "value": "热销", "color": "success" | "processing" | "error" | "default" | "warning" | "#hex", "variant": "filled" | "solid" | "outlined", "icon": "lucide-icon", "closable": false, "closeIcon": "lucide-icon", "size": "large" | "medium" | "small" } }
+{ "component": "Tag", "props": { "value": "热销", "color": "success" | "processing" | "error" | "default" | "warning", "variant": "filled" | "solid" | "outlined", "icon": "lucide-icon", "closable": false, "closeIcon": "lucide-icon", "size": "large" | "medium" | "small" } }
 \`\`\`
+**CRITICAL**: \`color\` 只允许以下值：5 个语义值 \`success\`(绿) | \`processing\`(蓝) | \`error\`(红) | \`default\`(灰) | \`warning\`(黄)，或以下扩展色：\`#0067D1\`(品牌蓝)、\`#d4f0f4\`(浅青)、\`#dff4cc\`(浅绿)、\`#fef0fd\`(浅粉)、\`#fee5f2\`(粉红)。禁止使用其他 CSS 命名色或自定义 hex 值。
 
 ### Badge
 \`\`\`
@@ -848,13 +849,15 @@ Card top-right multi-select/toggle SHOULD use Segmented.
 \`\`\`
 
 ### PieChart
+> **CRITICAL:** PieChart 已内置图例(legend)和中心文字(title)。禁止用 div/span 手动生成图例或中心文字叠加层。只需设置 option.title 和 option.data（data 中的 name 字段就是图例文字）。
 \`\`\`
 {
   "component": "PieChart",
   "props": {
     "option": {
       "data": { "path": "/chartData" },                // REQUIRED: [{ "name": "A", "value": 28 }]
-      "title": { "text": "Distribution", "subtext": "Q1" }, // REQUIRED: center text
+      "title": { "text": "Distribution", "subtext": "Q1" }, // REQUIRED: center text (rendered inside the donut hole)
+      "type": "circle",                                  // optional: "pie" (solid, default) | "circle" (doughnut/ring)
       "label": { "show": true },                         // optional: show labels
       "color": ["#5470c6", "#91cc75", ...]               // optional: custom color palette
     },
@@ -1021,16 +1024,17 @@ Card top-right multi-select/toggle SHOULD use Segmented.
 \`\`\`
 
 ### CircleProcessChart
+> **NOTE:** Only for single-value progress (e.g., CPU 75%, storage 60% complete). For multi-category distribution (e.g., 手机33% + 平板16% + ...), use **PieChart** instead.
 \`\`\`
 {
   "component": "CircleProcessChart",
   "props": {
     "option": {
-      "data": { "path": "/circleData" },               // REQUIRED: [{ "value": 71, "name": "Utilization" }]
-      "title": { "text": "CPU", "subtext": "使用率" },  // optional: center text
-      "color": ["#2070F3"]                               // optional: custom colors
+      "data": [{ "value": 71, "name": "已使用" }],          // REQUIRED: single data point
+      "title": { "text": "CPU", "subtext": "使用率" },       // optional: center text
+      "color": ["#2070F3"]                                  // optional: custom colors
     },
-    "className": "tailwind-classes"                      // MUST include w- and h- classes
+    "className": "tailwind-classes"
   }
 }
 \`\`\`

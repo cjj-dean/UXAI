@@ -122,6 +122,8 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   [需要被渲染模块的根节点:] ${elementId}
   [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
 
-  请先调用 *load_module_components* 工具查询组件 API，然后生成该模块的 JSON（包含 state 子集和 elements 数组）。`;
+  如果需要使用 Section 和 Icon 以外的组件，调用 \`load_components_docs\` 工具查询 API（只有一次机会，一次性传入全部组件名）。
+  如果只需要 Section 和 Icon，无需调用任何工具，直接输出 JSON。
+  无论是否调用工具，你的最终回复必须是一个纯 JSON 对象（以 { 开头，以 } 结尾），禁止输出思考过程、分析或任何自然语言。`;
   return humanMessage;
 }

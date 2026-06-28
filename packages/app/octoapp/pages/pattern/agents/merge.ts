@@ -50,8 +50,10 @@ export function mergeModules(shell: A2UIModule, modules: A2UIModule[], slots?: S
     if (slotIndex === -1) continue
 
     const modRoot = mod.elements.find((e) => e.id === originalRootId)
-    if (modRoot?.children) {
-      elements[slotIndex].children = copyChildren(modRoot.children) as string[]
+    if (modRoot) {
+      elements[slotIndex].component = modRoot.component
+      if (modRoot.props) elements[slotIndex].props = { ...modRoot.props }
+      if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
     }
 
     for (const el of mod.elements) {

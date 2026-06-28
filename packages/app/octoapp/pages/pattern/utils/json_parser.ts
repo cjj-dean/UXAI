@@ -11,6 +11,25 @@ export function extractJson(text: string): Record<string, unknown> | null {
     if (start !== -1 && end > start) raw = text.substring(start, end + 1)
   }
 
+  if (tryParse(raw)) return tryParse(raw)!
+
+  // 尝试从每个 '{' 位置解析（处理输出开头有多余字符的情况）
+  let searchFrom = 0
+  while (true) {
+    const nextStart = text.indexOf("{", searchFrom + 1)
+    if (nextStart === -1) break
+    const end = text.lastIndexOf("}")
+    if (end <= nextStart) break
+    const subRaw = text.substring(nextStart, end + 1)
+    const parsed = tryParse(subRaw)
+    if (parsed) return parsed
+    searchFrom = nextStart
+  }
+
+  return null
+}
+
+function tryParse(raw: string): Record<string, unknown> | null {
   try {
     let parsed = JSON.parse(raw.trim())
     return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
