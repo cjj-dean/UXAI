@@ -398,6 +398,10 @@ export function registerIpcHandlers(deps: Deps) {
 
   ipcMain.handle("get-preview-dist-dir", () => previewDistDir())
 
+  ipcMain.handle("get-octo-pattern-dir", () => {
+    return join(homedir(), ".octo", "pattern")
+  })
+
   ipcMain.handle("run-pixso-build", async (_event: IpcMainInvokeEvent, input: string) => {
     const { pathToFileURL } = await import("node:url")
     const { existsSync } = await import("node:fs")

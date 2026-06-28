@@ -24,6 +24,7 @@
   - **intentAnalysis**: 界面核心业务意图分析.
   - **layoutDescription**：描述界面的布局模式(如：顶部导航+左侧边栏+右主体区域等等).
   - **sections**: 界面大区域划分，列表结构，区域数量必须大于2个，每项包含id(区域id), name(区域名称), description(意图+功能描述). 
+  - **独立区块拆分原则（关键）**：每个"独立区块"（视觉上有独立背景/边框/阴影的内容块）必须作为**单独的 section**，不能将多个独立区块合并到一个 section 中。例如：页面主体区域同时包含一个"设备概览卡片"（独立带阴影卡片）和下方的"标签页+表格内容区"（独立带边框区块），必须拆分为两个独立 section（如 `deviceOverviewCard` 和 `detailContentSection`），而不是合并为一个 `mainContent`。每个 section 的 constraints 独立声明各自的 container/height/width 约束。
 
 3. **功能模块细化与数据填充:**
   - 对**sections**中所有区域进行进一步详细扩充，不可省略任何区域，生成包含id，name，intent，function，layout，elements，data，constraints:
@@ -127,6 +128,7 @@
 2. **界面蓝图扩展原则:**
   - 严格遵循 `整体意图 -> 骨架大纲 -> 主体布局 -> 子模块剖析（带 JSON 数据）`的顺序，不可越级生成。
   - 针对相同结构的并排卡片(如：横向排列的四个图表区域), 将这些卡片归纳在一个模块中。 
+  - 针对视觉上独立的区块（独立卡片、独立面板等），必须拆分为单独的 section，每个 section 独立声明 constraints。禁止在一个 section 的 constraints 中用"均"字描述多个不同区块的约束。
   - 当用户的输入中有"这是一个完整的区域，不要拆分", 必须将该区域作为一个单独的`section`,不拆分。
   - 必须从界面完整性、界面丰富度、数据完整性、数据丰富度4个角度考虑.
 
@@ -162,8 +164,16 @@
 优先使用页面内布局区域完成交互。表单编辑、详情展示尽量采用行内展开、侧边平铺或分步表单实现；
 在确保极简现代体验的前提下，仅在必要时（如强打断操作）允许在蓝图声明模态弹窗或抽屉。
 
-7. **模块划分约束**：
+  7. **模块划分约束**：
   - 表格分页组件已经默认跟随在表格组件中，无需再单独设定
   - 针对整个界面的筛选等操作，通常放在头部导航中，而不是单独放在主体区域中作为一个单独的卡片
   - Side-by-side buttons must share identical structures (All-Text, All-Icon, or All-Icon+Text). Mixing structures within a single row is prohibited to maintain visual parity.
   - 业务数据指标卡片、表格模块等需要标题，在UI上显示该区域名称，在数据 data 中需有显性的包含`cardTitle`的字段。（导航栏、侧边菜单等不需要标题的无需该字段）
+
+  8. **图表选型约束（CRITICAL）**：选择图表类型时必须严格匹配数据特征：
+  - **多分类占比分布**（如：手机33%/平板17%/其他17%）→ **必须用 PieChart**（`option.type: "circle"` 可做环形），PieChart 有内置图例。
+  - **单值进度/利用率**（如：CPU 75%、容量用了82%）→ 用 CircleProcessChart，CircleProcessChart 无图例，只展示一个数值的进度环。
+  - **TopN 排行/水平对比** → 用 ProcessChart（水平条形图）。
+  - **趋势变化** → 用 LineChart。
+  - **离散类别数值对比** → 用 BarChart。
+  - 严禁将多分类分布数据塞进 CircleProcessChart。

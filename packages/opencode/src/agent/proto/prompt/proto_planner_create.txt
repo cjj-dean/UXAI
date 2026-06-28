@@ -86,6 +86,8 @@ You MUST output a strictly valid JSON object conforming to the following structu
 # Constraints
 ## 1. Slotting Strategy & Generation Depth
 - Generate the elements *only* down to the slot parent container for each section. Do NOT generate the inner children of these section parents; they will be handled by subsequent agents.
+- **ONE section = ONE slot parent.** Each blueprint section maps to exactly ONE slot parent element. Do NOT pre-create placeholder elements for sub-content within a section (e.g., overview cards, tab bars, tables, breadcrumb rows). These are ALL inner content — module_create handles them entirely.
+- **Every element in `elements` MUST be either:** (a) a slot parent listed in `slots` with `children: []`, or (b) a structural shell wrapper (root, header, body, sidebar, main). No other elements are allowed. If an element is not in `slots` and is not a structural shell node, DELETE it.
 - Slot parents MUST be load-bearing nodes of the macro-shell. Injecting superficial wrapper elements (e.g., redundant div/Section layers) strictly to act as slots is FORBIDDEN. The chosen shell node must autonomously provide the sizing and layout constraints for the downstream module.
 - Slot parent elements MUST possess `id`, `props` (with className containing flex direction) and an explicitly empty `children: []` array.
 - Non-slot parent elements (the structural wrappers composing the shell) MUST be fully defined and complete. Do not omit any structural nodes in the layout.

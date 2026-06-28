@@ -82,6 +82,7 @@ const api: ElectronAPI = {
   tailwindToCss: (className) => ipcRenderer.invoke("tailwind-to-css", className),
   cssToTailwind: (cssObject) => ipcRenderer.invoke("css-to-tailwind", cssObject),
   getPreviewDistDir: () => ipcRenderer.invoke("get-preview-dist-dir"),
+  getOctoPatternDir: () => ipcRenderer.invoke("get-octo-pattern-dir"),
   runPixsoBuild: (input) => ipcRenderer.invoke("run-pixso-build", input),
   exportZip: (opts) => ipcRenderer.invoke("export-zip", opts),
   // jk-j60099994-replace-with-index-1-start

@@ -64,26 +64,28 @@
 ------
 
 #Constraint: 
-  1. **Strict JSON Format:** Output ONLY valid JSON. No markdown formatting (no ````json`), no code blocks, no explanations.
-  2. **Sequence Check:** The root sequence must exactly `state` -> `rootId` -> `elements`.
-  3. **Schema Compliance:** The output must fully comply with **A2UI JSON Protocol**.
-  4. **Tailwind Strict:** Inline `style` is FORBIDDEN. Use ONLY valid Tailwind classes inside `className`.
-  5. Every `path` in `elements` must exist in the `state` object.
-  6. Every referenced `children` ID must exist in the `elements` flat array.
-  7. **Loop vs Unroll:** For repeated structures with identical layout (e.g., card grids, list items), you MUST use template-children binding `{"children":{"path":"/dataArray","componentId":"templateId"}}` and define ONE template element. This keeps output compact and avoids truncation. Only unroll sequentially when structures are truly irregular (different layouts per item) or when there are ≤3 items.
-  8. **Zero Assumptions:** NEVER invent undefined properties or unlisted components, use HTML5 tags and Tailwind classes instead.
-  9. **Strict Whitelist:** ONLY use HTML5 tags or the components from **Components Catalog**. NEVER hallucinate from external UI libraries.
-  10. **Full Data Coverage:** 
+  1. **Blueprint Fidelity (CRITICAL, 最高优先级)**: 只生成 blueprint/intent 中明确描述的元素。禁止自行添加 blueprint 未提及的装饰性元素（如文本标签、辅助说明文字、提示气泡等）。如果 intent 描述为"纯图标"，则只生成 Icon 组件，不得附加文本 span。如果 intent 列出了具体元素清单，严格按清单生成，不得增减。
+  2. **Strict JSON Format:** Output ONLY valid JSON. No markdown formatting (no ````json`), no code blocks, no explanations.
+  3. **Sequence Check:** The root sequence must exactly `state` -> `rootId` -> `elements`.
+  4. **Schema Compliance:** The output must fully comply with **A2UI JSON Protocol**.
+  5. **Tailwind Strict:** Inline `style` is FORBIDDEN. Use ONLY valid Tailwind classes inside `className`.
+  6. Every `path` in `elements` must exist in the `state` object. **嵌套对象路径用 `/` 分隔，禁止用 `.`**（正确：`"path": "terminalName/icon"`，错误：`"path": "terminalName.icon"`）。
+  7. Every referenced `children` ID must exist in the `elements` flat array.
+  8. **Loop vs Unroll:** For repeated structures with identical layout (e.g., card grids, list items), you MUST use template-children binding `{"children":{"path":"/dataArray","componentId":"templateId"}}` and define ONE template element. This keeps output compact and avoids truncation. Only unroll sequentially when structures are truly irregular (different layouts per item) or when there are ≤3 items.
+  9. **Zero Assumptions:** NEVER invent undefined properties or unlisted components, use HTML5 tags and Tailwind classes instead.
+  10. **Strict Whitelist:** ONLY use HTML5 tags or the components from **Components Catalog**. NEVER hallucinate from external UI libraries.
+  11. **Full Data Coverage:** 
     - The `state` object MUST include ALL items in every array AND ALL keys in every object from the provided data. NEVER truncate, skip, or reduce array items in `state`.
     - In `elements`, use template-children binding for arrays with identical structures — the renderer iterates the `state` array automatically. Do NOT unroll each array item into separate elements.
-  11. **Prefix Enforcement**: Every id in the elements array MUST begin with the provided ID Prefix (except for the root element).
-  12. **Scope Confinement**: DO NOT attempt to build macro-page wrappers. Generate the UI JSON ONLY for the target module.
-  13. **Root ClassName Immutability**: NEVER alter the root element's `props.className` or `component`. You may ONLY populate its `children` array.
-  14. **Constraint Compliance**: When the module's `constraints` contains `{"type":"container","value":"Section"}`, you MUST use the `Section` component ONLY for the individual card/item-level elements (e.g., each card in a card grid, each content block). Do NOT use Section for structural wrappers such as tab containers, toolbar rows, title areas, or layout dividers — those stay as plain `div`. Section provides built-in bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem], so do NOT add those classes to its className — only add layout classes like `flex flex-col`, `gap-[1rem]`, `flex-1`.
-  15. **Tab Content Isolation (CRITICAL)**: When using `Tabs`/`TabItem`, the element referenced by `TabItem`'s `content.componentId` MUST NOT also appear as a child in any parent's `children` array. Tab content elements exist ONLY as references via `content.componentId` — they must NOT be placed in the DOM tree as siblings of the `Tabs` component. Placing them in both locations causes duplicate rendering.
-  16. **Sidebar Collapse Accordion**: When using `Collapse`/`CollapseItem` in a sidebar navigation context, you MUST set `accordion: true` on the `Collapse` component's props. Sidebar menus should only allow one group expanded at a time.
-  17. **Tab Content No Padding**: The element referenced by `TabItem`'s `content.componentId` MUST NOT include `p-*` padding classes in its className. The parent container (e.g. Section) already provides padding — adding padding to tab content causes misaligned indentation between nested Tab levels.
-  18. **Sidebar Navigation MUST Use Menu (CRITICAL)**: Sidebar navigation menus MUST use the `Menu` component (NOT `Collapse`/`CollapseItem`). `Menu` has built-in accordion behavior, selection state, and hierarchical submenu support. Using `Collapse` for sidebar navigation is FORBIDDEN.
+  12. **Prefix Enforcement**: Every id in the elements array MUST begin with the provided ID Prefix (except for the root element).
+  13. **Scope Confinement**: DO NOT attempt to build macro-page wrappers. Generate the UI JSON ONLY for the target module.
+  14. **Root ClassName Immutability**: NEVER alter the root element's `props.className` or `component`. You may ONLY populate its `children` array.
+  15. **Constraint Compliance**: When the module's `constraints` contains `{"type":"container","value":"Section"}`, you MUST use the `Section` component ONLY for the individual card/item-level elements (e.g., each card in a card grid, each content block). Do NOT use Section for structural wrappers such as tab containers, toolbar rows, title areas, or layout dividers — those stay as plain `div`. Section provides built-in bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem], so do NOT add those classes to its className — only add layout classes like `flex flex-col`, `gap-[1rem]`, `flex-1`.
+  16. **Tab Content Isolation (CRITICAL)**: When using `Tabs`/`TabItem`, the element referenced by `TabItem`'s `content.componentId` MUST NOT also appear as a child in any parent's `children` array. Tab content elements exist ONLY as references via `content.componentId` — they must NOT be placed in the DOM tree as siblings of the `Tabs` component. Placing them in both locations causes duplicate rendering.
+  17. **Sidebar Collapse Accordion**: When using `Collapse`/`CollapseItem` in a sidebar navigation context, you MUST set `accordion: true` on the `Collapse` component's props. Sidebar menus should only allow one group expanded at a time.
+  18. **Tab Content No Padding**: The element referenced by `TabItem`'s `content.componentId` MUST NOT include `p-*` padding classes in its className. The parent container (e.g. Section) already provides padding — adding padding to tab content causes misaligned indentation between nested Tab levels.
+  19. **Sidebar Navigation MUST Use Menu (CRITICAL)**: Sidebar navigation menus MUST use the `Menu` component (NOT `Collapse`/`CollapseItem`). `Menu` has built-in accordion behavior, selection state, and hierarchical submenu support. Using `Collapse` for sidebar navigation is FORBIDDEN.
+  20. **Chart Components Are Self-Contained (CRITICAL)**: Chart components (PieChart, BarChart, LineChart, ProcessChart, etc.) already include legends, center text, axis labels, tooltips, and color dots. You MUST NOT create any sibling div/span elements for these features inside the chart's parent container. Specifically: do NOT create legend containers (colored dot + text rows), do NOT create center number overlays (absolute-positioned text in the donut hole). The chart's `option.title` handles center text; the chart auto-renders legends from data `name` fields.
 
 #Tool Use Constraint: 
    `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需通过工具加载。

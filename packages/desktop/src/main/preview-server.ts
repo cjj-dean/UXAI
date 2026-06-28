@@ -5,6 +5,7 @@ import { dirname, extname, join, relative } from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { app } from "electron"
+import { batchClassesToCSS } from "./tailwind-to-css"
 
 const root = dirname(fileURLToPath(import.meta.url))
 const PREVIEW_PORT = 51856
@@ -41,6 +42,25 @@ export function startPreviewServer() {
     res.setHeader("Access-Control-Allow-Headers", "*")
 
     const pathname = decodeURIComponent(new URL(req.url ?? "/", "http://localhost").pathname)
+
+    if (req.method === "POST" && pathname === "/tailwind-compile") {
+      const chunks: Buffer[] = []
+      req.on("data", (chunk) => chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)))
+      req.on("end", () => {
+        try {
+          const body = JSON.parse(Buffer.concat(chunks).toString("utf-8"))
+          const css = batchClassesToCSS(body.classes ?? [])
+          res.writeHead(200, { "Content-Type": "text/css; charset=utf-8" })
+          res.end(css)
+        } catch (err) {
+          console.error("[preview-server] tailwind-compile error:", err)
+          res.writeHead(400)
+          res.end("Bad request")
+        }
+      })
+      return
+    }
+
     const candidate = join(dir, pathname === "/" ? "index.html" : pathname)
 
     if (relative(dir, candidate).startsWith("..")) {

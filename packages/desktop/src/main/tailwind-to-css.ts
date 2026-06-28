@@ -125,3 +125,101 @@ export function convertTailwindToCSS(className: string): Record<string, string> 
   if (!className.trim()) return {}
   return getTwj()!(className)
 }
+
+function escapeSelector(className: string): string {
+  return className.replace(/[^a-zA-Z0-9_-]/g, "\\$&")
+}
+
+function camelToKebab(str: string): string {
+  return str.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase())
+}
+
+const variantPseudo: Record<string, string> = {
+  hover: ":hover",
+  focus: ":focus",
+  "focus-visible": ":focus-visible",
+  "focus-within": ":focus-within",
+  active: ":active",
+  visited: ":visited",
+  disabled: ":disabled",
+  enabled: ":enabled",
+  checked: ":checked",
+  default: ":default",
+  required: ":required",
+  valid: ":valid",
+  invalid: ":invalid",
+  first: ":first-child",
+  last: ":last-child",
+  only: ":only-child",
+  odd: ":nth-child(odd)",
+  even: ":nth-child(even)",
+  empty: ":empty",
+  target: ":target",
+}
+
+const variantMedia: Record<string, string> = {
+  sm: "@media(min-width:640px)",
+  md: "@media(min-width:768px)",
+  lg: "@media(min-width:1024px)",
+  xl: "@media(min-width:1280px)",
+  "2xl": "@media(min-width:1536px)",
+}
+
+const ruleCache = new Map<string, string>()
+
+function buildRule(className: string, twj: (s: string) => Record<string, string>): string | null {
+  const parts = className.split(":")
+  const baseClass = parts.pop()!
+  const variants = parts
+
+  let cssObj: Record<string, string>
+  try {
+    cssObj = twj(baseClass)
+  } catch {
+    return null
+  }
+
+  if (!cssObj || Object.keys(cssObj).length === 0) return null
+
+  const escaped = escapeSelector(className)
+  let pseudoSuffix = ""
+  let mediaWrapper = ""
+
+  for (const v of variants) {
+    if (variantPseudo[v]) {
+      pseudoSuffix += variantPseudo[v]
+    } else if (variantMedia[v]) {
+      mediaWrapper = variantMedia[v]
+    } else {
+      return null
+    }
+  }
+
+  const declarations = Object.entries(cssObj)
+    .map(([prop, val]) => `${camelToKebab(prop)}:${val}`)
+    .join(";")
+
+  if (mediaWrapper) {
+    return `${mediaWrapper}{.${escaped}${pseudoSuffix}{${declarations}}}`
+  }
+  return `.${escaped}${pseudoSuffix}{${declarations}}`
+}
+
+export function batchClassesToCSS(classNames: string[]): string {
+  const twj = getTwj()
+  const rules: string[] = []
+
+  for (const className of classNames) {
+    if (ruleCache.has(className)) {
+      const cached = ruleCache.get(className)!
+      if (cached) rules.push(cached)
+      continue
+    }
+
+    const rule = buildRule(className, twj)
+    ruleCache.set(className, rule ?? "")
+    if (rule) rules.push(rule)
+  }
+
+  return rules.join("\n")
+}
