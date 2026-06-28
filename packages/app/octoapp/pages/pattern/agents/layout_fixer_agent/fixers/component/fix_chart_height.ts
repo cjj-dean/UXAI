@@ -5,6 +5,34 @@ const DEFAULT_CHART_HEIGHT = 250
 const HEADER_BUFFER = 80
 const CONFLICTING_CLASSES = new Set(["flex-1", "min-h-0", "flex-grow", "grow", "h-full", "h-screen"])
 
+const MINI_THRESHOLD_PER_ITEM = 38
+
+function processDataLength(elem: A2UIElement, state: Record<string, any> | undefined): number | null {
+  if (elem.component !== "ProcessChart") return null
+  const dataProp = elem.props?.option?.data
+  if (!dataProp) return null
+  if (Array.isArray(dataProp)) return dataProp.length
+  if (typeof dataProp === "object" && dataProp.path) {
+    const resolved = resolvePath(state, dataProp.path)
+    if (Array.isArray(resolved)) return resolved.length
+  }
+  return null
+}
+
+function resolvePath(state: Record<string, any> | undefined, path: string): any {
+  if (!state || !path) return null
+  let cur: any = state
+  for (const part of path.split("/").filter(Boolean)) {
+    if (cur && typeof cur === "object" && part in cur) cur = cur[part]
+    else if (Array.isArray(cur)) {
+      const idx = parseInt(part)
+      if (!isNaN(idx) && idx >= 0 && idx < cur.length) cur = cur[idx]
+      else return null
+    } else return null
+  }
+  return cur
+}
+
 function parsePx(cls: string, re: RegExp): number | null {
   const m = cls.match(re)
   return m ? parseFloat(m[1]) : null
@@ -74,19 +102,26 @@ export const fixChartHeight: Fixer = (json) => {
       available -= HEADER_BUFFER
       if (available < 100) available = 100
     }
+    const dataLen = processDataLength(elem, json.state)
+    const miniThreshold = dataLen ? dataLen * MINI_THRESHOLD_PER_ITEM + 10 : 0
     const currentH = getChartHeightPx(cls)
     const cleanedCls = stripConflicting(cls)
 
     if (currentH === null) {
-      const targetH = available ? Math.min(DEFAULT_CHART_HEIGHT, Math.floor(available)) : DEFAULT_CHART_HEIGHT
+      let targetH = available ? Math.min(DEFAULT_CHART_HEIGHT, Math.floor(available)) : DEFAULT_CHART_HEIGHT
+      if (miniThreshold > targetH) targetH = miniThreshold
       setClassName(elem, setChartHeightPx(cleanedCls, targetH))
       fixes.push(`[${elem.id}](${elem.component}) 缺少显式高度: 设置 h-[${targetH}px]`)
     } else {
       let newCls = cleanedCls
       if (available && currentH > available) {
-        const targetH = Math.floor(available)
+        let targetH = Math.floor(available)
+        if (miniThreshold > targetH) targetH = miniThreshold
         newCls = setChartHeightPx(cleanedCls, targetH)
         fixes.push(`[${elem.id}](${elem.component}) 图表高度 ${Math.floor(currentH)}px 溢出父容器: 缩小到 h-[${targetH}px]`)
+      } else if (miniThreshold > currentH) {
+        newCls = setChartHeightPx(cleanedCls, miniThreshold)
+        fixes.push(`[${elem.id}](${elem.component}) ProcessChart 高度 ${currentH}px 低于 mini 阈值 ${dataLen}*38: 提升到 h-[${miniThreshold}px]`)
       } else if (cleanedCls !== cls) {
         fixes.push(`[${elem.id}](${elem.component}) 清理冲突高度类 (h-full 等)`)
       }

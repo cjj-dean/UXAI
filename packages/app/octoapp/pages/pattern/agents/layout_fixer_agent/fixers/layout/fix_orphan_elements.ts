@@ -57,13 +57,26 @@ export const fixOrphanElements: Fixer = (json: A2UIJson): [A2UIJson, string[]] =
   const nowReachable = new Set(reachable)
   const leading: string[] = []
   const trailing: string[] = []
+  const emptyOrphanIds = new Set<string>()
 
   for (const elem of elements) {
     if (elem.id === rootId || nowReachable.has(elem.id)) continue
+    const hasChildren = Array.isArray(elem.children) ? elem.children.length > 0 : !!elem.children
+    const props = elem.props
+    const propKeys = props ? Object.keys(props).filter((k) => k !== "className") : []
+    if (!hasChildren && propKeys.length === 0) {
+      emptyOrphanIds.add(elem.id)
+      fixes.push(`[${elem.id}](${elem.component ?? "?"}) 空孤儿元素: 已删除`)
+      continue
+    }
     const comp = elem.component ?? ""
     const isHeaderLike = comp === "header" || elem.id.toLowerCase().includes("header")
     ;(isHeaderLike ? leading : trailing).push(elem.id)
     for (const id of collectSubtree(map, elem.id)) nowReachable.add(id)
+  }
+
+  if (emptyOrphanIds.size) {
+    json.elements = elements.filter((e) => !emptyOrphanIds.has(e.id))
   }
 
   if (!leading.length && !trailing.length) return [json, fixes]

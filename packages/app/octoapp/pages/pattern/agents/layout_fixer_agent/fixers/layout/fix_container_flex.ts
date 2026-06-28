@@ -1,6 +1,6 @@
 import { type A2UIElement, type Fixer, elemMap, getClassName, setClassName, tokens } from "../../types"
 
-const SKIP_COMPONENTS = new Set(["Table", "Tabs", "Collapse", "Tree", "Carousel", "Timeline"])
+const SKIP_COMPONENTS = new Set(["Table", "TableRow", "Tabs", "TabItem", "Collapse", "Tree", "Carousel", "Timeline"])
 const JUSTIFY_DISTRIBUTE = new Set(["justify-evenly", "justify-between", "justify-around"])
 const LEAF_COMPONENTS = new Set(["Icon", "span", "Tag", "Badge", "Button", "Input", "Select", "img", "a", "strong", "em", "code", "Progress", "Rate", "Switch", "Avatar", "Pagination", "DatePicker", "TimePicker", "Cascader"])
 const MB_RE = /^mb-(?:\[|\d)/

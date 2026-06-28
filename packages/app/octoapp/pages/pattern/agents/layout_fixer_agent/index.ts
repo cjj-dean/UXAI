@@ -1,8 +1,8 @@
 import type { A2UIJson } from "./types"
 import { ALL_FIXERS } from "./fixers"
 
-export function layoutFixer(genuiJson: A2UIJson): A2UIJson {
-  if (!genuiJson?.elements?.length) return genuiJson
+export function layoutFixer(genuiJson: A2UIJson): [A2UIJson, string[]] {
+  if (!genuiJson?.elements?.length) return [genuiJson, []]
 
   const allFixes: string[] = []
 
@@ -10,7 +10,8 @@ export function layoutFixer(genuiJson: A2UIJson): A2UIJson {
     const [json, fixes] = fixer.fn(genuiJson)
     genuiJson = json
     if (fixes.length) {
-      allFixes.push(...fixes)
+      allFixes.push(`[${fixer.name}] ${fixes.length} 处:`)
+      allFixes.push(...fixes.map((f) => `  - ${f}`))
       console.log(`----- [LayoutFixer] ${fixer.name}: ${fixes.length} 处 -----`)
     }
   }
@@ -21,7 +22,7 @@ export function layoutFixer(genuiJson: A2UIJson): A2UIJson {
     console.log("----- [LayoutFixer] 未发现需要修正的布局问题 -----")
   }
 
-  return genuiJson
+  return [genuiJson, allFixes]
 }
 
 export default layoutFixer
