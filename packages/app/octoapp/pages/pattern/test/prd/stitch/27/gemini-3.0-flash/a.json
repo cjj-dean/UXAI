@@ -1,0 +1,899 @@
+{
+    "state": {
+        "activeMenu": "凭证中心",
+        "currentCompany": "上海鼎泰科技有限公司 - 2023财年",
+        "unreadNotifications": 5,
+        "user": {
+            "nickName": "陈财务",
+            "role": "财务主管",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "metrics": [
+            {
+                "title": "资产总额",
+                "value": "12,850,600.45",
+                "trend": "up",
+                "change": "2.4%",
+                "icon": "trending-up",
+                "color": "primary"
+            },
+            {
+                "title": "负债总额",
+                "value": "4,502,300.12",
+                "trend": "down",
+                "change": "1.1%",
+                "icon": "trending-down",
+                "color": "error"
+            },
+            {
+                "title": "所有者权益",
+                "value": "8,348,300.33",
+                "trend": "up",
+                "change": "0.8%",
+                "icon": "shield-check",
+                "color": "success"
+            },
+            {
+                "title": "试算平衡状态",
+                "value": "已平衡",
+                "status": "success",
+                "icon": "scale",
+                "color": "success"
+            }
+        ],
+        "vouchers": [
+            {
+                "id": "V-202310-001",
+                "date": "2023-10-01",
+                "summary": "支付10月份办公室租金",
+                "subject": "管理费用-租金",
+                "debit": "50,000.00",
+                "credit": "0.00",
+                "creator": "张三",
+                "status": "已审核",
+                "statusColor": "success"
+            },
+            {
+                "id": "V-202310-002",
+                "date": "2023-10-02",
+                "summary": "收到A客户货款",
+                "subject": "银行存款-工行",
+                "debit": "128,000.00",
+                "credit": "0.00",
+                "creator": "李四",
+                "status": "未审核",
+                "statusColor": "warning"
+            },
+            {
+                "id": "V-202310-003",
+                "date": "2023-10-03",
+                "summary": "结转本月销售成本",
+                "subject": "主营业务成本",
+                "debit": "85,000.00",
+                "credit": "0.00",
+                "creator": "张三",
+                "status": "已审核",
+                "statusColor": "success"
+            },
+            {
+                "id": "V-202310-004",
+                "date": "2023-10-04",
+                "summary": "报销员工差旅费",
+                "subject": "管理费用-差旅费",
+                "debit": "3,200.00",
+                "credit": "0.00",
+                "creator": "王五",
+                "status": "已审核",
+                "statusColor": "success"
+            },
+            {
+                "id": "V-202310-005",
+                "date": "2023-10-05",
+                "summary": "计提本月工资",
+                "subject": "应付职工薪酬",
+                "debit": "0.00",
+                "credit": "450,000.00",
+                "creator": "李四",
+                "status": "未审核",
+                "statusColor": "warning"
+            },
+            {
+                "id": "V-202310-006",
+                "date": "2023-10-06",
+                "summary": "购买办公用品",
+                "subject": "管理费用-办公费",
+                "debit": "1,500.00",
+                "credit": "0.00",
+                "creator": "张三",
+                "status": "已作废",
+                "statusColor": "error"
+            },
+            {
+                "id": "V-202310-007",
+                "date": "2023-10-07",
+                "summary": "缴纳增值税",
+                "subject": "应交税费-增值税",
+                "debit": "22,000.00",
+                "credit": "0.00",
+                "creator": "王五",
+                "status": "已审核",
+                "statusColor": "success"
+            },
+            {
+                "id": "V-202310-008",
+                "date": "2023-10-08",
+                "summary": "提取现金备用",
+                "subject": "库存现金",
+                "debit": "5,000.00",
+                "credit": "0.00",
+                "creator": "李四",
+                "status": "未审核",
+                "statusColor": "warning"
+            },
+            {
+                "id": "V-202310-009",
+                "date": "2023-10-09",
+                "summary": "支付水电费",
+                "subject": "管理费用-水电费",
+                "debit": "4,200.00",
+                "credit": "0.00",
+                "creator": "张三",
+                "status": "已审核",
+                "statusColor": "success"
+            },
+            {
+                "id": "V-202310-010",
+                "date": "2023-10-10",
+                "summary": "固定资产折旧计提",
+                "subject": "累计折旧",
+                "debit": "0.00",
+                "credit": "12,000.00",
+                "creator": "王五",
+                "status": "已审核",
+                "statusColor": "success"
+            }
+        ],
+        "filterDate": [],
+        "filterType": "全部",
+        "filterStatus": "全部"
+    },
+    "rootId": "erpMainLayout",
+    "elements": [
+        {
+            "id": "erpMainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarNav",
+                "mainContentWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3 border-b border-divider"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "landmark",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "鼎泰财务ERP"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 py-4 px-3 flex flex-col gap-1"
+            },
+            "children": [
+                "menuItem1",
+                "menuItem2",
+                "menuItem3",
+                "menuItem4",
+                "menuItem5"
+            ]
+        },
+        {
+            "id": "menuItem1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-primary-container hover:text-primary transition-colors cursor-pointer"
+            },
+            "children": [
+                "menuIcon1",
+                "menuLabel1"
+            ]
+        },
+        {
+            "id": "menuIcon1",
+            "component": "Icon",
+            "props": {
+                "name": "layout-dashboard",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel1",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": "工作台"
+            }
+        },
+        {
+            "id": "menuItem2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg bg-primary text-on-primary shadow-sm"
+            },
+            "children": [
+                "menuIcon2",
+                "menuLabel2"
+            ]
+        },
+        {
+            "id": "menuIcon2",
+            "component": "Icon",
+            "props": {
+                "name": "book-open",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel2",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": "总账管理"
+            }
+        },
+        {
+            "id": "menuItem3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-primary-container"
+            },
+            "children": [
+                "menuIcon3",
+                "menuLabel3"
+            ]
+        },
+        {
+            "id": "menuIcon3",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-3",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel3",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": "报表中心"
+            }
+        },
+        {
+            "id": "menuItem4",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-primary-container"
+            },
+            "children": [
+                "menuIcon4",
+                "menuLabel4"
+            ]
+        },
+        {
+            "id": "menuIcon4",
+            "component": "Icon",
+            "props": {
+                "name": "building-2",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel4",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": "固定资产"
+            }
+        },
+        {
+            "id": "menuItem5",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-primary-container"
+            },
+            "children": [
+                "menuIcon5",
+                "menuLabel5"
+            ]
+        },
+        {
+            "id": "menuIcon5",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel5",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": "系统设置"
+            }
+        },
+        {
+            "id": "mainContentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-6 flex items-center justify-between"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "breadcrumbNav",
+                "companySelect"
+            ]
+        },
+        {
+            "id": "breadcrumbNav",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "总账管理"
+                    },
+                    {
+                        "title": "凭证中心"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "companySelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/currentCompany"
+                },
+                "options": [
+                    {
+                        "label": "上海鼎泰科技有限公司 - 2023财年",
+                        "value": "上海鼎泰科技有限公司 - 2023财年"
+                    }
+                ],
+                "className": "w-72",
+                "size": "small"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "globalSearch",
+                "notificationIcon",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "placeholder": "搜索功能、凭证...",
+                "prefix": "search",
+                "size": "small",
+                "className": "w-48"
+            },
+            "children": []
+        },
+        {
+            "id": "notificationIcon",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "bellIcon",
+                "notifBadge"
+            ]
+        },
+        {
+            "id": "bellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "notifBadge",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-1 -right-1 w-4 h-4 bg-error text-on-error text-[10px] flex items-center justify-center rounded-full",
+                "value": "5"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/user/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "/user/nickName"
+                }
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "kpiGrid",
+                "tableSection"
+            ]
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-5 rounded-xl shadow-card flex flex-col gap-3"
+            },
+            "children": [
+                "kpiHeader",
+                "kpiValue",
+                "kpiFooter"
+            ]
+        },
+        {
+            "id": "kpiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "kpiTitle",
+                "kpiIcon"
+            ]
+        },
+        {
+            "id": "kpiTitle",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant text-sm",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "kpiIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "kpiValue",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "kpiFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "kpiTrend",
+                "kpiChange"
+            ]
+        },
+        {
+            "id": "kpiTrend",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "较上月"
+            }
+        },
+        {
+            "id": "kpiChange",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-success",
+                "value": {
+                    "path": "change"
+                }
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card flex flex-col"
+            },
+            "children": [
+                "filterBar",
+                "voucherTable"
+            ]
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider flex items-center justify-between"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "dateRangePicker",
+                "typeSelect",
+                "statusSelect"
+            ]
+        },
+        {
+            "id": "dateRangePicker",
+            "component": "DatePicker",
+            "props": {
+                "range": true,
+                "value": {
+                    "path": "/filterDate"
+                },
+                "placeholder": [
+                    "开始日期",
+                    "结束日期"
+                ],
+                "size": "medium",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "typeSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterType"
+                },
+                "options": [
+                    {
+                        "label": "全部类型",
+                        "value": "全部"
+                    },
+                    {
+                        "label": "记账凭证",
+                        "value": "记账"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterStatus"
+                },
+                "options": [
+                    {
+                        "label": "全部状态",
+                        "value": "全部"
+                    },
+                    {
+                        "label": "已审核",
+                        "value": "已审核"
+                    },
+                    {
+                        "label": "未审核",
+                        "value": "未审核"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "addBtn",
+                "auditBtn",
+                "exportBtn"
+            ]
+        },
+        {
+            "id": "addBtn",
+            "component": "Button",
+            "props": {
+                "value": "新增凭证",
+                "color": "primary",
+                "icon": "plus"
+            }
+        },
+        {
+            "id": "auditBtn",
+            "component": "Button",
+            "props": {
+                "value": "批量审核",
+                "icon": "check-check"
+            }
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "voucherTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/vouchers"
+                },
+                "rowSelection": {
+                    "type": "checkbox"
+                },
+                "columns": [
+                    {
+                        "title": "凭证号",
+                        "dataIndex": "id",
+                        "width": 120
+                    },
+                    {
+                        "title": "日期",
+                        "dataIndex": "date",
+                        "width": 100
+                    },
+                    {
+                        "title": "摘要",
+                        "dataIndex": "summary"
+                    },
+                    {
+                        "title": "科目名称",
+                        "dataIndex": "subject"
+                    },
+                    {
+                        "title": "借方金额",
+                        "dataIndex": "debit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "贷方金额",
+                        "dataIndex": "credit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/vouchers",
+                "componentId": "voucherRow"
+            }
+        },
+        {
+            "id": "voucherRow",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellDate",
+                "cellSummary",
+                "cellSubject",
+                "cellDebit",
+                "cellCredit",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "className": "text-primary font-medium cursor-pointer",
+                "value": {
+                    "path": "id"
+                }
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "cellSummary",
+            "component": "span",
+            "props": {
+                "className": "truncate max-w-[200px]",
+                "value": {
+                    "path": "summary"
+                }
+            }
+        },
+        {
+            "id": "cellSubject",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subject"
+                }
+            }
+        },
+        {
+            "id": "cellDebit",
+            "component": "span",
+            "props": {
+                "className": "font-mono text-on-surface",
+                "value": {
+                    "path": "debit"
+                }
+            }
+        },
+        {
+            "id": "cellCredit",
+            "component": "span",
+            "props": {
+                "className": "font-mono text-on-surface",
+                "value": {
+                    "path": "credit"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "icon": "eye",
+                "size": "small",
+                "shape": "circle"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1046 @@
+{
+  "state": {
+    "activeTab": "overview",
+    "taskDistributionData": [
+      {
+        "value": 92,
+        "name": "正常"
+      },
+      {
+        "value": 8,
+        "name": "时延超阈值"
+      },
+      {
+        "value": 8,
+        "name": "丢包"
+      },
+      {
+        "value": 8,
+        "name": "丢包或时延超阈值"
+      }
+    ],
+    "taskDistributionColors": [
+      "#52c41a",
+      "#faad14",
+      "#f5222d",
+      "#eb2f96"
+    ],
+    "taskDistributionCenter": "116",
+    "taskDistributionSubtext": "会话指标",
+    "top10NodeLossData": [
+      {
+        "设备": "BR",
+        "丢包数": 380
+      },
+      {
+        "设备": "Leaf1",
+        "丢包数": 320
+      },
+      {
+        "设备": "Leaf2",
+        "丢包数": 280
+      },
+      {
+        "设备": "Leaf3",
+        "丢包数": 240
+      },
+      {
+        "设备": "Leaf4",
+        "丢包数": 200
+      },
+      {
+        "设备": "Leaf5",
+        "丢包数": 160
+      },
+      {
+        "设备": "Leaf6",
+        "丢包数": 120
+      },
+      {
+        "设备": "Leaf7",
+        "丢包数": 90
+      },
+      {
+        "设备": "Leaf8",
+        "丢包数": 60
+      },
+      {
+        "设备": "Leaf9",
+        "丢包数": 30
+      }
+    ],
+    "top10LinkLossData": [
+      {
+        "链路": "Leaf1_core1",
+        "丢包数": 350
+      },
+      {
+        "链路": "Leaf2_core2",
+        "丢包数": 260
+      },
+      {
+        "链路": "Leaf3_core3",
+        "丢包数": 180
+      },
+      {
+        "链路": "Leaf4_core4",
+        "丢包数": 90
+      }
+    ],
+    "top10SrcIpLossData": [
+      {
+        "name": "192.168.1.1",
+        "value": 3850
+      },
+      {
+        "name": "192.168.1.2",
+        "value": 3200
+      },
+      {
+        "name": "192.168.1.3",
+        "value": 2800
+      },
+      {
+        "name": "192.168.1.4",
+        "value": 2400
+      },
+      {
+        "name": "192.168.1.5",
+        "value": 2000
+      },
+      {
+        "name": "192.168.1.6",
+        "value": 1600
+      },
+      {
+        "name": "192.168.1.7",
+        "value": 1200
+      },
+      {
+        "name": "192.168.1.8",
+        "value": 800
+      },
+      {
+        "name": "192.168.1.9",
+        "value": 550
+      },
+      {
+        "name": "192.168.1.10",
+        "value": 350
+      }
+    ],
+    "top10DstIpLossData": [
+      {
+        "name": "10.0.0.1",
+        "value": 3900
+      },
+      {
+        "name": "10.0.0.2",
+        "value": 3300
+      },
+      {
+        "name": "10.0.0.3",
+        "value": 2900
+      },
+      {
+        "name": "10.0.0.4",
+        "value": 2350
+      },
+      {
+        "name": "10.0.0.5",
+        "value": 1900
+      },
+      {
+        "name": "10.0.0.6",
+        "value": 1500
+      },
+      {
+        "name": "10.0.0.7",
+        "value": 1050
+      },
+      {
+        "name": "10.0.0.8",
+        "value": 750
+      },
+      {
+        "name": "10.0.0.9",
+        "value": 480
+      },
+      {
+        "name": "10.0.0.10",
+        "value": 300
+      }
+    ],
+    "top10LatencySessionData": [
+      {
+        "name": "session-001",
+        "value": 450
+      },
+      {
+        "name": "session-002",
+        "value": 380
+      },
+      {
+        "name": "session-003",
+        "value": 310
+      },
+      {
+        "name": "session-004",
+        "value": 260
+      },
+      {
+        "name": "session-005",
+        "value": 210
+      },
+      {
+        "name": "session-006",
+        "value": 170
+      },
+      {
+        "name": "session-007",
+        "value": 130
+      },
+      {
+        "name": "session-008",
+        "value": 95
+      },
+      {
+        "name": "session-009",
+        "value": 60
+      },
+      {
+        "name": "session-010",
+        "value": 35
+      }
+    ]
+  },
+  "rootId": "pageShell",
+  "elements": [
+    {
+      "id": "pageShell",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "globalNavContainer",
+        "secondaryNavContainer",
+        "taskTabsContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "globalNavContainer",
+      "component": "header",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm min-h-12 flex items-center"
+      },
+      "children": [
+        "glbNavLeft",
+        "glbNavCenter",
+        "glbNavRight"
+      ]
+    },
+    {
+      "id": "secondaryNavContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container border-b border-divider min-h-10 flex items-center"
+      },
+      "children": [
+        "secNavTabs"
+      ]
+    },
+    {
+      "id": "taskTabsContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest px-page py-section"
+      },
+      "children": [
+        "tskTabsTabs"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-page grid grid-cols-3 gap-section"
+      },
+      "children": [
+        "mainCntCard1",
+        "mainCntCard2",
+        "mainCntCard3",
+        "mainCntCard4",
+        "mainCntCard5",
+        "mainCntCard6"
+      ]
+    },
+    {
+      "id": "glbNavLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 pl-page"
+      },
+      "children": [
+        "glbNavMenuIcon",
+        "glbNavPlatformName"
+      ]
+    },
+    {
+      "id": "glbNavMenuIcon",
+      "component": "Icon",
+      "props": {
+        "name": "menu",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface cursor-pointer"
+      }
+    },
+    {
+      "id": "glbNavPlatformName",
+      "component": "span",
+      "props": {
+        "value": "iMaster NCE-FabricInsight",
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "glbNavCenter",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 flex-1 justify-center"
+      },
+      "children": [
+        "glbNavItemHealth",
+        "glbNavItemTopology",
+        "glbNavItemOperation"
+      ]
+    },
+    {
+      "id": "glbNavItemHealth",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container cursor-pointer"
+      },
+      "children": [
+        "glbNavHealthIcon",
+        "glbNavHealthLabel"
+      ]
+    },
+    {
+      "id": "glbNavHealthIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-dashboard",
+        "shape": "outline",
+        "color": "primary",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "glbNavHealthLabel",
+      "component": "span",
+      "props": {
+        "value": "健康看板",
+        "className": "text-md font-medium text-primary"
+      }
+    },
+    {
+      "id": "glbNavItemTopology",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+      },
+      "children": [
+        "glbNavTopologyIcon",
+        "glbNavTopologyLabel"
+      ]
+    },
+    {
+      "id": "glbNavTopologyIcon",
+      "component": "Icon",
+      "props": {
+        "name": "network",
+        "shape": "outline",
+        "className": "w-4 h-4 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "glbNavTopologyLabel",
+      "component": "span",
+      "props": {
+        "value": "网络拓扑",
+        "className": "text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "glbNavItemOperation",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+      },
+      "children": [
+        "glbNavOperationIcon",
+        "glbNavOperationLabel"
+      ]
+    },
+    {
+      "id": "glbNavOperationIcon",
+      "component": "Icon",
+      "props": {
+        "name": "zap",
+        "shape": "outline",
+        "className": "w-4 h-4 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "glbNavOperationLabel",
+      "component": "span",
+      "props": {
+        "value": "智能运维",
+        "className": "text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "glbNavRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 pr-page"
+      },
+      "children": [
+        "glbNavPolicyCenter",
+        "glbNavHelpIcon",
+        "glbNavSettingsIcon",
+        "glbNavThemeIcon",
+        "glbNavUserSection"
+      ]
+    },
+    {
+      "id": "glbNavPolicyCenter",
+      "component": "span",
+      "props": {
+        "value": "策略中心",
+        "className": "text-md text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "glbNavHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "help-circle",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "glbNavSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "glbNavThemeIcon",
+      "component": "Icon",
+      "props": {
+        "name": "sun",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "glbNavUserSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "glbNavUserAvatar",
+        "glbNavUserName"
+      ]
+    },
+    {
+      "id": "glbNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": "https://randomuser.me/api/portraits/men/32.jpg",
+        "className": "w-7 h-7 rounded-full object-cover border border-surface-dim",
+        "alt": "Admin avatar"
+      }
+    },
+    {
+      "id": "glbNavUserName",
+      "component": "span",
+      "props": {
+        "value": "Admin",
+        "className": "text-md text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "secNavTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "size": "medium",
+        "className": "w-full px-page"
+      },
+      "children": [
+        "secNavOverviewTab",
+        "secNavSessionTab",
+        "secNavFlowTab"
+      ]
+    },
+    {
+      "id": "secNavOverviewTab",
+      "component": "TabItem",
+      "props": {
+        "key": "overview",
+        "label": "概览",
+        "content": {
+          "componentId": "secNavOverviewContent"
+        }
+      }
+    },
+    {
+      "id": "secNavSessionTab",
+      "component": "TabItem",
+      "props": {
+        "key": "sessionDetail",
+        "label": "会话详情",
+        "content": {
+          "componentId": "secNavSessionContent"
+        }
+      }
+    },
+    {
+      "id": "secNavFlowTab",
+      "component": "TabItem",
+      "props": {
+        "key": "flowAnalysis",
+        "label": "随流分析配置",
+        "content": {
+          "componentId": "secNavFlowContent"
+        }
+      }
+    },
+    {
+      "id": "secNavOverviewContent",
+      "component": "div",
+      "props": {
+        "className": "hidden"
+      }
+    },
+    {
+      "id": "secNavSessionContent",
+      "component": "div",
+      "props": {
+        "className": "hidden"
+      }
+    },
+    {
+      "id": "secNavFlowContent",
+      "component": "div",
+      "props": {
+        "className": "hidden"
+      }
+    },
+    {
+      "id": "tskTabsTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "types": "line",
+        "size": "medium",
+        "className": "w-full"
+      },
+      "children": [
+        "tskTabsMultiTab",
+        "tskTabsSingleTab"
+      ]
+    },
+    {
+      "id": "tskTabsMultiTab",
+      "component": "TabItem",
+      "props": {
+        "key": "multi",
+        "label": "多机任务",
+        "content": {
+          "componentId": "tskTabsMultiContent"
+        }
+      }
+    },
+    {
+      "id": "tskTabsSingleTab",
+      "component": "TabItem",
+      "props": {
+        "key": "single",
+        "label": "单机任务",
+        "content": {
+          "componentId": "tskTabsSingleContent"
+        }
+      }
+    },
+    {
+      "id": "tskTabsMultiContent",
+      "component": "div",
+      "props": {
+        "className": "hidden",
+        "value": "多机任务内容区域"
+      }
+    },
+    {
+      "id": "tskTabsSingleContent",
+      "component": "div",
+      "props": {
+        "className": "hidden",
+        "value": "单机任务内容区域"
+      }
+    },
+    {
+      "id": "mainCntCard1",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard1Header",
+        "mainCntCard1Body"
+      ]
+    },
+    {
+      "id": "mainCntCard1Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "mainCntCard1Title"
+      ]
+    },
+    {
+      "id": "mainCntCard1Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "任务分布"
+      }
+    },
+    {
+      "id": "mainCntCard1Body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-gutter flex-1"
+      },
+      "children": [
+        "mainCntCard1Chart",
+        "mainCntCard1Legend"
+      ]
+    },
+    {
+      "id": "mainCntCard1Chart",
+      "component": "CircleProcessChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/taskDistributionData"
+          },
+          "color": {
+            "path": "/taskDistributionColors"
+          },
+          "title": {
+            "text": {
+              "path": "/taskDistributionCenter"
+            },
+            "subtext": {
+              "path": "/taskDistributionSubtext"
+            }
+          }
+        },
+        "className": "h-48 w-48 shrink-0"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3 flex-1"
+      },
+      "children": [
+        "mainCntCard1Legend1",
+        "mainCntCard1Legend2",
+        "mainCntCard1Legend3",
+        "mainCntCard1Legend4"
+      ]
+    },
+    {
+      "id": "mainCntCard1Legend1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between py-1"
+      },
+      "children": [
+        "mainCntCard1Legend1Dot",
+        "mainCntCard1Legend1Label",
+        "mainCntCard1Legend1Value"
+      ]
+    },
+    {
+      "id": "mainCntCard1Legend1Dot",
+      "component": "div",
+      "props": {
+        "className": "w-3 h-3 rounded-full bg-success shrink-0"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend1Label",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface flex-1 ml-2",
+        "value": "正常"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend1Value",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "92"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend2",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between py-1"
+      },
+      "children": [
+        "mainCntCard1Legend2Dot",
+        "mainCntCard1Legend2Label",
+        "mainCntCard1Legend2Value"
+      ]
+    },
+    {
+      "id": "mainCntCard1Legend2Dot",
+      "component": "div",
+      "props": {
+        "className": "w-3 h-3 rounded-full bg-warning shrink-0"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend2Label",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface flex-1 ml-2",
+        "value": "时延超阈值"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend2Value",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "8"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend3",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between py-1"
+      },
+      "children": [
+        "mainCntCard1Legend3Dot",
+        "mainCntCard1Legend3Label",
+        "mainCntCard1Legend3Value"
+      ]
+    },
+    {
+      "id": "mainCntCard1Legend3Dot",
+      "component": "div",
+      "props": {
+        "className": "w-3 h-3 rounded-full bg-error shrink-0"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend3Label",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface flex-1 ml-2",
+        "value": "丢包"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend3Value",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "8"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend4",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between py-1"
+      },
+      "children": [
+        "mainCntCard1Legend4Dot",
+        "mainCntCard1Legend4Label",
+        "mainCntCard1Legend4Value"
+      ]
+    },
+    {
+      "id": "mainCntCard1Legend4Dot",
+      "component": "div",
+      "props": {
+        "className": "w-3 h-3 rounded-full bg-[#eb2f96] shrink-0"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend4Label",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface flex-1 ml-2",
+        "value": "丢包或时延超阈值"
+      }
+    },
+    {
+      "id": "mainCntCard1Legend4Value",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "8"
+      }
+    },
+    {
+      "id": "mainCntCard2",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard2Header",
+        "mainCntCard2Chart"
+      ]
+    },
+    {
+      "id": "mainCntCard2Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "mainCntCard2Title"
+      ]
+    },
+    {
+      "id": "mainCntCard2Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "Top10丢包设备分布（单节点）"
+      }
+    },
+    {
+      "id": "mainCntCard2Chart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top10NodeLossData"
+          },
+          "xAxis": {
+            "data": "设备"
+          },
+          "yAxisTitle": "丢包数"
+        },
+        "className": "flex-1 w-full min-h-0"
+      }
+    },
+    {
+      "id": "mainCntCard3",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard3Header",
+        "mainCntCard3Chart"
+      ]
+    },
+    {
+      "id": "mainCntCard3Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "mainCntCard3Title"
+      ]
+    },
+    {
+      "id": "mainCntCard3Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "Top10丢包设备分布（链路）"
+      }
+    },
+    {
+      "id": "mainCntCard3Chart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top10LinkLossData"
+          },
+          "xAxis": {
+            "data": "链路"
+          },
+          "yAxisTitle": "丢包数"
+        },
+        "className": "flex-1 w-full min-h-0"
+      }
+    },
+    {
+      "id": "mainCntCard4",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard4Header",
+        "mainCntCard4Chart"
+      ]
+    },
+    {
+      "id": "mainCntCard4Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "mainCntCard4Title"
+      ]
+    },
+    {
+      "id": "mainCntCard4Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "Top10源IP丢包分布"
+      }
+    },
+    {
+      "id": "mainCntCard4Chart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top10SrcIpLossData"
+          }
+        },
+        "className": "flex-1 w-full min-h-0"
+      }
+    },
+    {
+      "id": "mainCntCard5",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard5Header",
+        "mainCntCard5Chart"
+      ]
+    },
+    {
+      "id": "mainCntCard5Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "mainCntCard5Title"
+      ]
+    },
+    {
+      "id": "mainCntCard5Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "Top10目的IP丢包分布"
+      }
+    },
+    {
+      "id": "mainCntCard5Chart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top10DstIpLossData"
+          }
+        },
+        "className": "flex-1 w-full min-h-0"
+      }
+    },
+    {
+      "id": "mainCntCard6",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainCntCard6Header",
+        "mainCntCard6Chart"
+      ]
+    },
+    {
+      "id": "mainCntCard6Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mainCntCard6Title",
+        "mainCntCard6InfoIcon"
+      ]
+    },
+    {
+      "id": "mainCntCard6Title",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "Top10时延会话"
+      }
+    },
+    {
+      "id": "mainCntCard6InfoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "mainCntCard6Chart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top10LatencySessionData"
+          }
+        },
+        "className": "flex-1 w-full min-h-0"
+      }
+    }
+  ]
+}

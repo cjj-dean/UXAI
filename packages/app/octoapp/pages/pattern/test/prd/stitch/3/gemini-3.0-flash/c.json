@@ -1,0 +1,676 @@
+{
+    "state": {
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Users",
+                "isActive": true
+            },
+            {
+                "label": "Logs",
+                "isActive": false
+            },
+            {
+                "label": "Settings",
+                "isActive": false
+            }
+        ],
+        "header": {
+            "title": "User Directory",
+            "subtitle": "Manage access levels, monitor activity, and configure enterprise security roles."
+        },
+        "searchVal": "",
+        "roleFilter": "All",
+        "deptFilter": "All",
+        "statusFilter": "All",
+        "userList": [
+            {
+                "userId": "001",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "name": "Marcus Thorne",
+                "email": "m.thorne@enterprise.com",
+                "role": "Security Lead",
+                "department": "IT Operations",
+                "status": "ACTIVE",
+                "statusType": "success",
+                "lastLogin": "2 hours ago"
+            },
+            {
+                "userId": "002",
+                "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+                "name": "Sarah Chen",
+                "email": "s.chen@enterprise.com",
+                "role": "Compliance Officer",
+                "department": "Legal & Risk",
+                "status": "ACTIVE",
+                "statusType": "success",
+                "lastLogin": "Yesterday, 4:30 PM"
+            },
+            {
+                "userId": "003",
+                "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+                "name": "David Miller",
+                "email": "d.miller@enterprise.com",
+                "role": "Analyst",
+                "department": "Core Platform",
+                "status": "INACTIVE",
+                "statusType": "default",
+                "lastLogin": "Oct 12, 2023"
+            },
+            {
+                "userId": "004",
+                "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+                "name": "Elena Rodriguez",
+                "email": "e.rodriguez@enterprise.com",
+                "role": "System Admin",
+                "department": "IT Operations",
+                "status": "ACTIVE",
+                "statusType": "success",
+                "lastLogin": "15 mins ago"
+            }
+        ],
+        "footerLinks": [
+            {
+                "label": "Security Policy"
+            },
+            {
+                "label": "Privacy Statement"
+            },
+            {
+                "label": "Terms of Service"
+            },
+            {
+                "label": "Support"
+            }
+        ]
+    },
+    "rootId": "pageWrapper",
+    "elements": [
+        {
+            "id": "pageWrapper",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen bg-surface-container-lowest flex flex-col"
+            },
+            "children": [
+                "globalNav",
+                "mainContent",
+                "globalFooter"
+            ]
+        },
+        {
+            "id": "globalNav",
+            "component": "nav",
+            "props": {
+                "className": "h-16 px-gutter bg-surface-container-highest flex items-center justify-between border-b border-divider sticky top-0 z-50 shadow-sm"
+            },
+            "children": [
+                "navLeftSection",
+                "navRightSection"
+            ]
+        },
+        {
+            "id": "navLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-10"
+            },
+            "children": [
+                "brandLogo",
+                "navLinksList"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "brandIcon",
+                "brandText"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandText",
+            "component": "span",
+            "props": {
+                "value": "Security Gate",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navLinksList",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navLinkItem"
+            }
+        },
+        {
+            "id": "navLinkItem",
+            "component": "div",
+            "props": {
+                "className": "relative"
+            },
+            "children": [
+                "navLinkLabel"
+            ]
+        },
+        {
+            "id": "navLinkLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium cursor-pointer transition-colors hover:text-primary text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navIconSearch",
+                "navIconBell",
+                "navIconUser"
+            ]
+        },
+        {
+            "id": "navIconSearch",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "navIconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "navIconUser",
+            "component": "Icon",
+            "props": {
+                "name": "circle-user",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 w-full max-w-7xl mx-auto px-gutter py-inset flex flex-col gap-8"
+            },
+            "children": [
+                "pageHeader",
+                "filterBar",
+                "tableContainer"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "headerTextGroup",
+                "headerActionBtn"
+            ]
+        },
+        {
+            "id": "headerTextGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "headerTitle",
+                "headerSubtitle"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/header/title"
+                },
+                "className": "text-4xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerSubtitle",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/header/subtitle"
+                },
+                "className": "text-lg text-on-surface-variant max-w-2xl"
+            }
+        },
+        {
+            "id": "headerActionBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add New User",
+                "color": "primary",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "size": "large"
+            }
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between gap-4 bg-surface-container-highest p-4 rounded-xl shadow-sm"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 flex-1"
+            },
+            "children": [
+                "searchInput",
+                "roleSelect",
+                "deptSelect",
+                "statusSelect"
+            ]
+        },
+        {
+            "id": "searchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "Search by name or email...",
+                "prefix": "search",
+                "className": "w-72"
+            }
+        },
+        {
+            "id": "roleSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/roleFilter"
+                },
+                "options": [
+                    {
+                        "label": "Role: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "Admin",
+                        "value": "Admin"
+                    },
+                    {
+                        "label": "Security Lead",
+                        "value": "Security Lead"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "deptSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/deptFilter"
+                },
+                "options": [
+                    {
+                        "label": "Department: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "IT Operations",
+                        "value": "IT"
+                    },
+                    {
+                        "label": "Legal & Risk",
+                        "value": "Legal"
+                    }
+                ],
+                "className": "w-44"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/statusFilter"
+                },
+                "options": [
+                    {
+                        "label": "Status: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "Active",
+                        "value": "Active"
+                    },
+                    {
+                        "label": "Inactive",
+                        "value": "Inactive"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "Button",
+            "props": {
+                "value": "Clear Filters",
+                "icon": "rotate-ccw",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "tableContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden p-1"
+            },
+            "children": [
+                "userTable"
+            ]
+        },
+        {
+            "id": "userTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "userId",
+                "dataSource": {
+                    "path": "/userList"
+                },
+                "className": "mb-4",
+                "columns": [
+                    {
+                        "title": "Name",
+                        "dataIndex": "name",
+                        "minWidth": 250
+                    },
+                    {
+                        "title": "Role",
+                        "dataIndex": "role"
+                    },
+                    {
+                        "title": "Department",
+                        "dataIndex": "department"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Last Login",
+                        "dataIndex": "lastLogin"
+                    },
+                    {
+                        "title": "Actions",
+                        "dataIndex": "actions",
+                        "width": 150,
+                        "align": "right"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/userList",
+                "componentId": "userTableRow"
+            }
+        },
+        {
+            "id": "userTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellRole",
+                "cellDept",
+                "cellStatus",
+                "cellLogin",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userNameGroup"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userNameGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userNameText",
+                "userEmailText"
+            ]
+        },
+        {
+            "id": "userNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-md font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userEmailText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "email"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "role"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "cellDept",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "department"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "variant": "filled",
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellLogin",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "lastLogin"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-end gap-2"
+            },
+            "children": [
+                "btnEdit",
+                "btnSlash",
+                "btnTrash"
+            ]
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "icon": "file-edit",
+                "size": "small",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "btnSlash",
+            "component": "Button",
+            "props": {
+                "icon": "ban",
+                "size": "small",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "btnTrash",
+            "component": "Button",
+            "props": {
+                "icon": "trash-2",
+                "size": "small",
+                "color": "danger"
+            }
+        },
+        {
+            "id": "globalFooter",
+            "component": "footer",
+            "props": {
+                "className": "bg-surface-container-highest border-t border-divider py-8 px-gutter"
+            },
+            "children": [
+                "footerContent"
+            ]
+        },
+        {
+            "id": "footerContent",
+            "component": "div",
+            "props": {
+                "className": "max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "footerBrand",
+                "footerCopyright"
+            ]
+        },
+        {
+            "id": "footerBrand",
+            "component": "span",
+            "props": {
+                "value": "Security Gate",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "footerCopyright",
+            "component": "span",
+            "props": {
+                "value": "© 2024 Enterprise Secure Solutions. All rights reserved.",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/footerLinks",
+                "componentId": "footerLinkItem"
+            }
+        },
+        {
+            "id": "footerLinkItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant hover:text-primary cursor-pointer transition-colors"
+            }
+        }
+    ]
+}

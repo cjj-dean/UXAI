@@ -1,0 +1,990 @@
+{
+    "state": {
+        "activeMenuKey": "workflow",
+        "navItems": [
+            {
+                "key": "dashboard",
+                "label": "仪表盘",
+                "iconName": "layout-dashboard"
+            },
+            {
+                "key": "security",
+                "label": "安全审计",
+                "iconName": "shield-check"
+            },
+            {
+                "key": "workflow",
+                "label": "自动化工作流",
+                "iconName": "git-branch"
+            },
+            {
+                "key": "users",
+                "label": "用户管理",
+                "iconName": "users"
+            },
+            {
+                "key": "settings",
+                "label": "系统设置",
+                "iconName": "settings"
+            }
+        ],
+        "pageTitle": "线索自动化分配流程 v2.4",
+        "nodeGroups": [
+            {
+                "groupName": "TRIGGERS",
+                "nodes": [
+                    {
+                        "id": "new_lead",
+                        "name": "新销售线索",
+                        "icon": "zap",
+                        "desc": "当有新线索进入系统时触发"
+                    },
+                    {
+                        "id": "user_login",
+                        "name": "用户登录",
+                        "icon": "log-in",
+                        "desc": "用户成功登录后触发"
+                    }
+                ]
+            },
+            {
+                "groupName": "CONDITIONS",
+                "nodes": [
+                    {
+                        "id": "score_filter",
+                        "name": "分数过滤",
+                        "icon": "filter",
+                        "desc": "基于线索评分的分支判断"
+                    },
+                    {
+                        "id": "dept_match",
+                        "name": "部门匹配",
+                        "icon": "split",
+                        "desc": "根据所属部门路由"
+                    }
+                ]
+            },
+            {
+                "groupName": "ACTIONS",
+                "nodes": [
+                    {
+                        "id": "send_notify",
+                        "name": "发送通知",
+                        "icon": "mail",
+                        "desc": "向指定人员发送即时消息"
+                    },
+                    {
+                        "id": "update_pool",
+                        "name": "更新线索池",
+                        "icon": "database",
+                        "desc": "修改线索在数据库中的状态"
+                    }
+                ]
+            }
+        ],
+        "canvas": {
+            "zoom": "100%",
+            "isActive": true
+        },
+        "config": {
+            "title": "发现高价值线索: {{lead_name}}",
+            "template": "紧急线索提醒模板",
+            "delay": 5,
+            "recipients": [
+                {
+                    "id": "role_1",
+                    "name": "销售主管",
+                    "color": "primary"
+                },
+                {
+                    "id": "role_2",
+                    "name": "华东区经理",
+                    "color": "success"
+                }
+            ]
+        }
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen w-full bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "globalSidebar",
+                "mainLayout"
+            ]
+        },
+        {
+            "id": "globalSidebar",
+            "component": "div",
+            "props": {
+                "className": "w-16 flex flex-col items-center py-6 bg-surface-container-highest border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarBottom"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "mb-8"
+            },
+            "children": [
+                "sidebarLogoIcon"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-6"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "sidebarNavItem"
+            }
+        },
+        {
+            "id": "sidebarNavItem",
+            "component": "div",
+            "props": {
+                "className": "cursor-pointer p-2 rounded-lg transition-colors"
+            },
+            "children": [
+                "sidebarNavIcon"
+            ]
+        },
+        {
+            "id": "sidebarNavIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "iconName"
+                },
+                "color": "default",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "sidebarBottom",
+            "component": "Icon",
+            "props": {
+                "name": "user-circle",
+                "className": "w-6 h-6 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topNav",
+                "contentQuad"
+            ]
+        },
+        {
+            "id": "topNav",
+            "component": "div",
+            "props": {
+                "className": "h-14 flex items-center justify-between px-6 bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "topNavLeft",
+                "topNavRight"
+            ]
+        },
+        {
+            "id": "topNavLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "pageTitleText",
+                "pageVersionTag"
+            ]
+        },
+        {
+            "id": "pageTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-md font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pageVersionTag",
+            "component": "Tag",
+            "props": {
+                "value": "Draft",
+                "size": "small",
+                "color": "warning"
+            }
+        },
+        {
+            "id": "topNavRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "topSearch",
+                "topHelp",
+                "topBell",
+                "topAvatar"
+            ]
+        },
+        {
+            "id": "topSearch",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "topHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "topBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "topAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"
+            },
+            "children": [
+                "topAvatarImg"
+            ]
+        },
+        {
+            "id": "topAvatarImg",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-full h-full rounded-full"
+            }
+        },
+        {
+            "id": "contentQuad",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "nodeLibrary",
+                "canvasArea",
+                "configPanel"
+            ]
+        },
+        {
+            "id": "nodeLibrary",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col"
+            },
+            "children": [
+                "libHeader",
+                "libSearch",
+                "libGroups"
+            ]
+        },
+        {
+            "id": "libHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider"
+            },
+            "children": [
+                "libHeaderText"
+            ]
+        },
+        {
+            "id": "libHeaderText",
+            "component": "span",
+            "props": {
+                "value": "组件库 Node Library",
+                "className": "font-bold text-sm"
+            }
+        },
+        {
+            "id": "libSearch",
+            "component": "div",
+            "props": {
+                "className": "p-3"
+            },
+            "children": [
+                "libSearchInput"
+            ]
+        },
+        {
+            "id": "libSearchInput",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索组件...",
+                "prefix": "search",
+                "size": "small"
+            }
+        },
+        {
+            "id": "libGroups",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-3 flex flex-col gap-6"
+            },
+            "children": {
+                "path": "/nodeGroups",
+                "componentId": "libGroupItem"
+            }
+        },
+        {
+            "id": "libGroupItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "libGroupTitle",
+                "libGroupNodes"
+            ]
+        },
+        {
+            "id": "libGroupTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "groupName"
+                },
+                "className": "text-xs font-bold text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "libGroupNodes",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "nodes",
+                "componentId": "libNodeCard"
+            }
+        },
+        {
+            "id": "libNodeCard",
+            "component": "div",
+            "props": {
+                "className": "p-3 bg-surface-container-low border border-base rounded-lg hover:border-primary cursor-grab transition-all"
+            },
+            "children": [
+                "libNodeTop",
+                "libNodeDesc"
+            ]
+        },
+        {
+            "id": "libNodeTop",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-1"
+            },
+            "children": [
+                "libNodeIcon",
+                "libNodeName"
+            ]
+        },
+        {
+            "id": "libNodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "libNodeName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "libNodeDesc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "desc"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "canvasArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative bg-surface-container-lowest overflow-hidden flex flex-col"
+            },
+            "children": [
+                "canvasToolbar",
+                "canvasContent"
+            ]
+        },
+        {
+            "id": "canvasToolbar",
+            "component": "div",
+            "props": {
+                "className": "absolute top-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-4 px-4 py-2 bg-surface-container-highest shadow-md rounded-full border border-divider"
+            },
+            "children": [
+                "zoomText",
+                "canvasDivider1",
+                "testBtn",
+                "canvasDivider2",
+                "statusSwitchGroup",
+                "canvasDivider3",
+                "saveBtn"
+            ]
+        },
+        {
+            "id": "zoomText",
+            "component": "span",
+            "props": {
+                "value": "100%",
+                "className": "text-xs font-medium"
+            }
+        },
+        {
+            "id": "canvasDivider1",
+            "component": "div",
+            "props": {
+                "className": "w-px h-4 bg-divider"
+            }
+        },
+        {
+            "id": "testBtn",
+            "component": "Button",
+            "props": {
+                "value": "测试运行",
+                "icon": "play",
+                "size": "small"
+            }
+        },
+        {
+            "id": "canvasDivider2",
+            "component": "div",
+            "props": {
+                "className": "w-px h-4 bg-divider"
+            }
+        },
+        {
+            "id": "statusSwitchGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "statusLabel",
+                "statusSwitch"
+            ]
+        },
+        {
+            "id": "statusLabel",
+            "component": "span",
+            "props": {
+                "value": "已激活",
+                "className": "text-xs text-success font-medium"
+            }
+        },
+        {
+            "id": "statusSwitch",
+            "component": "Switch",
+            "props": {
+                "value": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "canvasDivider3",
+            "component": "div",
+            "props": {
+                "className": "w-px h-4 bg-divider"
+            }
+        },
+        {
+            "id": "saveBtn",
+            "component": "Button",
+            "props": {
+                "value": "保存发布",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "canvasContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col items-center pt-24"
+            },
+            "children": [
+                "flowNode1",
+                "flowLine1",
+                "flowNode2",
+                "flowSplitLines",
+                "flowBottomNodes"
+            ]
+        },
+        {
+            "id": "flowNode1",
+            "component": "div",
+            "props": {
+                "className": "w-48 p-4 bg-surface-container-highest border border-primary rounded-xl shadow-sm flex flex-col items-center gap-2"
+            },
+            "children": [
+                "node1Icon",
+                "node1Label"
+            ]
+        },
+        {
+            "id": "node1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "zap",
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "node1Label",
+            "component": "span",
+            "props": {
+                "value": "新销售线索",
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "flowLine1",
+            "component": "div",
+            "props": {
+                "className": "w-px h-12 bg-primary"
+            }
+        },
+        {
+            "id": "flowNode2",
+            "component": "div",
+            "props": {
+                "className": "w-48 p-4 bg-surface-container-highest border border-warning rounded-xl shadow-sm flex flex-col items-center gap-2"
+            },
+            "children": [
+                "node2Icon",
+                "node2Label"
+            ]
+        },
+        {
+            "id": "node2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "filter",
+                "shape": "circle",
+                "color": "warning",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "node2Label",
+            "component": "span",
+            "props": {
+                "value": "线索评分 > 80",
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "flowSplitLines",
+            "component": "div",
+            "props": {
+                "className": "w-96 flex justify-between px-24"
+            },
+            "children": [
+                "lineYes",
+                "lineNo"
+            ]
+        },
+        {
+            "id": "lineYes",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center"
+            },
+            "children": [
+                "lineYesV",
+                "tagYes"
+            ]
+        },
+        {
+            "id": "lineYesV",
+            "component": "div",
+            "props": {
+                "className": "w-px h-16 bg-divider"
+            }
+        },
+        {
+            "id": "tagYes",
+            "component": "span",
+            "props": {
+                "value": "YES",
+                "className": "text-xs font-bold text-success -mt-8 bg-surface-container-lowest px-1"
+            }
+        },
+        {
+            "id": "lineNo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center"
+            },
+            "children": [
+                "lineNoV",
+                "tagNo"
+            ]
+        },
+        {
+            "id": "lineNoV",
+            "component": "div",
+            "props": {
+                "className": "w-px h-16 bg-divider"
+            }
+        },
+        {
+            "id": "tagNo",
+            "component": "span",
+            "props": {
+                "value": "NO",
+                "className": "text-xs font-bold text-error -mt-8 bg-surface-container-lowest px-1"
+            }
+        },
+        {
+            "id": "flowBottomNodes",
+            "component": "div",
+            "props": {
+                "className": "w-full flex justify-center gap-24"
+            },
+            "children": [
+                "flowNode3",
+                "flowNode4"
+            ]
+        },
+        {
+            "id": "flowNode3",
+            "component": "div",
+            "props": {
+                "className": "w-48 p-4 bg-primary-container border-2 border-primary rounded-xl shadow-md flex flex-col items-center gap-2 ring-4 ring-primary/10"
+            },
+            "children": [
+                "node3Icon",
+                "node3Label"
+            ]
+        },
+        {
+            "id": "node3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "mail",
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "node3Label",
+            "component": "span",
+            "props": {
+                "value": "通知销售主管",
+                "className": "text-sm font-bold text-primary"
+            }
+        },
+        {
+            "id": "flowNode4",
+            "component": "div",
+            "props": {
+                "className": "w-48 p-4 bg-surface-container-highest border border-divider rounded-xl shadow-sm flex flex-col items-center gap-2 opacity-60"
+            },
+            "children": [
+                "node4Icon",
+                "node4Label"
+            ]
+        },
+        {
+            "id": "node4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "database",
+                "shape": "circle",
+                "color": "default",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "node4Label",
+            "component": "span",
+            "props": {
+                "value": "更新线索池",
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "configPanel",
+            "component": "div",
+            "props": {
+                "className": "w-80 bg-surface-container-highest border-l border-divider flex flex-col shadow-lg"
+            },
+            "children": [
+                "configHeader",
+                "configForm",
+                "configFooter"
+            ]
+        },
+        {
+            "id": "configHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider flex items-center justify-between"
+            },
+            "children": [
+                "configTitle",
+                "configClose"
+            ]
+        },
+        {
+            "id": "configTitle",
+            "component": "span",
+            "props": {
+                "value": "节点配置: 发送通知",
+                "className": "font-bold text-sm"
+            }
+        },
+        {
+            "id": "configClose",
+            "component": "Icon",
+            "props": {
+                "name": "x",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "configForm",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-4 flex flex-col gap-6"
+            },
+            "children": [
+                "fieldTitle",
+                "fieldTemplate",
+                "fieldRecipients",
+                "fieldDelay"
+            ]
+        },
+        {
+            "id": "fieldTitle",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "labelTitle",
+                "inputTitle"
+            ]
+        },
+        {
+            "id": "labelTitle",
+            "component": "span",
+            "props": {
+                "value": "通知标题",
+                "className": "text-xs font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "inputTitle",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/config/title"
+                },
+                "placeholder": "请输入标题"
+            }
+        },
+        {
+            "id": "fieldTemplate",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "labelTemplate",
+                "selectTemplate"
+            ]
+        },
+        {
+            "id": "labelTemplate",
+            "component": "span",
+            "props": {
+                "value": "通知模板",
+                "className": "text-xs font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "selectTemplate",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/config/template"
+                },
+                "options": [
+                    {
+                        "label": "紧急线索提醒模板",
+                        "value": "紧急线索提醒模板"
+                    },
+                    {
+                        "label": "日常跟进模板",
+                        "value": "日常跟进模板"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "fieldRecipients",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "labelRecipients",
+                "tagRecipients"
+            ]
+        },
+        {
+            "id": "labelRecipients",
+            "component": "span",
+            "props": {
+                "value": "接收者",
+                "className": "text-xs font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tagRecipients",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-2"
+            },
+            "children": {
+                "path": "/config/recipients",
+                "componentId": "recipientTag"
+            }
+        },
+        {
+            "id": "recipientTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "closable": true
+            }
+        },
+        {
+            "id": "fieldDelay",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "labelDelay",
+                "inputDelay"
+            ]
+        },
+        {
+            "id": "labelDelay",
+            "component": "span",
+            "props": {
+                "value": "发送延迟 (分钟)",
+                "className": "text-xs font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "inputDelay",
+            "component": "InputNumber",
+            "props": {
+                "value": {
+                    "path": "/config/delay"
+                },
+                "min": 0,
+                "controls": true,
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex gap-3"
+            },
+            "children": [
+                "btnReset",
+                "btnApply"
+            ]
+        },
+        {
+            "id": "btnReset",
+            "component": "Button",
+            "props": {
+                "value": "重置",
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "btnApply",
+            "component": "Button",
+            "props": {
+                "value": "应用配置",
+                "color": "primary",
+                "className": "flex-1"
+            }
+        }
+    ]
+}

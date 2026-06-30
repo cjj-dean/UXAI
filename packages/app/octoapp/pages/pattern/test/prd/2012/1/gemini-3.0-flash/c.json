@@ -1,0 +1,783 @@
+{
+    "state": {
+        "brand": {
+            "logoIcon": "cpu",
+            "brandName": "LLMDevOps"
+        },
+        "searchQuery": "",
+        "navMenu": [
+            {
+                "title": "结果总览",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "title": "评测集",
+                "icon": "database",
+                "isActive": false
+            },
+            {
+                "title": "评测工作台",
+                "icon": "terminal",
+                "isExpanded": true,
+                "children": [
+                    {
+                        "title": "部署任务",
+                        "isActive": true
+                    },
+                    {
+                        "title": "人工评测",
+                        "isActive": false
+                    },
+                    {
+                        "title": "研发评测",
+                        "isActive": false
+                    },
+                    {
+                        "title": "版本评测",
+                        "isActive": false
+                    }
+                ]
+            }
+        ],
+        "currentUser": {
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "name": "林超越",
+            "role": "管理员"
+        },
+        "breadcrumbItems": [
+            {
+                "title": "评测工作台"
+            },
+            {
+                "title": "部署任务"
+            }
+        ],
+        "tableSearch": "",
+        "deploymentTasks": [
+            {
+                "id": "1",
+                "index": 1,
+                "taskName": "Llama3-70B-Production",
+                "status": "部署完成",
+                "statusType": "success",
+                "statusIcon": "check-circle-2",
+                "gpuCount": "8 * A100",
+                "operator": "张建国",
+                "duration": "12m 45s",
+                "startTime": "2023-10-24 14:20:01",
+                "apiUrl": "https://api.llm.dev/v1/llama3",
+                "modelId": "llama-3-70b-instruct"
+            },
+            {
+                "id": "2",
+                "index": 2,
+                "taskName": "Qwen-Max-Test-01",
+                "status": "部署中",
+                "statusType": "processing",
+                "statusIcon": "loader-2",
+                "gpuCount": "4 * V100",
+                "operator": "李明",
+                "duration": "05m 12s",
+                "startTime": "2023-10-24 15:10:33",
+                "apiUrl": "-",
+                "modelId": "qwen-max-v1"
+            },
+            {
+                "id": "3",
+                "index": 3,
+                "taskName": "Mistral-7B-v0.3",
+                "status": "部署失败",
+                "statusType": "error",
+                "statusIcon": "x-circle",
+                "gpuCount": "1 * T4",
+                "operator": "王小红",
+                "duration": "02m 10s",
+                "startTime": "2023-10-24 10:05:22",
+                "apiUrl": "-",
+                "modelId": "mistral-7b-v0.3"
+            },
+            {
+                "id": "4",
+                "index": 4,
+                "taskName": "ChatGLM4-Online",
+                "status": "已停止",
+                "statusType": "default",
+                "statusIcon": "stop-circle",
+                "gpuCount": "2 * A10",
+                "operator": "赵铁柱",
+                "duration": "45m 00s",
+                "startTime": "2023-10-23 09:00:00",
+                "apiUrl": "https://api.llm.dev/v1/glm4",
+                "modelId": "chatglm-4"
+            },
+            {
+                "id": "5",
+                "index": 5,
+                "taskName": "DeepSeek-Coder-V2",
+                "status": "部署完成",
+                "statusType": "success",
+                "statusIcon": "check-circle-2",
+                "gpuCount": "16 * H100",
+                "operator": "陈大文",
+                "duration": "18m 22s",
+                "startTime": "2023-10-24 16:30:45",
+                "apiUrl": "https://api.llm.dev/v1/deepseek",
+                "modelId": "deepseek-coder-v2"
+            },
+            {
+                "id": "6",
+                "index": 6,
+                "taskName": "Yi-1.5-34B-Chat",
+                "status": "部署中",
+                "statusType": "processing",
+                "statusIcon": "loader-2",
+                "gpuCount": "4 * A800",
+                "operator": "周杰",
+                "duration": "08m 55s",
+                "startTime": "2023-10-24 17:00:12",
+                "apiUrl": "-",
+                "modelId": "yi-1.5-34b"
+            },
+            {
+                "id": "7",
+                "index": 7,
+                "taskName": "Baichuan2-13B-Base",
+                "status": "已停止",
+                "statusType": "default",
+                "statusIcon": "stop-circle",
+                "gpuCount": "2 * V100",
+                "operator": "孙志平",
+                "duration": "10h 15m",
+                "startTime": "2023-10-20 12:00:00",
+                "apiUrl": "https://api.llm.dev/v1/baichuan",
+                "modelId": "baichuan2-13b"
+            },
+            {
+                "id": "8",
+                "index": 8,
+                "taskName": "Gemma-7B-Instruct",
+                "status": "部署失败",
+                "statusType": "error",
+                "statusIcon": "x-circle",
+                "gpuCount": "1 * A10",
+                "operator": "吴优",
+                "duration": "01m 45s",
+                "startTime": "2023-10-24 11:45:30",
+                "apiUrl": "-",
+                "modelId": "gemma-7b"
+            },
+            {
+                "id": "9",
+                "index": 9,
+                "taskName": "InternLM2-20B-SFT",
+                "status": "部署完成",
+                "statusType": "success",
+                "statusIcon": "check-circle-2",
+                "gpuCount": "4 * A100",
+                "operator": "郑工",
+                "duration": "14m 10s",
+                "startTime": "2023-10-24 08:30:00",
+                "apiUrl": "https://api.llm.dev/v1/internlm",
+                "modelId": "internlm2-20b"
+            },
+            {
+                "id": "10",
+                "index": 10,
+                "taskName": "Phi-3-Mini-4K",
+                "status": "部署完成",
+                "statusType": "success",
+                "statusIcon": "check-circle-2",
+                "gpuCount": "1 * T4",
+                "operator": "冯小刚",
+                "duration": "03m 20s",
+                "startTime": "2023-10-24 18:05:11",
+                "apiUrl": "https://api.llm.dev/v1/phi3",
+                "modelId": "phi-3-mini"
+            }
+        ]
+    },
+    "rootId": "adminLayout",
+    "elements": [
+        {
+            "id": "adminLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarNav",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex flex-col gap-stack"
+            },
+            "children": [
+                "logoWrapper",
+                "sidebarSearch"
+            ]
+        },
+        {
+            "id": "logoWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/brandName"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchQuery"
+                },
+                "placeholder": "搜索功能或任务...",
+                "prefix": "search",
+                "size": "medium",
+                "className": "bg-surface-variant border-none"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-inline"
+            },
+            "children": [
+                "navMenuList"
+            ]
+        },
+        {
+            "id": "navMenuList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navMenu",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "navItemHeader",
+                "navSubMenu"
+            ]
+        },
+        {
+            "id": "navItemHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-2 rounded-md hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "navSubMenu",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col ml-6 mt-1 border-l border-divider"
+            },
+            "children": {
+                "path": "children",
+                "componentId": "navSubItem"
+            }
+        },
+        {
+            "id": "navSubItem",
+            "component": "div",
+            "props": {
+                "className": "p-2 pl-4 text-sm rounded-md hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "navSubLabel"
+            ]
+        },
+        {
+            "id": "navSubLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-t border-divider flex items-center gap-inline"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover border border-divider"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "px-gutter py-stack bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "breadcrumbNav",
+                "pageTitleRow"
+            ]
+        },
+        {
+            "id": "breadcrumbNav",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbItems"
+                },
+                "className": "mb-2"
+            }
+        },
+        {
+            "id": "pageTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "pageTitleIcon",
+                "pageTitleText"
+            ]
+        },
+        {
+            "id": "pageTitleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "rocket",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "pageTitleText",
+            "component": "h1",
+            "props": {
+                "value": "部署任务",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter"
+            },
+            "children": [
+                "tableCard"
+            ]
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "tableToolbar",
+                "mainDataTable"
+            ]
+        },
+        {
+            "id": "tableToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-gutter"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-stack"
+            },
+            "children": [
+                "createBtn",
+                "tableSearchInput"
+            ]
+        },
+        {
+            "id": "createBtn",
+            "component": "Button",
+            "props": {
+                "value": "创建部署任务",
+                "color": "primary",
+                "icon": "plus",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "tableSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/tableSearch"
+                },
+                "placeholder": "搜索任务名称或模型标识...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-stack"
+            },
+            "children": [
+                "settingsBtn"
+            ]
+        },
+        {
+            "id": "settingsBtn",
+            "component": "Button",
+            "props": {
+                "icon": "settings-2",
+                "className": "bg-surface-variant"
+            }
+        },
+        {
+            "id": "mainDataTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/deploymentTasks"
+                },
+                "columns": [
+                    {
+                        "title": "序号",
+                        "dataIndex": "index",
+                        "width": 60
+                    },
+                    {
+                        "title": "任务名称",
+                        "dataIndex": "taskName",
+                        "sort": true
+                    },
+                    {
+                        "title": "部署状态",
+                        "dataIndex": "status",
+                        "sort": true,
+                        "width": 120
+                    },
+                    {
+                        "title": "总卡数",
+                        "dataIndex": "gpuCount",
+                        "sort": true
+                    },
+                    {
+                        "title": "调用人",
+                        "dataIndex": "operator"
+                    },
+                    {
+                        "title": "部署耗时",
+                        "dataIndex": "duration",
+                        "sort": true
+                    },
+                    {
+                        "title": "开始时间",
+                        "dataIndex": "startTime",
+                        "sort": true
+                    },
+                    {
+                        "title": "API地址",
+                        "dataIndex": "apiUrl"
+                    },
+                    {
+                        "title": "模型标识",
+                        "dataIndex": "modelId",
+                        "sort": true
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 180
+                    }
+                ]
+            },
+            "children": {
+                "path": "/deploymentTasks",
+                "componentId": "taskTableRow"
+            }
+        },
+        {
+            "id": "taskTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellIndex",
+                "cellTaskName",
+                "cellStatus",
+                "cellGpu",
+                "cellOperator",
+                "cellDuration",
+                "cellStartTime",
+                "cellApi",
+                "cellModelId",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellIndex",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "index"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellTaskName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskName"
+                },
+                "className": "font-medium text-primary"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "icon": {
+                    "path": "statusIcon"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellGpu",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "gpuCount"
+                }
+            }
+        },
+        {
+            "id": "cellOperator",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "operator"
+                }
+            }
+        },
+        {
+            "id": "cellDuration",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "duration"
+                }
+            }
+        },
+        {
+            "id": "cellStartTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "startTime"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellApi",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "apiUrl"
+                },
+                "className": "truncate max-w-[150px] inline-block text-xs"
+            }
+        },
+        {
+            "id": "cellModelId",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "modelId"
+                },
+                "className": "bg-surface-variant text-on-surface-variant border-none"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-stack"
+            },
+            "children": [
+                "actionClone",
+                "actionEdit",
+                "actionLog"
+            ]
+        },
+        {
+            "id": "actionClone",
+            "component": "span",
+            "props": {
+                "value": "克隆",
+                "className": "text-primary cursor-pointer hover:underline text-sm"
+            }
+        },
+        {
+            "id": "actionEdit",
+            "component": "span",
+            "props": {
+                "value": "编辑",
+                "className": "text-primary cursor-pointer hover:underline text-sm"
+            }
+        },
+        {
+            "id": "actionLog",
+            "component": "span",
+            "props": {
+                "value": "日志路径",
+                "className": "text-primary cursor-pointer hover:underline text-sm"
+            }
+        }
+    ]
+}

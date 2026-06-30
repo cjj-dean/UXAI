@@ -1,0 +1,1385 @@
+{
+    "state": {
+      "searchValue": "",
+      "roleSearchValue": "",
+      "activePermissionTab": "tab_menu",
+      "switchDashboard": true,
+      "switchUsers": true,
+      "switchThreatLogs": true,
+      "switchSystemSettings": true,
+      "dashboardCheckedItems": [
+        "pm_dashboard_overview",
+        "pm_dashboard_threat"
+      ]
+    },
+    "rootId": "rootContainer",
+    "elements": [
+      {
+        "id": "rootContainer",
+        "component": "div",
+        "props": {
+          "className": "flex h-screen overflow-hidden bg-surface-container-lowest"
+        },
+        "children": [
+          "sidebarContainer",
+          "contentArea"
+        ]
+      },
+      {
+        "id": "sidebarContainer",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col w-56 bg-inverse-surface shrink-0"
+        },
+        "children": [
+          "sidebarBrand",
+          "sidebarNav",
+          "sidebarSpacer",
+          "sidebarUser"
+        ]
+      },
+      {
+        "id": "sidebarBrand",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2.5 px-5 py-6"
+        },
+        "children": [
+          "sidebarBrandIcon",
+          "sidebarBrandText"
+        ]
+      },
+      {
+        "id": "sidebarBrandIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield",
+          "color": "primary",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "sidebarBrandText",
+        "component": "span",
+        "props": {
+          "value": "Security Gate",
+          "className": "text-lg font-bold text-inverse-on-surface"
+        }
+      },
+      {
+        "id": "sidebarNav",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1 px-2"
+        },
+        "children": [
+          "navDashboard",
+          "navRoles",
+          "navPolicies",
+          "navLogs"
+        ]
+      },
+      {
+        "id": "navDashboard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant cursor-pointer hover:bg-white/5 transition-colors"
+        },
+        "children": [
+          "navDashboardIcon",
+          "navDashboardText"
+        ]
+      },
+      {
+        "id": "navDashboardIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "navDashboardText",
+        "component": "span",
+        "props": {
+          "value": "Dashboard",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "navRoles",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-on-primary cursor-pointer"
+        },
+        "children": [
+          "navRolesIcon",
+          "navRolesText"
+        ]
+      },
+      {
+        "id": "navRolesIcon",
+        "component": "Icon",
+        "props": {
+          "name": "user-check",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "navRolesText",
+        "component": "span",
+        "props": {
+          "value": "Roles & Permissions",
+          "className": "text-sm font-medium"
+        }
+      },
+      {
+        "id": "navPolicies",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant cursor-pointer hover:bg-white/5 transition-colors"
+        },
+        "children": [
+          "navPoliciesIcon",
+          "navPoliciesText",
+          "navPoliciesBadge"
+        ]
+      },
+      {
+        "id": "navPoliciesIcon",
+        "component": "Icon",
+        "props": {
+          "name": "file-text",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "navPoliciesText",
+        "component": "span",
+        "props": {
+          "value": "Policies",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "navPoliciesBadge",
+        "component": "span",
+        "props": {
+          "value": "3",
+          "className": "ml-auto bg-error text-on-error text-xs rounded-badge px-1.5 py-0.5 min-w-[20px] text-center font-medium"
+        }
+      },
+      {
+        "id": "navLogs",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant cursor-pointer hover:bg-white/5 transition-colors"
+        },
+        "children": [
+          "navLogsIcon",
+          "navLogsText"
+        ]
+      },
+      {
+        "id": "navLogsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "activity",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "navLogsText",
+        "component": "span",
+        "props": {
+          "value": "Audit Logs",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarSpacer",
+        "component": "div",
+        "props": {
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "sidebarUser",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-4 border-t border-white/10"
+        },
+        "children": [
+          "sidebarUserAvatar",
+          "sidebarUserInfo",
+          "sidebarUserStatus"
+        ]
+      },
+      {
+        "id": "sidebarUserAvatar",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/men/32.jpg",
+          "className": "w-9 h-9 rounded-full object-cover",
+          "alt": "Alex Murphy"
+        }
+      },
+      {
+        "id": "sidebarUserInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "sidebarUserName",
+          "sidebarUserRole"
+        ]
+      },
+      {
+        "id": "sidebarUserName",
+        "component": "span",
+        "props": {
+          "value": "Alex Murphy",
+          "className": "text-sm font-medium text-inverse-on-surface truncate"
+        }
+      },
+      {
+        "id": "sidebarUserRole",
+        "component": "span",
+        "props": {
+          "value": "Super Admin",
+          "className": "text-xs text-inverse-on-surface-variant"
+        }
+      },
+      {
+        "id": "sidebarUserStatus",
+        "component": "div",
+        "props": {
+          "className": "ml-auto flex items-center gap-1.5 shrink-0"
+        },
+        "children": [
+          "sidebarUserStatusDot",
+          "sidebarUserStatusText"
+        ]
+      },
+      {
+        "id": "sidebarUserStatusDot",
+        "component": "div",
+        "props": {
+          "className": "w-2 h-2 rounded-full bg-success"
+        }
+      },
+      {
+        "id": "sidebarUserStatusText",
+        "component": "span",
+        "props": {
+          "value": "Online",
+          "className": "text-xs text-success"
+        }
+      },
+      {
+        "id": "contentArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col overflow-hidden min-w-0"
+        },
+        "children": [
+          "contentHeader",
+          "contentBody"
+        ]
+      },
+      {
+        "id": "contentHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-6 py-4 bg-surface-container-highest shadow-sm shrink-0"
+        },
+        "children": [
+          "contentHeaderTitle",
+          "contentHeaderRight"
+        ]
+      },
+      {
+        "id": "contentHeaderTitle",
+        "component": "h1",
+        "props": {
+          "value": "Roles & Permissions",
+          "className": "text-xl font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "contentHeaderRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4"
+        },
+        "children": [
+          "headerSearchInput",
+          "headerBellBadge",
+          "headerSettingsIcon",
+          "headerGridIcon"
+        ]
+      },
+      {
+        "id": "headerSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/searchValue"
+          },
+          "placeholder": "Global search...",
+          "prefix": "search",
+          "className": "w-60"
+        }
+      },
+      {
+        "id": "headerBellBadge",
+        "component": "Badge",
+        "props": {
+          "count": 5,
+          "overflowCount": 99
+        },
+        "children": [
+          "headerBellIcon"
+        ]
+      },
+      {
+        "id": "headerBellIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bell",
+          "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+        }
+      },
+      {
+        "id": "headerSettingsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "settings",
+          "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+        }
+      },
+      {
+        "id": "headerGridIcon",
+        "component": "Icon",
+        "props": {
+          "name": "grid",
+          "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+        }
+      },
+      {
+        "id": "contentBody",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex gap-gutter p-gutter overflow-hidden min-h-0"
+        },
+        "children": [
+          "rolesPanel",
+          "detailPanel"
+        ]
+      },
+      {
+        "id": "rolesPanel",
+        "component": "div",
+        "props": {
+          "className": "w-72 flex flex-col bg-surface-container-highest rounded-container shadow-card overflow-hidden shrink-0"
+        },
+        "children": [
+          "rolesPanelTop",
+          "rolesList"
+        ]
+      },
+      {
+        "id": "rolesPanelTop",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3 p-4 border-b border-divider"
+        },
+        "children": [
+          "rolesAddBtn",
+          "rolesSearchInput"
+        ]
+      },
+      {
+        "id": "rolesAddBtn",
+        "component": "Button",
+        "props": {
+          "value": "+ Add New Role",
+          "color": "primary",
+          "icon": "plus-circle",
+          "iconPlacement": "start",
+          "className": "w-full"
+        }
+      },
+      {
+        "id": "rolesSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/roleSearchValue"
+          },
+          "placeholder": "Search roles...",
+          "prefix": "search",
+          "className": "w-full"
+        }
+      },
+      {
+        "id": "rolesList",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto p-2 flex flex-col gap-1"
+        },
+        "children": [
+          "roleCardSA",
+          "roleCardSL",
+          "roleCardIT",
+          "roleCardCO",
+          "roleCardAN"
+        ]
+      },
+      {
+        "id": "roleCardSA",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-3 rounded-lg bg-primary-container border-l-2 border-selected cursor-pointer"
+        },
+        "children": [
+          "roleCardSAIcon",
+          "roleCardSAInfo"
+        ]
+      },
+      {
+        "id": "roleCardSAIcon",
+        "component": "Icon",
+        "props": {
+          "name": "crown",
+          "color": "primary",
+          "shape": "square",
+          "className": "w-5 h-5 mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardSAInfo",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "roleCardSANameRow",
+          "roleCardSADesc",
+          "roleCardSAMeta"
+        ]
+      },
+      {
+        "id": "roleCardSANameRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "roleCardSAName",
+          "roleCardSATag"
+        ]
+      },
+      {
+        "id": "roleCardSAName",
+        "component": "span",
+        "props": {
+          "value": "Super Admin",
+          "className": "text-sm font-semibold text-on-primary-container"
+        }
+      },
+      {
+        "id": "roleCardSATag",
+        "component": "Tag",
+        "props": {
+          "value": "DEFAULT",
+          "color": "processing",
+          "size": "small"
+        }
+      },
+      {
+        "id": "roleCardSADesc",
+        "component": "span",
+        "props": {
+          "value": "拥有系统最高的管理与配置权限",
+          "className": "text-xs text-on-surface-variant mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardSAMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1.5"
+        },
+        "children": [
+          "roleCardSAUserIcon",
+          "roleCardSAUserCount"
+        ]
+      },
+      {
+        "id": "roleCardSAUserIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-3 h-3 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardSAUserCount",
+        "component": "span",
+        "props": {
+          "value": "2 users",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardSL",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-3 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "roleCardSLIcon",
+          "roleCardSLInfo"
+        ]
+      },
+      {
+        "id": "roleCardSLIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield-check",
+          "color": "default",
+          "shape": "square",
+          "className": "w-5 h-5 mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardSLInfo",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "roleCardSLName",
+          "roleCardSLDesc",
+          "roleCardSLMeta"
+        ]
+      },
+      {
+        "id": "roleCardSLName",
+        "component": "span",
+        "props": {
+          "value": "Security Lead",
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "roleCardSLDesc",
+        "component": "span",
+        "props": {
+          "value": "管理日常安全事件及安全团队",
+          "className": "text-xs text-on-surface-variant mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardSLMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1.5"
+        },
+        "children": [
+          "roleCardSLUserIcon",
+          "roleCardSLUserCount"
+        ]
+      },
+      {
+        "id": "roleCardSLUserIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-3 h-3 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardSLUserCount",
+        "component": "span",
+        "props": {
+          "value": "4 users",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardIT",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-3 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "roleCardITIcon",
+          "roleCardITInfo"
+        ]
+      },
+      {
+        "id": "roleCardITIcon",
+        "component": "Icon",
+        "props": {
+          "name": "server",
+          "color": "default",
+          "shape": "square",
+          "className": "w-5 h-5 mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardITInfo",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "roleCardITName",
+          "roleCardITDesc",
+          "roleCardITMeta"
+        ]
+      },
+      {
+        "id": "roleCardITName",
+        "component": "span",
+        "props": {
+          "value": "IT Operator",
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "roleCardITDesc",
+        "component": "span",
+        "props": {
+          "value": "负责基础设施监控与基础运维操作",
+          "className": "text-xs text-on-surface-variant mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardITMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1.5"
+        },
+        "children": [
+          "roleCardITUserIcon",
+          "roleCardITUserCount"
+        ]
+      },
+      {
+        "id": "roleCardITUserIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-3 h-3 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardITUserCount",
+        "component": "span",
+        "props": {
+          "value": "12 users",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardCO",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-3 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "roleCardCOIcon",
+          "roleCardCOInfo"
+        ]
+      },
+      {
+        "id": "roleCardCOIcon",
+        "component": "Icon",
+        "props": {
+          "name": "file-search",
+          "color": "default",
+          "shape": "square",
+          "className": "w-5 h-5 mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardCOInfo",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "roleCardCOName",
+          "roleCardCODesc",
+          "roleCardCOMeta"
+        ]
+      },
+      {
+        "id": "roleCardCOName",
+        "component": "span",
+        "props": {
+          "value": "Compliance Officer",
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "roleCardCODesc",
+        "component": "span",
+        "props": {
+          "value": "审查日志与确保操作符合合规要求",
+          "className": "text-xs text-on-surface-variant mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardCOMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1.5"
+        },
+        "children": [
+          "roleCardCOUserIcon",
+          "roleCardCOUserCount"
+        ]
+      },
+      {
+        "id": "roleCardCOUserIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-3 h-3 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardCOUserCount",
+        "component": "span",
+        "props": {
+          "value": "3 users",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardAN",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-3 rounded-lg hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "roleCardANIcon",
+          "roleCardANInfo"
+        ]
+      },
+      {
+        "id": "roleCardANIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bar-chart-2",
+          "color": "default",
+          "shape": "square",
+          "className": "w-5 h-5 mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardANInfo",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "roleCardANName",
+          "roleCardANDesc",
+          "roleCardANMeta"
+        ]
+      },
+      {
+        "id": "roleCardANName",
+        "component": "span",
+        "props": {
+          "value": "Analyst",
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "roleCardANDesc",
+        "component": "span",
+        "props": {
+          "value": "仅具有数据读取与基础报表生成权限",
+          "className": "text-xs text-on-surface-variant mt-0.5"
+        }
+      },
+      {
+        "id": "roleCardANMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1.5"
+        },
+        "children": [
+          "roleCardANUserIcon",
+          "roleCardANUserCount"
+        ]
+      },
+      {
+        "id": "roleCardANUserIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-3 h-3 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "roleCardANUserCount",
+        "component": "span",
+        "props": {
+          "value": "25 users",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "detailPanel",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col bg-surface-container-highest rounded-container shadow-card overflow-hidden min-w-0"
+        },
+        "children": [
+          "detailScrollArea"
+        ]
+      },
+      {
+        "id": "detailScrollArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col overflow-y-auto"
+        },
+        "children": [
+          "profileSection",
+          "detailDivider",
+          "permSection",
+          "actionFooter"
+        ]
+      },
+      {
+        "id": "profileSection",
+        "component": "div",
+        "props": {
+          "className": "p-6 pb-4"
+        },
+        "children": [
+          "profileHeader",
+          "profileDesc"
+        ]
+      },
+      {
+        "id": "profileHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-start justify-between gap-4"
+        },
+        "children": [
+          "profileTitleArea",
+          "profileActionIcons"
+        ]
+      },
+      {
+        "id": "profileTitleArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-2"
+        },
+        "children": [
+          "profileTitleRow"
+        ]
+      },
+      {
+        "id": "profileTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "profileTitle",
+          "profileSystemTag"
+        ]
+      },
+      {
+        "id": "profileTitle",
+        "component": "h2",
+        "props": {
+          "value": "Super Admin",
+          "className": "text-2xl font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "profileSystemTag",
+        "component": "Tag",
+        "props": {
+          "value": "SYSTEM DEFAULT",
+          "color": "processing",
+          "size": "small"
+        }
+      },
+      {
+        "id": "profileActionIcons",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 shrink-0"
+        },
+        "children": [
+          "profileEditBtn",
+          "profileCopyBtn"
+        ]
+      },
+      {
+        "id": "profileEditBtn",
+        "component": "Button",
+        "props": {
+          "icon": "edit-3",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "profileCopyBtn",
+        "component": "Button",
+        "props": {
+          "icon": "copy",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "profileDesc",
+        "component": "span",
+        "props": {
+          "value": "此角色拥有对系统所有模块的完全控制权，包括修改系统底层架构、管理其他管理员以及处理最高级别安全告警。通常仅分配给CTO或安全总监。",
+          "className": "text-sm text-on-surface-variant mt-3 leading-relaxed"
+        }
+      },
+      {
+        "id": "detailDivider",
+        "component": "Divider",
+        "props": {
+          "className": "mx-6"
+        }
+      },
+      {
+        "id": "permSection",
+        "component": "div",
+        "props": {
+          "className": "flex-1 px-6 pt-4 pb-2"
+        },
+        "children": [
+          "permTabs"
+        ]
+      },
+      {
+        "id": "permTabs",
+        "component": "Tabs",
+        "props": {
+          "activeKey": {
+            "path": "/activePermissionTab"
+          }
+        },
+        "children": [
+          "tabItemMenu",
+          "tabItemActions",
+          "tabItemData"
+        ]
+      },
+      {
+        "id": "tabItemMenu",
+        "component": "TabItem",
+        "props": {
+          "key": "tab_menu",
+          "label": "Menu Access",
+          "content": {
+            "componentId": "menuAccessContent"
+          }
+        }
+      },
+      {
+        "id": "tabItemActions",
+        "component": "TabItem",
+        "props": {
+          "key": "tab_actions",
+          "label": "Actions & Buttons",
+          "content": {
+            "componentId": "actionsTabContent"
+          }
+        }
+      },
+      {
+        "id": "tabItemData",
+        "component": "TabItem",
+        "props": {
+          "key": "tab_data",
+          "label": "Data Scope",
+          "content": {
+            "componentId": "dataTabContent"
+          }
+        }
+      },
+      {
+        "id": "menuAccessContent",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-2 py-4"
+        },
+        "children": [
+          "menuDashboardSection",
+          "menuUsersRow",
+          "menuThreatLogsRow",
+          "menuSystemSettingsRow"
+        ]
+      },
+      {
+        "id": "menuDashboardSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "menuDashboardRow",
+          "menuDashboardChildren"
+        ]
+      },
+      {
+        "id": "menuDashboardRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 py-2.5 px-3 rounded-lg bg-surface-variant"
+        },
+        "children": [
+          "menuDashboardChevron",
+          "menuDashboardIcon",
+          "menuDashboardName",
+          "menuDashboardSwitch"
+        ]
+      },
+      {
+        "id": "menuDashboardChevron",
+        "component": "Icon",
+        "props": {
+          "name": "chevron-down",
+          "className": "w-4 h-4 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "menuDashboardIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "menuDashboardName",
+        "component": "span",
+        "props": {
+          "value": "Dashboard",
+          "className": "text-sm font-medium text-on-surface flex-1"
+        }
+      },
+      {
+        "id": "menuDashboardSwitch",
+        "component": "Switch",
+        "props": {
+          "value": {
+            "path": "/switchDashboard"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "menuDashboardChildren",
+        "component": "div",
+        "props": {
+          "className": "ml-10 mt-1 mb-1"
+        },
+        "children": [
+          "dashboardCheckboxGroup"
+        ]
+      },
+      {
+        "id": "dashboardCheckboxGroup",
+        "component": "CheckboxGroup",
+        "props": {
+          "value": {
+            "path": "/dashboardCheckedItems"
+          },
+          "options": [
+            {
+              "label": "Global Overview",
+              "value": "pm_dashboard_overview"
+            },
+            {
+              "label": "Threat Map",
+              "value": "pm_dashboard_threat"
+            }
+          ]
+        }
+      },
+      {
+        "id": "menuUsersRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "menuUsersIcon",
+          "menuUsersName",
+          "menuUsersSwitch"
+        ]
+      },
+      {
+        "id": "menuUsersIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-4 h-4 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "menuUsersName",
+        "component": "span",
+        "props": {
+          "value": "Users",
+          "className": "text-sm text-on-surface flex-1"
+        }
+      },
+      {
+        "id": "menuUsersSwitch",
+        "component": "Switch",
+        "props": {
+          "value": {
+            "path": "/switchUsers"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "menuThreatLogsRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "menuThreatLogsIcon",
+          "menuThreatLogsName",
+          "menuThreatLogsSwitch"
+        ]
+      },
+      {
+        "id": "menuThreatLogsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield-alert",
+          "className": "w-4 h-4 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "menuThreatLogsName",
+        "component": "span",
+        "props": {
+          "value": "Threat Logs",
+          "className": "text-sm text-on-surface flex-1"
+        }
+      },
+      {
+        "id": "menuThreatLogsSwitch",
+        "component": "Switch",
+        "props": {
+          "value": {
+            "path": "/switchThreatLogs"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "menuSystemSettingsRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "menuSystemSettingsIcon",
+          "menuSystemSettingsName",
+          "menuSystemSettingsSwitch"
+        ]
+      },
+      {
+        "id": "menuSystemSettingsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "settings",
+          "className": "w-4 h-4 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "menuSystemSettingsName",
+        "component": "span",
+        "props": {
+          "value": "System Settings",
+          "className": "text-sm text-on-surface flex-1"
+        }
+      },
+      {
+        "id": "menuSystemSettingsSwitch",
+        "component": "Switch",
+        "props": {
+          "value": {
+            "path": "/switchSystemSettings"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "actionsTabContent",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col items-center justify-center py-12 text-on-surface-variant"
+        },
+        "children": [
+          "actionsTabIcon",
+          "actionsTabTitle",
+          "actionsTabDesc"
+        ]
+      },
+      {
+        "id": "actionsTabIcon",
+        "component": "Icon",
+        "props": {
+          "name": "mouse-pointer-click",
+          "shape": "circle",
+          "color": "default",
+          "className": "w-10 h-10 mb-3"
+        }
+      },
+      {
+        "id": "actionsTabTitle",
+        "component": "span",
+        "props": {
+          "value": "Action Button Permissions",
+          "className": "text-sm font-medium text-on-surface mb-1"
+        }
+      },
+      {
+        "id": "actionsTabDesc",
+        "component": "span",
+        "props": {
+          "value": "Configure action button permissions for this role.",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "dataTabContent",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col items-center justify-center py-12 text-on-surface-variant"
+        },
+        "children": [
+          "dataTabIcon",
+          "dataTabTitle",
+          "dataTabDesc"
+        ]
+      },
+      {
+        "id": "dataTabIcon",
+        "component": "Icon",
+        "props": {
+          "name": "database",
+          "shape": "circle",
+          "color": "default",
+          "className": "w-10 h-10 mb-3"
+        }
+      },
+      {
+        "id": "dataTabTitle",
+        "component": "span",
+        "props": {
+          "value": "Data Access Scope",
+          "className": "text-sm font-medium text-on-surface mb-1"
+        }
+      },
+      {
+        "id": "dataTabDesc",
+        "component": "span",
+        "props": {
+          "value": "Define data access scope and visibility rules for this role.",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "actionFooter",
+        "component": "div",
+        "props": {
+          "className": "p-6 border-t border-divider shrink-0"
+        },
+        "children": [
+          "noteCard",
+          "actionBtnRow"
+        ]
+      },
+      {
+        "id": "noteCard",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-3 p-4 rounded-container bg-warning-container mb-4"
+        },
+        "children": [
+          "noteIcon",
+          "noteText"
+        ]
+      },
+      {
+        "id": "noteIcon",
+        "component": "Icon",
+        "props": {
+          "name": "info",
+          "color": "warning",
+          "className": "w-5 h-5 mt-0.5 shrink-0"
+        }
+      },
+      {
+        "id": "noteText",
+        "component": "span",
+        "props": {
+          "value": "Inheritance Note: Super Admin automatically inherits all permissions from other roles. Manual restrictions will be overridden by system default policies.",
+          "className": "text-sm text-on-warning-container leading-relaxed"
+        }
+      },
+      {
+        "id": "actionBtnRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-end gap-3"
+        },
+        "children": [
+          "footerResetBtn",
+          "footerSaveBtn"
+        ]
+      },
+      {
+        "id": "footerResetBtn",
+        "component": "Button",
+        "props": {
+          "value": "Reset to Defaults",
+          "icon": "rotate-ccw",
+          "iconPlacement": "start"
+        }
+      },
+      {
+        "id": "footerSaveBtn",
+        "component": "Button",
+        "props": {
+          "value": "Save Changes",
+          "color": "primary",
+          "icon": "save",
+          "iconPlacement": "start"
+        }
+      }
+    ]
+  }

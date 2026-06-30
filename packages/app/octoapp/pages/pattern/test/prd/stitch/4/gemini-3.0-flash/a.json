@@ -1,0 +1,641 @@
+{
+    "state": {
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "label": "Security",
+                "icon": "shield-check",
+                "active": true
+            },
+            {
+                "label": "Audit Logs",
+                "icon": "file-search",
+                "active": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "active": false
+            }
+        ],
+        "currentUser": {
+            "userName": "Alex Rivera",
+            "userRole": "System Architect",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "globalSearch": "",
+        "roleSearch": "",
+        "roles": [
+            {
+                "roleId": "r1",
+                "roleName": "Super Admin",
+                "userCount": 3,
+                "isSelected": true,
+                "type": "System"
+            },
+            {
+                "roleId": "r2",
+                "roleName": "Security Lead",
+                "userCount": 8,
+                "isSelected": false,
+                "type": "Custom"
+            },
+            {
+                "roleId": "r3",
+                "roleName": "Auditor",
+                "userCount": 5,
+                "isSelected": false,
+                "type": "System"
+            },
+            {
+                "roleId": "r4",
+                "roleName": "DevOps Engineer",
+                "userCount": 12,
+                "isSelected": false,
+                "type": "Custom"
+            },
+            {
+                "roleId": "r5",
+                "roleName": "Guest Observer",
+                "userCount": 20,
+                "isSelected": false,
+                "type": "System"
+            }
+        ],
+        "activePermissionTab": "menu_access",
+        "permissionTree": [
+            {
+                "id": "m1",
+                "label": "Dashboard",
+                "switched": true,
+                "expanded": true,
+                "subOptions": [
+                    "View Real-time Metrics",
+                    "Export Reports"
+                ],
+                "selectedSub": [
+                    "View Real-time Metrics",
+                    "Export Reports"
+                ]
+            },
+            {
+                "id": "m2",
+                "label": "Users Management",
+                "switched": true,
+                "expanded": false,
+                "subOptions": [
+                    "Create User",
+                    "Delete User"
+                ],
+                "selectedSub": [
+                    "Create User"
+                ]
+            },
+            {
+                "id": "m3",
+                "label": "Security Policies",
+                "switched": false,
+                "expanded": false,
+                "subOptions": [],
+                "selectedSub": []
+            }
+        ]
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContentWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-20 flex flex-col items-center py-6 bg-surface-container-highest shadow-sm border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarUser"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "mb-10"
+            },
+            "children": [
+                "sidebarLogoIcon"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-6"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "sidebarNavItem"
+            }
+        },
+        {
+            "id": "sidebarNavItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center cursor-pointer group"
+            },
+            "children": [
+                "sidebarNavItemIcon"
+            ]
+        },
+        {
+            "id": "sidebarNavItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": "default",
+                "className": "w-6 h-6 group-hover:text-primary"
+            }
+        },
+        {
+            "id": "sidebarUser",
+            "component": "div",
+            "props": {
+                "className": "mt-auto flex flex-col items-center gap-2"
+            },
+            "children": [
+                "sidebarUserAvatar",
+                "sidebarUserName"
+            ]
+        },
+        {
+            "id": "sidebarUserAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-10 h-10 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "sidebarUserImg"
+            ]
+        },
+        {
+            "id": "sidebarUserImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "sidebarUserName",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant font-medium",
+                "value": "Alex"
+            }
+        },
+        {
+            "id": "mainContentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "pageBody"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 px-6 flex items-center bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "headerSearch"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/globalSearch"
+                },
+                "placeholder": "Search for permissions, roles or audit logs...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "pageBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex p-6 gap-6 overflow-hidden"
+            },
+            "children": [
+                "roleListSection",
+                "permissionDetailSection"
+            ]
+        },
+        {
+            "id": "roleListSection",
+            "component": "div",
+            "props": {
+                "className": "w-80 flex flex-col bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "roleListHeader",
+                "roleListScroll"
+            ]
+        },
+        {
+            "id": "roleListHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider flex flex-col gap-3"
+            },
+            "children": [
+                "roleListTitleRow",
+                "roleListSearchInput"
+            ]
+        },
+        {
+            "id": "roleListTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "roleListTitle",
+                "roleAddBtn"
+            ]
+        },
+        {
+            "id": "roleListTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "Roles"
+            }
+        },
+        {
+            "id": "roleAddBtn",
+            "component": "Button",
+            "props": {
+                "icon": "plus",
+                "color": "primary",
+                "size": "small",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "roleListSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/roleSearch"
+                },
+                "placeholder": "Filter roles...",
+                "prefix": "filter",
+                "size": "small"
+            }
+        },
+        {
+            "id": "roleListScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto"
+            },
+            "children": {
+                "path": "/roles",
+                "componentId": "roleItem"
+            }
+        },
+        {
+            "id": "roleItem",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex items-center justify-between cursor-pointer border-b border-divider last:border-0 hover:bg-surface-variant"
+            },
+            "children": [
+                "roleItemInfo",
+                "roleItemTag"
+            ]
+        },
+        {
+            "id": "roleItemInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "roleItemName",
+                "roleItemCount"
+            ]
+        },
+        {
+            "id": "roleItemName",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold text-on-surface",
+                "value": {
+                    "path": "roleName"
+                }
+            }
+        },
+        {
+            "id": "roleItemCount",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "userCount"
+                }
+            }
+        },
+        {
+            "id": "roleItemTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "size": "small",
+                "color": "default"
+            }
+        },
+        {
+            "id": "permissionDetailSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "permissionHeader",
+                "permissionTabs",
+                "permissionFooter"
+            ]
+        },
+        {
+            "id": "permissionHeader",
+            "component": "div",
+            "props": {
+                "className": "p-6 border-b border-divider"
+            },
+            "children": [
+                "permissionTitle",
+                "permissionDesc"
+            ]
+        },
+        {
+            "id": "permissionTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface mb-2",
+                "value": "Super Admin"
+            }
+        },
+        {
+            "id": "permissionDesc",
+            "component": "p",
+            "props": {
+                "className": "text-on-surface-variant text-md",
+                "value": "Full access to all system resources including security policies, user management, and global configurations."
+            }
+        },
+        {
+            "id": "permissionTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activePermissionTab"
+                },
+                "className": "flex-1 px-6 pt-4"
+            },
+            "children": [
+                "tabMenuAccess",
+                "tabApiPerms",
+                "tabDataScope"
+            ]
+        },
+        {
+            "id": "tabMenuAccess",
+            "component": "TabItem",
+            "props": {
+                "key": "menu_access",
+                "label": "Menu Access",
+                "content": {
+                    "componentId": "treeContainer"
+                }
+            }
+        },
+        {
+            "id": "tabApiPerms",
+            "component": "TabItem",
+            "props": {
+                "key": "api_permissions",
+                "label": "API Permissions",
+                "content": "API Permission Settings"
+            }
+        },
+        {
+            "id": "tabDataScope",
+            "component": "TabItem",
+            "props": {
+                "key": "data_scope",
+                "label": "Data Scope",
+                "content": "Data Scope Settings"
+            }
+        },
+        {
+            "id": "treeContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4 py-4"
+            },
+            "children": {
+                "path": "/permissionTree",
+                "componentId": "treeNode"
+            }
+        },
+        {
+            "id": "treeNode",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "treeNodeHeader",
+                "treeNodeChildren"
+            ]
+        },
+        {
+            "id": "treeNodeHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-3 bg-surface-variant rounded-lg mb-2"
+            },
+            "children": [
+                "treeNodeTitleGroup",
+                "treeNodeSwitch"
+            ]
+        },
+        {
+            "id": "treeNodeTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "treeNodeExpandIcon",
+                "treeNodeLabel"
+            ]
+        },
+        {
+            "id": "treeNodeExpandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "treeNodeLabel",
+            "component": "span",
+            "props": {
+                "className": "font-medium text-on-surface",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "treeNodeSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "switched"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeNodeChildren",
+            "component": "div",
+            "props": {
+                "className": "pl-10 mb-4"
+            },
+            "children": [
+                "treeNodeCheckboxGroup"
+            ]
+        },
+        {
+            "id": "treeNodeCheckboxGroup",
+            "component": "CheckboxGroup",
+            "props": {
+                "value": {
+                    "path": "selectedSub"
+                },
+                "options": {
+                    "path": "subOptions"
+                }
+            }
+        },
+        {
+            "id": "permissionFooter",
+            "component": "div",
+            "props": {
+                "className": "p-6 border-t border-divider bg-surface-container-low flex flex-col gap-4"
+            },
+            "children": [
+                "inheritanceNotice",
+                "footerActions"
+            ]
+        },
+        {
+            "id": "inheritanceNotice",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-info text-sm bg-info-container p-3 rounded-lg"
+            },
+            "children": [
+                "noticeIcon",
+                "noticeText"
+            ]
+        },
+        {
+            "id": "noticeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "color": "info",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "noticeText",
+            "component": "span",
+            "props": {
+                "value": "Note: Changes to Super Admin permissions will propagate to all inherited sub-roles automatically."
+            }
+        },
+        {
+            "id": "footerActions",
+            "component": "div",
+            "props": {
+                "className": "flex justify-end gap-3"
+            },
+            "children": [
+                "resetBtn",
+                "saveBtn"
+            ]
+        },
+        {
+            "id": "resetBtn",
+            "component": "Button",
+            "props": {
+                "value": "Reset Changes",
+                "icon": "rotate-ccw",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "saveBtn",
+            "component": "Button",
+            "props": {
+                "value": "Save Permissions",
+                "color": "primary",
+                "icon": "save",
+                "iconPlacement": "start"
+            }
+        }
+    ]
+}

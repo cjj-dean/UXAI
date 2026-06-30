@@ -1,0 +1,774 @@
+{
+    "state": {
+        "brandName": "Security Gate",
+        "helpIcon": "help-circle",
+        "globeIcon": "globe",
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "metrics": [
+            {
+                "cardTitle": "Total Users",
+                "metricValue": "12,482",
+                "metricIcon": "users",
+                "iconColor": "primary",
+                "trendDescription": "Active users in the last 30 days"
+            },
+            {
+                "cardTitle": "Security Threats",
+                "metricValue": "04",
+                "metricIcon": "shield-alert",
+                "iconColor": "error",
+                "trendDescription": "Critical issues require immediate action"
+            },
+            {
+                "cardTitle": "System Uptime",
+                "metricValue": "99.98%",
+                "metricIcon": "server",
+                "iconColor": "success",
+                "trendDescription": "Guaranteed SLA compliance maintained"
+            },
+            {
+                "cardTitle": "Compliance Score",
+                "metricValue": "94/100",
+                "metricIcon": "check-circle",
+                "iconColor": "primary",
+                "trendDescription": "Above industry average benchmark"
+            }
+        ],
+        "securityEventTrends": [
+            {
+                "dateLabel": "Mon",
+                "blocked": 120,
+                "detected": 45
+            },
+            {
+                "dateLabel": "Tue",
+                "blocked": 135,
+                "detected": 52
+            },
+            {
+                "dateLabel": "Wed",
+                "blocked": 98,
+                "detected": 38
+            },
+            {
+                "dateLabel": "Thu",
+                "blocked": 150,
+                "detected": 65
+            },
+            {
+                "dateLabel": "Fri",
+                "blocked": 180,
+                "detected": 80
+            },
+            {
+                "dateLabel": "Sat",
+                "blocked": 60,
+                "detected": 20
+            },
+            {
+                "dateLabel": "Sun",
+                "blocked": 45,
+                "detected": 15
+            }
+        ],
+        "complianceByDepartment": [
+            {
+                "department": "Engineering",
+                "compliancePercentage": 96
+            },
+            {
+                "department": "Operations",
+                "compliancePercentage": 88
+            },
+            {
+                "department": "Sales",
+                "compliancePercentage": 79
+            }
+        ],
+        "tasks": [
+            {
+                "taskTitle": "Review firewall changes",
+                "taskDescription": "Pending approval for port 8080",
+                "taskIcon": "shield-check"
+            },
+            {
+                "taskTitle": "Update SSL certificates",
+                "taskDescription": "Expiring in 3 days for api.domain.com",
+                "taskIcon": "key"
+            },
+            {
+                "taskTitle": "User access re-certification",
+                "taskDescription": "Quarterly review for IT department",
+                "taskIcon": "user-check"
+            }
+        ],
+        "viewAllButtonLabel": "View All Tasks (12)",
+        "aiCardTitle": "AI Threat Guard Beta",
+        "aiCardDescription": "Enable our next-gen AI-driven threat detection engine to proactively block zero-day attacks.",
+        "aiEnableButtonLabel": "Enable Early Access",
+        "policyLinks": [
+            {
+                "label": "Privacy Policy",
+                "url": "/policies/privacy"
+            },
+            {
+                "label": "Terms of Service",
+                "url": "/policies/terms"
+            },
+            {
+                "label": "Cookie Policy",
+                "url": "/policies/cookies"
+            },
+            {
+                "label": "Security",
+                "url": "/policies/security"
+            },
+            {
+                "label": "Compliance",
+                "url": "/policies/compliance"
+            }
+        ],
+        "copyrightText": "© 2024 Enterprise Secure Solutions. All rights reserved."
+    },
+    "rootId": "rootContainer",
+    "elements": [
+        {
+            "id": "rootContainer",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen flex flex-col bg-surface-container-lowest"
+            },
+            "children": [
+                "headerNav",
+                "mainContent",
+                "footerBar"
+            ]
+        },
+        {
+            "id": "headerNav",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-6 shrink-0"
+            },
+            "children": [
+                "headerNavLeft",
+                "headerNavRight"
+            ]
+        },
+        {
+            "id": "headerNavLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerNavBrandIcon",
+                "headerNavBrandText",
+                "headerNavLinkGroup"
+            ]
+        },
+        {
+            "id": "headerNavBrandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "headerNavBrandText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerNavLinkGroup",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-1 ml-6"
+            },
+            "children": [
+                "headerNavLinkDashboard",
+                "headerNavLinkIncidents",
+                "headerNavLinkPolicies",
+                "headerNavLinkReports"
+            ]
+        },
+        {
+            "id": "headerNavLinkDashboard",
+            "component": "a",
+            "props": {
+                "href": "/dashboard",
+                "value": "Dashboard",
+                "className": "px-3 py-2 text-sm font-semibold text-primary rounded-action bg-primary-container"
+            }
+        },
+        {
+            "id": "headerNavLinkIncidents",
+            "component": "a",
+            "props": {
+                "href": "/incidents",
+                "value": "Incidents",
+                "className": "px-3 py-2 text-sm text-on-surface-variant rounded-action hover:text-on-surface"
+            }
+        },
+        {
+            "id": "headerNavLinkPolicies",
+            "component": "a",
+            "props": {
+                "href": "/policies",
+                "value": "Policies",
+                "className": "px-3 py-2 text-sm text-on-surface-variant rounded-action hover:text-on-surface"
+            }
+        },
+        {
+            "id": "headerNavLinkReports",
+            "component": "a",
+            "props": {
+                "href": "/reports",
+                "value": "Reports",
+                "className": "px-3 py-2 text-sm text-on-surface-variant rounded-action hover:text-on-surface"
+            }
+        },
+        {
+            "id": "headerNavRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "headerNavHelpBtn",
+                "headerNavGlobeBtn",
+                "headerNavAvatarDropdown"
+            ]
+        },
+        {
+            "id": "headerNavHelpBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/helpIcon"
+                },
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "headerNavGlobeBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/globeIcon"
+                },
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "headerNavAvatarDropdown",
+            "component": "Dropdown",
+            "props": {
+                "trigger": [
+                    "click"
+                ],
+                "placement": "bottomRight",
+                "menu": [
+                    {
+                        "label": "Profile",
+                        "key": "profile",
+                        "icon": "user"
+                    },
+                    {
+                        "label": "Settings",
+                        "key": "settings",
+                        "icon": "settings"
+                    },
+                    {
+                        "label": "Sign Out",
+                        "key": "signout",
+                        "icon": "log-out"
+                    }
+                ]
+            },
+            "children": [
+                "headerNavAvatarImg"
+            ]
+        },
+        {
+            "id": "headerNavAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userAvatarImage"
+                },
+                "className": "w-8 h-8 rounded-full object-cover cursor-pointer"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-6 max-w-[1440px] mx-auto w-full flex flex-col gap-6"
+            },
+            "children": [
+                "metricsRow",
+                "contentRow"
+            ]
+        },
+        {
+            "id": "metricsRow",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricsCard"
+            }
+        },
+        {
+            "id": "metricsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col"
+            },
+            "children": [
+                "metricsCardIcon",
+                "metricsCardValue",
+                "metricsCardTitle",
+                "metricsCardDivider",
+                "metricsCardTrend"
+            ]
+        },
+        {
+            "id": "metricsCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "metricIcon"
+                },
+                "color": {
+                    "path": "iconColor"
+                },
+                "shape": "square",
+                "className": "w-10 h-10 mb-3"
+            }
+        },
+        {
+            "id": "metricsCardValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "metricValue"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricsCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cardTitle"
+                },
+                "className": "text-sm text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "metricsCardDivider",
+            "component": "div",
+            "props": {
+                "className": "border-b border-divider my-3"
+            }
+        },
+        {
+            "id": "metricsCardTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trendDescription"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": [
+                "analyticsCol",
+                "actionCol"
+            ]
+        },
+        {
+            "id": "analyticsCol",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-6 min-w-0"
+            },
+            "children": [
+                "analyticsLineCard",
+                "analyticsBarCard"
+            ]
+        },
+        {
+            "id": "analyticsLineCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col"
+            },
+            "children": [
+                "analyticsLineHeader",
+                "analyticsLineChart"
+            ]
+        },
+        {
+            "id": "analyticsLineHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "analyticsLineTitle",
+                "analyticsLineRange"
+            ]
+        },
+        {
+            "id": "analyticsLineTitle",
+            "component": "span",
+            "props": {
+                "value": "Security Event Trends",
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "analyticsLineRange",
+            "component": "Tag",
+            "props": {
+                "value": "This Week",
+                "color": "default"
+            }
+        },
+        {
+            "id": "analyticsLineChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/securityEventTrends"
+                    },
+                    "xAxis": {
+                        "data": "dateLabel"
+                    },
+                    "yAxisTitle": "Event Count",
+                    "smooth": true,
+                    "color": [
+                        "#2070F3",
+                        "#E02128"
+                    ]
+                },
+                "className": "h-72 w-full"
+            }
+        },
+        {
+            "id": "analyticsBarCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col"
+            },
+            "children": [
+                "analyticsBarTitle",
+                "analyticsBarChart"
+            ]
+        },
+        {
+            "id": "analyticsBarTitle",
+            "component": "span",
+            "props": {
+                "value": "Compliance Status by Department",
+                "className": "text-base font-semibold text-on-surface block mb-4"
+            }
+        },
+        {
+            "id": "analyticsBarChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/complianceByDepartment"
+                    },
+                    "xAxis": {
+                        "data": "department"
+                    },
+                    "yAxisTitle": "Compliance (%)",
+                    "color": [
+                        "#2070F3"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "actionCol",
+            "component": "div",
+            "props": {
+                "className": "w-[380px] shrink-0 flex flex-col gap-6"
+            },
+            "children": [
+                "actionTaskCard",
+                "actionAiCard"
+            ]
+        },
+        {
+            "id": "actionTaskCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col"
+            },
+            "children": [
+                "actionTaskHeader",
+                "actionTaskList",
+                "actionTaskViewAllBtn"
+            ]
+        },
+        {
+            "id": "actionTaskHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-3"
+            },
+            "children": [
+                "actionTaskTitle",
+                "actionTaskDueTag"
+            ]
+        },
+        {
+            "id": "actionTaskTitle",
+            "component": "span",
+            "props": {
+                "value": "Administrative Tasks",
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "actionTaskDueTag",
+            "component": "Tag",
+            "props": {
+                "value": "03 DUE",
+                "color": "error"
+            }
+        },
+        {
+            "id": "actionTaskList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": {
+                "path": "/tasks",
+                "componentId": "actionTaskItem"
+            }
+        },
+        {
+            "id": "actionTaskItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-3 p-3 border-b border-divider"
+            },
+            "children": [
+                "actionTaskItemIcon",
+                "actionTaskItemBody"
+            ]
+        },
+        {
+            "id": "actionTaskItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "taskIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-9 h-9 shrink-0"
+            }
+        },
+        {
+            "id": "actionTaskItemBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 min-w-0"
+            },
+            "children": [
+                "actionTaskItemTitle",
+                "actionTaskItemDesc"
+            ]
+        },
+        {
+            "id": "actionTaskItemTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskTitle"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "actionTaskItemDesc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskDescription"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "actionTaskViewAllBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/viewAllButtonLabel"
+                },
+                "icon": "chevron-right",
+                "iconPlacement": "end",
+                "className": "mt-3 w-full"
+            }
+        },
+        {
+            "id": "actionAiCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col"
+            },
+            "children": [
+                "actionAiHeader",
+                "actionAiDesc",
+                "actionAiBtn"
+            ]
+        },
+        {
+            "id": "actionAiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-3"
+            },
+            "children": [
+                "actionAiIcon",
+                "actionAiTitle",
+                "actionAiBetaTag"
+            ]
+        },
+        {
+            "id": "actionAiIcon",
+            "component": "Icon",
+            "props": {
+                "name": "sparkles",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "actionAiTitle",
+            "component": "span",
+            "props": {
+                "value": "AI Threat Guard",
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "actionAiBetaTag",
+            "component": "Tag",
+            "props": {
+                "value": "Beta",
+                "color": "processing",
+                "size": "small"
+            }
+        },
+        {
+            "id": "actionAiDesc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/aiCardDescription"
+                },
+                "className": "text-sm text-on-surface-variant mb-4 leading-relaxed"
+            }
+        },
+        {
+            "id": "actionAiBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/aiEnableButtonLabel"
+                },
+                "color": "primary",
+                "icon": "zap",
+                "iconPlacement": "start",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "footerBar",
+            "component": "footer",
+            "props": {
+                "className": "bg-surface-container-highest border-t border-divider px-6 py-4 mt-auto"
+            },
+            "children": [
+                "footerInner"
+            ]
+        },
+        {
+            "id": "footerInner",
+            "component": "div",
+            "props": {
+                "className": "max-w-[1440px] mx-auto w-full flex items-center justify-between"
+            },
+            "children": [
+                "footerLeft",
+                "footerCopyright"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": {
+                "path": "/policyLinks",
+                "componentId": "footerLinkItem"
+            }
+        },
+        {
+            "id": "footerLinkItem",
+            "component": "a",
+            "props": {
+                "href": {
+                    "path": "url"
+                },
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "footerCopyright",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/copyrightText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        }
+    ]
+}

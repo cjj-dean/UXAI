@@ -1,0 +1,880 @@
+{
+    "state": {
+        "currentUser": {
+            "userName": "Admin_Zhang",
+            "userRole": "高级安全专家",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+            "organization": "安全运营中心 (SOC)"
+        },
+        "navMenus": [
+            {
+                "menuName": "概览看板",
+                "menuIcon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "menuName": "安全规则",
+                "menuIcon": "shield-check",
+                "isActive": false
+            },
+            {
+                "menuName": "安全审计",
+                "menuIcon": "file-search",
+                "isActive": true
+            },
+            {
+                "menuName": "黑白名单",
+                "menuIcon": "ban",
+                "isActive": false
+            },
+            {
+                "menuName": "系统设置",
+                "menuIcon": "settings",
+                "isActive": false
+            }
+        ],
+        "globalSearch": "",
+        "notificationCount": 12,
+        "currentLanguage": "简体中文",
+        "languages": [
+            {
+                "label": "English",
+                "key": "en"
+            },
+            {
+                "label": "简体中文",
+                "key": "zh"
+            },
+            {
+                "label": "日本語",
+                "key": "jp"
+            }
+        ],
+        "pageTitle": "安全审计日志 Security Audit Logs",
+        "filterConfig": {
+            "timeRange": "24h",
+            "riskLevel": "all",
+            "actionType": "all"
+        },
+        "timeOptions": [
+            {
+                "label": "最近1小时",
+                "value": "1h"
+            },
+            {
+                "label": "最近24小时",
+                "value": "24h"
+            },
+            {
+                "label": "最近7天",
+                "value": "7d"
+            }
+        ],
+        "logs": [
+            {
+                "eventId": "EV-982341",
+                "timestamp": "2023-10-27 14:20:05",
+                "clientIp": "192.168.1.105",
+                "requestMethod": "POST",
+                "requestPath": "/api/v1/auth/login",
+                "status": "Success",
+                "statusType": "success",
+                "riskLevel": "Low",
+                "riskIcon": "shield"
+            },
+            {
+                "eventId": "EV-982342",
+                "timestamp": "2023-10-27 14:21:12",
+                "clientIp": "45.77.12.34",
+                "requestMethod": "GET",
+                "requestPath": "/admin/config",
+                "status": "Blocked",
+                "statusType": "error",
+                "riskLevel": "High",
+                "riskIcon": "alert-triangle"
+            },
+            {
+                "eventId": "EV-982343",
+                "timestamp": "2023-10-27 14:22:30",
+                "clientIp": "103.21.4.99",
+                "requestMethod": "PUT",
+                "requestPath": "/api/v1/user/profile",
+                "status": "Challenged",
+                "statusType": "warning",
+                "riskLevel": "Medium",
+                "riskIcon": "info"
+            },
+            {
+                "eventId": "EV-982344",
+                "timestamp": "2023-10-27 14:25:00",
+                "clientIp": "128.0.0.1",
+                "requestMethod": "DELETE",
+                "requestPath": "/api/v1/data/purge",
+                "status": "Success",
+                "statusType": "success",
+                "riskLevel": "Low",
+                "riskIcon": "shield"
+            }
+        ],
+        "drawerData": {
+            "title": "Log Details",
+            "eventId": "EV-982342",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+            "geoLocation": "美国, 纽约 (New York, US)",
+            "rawPayload": "{\n  \"header\": {\n    \"Content-Type\": \"application/json\",\n    \"X-Forwarded-For\": \"45.77.12.34\",\n    \"Authorization\": \"Bearer ********\"\n  },\n  \"body\": {\n    \"action\": \"admin_access\",\n    \"target\": \"system_config\",\n    \"payload\": \"sql_injection_attempt_detected\"\n  }\n}",
+            "timeline": [
+                {
+                    "time": "14:21:12.001",
+                    "event": "请求进入网关 (Request Received)",
+                    "icon": "log-in",
+                    "color": "primary"
+                },
+                {
+                    "time": "14:21:12.045",
+                    "event": "WAF规则匹配: SQLi-Rule-04",
+                    "icon": "shield-alert",
+                    "color": "warning"
+                },
+                {
+                    "time": "14:21:12.050",
+                    "event": "校验成功并执行拦截 (Blocked)",
+                    "icon": "check-circle",
+                    "color": "success"
+                }
+            ]
+        }
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col shadow-sm z-20"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu",
+                "sidebarUser"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "Security Gate"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navMenus",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "menuIcon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium text-on-surface-variant",
+                "value": {
+                    "path": "menuName"
+                }
+            }
+        },
+        {
+            "id": "sidebarUser",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider bg-surface-variant"
+            },
+            "children": [
+                "userCard"
+            ]
+        },
+        {
+            "id": "userCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-10 h-10 rounded-full border border-white shadow-sm"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-surface truncate",
+                "value": {
+                    "path": "/currentUser/userName"
+                }
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "/currentUser/userRole"
+                }
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden relative"
+            },
+            "children": [
+                "globalHeader",
+                "contentArea",
+                "logDetailsDrawer"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/globalSearch"
+                },
+                "placeholder": "搜索事件ID、IP或用户...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifBtn",
+                "langDropdown"
+            ]
+        },
+        {
+            "id": "notifBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "relative"
+            }
+        },
+        {
+            "id": "langDropdown",
+            "component": "Dropdown",
+            "props": {
+                "menu": {
+                    "path": "/languages"
+                }
+            },
+            "children": [
+                "langBtn"
+            ]
+        },
+        {
+            "id": "langBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/currentLanguage"
+                },
+                "icon": "languages",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "auditHeader",
+                "auditTableCard"
+            ]
+        },
+        {
+            "id": "auditHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "auditTitle",
+                "auditFilters"
+            ]
+        },
+        {
+            "id": "auditTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "/pageTitle"
+                }
+            }
+        },
+        {
+            "id": "auditFilters",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 bg-surface-container-high p-4 rounded-container"
+            },
+            "children": [
+                "filterTime",
+                "filterRisk",
+                "filterAction",
+                "filterReset"
+            ]
+        },
+        {
+            "id": "filterTime",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterConfig/timeRange"
+                },
+                "options": {
+                    "path": "/timeOptions"
+                },
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterRisk",
+            "component": "Select",
+            "props": {
+                "value": "all",
+                "options": [
+                    {
+                        "label": "全部等级",
+                        "value": "all"
+                    },
+                    {
+                        "label": "高风险",
+                        "value": "high"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterAction",
+            "component": "Select",
+            "props": {
+                "value": "all",
+                "options": [
+                    {
+                        "label": "所有操作",
+                        "value": "all"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterReset",
+            "component": "Button",
+            "props": {
+                "value": "重置筛选",
+                "icon": "rotate-ccw"
+            }
+        },
+        {
+            "id": "auditTableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-4"
+            },
+            "children": [
+                "auditTable"
+            ]
+        },
+        {
+            "id": "auditTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "eventId",
+                "dataSource": {
+                    "path": "/logs"
+                },
+                "columns": [
+                    {
+                        "title": "事件ID",
+                        "dataIndex": "eventId",
+                        "width": 120
+                    },
+                    {
+                        "title": "时间戳",
+                        "dataIndex": "timestamp"
+                    },
+                    {
+                        "title": "客户端IP",
+                        "dataIndex": "clientIp"
+                    },
+                    {
+                        "title": "请求路径",
+                        "dataIndex": "requestPath"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "风险等级",
+                        "dataIndex": "riskLevel",
+                        "width": 120
+                    }
+                ]
+            },
+            "children": {
+                "path": "/logs",
+                "componentId": "auditTableRow"
+            }
+        },
+        {
+            "id": "auditTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellEventId",
+                "cellTime",
+                "cellIp",
+                "cellPath",
+                "cellStatus",
+                "cellRisk"
+            ]
+        },
+        {
+            "id": "cellEventId",
+            "component": "span",
+            "props": {
+                "className": "text-primary font-medium cursor-pointer",
+                "value": {
+                    "path": "eventId"
+                }
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "timestamp"
+                }
+            }
+        },
+        {
+            "id": "cellIp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "clientIp"
+                }
+            }
+        },
+        {
+            "id": "cellPath",
+            "component": "span",
+            "props": {
+                "className": "truncate max-w-xs block",
+                "value": {
+                    "path": "requestPath"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "cellRisk",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "riskIcon",
+                "riskText"
+            ]
+        },
+        {
+            "id": "riskIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "riskIcon"
+                },
+                "className": "w-4 h-4",
+                "color": "error"
+            }
+        },
+        {
+            "id": "riskText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "riskLevel"
+                }
+            }
+        },
+        {
+            "id": "logDetailsDrawer",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 right-0 w-[450px] h-full bg-surface-container-highest shadow-xl border-l border-divider z-30 flex flex-col"
+            },
+            "children": [
+                "drawerHeader",
+                "drawerBody",
+                "drawerFooter"
+            ]
+        },
+        {
+            "id": "drawerHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "drawerTitle",
+                "drawerClose"
+            ]
+        },
+        {
+            "id": "drawerTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/drawerData/title"
+                }
+            }
+        },
+        {
+            "id": "drawerClose",
+            "component": "Button",
+            "props": {
+                "icon": "x",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "drawerBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-6"
+            },
+            "children": [
+                "metaSection",
+                "codeSection",
+                "timelineSection"
+            ]
+        },
+        {
+            "id": "metaSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": [
+                "metaId",
+                "metaUA",
+                "metaGeo"
+            ]
+        },
+        {
+            "id": "metaId",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "metaIdLabel",
+                "metaIdVal"
+            ]
+        },
+        {
+            "id": "metaIdLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Event ID"
+            }
+        },
+        {
+            "id": "metaIdVal",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold",
+                "value": {
+                    "path": "/drawerData/eventId"
+                }
+            }
+        },
+        {
+            "id": "metaUA",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "metaUALabel",
+                "metaUAVal"
+            ]
+        },
+        {
+            "id": "metaUALabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "User Agent"
+            }
+        },
+        {
+            "id": "metaUAVal",
+            "component": "span",
+            "props": {
+                "className": "text-xs break-all bg-surface-variant p-2 rounded",
+                "value": {
+                    "path": "/drawerData/userAgent"
+                }
+            }
+        },
+        {
+            "id": "metaGeo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "geoIcon",
+                "geoText"
+            ]
+        },
+        {
+            "id": "geoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "map-pin",
+                "color": "primary",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "geoText",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "/drawerData/geoLocation"
+                }
+            }
+        },
+        {
+            "id": "codeSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "codeLabel",
+                "codeBlock"
+            ]
+        },
+        {
+            "id": "codeLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": "Raw Payload"
+            }
+        },
+        {
+            "id": "codeBlock",
+            "component": "pre",
+            "props": {
+                "className": "bg-slate-900 text-slate-100 p-4 rounded-container text-xs overflow-x-auto font-mono",
+                "value": {
+                    "path": "/drawerData/rawPayload"
+                }
+            }
+        },
+        {
+            "id": "timelineSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": [
+                "timelineLabel",
+                "processTimeline"
+            ]
+        },
+        {
+            "id": "timelineLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": "Process Timeline"
+            }
+        },
+        {
+            "id": "processTimeline",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical"
+            },
+            "children": {
+                "path": "/drawerData/timeline",
+                "componentId": "timelineItem"
+            }
+        },
+        {
+            "id": "timelineItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "time"
+                },
+                "content": {
+                    "path": "event"
+                },
+                "icon": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                }
+            }
+        },
+        {
+            "id": "drawerFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider bg-surface-container-high"
+            },
+            "children": [
+                "copyUrlBtn"
+            ]
+        },
+        {
+            "id": "copyUrlBtn",
+            "component": "Button",
+            "props": {
+                "value": "复制事件URL",
+                "icon": "copy",
+                "color": "primary",
+                "className": "w-full"
+            }
+        }
+    ]
+}

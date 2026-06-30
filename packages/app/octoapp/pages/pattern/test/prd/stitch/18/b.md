@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个左右布局带状态栏的项目甘特图界面。顶部左侧是ProjectIntelligence标识和Dashboard、Schedules（当前选中）、Resources等菜单，中间是搜索框，右侧是三个图标、Publish Plan按钮和头像。左侧边栏上方是Project Alpha的项目简介，中间是Overview、Gantt View（激活态）等五个菜单及New Milestone按钮，底部是Help Center。主视图区头部左侧是Today按钮及Day/Week/Month/Quarter视图切换器，右侧排列Critical Path等图例。主体分为左侧表格和右侧图表：左侧表格含Task Name、Assignee、Status、Dates列，渲染了Core Infra Aud等6行数据，包含头像和DELAYED等状态标签；右侧时间轴展示OCTOBER 2023的Week 41到46，画了三个任务条（第一个是黑色条，带向下依赖的红色虚线，连着第二个带警告图标的红色条，第三个是灰色条），且有一条贯穿Week 42的垂直标线。底部栏左侧显示Active Tasks: 24等统计数据，右侧显示Last updated时间和Live Sync Active绿点标记。

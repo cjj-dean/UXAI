@@ -1,0 +1,1683 @@
+{
+    "state": {
+      "activeTab": "ar",
+      "selectedStatus": "All Statuses",
+      "selectedDate": "Last 30 Days",
+      "selectedKeys": [],
+      "searchValue": "",
+      "logoIcon": "layers",
+      "logoText": "NEXUS ERP",
+      "menuItems": [
+        {
+          "menuIcon": "layout-dashboard",
+          "menuItemLabel": "Overview",
+          "isActive": false
+        },
+        {
+          "menuIcon": "file-text",
+          "menuItemLabel": "AR/AP Management",
+          "isActive": true
+        },
+        {
+          "menuIcon": "shopping-cart",
+          "menuItemLabel": "Procurement",
+          "isActive": false
+        },
+        {
+          "menuIcon": "receipt",
+          "menuItemLabel": "Expenses",
+          "isActive": false
+        },
+        {
+          "menuIcon": "bar-chart-3",
+          "menuItemLabel": "Reports",
+          "isActive": false
+        },
+        {
+          "menuIcon": "landmark",
+          "menuItemLabel": "Tax Management",
+          "isActive": false
+        }
+      ],
+      "quickActionButtonLabel": "+ New Transaction",
+      "searchPlaceholder": "Search transactions, vendors, invoices...",
+      "headerActions": [
+        {
+          "actionName": "Notifications",
+          "actionIcon": "bell",
+          "badgeCount": 3
+        },
+        {
+          "actionName": "Help Center",
+          "actionIcon": "circle-help"
+        },
+        {
+          "actionName": "System Settings",
+          "actionIcon": "settings"
+        }
+      ],
+      "userInfo": {
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "userName": "Alex Thompson",
+        "userRole": "Financial Controller"
+      },
+      "kpiCards": [
+        {
+          "cardTitle": "Overdue Receivables",
+          "coreValue": "$12,450.00",
+          "leftDescription": "5 Critical Invoices",
+          "rightHighlight": "High Alert",
+          "trendIcon": "alert-triangle",
+          "trendColor": "error",
+          "highlightColor": "error"
+        },
+        {
+          "cardTitle": "Total Receivables",
+          "coreValue": "$84,230.50",
+          "leftDescription": "42 Active Invoices",
+          "rightHighlight": "On Track",
+          "trendIcon": "trending-up",
+          "trendColor": "success",
+          "highlightColor": "success"
+        },
+        {
+          "cardTitle": "Total Payables",
+          "coreValue": "$45,100.25",
+          "leftDescription": "18 Pending Bills",
+          "rightHighlight": "Due Soon",
+          "trendIcon": "clock",
+          "trendColor": "warning",
+          "highlightColor": "warning"
+        },
+        {
+          "cardTitle": "Cash Balance",
+          "coreValue": "$128,940.70",
+          "leftDescription": "Updated 5 min ago",
+          "rightHighlight": "Healthy",
+          "trendIcon": "wallet",
+          "trendColor": "success",
+          "highlightColor": "success"
+        }
+      ],
+      "tableCardTitle": "AR/AP Management",
+      "tableTabs": [
+        {
+          "key": "ar",
+          "tabName": "Accounts Receivable",
+          "isActive": true,
+          "count": 124
+        },
+        {
+          "key": "ap",
+          "tabName": "Accounts Payable",
+          "isActive": false,
+          "count": 58
+        }
+      ],
+      "filters": {
+        "statusFilter": {
+          "defaultValue": "All Statuses",
+          "options": [
+            "All Statuses",
+            "Paid",
+            "Pending",
+            "Overdue"
+          ]
+        },
+        "dateFilter": {
+          "defaultValue": "Last 30 Days",
+          "options": [
+            "Last 7 Days",
+            "Last 30 Days",
+            "This Quarter",
+            "Custom Range"
+          ]
+        }
+      },
+      "statusFilterOptions": [
+        {
+          "label": "All Statuses",
+          "value": "All Statuses"
+        },
+        {
+          "label": "Paid",
+          "value": "Paid"
+        },
+        {
+          "label": "Pending",
+          "value": "Pending"
+        },
+        {
+          "label": "Overdue",
+          "value": "Overdue"
+        }
+      ],
+      "dateFilterOptions": [
+        {
+          "label": "Last 7 Days",
+          "value": "Last 7 Days"
+        },
+        {
+          "label": "Last 30 Days",
+          "value": "Last 30 Days"
+        },
+        {
+          "label": "This Quarter",
+          "value": "This Quarter"
+        },
+        {
+          "label": "Custom Range",
+          "value": "Custom Range"
+        }
+      ],
+      "toolBar": {
+        "leftActions": [
+          {
+            "actionLabel": "Match Invoice",
+            "actionIcon": "git-merge"
+          },
+          {
+            "actionLabel": "Export Data",
+            "actionIcon": "download"
+          }
+        ],
+        "rightSummary": "Showing 1-10 of 124"
+      },
+      "tableHeaders": [
+        "INVOICE ID",
+        "CUSTOMER / VENDOR",
+        "ISSUE DATE",
+        "DUE DATE",
+        "STATUS",
+        "REMAINING",
+        "ACTIONS"
+      ],
+      "tableRows": [
+        {
+          "id": "1",
+          "invoiceId": "INV-10291",
+          "overdueText": "15 Days Overdue",
+          "overdueColor": "text-red-500",
+          "entityName": "TechCore Solutions",
+          "issueDate": "2024-04-15",
+          "dueDate": "2024-05-15",
+          "statusTag": "Overdue",
+          "tagColor": "bg-red-100 text-red-700",
+          "statusColor": "error",
+          "remainingAmount": "$4,500.00",
+          "amountStyle": "font-bold text-red-600",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "2",
+          "invoiceId": "INV-10292",
+          "overdueText": "5 Days Left",
+          "overdueColor": "text-yellow-600",
+          "entityName": "GlobalEdge Corp",
+          "issueDate": "2024-04-18",
+          "dueDate": "2024-05-20",
+          "statusTag": "Pending",
+          "tagColor": "bg-yellow-100 text-yellow-800",
+          "statusColor": "warning",
+          "remainingAmount": "$12,450.00",
+          "amountStyle": "font-bold",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "3",
+          "invoiceId": "INV-10293",
+          "overdueText": "",
+          "overdueColor": "",
+          "entityName": "Alpha Dynamics",
+          "issueDate": "2024-03-10",
+          "dueDate": "2024-04-10",
+          "statusTag": "Paid",
+          "tagColor": "bg-green-100 text-green-700",
+          "statusColor": "success",
+          "remainingAmount": "$0.00",
+          "amountStyle": "text-gray-400 line-through",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "4",
+          "invoiceId": "INV-10294",
+          "overdueText": "45 Days Overdue",
+          "overdueColor": "text-red-500",
+          "entityName": "Blue Sky Ventures",
+          "issueDate": "2024-02-05",
+          "dueDate": "2024-03-05",
+          "statusTag": "Bad Debt",
+          "tagColor": "bg-gray-800 text-white",
+          "statusColor": "default",
+          "remainingAmount": "$850.00",
+          "amountStyle": "font-bold text-red-600",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "5",
+          "invoiceId": "INV-10295",
+          "overdueText": "Not Due",
+          "overdueColor": "text-gray-400",
+          "entityName": "Zenith Industries",
+          "issueDate": "2024-05-01",
+          "dueDate": "2024-06-01",
+          "statusTag": "Pending",
+          "tagColor": "bg-yellow-100 text-yellow-800",
+          "statusColor": "warning",
+          "remainingAmount": "$2,100.00",
+          "amountStyle": "font-bold",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "6",
+          "invoiceId": "INV-10296",
+          "overdueText": "",
+          "overdueColor": "",
+          "entityName": "Acme Corp",
+          "issueDate": "2024-04-25",
+          "dueDate": "2024-05-25",
+          "statusTag": "Paid",
+          "tagColor": "bg-green-100 text-green-700",
+          "statusColor": "success",
+          "remainingAmount": "$0.00",
+          "amountStyle": "text-gray-400 line-through",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "7",
+          "invoiceId": "INV-10297",
+          "overdueText": "2 Days Overdue",
+          "overdueColor": "text-red-500",
+          "entityName": "Stellar Logistics",
+          "issueDate": "2024-04-28",
+          "dueDate": "2024-05-18",
+          "statusTag": "Overdue",
+          "tagColor": "bg-red-100 text-red-700",
+          "statusColor": "error",
+          "remainingAmount": "$18,200.00",
+          "amountStyle": "font-bold text-red-600",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "8",
+          "invoiceId": "INV-10298",
+          "overdueText": "10 Days Left",
+          "overdueColor": "text-yellow-600",
+          "entityName": "Orion Tech",
+          "issueDate": "2024-05-05",
+          "dueDate": "2024-05-30",
+          "statusTag": "Pending",
+          "tagColor": "bg-yellow-100 text-yellow-800",
+          "statusColor": "warning",
+          "remainingAmount": "$5,400.00",
+          "amountStyle": "font-bold",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "9",
+          "invoiceId": "INV-10299",
+          "overdueText": "",
+          "overdueColor": "",
+          "entityName": "Nebula Systems",
+          "issueDate": "2024-04-20",
+          "dueDate": "2024-04-30",
+          "statusTag": "Paid",
+          "tagColor": "bg-green-100 text-green-700",
+          "statusColor": "success",
+          "remainingAmount": "$0.00",
+          "amountStyle": "text-gray-400 line-through",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "10",
+          "invoiceId": "INV-10300",
+          "overdueText": "30 Days Overdue",
+          "overdueColor": "text-red-500",
+          "entityName": "QuantumLeap Inc",
+          "issueDate": "2024-03-15",
+          "dueDate": "2024-04-15",
+          "statusTag": "Overdue",
+          "tagColor": "bg-red-100 text-red-700",
+          "statusColor": "error",
+          "remainingAmount": "$950.00",
+          "amountStyle": "font-bold text-red-600",
+          "actionIcon": "more-vertical"
+        },
+        {
+          "id": "11",
+          "invoiceId": "INV-10301",
+          "overdueText": "1 Day Left",
+          "overdueColor": "text-yellow-600",
+          "entityName": "Horizon Ltd",
+          "issueDate": "2024-05-10",
+          "dueDate": "2024-05-21",
+          "statusTag": "Pending",
+          "tagColor": "bg-yellow-100 text-yellow-800",
+          "statusColor": "warning",
+          "remainingAmount": "$7,600.00",
+          "amountStyle": "font-bold",
+          "actionIcon": "more-vertical"
+        }
+      ],
+      "pagination": {
+        "rowsPerPage": 10,
+        "currentPage": 1,
+        "totalPages": 13
+      },
+      "leftCard": {
+        "cardTitle": "Liquidity Insight",
+        "insightIcon": "lightbulb",
+        "descriptionParagraphs": [
+          "Based on current receivables velocity, your cash runway is projected to tighten in the next 15 days due to a concentration of vendor payments.",
+          "We recommend accelerating collection on the 5 'High Alert' invoices to maintain optimal working capital."
+        ],
+        "actionLink": {
+          "linkText": "Run Collection Workflow",
+          "linkIcon": "arrow-right"
+        }
+      },
+      "rightCard": {
+        "cardTitle": "Upcoming Payables",
+        "upcomingIcon": "calendar-clock",
+        "payableItems": [
+          {
+            "vendorName": "AWS Cloud Services",
+            "amountDue": "$1,200.00",
+            "dueDate": "May 22",
+            "statusTag": "AUTO-PAY READY",
+            "tagStyle": "bg-blue-50 text-blue-700",
+            "tagColorName": "processing"
+          },
+          {
+            "vendorName": "Office Lease - Q2",
+            "amountDue": "$5,000.00",
+            "dueDate": "May 25",
+            "statusTag": "SCHEDULED",
+            "tagStyle": "bg-gray-100 text-gray-600",
+            "tagColorName": "default"
+          },
+          {
+            "vendorName": "Slack Enterprise",
+            "amountDue": "$450.00",
+            "dueDate": "May 28",
+            "statusTag": "NEEDS APPROVAL",
+            "tagStyle": "bg-yellow-50 text-yellow-700",
+            "tagColorName": "warning"
+          },
+          {
+            "vendorName": "Google Workspace",
+            "amountDue": "$320.00",
+            "dueDate": "June 01",
+            "statusTag": "AUTO-PAY READY",
+            "tagStyle": "bg-blue-50 text-blue-700",
+            "tagColorName": "processing"
+          },
+          {
+            "vendorName": "DataCenter Ops",
+            "amountDue": "$2,800.00",
+            "dueDate": "June 05",
+            "statusTag": "PENDING REVIEW",
+            "tagStyle": "bg-orange-50 text-orange-600",
+            "tagColorName": "warning"
+          }
+        ]
+      },
+      "copyrightText": "© 2024 NEXUS ENTERPRISE SOLUTIONS • SYSTEM V4.2.1-STABLE"
+    },
+    "rootId": "appLayout",
+    "elements": [
+      {
+        "id": "appLayout",
+        "component": "div",
+        "props": {
+          "className": "flex h-screen overflow-hidden bg-surface-container-lowest"
+        },
+        "children": [
+          "sidebarSection",
+          "mainSection"
+        ]
+      },
+      {
+        "id": "sidebarSection",
+        "component": "div",
+        "props": {
+          "className": "w-60 bg-inverse-surface flex flex-col shrink-0"
+        },
+        "children": [
+          "sidebarLogoArea",
+          "sidebarDivider",
+          "sidebarMenuScroll",
+          "sidebarActionArea"
+        ]
+      },
+      {
+        "id": "sidebarLogoArea",
+        "component": "div",
+        "props": {
+          "className": "px-6 py-6 flex items-center gap-3"
+        },
+        "children": [
+          "sidebarLogoIcon",
+          "sidebarLogoText"
+        ]
+      },
+      {
+        "id": "sidebarLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/logoIcon"
+          },
+          "color": "primary",
+          "shape": "square",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "sidebarLogoText",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-inverse-on-surface tracking-wide",
+          "value": {
+            "path": "/logoText"
+          }
+        }
+      },
+      {
+        "id": "sidebarDivider",
+        "component": "Divider",
+        "props": {
+          "className": "mx-4",
+          "variant": "solid"
+        }
+      },
+      {
+        "id": "sidebarMenuScroll",
+        "component": "div",
+        "props": {
+          "className": "flex-1 px-3 flex flex-col gap-1 overflow-y-auto py-2"
+        },
+        "children": [
+          "sidebarItem1",
+          "sidebarItem2",
+          "sidebarItem3",
+          "sidebarItem4",
+          "sidebarItem5",
+          "sidebarItem6"
+        ]
+      },
+      {
+        "id": "sidebarItem1",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/50",
+          "title": {
+            "path": "/menuItems/0/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem1Icon",
+          "sidebarItem1Label"
+        ]
+      },
+      {
+        "id": "sidebarItem1Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/0/menuIcon"
+          },
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem1Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": {
+            "path": "/menuItems/0/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarItem2",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white/10",
+          "title": {
+            "path": "/menuItems/1/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem2Dot",
+          "sidebarItem2Icon",
+          "sidebarItem2Label"
+        ]
+      },
+      {
+        "id": "sidebarItem2Dot",
+        "component": "div",
+        "props": {
+          "className": "w-1.5 h-5 bg-primary rounded-full shrink-0"
+        }
+      },
+      {
+        "id": "sidebarItem2Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/1/menuIcon"
+          },
+          "color": "primary",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem2Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-white",
+          "value": {
+            "path": "/menuItems/1/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarItem3",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/50",
+          "title": {
+            "path": "/menuItems/2/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem3Icon",
+          "sidebarItem3Label"
+        ]
+      },
+      {
+        "id": "sidebarItem3Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/2/menuIcon"
+          },
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem3Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": {
+            "path": "/menuItems/2/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarItem4",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/50",
+          "title": {
+            "path": "/menuItems/3/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem4Icon",
+          "sidebarItem4Label"
+        ]
+      },
+      {
+        "id": "sidebarItem4Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/3/menuIcon"
+          },
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem4Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": {
+            "path": "/menuItems/3/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarItem5",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/50",
+          "title": {
+            "path": "/menuItems/4/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem5Icon",
+          "sidebarItem5Label"
+        ]
+      },
+      {
+        "id": "sidebarItem5Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/4/menuIcon"
+          },
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem5Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": {
+            "path": "/menuItems/4/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarItem6",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/50",
+          "title": {
+            "path": "/menuItems/5/menuItemLabel"
+          }
+        },
+        "children": [
+          "sidebarItem6Icon",
+          "sidebarItem6Label"
+        ]
+      },
+      {
+        "id": "sidebarItem6Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/menuItems/5/menuIcon"
+          },
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarItem6Label",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": {
+            "path": "/menuItems/5/menuItemLabel"
+          }
+        }
+      },
+      {
+        "id": "sidebarActionArea",
+        "component": "div",
+        "props": {
+          "className": "px-4 pb-6 pt-4"
+        },
+        "children": [
+          "sidebarActionBtn"
+        ]
+      },
+      {
+        "id": "sidebarActionBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/quickActionButtonLabel"
+          },
+          "color": "primary",
+          "className": "w-full",
+          "size": "large"
+        }
+      },
+      {
+        "id": "mainSection",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col overflow-hidden min-w-0"
+        },
+        "children": [
+          "topHeaderBar",
+          "contentArea"
+        ]
+      },
+      {
+        "id": "topHeaderBar",
+        "component": "div",
+        "props": {
+          "className": "h-16 bg-surface-container-highest shadow-card flex items-center justify-between px-6 shrink-0 z-10"
+        },
+        "children": [
+          "headerSearchInput",
+          "headerRightArea"
+        ]
+      },
+      {
+        "id": "headerSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/searchValue"
+          },
+          "placeholder": {
+            "path": "/searchPlaceholder"
+          },
+          "prefix": "search",
+          "className": "w-80"
+        }
+      },
+      {
+        "id": "headerRightArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-5"
+        },
+        "children": [
+          "headerNotifWrap",
+          "headerHelpWrap",
+          "headerSettingsWrap",
+          "headerDivider",
+          "headerUserArea"
+        ]
+      },
+      {
+        "id": "headerNotifWrap",
+        "component": "div",
+        "props": {
+          "className": "relative",
+          "title": {
+            "path": "/headerActions/0/actionName"
+          }
+        },
+        "children": [
+          "headerNotifIcon",
+          "headerNotifBadge"
+        ]
+      },
+      {
+        "id": "headerNotifIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/headerActions/0/actionIcon"
+          },
+          "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+        }
+      },
+      {
+        "id": "headerNotifBadge",
+        "component": "span",
+        "props": {
+          "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold leading-none",
+          "value": {
+            "path": "/headerActions/0/badgeCount"
+          }
+        }
+      },
+      {
+        "id": "headerHelpWrap",
+        "component": "div",
+        "props": {
+          "className": "cursor-pointer",
+          "title": {
+            "path": "/headerActions/1/actionName"
+          }
+        },
+        "children": [
+          "headerHelpIcon"
+        ]
+      },
+      {
+        "id": "headerHelpIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/headerActions/1/actionIcon"
+          },
+          "className": "w-5 h-5 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerSettingsWrap",
+        "component": "div",
+        "props": {
+          "className": "cursor-pointer",
+          "title": {
+            "path": "/headerActions/2/actionName"
+          }
+        },
+        "children": [
+          "headerSettingsIcon"
+        ]
+      },
+      {
+        "id": "headerSettingsIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/headerActions/2/actionIcon"
+          },
+          "className": "w-5 h-5 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerDivider",
+        "component": "Divider",
+        "props": {
+          "orientation": "vertical",
+          "className": "h-8"
+        }
+      },
+      {
+        "id": "headerUserArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "headerUserAvatar",
+          "headerUserInfo"
+        ]
+      },
+      {
+        "id": "headerUserAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/userInfo/userAvatarImage"
+          },
+          "alt": "User Avatar",
+          "className": "w-9 h-9 rounded-full object-cover"
+        }
+      },
+      {
+        "id": "headerUserInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "headerUserName",
+          "headerUserRole"
+        ]
+      },
+      {
+        "id": "headerUserName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": {
+            "path": "/userInfo/userName"
+          }
+        }
+      },
+      {
+        "id": "headerUserRole",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "/userInfo/userRole"
+          }
+        }
+      },
+      {
+        "id": "contentArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+        },
+        "children": [
+          "kpiSection",
+          "tableSection",
+          "insightsSection",
+          "footerSection"
+        ]
+      },
+      {
+        "id": "kpiSection",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-4 gap-6"
+        },
+        "children": {
+          "path": "/kpiCards",
+          "componentId": "kpiCard"
+        }
+      },
+      {
+        "id": "kpiCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-5 flex flex-col"
+        },
+        "children": [
+          "kpiCardHeader",
+          "kpiCardBody",
+          "kpiCardDesc"
+        ]
+      },
+      {
+        "id": "kpiCardHeader",
+        "component": "div",
+        "props": {
+          "className": "flex justify-between items-start mb-4"
+        },
+        "children": [
+          "kpiCardTitle",
+          "kpiCardHighlight"
+        ]
+      },
+      {
+        "id": "kpiCardTitle",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant font-medium",
+          "value": {
+            "path": "cardTitle"
+          }
+        }
+      },
+      {
+        "id": "kpiCardHighlight",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "rightHighlight"
+          },
+          "color": {
+            "path": "highlightColor"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "kpiCardBody",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mb-3"
+        },
+        "children": [
+          "kpiCardValue",
+          "kpiCardTrendIcon"
+        ]
+      },
+      {
+        "id": "kpiCardValue",
+        "component": "span",
+        "props": {
+          "className": "text-3xl font-bold text-on-surface",
+          "value": {
+            "path": "coreValue"
+          }
+        }
+      },
+      {
+        "id": "kpiCardTrendIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "trendIcon"
+          },
+          "color": {
+            "path": "trendColor"
+          },
+          "shape": "circle",
+          "className": "w-8 h-8 ml-auto"
+        }
+      },
+      {
+        "id": "kpiCardDesc",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "leftDescription"
+          }
+        }
+      },
+      {
+        "id": "tableSection",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+        },
+        "children": [
+          "tableCardHeader",
+          "tableFiltersRow",
+          "tableToolbarRow",
+          "mainTable"
+        ]
+      },
+      {
+        "id": "tableCardHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-6 py-4 border-b border-divider"
+        },
+        "children": [
+          "tableCardTitle",
+          "tableTabBar"
+        ]
+      },
+      {
+        "id": "tableCardTitle",
+        "component": "span",
+        "props": {
+          "className": "text-xl font-bold text-on-surface",
+          "value": {
+            "path": "/tableCardTitle"
+          }
+        }
+      },
+      {
+        "id": "tableTabBar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 bg-surface-variant rounded-lg p-1"
+        },
+        "children": [
+          "tableTabAR",
+          "tableTabAP"
+        ]
+      },
+      {
+        "id": "tableTabAR",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 px-4 py-2 bg-surface-container-highest shadow-sm rounded-lg"
+        },
+        "children": [
+          "tableTabARLabel",
+          "tableTabARCount"
+        ]
+      },
+      {
+        "id": "tableTabARLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-primary",
+          "value": {
+            "path": "/tableTabs/0/tabName"
+          }
+        }
+      },
+      {
+        "id": "tableTabARCount",
+        "component": "span",
+        "props": {
+          "className": "text-xs bg-primary-container text-primary px-2 py-0.5 rounded-full font-medium",
+          "value": {
+            "path": "/tableTabs/0/count"
+          }
+        }
+      },
+      {
+        "id": "tableTabAP",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 px-4 py-2 rounded-lg"
+        },
+        "children": [
+          "tableTabAPLabel",
+          "tableTabAPCount"
+        ]
+      },
+      {
+        "id": "tableTabAPLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant",
+          "value": {
+            "path": "/tableTabs/1/tabName"
+          }
+        }
+      },
+      {
+        "id": "tableTabAPCount",
+        "component": "span",
+        "props": {
+          "className": "text-xs bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full",
+          "value": {
+            "path": "/tableTabs/1/count"
+          }
+        }
+      },
+      {
+        "id": "tableFiltersRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-6 py-3 border-b border-divider"
+        },
+        "children": [
+          "tableStatusSelect",
+          "tableDateSelect"
+        ]
+      },
+      {
+        "id": "tableStatusSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/selectedStatus"
+          },
+          "options": {
+            "path": "/statusFilterOptions"
+          },
+          "className": "w-44"
+        }
+      },
+      {
+        "id": "tableDateSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/selectedDate"
+          },
+          "options": {
+            "path": "/dateFilterOptions"
+          },
+          "className": "w-44"
+        }
+      },
+      {
+        "id": "tableToolbarRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-6 py-2.5 border-b border-divider"
+        },
+        "children": [
+          "tableToolbarLeft",
+          "tableToolbarSummary"
+        ]
+      },
+      {
+        "id": "tableToolbarLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "tableMatchBtn",
+          "tableExportBtn"
+        ]
+      },
+      {
+        "id": "tableMatchBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/toolBar/leftActions/0/actionLabel"
+          },
+          "icon": {
+            "path": "/toolBar/leftActions/0/actionIcon"
+          },
+          "iconPlacement": "start",
+          "size": "small"
+        }
+      },
+      {
+        "id": "tableExportBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/toolBar/leftActions/1/actionLabel"
+          },
+          "icon": {
+            "path": "/toolBar/leftActions/1/actionIcon"
+          },
+          "iconPlacement": "start",
+          "size": "small"
+        }
+      },
+      {
+        "id": "tableToolbarSummary",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "/toolBar/rightSummary"
+          }
+        }
+      },
+      {
+        "id": "mainTable",
+        "component": "Table",
+        "props": {
+          "rowKey": "id",
+          "dataSource": {
+            "path": "/tableRows"
+          },
+          "rowSelection": {
+            "type": "checkbox",
+            "selectedRowKeys": {
+              "path": "/selectedKeys"
+            }
+          },
+          "columns": [
+            {
+              "title": "INVOICE ID",
+              "dataIndex": "invoiceId"
+            },
+            {
+              "title": "CUSTOMER / VENDOR",
+              "dataIndex": "entityName"
+            },
+            {
+              "title": "ISSUE DATE",
+              "dataIndex": "issueDate"
+            },
+            {
+              "title": "DUE DATE",
+              "dataIndex": "dueDate"
+            },
+            {
+              "title": "STATUS",
+              "dataIndex": "statusTag",
+              "width": 120
+            },
+            {
+              "title": "REMAINING",
+              "dataIndex": "remainingAmount",
+              "align": "right"
+            },
+            {
+              "title": "ACTIONS",
+              "dataIndex": "actionIcon",
+              "width": 80,
+              "align": "center"
+            }
+          ],
+          "className": "mb-4"
+        },
+        "children": {
+          "path": "/tableRows",
+          "componentId": "tableRowTemplate"
+        }
+      },
+      {
+        "id": "tableRowTemplate",
+        "component": "TableRow",
+        "children": [
+          "tableInvoiceIdCell",
+          "tableEntityCell",
+          "tableIssueDateCell",
+          "tableDueDateCell",
+          "tableStatusCell",
+          "tableRemainingCell",
+          "tableActionCell"
+        ]
+      },
+      {
+        "id": "tableInvoiceIdCell",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5"
+        },
+        "children": [
+          "tableInvoiceIdText",
+          "tableOverdueText"
+        ]
+      },
+      {
+        "id": "tableInvoiceIdText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-on-surface",
+          "value": {
+            "path": "invoiceId"
+          }
+        }
+      },
+      {
+        "id": "tableOverdueText",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "overdueText"
+          }
+        }
+      },
+      {
+        "id": "tableEntityCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface",
+          "value": {
+            "path": "entityName"
+          }
+        }
+      },
+      {
+        "id": "tableIssueDateCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant",
+          "value": {
+            "path": "issueDate"
+          }
+        }
+      },
+      {
+        "id": "tableDueDateCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant",
+          "value": {
+            "path": "dueDate"
+          }
+        }
+      },
+      {
+        "id": "tableStatusCell",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "statusTag"
+          },
+          "color": {
+            "path": "statusColor"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "tableRemainingCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": {
+            "path": "remainingAmount"
+          }
+        }
+      },
+      {
+        "id": "tableActionCell",
+        "component": "Button",
+        "props": {
+          "icon": {
+            "path": "actionIcon"
+          },
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "insightsSection",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-5 gap-6"
+        },
+        "children": [
+          "insightsLeftCard",
+          "insightsRightCard"
+        ]
+      },
+      {
+        "id": "insightsLeftCard",
+        "component": "div",
+        "props": {
+          "className": "col-span-3 bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col gap-4"
+        },
+        "children": [
+          "insightsLeftHeader",
+          "insightsPara1",
+          "insightsPara2",
+          "insightsLeftAction"
+        ]
+      },
+      {
+        "id": "insightsLeftHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mb-1"
+        },
+        "children": [
+          "insightsLeftIcon",
+          "insightsLeftTitle"
+        ]
+      },
+      {
+        "id": "insightsLeftIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/leftCard/insightIcon"
+          },
+          "color": "warning",
+          "shape": "fill",
+          "className": "w-6 h-6"
+        }
+      },
+      {
+        "id": "insightsLeftTitle",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-on-surface",
+          "value": {
+            "path": "/leftCard/cardTitle"
+          }
+        }
+      },
+      {
+        "id": "insightsPara1",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant leading-relaxed",
+          "value": {
+            "path": "/leftCard/descriptionParagraphs/0"
+          }
+        }
+      },
+      {
+        "id": "insightsPara2",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant leading-relaxed",
+          "value": {
+            "path": "/leftCard/descriptionParagraphs/1"
+          }
+        }
+      },
+      {
+        "id": "insightsLeftAction",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mt-2 cursor-pointer"
+        },
+        "children": [
+          "insightsLeftActionText",
+          "insightsLeftActionArrow"
+        ]
+      },
+      {
+        "id": "insightsLeftActionText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-primary",
+          "value": {
+            "path": "/leftCard/actionLink/linkText"
+          }
+        }
+      },
+      {
+        "id": "insightsLeftActionArrow",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/leftCard/actionLink/linkIcon"
+          },
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "insightsRightCard",
+        "component": "div",
+        "props": {
+          "className": "col-span-2 bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col gap-4"
+        },
+        "children": [
+          "insightsRightHeader",
+          "insightsRightList"
+        ]
+      },
+      {
+        "id": "insightsRightHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mb-1"
+        },
+        "children": [
+          "insightsRightIcon",
+          "insightsRightTitle"
+        ]
+      },
+      {
+        "id": "insightsRightIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/rightCard/upcomingIcon"
+          },
+          "color": "primary",
+          "shape": "fill",
+          "className": "w-6 h-6"
+        }
+      },
+      {
+        "id": "insightsRightTitle",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-on-surface",
+          "value": {
+            "path": "/rightCard/cardTitle"
+          }
+        }
+      },
+      {
+        "id": "insightsRightList",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": {
+          "path": "/rightCard/payableItems",
+          "componentId": "insightsPayableItem"
+        }
+      },
+      {
+        "id": "insightsPayableItem",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between py-3 border-b border-divider last:border-b-0"
+        },
+        "children": [
+          "payableItemLeft",
+          "payableItemRight"
+        ]
+      },
+      {
+        "id": "payableItemLeft",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5"
+        },
+        "children": [
+          "payableVendorName",
+          "payableDueDate"
+        ]
+      },
+      {
+        "id": "payableVendorName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-on-surface",
+          "value": {
+            "path": "vendorName"
+          }
+        }
+      },
+      {
+        "id": "payableDueDate",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "dueDate"
+          }
+        }
+      },
+      {
+        "id": "payableItemRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "payableAmount",
+          "payableStatusTag"
+        ]
+      },
+      {
+        "id": "payableAmount",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": {
+            "path": "amountDue"
+          }
+        }
+      },
+      {
+        "id": "payableStatusTag",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "statusTag"
+          },
+          "color": {
+            "path": "tagColorName"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "footerSection",
+        "component": "div",
+        "props": {
+          "className": "py-6 text-center"
+        },
+        "children": [
+          "footerText"
+        ]
+      },
+      {
+        "id": "footerText",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "/copyrightText"
+          }
+        }
+      }
+    ]
+  }

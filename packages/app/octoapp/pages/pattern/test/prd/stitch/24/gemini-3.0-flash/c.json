@@ -1,0 +1,1076 @@
+{
+    "state": {
+        "brand": {
+            "logoImage": "https://picsum.photos/seed/nexus-logo/200/200",
+            "projectName": "Nexus ERP"
+        },
+        "menuGroups": [
+            {
+                "label": "仪表盘",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "供应商名录",
+                "icon": "book-open",
+                "isActive": true
+            },
+            {
+                "label": "资质管理",
+                "icon": "shield-check",
+                "isActive": false
+            },
+            {
+                "label": "绩效评估",
+                "icon": "bar-chart-3",
+                "isActive": false
+            },
+            {
+                "label": "审计日志",
+                "icon": "history",
+                "isActive": false
+            }
+        ],
+        "footerTools": [
+            {
+                "label": "系统设置",
+                "icon": "settings"
+            },
+            {
+                "label": "技术支持",
+                "icon": "life-buoy"
+            }
+        ],
+        "searchPlaceholder": "搜索供应商或文件...",
+        "notifications": {
+            "unreadCount": 5,
+            "icon": "bell"
+        },
+        "currentUser": {
+            "nickName": "SCM_ADMIN",
+            "role": "高级管理员",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "header": {
+            "title": "供应商库 (Supplier Directory)",
+            "statsText": "当前管理 248 家活跃供应商",
+            "addActionLabel": "新增供应商",
+            "addActionIcon": "plus"
+        },
+        "supplierList": [
+            {
+                "id": "S001",
+                "companyName": "Global Tech Logistics",
+                "category": "物流服务",
+                "status": "有效",
+                "statusType": "success",
+                "score": 94
+            },
+            {
+                "id": "S002",
+                "companyName": "Eco-Wrap Packaging",
+                "category": "包装材料",
+                "status": "已过期",
+                "statusType": "error",
+                "score": 56
+            },
+            {
+                "id": "S003",
+                "companyName": "Fast-Track Electronics",
+                "category": "电子元器件",
+                "status": "审核中",
+                "statusType": "warning",
+                "score": 82
+            },
+            {
+                "id": "S004",
+                "companyName": "Nordic Steel Group",
+                "category": "原材料",
+                "status": "有效",
+                "statusType": "success",
+                "score": 88
+            },
+            {
+                "id": "S005",
+                "companyName": "Apex Chemical Co.",
+                "category": "化工品",
+                "status": "待更新",
+                "statusType": "warning",
+                "score": 74
+            },
+            {
+                "id": "S006",
+                "companyName": "Smart Solutions Inc.",
+                "category": "IT服务",
+                "status": "有效",
+                "statusType": "success",
+                "score": 91
+            },
+            {
+                "id": "S007",
+                "companyName": "Green Energy Ltd.",
+                "category": "能源",
+                "status": "有效",
+                "statusType": "success",
+                "score": 85
+            },
+            {
+                "id": "S008",
+                "companyName": "Precision Tools Corp",
+                "category": "机械加工",
+                "status": "已过期",
+                "statusType": "error",
+                "score": 42
+            },
+            {
+                "id": "S009",
+                "companyName": "Global Freight Ltd.",
+                "category": "物流服务",
+                "status": "有效",
+                "statusType": "success",
+                "score": 79
+            },
+            {
+                "id": "S010",
+                "companyName": "Bio-Safe Labs",
+                "category": "医疗器械",
+                "status": "有效",
+                "statusType": "success",
+                "score": 96
+            }
+        ],
+        "profile": {
+            "avatarImage": "https://picsum.photos/seed/company-logo/200/200",
+            "companyName": "Global Tech Logistics",
+            "creditCode": "91310115MA1K2L3P4X",
+            "ratingValue": 4.8,
+            "maxRating": 5,
+            "primaryContact": "张伟 (Li Zhang)",
+            "region": "华东地区 / 上海市"
+        },
+        "documents": [
+            {
+                "fileName": "营业执照副本.pdf",
+                "fileTypeIcon": "file-text",
+                "expiryDate": "2026-12-31",
+                "isUrgent": false
+            },
+            {
+                "fileName": "道路运输经营许可证.jpg",
+                "fileTypeIcon": "file-image",
+                "expiryDate": "2024-05-15",
+                "isUrgent": true
+            },
+            {
+                "fileName": "ISO9001质量认证.pdf",
+                "fileTypeIcon": "shield-check",
+                "expiryDate": "2025-08-20",
+                "isUrgent": false
+            },
+            {
+                "fileName": "安全生产许可证.pdf",
+                "fileTypeIcon": "file-lock",
+                "expiryDate": "2024-11-10",
+                "isUrgent": false
+            }
+        ],
+        "matrix": [
+            {
+                "dimension": "质量",
+                "y2023": 96,
+                "y2022": 94,
+                "y2021": 92
+            },
+            {
+                "dimension": "交付",
+                "y2023": 92,
+                "y2022": 88,
+                "y2021": 85
+            },
+            {
+                "dimension": "价格",
+                "y2023": 85,
+                "y2022": 82,
+                "y2021": 80
+            }
+        ],
+        "overallPerformance": {
+            "currentScore": 91,
+            "improvementRate": "+2.4%",
+            "comparisonText": "自去年起",
+            "progressValue": 91,
+            "trendIcon": "trending-up"
+        }
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogoSection",
+                "sidebarMenuSection",
+                "sidebarFooterSection"
+            ]
+        },
+        {
+            "id": "sidebarLogoSection",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "sidebarLogoImg",
+                "sidebarProjectName"
+            ]
+        },
+        {
+            "id": "sidebarLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/brand/logoImage"
+                },
+                "className": "w-8 h-8 rounded-lg"
+            }
+        },
+        {
+            "id": "sidebarProjectName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/projectName"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "sidebarMenuSection",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1 overflow-y-auto"
+            },
+            "children": {
+                "path": "/menuGroups",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary-container transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarFooterSection",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/footerTools",
+                "componentId": "sidebarFooterItem"
+            }
+        },
+        {
+            "id": "sidebarFooterItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-variant transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarFooterIcon",
+                "sidebarFooterLabel"
+            ]
+        },
+        {
+            "id": "sidebarFooterIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarFooterLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topBar",
+                "contentContainer"
+            ]
+        },
+        {
+            "id": "topBar",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-8"
+            },
+            "children": [
+                "topBarSearch",
+                "topBarActions"
+            ]
+        },
+        {
+            "id": "topBarSearch",
+            "component": "div",
+            "props": {
+                "className": "w-96"
+            },
+            "children": [
+                "topBarSearchInput"
+            ]
+        },
+        {
+            "id": "topBarSearchInput",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "bg-surface-variant border-none"
+            }
+        },
+        {
+            "id": "topBarActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "topBarNotice",
+                "topBarHelp",
+                "topBarUser"
+            ]
+        },
+        {
+            "id": "topBarNotice",
+            "component": "div",
+            "props": {
+                "className": "relative"
+            },
+            "children": [
+                "topBarNoticeIcon"
+            ]
+        },
+        {
+            "id": "topBarNoticeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "topBarHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "topBarUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 pl-4 border-l border-divider"
+            },
+            "children": [
+                "topBarUserAvatar",
+                "topBarUserInfo"
+            ]
+        },
+        {
+            "id": "topBarUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "topBarUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "topBarUserName",
+                "topBarUserRole"
+            ]
+        },
+        {
+            "id": "topBarUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/nickName"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "topBarUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentContainer",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex overflow-hidden p-6 gap-6"
+            },
+            "children": [
+                "directoryModule",
+                "profileSidebar"
+            ]
+        },
+        {
+            "id": "directoryModule",
+            "component": "section",
+            "props": {
+                "className": "flex-[7] flex flex-col gap-6 overflow-hidden"
+            },
+            "children": [
+                "directoryHeader",
+                "directoryTableCard"
+            ]
+        },
+        {
+            "id": "directoryHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "directoryTitleGroup",
+                "directoryAddBtn"
+            ]
+        },
+        {
+            "id": "directoryTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "directoryTitle",
+                "directoryStats"
+            ]
+        },
+        {
+            "id": "directoryTitle",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/header/title"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "directoryStats",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/header/statsText"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "directoryAddBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/header/addActionLabel"
+                },
+                "icon": "plus",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "directoryTableCard",
+            "component": "div",
+            "props": {
+                "className": "flex-1 bg-surface-container-highest rounded-xl shadow-card overflow-hidden flex flex-col"
+            },
+            "children": [
+                "directoryTable"
+            ]
+        },
+        {
+            "id": "directoryTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/supplierList"
+                },
+                "columns": [
+                    {
+                        "title": "供应商名称",
+                        "dataIndex": "companyName"
+                    },
+                    {
+                        "title": "类别",
+                        "dataIndex": "category"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "综合评分",
+                        "dataIndex": "score",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/supplierList",
+                "componentId": "directoryTableRow"
+            }
+        },
+        {
+            "id": "directoryTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellCompany",
+                "cellCategory",
+                "cellStatus",
+                "cellScore",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellCompany",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "companyName"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellCategory",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "category"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "font-bold text-primary"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "profileSidebar",
+            "component": "section",
+            "props": {
+                "className": "flex-[3] flex flex-col gap-6 overflow-y-auto"
+            },
+            "children": [
+                "profileOverviewCard",
+                "qualificationCard",
+                "performanceCard"
+            ]
+        },
+        {
+            "id": "profileOverviewCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card flex flex-col items-center text-center"
+            },
+            "children": [
+                "profileAvatar",
+                "profileName",
+                "profileCredit",
+                "profileRating",
+                "profileDivider",
+                "profileContactGrid"
+            ]
+        },
+        {
+            "id": "profileAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/profile/avatarImage"
+                },
+                "className": "w-20 h-20 rounded-xl mb-4 shadow-sm"
+            }
+        },
+        {
+            "id": "profileName",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/profile/companyName"
+                },
+                "className": "text-lg font-bold mb-1"
+            }
+        },
+        {
+            "id": "profileCredit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/profile/creditCode"
+                },
+                "className": "text-xs text-on-surface-variant mb-3"
+            }
+        },
+        {
+            "id": "profileRating",
+            "component": "Rate",
+            "props": {
+                "value": {
+                    "path": "/profile/ratingValue"
+                },
+                "count": {
+                    "path": "/profile/maxRating"
+                },
+                "disabled": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "profileDivider",
+            "component": "Divider",
+            "props": {
+                "className": "my-4"
+            }
+        },
+        {
+            "id": "profileContactGrid",
+            "component": "div",
+            "props": {
+                "className": "w-full grid grid-cols-1 gap-3 text-left"
+            },
+            "children": [
+                "profileContactRow",
+                "profileRegionRow"
+            ]
+        },
+        {
+            "id": "profileContactRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "profileContactIcon",
+                "profileContactText"
+            ]
+        },
+        {
+            "id": "profileContactIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "profileContactText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/profile/primaryContact"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "profileRegionRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "profileRegionIcon",
+                "profileRegionText"
+            ]
+        },
+        {
+            "id": "profileRegionIcon",
+            "component": "Icon",
+            "props": {
+                "name": "map-pin",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "profileRegionText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/profile/region"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "qualificationCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "qualificationTitle",
+                "qualificationList"
+            ]
+        },
+        {
+            "id": "qualificationTitle",
+            "component": "h4",
+            "props": {
+                "value": "资质文件",
+                "className": "text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4"
+            }
+        },
+        {
+            "id": "qualificationList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/documents",
+                "componentId": "qualificationItem"
+            }
+        },
+        {
+            "id": "qualificationItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-3 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "qualifInfo",
+                "qualifDate"
+            ]
+        },
+        {
+            "id": "qualifInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "qualifIcon",
+                "qualifName"
+            ]
+        },
+        {
+            "id": "qualifIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "fileTypeIcon"
+                },
+                "className": "w-5 h-5 text-primary"
+            }
+        },
+        {
+            "id": "qualifName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "fileName"
+                },
+                "className": "text-sm font-medium truncate w-32"
+            }
+        },
+        {
+            "id": "qualifDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "expiryDate"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "performanceCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "performanceTitle",
+                "performanceTable",
+                "performanceFooter"
+            ]
+        },
+        {
+            "id": "performanceTitle",
+            "component": "h4",
+            "props": {
+                "value": "年度绩效矩阵",
+                "className": "text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4"
+            }
+        },
+        {
+            "id": "performanceTable",
+            "component": "Table",
+            "props": {
+                "pagination": false,
+                "dataSource": {
+                    "path": "/matrix"
+                },
+                "rowKey": "dimension",
+                "columns": [
+                    {
+                        "title": "维度",
+                        "dataIndex": "dimension"
+                    },
+                    {
+                        "title": "2023",
+                        "dataIndex": "y2023"
+                    },
+                    {
+                        "title": "2022",
+                        "dataIndex": "y2022"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/matrix",
+                "componentId": "performanceRow"
+            }
+        },
+        {
+            "id": "performanceRow",
+            "component": "TableRow",
+            "children": [
+                "perfDim",
+                "perf2023",
+                "perf2022"
+            ]
+        },
+        {
+            "id": "perfDim",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dimension"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "perf2023",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "y2023"
+                },
+                "className": "text-xs font-bold text-success"
+            }
+        },
+        {
+            "id": "perf2022",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "y2022"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "performanceFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-4 pt-4 border-t border-divider"
+            },
+            "children": [
+                "perfProgressLabel",
+                "perfProgress",
+                "perfTrend"
+            ]
+        },
+        {
+            "id": "perfProgressLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between mb-2"
+            },
+            "children": [
+                "perfProgressText",
+                "perfProgressValue"
+            ]
+        },
+        {
+            "id": "perfProgressText",
+            "component": "span",
+            "props": {
+                "value": "综合得分",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "perfProgressValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/overallPerformance/currentScore"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "perfProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "/overallPerformance/progressValue"
+                },
+                "showInfo": false,
+                "strokeColor": "#0067D1"
+            }
+        },
+        {
+            "id": "perfTrend",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mt-2"
+            },
+            "children": [
+                "perfTrendIcon",
+                "perfTrendRate",
+                "perfTrendText"
+            ]
+        },
+        {
+            "id": "perfTrendIcon",
+            "component": "Icon",
+            "props": {
+                "name": "trending-up",
+                "className": "w-4 h-4 text-success"
+            }
+        },
+        {
+            "id": "perfTrendRate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/overallPerformance/improvementRate"
+                },
+                "className": "text-sm font-bold text-success"
+            }
+        },
+        {
+            "id": "perfTrendText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/overallPerformance/comparisonText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        }
+    ]
+}

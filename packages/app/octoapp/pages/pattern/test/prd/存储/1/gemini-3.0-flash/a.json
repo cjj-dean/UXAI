@@ -1,0 +1,1220 @@
+{
+  "state": {
+    "snSelectedKeys": [
+      "dev"
+    ],
+    "snOpenKeys": [
+      "storage"
+    ],
+    "snMenuItems": [
+      {
+        "title": "存储",
+        "key": "storage",
+        "icon": "database",
+        "children": [
+          {
+            "title": "存储设备",
+            "key": "dev"
+          },
+          {
+            "title": "命名空间",
+            "key": "ns"
+          },
+          {
+            "title": "文件系统",
+            "key": "fs"
+          },
+          {
+            "title": "Dtree",
+            "key": "dtree"
+          },
+          {
+            "title": "共享",
+            "key": "share"
+          }
+        ]
+      },
+      {
+        "title": "机柜",
+        "key": "cabinet",
+        "icon": "layers"
+      }
+    ],
+    "thActions": [
+      {
+        "id": "search",
+        "actionIcon": "search",
+        "hasBadge": false
+      },
+      {
+        "id": "notify",
+        "actionIcon": "bell",
+        "hasBadge": true
+      },
+      {
+        "id": "help",
+        "actionIcon": "help-circle",
+        "hasBadge": false
+      },
+      {
+        "id": "doc",
+        "actionIcon": "file-text",
+        "hasBadge": false
+      }
+    ],
+    "thUser": {
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userName": "Admin"
+    },
+    "dbBackIcon": "arrow-left",
+    "dbDeviceName": "A800_01",
+    "dbSwitchIcon": "chevron-down",
+    "dbDeviceList": [
+      {
+        "label": "A800_01 (当前)",
+        "key": "A800_01",
+        "icon": "hard-drive"
+      },
+      {
+        "label": "A800_02",
+        "key": "A800_02",
+        "icon": "hard-drive"
+      },
+      {
+        "label": "V5_Storage_03",
+        "key": "V5_Storage_03",
+        "icon": "hard-drive"
+      }
+    ],
+    "docCardTitle": "设备概览",
+    "docDeviceTitle": "A800_01",
+    "docDeviceIp": "(100.122.13.24)",
+    "docStatus": {
+      "text": "正常",
+      "type": "success"
+    },
+    "docAttributes": [
+      {
+        "label": "序列号",
+        "value": "2102350CDS10DM000001"
+      },
+      {
+        "label": "型号",
+        "value": "OceanStor A800"
+      },
+      {
+        "label": "版本",
+        "value": "1.0.0"
+      },
+      {
+        "label": "厂商",
+        "value": "Huawei"
+      }
+    ],
+    "docMoreMenu": [
+      {
+        "label": "重启设备",
+        "key": "reboot",
+        "icon": "refresh-cw"
+      },
+      {
+        "label": "下线",
+        "key": "offline",
+        "icon": "power"
+      }
+    ],
+    "dmtPrimaryActive": "system",
+    "dmtSecondaryActive": "tenant",
+    "dmtPrimaryTabs": [
+      {
+        "key": "overview",
+        "label": "概览"
+      },
+      {
+        "key": "fileService",
+        "label": "文件服务"
+      },
+      {
+        "key": "hardware",
+        "label": "硬件"
+      },
+      {
+        "key": "system",
+        "label": "系统"
+      },
+      {
+        "key": "config",
+        "label": "配置"
+      }
+    ],
+    "dmtSecondaryTabs": [
+      {
+        "key": "zone",
+        "label": "Zone"
+      },
+      {
+        "key": "pool",
+        "label": "存储池"
+      },
+      {
+        "key": "tenant",
+        "label": "租户"
+      },
+      {
+        "key": "authUser",
+        "label": "认证用户"
+      },
+      {
+        "key": "admin",
+        "label": "DataTurbo管理员"
+      }
+    ],
+    "dmtTenantData": [
+      {
+        "key": "1",
+        "tenantName": "vStore001",
+        "tenantId": "001",
+        "nodeName": "Node_005",
+        "nodeIp": "10.12.13.11",
+        "nodeType": "HyperScale",
+        "fsCount": 32,
+        "totalCapacity": "12.000GB",
+        "usagePercent": 20,
+        "usageText": "2.400GB / 12.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "80%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "2",
+        "tenantName": "vStore_Backup",
+        "tenantId": "002",
+        "nodeName": "Node_008",
+        "nodeIp": "10.12.13.14",
+        "nodeType": "Standard",
+        "fsCount": 12,
+        "totalCapacity": "50.000GB",
+        "usagePercent": 65.5,
+        "usageText": "32.750GB / 50.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "90%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "3",
+        "tenantName": "vStore_Dev",
+        "tenantId": "003",
+        "nodeName": "Node_002",
+        "nodeIp": "10.12.13.10",
+        "nodeType": "HyperScale",
+        "fsCount": 5,
+        "totalCapacity": "2.000GB",
+        "usagePercent": 10,
+        "usageText": "0.200GB / 2.000GB",
+        "quotaAlert": "未启用",
+        "alertThreshold": "--",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "4",
+        "tenantName": "vStore_Finance",
+        "tenantId": "004",
+        "nodeName": "Node_005",
+        "nodeIp": "10.12.13.11",
+        "nodeType": "HyperScale",
+        "fsCount": 128,
+        "totalCapacity": "500.000GB",
+        "usagePercent": 85,
+        "usageText": "425.000GB / 500.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "80%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "5",
+        "tenantName": "vStore_HR",
+        "tenantId": "005",
+        "nodeName": "Node_009",
+        "nodeIp": "10.12.13.19",
+        "nodeType": "Standard",
+        "fsCount": 15,
+        "totalCapacity": "20.000GB",
+        "usagePercent": 45.2,
+        "usageText": "9.040GB / 20.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "85%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "6",
+        "tenantName": "vStore_Test",
+        "tenantId": "006",
+        "nodeName": "Node_001",
+        "nodeIp": "10.12.13.01",
+        "nodeType": "Standard",
+        "fsCount": 8,
+        "totalCapacity": "10.000GB",
+        "usagePercent": 5,
+        "usageText": "0.500GB / 10.000GB",
+        "quotaAlert": "未启用",
+        "alertThreshold": "--",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "7",
+        "tenantName": "vStore_Log",
+        "tenantId": "007",
+        "nodeName": "Node_005",
+        "nodeIp": "10.12.13.11",
+        "nodeType": "HyperScale",
+        "fsCount": 45,
+        "totalCapacity": "100.000GB",
+        "usagePercent": 92,
+        "usageText": "92.000GB / 100.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "90%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "8",
+        "tenantName": "vStore_Archive",
+        "tenantId": "008",
+        "nodeName": "Node_012",
+        "nodeIp": "10.12.13.22",
+        "nodeType": "Standard",
+        "fsCount": 2,
+        "totalCapacity": "1000.000GB",
+        "usagePercent": 15.5,
+        "usageText": "155.000GB / 1000.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "95%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "9",
+        "tenantName": "vStore_Media",
+        "tenantId": "009",
+        "nodeName": "Node_005",
+        "nodeIp": "10.12.13.11",
+        "nodeType": "HyperScale",
+        "fsCount": 67,
+        "totalCapacity": "250.000GB",
+        "usagePercent": 40,
+        "usageText": "100.000GB / 250.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "80%",
+        "actionIcon": "more-horizontal"
+      },
+      {
+        "key": "10",
+        "tenantName": "vStore_Security",
+        "tenantId": "010",
+        "nodeName": "Node_015",
+        "nodeIp": "10.12.13.25",
+        "nodeType": "Standard",
+        "fsCount": 24,
+        "totalCapacity": "40.000GB",
+        "usagePercent": 55,
+        "usageText": "22.000GB / 40.000GB",
+        "quotaAlert": "已启用",
+        "alertThreshold": "80%",
+        "actionIcon": "more-horizontal"
+      }
+    ],
+    "dmtSelectedRows": [
+      "1"
+    ]
+  },
+  "rootId": "mainAppShell",
+  "elements": [
+    {
+      "id": "mainAppShell",
+      "component": "div",
+      "props": {
+        "className": "flex min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "sideNavContainer",
+        "mainContentWrapper"
+      ]
+    },
+    {
+      "id": "sideNavContainer",
+      "component": "aside",
+      "props": {
+        "className": "w-[15.5rem] bg-surface-container-highest flex flex-col border-r border-divider z-10"
+      },
+      "children": [
+        "snLogoSection",
+        "snMenuSection",
+        "snFooterSection"
+      ]
+    },
+    {
+      "id": "mainContentWrapper",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-hidden"
+      },
+      "children": [
+        "headerToolBar",
+        "scrollableContentArea"
+      ]
+    },
+    {
+      "id": "headerToolBar",
+      "component": "header",
+      "props": {
+        "className": "h-12 bg-surface-container-highest flex items-center justify-end px-inset border-b border-divider"
+      },
+      "children": [
+        "thActionList",
+        "thUserContainer"
+      ]
+    },
+    {
+      "id": "scrollableContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-page flex flex-col gap-section"
+      },
+      "children": [
+        "breadcrumbRow",
+        "overviewCardContainer",
+        "detailTabsContainer"
+      ]
+    },
+    {
+      "id": "breadcrumbRow",
+      "component": "nav",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "dbBackButton",
+        "dbDeviceDropdown"
+      ]
+    },
+    {
+      "id": "overviewCardContainer",
+      "component": "section",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card p-inset flex text-sm font-normal p-0 rounded-none",
+        "style": {
+          "backgroundImage": "url(/uploads/68bbb44030f243d18a8f6c6043def696.png) !important",
+          "backgroundSize": "cover !important"
+        }
+      },
+      "children": [
+        "docLeftSpacer",
+        "docMainContent"
+      ]
+    },
+    {
+      "id": "detailTabsContainer",
+      "component": "section",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex-1"
+      },
+      "children": [
+        "dmtPrimaryTabsWrapper"
+      ]
+    },
+    {
+      "id": "snLogoSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-inset py-gutter h-12 shrink-0"
+      },
+      "children": [
+        "snLogoBrandWrapper",
+        "snCollapseBtn"
+      ]
+    },
+    {
+      "id": "snLogoBrandWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "snLogoIcon",
+        "snBrandName"
+      ]
+    },
+    {
+      "id": "snLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "hard-drive",
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "snBrandName",
+      "component": "span",
+      "props": {
+        "value": "DME",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "snCollapseBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left",
+        "types": "link",
+        "className": "p-0 h-auto text-on-surface-variant hover:text-primary"
+      }
+    },
+    {
+      "id": "snMenuSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto py-stack"
+      },
+      "children": [
+        "snInfraHeader",
+        "snMainMenu"
+      ]
+    },
+    {
+      "id": "snInfraHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline px-inset pb-stack mb-stack border-b border-divider"
+      },
+      "children": [
+        "snInfraIcon",
+        "snInfraLabel"
+      ]
+    },
+    {
+      "id": "snInfraIcon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "snInfraLabel",
+      "component": "span",
+      "props": {
+        "value": "基础设施",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "snMainMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "selectedKeys": {
+          "path": "/snSelectedKeys"
+        },
+        "openKeys": {
+          "path": "/snOpenKeys"
+        },
+        "items": {
+          "path": "/snMenuItems"
+        },
+        "className": "border-none bg-transparent"
+      }
+    },
+    {
+      "id": "snFooterSection",
+      "component": "div",
+      "props": {
+        "className": "p-gutter border-t border-divider flex justify-center"
+      },
+      "children": [
+        "snBottomActionBtn"
+      ]
+    },
+    {
+      "id": "snBottomActionBtn",
+      "component": "Button",
+      "props": {
+        "icon": "panel-left-close",
+        "types": "link",
+        "className": "text-on-surface-variant hover:text-primary"
+      }
+    },
+    {
+      "id": "thActionList",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter mr-gutter"
+      },
+      "children": {
+        "path": "/thActions",
+        "componentId": "thActionItemWrapper"
+      }
+    },
+    {
+      "id": "thActionItemWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity relative"
+      },
+      "children": [
+        "thActionIcon"
+      ]
+    },
+    {
+      "id": "thActionIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "actionIcon"
+        },
+        "className": "w-5 h-5",
+        "color": "#000",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "thUserContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline pl-gutter border-l border-divider h-6"
+      },
+      "children": [
+        "thUserAvatar",
+        "thUserName"
+      ]
+    },
+    {
+      "id": "thUserAvatar",
+      "component": "div",
+      "props": {
+        "className": "w-8 h-8 rounded-full overflow-hidden border border-divider"
+      },
+      "children": [
+        "thUserAvatarImg"
+      ]
+    },
+    {
+      "id": "thUserAvatarImg",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/thUser/avatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-full h-full object-cover"
+      }
+    },
+    {
+      "id": "thUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/thUser/userName"
+        },
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "dbBackButton",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "/dbBackIcon"
+        },
+        "types": "link",
+        "className": "p-0 h-auto text-on-surface-variant hover:text-primary"
+      }
+    },
+    {
+      "id": "dbDeviceDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomLeft",
+        "menu": {
+          "path": "/dbDeviceList"
+        }
+      },
+      "children": [
+        "dbDeviceSelector"
+      ]
+    },
+    {
+      "id": "dbDeviceSelector",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 cursor-pointer group"
+      },
+      "children": [
+        "dbDeviceLabel",
+        "dbSwitchIconNode"
+      ]
+    },
+    {
+      "id": "dbDeviceLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/dbDeviceName"
+        },
+        "className": "text-lg font-semibold text-on-surface group-hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "dbSwitchIconNode",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/dbSwitchIcon"
+        },
+        "className": "w-4 h-4 text-on-surface-variant group-hover:text-primary"
+      }
+    },
+    {
+      "id": "docLeftSpacer",
+      "component": "div",
+      "props": {
+        "className": "shrink-0 text-sm font-normal p-0 rounded-none w-[200px]"
+      }
+    },
+    {
+      "id": "docMainContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-stack"
+      },
+      "children": [
+        "docHeaderRow",
+        "docBodyRow"
+      ]
+    },
+    {
+      "id": "docHeaderRow",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-start"
+      },
+      "children": [
+        "docTitleGroup",
+        "docActionGroup"
+      ]
+    },
+    {
+      "id": "docTitleGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "docPrimaryInfoRow",
+        "docStatusTag"
+      ]
+    },
+    {
+      "id": "docPrimaryInfoRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "docDeviceName",
+        "docDeviceIpText"
+      ]
+    },
+    {
+      "id": "docDeviceName",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-on-surface",
+        "value": {
+          "path": "/docDeviceTitle"
+        }
+      }
+    },
+    {
+      "id": "docDeviceIpText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "/docDeviceIp"
+        }
+      }
+    },
+    {
+      "id": "docStatusTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "/docStatus/text"
+        },
+        "color": {
+          "path": "/docStatus/type"
+        },
+        "variant": "filled",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "docActionGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "docEditBtn",
+        "docSyncBtn",
+        "docExportBtn",
+        "docMoreDropdown"
+      ]
+    },
+    {
+      "id": "docEditBtn",
+      "component": "Button",
+      "props": {
+        "value": "修改",
+        "color": "default"
+      }
+    },
+    {
+      "id": "docSyncBtn",
+      "component": "Button",
+      "props": {
+        "value": "同步",
+        "color": "default"
+      }
+    },
+    {
+      "id": "docExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出数据",
+        "color": "default"
+      }
+    },
+    {
+      "id": "docMoreDropdown",
+      "component": "Dropdown",
+      "props": {
+        "menu": {
+          "path": "/docMoreMenu"
+        },
+        "placement": "bottomRight"
+      },
+      "children": [
+        "docMoreBtn"
+      ]
+    },
+    {
+      "id": "docMoreBtn",
+      "component": "Button",
+      "props": {
+        "value": "更多",
+        "icon": "chevron-down",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "docBodyRow",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-gutter mt-stack"
+      },
+      "children": {
+        "path": "/docAttributes",
+        "componentId": "docAttrBlock"
+      }
+    },
+    {
+      "id": "docAttrBlock",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "docAttrLabel",
+        "docAttrValue"
+      ]
+    },
+    {
+      "id": "docAttrLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "label"
+        }
+      }
+    },
+    {
+      "id": "docAttrValue",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": {
+          "path": "value"
+        }
+      }
+    },
+    {
+      "id": "dmtPrimaryTabsWrapper",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/dmtPrimaryActive"
+        },
+        "size": "large"
+      },
+      "children": {
+        "path": "/dmtPrimaryTabs",
+        "componentId": "dmtPrimaryTabItem"
+      }
+    },
+    {
+      "id": "dmtPrimaryTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "label"
+        },
+        "content": {
+          "componentId": "dmtSecondaryTabsWrapper"
+        }
+      }
+    },
+    {
+      "id": "dmtSecondaryTabsWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack mt-stack"
+      },
+      "children": [
+        "dmtSecondaryTabs",
+        "dmtTableActionToolbar",
+        "dmtTenantTable"
+      ]
+    },
+    {
+      "id": "dmtSecondaryTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/dmtSecondaryActive"
+        },
+        "types": "card",
+        "size": "small"
+      },
+      "children": {
+        "path": "/dmtSecondaryTabs",
+        "componentId": "dmtSecondaryTabItem"
+      }
+    },
+    {
+      "id": "dmtSecondaryTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "label"
+        }
+      }
+    },
+    {
+      "id": "dmtTableActionToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-inline"
+      },
+      "children": [
+        "dmtActionLeft",
+        "dmtActionRight"
+      ]
+    },
+    {
+      "id": "dmtActionLeft",
+      "component": "div",
+      "props": {
+        "className": "flex gap-inline"
+      },
+      "children": [
+        "dmtBtnCreate",
+        "dmtBtnDelete"
+      ]
+    },
+    {
+      "id": "dmtBtnCreate",
+      "component": "Button",
+      "props": {
+        "value": "创建",
+        "icon": "plus",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "dmtBtnDelete",
+      "component": "Button",
+      "props": {
+        "value": "删除",
+        "icon": "trash-2",
+        "color": "danger"
+      }
+    },
+    {
+      "id": "dmtActionRight",
+      "component": "Button",
+      "props": {
+        "icon": "refresh-cw",
+        "types": "default"
+      }
+    },
+    {
+      "id": "dmtTenantTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "key",
+        "dataSource": {
+          "path": "/dmtTenantData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/dmtSelectedRows"
+          }
+        },
+        "columns": [
+          {
+            "title": "名称",
+            "dataIndex": "tenantName",
+            "minWidth": "120px"
+          },
+          {
+            "title": "ID",
+            "dataIndex": "tenantId",
+            "width": "80px"
+          },
+          {
+            "title": "所属集群",
+            "dataIndex": "nodeName",
+            "minWidth": "80px"
+          },
+          {
+            "title": "文件系统数量",
+            "dataIndex": "fsCount",
+            "align": "right"
+          },
+          {
+            "title": "文件系统总容量",
+            "dataIndex": "totalCapacity",
+            "align": "right"
+          },
+          {
+            "title": "NAS容量配额利用率",
+            "dataIndex": "usagePercent",
+            "width": "220px"
+          },
+          {
+            "title": "NAS容量配额告警",
+            "dataIndex": "quotaAlert"
+          },
+          {
+            "title": "NAS容量配额告警阈值",
+            "dataIndex": "alertThreshold",
+            "align": "right"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "fixed": "end",
+            "width": "80px"
+          }
+        ]
+      },
+      "children": {
+        "path": "/dmtTenantData",
+        "componentId": "dmtTenantRow"
+      }
+    },
+    {
+      "id": "dmtTenantRow",
+      "component": "TableRow",
+      "children": [
+        "dmtCellName",
+        "dmtCellId",
+        "dmtCellCluster",
+        "dmtCellFsCount",
+        "dmtCellCapacity",
+        "dmtCellUsage",
+        "dmtCellAlertStatus",
+        "dmtCellThreshold",
+        "dmtCellActions"
+      ]
+    },
+    {
+      "id": "dmtCellName",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-primary",
+        "value": {
+          "path": "tenantName"
+        }
+      }
+    },
+    {
+      "id": "dmtCellId",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "tenantId"
+        }
+      }
+    },
+    {
+      "id": "dmtCellCluster",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between gap-gutter"
+      },
+      "children": [
+        "dmtCellClusterLeft",
+        "dmtCellClusterRight"
+      ]
+    },
+    {
+      "id": "dmtCellClusterLeft",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "dmtCellNodeName",
+        "dmtCellNodeIp"
+      ]
+    },
+    {
+      "id": "dmtCellNodeName",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium",
+        "value": {
+          "path": "nodeName"
+        }
+      }
+    },
+    {
+      "id": "dmtCellNodeIp",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "nodeIp"
+        }
+      }
+    },
+    {
+      "id": "dmtCellClusterRight",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "nodeType"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "dmtCellFsCount",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "fsCount"
+        }
+      }
+    },
+    {
+      "id": "dmtCellCapacity",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "totalCapacity"
+        }
+      }
+    },
+    {
+      "id": "dmtCellUsage",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1 w-full"
+      },
+      "children": [
+        "dmtUsageProgress",
+        "dmtUsageText"
+      ]
+    },
+    {
+      "id": "dmtUsageProgress",
+      "component": "Progress",
+      "props": {
+        "percent": {
+          "path": "usagePercent"
+        },
+        "size": "small",
+        "showInfo": false,
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "dmtUsageText",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "usageText"
+        }
+      }
+    },
+    {
+      "id": "dmtCellAlertStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "quotaAlert"
+        },
+        "color": "success",
+        "variant": "outlined"
+      }
+    },
+    {
+      "id": "dmtCellThreshold",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "alertThreshold"
+        }
+      }
+    },
+    {
+      "id": "dmtCellActions",
+      "component": "Button",
+      "props": {
+        "icon": "more-horizontal",
+        "types": "link"
+      }
+    }
+  ]
+}

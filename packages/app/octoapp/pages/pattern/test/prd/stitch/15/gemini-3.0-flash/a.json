@@ -1,0 +1,839 @@
+{
+    "state": {
+        "navMenu": [
+            {
+                "label": "Market Overview",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Benchmarking",
+                "icon": "bar-chart-3",
+                "isActive": true
+            },
+            {
+                "label": "Trend Analysis",
+                "icon": "trending-up",
+                "isActive": false
+            },
+            {
+                "label": "Intelligence Feed",
+                "icon": "rss",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "name": "Alex Thompson",
+            "role": "Senior Strategy Analyst",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "searchQuery": "",
+        "comparisonTarget": "NexGen Analytics",
+        "comparisonOptions": [
+            {
+                "label": "NexGen Analytics",
+                "value": "NexGen Analytics"
+            },
+            {
+                "label": "DataPulse Pro",
+                "value": "DataPulse Pro"
+            },
+            {
+                "label": "InsightFlow",
+                "value": "InsightFlow"
+            },
+            {
+                "label": "MarketMaster",
+                "value": "MarketMaster"
+            }
+        ],
+        "radarAnalysis": {
+            "IntelEngine (Ours)": {
+                "AI Engine": 95,
+                "Data Coverage": 88,
+                "Real-time Sync": 92,
+                "Usability": 85,
+                "Integration": 90,
+                "Cost Efficiency": 78
+            },
+            "NexGen Analytics": {
+                "AI Engine": 70,
+                "Data Coverage": 95,
+                "Real-time Sync": 65,
+                "Usability": 80,
+                "Integration": 75,
+                "Cost Efficiency": 85
+            }
+        },
+        "winRateData": [
+            {
+                "Month": "Apr",
+                "WinRate": 42
+            },
+            {
+                "Month": "May",
+                "WinRate": 45
+            },
+            {
+                "Month": "Jun",
+                "WinRate": 48
+            },
+            {
+                "Month": "Jul",
+                "WinRate": 52
+            },
+            {
+                "Month": "Aug",
+                "WinRate": 55
+            },
+            {
+                "Month": "Sep",
+                "WinRate": 59
+            }
+        ],
+        "featureComparison": [
+            {
+                "id": "1",
+                "feature": "Real-time Data Streaming",
+                "intel": true,
+                "nexgen": false,
+                "datapulse": true,
+                "insight": false
+            },
+            {
+                "id": "2",
+                "feature": "Custom ML Model Training",
+                "intel": true,
+                "nexgen": true,
+                "datapulse": false,
+                "insight": false
+            },
+            {
+                "id": "3",
+                "feature": "Multi-tenant Architecture",
+                "intel": true,
+                "nexgen": true,
+                "datapulse": true,
+                "insight": true
+            },
+            {
+                "id": "4",
+                "feature": "Predictive Churn Analysis",
+                "intel": true,
+                "nexgen": false,
+                "datapulse": false,
+                "insight": true
+            },
+            {
+                "id": "5",
+                "feature": "Automated Report Generation",
+                "intel": true,
+                "nexgen": true,
+                "datapulse": false,
+                "insight": false
+            },
+            {
+                "id": "6",
+                "feature": "White-label Dashboarding",
+                "intel": true,
+                "nexgen": false,
+                "datapulse": true,
+                "insight": false
+            },
+            {
+                "id": "7",
+                "feature": "Natural Language Querying",
+                "intel": true,
+                "nexgen": false,
+                "datapulse": false,
+                "insight": false
+            },
+            {
+                "id": "8",
+                "feature": "API First Integration",
+                "intel": true,
+                "nexgen": true,
+                "datapulse": true,
+                "insight": true
+            },
+            {
+                "id": "9",
+                "feature": "Offline Data Processing",
+                "intel": false,
+                "nexgen": true,
+                "datapulse": false,
+                "insight": false
+            },
+            {
+                "id": "10",
+                "feature": "Advanced Sentiment Analysis",
+                "intel": true,
+                "nexgen": false,
+                "datapulse": true,
+                "insight": true
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-sm flex flex-col border-r border-divider"
+            },
+            "children": [
+                "navLogoSection",
+                "navMenuSection",
+                "navFooterSection"
+            ]
+        },
+        {
+            "id": "navLogoSection",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "navLogoIcon",
+                "navLogoText"
+            ]
+        },
+        {
+            "id": "navLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "cpu",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "navLogoText",
+            "component": "span",
+            "props": {
+                "value": "IntelEngine",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navMenuSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2"
+            },
+            "children": {
+                "path": "/navMenu",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-action mb-1 cursor-pointer transition-colors"
+            },
+            "children": [
+                "navMenuItemIcon",
+                "navMenuItemLabel"
+            ]
+        },
+        {
+            "id": "navMenuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navMenuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium"
+            }
+        },
+        {
+            "id": "navFooterSection",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "addCompBtn",
+                "userInfoCard"
+            ]
+        },
+        {
+            "id": "addCompBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add Competitor",
+                "icon": "plus-circle",
+                "className": "w-full mb-4",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "userInfoCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-2 bg-surface-variant rounded-container"
+            },
+            "children": [
+                "userAvatar",
+                "userDetails"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-bold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant truncate"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-8 flex items-center justify-between"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "div",
+            "props": {
+                "className": "w-96 flex items-center bg-surface-variant px-3 py-1.5 rounded-full"
+            },
+            "children": [
+                "searchIcon",
+                "searchInput"
+            ]
+        },
+        {
+            "id": "searchIcon",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "searchInput",
+            "component": "span",
+            "props": {
+                "value": "Search intelligence...",
+                "className": "ml-2 text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "bellIcon",
+                "helpIcon",
+                "settingsIcon"
+            ]
+        },
+        {
+            "id": "bellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "settingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8"
+            },
+            "children": [
+                "pageHeader",
+                "analysisGrid",
+                "tableSection"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 mb-8"
+            },
+            "children": [
+                "pageTitle",
+                "targetSelect"
+            ]
+        },
+        {
+            "id": "pageTitle",
+            "component": "h1",
+            "props": {
+                "value": "Competitive Benchmarking",
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "targetSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/comparisonTarget"
+                },
+                "options": {
+                    "path": "/comparisonOptions"
+                },
+                "size": "large",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "analysisGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-6 mb-8"
+            },
+            "children": [
+                "radarCard",
+                "rightStatsCol"
+            ]
+        },
+        {
+            "id": "radarCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-7 bg-surface-container-highest rounded-xl shadow-card p-6"
+            },
+            "children": [
+                "radarTitle",
+                "radarChart"
+            ]
+        },
+        {
+            "id": "radarTitle",
+            "component": "h3",
+            "props": {
+                "value": "Capability Distribution Analysis",
+                "className": "text-lg font-bold mb-6 text-on-surface"
+            }
+        },
+        {
+            "id": "radarChart",
+            "component": "RadarChart",
+            "props": {
+                "option": {
+                    "radarMax": 100,
+                    "data": {
+                        "path": "/radarAnalysis"
+                    },
+                    "color": [
+                        "#0067D1",
+                        "#F4840C"
+                    ]
+                },
+                "className": "h-96 w-full"
+            }
+        },
+        {
+            "id": "rightStatsCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-5 flex flex-col gap-6"
+            },
+            "children": [
+                "edgeCard",
+                "winRateCard"
+            ]
+        },
+        {
+            "id": "edgeCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6"
+            },
+            "children": [
+                "edgeTitle",
+                "edgeList"
+            ]
+        },
+        {
+            "id": "edgeTitle",
+            "component": "h3",
+            "props": {
+                "value": "Key Differentiators",
+                "className": "text-lg font-bold mb-4 text-on-surface"
+            }
+        },
+        {
+            "id": "edgeList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": [
+                "edgeItem1",
+                "edgeItem2"
+            ]
+        },
+        {
+            "id": "edgeItem1",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3 items-start"
+            },
+            "children": [
+                "edgeIcon1",
+                "edgeText1"
+            ]
+        },
+        {
+            "id": "edgeIcon1",
+            "component": "Icon",
+            "props": {
+                "name": "zap",
+                "color": "warning",
+                "shape": "circle",
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "edgeText1",
+            "component": "span",
+            "props": {
+                "value": "Proprietary AI algorithms provide 40% faster insight generation than NexGen.",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "edgeItem2",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3 items-start"
+            },
+            "children": [
+                "edgeIcon2",
+                "edgeText2"
+            ]
+        },
+        {
+            "id": "edgeIcon2",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "success",
+                "shape": "circle",
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "edgeText2",
+            "component": "span",
+            "props": {
+                "value": "Enterprise-grade security with native SOC2 compliance across all regions.",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "winRateCard",
+            "component": "div",
+            "props": {
+                "className": "bg-inverse-surface rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "winRateHeader",
+                "winRateChart"
+            ]
+        },
+        {
+            "id": "winRateHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-4"
+            },
+            "children": [
+                "winRateTitle",
+                "winRateHighlight"
+            ]
+        },
+        {
+            "id": "winRateTitle",
+            "component": "span",
+            "props": {
+                "value": "Win-Rate Performance",
+                "className": "text-sm text-inverse-on-surface-variant block"
+            }
+        },
+        {
+            "id": "winRateHighlight",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2 mt-1"
+            },
+            "children": [
+                "winRateValue",
+                "winRateDesc"
+            ]
+        },
+        {
+            "id": "winRateValue",
+            "component": "span",
+            "props": {
+                "value": "14.2%",
+                "className": "text-3xl font-bold text-success"
+            }
+        },
+        {
+            "id": "winRateDesc",
+            "component": "span",
+            "props": {
+                "value": "Increase vs. NexGen",
+                "className": "text-xs text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "winRateChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/winRateData"
+                    },
+                    "xAxis": {
+                        "data": "Month"
+                    },
+                    "yAxisTitle": "Win Rate %",
+                    "color": [
+                        "#09AA71"
+                    ]
+                },
+                "className": "h-40 w-full"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6"
+            },
+            "children": [
+                "tableHeader",
+                "featureTable"
+            ]
+        },
+        {
+            "id": "tableHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "tableTitle",
+                "exportBtn"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h3",
+            "props": {
+                "value": "Feature Matrix Comparison",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Export PDF",
+                "icon": "file-down",
+                "size": "small"
+            }
+        },
+        {
+            "id": "featureTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/featureComparison"
+                },
+                "columns": [
+                    {
+                        "title": "Feature Set",
+                        "dataIndex": "feature"
+                    },
+                    {
+                        "title": "IntelEngine",
+                        "dataIndex": "intel",
+                        "align": "center"
+                    },
+                    {
+                        "title": "NexGen",
+                        "dataIndex": "nexgen",
+                        "align": "center"
+                    },
+                    {
+                        "title": "DataPulse",
+                        "dataIndex": "datapulse",
+                        "align": "center"
+                    },
+                    {
+                        "title": "InsightFlow",
+                        "dataIndex": "insight",
+                        "align": "center"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/featureComparison",
+                "componentId": "featureTableRow"
+            }
+        },
+        {
+            "id": "featureTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellFeature",
+                "cellIntel",
+                "cellNexgen",
+                "cellDatapulse",
+                "cellInsight"
+            ]
+        },
+        {
+            "id": "cellFeature",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "feature"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellIntel",
+            "component": "Icon",
+            "props": {
+                "name": "check",
+                "color": "success",
+                "className": "w-5 h-5 mx-auto"
+            }
+        },
+        {
+            "id": "cellNexgen",
+            "component": "Icon",
+            "props": {
+                "name": "x",
+                "color": "error",
+                "className": "w-5 h-5 mx-auto"
+            }
+        },
+        {
+            "id": "cellDatapulse",
+            "component": "Icon",
+            "props": {
+                "name": "check",
+                "color": "success",
+                "className": "w-5 h-5 mx-auto"
+            }
+        },
+        {
+            "id": "cellInsight",
+            "component": "Icon",
+            "props": {
+                "name": "x",
+                "color": "error",
+                "className": "w-5 h-5 mx-auto"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1073 @@
+{
+    "state": {
+        "systemName": "HRConnect Pro",
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Team Schedule",
+                "icon": "calendar-days",
+                "isActive": false
+            },
+            {
+                "label": "Attendance",
+                "icon": "user-check",
+                "isActive": false
+            },
+            {
+                "label": "Leave Management",
+                "icon": "plane",
+                "isActive": true
+            },
+            {
+                "label": "Rostering",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "searchVal": "",
+        "metrics": [
+            {
+                "title": "年假余额",
+                "value": "12.5",
+                "total": "20",
+                "unit": "天",
+                "type": "normal",
+                "progress": 62.5
+            },
+            {
+                "title": "病假已用",
+                "value": "3.0",
+                "total": "10",
+                "unit": "天",
+                "type": "exception",
+                "progress": 30
+            },
+            {
+                "title": "事假余额",
+                "value": "5.0",
+                "total": "5",
+                "unit": "天",
+                "type": "success",
+                "progress": 100
+            },
+            {
+                "title": "团队建议",
+                "content": "下周五有关键项目会议，建议控制该时段的调休审批。",
+                "icon": "lightbulb",
+                "type": "info"
+            }
+        ],
+        "requests": [
+            {
+                "id": "REQ001",
+                "employeeName": "李小芳",
+                "type": "年假",
+                "duration": "05/20 - 05/22",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg"
+            },
+            {
+                "id": "REQ002",
+                "employeeName": "张伟",
+                "type": "病假",
+                "duration": "05/18",
+                "status": "审批中",
+                "statusType": "processing",
+                "avatar": "https://randomuser.me/api/portraits/men/45.jpg"
+            },
+            {
+                "id": "REQ003",
+                "employeeName": "王强",
+                "type": "调休",
+                "duration": "05/19 下午",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/men/67.jpg"
+            },
+            {
+                "id": "REQ004",
+                "employeeName": "赵敏",
+                "type": "年假",
+                "duration": "05/25 - 05/26",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+                "id": "REQ005",
+                "employeeName": "刘洋",
+                "type": "事假",
+                "duration": "05/21",
+                "status": "审批中",
+                "statusType": "processing",
+                "avatar": "https://randomuser.me/api/portraits/men/22.jpg"
+            },
+            {
+                "id": "REQ006",
+                "employeeName": "陈静",
+                "type": "年假",
+                "duration": "06/01 - 06/05",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/women/5.jpg"
+            },
+            {
+                "id": "REQ007",
+                "employeeName": "孙磊",
+                "type": "调休",
+                "duration": "05/20 上午",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/men/88.jpg"
+            },
+            {
+                "id": "REQ008",
+                "employeeName": "周涛",
+                "type": "病假",
+                "duration": "05/17",
+                "status": "已驳回",
+                "statusType": "error",
+                "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
+            },
+            {
+                "id": "REQ009",
+                "employeeName": "吴芳",
+                "type": "年假",
+                "duration": "05/28",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/women/21.jpg"
+            },
+            {
+                "id": "REQ010",
+                "employeeName": "郑和",
+                "type": "事假",
+                "duration": "05/22",
+                "status": "待审批",
+                "statusType": "warning",
+                "avatar": "https://randomuser.me/api/portraits/men/54.jpg"
+            }
+        ],
+        "approvalTimeline": [
+            {
+                "node": "直属部门主管（王经理）",
+                "time": "05-18 14:30",
+                "status": "已批准",
+                "comment": "工作交接已完成",
+                "icon": "check-circle",
+                "color": "success"
+            },
+            {
+                "node": "人力资源总监（系统分派）",
+                "time": "进行中",
+                "status": "处理中",
+                "comment": "待核实年假天数",
+                "icon": "clock",
+                "color": "primary"
+            },
+            {
+                "node": "终审完成",
+                "time": "等待中",
+                "status": "未开始",
+                "comment": "最后确认及薪资结算更新",
+                "icon": "circle",
+                "color": "default"
+            }
+        ]
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebar",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarClockIn",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "activity",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/systemName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-3 space-y-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarClockIn",
+            "component": "div",
+            "props": {
+                "className": "p-4"
+            },
+            "children": [
+                "clockBtn"
+            ]
+        },
+        {
+            "id": "clockBtn",
+            "component": "Button",
+            "props": {
+                "value": "Clock In/Out",
+                "icon": "clock",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider space-y-2"
+            },
+            "children": [
+                "settingsBtn",
+                "supportBtn"
+            ]
+        },
+        {
+            "id": "settingsBtn",
+            "component": "Button",
+            "props": {
+                "value": "Settings",
+                "icon": "settings",
+                "className": "w-full justify-start border-none shadow-none text-on-surface-variant"
+            }
+        },
+        {
+            "id": "supportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Support",
+                "icon": "life-buoy",
+                "className": "w-full justify-start border-none shadow-none text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "topNav",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6"
+            },
+            "children": [
+                "searchBox",
+                "userActions"
+            ]
+        },
+        {
+            "id": "searchBox",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索员工或记录...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "userActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifIcon",
+                "helpIcon",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "notifIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "mainScrollArea",
+                "detailPanel"
+            ]
+        },
+        {
+            "id": "mainScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 space-y-6"
+            },
+            "children": [
+                "pageHeader",
+                "metricsGrid",
+                "teamBanner",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "headerTitles",
+                "headerAction"
+            ]
+        },
+        {
+            "id": "headerTitles",
+            "component": "div",
+            "props": {
+                "className": "space-y-1"
+            },
+            "children": [
+                "mainTitle",
+                "subTitle"
+            ]
+        },
+        {
+            "id": "mainTitle",
+            "component": "h1",
+            "props": {
+                "value": "请假与调休管理",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "subTitle",
+            "component": "p",
+            "props": {
+                "value": "管理团队假期余额、审批流程及排班冲突。",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerAction",
+            "component": "Button",
+            "props": {
+                "value": "申请假期",
+                "icon": "plus",
+                "color": "primary",
+                "size": "large"
+            }
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-xl shadow-card"
+            },
+            "children": [
+                "metricHeader",
+                "metricBody"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between mb-2"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-xs font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricBody",
+            "component": "div",
+            "props": {
+                "className": "space-y-2"
+            },
+            "children": [
+                "metricValue",
+                "metricProgress"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "mVal",
+                "mUnit"
+            ]
+        },
+        {
+            "id": "mVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "mUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "progress"
+                },
+                "status": {
+                    "path": "type"
+                },
+                "size": "small",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "teamBanner",
+            "component": "div",
+            "props": {
+                "className": "bg-info-container p-4 rounded-xl flex items-center justify-between"
+            },
+            "children": [
+                "bannerLeft",
+                "bannerRight"
+            ]
+        },
+        {
+            "id": "bannerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "bannerDate",
+                "bannerText"
+            ]
+        },
+        {
+            "id": "bannerDate",
+            "component": "div",
+            "props": {
+                "className": "bg-on-info text-info px-3 py-1 rounded-lg font-bold text-xs"
+            },
+            "children": [
+                "dateText"
+            ]
+        },
+        {
+            "id": "dateText",
+            "component": "span",
+            "props": {
+                "value": "MAY 20"
+            }
+        },
+        {
+            "id": "bannerText",
+            "component": "span",
+            "props": {
+                "value": "研发部目前有 2 位成员处于休假状态，预计下周一全员归队。",
+                "className": "text-sm text-on-info-container font-medium"
+            }
+        },
+        {
+            "id": "bannerRight",
+            "component": "div",
+            "props": {
+                "className": "flex -space-x-2"
+            },
+            "children": [
+                "av1",
+                "av2",
+                "av3",
+                "avMore"
+            ]
+        },
+        {
+            "id": "av1",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/women/65.jpg",
+                "className": "w-8 h-8 rounded-full border-2 border-on-info"
+            }
+        },
+        {
+            "id": "av2",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/41.jpg",
+                "className": "w-8 h-8 rounded-full border-2 border-on-info"
+            }
+        },
+        {
+            "id": "av3",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/women/10.jpg",
+                "className": "w-8 h-8 rounded-full border-2 border-on-info"
+            }
+        },
+        {
+            "id": "avMore",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-[10px] font-bold border-2 border-on-info"
+            },
+            "children": [
+                "moreText"
+            ]
+        },
+        {
+            "id": "moreText",
+            "component": "span",
+            "props": {
+                "value": "+2"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "tableHeader",
+                "leaveTable"
+            ]
+        },
+        {
+            "id": "tableHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider"
+            },
+            "children": [
+                "tableTitle"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "span",
+            "props": {
+                "value": "待处理申请",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "leaveTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/requests"
+                },
+                "columns": [
+                    {
+                        "title": "员工姓名",
+                        "dataIndex": "employeeName"
+                    },
+                    {
+                        "title": "请假类型",
+                        "dataIndex": "type"
+                    },
+                    {
+                        "title": "请假时间",
+                        "dataIndex": "duration"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/requests",
+                "componentId": "leaveRow"
+            }
+        },
+        {
+            "id": "leaveRow",
+            "component": "TableRow",
+            "children": [
+                "empCell",
+                "typeCell",
+                "timeCell",
+                "statusCell",
+                "actionCell"
+            ]
+        },
+        {
+            "id": "empCell",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "empAv",
+                "empName"
+            ]
+        },
+        {
+            "id": "empAv",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "empName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "employeeName"
+                }
+            }
+        },
+        {
+            "id": "typeCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "timeCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "duration"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "actionCell",
+            "component": "Button",
+            "props": {
+                "value": "详情",
+                "size": "small",
+                "className": "text-primary border-none shadow-none"
+            }
+        },
+        {
+            "id": "detailPanel",
+            "component": "div",
+            "props": {
+                "className": "w-80 bg-surface-container-highest border-l border-divider flex flex-col"
+            },
+            "children": [
+                "panelHeader",
+                "panelBody",
+                "panelFooter"
+            ]
+        },
+        {
+            "id": "panelHeader",
+            "component": "div",
+            "props": {
+                "className": "p-6 border-b border-divider"
+            },
+            "children": [
+                "panelTitle"
+            ]
+        },
+        {
+            "id": "panelTitle",
+            "component": "span",
+            "props": {
+                "value": "审批详情：李小芳",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "panelBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 space-y-6"
+            },
+            "children": [
+                "reqSummary",
+                "approvalTimeline"
+            ]
+        },
+        {
+            "id": "reqSummary",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg space-y-2"
+            },
+            "children": [
+                "sumType",
+                "sumReason"
+            ]
+        },
+        {
+            "id": "sumType",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "stL",
+                "stR"
+            ]
+        },
+        {
+            "id": "stL",
+            "component": "span",
+            "props": {
+                "value": "类型 / 时长",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "stR",
+            "component": "span",
+            "props": {
+                "value": "年假 / 3天",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sumReason",
+            "component": "div",
+            "props": {
+                "className": "text-xs"
+            },
+            "children": [
+                "srL",
+                "srR"
+            ]
+        },
+        {
+            "id": "srL",
+            "component": "span",
+            "props": {
+                "value": "申请理由：",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "srR",
+            "component": "span",
+            "props": {
+                "value": "家庭旅行",
+                "className": "text-on-surface"
+            }
+        },
+        {
+            "id": "approvalTimeline",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical"
+            },
+            "children": {
+                "path": "/approvalTimeline",
+                "componentId": "timeItem"
+            }
+        },
+        {
+            "id": "timeItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "node"
+                },
+                "icon": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "content": {
+                    "componentId": "timeContent"
+                }
+            }
+        },
+        {
+            "id": "timeContent",
+            "component": "div",
+            "props": {
+                "className": "space-y-1"
+            },
+            "children": [
+                "tcStatus",
+                "tcComment"
+            ]
+        },
+        {
+            "id": "tcStatus",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-[10px]"
+            },
+            "children": [
+                "tcsL",
+                "tcsR"
+            ]
+        },
+        {
+            "id": "tcsL",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "tcsR",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tcComment",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "comment"
+                },
+                "className": "text-[10px] text-on-surface-variant italic"
+            }
+        },
+        {
+            "id": "panelFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider space-y-3"
+            },
+            "children": [
+                "commentInput",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "commentInput",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "添加审批意见...",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "rejectBtn",
+                "approveBtn"
+            ]
+        },
+        {
+            "id": "rejectBtn",
+            "component": "Button",
+            "props": {
+                "value": "退回修改",
+                "icon": "rotate-ccw",
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "approveBtn",
+            "component": "Button",
+            "props": {
+                "value": "确认审批",
+                "icon": "check",
+                "color": "primary",
+                "className": "flex-1"
+            }
+        }
+    ]
+}

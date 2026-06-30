@@ -1,0 +1,823 @@
+{
+    "state": {
+        "systemName": "Nexus ERP",
+        "menuItems": [
+            {
+                "label": "概览",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "label": "采购管理",
+                "icon": "shopping-cart",
+                "active": false
+            },
+            {
+                "label": "物流仓储",
+                "icon": "truck",
+                "active": false
+            },
+            {
+                "label": "总账管理",
+                "icon": "book-open",
+                "active": true
+            },
+            {
+                "label": "固定资产",
+                "icon": "building",
+                "active": false
+            },
+            {
+                "label": "报表中心",
+                "icon": "bar-chart-3",
+                "active": false
+            }
+        ],
+        "currentUser": {
+            "name": "Zhou Wei",
+            "role": "首席财务官 (CFO)",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "metrics": [
+            {
+                "title": "资产总计",
+                "value": "¥45,280,400.00",
+                "trend": "up",
+                "change": "+2.4%",
+                "icon": "wallet",
+                "color": "primary"
+            },
+            {
+                "title": "负债总计",
+                "value": "¥12,150,000.00",
+                "trend": "down",
+                "change": "-1.2%",
+                "icon": "credit-card",
+                "color": "error"
+            },
+            {
+                "title": "所有者权益",
+                "value": "¥33,130,400.00",
+                "trend": "up",
+                "change": "+0.8%",
+                "icon": "pie-chart",
+                "color": "success"
+            },
+            {
+                "title": "试算平衡状态",
+                "value": "已平衡",
+                "status": "success",
+                "lastCheck": "10分钟前",
+                "icon": "check-circle-2",
+                "color": "success"
+            }
+        ],
+        "filter": {
+            "dateRange": [
+                "2023-10-01",
+                "2023-10-31"
+            ],
+            "accountType": "全部科目",
+            "onlyPosted": true
+        },
+        "accountOptions": [
+            {
+                "label": "全部科目",
+                "value": "全部科目"
+            },
+            {
+                "label": "资产类",
+                "value": "资产类"
+            },
+            {
+                "label": "负债类",
+                "value": "负债类"
+            },
+            {
+                "label": "权益类",
+                "value": "权益类"
+            },
+            {
+                "label": "成本类",
+                "value": "成本类"
+            },
+            {
+                "label": "损益类",
+                "value": "损益类"
+            }
+        ],
+        "vouchers": [
+            {
+                "id": "VOU-20231001",
+                "date": "2023-10-25",
+                "account": "1002 银行存款",
+                "summary": "支付办公租金",
+                "debit": "0.00",
+                "credit": "50,000.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231002",
+                "date": "2023-10-25",
+                "account": "1122 应收账款",
+                "summary": "收到A客户货款",
+                "debit": "120,000.00",
+                "credit": "0.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231003",
+                "date": "2023-10-26",
+                "account": "6601 销售费用",
+                "summary": "市场推广费",
+                "debit": "15,000.00",
+                "credit": "0.00",
+                "status": "草稿",
+                "statusColor": "default"
+            },
+            {
+                "id": "VOU-20231004",
+                "date": "2023-10-26",
+                "account": "2202 应付账款",
+                "summary": "采购原材料",
+                "debit": "0.00",
+                "credit": "85,600.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231005",
+                "date": "2023-10-27",
+                "account": "1001 库存现金",
+                "summary": "差旅费报销",
+                "debit": "0.00",
+                "credit": "1,200.00",
+                "status": "待审核",
+                "statusColor": "warning"
+            },
+            {
+                "id": "VOU-20231006",
+                "date": "2023-10-27",
+                "account": "1403 原材料",
+                "summary": "材料入库",
+                "debit": "45,000.00",
+                "credit": "0.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231007",
+                "date": "2023-10-28",
+                "account": "2211 应付职工薪酬",
+                "summary": "计提10月工资",
+                "debit": "0.00",
+                "credit": "320,000.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231008",
+                "date": "2023-10-28",
+                "account": "6001 主营业务收入",
+                "summary": "销售产品收入",
+                "debit": "210,000.00",
+                "credit": "0.00",
+                "status": "已过账",
+                "statusColor": "success"
+            },
+            {
+                "id": "VOU-20231009",
+                "date": "2023-10-29",
+                "account": "1601 固定资产",
+                "summary": "购入服务器设备",
+                "debit": "68,000.00",
+                "credit": "0.00",
+                "status": "草稿",
+                "statusColor": "default"
+            },
+            {
+                "id": "VOU-20231010",
+                "date": "2023-10-29",
+                "account": "2221 应交税费",
+                "summary": "缴纳上月增值税",
+                "debit": "0.00",
+                "credit": "42,300.00",
+                "status": "已过账",
+                "statusColor": "success"
+            }
+        ]
+    },
+    "rootId": "nexusAppContainer",
+    "elements": [
+        {
+            "id": "nexusAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarWrapper",
+                "mainContentWrapper"
+            ]
+        },
+        {
+            "id": "sidebarWrapper",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "box",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/systemName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "on-surface-variant"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "createVoucherBtn"
+            ]
+        },
+        {
+            "id": "createVoucherBtn",
+            "component": "Button",
+            "props": {
+                "value": "新建凭证",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "mainContentWrapper",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "globalHeader",
+                "scrollArea"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6 shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "w-96"
+            },
+            "children": [
+                "globalSearch"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索凭证号、科目或摘要...",
+                "prefix": "search",
+                "className": "bg-surface-variant border-none"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "exportBtn",
+                "notificationIcon",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出报表",
+                "icon": "download",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "notificationIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "scrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "metricsGrid",
+                "filterBar",
+                "tableSection"
+            ]
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-5 rounded-xl shadow-sm flex flex-col gap-3"
+            },
+            "children": [
+                "metricHeader",
+                "metricBody",
+                "metricFooter"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "metricBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "metricValue"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "metricTrend",
+                "metricLast"
+            ]
+        },
+        {
+            "id": "metricTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "change"
+                },
+                "className": "text-xs font-medium text-success"
+            }
+        },
+        {
+            "id": "metricLast",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "lastCheck"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-xl shadow-sm flex items-center justify-between"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "dateFilter",
+                "accountFilter",
+                "resetBtn"
+            ]
+        },
+        {
+            "id": "dateFilter",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/filter/dateRange"
+                },
+                "range": true,
+                "placeholder": [
+                    "开始日期",
+                    "结束日期"
+                ],
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "accountFilter",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filter/accountType"
+                },
+                "options": {
+                    "path": "/accountOptions"
+                },
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "resetBtn",
+            "component": "Button",
+            "props": {
+                "value": "重置",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "postedLabel",
+                "postedSwitch"
+            ]
+        },
+        {
+            "id": "postedLabel",
+            "component": "span",
+            "props": {
+                "value": "仅显示已过账",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "postedSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "/filter/onlyPosted"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm overflow-hidden"
+            },
+            "children": [
+                "ledgerTable"
+            ]
+        },
+        {
+            "id": "ledgerTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/vouchers"
+                },
+                "columns": [
+                    {
+                        "title": "凭证 ID",
+                        "dataIndex": "id",
+                        "width": 140
+                    },
+                    {
+                        "title": "日期",
+                        "dataIndex": "date",
+                        "width": 120
+                    },
+                    {
+                        "title": "主科目",
+                        "dataIndex": "account"
+                    },
+                    {
+                        "title": "摘要",
+                        "dataIndex": "summary"
+                    },
+                    {
+                        "title": "借方金额",
+                        "dataIndex": "debit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "贷方金额",
+                        "dataIndex": "credit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/vouchers",
+                "componentId": "ledgerRow"
+            }
+        },
+        {
+            "id": "ledgerRow",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellDate",
+                "cellAccount",
+                "cellSummary",
+                "cellDebit",
+                "cellCredit",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "font-mono text-primary font-medium"
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "cellAccount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "account"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellSummary",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "summary"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellDebit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "debit"
+                },
+                "className": "font-mono"
+            }
+        },
+        {
+            "id": "cellCredit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "credit"
+                },
+                "className": "font-mono"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "icon": "eye",
+                "size": "small",
+                "shape": "circle"
+            }
+        }
+    ]
+}

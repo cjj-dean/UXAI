@@ -1,0 +1,929 @@
+{
+    "state": {
+        "searchValue": "",
+        "kanbanColumns": [
+            {
+                "columnTitle": "初步接洽",
+                "dealCount": 4,
+                "totalAmount": "¥1,240,000",
+                "items": [
+                    {
+                        "tagLabel": "NEW",
+                        "tagColor": "processing",
+                        "dealTitle": "云服务采购项目",
+                        "companyName": "阿里巴巴集团",
+                        "amount": "¥500,000",
+                        "progress": 40,
+                        "dueDate": "2024-05-12",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/32.jpg"
+                    },
+                    {
+                        "tagLabel": "WARM",
+                        "tagColor": "warning",
+                        "dealTitle": "智能设备集成",
+                        "companyName": "顺丰速运",
+                        "amount": "¥280,000",
+                        "progress": 20,
+                        "dueDate": "2024-06-01",
+                        "assigneeImage": "https://randomuser.me/api/portraits/women/68.jpg"
+                    },
+                    {
+                        "tagLabel": "COLD",
+                        "tagColor": "default",
+                        "dealTitle": "办公软硬件升级",
+                        "companyName": "字节跳动",
+                        "amount": "¥150,000",
+                        "progress": 10,
+                        "dueDate": "2024-06-15",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/45.jpg"
+                    },
+                    {
+                        "tagLabel": "NEW",
+                        "tagColor": "processing",
+                        "dealTitle": "年度安保服务外包",
+                        "companyName": "中建八局",
+                        "amount": "¥310,000",
+                        "progress": 15,
+                        "dueDate": "2024-07-01",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/22.jpg"
+                    }
+                ]
+            },
+            {
+                "columnTitle": "需求分析",
+                "dealCount": 2,
+                "totalAmount": "¥2,100,000",
+                "items": [
+                    {
+                        "tagLabel": "DISCOVERY",
+                        "tagColor": "#715AFB",
+                        "dealTitle": "跨境支付系统升级",
+                        "companyName": "招商银行",
+                        "amount": "¥1,500,000",
+                        "progress": 60,
+                        "dueDate": "2024-04-30",
+                        "assigneeImage": "https://randomuser.me/api/portraits/women/55.jpg"
+                    },
+                    {
+                        "tagLabel": "ANALYSIS",
+                        "tagColor": "#2CB8C9",
+                        "dealTitle": "企业ERP系统重构",
+                        "companyName": "海尔智家",
+                        "amount": "¥600,000",
+                        "progress": 35,
+                        "dueDate": "2024-05-20",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/66.jpg"
+                    }
+                ]
+            },
+            {
+                "columnTitle": "方案报价",
+                "dealCount": 3,
+                "totalAmount": "¥850,000",
+                "items": [
+                    {
+                        "tagLabel": "ACTIVE",
+                        "tagColor": "success",
+                        "dealTitle": "安全审计咨询",
+                        "companyName": "美团点评",
+                        "amount": "¥450,000",
+                        "progress": 75,
+                        "dueDate": "2024-05-18",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/11.jpg"
+                    },
+                    {
+                        "tagLabel": "PENDING",
+                        "tagColor": "warning",
+                        "dealTitle": "大数据平台搭建",
+                        "companyName": "京东科技",
+                        "amount": "¥250,000",
+                        "progress": 85,
+                        "dueDate": "2024-05-10",
+                        "assigneeImage": "https://randomuser.me/api/portraits/women/14.jpg"
+                    },
+                    {
+                        "tagLabel": "REVISION",
+                        "tagColor": "#715AFB",
+                        "dealTitle": "云端容灾备份方案",
+                        "companyName": "平安保险",
+                        "amount": "¥150,000",
+                        "progress": 50,
+                        "dueDate": "2024-06-05",
+                        "assigneeImage": "https://randomuser.me/api/portraits/men/88.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "rootId": "crmAppRoot",
+    "elements": [
+        {
+            "id": "crmAppRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "globalNavBar",
+                "globalContentRow",
+                "floatingAssistant"
+            ]
+        },
+        {
+            "id": "globalNavBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between h-14 px-6 bg-surface-container-highest shadow-sm"
+            },
+            "children": [
+                "navBrandSection",
+                "navLinksSection",
+                "navSystemSection"
+            ]
+        },
+        {
+            "id": "globalContentRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "floatingAssistant",
+            "component": "div",
+            "props": {
+                "className": "fixed bottom-6 right-6 z-50 shadow-lg rounded-full"
+            },
+            "children": [
+                "floatingAssistantBtn"
+            ]
+        },
+        {
+            "id": "floatingAssistantBtn",
+            "component": "Button",
+            "props": {
+                "icon": "message-circle",
+                "shape": "circle",
+                "color": "primary",
+                "size": "large"
+            }
+        },
+        {
+            "id": "navBrandSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navBrandIcon",
+                "navBrandName"
+            ]
+        },
+        {
+            "id": "navBrandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "zap",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "navBrandName",
+            "component": "span",
+            "props": {
+                "value": "Nexus CRM",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navLinksSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "navLinkDashboard",
+                "navLinkPipeline",
+                "navLinkAccounts",
+                "navLinkReports"
+            ]
+        },
+        {
+            "id": "navLinkDashboard",
+            "component": "span",
+            "props": {
+                "value": "Dashboard",
+                "className": "px-4 py-4 text-sm text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors border-b-2 border-transparent"
+            }
+        },
+        {
+            "id": "navLinkPipeline",
+            "component": "span",
+            "props": {
+                "value": "Pipeline",
+                "className": "px-4 py-4 text-sm text-primary font-semibold cursor-pointer border-b-2 border-primary"
+            }
+        },
+        {
+            "id": "navLinkAccounts",
+            "component": "span",
+            "props": {
+                "value": "Accounts",
+                "className": "px-4 py-4 text-sm text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors border-b-2 border-transparent"
+            }
+        },
+        {
+            "id": "navLinkReports",
+            "component": "span",
+            "props": {
+                "value": "Reports",
+                "className": "px-4 py-4 text-sm text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors border-b-2 border-transparent"
+            }
+        },
+        {
+            "id": "navSystemSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navSysSearchIcon",
+                "navSysBellIcon",
+                "navSysSettingsIcon",
+                "navUserAvatar"
+            ]
+        },
+        {
+            "id": "navSysSearchIcon",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "navSysBellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "navSysSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "navUserAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/women/44.jpg",
+                "className": "w-8 h-8 rounded-full object-cover cursor-pointer"
+            }
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-56 bg-surface-container-highest shadow-sm border-r border-divider"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarMenuList",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col px-4 pt-5 pb-4 border-b border-divider"
+            },
+            "children": [
+                "sidebarHubTitle",
+                "sidebarHubEdition"
+            ]
+        },
+        {
+            "id": "sidebarHubTitle",
+            "component": "span",
+            "props": {
+                "value": "Sales Hub",
+                "className": "text-base font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarHubEdition",
+            "component": "span",
+            "props": {
+                "value": "Enterprise Edition",
+                "className": "text-xs text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "sidebarMenuList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col py-2 overflow-auto"
+            },
+            "children": [
+                "sidebarMenuHome",
+                "sidebarMenuDeals",
+                "sidebarMenuContacts",
+                "sidebarMenuTasks",
+                "sidebarMenuAnalytics"
+            ]
+        },
+        {
+            "id": "sidebarMenuHome",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuHomeIcon",
+                "sidebarMenuHomeLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuHomeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "home",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuHomeLabel",
+            "component": "span",
+            "props": {
+                "value": "Home",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenuDeals",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg cursor-pointer bg-primary-container transition-colors"
+            },
+            "children": [
+                "sidebarMenuDealsIcon",
+                "sidebarMenuDealsLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuDealsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "briefcase",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuDealsLabel",
+            "component": "span",
+            "props": {
+                "value": "Deals",
+                "className": "text-sm font-semibold text-primary"
+            }
+        },
+        {
+            "id": "sidebarMenuContacts",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuContactsIcon",
+                "sidebarMenuContactsLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuContactsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuContactsLabel",
+            "component": "span",
+            "props": {
+                "value": "Contacts",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenuTasks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuTasksIcon",
+                "sidebarMenuTasksLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuTasksIcon",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTasksLabel",
+            "component": "span",
+            "props": {
+                "value": "Tasks",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenuAnalytics",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuAnalyticsIcon",
+                "sidebarMenuAnalyticsLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuAnalyticsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-2",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuAnalyticsLabel",
+            "component": "span",
+            "props": {
+                "value": "Analytics",
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3 px-4 py-4 border-t border-divider"
+            },
+            "children": [
+                "sidebarQuickBtn",
+                "sidebarHelpLink"
+            ]
+        },
+        {
+            "id": "sidebarQuickBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ New Deal",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "sidebarHelpLink",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer px-1"
+            },
+            "children": [
+                "sidebarHelpIcon",
+                "sidebarHelpText"
+            ]
+        },
+        {
+            "id": "sidebarHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "sidebarHelpText",
+            "component": "span",
+            "props": {
+                "value": "Help",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden p-6 gap-4"
+            },
+            "children": [
+                "mainPageHeader",
+                "mainControlBar",
+                "mainKanbanBoard"
+            ]
+        },
+        {
+            "id": "mainPageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "headerLeftSection",
+                "headerRightSection"
+            ]
+        },
+        {
+            "id": "headerLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerTitle",
+                "headerSubtitle"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": "销售管线",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerSubtitle",
+            "component": "span",
+            "props": {
+                "value": "实时跟踪您的业务成交进度与预测数据",
+                "className": "text-sm text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "headerRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "headerSearchInput",
+                "headerCreateBtn"
+            ]
+        },
+        {
+            "id": "headerSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": "搜索商机...",
+                "prefix": "search",
+                "className": "w-60"
+            }
+        },
+        {
+            "id": "headerCreateBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ 新建商机",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "mainControlBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "controlViewTabs",
+                "controlActions"
+            ]
+        },
+        {
+            "id": "controlViewTabs",
+            "component": "div",
+            "props": {
+                "className": "flex bg-surface-variant rounded-lg p-0.5"
+            },
+            "children": [
+                "controlViewMy",
+                "controlViewAll"
+            ]
+        },
+        {
+            "id": "controlViewMy",
+            "component": "span",
+            "props": {
+                "value": "我的商机",
+                "className": "px-4 py-1.5 text-sm font-medium bg-surface-container-highest rounded-md shadow-sm text-primary cursor-pointer"
+            }
+        },
+        {
+            "id": "controlViewAll",
+            "component": "span",
+            "props": {
+                "value": "全部商机",
+                "className": "px-4 py-1.5 text-sm font-medium text-on-surface-variant cursor-pointer rounded-md hover:text-on-surface"
+            }
+        },
+        {
+            "id": "controlActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "controlFilterBtn",
+                "controlSortBtn"
+            ]
+        },
+        {
+            "id": "controlFilterBtn",
+            "component": "Button",
+            "props": {
+                "value": "筛选",
+                "icon": "filter",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "controlSortBtn",
+            "component": "Button",
+            "props": {
+                "value": "排序",
+                "icon": "arrow-up-down",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "mainKanbanBoard",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex gap-4 overflow-hidden min-h-0"
+            },
+            "children": {
+                "path": "/kanbanColumns",
+                "componentId": "kanbanColumnTemplate"
+            }
+        },
+        {
+            "id": "kanbanColumnTemplate",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col rounded-xl overflow-hidden min-w-0 bg-surface-dim"
+            },
+            "children": [
+                "kanbanColumnHeader",
+                "kanbanColumnItems"
+            ]
+        },
+        {
+            "id": "kanbanColumnHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-4 py-3 bg-white rounded-t-xl"
+            },
+            "children": [
+                "kanbanColHeaderLeft",
+                "kanbanColAmount"
+            ]
+        },
+        {
+            "id": "kanbanColHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "kanbanColTitle",
+                "kanbanColCount"
+            ]
+        },
+        {
+            "id": "kanbanColTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "columnTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "kanbanColCount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dealCount"
+                },
+                "className": "text-xs bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full"
+            }
+        },
+        {
+            "id": "kanbanColAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "totalAmount"
+                },
+                "className": "text-sm font-bold text-primary"
+            }
+        },
+        {
+            "id": "kanbanColumnItems",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-3 overflow-auto flex flex-col gap-3 min-h-0"
+            },
+            "children": {
+                "path": "items",
+                "componentId": "kanbanDealCard"
+            }
+        },
+        {
+            "id": "kanbanDealCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2.5 p-4 bg-white rounded-lg shadow-card cursor-pointer hover:shadow-md transition-shadow"
+            },
+            "children": [
+                "kanbanCardTop",
+                "kanbanCardTitle",
+                "kanbanCardCompany",
+                "kanbanCardAmount",
+                "kanbanCardProgress",
+                "kanbanCardFooter"
+            ]
+        },
+        {
+            "id": "kanbanCardTop",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "kanbanCardTag",
+                "kanbanCardMenu"
+            ]
+        },
+        {
+            "id": "kanbanCardTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "tagLabel"
+                },
+                "color": {
+                    "path": "tagColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "kanbanCardMenu",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "kanbanCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dealTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "kanbanCardCompany",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "companyName"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kanbanCardAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "text-base font-bold text-primary"
+            }
+        },
+        {
+            "id": "kanbanCardProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "progress"
+                },
+                "size": "small",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "kanbanCardFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "kanbanCardDate",
+                "kanbanCardAvatar"
+            ]
+        },
+        {
+            "id": "kanbanCardDate",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "kanbanCardDateIcon",
+                "kanbanCardDateText"
+            ]
+        },
+        {
+            "id": "kanbanCardDateIcon",
+            "component": "Icon",
+            "props": {
+                "name": "calendar",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "kanbanCardDateText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dueDate"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kanbanCardAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "assigneeImage"
+                },
+                "className": "w-6 h-6 rounded-full object-cover"
+            }
+        }
+    ]
+}

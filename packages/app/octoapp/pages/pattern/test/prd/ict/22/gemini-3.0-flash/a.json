@@ -1,0 +1,814 @@
+{
+    "state": {
+        "nav": {
+            "brand": "iMaster MAE",
+            "title": "全网故障智能监控中心",
+            "actions": [
+                {
+                    "label": "监控视图",
+                    "isActive": true,
+                    "icon": "monitor"
+                },
+                {
+                    "label": "告警管理",
+                    "isActive": false,
+                    "icon": "bell"
+                },
+                {
+                    "label": "拓扑分析",
+                    "isActive": false,
+                    "icon": "share-2"
+                }
+            ],
+            "systems": [
+                {
+                    "icon": "search",
+                    "tip": "全局搜索"
+                },
+                {
+                    "icon": "layout-grid",
+                    "tip": "应用切换"
+                },
+                {
+                    "icon": "settings",
+                    "tip": "系统配置"
+                },
+                {
+                    "icon": "user",
+                    "tip": "个人中心"
+                }
+            ]
+        },
+        "metrics": [
+            {
+                "label": "故障总数",
+                "value": "1,284",
+                "unit": "个",
+                "icon": "alert-circle",
+                "color": "error",
+                "trend": "up",
+                "change": "+12%"
+            },
+            {
+                "label": "严重告警",
+                "value": "42",
+                "unit": "个",
+                "icon": "shield-alert",
+                "color": "error",
+                "trend": "down",
+                "change": "-5%"
+            },
+            {
+                "label": "主要告警",
+                "value": "156",
+                "unit": "个",
+                "icon": "zap",
+                "color": "warning",
+                "trend": "stable",
+                "change": "0%"
+            },
+            {
+                "label": "次要告警",
+                "value": "389",
+                "unit": "个",
+                "icon": "info",
+                "color": "primary",
+                "trend": "up",
+                "change": "+8%"
+            },
+            {
+                "label": "提示告警",
+                "value": "697",
+                "unit": "个",
+                "icon": "message-square",
+                "color": "success",
+                "trend": "up",
+                "change": "+15%"
+            },
+            {
+                "label": "已清除故障",
+                "value": "2,451",
+                "unit": "个",
+                "icon": "check-circle-2",
+                "color": "primary",
+                "trend": "up",
+                "change": "+22%"
+            }
+        ],
+        "diagnostic": {
+            "steps": [
+                {
+                    "title": "数据采集",
+                    "status": "finish"
+                },
+                {
+                    "title": "特征提取",
+                    "status": "process"
+                },
+                {
+                    "title": "关联分析",
+                    "status": "wait"
+                },
+                {
+                    "title": "根因定位",
+                    "status": "wait"
+                }
+            ],
+            "pieData": [
+                {
+                    "name": "硬件故障",
+                    "value": 45
+                },
+                {
+                    "name": "链路异常",
+                    "value": 25
+                },
+                {
+                    "name": "协议错误",
+                    "value": 20
+                },
+                {
+                    "name": "配置变更",
+                    "value": 10
+                }
+            ],
+            "barLevel": [
+                {
+                    "level": "P0",
+                    "count": 12
+                },
+                {
+                    "level": "P1",
+                    "count": 34
+                },
+                {
+                    "level": "P2",
+                    "count": 89
+                },
+                {
+                    "level": "P3",
+                    "count": 156
+                }
+            ],
+            "vendorData": [
+                {
+                    "vendor": "Huawei",
+                    "active": 120,
+                    "resolved": 450
+                },
+                {
+                    "vendor": "Cisco",
+                    "active": 80,
+                    "resolved": 320
+                },
+                {
+                    "vendor": "ZTE",
+                    "active": 45,
+                    "resolved": 210
+                }
+            ],
+            "regionData": [
+                {
+                    "region": "北京数据中心",
+                    "value": 98
+                },
+                {
+                    "region": "上海研发中心",
+                    "value": 76
+                },
+                {
+                    "region": "深圳南山机房",
+                    "value": 65
+                },
+                {
+                    "region": "广州天河节点",
+                    "value": 43
+                },
+                {
+                    "region": "成都高新中心",
+                    "value": 31
+                }
+            ]
+        },
+        "trend": [
+            {
+                "time": "00:00",
+                "new": 12,
+                "proc": 45,
+                "done": 8
+            },
+            {
+                "time": "04:00",
+                "new": 8,
+                "proc": 38,
+                "done": 15
+            },
+            {
+                "time": "08:00",
+                "new": 45,
+                "proc": 72,
+                "done": 20
+            },
+            {
+                "time": "12:00",
+                "new": 68,
+                "proc": 110,
+                "done": 55
+            },
+            {
+                "time": "16:00",
+                "new": 52,
+                "proc": 95,
+                "done": 78
+            },
+            {
+                "time": "20:00",
+                "new": 30,
+                "proc": 60,
+                "done": 45
+            },
+            {
+                "time": "23:59",
+                "new": 15,
+                "proc": 40,
+                "done": 32
+            }
+        ],
+        "footer": {
+            "time": "2023-10-27 14:30:05",
+            "ver": "v3.5.2-Enterprise",
+            "copy": "© 2023 iMaster MAE Intelligent Technology Co., Ltd.",
+            "status": "online"
+        }
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen bg-surface-container-lowest flex flex-col"
+            },
+            "children": [
+                "navHeader",
+                "mainContent",
+                "systemFooter"
+            ]
+        },
+        {
+            "id": "navHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-gutter sticky top-0 z-50"
+            },
+            "children": [
+                "navLeft",
+                "navCenter",
+                "navRight"
+            ]
+        },
+        {
+            "id": "navLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "brandIcon",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "cpu",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/nav/brand"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navCenter",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/nav/title"
+                },
+                "className": "text-xl font-semibold text-primary"
+            }
+        },
+        {
+            "id": "navRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navActionGroup",
+                "navSystemIcons"
+            ]
+        },
+        {
+            "id": "navActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex bg-surface-variant rounded-action p-1"
+            },
+            "children": {
+                "path": "/nav/actions",
+                "componentId": "navActionBtn"
+            }
+        },
+        {
+            "id": "navActionBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "icon": {
+                    "path": "icon"
+                },
+                "size": "small",
+                "className": "border-none shadow-none"
+            }
+        },
+        {
+            "id": "navSystemIcons",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3 border-l border-divider pl-4 ml-2"
+            },
+            "children": {
+                "path": "/nav/systems",
+                "componentId": "navSysIcon"
+            }
+        },
+        {
+            "id": "navSysIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricsCard",
+                "diagnosticCard",
+                "trendCard"
+            ]
+        },
+        {
+            "id": "metricsCard",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "metricsTitle",
+                "metricsGrid"
+            ]
+        },
+        {
+            "id": "metricsTitle",
+            "component": "h2",
+            "props": {
+                "value": "实时监控核心指标",
+                "className": "text-md font-bold mb-stack flex items-center gap-2"
+            }
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-6 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricItem"
+            }
+        },
+        {
+            "id": "metricItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "metricIcon",
+                "metricInfo"
+            ]
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "circle",
+                "className": "w-10 h-10 mr-3"
+            }
+        },
+        {
+            "id": "metricInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "metricLabel",
+                "metricValueGroup"
+            ]
+        },
+        {
+            "id": "metricLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricValueGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "metricVal",
+                "metricUnit"
+            ]
+        },
+        {
+            "id": "metricVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "diagnosticCard",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-6"
+            },
+            "children": [
+                "diagHeader",
+                "diagCharts"
+            ]
+        },
+        {
+            "id": "diagHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "diagTitle",
+                "diagSteps"
+            ]
+        },
+        {
+            "id": "diagTitle",
+            "component": "h2",
+            "props": {
+                "value": "故障多维诊断分析",
+                "className": "text-md font-bold"
+            }
+        },
+        {
+            "id": "diagSteps",
+            "component": "Steps",
+            "props": {
+                "current": 1,
+                "size": "small",
+                "className": "w-1/2"
+            },
+            "children": {
+                "path": "/diagnostic/steps",
+                "componentId": "diagStepItem"
+            }
+        },
+        {
+            "id": "diagStepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "diagCharts",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": [
+                "chartType",
+                "chartLevel",
+                "chartVendor",
+                "chartRegion"
+            ]
+        },
+        {
+            "id": "chartType",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "chartTypeTitle",
+                "chartTypePie"
+            ]
+        },
+        {
+            "id": "chartTypeTitle",
+            "component": "span",
+            "props": {
+                "value": "故障类型分布",
+                "className": "text-sm font-semibold mb-2 block"
+            }
+        },
+        {
+            "id": "chartTypePie",
+            "component": "PieChart",
+            "props": {
+                "className": "h-48 w-full",
+                "option": {
+                    "type": "circle",
+                    "data": {
+                        "path": "/diagnostic/pieData"
+                    },
+                    "title": {
+                        "text": "100%",
+                        "subtext": "覆盖率"
+                    }
+                }
+            }
+        },
+        {
+            "id": "chartLevel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "chartLevelTitle",
+                "chartLevelBar"
+            ]
+        },
+        {
+            "id": "chartLevelTitle",
+            "component": "span",
+            "props": {
+                "value": "故障等级分布",
+                "className": "text-sm font-semibold mb-2 block"
+            }
+        },
+        {
+            "id": "chartLevelBar",
+            "component": "BarChart",
+            "props": {
+                "className": "h-48 w-full",
+                "option": {
+                    "data": {
+                        "path": "/diagnostic/barLevel"
+                    },
+                    "xAxis": {
+                        "data": "level"
+                    },
+                    "yAxisTitle": "数量",
+                    "color": [
+                        "#E02128"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "chartVendor",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "chartVendorTitle",
+                "chartVendorBar"
+            ]
+        },
+        {
+            "id": "chartVendorTitle",
+            "component": "span",
+            "props": {
+                "value": "设备厂商占比",
+                "className": "text-sm font-semibold mb-2 block"
+            }
+        },
+        {
+            "id": "chartVendorBar",
+            "component": "BarChart",
+            "props": {
+                "className": "h-48 w-full",
+                "option": {
+                    "type": "stack",
+                    "data": {
+                        "path": "/diagnostic/vendorData"
+                    },
+                    "xAxis": {
+                        "data": "vendor"
+                    },
+                    "yAxisTitle": "设备数"
+                }
+            }
+        },
+        {
+            "id": "chartRegion",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "chartRegionTitle",
+                "chartRegionBar"
+            ]
+        },
+        {
+            "id": "chartRegionTitle",
+            "component": "span",
+            "props": {
+                "value": "Top 5 故障区域",
+                "className": "text-sm font-semibold mb-2 block"
+            }
+        },
+        {
+            "id": "chartRegionBar",
+            "component": "BarChart",
+            "props": {
+                "className": "h-48 w-full",
+                "option": {
+                    "direction": "horizontal",
+                    "data": {
+                        "path": "/diagnostic/regionData"
+                    },
+                    "xAxis": {
+                        "data": "region"
+                    },
+                    "yAxisTitle": "故障数"
+                }
+            }
+        },
+        {
+            "id": "trendCard",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "trendTitle",
+                "trendLine"
+            ]
+        },
+        {
+            "id": "trendTitle",
+            "component": "h2",
+            "props": {
+                "value": "故障诊断与处理趋势 (24h)",
+                "className": "text-md font-bold mb-4"
+            }
+        },
+        {
+            "id": "trendLine",
+            "component": "LineChart",
+            "props": {
+                "className": "h-64 w-full",
+                "option": {
+                    "smooth": true,
+                    "area": true,
+                    "data": {
+                        "path": "/trend"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "故障数",
+                    "color": [
+                        "#FF4D4F",
+                        "#1890FF",
+                        "#52C41A"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "systemFooter",
+            "component": "footer",
+            "props": {
+                "className": "h-10 bg-surface-container-highest border-t border-divider px-gutter flex items-center justify-between text-xs text-on-surface-variant"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4"
+            },
+            "children": [
+                "footerVer",
+                "footerCopy"
+            ]
+        },
+        {
+            "id": "footerVer",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/footer/ver"
+                }
+            }
+        },
+        {
+            "id": "footerCopy",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/footer/copy"
+                }
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "footerStatus",
+                "footerTime"
+            ]
+        },
+        {
+            "id": "footerStatus",
+            "component": "Tag",
+            "props": {
+                "value": "实时数据已连接",
+                "color": "success",
+                "icon": "activity",
+                "size": "small"
+            }
+        },
+        {
+            "id": "footerTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/footer/time"
+                }
+            }
+        }
+    ]
+}

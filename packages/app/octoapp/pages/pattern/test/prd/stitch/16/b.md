@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个左右布局的项目数据看板。左侧边栏顶部有Nexus CRM Enterprise Finance标志，五个导航项（选中Reports），底部是Account和Logout。顶部导航左侧是Search portfolio...的搜索框，右侧有四个图标。主区域头部有Dashboard > Project Portfolio > Q3 Global Expansion面包屑，下方是Q3 Global Expansion标题、HEALTHY标签以及Generate Report、Edit Project按钮。往下是四个指标卡片：OVERALL PROGRESS (65%)、DAYS REMAINING (45, 目标Sept 30)、TEAM SIZE (12)和BUDGET LEFT ($250k)。主体下半部分为左宽右窄结构：左列包含Project Timeline & Milestones（列出Phase 1完成、Phase 2 82%进度和Phase 3待开始的垂直时间线）和Recent Task Updates表格（含Task Name, Assignee, Status, Priority四列及三行数据）；右列包含Project Team（Robert Vance等3人列表及Manage Team按钮）、Resource Allocation（中心写着420h/mo的环形图及下面Engineering 50%等图例）、Financial Health（包含Burn Rate进度条、$500,000的实际花费和3% Under Budget标签）。页面右下角需要一个悬浮的“+”按钮。

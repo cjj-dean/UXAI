@@ -1,0 +1,905 @@
+{
+    "state": {
+        "sidebar": {
+            "logo": "https://picsum.photos/seed/erp-logo/200/200",
+            "menu": [
+                {
+                    "label": "控制台",
+                    "icon": "layout-dashboard",
+                    "active": false
+                },
+                {
+                    "label": "费用报销",
+                    "icon": "file-text",
+                    "active": true
+                },
+                {
+                    "label": "预算管理",
+                    "icon": "wallet",
+                    "active": false
+                },
+                {
+                    "label": "统计报表",
+                    "icon": "bar-chart",
+                    "active": false
+                },
+                {
+                    "label": "系统设置",
+                    "icon": "settings",
+                    "active": false
+                }
+            ]
+        },
+        "header": {
+            "search": "",
+            "notifications": 12,
+            "user": {
+                "name": "张晓明",
+                "role": "财务总监",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+        },
+        "metrics": [
+            {
+                "title": "本月报销总额",
+                "value": "¥428,500.00",
+                "trend": "+12.5%",
+                "icon": "trending-up",
+                "color": "primary"
+            },
+            {
+                "title": "实际支出金额",
+                "value": "¥312,200.00",
+                "trend": "85%",
+                "icon": "check-circle",
+                "color": "success"
+            },
+            {
+                "title": "审批完成进度",
+                "value": "78.4%",
+                "trend": "24单",
+                "icon": "clock",
+                "color": "warning"
+            },
+            {
+                "title": "平均处理耗时",
+                "value": "4.2h",
+                "trend": "-1.5h",
+                "icon": "zap",
+                "color": "info"
+            }
+        ],
+        "reimbursements": [
+            {
+                "id": "EXP-20231001",
+                "applicant": "李青",
+                "type": "差旅费",
+                "amount": "¥2,400.00",
+                "date": "2023-10-25",
+                "status": "待审批",
+                "statusTag": "warning"
+            },
+            {
+                "id": "EXP-20231002",
+                "applicant": "王五",
+                "type": "招待费",
+                "amount": "¥1,200.00",
+                "date": "2023-10-26",
+                "status": "审批中",
+                "statusTag": "processing"
+            },
+            {
+                "id": "EXP-20231003",
+                "applicant": "赵六",
+                "type": "办公用品",
+                "amount": "¥560.00",
+                "date": "2023-10-26",
+                "status": "待审批",
+                "statusTag": "warning"
+            },
+            {
+                "id": "EXP-20231004",
+                "applicant": "孙七",
+                "type": "交通费",
+                "amount": "¥120.00",
+                "date": "2023-10-27",
+                "status": "驳回",
+                "statusTag": "error"
+            },
+            {
+                "id": "EXP-20231005",
+                "applicant": "周八",
+                "type": "培训费",
+                "amount": "¥5,000.00",
+                "date": "2023-10-27",
+                "status": "已通过",
+                "statusTag": "success"
+            },
+            {
+                "id": "EXP-20231006",
+                "applicant": "吴九",
+                "type": "差旅费",
+                "amount": "¥3,100.00",
+                "date": "2023-10-27",
+                "status": "待审批",
+                "statusTag": "warning"
+            },
+            {
+                "id": "EXP-20231007",
+                "applicant": "郑十",
+                "type": "通讯费",
+                "amount": "¥200.00",
+                "date": "2023-10-28",
+                "status": "待审批",
+                "statusTag": "warning"
+            },
+            {
+                "id": "EXP-20231008",
+                "applicant": "陈一",
+                "type": "招待费",
+                "amount": "¥890.00",
+                "date": "2023-10-28",
+                "status": "审批中",
+                "statusTag": "processing"
+            },
+            {
+                "id": "EXP-20231009",
+                "applicant": "林二",
+                "type": "办公用品",
+                "amount": "¥1,500.00",
+                "date": "2023-10-28",
+                "status": "待审批",
+                "statusTag": "warning"
+            },
+            {
+                "id": "EXP-20231010",
+                "applicant": "何三",
+                "type": "差旅费",
+                "amount": "¥4,200.00",
+                "date": "2023-10-29",
+                "status": "待审批",
+                "statusTag": "warning"
+            }
+        ],
+        "workflow": [
+            {
+                "title": "提交申请",
+                "time": "2023-10-25 10:00",
+                "status": "finish"
+            },
+            {
+                "title": "部门经理审核",
+                "time": "2023-10-25 14:30",
+                "status": "process"
+            },
+            {
+                "title": "财务初审",
+                "time": "等待中",
+                "status": "wait"
+            },
+            {
+                "title": "出纳付款",
+                "time": "等待中",
+                "status": "wait"
+            }
+        ],
+        "approval": {
+            "comment": "",
+            "invoice": "https://picsum.photos/seed/invoice-sample/800/1200",
+            "vendor": "某某餐饮管理有限公司",
+            "taxId": "91310115MA1KXXXXXX"
+        }
+    },
+    "rootId": "erpLayout",
+    "elements": [
+        {
+            "id": "erpLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-inverse-surface flex flex-col shrink-0"
+            },
+            "children": [
+                "sideLogo",
+                "sideMenu",
+                "sideFooter"
+            ]
+        },
+        {
+            "id": "sideLogo",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-inline"
+            },
+            "children": [
+                "logoImg",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/sidebar/logo"
+                },
+                "className": "w-8 h-8 rounded-md"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "A2 ERP 系统",
+                "className": "text-lg font-bold text-inverse-on-surface"
+            }
+        },
+        {
+            "id": "sideMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/sidebar/menu",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer transition-colors hover:bg-white/10"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "sideFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-white/10"
+            },
+            "children": [
+                "versionText"
+            ]
+        },
+        {
+            "id": "versionText",
+            "component": "span",
+            "props": {
+                "value": "v2.4.0 Professional",
+                "className": "text-xs text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "scrollContent"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-gutter z-10"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/header/search"
+                },
+                "placeholder": "搜索报销单号、申请人...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "notifyIcon",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "notifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/header/user/avatar"
+                },
+                "className": "w-9 h-9 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/header/user/name"
+                },
+                "className": "text-sm font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/header/user/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "scrollContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter bg-surface"
+            },
+            "children": [
+                "statsGrid",
+                "mainBodyGrid"
+            ]
+        },
+        {
+            "id": "statsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter mb-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "statCard"
+            }
+        },
+        {
+            "id": "statCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "statHeader",
+                "statValue",
+                "statTrend"
+            ]
+        },
+        {
+            "id": "statHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "statTitle",
+                "statIcon"
+            ]
+        },
+        {
+            "id": "statTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "statValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statTrend",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "trendLabel",
+                "trendVal"
+            ]
+        },
+        {
+            "id": "trendLabel",
+            "component": "span",
+            "props": {
+                "value": "趋势:",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "trendVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs font-medium text-primary"
+            }
+        },
+        {
+            "id": "mainBodyGrid",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "leftSection",
+                "rightSection"
+            ]
+        },
+        {
+            "id": "leftSection",
+            "component": "div",
+            "props": {
+                "className": "flex-[0.65] flex flex-col gap-gutter"
+            },
+            "children": [
+                "tableCard",
+                "progressCard"
+            ]
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "tableTitle",
+                "reimburseTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h3",
+            "props": {
+                "value": "待审批报销单据",
+                "className": "text-lg font-bold mb-4"
+            }
+        },
+        {
+            "id": "reimburseTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/reimbursements"
+                },
+                "columns": [
+                    {
+                        "title": "单据编号",
+                        "dataIndex": "id"
+                    },
+                    {
+                        "title": "申请人",
+                        "dataIndex": "applicant"
+                    },
+                    {
+                        "title": "费用类型",
+                        "dataIndex": "type"
+                    },
+                    {
+                        "title": "金额",
+                        "dataIndex": "amount"
+                    },
+                    {
+                        "title": "申请日期",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/reimbursements",
+                "componentId": "tableRowTemplate"
+            }
+        },
+        {
+            "id": "tableRowTemplate",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellApplicant",
+                "cellType",
+                "cellAmount",
+                "cellDate",
+                "cellStatus"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "font-medium text-primary"
+            }
+        },
+        {
+            "id": "cellApplicant",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "applicant"
+                }
+            }
+        },
+        {
+            "id": "cellType",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "cellAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusTag"
+                }
+            }
+        },
+        {
+            "id": "progressCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "progressTitle",
+                "workflowSteps"
+            ]
+        },
+        {
+            "id": "progressTitle",
+            "component": "h3",
+            "props": {
+                "value": "当前单据处理进度 (EXP-20231001)",
+                "className": "text-md font-bold mb-6"
+            }
+        },
+        {
+            "id": "workflowSteps",
+            "component": "Steps",
+            "props": {
+                "current": 1,
+                "className": "px-4"
+            },
+            "children": {
+                "path": "/workflow",
+                "componentId": "stepTemplate"
+            }
+        },
+        {
+            "id": "stepTemplate",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "content": {
+                    "path": "time"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "rightSection",
+            "component": "div",
+            "props": {
+                "className": "flex-[0.35]"
+            },
+            "children": [
+                "approvalPanel"
+            ]
+        },
+        {
+            "id": "approvalPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "panelTitle",
+                "invoicePreview",
+                "invoiceInfo",
+                "approvalForm",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "panelTitle",
+            "component": "h3",
+            "props": {
+                "value": "审批操作台",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "invoicePreview",
+            "component": "div",
+            "props": {
+                "className": "aspect-[3/4] bg-surface-variant rounded-lg overflow-hidden border border-divider relative group cursor-zoom-in"
+            },
+            "children": [
+                "invoiceImg",
+                "zoomOverlay"
+            ]
+        },
+        {
+            "id": "invoiceImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/approval/invoice"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "zoomOverlay",
+            "component": "div",
+            "props": {
+                "className": "absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+            },
+            "children": [
+                "zoomIcon"
+            ]
+        },
+        {
+            "id": "zoomIcon",
+            "component": "Icon",
+            "props": {
+                "name": "maximize",
+                "className": "text-white w-8 h-8"
+            }
+        },
+        {
+            "id": "invoiceInfo",
+            "component": "div",
+            "props": {
+                "className": "p-3 bg-surface-variant rounded-lg flex flex-col gap-1"
+            },
+            "children": [
+                "vendorText",
+                "taxText"
+            ]
+        },
+        {
+            "id": "vendorText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/approval/vendor"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "taxText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/approval/taxId"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "approvalForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "commentLabel",
+                "commentArea"
+            ]
+        },
+        {
+            "id": "commentLabel",
+            "component": "span",
+            "props": {
+                "value": "审批意见",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "commentArea",
+            "component": "TextArea",
+            "props": {
+                "value": {
+                    "path": "/approval/comment"
+                },
+                "placeholder": "请输入审批意见或驳回理由...",
+                "autoSize": true,
+                "className": "min-h-[100px]"
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "primaryActions",
+                "secondaryActions"
+            ]
+        },
+        {
+            "id": "primaryActions",
+            "component": "Button",
+            "props": {
+                "value": "批准报销",
+                "color": "primary",
+                "icon": "check-circle-2",
+                "className": "w-full py-6 text-lg"
+            }
+        },
+        {
+            "id": "secondaryActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "rejectBtn",
+                "returnBtn"
+            ]
+        },
+        {
+            "id": "rejectBtn",
+            "component": "Button",
+            "props": {
+                "value": "驳回",
+                "color": "danger",
+                "icon": "x-circle",
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "returnBtn",
+            "component": "Button",
+            "props": {
+                "value": "退回修改",
+                "icon": "rotate-ccw",
+                "className": "flex-1"
+            }
+        }
+    ]
+}

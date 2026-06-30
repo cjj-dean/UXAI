@@ -1,0 +1,1362 @@
+{
+    "state": {
+      "searchValue": "",
+      "approvalSteps": [
+        {
+          "stepName": "Department Head",
+          "stepUser": "Alice G.",
+          "stepStatus": "finish",
+          "stepIcon": "check-circle"
+        },
+        {
+          "stepName": "Finance Director",
+          "stepUser": "Bob T.",
+          "stepStatus": "finish",
+          "stepIcon": "check-circle"
+        },
+        {
+          "stepName": "General Manager",
+          "stepUser": "Charlie R.",
+          "stepStatus": "process",
+          "stepIcon": "clock"
+        }
+      ],
+      "itemsList": [
+        {
+          "id": "1",
+          "itemCode": "SRV-7742",
+          "description": "Dell PowerEdge R740 Server",
+          "quantity": "4",
+          "unitPrice": "$1,240.00",
+          "totalPrice": "$4,960.00",
+          "status": "Delivered",
+          "statusColor": "success"
+        },
+        {
+          "id": "2",
+          "itemCode": "CAB-9011",
+          "description": "Cat6 Ethernet Cable (50ft)",
+          "quantity": "12",
+          "unitPrice": "$85.00",
+          "totalPrice": "$1,020.00",
+          "status": "In Transit",
+          "statusColor": "processing"
+        },
+        {
+          "id": "3",
+          "itemCode": "RACK-2U",
+          "description": "2U Wall Mount Rack",
+          "quantity": "2",
+          "unitPrice": "$210.00",
+          "totalPrice": "$420.00",
+          "status": "Backordered",
+          "statusColor": "error"
+        },
+        {
+          "id": "4",
+          "itemCode": "SUPP-MISC",
+          "description": "Maintenance Kit Suite",
+          "quantity": "1",
+          "unitPrice": "$350.00",
+          "totalPrice": "$350.00",
+          "status": "Pending",
+          "statusColor": "warning"
+        },
+        {
+          "id": "5",
+          "itemCode": "GIFT-001",
+          "description": "Promotional USB Drive (Free)",
+          "quantity": "1",
+          "unitPrice": "$0.00",
+          "totalPrice": "$0.00",
+          "status": "Pending",
+          "statusColor": "default"
+        }
+      ],
+      "logisticsTimeline": [
+        {
+          "eventTitle": "Customs Cleared",
+          "eventTime": "Aug 20, 10:30 AM",
+          "nodeIcon": "check-circle"
+        },
+        {
+          "eventTitle": "In Transit",
+          "eventTime": "Aug 18, 02:15 PM",
+          "nodeIcon": "check-circle"
+        },
+        {
+          "eventTitle": "Picked up",
+          "eventTime": "Aug 15, 09:00 AM",
+          "nodeIcon": "package"
+        }
+      ],
+      "docList": [
+        {
+          "fileName": "Invoice_INV-882.pdf",
+          "fileSize": "2.4 MB",
+          "fileTypeIcon": "file-text"
+        },
+        {
+          "fileName": "RFQ_GlobalLog_V1.pdf",
+          "fileSize": "1.1 MB",
+          "fileTypeIcon": "file-text"
+        },
+        {
+          "fileName": "Contract_T&C_2024.pdf",
+          "fileSize": "850 KB",
+          "fileTypeIcon": "file"
+        },
+        {
+          "fileName": "PackingList_0815.pdf",
+          "fileSize": "320 KB",
+          "fileTypeIcon": "file"
+        }
+      ],
+      "activityLogList": [
+        {
+          "userAvatar": "https://randomuser.me/api/portraits/women/44.jpg",
+          "userName": "Sarah Jenkins",
+          "actionText": "confirmed the budget is within limits.",
+          "timestamp": "2 hours ago",
+          "actionIcon": "check"
+        },
+        {
+          "userAvatar": "https://randomuser.me/api/portraits/men/46.jpg",
+          "userName": "John Doe",
+          "actionText": "submitted order for Director approval.",
+          "timestamp": "5 hours ago",
+          "actionIcon": "send"
+        },
+        {
+          "userAvatar": "https://randomuser.me/api/portraits/men/32.jpg",
+          "userName": "Michael Chen",
+          "actionText": "added item SRV-7742 to the list.",
+          "timestamp": "Yesterday",
+          "actionIcon": "plus"
+        },
+        {
+          "userAvatar": "https://randomuser.me/api/portraits/women/68.jpg",
+          "userName": "Emily Clark",
+          "actionText": "created Purchase Order #20240815-001.",
+          "timestamp": "Aug 10, 2024",
+          "actionIcon": "file-plus"
+        }
+      ]
+    },
+    "rootId": "rootContainer",
+    "elements": [
+      {
+        "id": "rootContainer",
+        "component": "div",
+        "props": {
+          "className": "flex min-h-screen bg-surface-container-lowest"
+        },
+        "children": [
+          "sidebarContainer",
+          "mainArea"
+        ]
+      },
+      {
+        "id": "sidebarContainer",
+        "component": "div",
+        "props": {
+          "className": "w-60 bg-surface-container-highest flex flex-col h-screen sticky top-0 shrink-0"
+        },
+        "children": [
+          "sidebarTop",
+          "sidebarMenuArea",
+          "sidebarBottom"
+        ]
+      },
+      {
+        "id": "sidebarTop",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline p-inset border-b border-divider"
+        },
+        "children": [
+          "sidebarLogoIcon",
+          "sidebarLogoText"
+        ]
+      },
+      {
+        "id": "sidebarLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layers",
+          "color": "primary",
+          "shape": "square",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "sidebarLogoText",
+        "component": "span",
+        "props": {
+          "value": "Nexus ERP",
+          "className": "text-lg font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "sidebarMenuArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col gap-1 p-inset overflow-y-auto"
+        },
+        "children": [
+          "sidebarMenuHome",
+          "sidebarMenuPO",
+          "sidebarMenuVendors",
+          "sidebarMenuLogistics",
+          "sidebarMenuAnalytics"
+        ]
+      },
+      {
+        "id": "sidebarMenuHome",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline px-3 py-2 rounded-lg text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuHomeIcon",
+          "sidebarMenuHomeText"
+        ]
+      },
+      {
+        "id": "sidebarMenuHomeIcon",
+        "component": "Icon",
+        "props": {
+          "name": "home",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuHomeText",
+        "component": "span",
+        "props": {
+          "value": "Home",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuPO",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline px-3 py-2 rounded-lg bg-primary-container text-primary font-medium"
+        },
+        "children": [
+          "sidebarMenuPOIcon",
+          "sidebarMenuPOText"
+        ]
+      },
+      {
+        "id": "sidebarMenuPOIcon",
+        "component": "Icon",
+        "props": {
+          "name": "file-text",
+          "color": "primary",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuPOText",
+        "component": "span",
+        "props": {
+          "value": "Purchase Orders - Active",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuVendors",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline px-3 py-2 rounded-lg text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuVendorsIcon",
+          "sidebarMenuVendorsText"
+        ]
+      },
+      {
+        "id": "sidebarMenuVendorsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuVendorsText",
+        "component": "span",
+        "props": {
+          "value": "Vendors",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuLogistics",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline px-3 py-2 rounded-lg text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuLogisticsIcon",
+          "sidebarMenuLogisticsText"
+        ]
+      },
+      {
+        "id": "sidebarMenuLogisticsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "truck",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLogisticsText",
+        "component": "span",
+        "props": {
+          "value": "Logistics",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuAnalytics",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline px-3 py-2 rounded-lg text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuAnalyticsIcon",
+          "sidebarMenuAnalyticsText"
+        ]
+      },
+      {
+        "id": "sidebarMenuAnalyticsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bar-chart-3",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuAnalyticsText",
+        "component": "span",
+        "props": {
+          "value": "Analytics",
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarBottom",
+        "component": "div",
+        "props": {
+          "className": "p-inset border-t border-divider"
+        },
+        "children": [
+          "sidebarNewBtn"
+        ]
+      },
+      {
+        "id": "sidebarNewBtn",
+        "component": "Button",
+        "props": {
+          "value": "+ New Purchase Order",
+          "color": "primary",
+          "className": "w-full"
+        }
+      },
+      {
+        "id": "mainArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col min-w-0"
+        },
+        "children": [
+          "headerBar",
+          "contentArea"
+        ]
+      },
+      {
+        "id": "headerBar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-inset py-stack bg-surface-container-highest border-b border-divider"
+        },
+        "children": [
+          "headerLeft",
+          "headerSearch",
+          "headerRight"
+        ]
+      },
+      {
+        "id": "headerLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "headerTitle"
+        ]
+      },
+      {
+        "id": "headerTitle",
+        "component": "span",
+        "props": {
+          "value": "PO Tracking: #20240815-001",
+          "className": "text-lg font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "headerSearch",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/searchValue"
+          },
+          "placeholder": "Search resources...",
+          "prefix": "search",
+          "className": "w-64"
+        }
+      },
+      {
+        "id": "headerRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-gutter"
+        },
+        "children": [
+          "headerMenuRow",
+          "headerDivider",
+          "headerNotifWrap",
+          "headerUserWrap"
+        ]
+      },
+      {
+        "id": "headerMenuRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4"
+        },
+        "children": [
+          "headerMenuDash",
+          "headerMenuInv",
+          "headerMenuProc",
+          "headerMenuRep"
+        ]
+      },
+      {
+        "id": "headerMenuDash",
+        "component": "span",
+        "props": {
+          "value": "Dashboard",
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerMenuInv",
+        "component": "span",
+        "props": {
+          "value": "Inventory",
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerMenuProc",
+        "component": "span",
+        "props": {
+          "value": "Procurement",
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerMenuRep",
+        "component": "span",
+        "props": {
+          "value": "Reports",
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerDivider",
+        "component": "div",
+        "props": {
+          "className": "w-px h-5 bg-border-base"
+        }
+      },
+      {
+        "id": "headerNotifWrap",
+        "component": "div",
+        "props": {
+          "className": "relative"
+        },
+        "children": [
+          "headerNotifIcon",
+          "headerNotifBadge"
+        ]
+      },
+      {
+        "id": "headerNotifIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bell",
+          "className": "w-5 h-5 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerNotifBadge",
+        "component": "span",
+        "props": {
+          "value": "3",
+          "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium"
+        }
+      },
+      {
+        "id": "headerUserWrap",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "headerUserAvatar",
+          "headerUserName"
+        ]
+      },
+      {
+        "id": "headerUserAvatar",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/men/32.jpg",
+          "className": "w-8 h-8 rounded-full object-cover"
+        }
+      },
+      {
+        "id": "headerUserName",
+        "component": "span",
+        "props": {
+          "value": "Michael Chen",
+          "className": "text-sm text-on-surface font-medium"
+        }
+      },
+      {
+        "id": "contentArea",
+        "component": "div",
+        "props": {
+          "className": "flex gap-gutter p-inset flex-1"
+        },
+        "children": [
+          "leftColumn",
+          "rightColumn"
+        ]
+      },
+      {
+        "id": "leftColumn",
+        "component": "div",
+        "props": {
+          "className": "flex-[7] min-w-0 flex flex-col gap-gutter"
+        },
+        "children": [
+          "summaryCard",
+          "tableCard"
+        ]
+      },
+      {
+        "id": "summaryCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+        },
+        "children": [
+          "summaryTopRow",
+          "summaryPoRow",
+          "summaryInfoGrid",
+          "summaryDivider",
+          "summaryWorkflowArea"
+        ]
+      },
+      {
+        "id": "summaryTopRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between"
+        },
+        "children": [
+          "summaryTitle",
+          "summaryBtnGroup"
+        ]
+      },
+      {
+        "id": "summaryTitle",
+        "component": "span",
+        "props": {
+          "value": "Order Summary",
+          "className": "text-lg font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "summaryBtnGroup",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "summaryExportBtn",
+          "summaryEditBtn"
+        ]
+      },
+      {
+        "id": "summaryExportBtn",
+        "component": "Button",
+        "props": {
+          "value": "Export PDF",
+          "icon": "file-down",
+          "iconPlacement": "start"
+        }
+      },
+      {
+        "id": "summaryEditBtn",
+        "component": "Button",
+        "props": {
+          "value": "Edit Order",
+          "icon": "pencil",
+          "iconPlacement": "start",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "summaryPoRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline mt-stack"
+        },
+        "children": [
+          "summaryPoNumber",
+          "summaryStatusTag"
+        ]
+      },
+      {
+        "id": "summaryPoNumber",
+        "component": "span",
+        "props": {
+          "value": "PO-20240815-001",
+          "className": "text-xl font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "summaryStatusTag",
+        "component": "Tag",
+        "props": {
+          "value": "IN PROGRESS",
+          "color": "processing"
+        }
+      },
+      {
+        "id": "summaryInfoGrid",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-3 gap-gutter mt-stack"
+        },
+        "children": [
+          "summaryVendorField",
+          "summaryOrderDateField",
+          "summaryDeliveryDateField"
+        ]
+      },
+      {
+        "id": "summaryVendorField",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "summaryVendorLabel",
+          "summaryVendorValue"
+        ]
+      },
+      {
+        "id": "summaryVendorLabel",
+        "component": "span",
+        "props": {
+          "value": "Vendor",
+          "className": "text-xs text-on-surface-variant uppercase tracking-wide"
+        }
+      },
+      {
+        "id": "summaryVendorValue",
+        "component": "span",
+        "props": {
+          "value": "Global Logistics Solutions",
+          "className": "text-sm text-on-surface font-medium"
+        }
+      },
+      {
+        "id": "summaryOrderDateField",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "summaryOrderDateLabel",
+          "summaryOrderDateValue"
+        ]
+      },
+      {
+        "id": "summaryOrderDateLabel",
+        "component": "span",
+        "props": {
+          "value": "Order Date",
+          "className": "text-xs text-on-surface-variant uppercase tracking-wide"
+        }
+      },
+      {
+        "id": "summaryOrderDateValue",
+        "component": "span",
+        "props": {
+          "value": "Aug 10, 2024",
+          "className": "text-sm text-on-surface font-medium"
+        }
+      },
+      {
+        "id": "summaryDeliveryDateField",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "summaryDeliveryDateLabel",
+          "summaryDeliveryDateValue"
+        ]
+      },
+      {
+        "id": "summaryDeliveryDateLabel",
+        "component": "span",
+        "props": {
+          "value": "Delivery Date",
+          "className": "text-xs text-on-surface-variant uppercase tracking-wide"
+        }
+      },
+      {
+        "id": "summaryDeliveryDateValue",
+        "component": "span",
+        "props": {
+          "value": "Aug 22, 2024",
+          "className": "text-sm text-on-surface font-medium"
+        }
+      },
+      {
+        "id": "summaryDivider",
+        "component": "div",
+        "props": {
+          "className": "border-t border-divider my-stack"
+        }
+      },
+      {
+        "id": "summaryWorkflowArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-stack"
+        },
+        "children": [
+          "summaryWorkflowLabel",
+          "summarySteps"
+        ]
+      },
+      {
+        "id": "summaryWorkflowLabel",
+        "component": "span",
+        "props": {
+          "value": "APPROVAL WORKFLOW",
+          "className": "text-xs text-on-surface-variant uppercase tracking-widest font-semibold"
+        }
+      },
+      {
+        "id": "summarySteps",
+        "component": "Steps",
+        "props": {
+          "current": 2,
+          "orientation": "horizontal"
+        },
+        "children": {
+          "path": "/approvalSteps",
+          "componentId": "summaryStepItem"
+        }
+      },
+      {
+        "id": "summaryStepItem",
+        "component": "StepItem",
+        "props": {
+          "title": {
+            "path": "stepName"
+          },
+          "content": {
+            "path": "stepUser"
+          },
+          "status": {
+            "path": "stepStatus"
+          },
+          "icon": {
+            "path": "stepIcon"
+          }
+        }
+      },
+      {
+        "id": "tableCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+        },
+        "children": [
+          "tableTopRow",
+          "tableComponent"
+        ]
+      },
+      {
+        "id": "tableTopRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mb-stack"
+        },
+        "children": [
+          "tableCardTitle",
+          "tableTotalWrap"
+        ]
+      },
+      {
+        "id": "tableCardTitle",
+        "component": "span",
+        "props": {
+          "value": "5 Items Listed",
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "tableTotalWrap",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "tableTotalLabel",
+          "tableTotalValue"
+        ]
+      },
+      {
+        "id": "tableTotalLabel",
+        "component": "span",
+        "props": {
+          "value": "Total Amount:",
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "tableTotalValue",
+        "component": "span",
+        "props": {
+          "value": "$6,750.00",
+          "className": "text-lg font-bold text-primary"
+        }
+      },
+      {
+        "id": "tableComponent",
+        "component": "Table",
+        "props": {
+          "rowKey": "id",
+          "dataSource": {
+            "path": "/itemsList"
+          },
+          "pagination": false,
+          "columns": [
+            {
+              "title": "Item Code",
+              "dataIndex": "itemCode"
+            },
+            {
+              "title": "Description",
+              "dataIndex": "description"
+            },
+            {
+              "title": "Qty",
+              "dataIndex": "quantity",
+              "width": 60,
+              "align": "center"
+            },
+            {
+              "title": "Unit Price",
+              "dataIndex": "unitPrice",
+              "width": 100,
+              "align": "right"
+            },
+            {
+              "title": "Total",
+              "dataIndex": "totalPrice",
+              "width": 100,
+              "align": "right"
+            },
+            {
+              "title": "Status",
+              "dataIndex": "status",
+              "width": 120,
+              "align": "center"
+            }
+          ]
+        },
+        "children": {
+          "path": "/itemsList",
+          "componentId": "tableRow"
+        }
+      },
+      {
+        "id": "tableRow",
+        "component": "TableRow",
+        "children": [
+          "tableCellCode",
+          "tableCellDesc",
+          "tableCellQty",
+          "tableCellPrice",
+          "tableCellTotal",
+          "tableCellStatus"
+        ]
+      },
+      {
+        "id": "tableCellCode",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "itemCode"
+          },
+          "className": "font-mono text-sm"
+        }
+      },
+      {
+        "id": "tableCellDesc",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "description"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "tableCellQty",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "quantity"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "tableCellPrice",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "unitPrice"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "tableCellTotal",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "totalPrice"
+          },
+          "className": "text-sm font-semibold"
+        }
+      },
+      {
+        "id": "tableCellStatus",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "status"
+          },
+          "color": {
+            "path": "statusColor"
+          },
+          "size": "small"
+        }
+      },
+      {
+        "id": "rightColumn",
+        "component": "div",
+        "props": {
+          "className": "flex-[3] flex flex-col gap-gutter"
+        },
+        "children": [
+          "logisticsCard",
+          "documentsCard",
+          "activityCard"
+        ]
+      },
+      {
+        "id": "logisticsCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+        },
+        "children": [
+          "logisticsTitleRow",
+          "logisticsCarrierBox",
+          "logisticsEstRow",
+          "logisticsTimeline",
+          "logisticsConfirmBtn"
+        ]
+      },
+      {
+        "id": "logisticsTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "logisticsTitleIcon",
+          "logisticsTitleText"
+        ]
+      },
+      {
+        "id": "logisticsTitleIcon",
+        "component": "Icon",
+        "props": {
+          "name": "truck",
+          "color": "primary",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "logisticsTitleText",
+        "component": "span",
+        "props": {
+          "value": "Logistics Tracking",
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "logisticsCarrierBox",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mt-stack p-stack rounded-lg bg-surface-variant"
+        },
+        "children": [
+          "logisticsCarrierLeft",
+          "logisticsTrackingNo"
+        ]
+      },
+      {
+        "id": "logisticsCarrierLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline"
+        },
+        "children": [
+          "logisticsCarrierIcon",
+          "logisticsCarrierName"
+        ]
+      },
+      {
+        "id": "logisticsCarrierIcon",
+        "component": "Icon",
+        "props": {
+          "name": "truck",
+          "className": "w-4 h-4 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "logisticsCarrierName",
+        "component": "span",
+        "props": {
+          "value": "DHL Express",
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "logisticsTrackingNo",
+        "component": "span",
+        "props": {
+          "value": "DHL-884920135",
+          "className": "text-xs font-mono text-on-surface-variant"
+        }
+      },
+      {
+        "id": "logisticsEstRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mt-stack"
+        },
+        "children": [
+          "logisticsEstLabel",
+          "logisticsEstValue"
+        ]
+      },
+      {
+        "id": "logisticsEstLabel",
+        "component": "span",
+        "props": {
+          "value": "Est. Delivery",
+          "className": "text-xs text-on-surface-variant uppercase tracking-wide"
+        }
+      },
+      {
+        "id": "logisticsEstValue",
+        "component": "span",
+        "props": {
+          "value": "Aug 22, 2024",
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "logisticsTimeline",
+        "component": "Timeline",
+        "props": {
+          "orientation": "vertical",
+          "className": "mt-stack"
+        },
+        "children": {
+          "path": "/logisticsTimeline",
+          "componentId": "logisticsTimelineItem"
+        }
+      },
+      {
+        "id": "logisticsTimelineItem",
+        "component": "TimelineItem",
+        "props": {
+          "title": {
+            "path": "eventTime"
+          },
+          "content": {
+            "path": "eventTitle"
+          },
+          "icon": {
+            "path": "nodeIcon"
+          }
+        }
+      },
+      {
+        "id": "logisticsConfirmBtn",
+        "component": "Button",
+        "props": {
+          "value": "Confirm Delivery",
+          "color": "primary",
+          "className": "w-full mt-stack"
+        }
+      },
+      {
+        "id": "documentsCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+        },
+        "children": [
+          "documentsTitle",
+          "documentsList"
+        ]
+      },
+      {
+        "id": "documentsTitle",
+        "component": "span",
+        "props": {
+          "value": "Related Documents",
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "documentsList",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-stack mt-stack"
+        },
+        "children": {
+          "path": "/docList",
+          "componentId": "documentsItem"
+        }
+      },
+      {
+        "id": "documentsItem",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between p-stack rounded-lg bg-surface-variant"
+        },
+        "children": [
+          "docItemLeft",
+          "docItemDownload"
+        ]
+      },
+      {
+        "id": "docItemLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-inline min-w-0"
+        },
+        "children": [
+          "docItemIcon",
+          "docItemInfo"
+        ]
+      },
+      {
+        "id": "docItemIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "fileTypeIcon"
+          },
+          "className": "w-4 h-4 text-on-surface-variant shrink-0"
+        }
+      },
+      {
+        "id": "docItemInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "docItemName",
+          "docItemSize"
+        ]
+      },
+      {
+        "id": "docItemName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "fileName"
+          },
+          "className": "text-sm text-on-surface font-medium truncate"
+        }
+      },
+      {
+        "id": "docItemSize",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "fileSize"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "docItemDownload",
+        "component": "Button",
+        "props": {
+          "icon": "download",
+          "size": "small"
+        }
+      },
+      {
+        "id": "activityCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+        },
+        "children": [
+          "activityTitle",
+          "activityList"
+        ]
+      },
+      {
+        "id": "activityTitle",
+        "component": "span",
+        "props": {
+          "value": "Activity Log",
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "activityList",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-stack mt-stack"
+        },
+        "children": {
+          "path": "/activityLogList",
+          "componentId": "activityItem"
+        }
+      },
+      {
+        "id": "activityItem",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-inline"
+        },
+        "children": [
+          "activityItemAvatar",
+          "activityItemContent",
+          "activityItemIcon"
+        ]
+      },
+      {
+        "id": "activityItemAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "userAvatar"
+          },
+          "className": "w-8 h-8 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "activityItemContent",
+        "component": "div",
+        "props": {
+          "className": "flex-1 min-w-0"
+        },
+        "children": [
+          "activityItemText",
+          "activityItemTime"
+        ]
+      },
+      {
+        "id": "activityItemText",
+        "component": "div",
+        "props": {
+          "className": "text-sm"
+        },
+        "children": [
+          "activityItemUser",
+          "activityItemAction"
+        ]
+      },
+      {
+        "id": "activityItemUser",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "userName"
+          },
+          "className": "font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "activityItemAction",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "actionText"
+          },
+          "className": "text-on-surface-variant"
+        }
+      },
+      {
+        "id": "activityItemTime",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "timestamp"
+          },
+          "className": "text-xs text-on-surface-variant mt-1"
+        }
+      },
+      {
+        "id": "activityItemIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "actionIcon"
+          },
+          "className": "w-4 h-4 text-on-surface-variant shrink-0 mt-1"
+        }
+      }
+    ]
+  }

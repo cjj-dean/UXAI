@@ -1,0 +1,848 @@
+{
+    "state": {
+        "navItems": [
+            {
+                "label": "控制台",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "label": "线索公海",
+                "icon": "users",
+                "active": true
+            },
+            {
+                "label": "客户管理",
+                "icon": "shield-check",
+                "active": false
+            },
+            {
+                "label": "销售机会",
+                "icon": "target",
+                "active": false
+            },
+            {
+                "label": "数据报表",
+                "icon": "bar-chart-3",
+                "active": false
+            }
+        ],
+        "metrics": [
+            {
+                "title": "总线索数",
+                "value": "12,847",
+                "unit": "条",
+                "trend": "+5.2%",
+                "icon": "trending-up",
+                "color": "success"
+            },
+            {
+                "title": "今日新增",
+                "value": "156",
+                "unit": "条",
+                "trend": "+12.8%",
+                "icon": "trending-up",
+                "color": "success"
+            },
+            {
+                "title": "平均池中时间",
+                "value": "4.2",
+                "unit": "小时",
+                "trend": "-0.5h",
+                "icon": "trending-down",
+                "color": "primary"
+            }
+        ],
+        "leads": [
+            {
+                "id": "L001",
+                "name": "陈默",
+                "company": "极光科技集团",
+                "source": "官网预约",
+                "status": "待认领",
+                "time": "2023-10-24 10:20",
+                "score": 85,
+                "scoreStatus": "success"
+            },
+            {
+                "id": "L002",
+                "name": "Sarah Jenkins",
+                "company": "Global Security Inc",
+                "source": "展会扫描",
+                "status": "待认领",
+                "time": "2023-10-24 09:15",
+                "score": 92,
+                "scoreStatus": "success"
+            },
+            {
+                "id": "L003",
+                "name": "王大锤",
+                "company": "锤子安防器材",
+                "source": "电话咨询",
+                "status": "待认领",
+                "time": "2023-10-24 08:45",
+                "score": 45,
+                "scoreStatus": "active"
+            },
+            {
+                "id": "L004",
+                "name": "李晓明",
+                "company": "智连万物科技",
+                "source": "第三方投放",
+                "status": "待认领",
+                "time": "2023-10-23 17:30",
+                "score": 78,
+                "scoreStatus": "success"
+            },
+            {
+                "id": "L005",
+                "name": "Robert Fox",
+                "company": "Fox Industrial",
+                "source": "官网预约",
+                "status": "待认领",
+                "time": "2023-10-23 16:20",
+                "score": 30,
+                "scoreStatus": "exception"
+            },
+            {
+                "id": "L006",
+                "name": "张伟",
+                "company": "恒大物业中心",
+                "source": "展会扫描",
+                "status": "待认领",
+                "time": "2023-10-23 15:10",
+                "score": 66,
+                "scoreStatus": "normal"
+            },
+            {
+                "id": "L007",
+                "name": "刘芳",
+                "company": "蓝天教育集团",
+                "source": "电话咨询",
+                "status": "待认领",
+                "time": "2023-10-23 14:05",
+                "score": 88,
+                "scoreStatus": "success"
+            },
+            {
+                "id": "L008",
+                "name": "Michael Chen",
+                "company": "TechHub Co.",
+                "source": "官网预约",
+                "status": "待认领",
+                "time": "2023-10-23 11:55",
+                "score": 55,
+                "scoreStatus": "normal"
+            },
+            {
+                "id": "L009",
+                "name": "赵敏",
+                "company": "敏捷物流",
+                "source": "第三方投放",
+                "status": "待认领",
+                "time": "2023-10-23 10:40",
+                "score": 95,
+                "scoreStatus": "success"
+            },
+            {
+                "id": "L010",
+                "name": "孙兴",
+                "company": "兴盛房产",
+                "source": "展会扫描",
+                "status": "待认领",
+                "time": "2023-10-23 09:20",
+                "score": 42,
+                "scoreStatus": "active"
+            }
+        ],
+        "searchVal": "",
+        "sourceFilter": "全部来源",
+        "statusFilter": "待认领"
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "navLogo",
+                "navMenu",
+                "navFooter"
+            ]
+        },
+        {
+            "id": "navLogo",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-2"
+            },
+            "children": [
+                "logoImg",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/security-gate-logo/200/200",
+                "className": "w-8 h-8 rounded-lg"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Security Gate",
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "navMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action transition-colors cursor-pointer"
+            },
+            "children": [
+                "navMenuIcon",
+                "navMenuLabel"
+            ]
+        },
+        {
+            "id": "navMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "navFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex flex-col gap-2"
+            },
+            "children": [
+                "ticketBtn",
+                "logoutBtn"
+            ]
+        },
+        {
+            "id": "ticketBtn",
+            "component": "Button",
+            "props": {
+                "value": "提交工单",
+                "icon": "life-buoy",
+                "className": "w-full",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "logoutBtn",
+            "component": "Button",
+            "props": {
+                "value": "安全退出",
+                "icon": "log-out",
+                "className": "w-full",
+                "color": "danger",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "globalHeader",
+                "pageContent"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset"
+            },
+            "children": [
+                "headerSearch",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索线索名称、公司...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifIcon",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "notifIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer",
+                "color": "default"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "avatarImg",
+                "userName"
+            ]
+        },
+        {
+            "id": "avatarImg",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": "张经理",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "pageContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "pageHeader",
+                "metricGrid",
+                "tableCard",
+                "aiBanner"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "headerTitleGroup",
+                "headerActionGroup"
+            ]
+        },
+        {
+            "id": "headerTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "pageTitle",
+                "pageDesc"
+            ]
+        },
+        {
+            "id": "pageTitle",
+            "component": "h1",
+            "props": {
+                "value": "线索池管理 (Lead Pool)",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pageDesc",
+            "component": "p",
+            "props": {
+                "value": "在这里管理所有未分配的原始线索，您可以手动认领或配置自动路由规则。当前池内线索周转率提升了15%。",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "importBtn",
+                "routeBtn"
+            ]
+        },
+        {
+            "id": "importBtn",
+            "component": "Button",
+            "props": {
+                "value": "导入线索",
+                "icon": "file-up",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "routeBtn",
+            "component": "Button",
+            "props": {
+                "value": "路由规则",
+                "icon": "git-branch",
+                "color": "primary",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "metricGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "metricHeader",
+                "metricValueGroup"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "metricValueGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2"
+            },
+            "children": [
+                "metricValue",
+                "metricTrend"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs font-medium text-success"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-gutter flex flex-col gap-4"
+            },
+            "children": [
+                "tableFilterBar",
+                "leadTable"
+            ]
+        },
+        {
+            "id": "tableFilterBar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "sourceSelect",
+                "statusSelect"
+            ]
+        },
+        {
+            "id": "sourceSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/sourceFilter"
+                },
+                "options": [
+                    {
+                        "label": "全部来源",
+                        "value": "全部来源"
+                    },
+                    {
+                        "label": "官网预约",
+                        "value": "官网预约"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/statusFilter"
+                },
+                "options": [
+                    {
+                        "label": "待认领",
+                        "value": "待认领"
+                    },
+                    {
+                        "label": "处理中",
+                        "value": "处理中"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索姓名/公司",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "leadTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/leads"
+                },
+                "columns": [
+                    {
+                        "title": "姓名/公司",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "来源",
+                        "dataIndex": "source"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "时间",
+                        "dataIndex": "time"
+                    },
+                    {
+                        "title": "评分进度",
+                        "dataIndex": "score",
+                        "width": 150
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 120
+                    }
+                ]
+            },
+            "children": {
+                "path": "/leads",
+                "componentId": "leadTableRow"
+            }
+        },
+        {
+            "id": "leadTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellLeadInfo",
+                "cellSource",
+                "cellStatus",
+                "cellTime",
+                "cellScore",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellLeadInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "leadName",
+                "leadCompany"
+            ]
+        },
+        {
+            "id": "leadName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "leadCompany",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "company"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellSource",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "source"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "processing"
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "score"
+                },
+                "status": {
+                    "path": "scoreStatus"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "claimBtn",
+                "viewIcon"
+            ]
+        },
+        {
+            "id": "claimBtn",
+            "component": "Button",
+            "props": {
+                "value": "认领",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "viewIcon",
+            "component": "Icon",
+            "props": {
+                "name": "eye",
+                "className": "w-4 h-4 cursor-pointer",
+                "color": "default"
+            }
+        },
+        {
+            "id": "aiBanner",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container p-inset rounded-container flex items-center justify-between border border-primary/10"
+            },
+            "children": [
+                "aiBannerLeft",
+                "aiBannerRight"
+            ]
+        },
+        {
+            "id": "aiBannerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "aiIcon",
+                "aiTextGroup"
+            ]
+        },
+        {
+            "id": "aiIcon",
+            "component": "Icon",
+            "props": {
+                "name": "sparkles",
+                "shape": "square",
+                "color": "primary",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "aiTextGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "aiTitle",
+                "aiDesc"
+            ]
+        },
+        {
+            "id": "aiTitle",
+            "component": "span",
+            "props": {
+                "value": "解锁 AI 智能线索打分系统",
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "aiDesc",
+            "component": "p",
+            "props": {
+                "value": "基于 50+ 维度深度学习算法，自动识别高意向客户，将您的线索转化率提升至 300% 以上。",
+                "className": "text-sm text-on-primary-container opacity-80"
+            }
+        },
+        {
+            "id": "aiBannerRight",
+            "component": "Button",
+            "props": {
+                "value": "立即升级计划",
+                "color": "primary",
+                "size": "large",
+                "icon": "arrow-right",
+                "iconPlacement": "end"
+            }
+        }
+    ]
+}

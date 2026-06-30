@@ -1,0 +1,914 @@
+{
+    "state": {
+        "sidebar": {
+            "brand": {
+                "logo": "shield-check",
+                "name": "Security Gate"
+            },
+            "menu": [
+                {
+                    "label": "Dashboard",
+                    "icon": "layout-dashboard",
+                    "active": false
+                },
+                {
+                    "label": "Lead Pool",
+                    "icon": "users",
+                    "active": true
+                },
+                {
+                    "label": "Campaigns",
+                    "icon": "megaphone",
+                    "active": false
+                },
+                {
+                    "label": "Analytics",
+                    "icon": "bar-chart-3",
+                    "active": false
+                },
+                {
+                    "label": "Automation",
+                    "icon": "zap",
+                    "active": false
+                },
+                {
+                    "label": "Integrations",
+                    "icon": "link-2",
+                    "active": false
+                },
+                {
+                    "label": "Settings",
+                    "icon": "settings",
+                    "active": false
+                }
+            ]
+        },
+        "toolbar": {
+            "search": "",
+            "notifications": 12
+        },
+        "metrics": [
+            {
+                "label": "Total Unassigned Leads",
+                "value": "1,284",
+                "trend": "+12%",
+                "icon": "user-plus",
+                "color": "primary"
+            },
+            {
+                "label": "New Today",
+                "value": "42",
+                "trend": "+5%",
+                "icon": "clock",
+                "color": "success"
+            },
+            {
+                "label": "Average Time in Pool",
+                "value": "4h 22m",
+                "trend": "-18%",
+                "icon": "timer",
+                "color": "warning"
+            }
+        ],
+        "table": {
+            "search": "",
+            "source": "All Sources",
+            "status": "All Status",
+            "data": [
+                {
+                    "id": "1",
+                    "name": "Johnathan Doe",
+                    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                    "company": "TechFlow Solutions",
+                    "sub": "Enterprise Software",
+                    "source": "Website",
+                    "sourceIcon": "globe",
+                    "status": "UNASSIGNED",
+                    "statusType": "warning",
+                    "score": 85,
+                    "time": "2 hours ago"
+                },
+                {
+                    "id": "2",
+                    "name": "Sarah Jenkins",
+                    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                    "company": "GreenGrid Systems",
+                    "sub": "Renewable Energy",
+                    "source": "Referral",
+                    "sourceIcon": "user-check",
+                    "status": "UNASSIGNED",
+                    "statusType": "warning",
+                    "score": 92,
+                    "time": "5 hours ago"
+                },
+                {
+                    "id": "3",
+                    "name": "Michael Chen",
+                    "avatar": "https://randomuser.me/api/portraits/men/67.jpg",
+                    "company": "BlueWhale Logistics",
+                    "sub": "Supply Chain",
+                    "source": "LinkedIn",
+                    "sourceIcon": "linkedin",
+                    "status": "PENDING",
+                    "statusType": "processing",
+                    "score": 64,
+                    "time": "1 day ago"
+                },
+                {
+                    "id": "4",
+                    "name": "Emily Rodriguez",
+                    "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+                    "company": "Nova Retail Group",
+                    "sub": "E-commerce",
+                    "source": "Ads",
+                    "sourceIcon": "mouse-pointer-click",
+                    "status": "UNASSIGNED",
+                    "statusType": "warning",
+                    "score": 78,
+                    "time": "3 hours ago"
+                }
+            ]
+        }
+    },
+    "rootId": "adminLayout",
+    "elements": [
+        {
+            "id": "adminLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sideNavHeader",
+                "sideNavMenu",
+                "sideNavFooter"
+            ]
+        },
+        {
+            "id": "sideNavHeader",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "sideNavLogo",
+                "sideNavBrandName"
+            ]
+        },
+        {
+            "id": "sideNavLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/sidebar/brand/logo"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "sideNavBrandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/sidebar/brand/name"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sideNavMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 space-y-1"
+            },
+            "children": {
+                "path": "/sidebar/menu",
+                "componentId": "sideNavMenuItem"
+            }
+        },
+        {
+            "id": "sideNavMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "sideNavMenuIcon",
+                "sideNavMenuLabel"
+            ]
+        },
+        {
+            "id": "sideNavMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sideNavMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sideNavFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider space-y-2"
+            },
+            "children": [
+                "supportBtn",
+                "logoutLink"
+            ]
+        },
+        {
+            "id": "supportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Support Ticket",
+                "icon": "life-buoy",
+                "className": "w-full",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "logoutLink",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center gap-2 py-2 text-on-surface-variant cursor-pointer"
+            },
+            "children": [
+                "logoutIcon",
+                "logoutText"
+            ]
+        },
+        {
+            "id": "logoutIcon",
+            "component": "Icon",
+            "props": {
+                "name": "log-out",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "logoutText",
+            "component": "span",
+            "props": {
+                "value": "Log Out",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topToolbar",
+                "scrollContent"
+            ]
+        },
+        {
+            "id": "topToolbar",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-8"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "span",
+            "props": {
+                "value": "Lead Pool",
+                "className": "text-md font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "globalSearch",
+                "toolbarIcons"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/toolbar/search"
+                },
+                "placeholder": "Global search...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "toolbarIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "iconBell",
+                "iconCalendar",
+                "iconHelp",
+                "iconUser"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconCalendar",
+            "component": "Icon",
+            "props": {
+                "name": "calendar",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconUser",
+            "component": "Icon",
+            "props": {
+                "name": "user-circle",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "scrollContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8 space-y-8"
+            },
+            "children": [
+                "pageHeader",
+                "metricGrid",
+                "tableCard",
+                "promoCard"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "headerText",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerText",
+            "component": "div",
+            "props": {
+                "className": "space-y-1"
+            },
+            "children": [
+                "headerTitle",
+                "headerDesc"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": "Lead Pool",
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerDesc",
+            "component": "p",
+            "props": {
+                "value": "Manage and distribute unassigned leads to your sales team efficiently.",
+                "className": "text-on-surface-variant text-md"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "importBtn",
+                "routingBtn"
+            ]
+        },
+        {
+            "id": "importBtn",
+            "component": "Button",
+            "props": {
+                "value": "Import Leads",
+                "icon": "upload",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "routingBtn",
+            "component": "Button",
+            "props": {
+                "value": "Routing Rules",
+                "icon": "git-branch",
+                "color": "primary",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "metricGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-6"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card flex items-center gap-4"
+            },
+            "children": [
+                "metricIcon",
+                "metricInfo"
+            ]
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "square",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "metricInfo",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            },
+            "children": [
+                "metricLabel",
+                "metricValueRow"
+            ]
+        },
+        {
+            "id": "metricLabel",
+            "component": "div",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant font-medium uppercase tracking-wider"
+            }
+        },
+        {
+            "id": "metricValueRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2"
+            },
+            "children": [
+                "metricValue",
+                "metricTrend"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs font-bold text-success"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "tableToolbar",
+                "leadTable"
+            ]
+        },
+        {
+            "id": "tableToolbar",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider flex items-center justify-between"
+            },
+            "children": [
+                "tableFilters",
+                "tableFilterIcon"
+            ]
+        },
+        {
+            "id": "tableFilters",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "tableSearch",
+                "sourceSelect",
+                "statusSelect"
+            ]
+        },
+        {
+            "id": "tableSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/table/search"
+                },
+                "placeholder": "Filter by name...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "sourceSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/table/source"
+                },
+                "options": [
+                    {
+                        "label": "All Sources",
+                        "value": "All Sources"
+                    },
+                    {
+                        "label": "Website",
+                        "value": "Website"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/table/status"
+                },
+                "options": [
+                    {
+                        "label": "All Status",
+                        "value": "All Status"
+                    },
+                    {
+                        "label": "UNASSIGNED",
+                        "value": "UNASSIGNED"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "tableFilterIcon",
+            "component": "Button",
+            "props": {
+                "icon": "filter",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "leadTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/table/data"
+                },
+                "columns": [
+                    {
+                        "title": "LEAD NAME & COMPANY",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "SOURCE",
+                        "dataIndex": "source",
+                        "width": 120
+                    },
+                    {
+                        "title": "STATUS",
+                        "dataIndex": "status",
+                        "width": 140
+                    },
+                    {
+                        "title": "SCORE",
+                        "dataIndex": "score",
+                        "width": 150
+                    },
+                    {
+                        "title": "CREATED AT",
+                        "dataIndex": "time",
+                        "width": 120
+                    },
+                    {
+                        "title": "ACTION",
+                        "dataIndex": "action",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/table/data",
+                "componentId": "leadTableRow"
+            }
+        },
+        {
+            "id": "leadTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellLead",
+                "cellSource",
+                "cellStatus",
+                "cellScore",
+                "cellTime",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellLead",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "leadAvatar",
+                "leadMeta"
+            ]
+        },
+        {
+            "id": "leadAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "leadMeta",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "leadName",
+                "leadCompany"
+            ]
+        },
+        {
+            "id": "leadName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "leadCompany",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "company"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellSource",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "sourceIcon",
+                "sourceLabel"
+            ]
+        },
+        {
+            "id": "sourceIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "sourceIcon"
+                },
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sourceLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "source"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "div",
+            "props": {
+                "className": "w-full space-y-1"
+            },
+            "children": [
+                "scoreText",
+                "scoreProgress"
+            ]
+        },
+        {
+            "id": "scoreText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "scoreProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "score"
+                },
+                "showInfo": false,
+                "size": "small",
+                "strokeColor": "#0067D1"
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "value": "Claim",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "promoCard",
+            "component": "div",
+            "props": {
+                "className": "bg-primary text-on-primary p-8 rounded-xl flex items-center justify-between relative overflow-hidden"
+            },
+            "children": [
+                "promoContent",
+                "promoBtn"
+            ]
+        },
+        {
+            "id": "promoContent",
+            "component": "div",
+            "props": {
+                "className": "max-w-2xl space-y-2 relative z-10"
+            },
+            "children": [
+                "promoTitleRow",
+                "promoDesc"
+            ]
+        },
+        {
+            "id": "promoTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "promoSparkle",
+                "promoTitle"
+            ]
+        },
+        {
+            "id": "promoSparkle",
+            "component": "Icon",
+            "props": {
+                "name": "sparkles",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "promoTitle",
+            "component": "h2",
+            "props": {
+                "value": "Enable AI-Driven Lead Scoring",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "promoDesc",
+            "component": "p",
+            "props": {
+                "value": "Our AI analyzes 50+ signals to identify prospects most likely to convert with 94% accuracy.",
+                "className": "opacity-90 text-md"
+            }
+        },
+        {
+            "id": "promoBtn",
+            "component": "Button",
+            "props": {
+                "value": "Upgrade Plan",
+                "className": "bg-white text-primary border-none font-bold px-8",
+                "size": "large"
+            }
+        }
+    ]
+}

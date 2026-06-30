@@ -1,0 +1,1418 @@
+{
+  "state": {
+    "systemName": "iMaster NCE-FabricInsight",
+    "leftNavItems": [
+      {
+        "label": "健康看板",
+        "icon": "Home",
+        "activeStatus": true
+      },
+      {
+        "label": "大屏",
+        "icon": "Monitor",
+        "activeStatus": false
+      }
+    ],
+    "rightActions": [
+      {
+        "label": "策略中心",
+        "type": "text"
+      },
+      {
+        "icon": "HelpCircle",
+        "tooltip": "帮助文档"
+      },
+      {
+        "icon": "Settings",
+        "tooltip": "系统设置"
+      },
+      {
+        "icon": "Moon",
+        "tooltip": "主题切换"
+      }
+    ],
+    "userInfo": {
+      "userName": "Admin",
+      "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    "selectedMenuKeys": [
+      "health-dashboard"
+    ],
+    "menuItems": [
+      {
+        "title": "健康看板",
+        "key": "health-dashboard",
+        "icon": "home"
+      },
+      {
+        "title": "大屏",
+        "key": "big-screen",
+        "icon": "monitor"
+      }
+    ],
+    "activeTab": "inspection",
+    "tabItems": [
+      {
+        "key": "inspection",
+        "label": "巡检结果",
+        "icon": "clipboard-check",
+        "isActive": true
+      },
+      {
+        "key": "planning",
+        "label": "链路规划",
+        "icon": "route",
+        "isActive": false
+      }
+    ],
+    "decorativeIcon": "shield-check",
+    "cardTitle": "检测完成",
+    "inspectionTime": "2025-11-27 10:09:18",
+    "nextInspectionTime": "2025-11-27 10:49:17",
+    "resultSummary": "检测结果：共152条链路，已检测152条链路，其中有2条链路存在异常。异常类型统计如下：",
+    "anomalyTags": [
+      {
+        "tagName": "异常分光",
+        "count": 1,
+        "tagColor": "error"
+      },
+      {
+        "tagName": "脏污",
+        "count": 1,
+        "tagColor": "warning"
+      }
+    ],
+    "statusMetrics": [
+      {
+        "statusName": "正常",
+        "count": 45,
+        "icon": "circle-check",
+        "statusColor": "success"
+      },
+      {
+        "statusName": "Down",
+        "count": 0,
+        "icon": "circle-arrow-down",
+        "statusColor": "default"
+      },
+      {
+        "statusName": "异常",
+        "count": 2,
+        "icon": "triangle-alert",
+        "statusColor": "error"
+      },
+      {
+        "statusName": "风险",
+        "count": 0,
+        "icon": "circle-alert",
+        "statusColor": "warning"
+      }
+    ],
+    "searchValue": "",
+    "selectedKeys": [],
+    "tableRows": [
+      {
+        "id": "row1",
+        "localDeviceName": "POD9-64-ZT",
+        "localPort": "400GE 1/0/2",
+        "localModuleType": "400G-SR8",
+        "remoteDeviceName": "无数据",
+        "remotePort": "无数据",
+        "remoteModuleType": "无数据",
+        "linkStatus": {
+          "text": "异常",
+          "icon": "alert-triangle",
+          "status": "error"
+        },
+        "analysisResult": "光链路异常分光且频繁丢包",
+        "localTxPower": "Lane1:-1.25dBm",
+        "localRxPower": "Lane0:2.43dBm",
+        "localCurrent": "Lane0:87.23mA",
+        "localSnr": "Lane0:1.02dB",
+        "localBer": "NA",
+        "remoteTxPower": "Lane0:-0.95dBm",
+        "remoteRxPower": "Lane0:2.43dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row2",
+        "localDeviceName": "spine1",
+        "localPort": "400GE 1/0/1",
+        "localModuleType": "400G-SR8",
+        "remoteDeviceName": "Leaf1",
+        "remotePort": "400GE 1/0/1",
+        "remoteModuleType": "400G-SR8",
+        "linkStatus": {
+          "text": "异常",
+          "icon": "alert-triangle",
+          "status": "error"
+        },
+        "analysisResult": "本端光模块多通道接收异常",
+        "localTxPower": "无数据",
+        "localRxPower": "Lane0:2.43dBm",
+        "localCurrent": "Lane0:87.23mA",
+        "localSnr": "Lane0:1.02dB",
+        "localBer": "NA",
+        "remoteTxPower": "Lane0:-0.95dBm",
+        "remoteRxPower": "Lane0:2.43dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row3",
+        "localDeviceName": "spine1",
+        "localPort": "100GE 1/0/3",
+        "localModuleType": "400G-SR8",
+        "remoteDeviceName": "Leaf1",
+        "remotePort": "400GE 1/0/1",
+        "remoteModuleType": "400G-SR8",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:2.43dBm",
+        "localRxPower": "Lane0:-1.25dBm",
+        "localCurrent": "Lane0:85.11mA",
+        "localSnr": "Lane0:1.05dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:2.43dBm",
+        "remoteRxPower": "Lane0:-0.95dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row4",
+        "localDeviceName": "spine2",
+        "localPort": "100GE 1/0/1",
+        "localModuleType": "100G-SR4",
+        "remoteDeviceName": "Leaf2",
+        "remotePort": "100GE 1/0/1",
+        "remoteModuleType": "100G-SR4",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:1.89dBm",
+        "localRxPower": "Lane0:-0.45dBm",
+        "localCurrent": "Lane0:45.21mA",
+        "localSnr": "Lane0:2.11dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:2.12dBm",
+        "remoteRxPower": "Lane0:-0.38dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row5",
+        "localDeviceName": "spine3",
+        "localPort": "40GE 1/0/2",
+        "localModuleType": "40G-SR4",
+        "remoteDeviceName": "Leaf4",
+        "remotePort": "40GE 1/0/2",
+        "remoteModuleType": "40G-SR4",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:3.10dBm",
+        "localRxPower": "Lane0:0.89dBm",
+        "localCurrent": "Lane0:32.55mA",
+        "localSnr": "Lane0:1.98dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:2.85dBm",
+        "remoteRxPower": "Lane0:0.76dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row6",
+        "localDeviceName": "POD5-12-TOR",
+        "localPort": "10GE 1/0/5",
+        "localModuleType": "10G-SR",
+        "remoteDeviceName": "Server-RackA",
+        "remotePort": "10GE 1/0/1",
+        "remoteModuleType": "10G-SR",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:-2.11dBm",
+        "localRxPower": "Lane0:-4.15dBm",
+        "localCurrent": "Lane0:12.33mA",
+        "localSnr": "Lane0:3.45dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:-1.95dBm",
+        "remoteRxPower": "Lane0:-3.88dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row7",
+        "localDeviceName": "Firewall-01",
+        "localPort": "40GE 1/0/1",
+        "localModuleType": "40G-SR4",
+        "remoteDeviceName": "CoreSwitch",
+        "remotePort": "40GE 1/0/3",
+        "remoteModuleType": "40G-SR4",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:0.55dBm",
+        "localRxPower": "Lane0:-0.12dBm",
+        "localCurrent": "Lane0:38.10mA",
+        "localSnr": "Lane0:2.55dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:0.65dBm",
+        "remoteRxPower": "Lane0:0.11dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row8",
+        "localDeviceName": "CoreSwitch",
+        "localPort": "100GE 2/0/1",
+        "localModuleType": "100G-CWDM4",
+        "remoteDeviceName": "Spine1",
+        "remotePort": "100GE 3/0/2",
+        "remoteModuleType": "100G-CWDM4",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:4.12dBm",
+        "localRxPower": "Lane0:1.33dBm",
+        "localCurrent": "Lane0:56.21mA",
+        "localSnr": "Lane0:1.88dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:3.95dBm",
+        "remoteRxPower": "Lane0:1.20dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row9",
+        "localDeviceName": "Leaf6",
+        "localPort": "25GE 1/0/4",
+        "localModuleType": "25G-SR",
+        "remoteDeviceName": "Server-RackB",
+        "remotePort": "25GE 1/0/2",
+        "remoteModuleType": "25G-SR",
+        "linkStatus": {
+          "text": "风险",
+          "icon": "circle-alert",
+          "status": "warning"
+        },
+        "analysisResult": "光模块温度偏高，接收功率临近阈值",
+        "localTxPower": "Lane0:1.22dBm",
+        "localRxPower": "Lane0:-8.95dBm",
+        "localCurrent": "Lane0:18.45mA",
+        "localSnr": "Lane0:0.85dB",
+        "localBer": "1.2E-8",
+        "remoteTxPower": "Lane0:1.15dBm",
+        "remoteRxPower": "Lane0:-9.10dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      },
+      {
+        "id": "row10",
+        "localDeviceName": "Spine4",
+        "localPort": "100GE 1/0/4",
+        "localModuleType": "100G-SR4",
+        "remoteDeviceName": "Leaf8",
+        "remotePort": "100GE 1/0/1",
+        "remoteModuleType": "100G-SR4",
+        "linkStatus": {
+          "text": "正常",
+          "icon": "circle-check",
+          "status": "success"
+        },
+        "analysisResult": "未发现异常",
+        "localTxPower": "Lane0:2.15dBm",
+        "localRxPower": "Lane0:-0.55dBm",
+        "localCurrent": "Lane0:42.11mA",
+        "localSnr": "Lane0:1.95dB",
+        "localBer": "0",
+        "remoteTxPower": "Lane0:2.25dBm",
+        "remoteRxPower": "Lane0:-0.45dBm",
+        "actions": [
+          "Detail",
+          "Diagnose"
+        ]
+      }
+    ]
+  },
+  "rootId": "rootMainContainer",
+  "elements": [
+    {
+      "id": "rootMainContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-full bg-surface-container-lowest"
+      },
+      "children": [
+        "headerGlobalNav",
+        "mainScrollableArea"
+      ]
+    },
+    {
+      "id": "headerGlobalNav",
+      "component": "header",
+      "props": {
+        "className": "w-full h-12 bg-surface-container-highest shadow-sm flex items-center px-page shrink-0"
+      },
+      "children": [
+        "gHeadNavLeftArea",
+        "gHeadNavSpacer",
+        "gHeadNavRightArea"
+      ]
+    },
+    {
+      "id": "mainScrollableArea",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col gap-section p-page overflow-y-auto"
+      },
+      "children": [
+        "navSecondaryTab",
+        "sectionSummaryCard",
+        "sectionLinkDetailTable"
+      ]
+    },
+    {
+      "id": "navSecondaryTab",
+      "component": "nav",
+      "props": {
+        "className": "w-full shrink-0"
+      },
+      "children": [
+        "secTabNavContainer"
+      ]
+    },
+    {
+      "id": "sectionSummaryCard",
+      "component": "section",
+      "props": {
+        "className": "w-full shrink-0 bg-surface-container-highest shadow-card rounded-container"
+      },
+      "children": [
+        "insSumCardInner"
+      ]
+    },
+    {
+      "id": "sectionLinkDetailTable",
+      "component": "section",
+      "props": {
+        "className": "w-full shrink-0 bg-surface-container-highest shadow-card rounded-container flex flex-col"
+      },
+      "children": [
+        "linkTblHeader",
+        "linkTblToolbar",
+        "linkTblTableWrap"
+      ]
+    },
+    {
+      "id": "gHeadNavLeftArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "gHeadNavMenuBtn",
+        "gHeadNavLogoArea",
+        "gHeadNavDivider",
+        "gHeadNavMainMenu"
+      ]
+    },
+    {
+      "id": "gHeadNavMenuBtn",
+      "component": "Button",
+      "props": {
+        "icon": "menu",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "gHeadNavLogoArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "gHeadNavLogoIcon",
+        "gHeadNavSystemName"
+      ]
+    },
+    {
+      "id": "gHeadNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "hexagon",
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadNavSystemName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemName"
+        },
+        "className": "text-md font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "gHeadNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider mx-1"
+      }
+    },
+    {
+      "id": "gHeadNavMainMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "bg-transparent"
+      }
+    },
+    {
+      "id": "gHeadNavSpacer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "gHeadNavRightArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "gHeadNavStrategyBtn",
+        "gHeadNavDividerRight",
+        "gHeadNavHelpBtn",
+        "gHeadNavSettingsBtn",
+        "gHeadNavThemeBtn",
+        "gHeadNavDividerUser",
+        "gHeadNavUserArea"
+      ]
+    },
+    {
+      "id": "gHeadNavStrategyBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/rightActions/0/label"
+        },
+        "types": "link"
+      }
+    },
+    {
+      "id": "gHeadNavDividerRight",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider mx-1"
+      }
+    },
+    {
+      "id": "gHeadNavHelpBtn",
+      "component": "Button",
+      "props": {
+        "icon": "help-circle",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "gHeadNavSettingsBtn",
+      "component": "Button",
+      "props": {
+        "icon": "settings",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "gHeadNavThemeBtn",
+      "component": "Button",
+      "props": {
+        "icon": "moon",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "gHeadNavDividerUser",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider mx-1"
+      }
+    },
+    {
+      "id": "gHeadNavUserArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 pl-1"
+      },
+      "children": [
+        "gHeadNavUserAvatar",
+        "gHeadNavUserName"
+      ]
+    },
+    {
+      "id": "gHeadNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/userAvatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "gHeadNavUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/userName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "secTabNavContainer",
+      "component": "div",
+      "props": {
+        "className": "w-full bg-surface-container-highest border-b border-divider px-page"
+      },
+      "children": [
+        "secTabNavTabs"
+      ]
+    },
+    {
+      "id": "secTabNavTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "types": "line",
+        "size": "medium"
+      },
+      "children": {
+        "path": "/tabItems",
+        "componentId": "secTabNavItem"
+      }
+    },
+    {
+      "id": "secTabNavItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "label"
+        },
+        "icon": {
+          "path": "icon"
+        }
+      }
+    },
+    {
+      "id": "insSumCardInner",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row overflow-hidden"
+      },
+      "children": [
+        "insSumCardLeftDecor",
+        "insSumCardRightContent"
+      ]
+    },
+    {
+      "id": "insSumCardLeftDecor",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center w-24 shrink-0 bg-primary rounded-l-xl py-6"
+      },
+      "children": [
+        "insSumCardDecorIcon"
+      ]
+    },
+    {
+      "id": "insSumCardDecorIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/decorativeIcon"
+        },
+        "color": "inverse",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "insSumCardRightContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-4 p-page"
+      },
+      "children": [
+        "insSumCardHeader",
+        "insSumCardMidSection",
+        "insSumCardStatusGrid"
+      ]
+    },
+    {
+      "id": "insSumCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-start justify-between"
+      },
+      "children": [
+        "insSumCardTitleArea",
+        "insSumCardTimeArea"
+      ]
+    },
+    {
+      "id": "insSumCardTitleArea",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-2"
+      },
+      "children": [
+        "insSumCardTitle",
+        "insSumCardStatusTag"
+      ]
+    },
+    {
+      "id": "insSumCardTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "insSumCardStatusTag",
+      "component": "Tag",
+      "props": {
+        "value": "已完成",
+        "color": "success",
+        "icon": "circle-check",
+        "size": "small"
+      }
+    },
+    {
+      "id": "insSumCardTimeArea",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end gap-1"
+      },
+      "children": [
+        "insSumCardTimeRow1",
+        "insSumCardTimeRow2"
+      ]
+    },
+    {
+      "id": "insSumCardTimeRow1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "insSumCardTimeIcon1",
+        "insSumCardTimeLabel1",
+        "insSumCardInsTimeVal"
+      ]
+    },
+    {
+      "id": "insSumCardTimeIcon1",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "primary",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "insSumCardTimeLabel1",
+      "component": "span",
+      "props": {
+        "value": "检测时间",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "insSumCardInsTimeVal",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/inspectionTime"
+        },
+        "className": "text-xs text-on-surface"
+      }
+    },
+    {
+      "id": "insSumCardTimeRow2",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "insSumCardTimeIcon2",
+        "insSumCardTimeLabel2",
+        "insSumCardNextTimeVal"
+      ]
+    },
+    {
+      "id": "insSumCardTimeIcon2",
+      "component": "Icon",
+      "props": {
+        "name": "timer",
+        "color": "default",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "insSumCardTimeLabel2",
+      "component": "span",
+      "props": {
+        "value": "下次检测",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "insSumCardNextTimeVal",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/nextInspectionTime"
+        },
+        "className": "text-xs text-on-surface"
+      }
+    },
+    {
+      "id": "insSumCardMidSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-2"
+      },
+      "children": [
+        "insSumCardDescText",
+        "insSumCardTagRow"
+      ]
+    },
+    {
+      "id": "insSumCardDescText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/resultSummary"
+        },
+        "className": "text-sm text-on-surface-variant leading-relaxed"
+      }
+    },
+    {
+      "id": "insSumCardTagRow",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-3 flex-wrap"
+      },
+      "children": {
+        "path": "/anomalyTags",
+        "componentId": "insSumCardAnomalyTagWrapper"
+      }
+    },
+    {
+      "id": "insSumCardAnomalyTagWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "insSumCardAnomalyTag",
+        "insSumCardAnomalyCountSpan"
+      ]
+    },
+    {
+      "id": "insSumCardAnomalyTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "tagName"
+        },
+        "color": {
+          "path": "tagColor"
+        },
+        "icon": "triangle-alert",
+        "size": "small"
+      }
+    },
+    {
+      "id": "insSumCardAnomalyCountSpan",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "count"
+        },
+        "className": "text-sm font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "insSumCardStatusGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-section"
+      },
+      "children": {
+        "path": "/statusMetrics",
+        "componentId": "insSumCardStatusBlock"
+      }
+    },
+    {
+      "id": "insSumCardStatusBlock",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-3 bg-surface-variant rounded-lg p-3"
+      },
+      "children": [
+        "insSumCardStatusIcon",
+        "insSumCardStatusInfo"
+      ]
+    },
+    {
+      "id": "insSumCardStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "insSumCardStatusInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "insSumCardStatusCount",
+        "insSumCardStatusName"
+      ]
+    },
+    {
+      "id": "insSumCardStatusCount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "count"
+        },
+        "className": "text-xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "insSumCardStatusName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "statusName"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "linkTblHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-page pt-page pb-0"
+      },
+      "children": [
+        "linkTblHeaderIcon",
+        "linkTblHeaderTitle"
+      ]
+    },
+    {
+      "id": "linkTblHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": "list-checks",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "linkTblHeaderTitle",
+      "component": "span",
+      "props": {
+        "value": "链路巡检明细数据",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between gap-3 px-page py-4 border-b border-divider"
+      },
+      "children": [
+        "linkTblSearchInput",
+        "linkTblActionsGroup"
+      ]
+    },
+    {
+      "id": "linkTblSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "默认按关键字搜索...",
+        "prefix": "search",
+        "className": "w-72"
+      }
+    },
+    {
+      "id": "linkTblActionsGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "linkTblBtnQuery",
+        "linkTblBtnSettings",
+        "linkTblBtnPeriodic",
+        "linkTblBtnDetect",
+        "linkTblBtnExport"
+      ]
+    },
+    {
+      "id": "linkTblBtnQuery",
+      "component": "Button",
+      "props": {
+        "value": "查询",
+        "color": "default",
+        "icon": "search",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "linkTblBtnSettings",
+      "component": "Button",
+      "props": {
+        "value": "巡检设置",
+        "color": "default",
+        "icon": "settings",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "linkTblBtnPeriodic",
+      "component": "Button",
+      "props": {
+        "value": "周期检测设置",
+        "color": "default",
+        "icon": "timer",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "linkTblBtnDetect",
+      "component": "Button",
+      "props": {
+        "value": "检测",
+        "color": "default",
+        "icon": "play",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "linkTblBtnExport",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "color": "primary",
+        "icon": "download",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "linkTblTableWrap",
+      "component": "div",
+      "props": {
+        "className": "px-page pb-page pt-4"
+      },
+      "children": [
+        "linkTblTable"
+      ]
+    },
+    {
+      "id": "linkTblTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableRows"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "pagination": true,
+        "columns": [
+          {
+            "title": "本端设备名称",
+            "dataIndex": "localDeviceName",
+            "width": 140,
+            "fixed": "start"
+          },
+          {
+            "title": "本端端口",
+            "dataIndex": "localPort",
+            "width": 120
+          },
+          {
+            "title": "本端模块类型",
+            "dataIndex": "localModuleType",
+            "width": 120
+          },
+          {
+            "title": "对端设备名称",
+            "dataIndex": "remoteDeviceName",
+            "width": 140
+          },
+          {
+            "title": "对端端口",
+            "dataIndex": "remotePort",
+            "width": 120
+          },
+          {
+            "title": "对端模块类型",
+            "dataIndex": "remoteModuleType",
+            "width": 120
+          },
+          {
+            "title": "状态",
+            "dataIndex": "linkStatus",
+            "width": 90,
+            "align": "center"
+          },
+          {
+            "title": "分析结果",
+            "dataIndex": "analysisResult",
+            "width": 200
+          },
+          {
+            "title": "发送功率(本端)",
+            "dataIndex": "localTxPower",
+            "width": 130
+          },
+          {
+            "title": "接收功率(本端)",
+            "dataIndex": "localRxPower",
+            "width": 130
+          },
+          {
+            "title": "电流(本端)",
+            "dataIndex": "localCurrent",
+            "width": 120
+          },
+          {
+            "title": "信噪比(本端)",
+            "dataIndex": "localSnr",
+            "width": 110
+          },
+          {
+            "title": "误码率(本端)",
+            "dataIndex": "localBer",
+            "width": 100
+          },
+          {
+            "title": "发送功率(对端)",
+            "dataIndex": "remoteTxPower",
+            "width": 130
+          },
+          {
+            "title": "接收功率(对端)",
+            "dataIndex": "remoteRxPower",
+            "width": 130
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 140,
+            "fixed": "end"
+          }
+        ]
+      },
+      "children": {
+        "path": "/tableRows",
+        "componentId": "linkTblRow"
+      }
+    },
+    {
+      "id": "linkTblRow",
+      "component": "TableRow",
+      "children": [
+        "linkTblCellDeviceName",
+        "linkTblCellLocalPort",
+        "linkTblCellModuleType",
+        "linkTblCellRemoteName",
+        "linkTblCellRemotePort",
+        "linkTblCellRemoteModule",
+        "linkTblCellStatus",
+        "linkTblCellAnalysis",
+        "linkTblCellTxPower",
+        "linkTblCellRxPower",
+        "linkTblCellCurrent",
+        "linkTblCellSnr",
+        "linkTblCellBer",
+        "linkTblCellRemoteTx",
+        "linkTblCellRemoteRx",
+        "linkTblCellActions"
+      ]
+    },
+    {
+      "id": "linkTblCellDeviceName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localDeviceName"
+        },
+        "className": "text-sm text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "linkTblCellLocalPort",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localPort"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellModuleType",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "localModuleType"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "linkTblCellRemoteName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "remoteDeviceName"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellRemotePort",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "remotePort"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellRemoteModule",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "remoteModuleType"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "linkTblCellStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "linkStatus.text"
+        },
+        "icon": {
+          "path": "linkStatus.icon"
+        },
+        "color": {
+          "path": "linkStatus.status"
+        },
+        "variant": "filled",
+        "size": "small"
+      }
+    },
+    {
+      "id": "linkTblCellAnalysis",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "analysisResult"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellTxPower",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localTxPower"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellRxPower",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localRxPower"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellCurrent",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localCurrent"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellSnr",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localSnr"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellBer",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "localBer"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellRemoteTx",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "remoteTxPower"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellRemoteRx",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "remoteRxPower"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "linkTblCellActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "linkTblBtnDetail",
+        "linkTblBtnDiag"
+      ]
+    },
+    {
+      "id": "linkTblBtnDetail",
+      "component": "Button",
+      "props": {
+        "value": "详情",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "linkTblBtnDiag",
+      "component": "Button",
+      "props": {
+        "value": "诊断",
+        "types": "link",
+        "size": "small",
+        "color": "primary"
+      }
+    }
+  ]
+}

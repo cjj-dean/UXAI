@@ -1,0 +1,845 @@
+{
+  "state": {
+    "selectedMenuKeys": [
+      "config"
+    ],
+    "menuItems": [
+      {
+        "title": "监控",
+        "key": "monitor"
+      },
+      {
+        "title": "配置",
+        "key": "config"
+      },
+      {
+        "title": "维护",
+        "key": "maintenance"
+      }
+    ],
+    "notificationCount": 3,
+    "menuCategoryTitle": "网络配置",
+    "selectedKeys": [
+      "config-view"
+    ],
+    "openKeys": [
+      "template-mgmt"
+    ],
+    "breadcrumbItems": [
+      {
+        "breadcrumbName": "网络配置",
+        "path": "/net-config"
+      },
+      {
+        "breadcrumbName": "模板管理",
+        "path": "/net-config/template"
+      },
+      {
+        "breadcrumbName": "配置视图配置",
+        "path": null
+      }
+    ],
+    "cardTitle": "网络设备版本选择",
+    "selectedVersion": "v3.2",
+    "versionOptions": [
+      {
+        "label": "V3.2 (最新)",
+        "value": "v3.2"
+      },
+      {
+        "label": "V3.1",
+        "value": "v3.1"
+      },
+      {
+        "label": "V2.8 (LTS)",
+        "value": "v2.8"
+      }
+    ],
+    "modeCards": [
+      {
+        "cardId": "standard-mode",
+        "cardTitle": "标准模式",
+        "cardIcon": "monitor",
+        "modeIllustrationImage": "https://fpoimg.com/800x600?gradient=0067D1,E6F2FD&text_color=ffffff&text=Standard+3D",
+        "modeDescription": "适用于常规网络场景，提供图形化的向导式配置体验，屏蔽底层复杂命令，快速完成基础网络连通性设置。",
+        "featureTags": [
+          "图形化向导",
+          "快速开局",
+          "基础连通"
+        ],
+        "tagColor": "processing",
+        "actionButtonText": "进入标准模式"
+      },
+      {
+        "cardId": "expert-mode",
+        "cardTitle": "专家模式",
+        "cardIcon": "terminal",
+        "modeIllustrationImage": "https://fpoimg.com/800x600?gradient=F4840C,FEF5E8&text_color=ffffff&text=Expert+3D",
+        "modeDescription": "面向资深网络工程师，提供完整的CLI命令行视图与高级脚本下发能力，支持精细化策略与复杂协议配置。",
+        "featureTags": [
+          "CLI视图",
+          "高级脚本",
+          "精细化控制"
+        ],
+        "tagColor": "warning",
+        "actionButtonText": "进入专家模式"
+      }
+    ],
+    "deployCards": [
+      {
+        "cardId": "single-site",
+        "cardTitle": "单站配置",
+        "deployIcon": "building",
+        "featureList": [
+          "针对单一物理站点进行独立规划与部署",
+          "支持向导式绑定设备与模板",
+          "适用与小型分支或独立局点"
+        ],
+        "guideLinkText": "查看单站配置流程",
+        "guideLinkUrl": "/guide/single-site"
+      },
+      {
+        "cardId": "device-batch",
+        "cardTitle": "设备批量配置",
+        "deployIcon": "printer",
+        "featureList": [
+          "基于文件或规则批量下发配置到多台设备",
+          "支持配置预审计与一键回滚机制",
+          "适用于同构设备的大规模初始交付"
+        ],
+        "guideLinkText": "查看设备批量配置流程",
+        "guideLinkUrl": "/guide/device-batch"
+      },
+      {
+        "cardId": "site-batch",
+        "cardTitle": "站点批量配置",
+        "deployIcon": "map",
+        "featureList": [
+          "以站点为维度，批量将网络规划应用到多站点",
+          "支持站点间配置差异化变量替换",
+          "适用于大型园区多分支的敏捷开局"
+        ],
+        "guideLinkText": "查看站点批量配置流程",
+        "guideLinkUrl": "/guide/site-batch"
+      }
+    ]
+  },
+  "rootId": "appRoot",
+  "elements": [
+    {
+      "id": "appRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col w-[1920px] h-screen bg-surface-container-lowest overflow-hidden"
+      },
+      "children": [
+        "headerSlot",
+        "bodyWrapper"
+      ]
+    },
+    {
+      "id": "headerSlot",
+      "component": "header",
+      "props": {
+        "className": "flex items-center w-full h-16 bg-surface-container-highest shadow-sm px-page z-10"
+      },
+      "children": [
+        "hdrNavLogoArea",
+        "hdrNavMenuWrap",
+        "hdrNavRightArea"
+      ]
+    },
+    {
+      "id": "bodyWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "asideSlot",
+        "contentWrapper"
+      ]
+    },
+    {
+      "id": "asideSlot",
+      "component": "aside",
+      "props": {
+        "className": "flex flex-col w-64 bg-surface-container-highest shadow-sm overflow-y-auto"
+      },
+      "children": [
+        "sideMnuHeader",
+        "sideMnuDivider",
+        "sideMnuMenu"
+      ]
+    },
+    {
+      "id": "contentWrapper",
+      "component": "main",
+      "props": {
+        "className": "flex flex-col flex-1 p-page gap-section overflow-y-auto"
+      },
+      "children": [
+        "workspaceSlot",
+        "modeSlot",
+        "deploySlot"
+      ]
+    },
+    {
+      "id": "workspaceSlot",
+      "component": "div",
+      "props": {
+        "className": "flex w-full"
+      },
+      "children": [
+        "wrkSpcBreadcrumbBar"
+      ]
+    },
+    {
+      "id": "modeSlot",
+      "component": "section",
+      "props": {
+        "className": "flex flex-col w-full"
+      },
+      "children": [
+        "modSelHeader",
+        "modSelCardGrid"
+      ]
+    },
+    {
+      "id": "deploySlot",
+      "component": "section",
+      "props": {
+        "className": "flex flex-col w-full"
+      },
+      "children": [
+        "depMthTitleBar",
+        "depMthCardsGrid"
+      ]
+    },
+    {
+      "id": "hdrNavLogoArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "hdrNavLogoIcon",
+        "hdrNavLogoText"
+      ]
+    },
+    {
+      "id": "hdrNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "network",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "hdrNavLogoText",
+      "component": "span",
+      "props": {
+        "value": "iMaster Nce",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "hdrNavMenuWrap",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "hdrNavMenu"
+      ]
+    },
+    {
+      "id": "hdrNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "border-none"
+      }
+    },
+    {
+      "id": "hdrNavRightArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 shrink-0"
+      },
+      "children": [
+        "hdrNavNotifBadge",
+        "hdrNavSettingsIcon",
+        "hdrNavUserDivider",
+        "hdrNavUserArea"
+      ]
+    },
+    {
+      "id": "hdrNavNotifBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/notificationCount"
+        },
+        "overflowCount": 99
+      },
+      "children": [
+        "hdrNavNotifIcon"
+      ]
+    },
+    {
+      "id": "hdrNavNotifIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "hdrNavSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "hdrNavUserDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-6 bg-border-divider"
+      }
+    },
+    {
+      "id": "hdrNavUserArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "hdrNavUserAvatar",
+        "hdrNavUserName"
+      ]
+    },
+    {
+      "id": "hdrNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": "https://randomuser.me/api/portraits/men/75.jpg",
+        "alt": "Admin Avatar",
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "hdrNavUserName",
+      "component": "span",
+      "props": {
+        "value": "Admin",
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "sideMnuHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-5 py-4"
+      },
+      "children": [
+        "sideMnuHeaderIcon",
+        "sideMnuHeaderText"
+      ]
+    },
+    {
+      "id": "sideMnuHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": "network",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "sideMnuHeaderText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface tracking-tight",
+        "value": {
+          "path": "/menuCategoryTitle"
+        }
+      }
+    },
+    {
+      "id": "sideMnuDivider",
+      "component": "div",
+      "props": {
+        "className": "h-px bg-border-divider mx-3"
+      }
+    },
+    {
+      "id": "sideMnuMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "openKeys": {
+          "path": "/openKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "flex-1 w-full border-none bg-transparent"
+      }
+    },
+    {
+      "id": "wrkSpcBreadcrumbBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center w-full px-page py-3 bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "wrkSpcBreadcrumb"
+      ]
+    },
+    {
+      "id": "wrkSpcBreadcrumb",
+      "component": "Breadcrumb",
+      "props": {
+        "separator": "/",
+        "items": [
+          {
+            "title": {
+              "componentId": "wrkSpcHomeIcon"
+            }
+          },
+          {
+            "title": "网络配置"
+          },
+          {
+            "title": "模板管理"
+          },
+          {
+            "title": "配置视图配置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wrkSpcHomeIcon",
+      "component": "Icon",
+      "props": {
+        "name": "house",
+        "size": 16,
+        "color": "default",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "modSelHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "modSelHeaderLeft",
+        "modSelVersionSelect"
+      ]
+    },
+    {
+      "id": "modSelHeaderLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "modSelHeaderIcon",
+        "modSelHeaderTitle"
+      ]
+    },
+    {
+      "id": "modSelHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layers",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "modSelHeaderTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "modSelVersionSelect",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "modSelVersionLabel",
+        "modSelVersionDropdown"
+      ]
+    },
+    {
+      "id": "modSelVersionLabel",
+      "component": "span",
+      "props": {
+        "value": "设备版本：",
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "modSelVersionDropdown",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedVersion"
+        },
+        "options": {
+          "path": "/versionOptions"
+        },
+        "className": "w-48"
+      }
+    },
+    {
+      "id": "modSelCardGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-section"
+      },
+      "children": {
+        "path": "/modeCards",
+        "componentId": "modSelCard"
+      }
+    },
+    {
+      "id": "modSelCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden flex flex-col"
+      },
+      "children": [
+        "modSelCardImgWrap",
+        "modSelCardBody"
+      ]
+    },
+    {
+      "id": "modSelCardImgWrap",
+      "component": "div",
+      "props": {
+        "className": "w-full aspect-video overflow-hidden relative"
+      },
+      "children": [
+        "modSelCardImage",
+        "modSelCardImgOverlay"
+      ]
+    },
+    {
+      "id": "modSelCardImage",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "modeIllustrationImage"
+        },
+        "alt": {
+          "path": "cardTitle"
+        },
+        "className": "w-full h-full object-cover"
+      }
+    },
+    {
+      "id": "modSelCardImgOverlay",
+      "component": "div",
+      "props": {
+        "className": "absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+      }
+    },
+    {
+      "id": "modSelCardBody",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack p-inset flex-1"
+      },
+      "children": [
+        "modSelCardTitleRow",
+        "modSelCardDesc",
+        "modSelTagRow",
+        "modSelCardBtnWrap"
+      ]
+    },
+    {
+      "id": "modSelCardTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "modSelCardTitleIcon",
+        "modSelCardTitleText"
+      ]
+    },
+    {
+      "id": "modSelCardTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "cardIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "modSelCardTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "modSelCardDesc",
+      "component": "p",
+      "props": {
+        "value": {
+          "path": "modeDescription"
+        },
+        "className": "text-md text-on-surface-variant leading-relaxed"
+      }
+    },
+    {
+      "id": "modSelTagRow",
+      "component": "div",
+      "props": {
+        "className": "flex flex-wrap gap-inline"
+      },
+      "children": {
+        "path": "featureTags",
+        "componentId": "modSelTagItem"
+      }
+    },
+    {
+      "id": "modSelTagItem",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": ""
+        },
+        "color": {
+          "path": "../tagColor"
+        },
+        "size": "small",
+        "variant": "filled"
+      }
+    },
+    {
+      "id": "modSelCardBtnWrap",
+      "component": "div",
+      "props": {
+        "className": "mt-auto pt-stack border-t border-divider"
+      },
+      "children": [
+        "modSelCardBtn"
+      ]
+    },
+    {
+      "id": "modSelCardBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "actionButtonText"
+        },
+        "color": "primary",
+        "icon": "arrow-right",
+        "iconPlacement": "end",
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "depMthTitleBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "depMthTitleIcon",
+        "depMthTitleText"
+      ]
+    },
+    {
+      "id": "depMthTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-grid",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "depMthTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "depMthCardsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-3 gap-section"
+      },
+      "children": {
+        "path": "/deployCards",
+        "componentId": "depMthCard"
+      }
+    },
+    {
+      "id": "depMthCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+      },
+      "children": [
+        "depMthCardIcon",
+        "depMthCardTitle",
+        "depMthFeatureList",
+        "depMthDivider",
+        "depMthGuideLink"
+      ]
+    },
+    {
+      "id": "depMthCardIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "deployIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "depMthCardTitle",
+      "component": "h3",
+      "props": {
+        "value": {
+          "path": "cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface mt-4"
+      }
+    },
+    {
+      "id": "depMthFeatureList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3 mt-4 flex-1"
+      },
+      "children": {
+        "path": "featureList",
+        "componentId": "depMthFeatureItem"
+      }
+    },
+    {
+      "id": "depMthFeatureItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-start gap-2"
+      },
+      "children": [
+        "depMthFeatureDot",
+        "depMthFeatureText"
+      ]
+    },
+    {
+      "id": "depMthFeatureDot",
+      "component": "Icon",
+      "props": {
+        "name": "check",
+        "color": "success",
+        "shape": "outline",
+        "className": "w-4 h-4 mt-0.5 shrink-0"
+      }
+    },
+    {
+      "id": "depMthFeatureText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": ""
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "depMthDivider",
+      "component": "div",
+      "props": {
+        "className": "border-t border-divider mt-4"
+      }
+    },
+    {
+      "id": "depMthGuideLink",
+      "component": "a",
+      "props": {
+        "href": {
+          "path": "guideLinkUrl"
+        },
+        "className": "inline-flex items-center gap-1 text-primary text-md font-medium mt-4 hover:underline"
+      },
+      "children": [
+        "depMthGuideLinkText",
+        "depMthGuideArrow"
+      ]
+    },
+    {
+      "id": "depMthGuideLinkText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "guideLinkText"
+        },
+        "className": "text-primary"
+      }
+    },
+    {
+      "id": "depMthGuideArrow",
+      "component": "Icon",
+      "props": {
+        "name": "arrow-right",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    }
+  ]
+}

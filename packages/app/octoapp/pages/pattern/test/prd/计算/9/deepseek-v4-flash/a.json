@@ -1,0 +1,958 @@
+{
+  "state": {
+    "menuSelectedKeys": [
+      "alarm"
+    ],
+    "menuItems": [
+      {
+        "title": "仪表盘",
+        "key": "dashboard",
+        "icon": "layout-dashboard"
+      },
+      {
+        "title": "拓扑图",
+        "key": "topology",
+        "icon": "git-branch"
+      },
+      {
+        "title": "资源管理",
+        "key": "resource",
+        "icon": "database"
+      },
+      {
+        "title": "故障监控",
+        "key": "alarm",
+        "icon": "alert-triangle"
+      },
+      {
+        "title": "性能分析",
+        "key": "performance",
+        "icon": "activity"
+      },
+      {
+        "title": "安全管理",
+        "key": "security",
+        "icon": "shield"
+      },
+      {
+        "title": "系统设置",
+        "key": "settings",
+        "icon": "settings"
+      }
+    ],
+    "notificationBadgeCount": 5,
+    "adminMenuItems": [
+      {
+        "label": "个人信息",
+        "key": "profile",
+        "icon": "user"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "sectionTitle": "资源管理中心",
+    "selectedKeys": [
+      "deviceDashboard"
+    ],
+    "cardTitle": "全网设备健康度实时监控",
+    "description": "全局展示当前各区域网络设备的运行状态与告警信息，通过AI智能分析实现故障的预测与快速定位，提升运维团队的故障处理效率，保障核心业务的高可用性与连续性。",
+    "stepsTitle": "自动化故障处理流水线",
+    "steps": [
+      {
+        "title": "待处理告警",
+        "description": "当前有12条待处理",
+        "status": "process"
+      },
+      {
+        "title": "智能分析中",
+        "description": "AI正在分析6条告警",
+        "status": "wait"
+      },
+      {
+        "title": "已自动修复",
+        "description": "今日已自动修复8条",
+        "status": "finish"
+      }
+    ],
+    "illustrationImage": "https://fpoimg.com/400x300?gradient=0067D1,004EA8&text_color=ffffff&text=NETWORK+SECURITY+SHIELD",
+    "activeView": "active",
+    "viewOptions": [
+      {
+        "label": "活跃告警",
+        "value": "active"
+      },
+      {
+        "label": "历史告警",
+        "value": "history"
+      }
+    ],
+    "selectedRowKeys": [],
+    "tableData": [
+      {
+        "id": "1",
+        "deviceName": "SW-CORE-01",
+        "cpuMemoryUsage": "45/60%",
+        "deviceType": "核心交换机",
+        "firmwareVersion": "v1.2.4",
+        "uptime": "90天12小时",
+        "ipAddress": "192.168.1.10",
+        "macAddress": "00:1A:2B:3C:4D:5E",
+        "runningStatus": {
+          "text": "严重",
+          "color": "error"
+        }
+      },
+      {
+        "id": "2",
+        "deviceName": "SW-ACCESS-02",
+        "cpuMemoryUsage": "22/40%",
+        "deviceType": "接入交换机",
+        "firmwareVersion": "v1.1.8",
+        "uptime": "45天6小时",
+        "ipAddress": "192.168.1.20",
+        "macAddress": "00:1A:2B:3C:4D:5F",
+        "runningStatus": {
+          "text": "正常",
+          "color": "success"
+        }
+      },
+      {
+        "id": "3",
+        "deviceName": "ROUTER-01",
+        "cpuMemoryUsage": "80/90%",
+        "deviceType": "核心路由器",
+        "firmwareVersion": "v2.0.1",
+        "uptime": "120天3小时",
+        "ipAddress": "192.168.1.30",
+        "macAddress": "00:1A:2B:3C:4D:60",
+        "runningStatus": {
+          "text": "轻微",
+          "color": "warning"
+        }
+      },
+      {
+        "id": "4",
+        "deviceName": "SW-DIST-04",
+        "cpuMemoryUsage": "55/70%",
+        "deviceType": "汇聚交换机",
+        "firmwareVersion": "v1.3.0",
+        "uptime": "200天18小时",
+        "ipAddress": "192.168.1.40",
+        "macAddress": "00:1A:2B:3C:4D:61",
+        "runningStatus": {
+          "text": "正常",
+          "color": "success"
+        }
+      },
+      {
+        "id": "5",
+        "deviceName": "FW-01",
+        "cpuMemoryUsage": "30/50%",
+        "deviceType": "防火墙",
+        "firmwareVersion": "v3.1.2",
+        "uptime": "30天2小时",
+        "ipAddress": "192.168.1.50",
+        "macAddress": "00:1A:2B:3C:4D:62",
+        "runningStatus": {
+          "text": "严重",
+          "color": "error"
+        }
+      },
+      {
+        "id": "6",
+        "deviceName": "SW-CORE-02",
+        "cpuMemoryUsage": "60/80%",
+        "deviceType": "核心交换机",
+        "firmwareVersion": "v1.2.4",
+        "uptime": "90天12小时",
+        "ipAddress": "192.168.1.11",
+        "macAddress": "00:1A:2B:3C:4D:63",
+        "runningStatus": {
+          "text": "轻微",
+          "color": "warning"
+        }
+      },
+      {
+        "id": "7",
+        "deviceName": "ROUTER-02",
+        "cpuMemoryUsage": "15/30%",
+        "deviceType": "边缘路由器",
+        "firmwareVersion": "v2.0.1",
+        "uptime": "15天8小时",
+        "ipAddress": "192.168.1.60",
+        "macAddress": "00:1A:2B:3C:4D:64",
+        "runningStatus": {
+          "text": "正常",
+          "color": "success"
+        }
+      },
+      {
+        "id": "8",
+        "deviceName": "SW-ACCESS-05",
+        "cpuMemoryUsage": "40/60%",
+        "deviceType": "接入交换机",
+        "firmwareVersion": "v1.1.8",
+        "uptime": "60天4小时",
+        "ipAddress": "192.168.1.70",
+        "macAddress": "00:1A:2B:3C:4D:65",
+        "runningStatus": {
+          "text": "正常",
+          "color": "success"
+        }
+      },
+      {
+        "id": "9",
+        "deviceName": "LB-01",
+        "cpuMemoryUsage": "70/85%",
+        "deviceType": "负载均衡器",
+        "firmwareVersion": "v2.2.0",
+        "uptime": "180天10小时",
+        "ipAddress": "192.168.1.80",
+        "macAddress": "00:1A:2B:3C:4D:66",
+        "runningStatus": {
+          "text": "严重",
+          "color": "error"
+        }
+      },
+      {
+        "id": "10",
+        "deviceName": "SW-CORE-03",
+        "cpuMemoryUsage": "50/70%",
+        "deviceType": "核心交换机",
+        "firmwareVersion": "v1.2.5",
+        "uptime": "75天6小时",
+        "ipAddress": "192.168.1.12",
+        "macAddress": "00:1A:2B:3C:4D:67",
+        "runningStatus": {
+          "text": "轻微",
+          "color": "warning"
+        }
+      }
+    ]
+  },
+  "rootId": "appRoot",
+  "elements": [
+    {
+      "id": "appRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "headerNavContainer",
+        "bodyContainer"
+      ]
+    },
+    {
+      "id": "headerNavContainer",
+      "component": "header",
+      "props": {
+        "className": "h-12 bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "headerNavInner"
+      ]
+    },
+    {
+      "id": "bodyContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "sidebarContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "aside",
+      "props": {
+        "className": "w-62 bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "sidebarContent"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col gap-section p-page overflow-auto"
+      },
+      "children": [
+        "healthCardContainer",
+        "deviceTableContainer"
+      ]
+    },
+    {
+      "id": "healthCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card"
+      },
+      "children": [
+        "healthCardInnerWrapper"
+      ]
+    },
+    {
+      "id": "deviceTableContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card"
+      },
+      "children": [
+        "deviceTableToolbar",
+        "deviceTableMainTable"
+      ]
+    },
+    {
+      "id": "headerNavInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between h-full px-page"
+      },
+      "children": [
+        "headerNavLeftSection",
+        "headerNavCenterSection",
+        "headerNavRightSection"
+      ]
+    },
+    {
+      "id": "headerNavLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "headerNavLogoIcon",
+        "headerNavSystemName"
+      ]
+    },
+    {
+      "id": "headerNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield-check",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "headerNavSystemName",
+      "component": "span",
+      "props": {
+        "value": "iMaster NCE",
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "headerNavCenterSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "headerNavMenu"
+      ]
+    },
+    {
+      "id": "headerNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/menuSelectedKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "min-w-0"
+      }
+    },
+    {
+      "id": "headerNavRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "headerNavNotificationBadge",
+        "headerNavUserDropdown",
+        "headerNavHelpIcon"
+      ]
+    },
+    {
+      "id": "headerNavNotificationBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/notificationBadgeCount"
+        },
+        "overflowCount": 99
+      },
+      "children": [
+        "headerNavNotificationIcon"
+      ]
+    },
+    {
+      "id": "headerNavNotificationIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "headerNavUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "placement": "bottom",
+        "trigger": [
+          "hover"
+        ],
+        "menu": {
+          "path": "/adminMenuItems"
+        }
+      },
+      "children": [
+        "headerNavUserDisplay"
+      ]
+    },
+    {
+      "id": "headerNavUserDisplay",
+      "component": "span",
+      "props": {
+        "value": "Admin",
+        "className": "text-md text-on-surface cursor-pointer"
+      }
+    },
+    {
+      "id": "headerNavHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "circle-help",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-full"
+      },
+      "children": [
+        "sidebarTitleSection",
+        "sidebarMenu"
+      ]
+    },
+    {
+      "id": "sidebarTitleSection",
+      "component": "div",
+      "props": {
+        "className": "px-4 pt-5 pb-3 border-b border-divider"
+      },
+      "children": [
+        "sidebarTitleIcon",
+        "sidebarTitleText"
+      ]
+    },
+    {
+      "id": "sidebarTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-panel-top",
+        "className": "w-5 h-5 inline-block mr-2 text-primary",
+        "shape": "square"
+      }
+    },
+    {
+      "id": "sidebarTitleText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface align-middle",
+        "value": {
+          "path": "/sectionTitle"
+        }
+      }
+    },
+    {
+      "id": "sidebarMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "flex-1 pt-2"
+      }
+    },
+    {
+      "id": "healthCardInnerWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-stretch p-inset gap-gutter"
+      },
+      "children": [
+        "healthCardLeftCol",
+        "healthCardRightCol"
+      ]
+    },
+    {
+      "id": "healthCardLeftCol",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1 justify-between gap-stack"
+      },
+      "children": [
+        "healthCardTitle",
+        "healthCardDesc",
+        "healthCardStepsWrapper"
+      ]
+    },
+    {
+      "id": "healthCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "healthCardDesc",
+      "component": "p",
+      "props": {
+        "className": "text-md text-on-surface-variant leading-relaxed",
+        "value": {
+          "path": "/description"
+        }
+      }
+    },
+    {
+      "id": "healthCardStepsWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-inline"
+      },
+      "children": [
+        "healthCardStepsLabel",
+        "healthCardStepBar"
+      ]
+    },
+    {
+      "id": "healthCardStepsLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant font-medium",
+        "value": {
+          "path": "/stepsTitle"
+        }
+      }
+    },
+    {
+      "id": "healthCardStepBar",
+      "component": "Steps",
+      "props": {
+        "current": 0,
+        "types": "default",
+        "orientation": "horizontal",
+        "className": "w-full"
+      },
+      "children": [
+        "healthCardStepOne",
+        "healthCardStepTwo",
+        "healthCardStepThree"
+      ]
+    },
+    {
+      "id": "healthCardStepOne",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "/steps/0/title"
+        },
+        "content": {
+          "componentId": "healthCardStepOneContent"
+        },
+        "status": {
+          "path": "/steps/0/status"
+        },
+        "icon": "alert-triangle"
+      }
+    },
+    {
+      "id": "healthCardStepOneContent",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": {
+          "path": "/steps/0/description"
+        }
+      }
+    },
+    {
+      "id": "healthCardStepTwo",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "/steps/1/title"
+        },
+        "content": {
+          "componentId": "healthCardStepTwoContent"
+        },
+        "status": {
+          "path": "/steps/1/status"
+        },
+        "icon": "brain-circuit"
+      }
+    },
+    {
+      "id": "healthCardStepTwoContent",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": {
+          "path": "/steps/1/description"
+        }
+      }
+    },
+    {
+      "id": "healthCardStepThree",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "/steps/2/title"
+        },
+        "content": {
+          "componentId": "healthCardStepThreeContent"
+        },
+        "status": {
+          "path": "/steps/2/status"
+        },
+        "icon": "shield-check"
+      }
+    },
+    {
+      "id": "healthCardStepThreeContent",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": {
+          "path": "/steps/2/description"
+        }
+      }
+    },
+    {
+      "id": "healthCardRightCol",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center w-[400px] shrink-0"
+      },
+      "children": [
+        "healthCardIllustration"
+      ]
+    },
+    {
+      "id": "healthCardIllustration",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/illustrationImage"
+        },
+        "alt": "网络安全盾牌插图 - 立体底座发光蓝色盾牌与十字图案",
+        "className": "w-full h-auto object-contain"
+      }
+    },
+    {
+      "id": "deviceTableToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-6 pt-4 pb-3"
+      },
+      "children": [
+        "deviceTableToolbarLeft",
+        "deviceTableToolbarRight"
+      ]
+    },
+    {
+      "id": "deviceTableToolbarLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "deviceTableViewSegmented"
+      ]
+    },
+    {
+      "id": "deviceTableViewSegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/activeView"
+        },
+        "options": {
+          "path": "/viewOptions"
+        },
+        "size": "small",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "deviceTableToolbarRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "deviceTableExportBtn",
+        "deviceTableCreateBtn",
+        "deviceTableRefreshIconBtn"
+      ]
+    },
+    {
+      "id": "deviceTableExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "数据导出",
+        "color": "default",
+        "icon": "download",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "deviceTableCreateBtn",
+      "component": "Button",
+      "props": {
+        "value": "创建工单",
+        "color": "primary",
+        "icon": "file-plus",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "deviceTableRefreshIconBtn",
+      "component": "Button",
+      "props": {
+        "icon": "refresh-cw",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "deviceTableMainTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedRowKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "设备名称",
+            "dataIndex": "deviceName",
+            "sort": true,
+            "minWidth": 140
+          },
+          {
+            "title": "CPU/内存使用率",
+            "dataIndex": "cpuMemoryUsage",
+            "sort": true
+          },
+          {
+            "title": "设备类型",
+            "dataIndex": "deviceType",
+            "sort": true
+          },
+          {
+            "title": "固件版本",
+            "dataIndex": "firmwareVersion",
+            "sort": true
+          },
+          {
+            "title": "运行时长",
+            "dataIndex": "uptime",
+            "sort": true
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress",
+            "sort": true
+          },
+          {
+            "title": "MAC地址",
+            "dataIndex": "macAddress",
+            "sort": true
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "runningStatus",
+            "sort": true
+          },
+          {
+            "title": "操作",
+            "dataIndex": "operations"
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "deviceTableRow"
+      }
+    },
+    {
+      "id": "deviceTableRow",
+      "component": "TableRow",
+      "children": [
+        "deviceTableRowDeviceName",
+        "deviceTableRowCpuMemory",
+        "deviceTableRowDeviceType",
+        "deviceTableRowFirmware",
+        "deviceTableRowUptime",
+        "deviceTableRowIpAddress",
+        "deviceTableRowMacAddress",
+        "deviceTableRowStatus",
+        "deviceTableRowOperations"
+      ]
+    },
+    {
+      "id": "deviceTableRowDeviceName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceName"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowCpuMemory",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cpuMemoryUsage"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowDeviceType",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceType"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowFirmware",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "firmwareVersion"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowUptime",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "uptime"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowIpAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowMacAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "macAddress"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "deviceTableRowStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "runningStatus/text"
+        },
+        "color": {
+          "path": "runningStatus/color"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "deviceTableRowOperations",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "deviceTableRowOpEdit",
+        "deviceTableRowOpDiagnose",
+        "deviceTableRowOpDelete"
+      ]
+    },
+    {
+      "id": "deviceTableRowOpEdit",
+      "component": "Button",
+      "props": {
+        "icon": "pencil",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "deviceTableRowOpDiagnose",
+      "component": "Button",
+      "props": {
+        "icon": "activity",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "deviceTableRowOpDelete",
+      "component": "Button",
+      "props": {
+        "icon": "trash-2",
+        "types": "link",
+        "size": "small"
+      }
+    }
+  ]
+}

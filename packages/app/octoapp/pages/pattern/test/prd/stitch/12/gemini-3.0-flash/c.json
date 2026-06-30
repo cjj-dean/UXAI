@@ -1,0 +1,877 @@
+{
+    "state": {
+        "sidebar": {
+            "brand": {
+                "main": "Nexus Enterprise",
+                "sub": "Contract Management"
+            },
+            "menus": [
+                {
+                    "label": "Dashboard",
+                    "icon": "layout-dashboard",
+                    "active": false
+                },
+                {
+                    "label": "Contracts",
+                    "icon": "file-text",
+                    "active": true
+                },
+                {
+                    "label": "Signatures",
+                    "icon": "pen-tool",
+                    "active": false
+                },
+                {
+                    "label": "Archive",
+                    "icon": "archive",
+                    "active": false
+                },
+                {
+                    "label": "Templates",
+                    "icon": "clipboard-list",
+                    "active": false
+                }
+            ],
+            "footer": [
+                {
+                    "label": "Settings",
+                    "icon": "settings"
+                },
+                {
+                    "label": "Support",
+                    "icon": "life-buoy"
+                }
+            ]
+        },
+        "header": {
+            "title": "Nexus Contracts",
+            "search": "",
+            "userAvatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "metrics": [
+            {
+                "title": "总合同数",
+                "value": "1,284",
+                "trend": "+12%",
+                "status": "success",
+                "icon": "files"
+            },
+            {
+                "title": "待签署",
+                "value": "42",
+                "trend": "需关注",
+                "status": "warning",
+                "icon": "clock"
+            },
+            {
+                "title": "本月价值",
+                "value": "¥4.2M",
+                "trend": "达标",
+                "status": "success",
+                "icon": "bar-chart-3"
+            },
+            {
+                "title": "平均签署周期",
+                "value": "4.5d",
+                "trend": "较上月持平",
+                "status": "default",
+                "icon": "zap"
+            }
+        ],
+        "table": {
+            "activeTab": "全部",
+            "tabs": [
+                {
+                    "key": "全部",
+                    "label": "全部"
+                },
+                {
+                    "key": "待签署",
+                    "label": "待签署"
+                },
+                {
+                    "key": "已生效",
+                    "label": "已生效"
+                }
+            ],
+            "data": [
+                {
+                    "id": "CN-2024-001",
+                    "name": "2024年度云服务框架协议",
+                    "icon": "cloud",
+                    "client": "阿里云计算有限公司",
+                    "amount": "¥850,000.00",
+                    "status": "已生效 (Signed)",
+                    "statusType": "success",
+                    "date": "2024-01-15"
+                },
+                {
+                    "id": "CN-2024-023",
+                    "name": "智能硬件采购合同-Q1",
+                    "icon": "cpu",
+                    "client": "小米通讯技术有限公司",
+                    "amount": "¥1,200,000.00",
+                    "status": "待签署 (Pending)",
+                    "statusType": "warning",
+                    "date": "--"
+                },
+                {
+                    "id": "CN-2024-058",
+                    "name": "软件开发外包保密协议",
+                    "icon": "shield-check",
+                    "client": "软通动力信息技术",
+                    "amount": "--",
+                    "status": "草稿 (Drafting)",
+                    "statusType": "default",
+                    "date": "--"
+                },
+                {
+                    "id": "CN-2024-089",
+                    "name": "办公场地租赁续签协议",
+                    "icon": "building",
+                    "client": "万科物业发展有限公司",
+                    "amount": "¥450,000.00",
+                    "status": "已生效 (Signed)",
+                    "statusType": "success",
+                    "date": "2024-02-01"
+                },
+                {
+                    "id": "CN-2024-112",
+                    "name": "市场推广服务框架合同",
+                    "icon": "megaphone",
+                    "client": "字节跳动科技有限公司",
+                    "amount": "¥300,000.00",
+                    "status": "待签署 (Pending)",
+                    "statusType": "warning",
+                    "date": "--"
+                }
+            ]
+        }
+    },
+    "rootId": "pageLayout",
+    "elements": [
+        {
+            "id": "pageLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-inset"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "mb-section"
+            },
+            "children": [
+                "sidebarBrandMain",
+                "sidebarBrandSub"
+            ]
+        },
+        {
+            "id": "sidebarBrandMain",
+            "component": "h1",
+            "props": {
+                "className": "text-xl font-bold text-primary",
+                "value": {
+                    "path": "/sidebar/brand/main"
+                }
+            }
+        },
+        {
+            "id": "sidebarBrandSub",
+            "component": "p",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/sidebar/brand/sub"
+                }
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-inline"
+            },
+            "children": {
+                "path": "/sidebar/menus",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-stack p-2 rounded-container transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto flex flex-col gap-stack"
+            },
+            "children": [
+                "upgradeBtn",
+                "sidebarSecondaryMenus"
+            ]
+        },
+        {
+            "id": "upgradeBtn",
+            "component": "Button",
+            "props": {
+                "value": "Upgrade Plan",
+                "color": "primary",
+                "className": "w-full mb-2",
+                "icon": "zap"
+            }
+        },
+        {
+            "id": "sidebarSecondaryMenus",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": {
+                "path": "/sidebar/footer",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-y-auto"
+            },
+            "children": [
+                "globalHeader",
+                "mainScrollableContent"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-gutter shrink-0"
+            },
+            "children": [
+                "headerTitle",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/header/title"
+                }
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerIcons",
+                "headerCreateBtn",
+                "headerAvatar"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/header/search"
+                },
+                "placeholder": "搜索合同、客户...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-stack"
+            },
+            "children": [
+                "headerBell",
+                "headerHelp"
+            ]
+        },
+        {
+            "id": "headerBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerCreateBtn",
+            "component": "Button",
+            "props": {
+                "value": "Create Contract",
+                "color": "primary",
+                "icon": "plus"
+            }
+        },
+        {
+            "id": "headerAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/header/userAvatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "mainScrollableContent",
+            "component": "div",
+            "props": {
+                "className": "p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricsGrid",
+                "tableSection",
+                "fabButton"
+            ]
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "metricHeader",
+                "metricValue",
+                "metricFooter"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "className": "text-3xl font-bold text-on-surface",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "metricFooter",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "color": {
+                    "path": "status"
+                },
+                "size": "small",
+                "className": "w-fit"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "tableToolbar",
+                "contractTable",
+                "tableFooter"
+            ]
+        },
+        {
+            "id": "tableToolbar",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "tableTabs",
+                "filterBtn"
+            ]
+        },
+        {
+            "id": "tableTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/table/activeTab"
+                },
+                "size": "small"
+            },
+            "children": {
+                "path": "/table/tabs",
+                "componentId": "tableTabItem"
+            }
+        },
+        {
+            "id": "tableTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "filterBtn",
+            "component": "Button",
+            "props": {
+                "value": "高级筛选",
+                "icon": "filter",
+                "size": "small"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-stack text-sm text-on-surface-variant"
+            },
+            "children": [
+                "paginationSummary",
+                "paginationArrows"
+            ]
+        },
+        {
+            "id": "paginationSummary",
+            "component": "span",
+            "props": {
+                "value": "显示 1-10 条，共 1,284 条"
+            }
+        },
+        {
+            "id": "paginationArrows",
+            "component": "div",
+            "props": {
+                "className": "flex gap-1"
+            },
+            "children": [
+                "arrowLeft",
+                "arrowRight"
+            ]
+        },
+        {
+            "id": "arrowLeft",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-left",
+                "size": "small",
+                "shape": "default"
+            }
+        },
+        {
+            "id": "arrowRight",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-right",
+                "size": "small",
+                "shape": "default"
+            }
+        },
+        {
+            "id": "contractTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/table/data"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "合同名称",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "客户",
+                        "dataIndex": "client"
+                    },
+                    {
+                        "title": "金额",
+                        "dataIndex": "amount"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "生效日期",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/table/data",
+                "componentId": "contractTableRow"
+            }
+        },
+        {
+            "id": "contractTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellClient",
+                "cellAmount",
+                "cellStatus",
+                "cellDate",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "cellNameIcon",
+                "cellNameTextGroup"
+            ]
+        },
+        {
+            "id": "cellNameIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4",
+                "color": "primary",
+                "shape": "square"
+            }
+        },
+        {
+            "id": "cellNameTextGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "cellNameTitle",
+                "cellNameId"
+            ]
+        },
+        {
+            "id": "cellNameTitle",
+            "component": "span",
+            "props": {
+                "className": "font-medium text-on-surface",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "cellNameId",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "id"
+                }
+            }
+        },
+        {
+            "id": "cellClient",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "client"
+                }
+            }
+        },
+        {
+            "id": "cellAmount",
+            "component": "span",
+            "props": {
+                "className": "font-mono",
+                "value": {
+                    "path": "amount"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "Button",
+            "props": {
+                "value": "详情",
+                "size": "small",
+                "color": "default"
+            }
+        },
+        {
+            "id": "tableFooter",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-t border-divider flex justify-between items-center"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter text-sm"
+            },
+            "children": [
+                "pageSizeSelect",
+                "jumpToPage"
+            ]
+        },
+        {
+            "id": "pageSizeSelect",
+            "component": "Select",
+            "props": {
+                "value": "10 条/页",
+                "options": [
+                    {
+                        "label": "10 条/页",
+                        "value": "10"
+                    }
+                ],
+                "size": "small"
+            }
+        },
+        {
+            "id": "jumpToPage",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "jumpLabel",
+                "jumpInput"
+            ]
+        },
+        {
+            "id": "jumpLabel",
+            "component": "span",
+            "props": {
+                "value": "跳至第"
+            }
+        },
+        {
+            "id": "jumpInput",
+            "component": "Input",
+            "props": {
+                "value": "1",
+                "size": "small",
+                "className": "w-12 text-center"
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-1"
+            },
+            "children": [
+                "page1",
+                "page2",
+                "page3",
+                "pageEllipsis",
+                "pageLast"
+            ]
+        },
+        {
+            "id": "page1",
+            "component": "Button",
+            "props": {
+                "value": "1",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "page2",
+            "component": "Button",
+            "props": {
+                "value": "2",
+                "size": "small"
+            }
+        },
+        {
+            "id": "page3",
+            "component": "Button",
+            "props": {
+                "value": "3",
+                "size": "small"
+            }
+        },
+        {
+            "id": "pageEllipsis",
+            "component": "span",
+            "props": {
+                "className": "px-2",
+                "value": "..."
+            }
+        },
+        {
+            "id": "pageLast",
+            "component": "Button",
+            "props": {
+                "value": "128",
+                "size": "small"
+            }
+        },
+        {
+            "id": "fabButton",
+            "component": "Button",
+            "props": {
+                "icon": "plus",
+                "shape": "circle",
+                "color": "primary",
+                "className": "fixed bottom-8 right-8 w-14 h-14 shadow-xl flex items-center justify-center"
+            }
+        }
+    ]
+}

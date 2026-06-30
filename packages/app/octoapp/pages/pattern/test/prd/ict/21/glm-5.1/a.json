@@ -1,0 +1,1388 @@
+{
+  "state": {
+    "activeTopMenu": "analysis",
+    "topMenus": [
+      {
+        "key": "monitor",
+        "menuName": "监控"
+      },
+      {
+        "key": "analysis",
+        "menuName": "分析"
+      },
+      {
+        "key": "config",
+        "menuName": "配置"
+      },
+      {
+        "key": "maintain",
+        "menuName": "维护"
+      }
+    ],
+    "brandName": "华为坤灵",
+    "globalSearch": "",
+    "searchPlaceholder": "搜索设备、IP或告警...",
+    "notificationCount": 5,
+    "userName": "Admin_Lee",
+    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "sidebarMenus": [
+      {
+        "menuName": "总览概要",
+        "menuIcon": "layout-dashboard"
+      },
+      {
+        "menuName": "无线体验",
+        "menuIcon": "wifi"
+      },
+      {
+        "menuName": "终端画像",
+        "menuIcon": "smartphone"
+      },
+      {
+        "menuName": "流量分析",
+        "menuIcon": "activity"
+      },
+      {
+        "menuName": "性能报告",
+        "menuIcon": "file-text"
+      }
+    ],
+    "breadcrumbItems": [
+      {
+        "title": "分析",
+        "link": "/analysis"
+      },
+      {
+        "title": "无线体验",
+        "link": "/analysis/wireless-experience"
+      },
+      {
+        "title": "状态概览",
+        "link": ""
+      }
+    ],
+    "healthCardTitle": "系统健康度评估",
+    "overallScore": 95,
+    "statusLevel": "良好",
+    "evaluateTime": "2023-10-27 10:30:00",
+    "radarSeries": {
+      "当前状态": {
+        "信号覆盖": 92,
+        "漫游体验": 88,
+        "干扰抑制": 75,
+        "负载均衡": 85,
+        "终端速率": 95
+      }
+    },
+    "metricsTable": [
+      {
+        "id": "m1",
+        "metricName": "信噪比",
+        "radarDimension": "信号覆盖",
+        "currentValue": "35 dBm",
+        "baselineValue": "> 25 dBm",
+        "statusTag": "正常",
+        "statusColor": "success",
+        "trendIcon": "trending-up",
+        "trendColor": "success"
+      },
+      {
+        "id": "m2",
+        "metricName": "漫游成功率",
+        "radarDimension": "漫游体验",
+        "currentValue": "98.5%",
+        "baselineValue": "> 95%",
+        "statusTag": "正常",
+        "statusColor": "success",
+        "trendIcon": "trending-up",
+        "trendColor": "success"
+      },
+      {
+        "id": "m3",
+        "metricName": "同频干扰率",
+        "radarDimension": "干扰抑制",
+        "currentValue": "18%",
+        "baselineValue": "< 15%",
+        "statusTag": "告警",
+        "statusColor": "error",
+        "trendIcon": "trending-down",
+        "trendColor": "error"
+      },
+      {
+        "id": "m4",
+        "metricName": "信道利用率均值",
+        "radarDimension": "负载均衡",
+        "currentValue": "45%",
+        "baselineValue": "< 60%",
+        "statusTag": "正常",
+        "statusColor": "success",
+        "trendIcon": "minus",
+        "trendColor": "default"
+      },
+      {
+        "id": "m5",
+        "metricName": "平均下行单速",
+        "radarDimension": "终端速率",
+        "currentValue": "250 Mbps",
+        "baselineValue": "> 100 Mbps",
+        "statusTag": "正常",
+        "statusColor": "success",
+        "trendIcon": "trending-up",
+        "trendColor": "success"
+      }
+    ],
+    "rfCardTitle": "射频列表管理",
+    "searchAP": "",
+    "bandFilter": "全部频段",
+    "bandOptions": [
+      {
+        "label": "全部频段",
+        "value": "全部频段"
+      },
+      {
+        "label": "2.4G",
+        "value": "2.4G"
+      },
+      {
+        "label": "5G",
+        "value": "5G"
+      },
+      {
+        "label": "6G",
+        "value": "6G"
+      }
+    ],
+    "radioList": [
+      {
+        "id": "r001",
+        "apName": "AP-F1-01",
+        "macAddress": "00:1A:2B:3C:4D:5E",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 149,
+        "signalStrength": -40,
+        "channelUtilization": "20%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r002",
+        "apName": "AP-F1-02",
+        "macAddress": "00:1A:2B:3C:4D:6F",
+        "bandTag": "2.4G",
+        "bandColor": "warning",
+        "channel": 6,
+        "signalStrength": -55,
+        "channelUtilization": "85%",
+        "statusDot": "告警",
+        "statusIcon": "circle-alert",
+        "statusColor": "error",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r003",
+        "apName": "AP-F2-01",
+        "macAddress": "00:1A:2B:3C:4D:7G",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 36,
+        "signalStrength": -42,
+        "channelUtilization": "30%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r004",
+        "apName": "AP-F2-02",
+        "macAddress": "00:1A:2B:3C:4D:8H",
+        "bandTag": "6G",
+        "bandColor": "#715AFB",
+        "channel": 1,
+        "signalStrength": -38,
+        "channelUtilization": "15%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r005",
+        "apName": "AP-F3-01",
+        "macAddress": "00:1A:2B:3C:4D:9I",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 44,
+        "signalStrength": -65,
+        "channelUtilization": "40%",
+        "statusDot": "降级",
+        "statusIcon": "circle-minus",
+        "statusColor": "warning",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r006",
+        "apName": "AP-F3-02",
+        "macAddress": "00:1A:2B:3C:4D:0J",
+        "bandTag": "2.4G",
+        "bandColor": "warning",
+        "channel": 11,
+        "signalStrength": -48,
+        "channelUtilization": "50%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r007",
+        "apName": "AP-F4-01",
+        "macAddress": "00:1A:2B:3C:4D:1K",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 157,
+        "signalStrength": -70,
+        "channelUtilization": "90%",
+        "statusDot": "告警",
+        "statusIcon": "circle-alert",
+        "statusColor": "error",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r008",
+        "apName": "AP-F4-02",
+        "macAddress": "00:1A:2B:3C:4D:2L",
+        "bandTag": "6G",
+        "bandColor": "#715AFB",
+        "channel": 5,
+        "signalStrength": -35,
+        "channelUtilization": "18%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r009",
+        "apName": "AP-F5-01",
+        "macAddress": "00:1A:2B:3C:4D:3M",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 52,
+        "signalStrength": -50,
+        "channelUtilization": "45%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r010",
+        "apName": "AP-F5-02",
+        "macAddress": "00:1A:2B:3C:4D:4N",
+        "bandTag": "2.4G",
+        "bandColor": "warning",
+        "channel": 1,
+        "signalStrength": -80,
+        "channelUtilization": "60%",
+        "statusDot": "降级",
+        "statusIcon": "circle-minus",
+        "statusColor": "warning",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r011",
+        "apName": "AP-F6-01",
+        "macAddress": "00:1A:2B:3C:4D:5O",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 60,
+        "signalStrength": -45,
+        "channelUtilization": "22%",
+        "statusDot": "在线",
+        "statusIcon": "circle-check",
+        "statusColor": "success",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      },
+      {
+        "id": "r012",
+        "apName": "AP-F6-02",
+        "macAddress": "00:1A:2B:3C:4D:6P",
+        "bandTag": "5G",
+        "bandColor": "processing",
+        "channel": 100,
+        "signalStrength": 0,
+        "channelUtilization": "0%",
+        "statusDot": "离线",
+        "statusIcon": "circle-x",
+        "statusColor": "default",
+        "actionIcons": [
+          "eye",
+          "settings"
+        ]
+      }
+    ],
+    "pagination": {
+      "currentPage": 1,
+      "pageSize": 10,
+      "totalItems": 56
+    }
+  },
+  "rootId": "rootContainer",
+  "elements": [
+    {
+      "id": "rootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavContainer",
+        "bodyContainer"
+      ]
+    },
+    {
+      "id": "topNavContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between h-14 px-gutter bg-surface-container-highest shadow-sm shrink-0"
+      },
+      "children": [
+        "topNavLeft",
+        "topNavRight"
+      ]
+    },
+    {
+      "id": "topNavLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter"
+      },
+      "children": [
+        "topNavBrandIcon",
+        "topNavBrandText",
+        "topNavDivider",
+        "topNavTabs"
+      ]
+    },
+    {
+      "id": "topNavBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "topNavBrandText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-primary",
+        "value": {
+          "path": "/brandName"
+        }
+      }
+    },
+    {
+      "id": "topNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-6 bg-divider mx-1"
+      }
+    },
+    {
+      "id": "topNavTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTopMenu"
+        },
+        "types": "line",
+        "size": "medium",
+        "className": "flex-1"
+      },
+      "children": {
+        "path": "/topMenus",
+        "componentId": "topNavItem"
+      }
+    },
+    {
+      "id": "topNavItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "menuName"
+        },
+        "content": {
+          "componentId": "topNavTabContent"
+        }
+      }
+    },
+    {
+      "id": "topNavTabContent",
+      "component": "div",
+      "props": {
+        "className": "hidden"
+      }
+    },
+    {
+      "id": "topNavRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter"
+      },
+      "children": [
+        "topNavSearchInput",
+        "topNavBellWrap",
+        "topNavUserDropdown"
+      ]
+    },
+    {
+      "id": "topNavSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/globalSearch"
+        },
+        "placeholder": {
+          "path": "/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-64"
+      }
+    },
+    {
+      "id": "topNavBellWrap",
+      "component": "div",
+      "props": {
+        "className": "relative cursor-pointer"
+      },
+      "children": [
+        "topNavBellIcon",
+        "topNavBadge"
+      ]
+    },
+    {
+      "id": "topNavBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavBadge",
+      "component": "span",
+      "props": {
+        "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error rounded-full min-w-4 h-4 flex items-center justify-center text-xs font-medium leading-none px-1",
+        "value": {
+          "path": "/notificationCount"
+        }
+      }
+    },
+    {
+      "id": "topNavUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": [
+          {
+            "label": "个人中心",
+            "key": "profile",
+            "icon": "user"
+          },
+          {
+            "label": "系统设置",
+            "key": "settings",
+            "icon": "settings"
+          },
+          {
+            "label": "退出登录",
+            "key": "logout",
+            "icon": "log-out"
+          }
+        ]
+      },
+      "children": [
+        "topNavUserTrigger"
+      ]
+    },
+    {
+      "id": "topNavUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "topNavUserAvatar",
+        "topNavUserName"
+      ]
+    },
+    {
+      "id": "topNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userAvatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "topNavUserName",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-on-surface",
+        "value": {
+          "path": "/userName"
+        }
+      }
+    },
+    {
+      "id": "bodyContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "sidebarContainer",
+        "mainContentArea"
+      ]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col w-56 bg-surface-container-highest shadow-sm shrink-0 border-r border-divider"
+      },
+      "children": [
+        "sidebarHeader",
+        "sidebarDivider",
+        "sidebarMenuList"
+      ]
+    },
+    {
+      "id": "sidebarHeader",
+      "component": "div",
+      "props": {
+        "className": "px-gutter py-stack"
+      },
+      "children": [
+        "sidebarHeaderText"
+      ]
+    },
+    {
+      "id": "sidebarHeaderText",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface-variant",
+        "value": "分析模块"
+      }
+    },
+    {
+      "id": "sidebarDivider",
+      "component": "div",
+      "props": {
+        "className": "border-t border-divider"
+      }
+    },
+    {
+      "id": "sidebarMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col py-1"
+      },
+      "children": [
+        "sidebarItem0",
+        "sidebarItem1",
+        "sidebarItem2",
+        "sidebarItem3",
+        "sidebarItem4"
+      ]
+    },
+    {
+      "id": "sidebarItem0",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-2 mx-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarItem0Icon",
+        "sidebarItem0Text"
+      ]
+    },
+    {
+      "id": "sidebarItem0Icon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebarMenus/0/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarItem0Text",
+      "component": "span",
+      "props": {
+        "className": "text-sm",
+        "value": {
+          "path": "/sidebarMenus/0/menuName"
+        }
+      }
+    },
+    {
+      "id": "sidebarItem1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-2 mx-2 rounded-action cursor-pointer bg-primary-container text-primary font-medium"
+      },
+      "children": [
+        "sidebarItem1Icon",
+        "sidebarItem1Text"
+      ]
+    },
+    {
+      "id": "sidebarItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebarMenus/1/menuIcon"
+        },
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarItem1Text",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-primary",
+        "value": {
+          "path": "/sidebarMenus/1/menuName"
+        }
+      }
+    },
+    {
+      "id": "sidebarItem2",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-2 mx-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarItem2Icon",
+        "sidebarItem2Text"
+      ]
+    },
+    {
+      "id": "sidebarItem2Icon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebarMenus/2/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarItem2Text",
+      "component": "span",
+      "props": {
+        "className": "text-sm",
+        "value": {
+          "path": "/sidebarMenus/2/menuName"
+        }
+      }
+    },
+    {
+      "id": "sidebarItem3",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-2 mx-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarItem3Icon",
+        "sidebarItem3Text"
+      ]
+    },
+    {
+      "id": "sidebarItem3Icon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebarMenus/3/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarItem3Text",
+      "component": "span",
+      "props": {
+        "className": "text-sm",
+        "value": {
+          "path": "/sidebarMenus/3/menuName"
+        }
+      }
+    },
+    {
+      "id": "sidebarItem4",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-2 mx-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarItem4Icon",
+        "sidebarItem4Text"
+      ]
+    },
+    {
+      "id": "sidebarItem4Icon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebarMenus/4/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarItem4Text",
+      "component": "span",
+      "props": {
+        "className": "text-sm",
+        "value": {
+          "path": "/sidebarMenus/4/menuName"
+        }
+      }
+    },
+    {
+      "id": "mainContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-auto bg-surface-container-lowest p-inset"
+      },
+      "children": [
+        "breadcrumbComp",
+        "contentCards"
+      ]
+    },
+    {
+      "id": "breadcrumbComp",
+      "component": "Breadcrumb",
+      "props": {
+        "items": {
+          "path": "/breadcrumbItems"
+        },
+        "separator": "/",
+        "className": "mb-gutter"
+      }
+    },
+    {
+      "id": "contentCards",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-gutter"
+      },
+      "children": [
+        "healthCardContainer",
+        "rfCardContainer"
+      ]
+    },
+    {
+      "id": "healthCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-sm p-inset"
+      },
+      "children": [
+        "healthCardHeader",
+        "healthCardBody",
+        "metricsSection"
+      ]
+    },
+    {
+      "id": "healthCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-stack"
+      },
+      "children": [
+        "healthCardTitle",
+        "healthCardTime"
+      ]
+    },
+    {
+      "id": "healthCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/healthCardTitle"
+        }
+      }
+    },
+    {
+      "id": "healthCardTime",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "评估时间：2023-10-27 10:30:00"
+      }
+    },
+    {
+      "id": "healthCardBody",
+      "component": "div",
+      "props": {
+        "className": "flex gap-gutter mb-gutter"
+      },
+      "children": [
+        "healthRadarArea",
+        "healthScorePanel"
+      ]
+    },
+    {
+      "id": "healthRadarArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0"
+      },
+      "children": [
+        "healthRadarChart"
+      ]
+    },
+    {
+      "id": "healthRadarChart",
+      "component": "RadarChart",
+      "props": {
+        "option": {
+          "radarMax": 100,
+          "data": {
+            "path": "/radarSeries"
+          },
+          "area": {
+            "show": true
+          }
+        },
+        "className": "h-72 w-full"
+      }
+    },
+    {
+      "id": "healthScorePanel",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center w-52 shrink-0 bg-surface-variant rounded-container p-gutter"
+      },
+      "children": [
+        "healthScoreLabel",
+        "healthScoreValue",
+        "healthStatusTag",
+        "healthScoreDesc"
+      ]
+    },
+    {
+      "id": "healthScoreLabel",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mb-1",
+        "value": "综合健康评分"
+      }
+    },
+    {
+      "id": "healthScoreValue",
+      "component": "span",
+      "props": {
+        "className": "text-5xl font-bold text-success leading-none",
+        "value": {
+          "path": "/overallScore"
+        }
+      }
+    },
+    {
+      "id": "healthStatusTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "/statusLevel"
+        },
+        "color": "success",
+        "variant": "filled",
+        "size": "medium",
+        "className": "mt-2"
+      }
+    },
+    {
+      "id": "healthScoreDesc",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-2",
+        "value": "系统整体运行状态良好，请关注干扰抑制指标"
+      }
+    },
+    {
+      "id": "metricsSection",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-variant rounded-container p-gutter"
+      },
+      "children": [
+        "metricsSectionTitle",
+        "metricsTable"
+      ]
+    },
+    {
+      "id": "metricsSectionTitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface mb-stack block",
+        "value": "维度指标明细"
+      }
+    },
+    {
+      "id": "metricsTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/metricsTable"
+        },
+        "pagination": false,
+        "columns": [
+          {
+            "title": "指标名称",
+            "dataIndex": "metricName"
+          },
+          {
+            "title": "雷达维度",
+            "dataIndex": "radarDimension"
+          },
+          {
+            "title": "当前值",
+            "dataIndex": "currentValue"
+          },
+          {
+            "title": "基线值",
+            "dataIndex": "baselineValue"
+          },
+          {
+            "title": "状态",
+            "dataIndex": "statusTag",
+            "width": 100
+          },
+          {
+            "title": "趋势",
+            "dataIndex": "trendIcon",
+            "width": 80
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/metricsTable",
+        "componentId": "metricsRow"
+      }
+    },
+    {
+      "id": "metricsRow",
+      "component": "TableRow",
+      "children": [
+        "metricsNameCell",
+        "metricsDimCell",
+        "metricsCurrentCell",
+        "metricsBaselineCell",
+        "metricsStatusCell",
+        "metricsTrendCell"
+      ]
+    },
+    {
+      "id": "metricsNameCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "metricsDimCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "radarDimension"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "metricsCurrentCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "currentValue"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "metricsBaselineCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "baselineValue"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "metricsStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusTag"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "variant": "filled",
+        "size": "small"
+      }
+    },
+    {
+      "id": "metricsTrendCell",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "trendIcon"
+        },
+        "color": {
+          "path": "trendColor"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "rfCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-sm p-inset"
+      },
+      "children": [
+        "rfCardHeader",
+        "rfTable"
+      ]
+    },
+    {
+      "id": "rfCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-gutter"
+      },
+      "children": [
+        "rfCardTitle",
+        "rfFilterBar"
+      ]
+    },
+    {
+      "id": "rfCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/rfCardTitle"
+        }
+      }
+    },
+    {
+      "id": "rfFilterBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter"
+      },
+      "children": [
+        "rfSearchInput",
+        "rfBandSelect",
+        "rfExportBtn"
+      ]
+    },
+    {
+      "id": "rfSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchAP"
+        },
+        "placeholder": "搜索AP名称或MAC地址",
+        "prefix": "search",
+        "className": "w-56"
+      }
+    },
+    {
+      "id": "rfBandSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/bandFilter"
+        },
+        "options": {
+          "path": "/bandOptions"
+        },
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "rfExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "icon": "download",
+        "iconPlacement": "start",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "rfTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/radioList"
+        },
+        "pagination": true,
+        "columns": [
+          {
+            "title": "AP名称",
+            "dataIndex": "apName"
+          },
+          {
+            "title": "MAC地址",
+            "dataIndex": "macAddress"
+          },
+          {
+            "title": "频段",
+            "dataIndex": "bandTag",
+            "width": 100
+          },
+          {
+            "title": "信道",
+            "dataIndex": "channel",
+            "width": 80,
+            "align": "center"
+          },
+          {
+            "title": "信号强度(dBm)",
+            "dataIndex": "signalStrength",
+            "width": 120,
+            "align": "center"
+          },
+          {
+            "title": "信道利用率",
+            "dataIndex": "channelUtilization",
+            "width": 120,
+            "align": "center"
+          },
+          {
+            "title": "状态",
+            "dataIndex": "statusDot",
+            "width": 120
+          },
+          {
+            "title": "操作",
+            "dataIndex": "action",
+            "width": 100,
+            "align": "center"
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/radioList",
+        "componentId": "rfRow"
+      }
+    },
+    {
+      "id": "rfRow",
+      "component": "TableRow",
+      "children": [
+        "rfApNameCell",
+        "rfMacCell",
+        "rfBandCell",
+        "rfChannelCell",
+        "rfSignalCell",
+        "rfUtilCell",
+        "rfStatusCell",
+        "rfActionCell"
+      ]
+    },
+    {
+      "id": "rfApNameCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "apName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "rfMacCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "macAddress"
+        },
+        "className": "text-sm text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "rfBandCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "bandTag"
+        },
+        "color": {
+          "path": "bandColor"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "rfChannelCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "channel"
+        },
+        "className": "text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "rfSignalCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "signalStrength"
+        },
+        "className": "text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "rfUtilCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "channelUtilization"
+        },
+        "className": "text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "rfStatusCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "rfStatusIcon",
+        "rfStatusText"
+      ]
+    },
+    {
+      "id": "rfStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "statusIcon"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "rfStatusText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "statusDot"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "rfActionCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rfActionEye",
+        "rfActionSettings"
+      ]
+    },
+    {
+      "id": "rfActionEye",
+      "component": "Icon",
+      "props": {
+        "name": "eye",
+        "className": "w-4 h-4 text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "rfActionSettings",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "className": "w-4 h-4 text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+      }
+    }
+  ]
+}

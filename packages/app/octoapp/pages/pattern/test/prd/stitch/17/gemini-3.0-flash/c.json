@@ -1,0 +1,1195 @@
+{
+    "state": {
+        "sidebar": {
+            "brand": {
+                "main": "Nexus CRM",
+                "sub": "ENTERPRISE EDITION"
+            },
+            "menu": [
+                {
+                    "label": "Home",
+                    "icon": "home",
+                    "active": false
+                },
+                {
+                    "label": "Deals",
+                    "icon": "briefcase",
+                    "active": false
+                },
+                {
+                    "label": "Contacts",
+                    "icon": "users",
+                    "active": false
+                },
+                {
+                    "label": "Tasks",
+                    "icon": "check-square",
+                    "active": true
+                },
+                {
+                    "label": "Analytics",
+                    "icon": "bar-chart-2",
+                    "active": false
+                }
+            ]
+        },
+        "topbar": {
+            "search": "",
+            "nav": [
+                "Dashboard",
+                "Pipeline",
+                "Accounts",
+                "Reports"
+            ]
+        },
+        "task": {
+            "breadcrumbs": [
+                {
+                    "title": "Projects"
+                },
+                {
+                    "title": "APAC Expansion"
+                }
+            ],
+            "title": "Setup APAC Cloud Region / 亚太区云区域部署",
+            "tags": [
+                {
+                    "text": "In Progress / 进行中",
+                    "type": "processing"
+                },
+                {
+                    "text": "High Priority / 高优先级",
+                    "type": "error"
+                }
+            ],
+            "description": {
+                "title": "Task Description / 任务详情",
+                "text": "Initialize the high-availability cloud infrastructure across the Asia-Pacific region to ensure low-latency service delivery.",
+                "bullets": [
+                    "Provisioning 3 Availability Zones for redundancy",
+                    "Establishing cross-region database replication",
+                    "Configuring global load balancer rules"
+                ]
+            },
+            "subtasks": {
+                "title": "Subtasks / 子任务拆解",
+                "stats": "3 of 5 Completed",
+                "items": [
+                    {
+                        "id": 1,
+                        "name": "Regional VPC Configuration / 区域网络配置",
+                        "done": true,
+                        "status": "Completed",
+                        "img": "https://randomuser.me/api/portraits/men/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Security Group Audit / 安全组审计",
+                        "done": true,
+                        "status": "Completed",
+                        "img": "https://randomuser.me/api/portraits/women/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "name": "IAM Role Provisioning / 身份与访问管理",
+                        "done": false,
+                        "status": "Due Oct 24",
+                        "img": "https://randomuser.me/api/portraits/men/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "name": "K8s Cluster Initialization / 集群初始化",
+                        "done": false,
+                        "status": "Due Oct 28",
+                        "img": "https://randomuser.me/api/portraits/women/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "name": "CDN Edge Node Setup / 边缘节点设置",
+                        "done": false,
+                        "status": "Due Oct 30",
+                        "img": "https://randomuser.me/api/portraits/men/5.jpg"
+                    }
+                ]
+            },
+            "steps": [
+                {
+                    "title": "Environment Prep",
+                    "status": "finish"
+                },
+                {
+                    "title": "Resource Allocation",
+                    "status": "process"
+                },
+                {
+                    "title": "Validation",
+                    "status": "wait"
+                }
+            ],
+            "assignment": {
+                "owner": {
+                    "name": "Chen Wei",
+                    "role": "Project Owner",
+                    "img": "https://randomuser.me/api/portraits/men/10.jpg"
+                },
+                "contributors": [
+                    {
+                        "img": "https://randomuser.me/api/portraits/women/11.jpg"
+                    },
+                    {
+                        "img": "https://randomuser.me/api/portraits/men/12.jpg"
+                    },
+                    {
+                        "img": "https://randomuser.me/api/portraits/women/13.jpg"
+                    },
+                    {
+                        "img": "https://randomuser.me/api/portraits/men/14.jpg"
+                    }
+                ]
+            },
+            "progress": {
+                "percent": 68,
+                "start": "Oct 10, 2023",
+                "due": "Oct 30, 2023"
+            },
+            "discussion": [
+                {
+                    "user": "Sarah Jenkins",
+                    "time": "2h ago",
+                    "msg": "The regional compliance check for Singapore is now complete. We can proceed with the VPC setup.",
+                    "img": "https://randomuser.me/api/portraits/women/20.jpg"
+                },
+                {
+                    "user": "Chen Wei",
+                    "time": "1h ago",
+                    "msg": "Copy that, Sarah. I'll review the IAM roles this afternoon.",
+                    "img": "https://randomuser.me/api/portraits/men/10.jpg"
+                }
+            ]
+        }
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-inset"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "mb-section"
+            },
+            "children": [
+                "brandMain",
+                "brandSub"
+            ]
+        },
+        {
+            "id": "brandMain",
+            "component": "div",
+            "props": {
+                "className": "text-xl font-bold text-primary",
+                "value": {
+                    "path": "/sidebar/brand/main"
+                }
+            }
+        },
+        {
+            "id": "brandSub",
+            "component": "div",
+            "props": {
+                "className": "text-xs text-on-surface-variant tracking-widest",
+                "value": {
+                    "path": "/sidebar/brand/sub"
+                }
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 flex flex-col gap-stack"
+            },
+            "children": {
+                "path": "/sidebar/menu",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-2 rounded-md hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto flex flex-col gap-stack"
+            },
+            "children": [
+                "newQuoteBtn",
+                "helpLink",
+                "logoutLink"
+            ]
+        },
+        {
+            "id": "newQuoteBtn",
+            "component": "Button",
+            "props": {
+                "value": "New Quote",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "helpLink",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline text-on-surface-variant p-2 cursor-pointer"
+            },
+            "children": [
+                "helpIcon",
+                "helpText"
+            ]
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "helpText",
+            "component": "span",
+            "props": {
+                "value": "Help",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "logoutLink",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline text-error p-2 cursor-pointer"
+            },
+            "children": [
+                "logoutIcon",
+                "logoutText"
+            ]
+        },
+        {
+            "id": "logoutIcon",
+            "component": "Icon",
+            "props": {
+                "name": "log-out",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "logoutText",
+            "component": "span",
+            "props": {
+                "value": "Logout",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topbarContainer",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "topbarContainer",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-gutter shrink-0"
+            },
+            "children": [
+                "topbarLeft",
+                "topbarCenter",
+                "topbarRight"
+            ]
+        },
+        {
+            "id": "topbarLeft",
+            "component": "div",
+            "props": {
+                "className": "w-1/3"
+            },
+            "children": [
+                "searchInput"
+            ]
+        },
+        {
+            "id": "searchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/topbar/search"
+                },
+                "placeholder": "Search tasks, docs...",
+                "prefix": "search",
+                "className": "max-w-xs"
+            }
+        },
+        {
+            "id": "topbarCenter",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": {
+                "path": "/topbar/nav",
+                "componentId": "topNavText"
+            }
+        },
+        {
+            "id": "topNavText",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium text-on-surface-variant hover:text-primary cursor-pointer",
+                "value": {
+                    "path": ""
+                }
+            }
+        },
+        {
+            "id": "topbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "bellIcon",
+                "settingsIcon",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "bellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "settingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "shape": "circle",
+                "className": "w-8 h-8 cursor-pointer"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter"
+            },
+            "children": [
+                "taskHeader",
+                "taskBody"
+            ]
+        },
+        {
+            "id": "taskHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-gutter"
+            },
+            "children": [
+                "breadcrumbArea",
+                "titleActionArea"
+            ]
+        },
+        {
+            "id": "breadcrumbArea",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/task/breadcrumbs"
+                },
+                "className": "mb-2"
+            }
+        },
+        {
+            "id": "titleActionArea",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "titleTagGroup",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "titleTagGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "taskMainTitle",
+                "tagRow"
+            ]
+        },
+        {
+            "id": "taskMainTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "/task/title"
+                }
+            }
+        },
+        {
+            "id": "tagRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": {
+                "path": "/task/tags",
+                "componentId": "taskStatusTag"
+            }
+        },
+        {
+            "id": "taskStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "text"
+                },
+                "color": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "markCompleteBtn",
+                "editBtn",
+                "moreBtn"
+            ]
+        },
+        {
+            "id": "markCompleteBtn",
+            "component": "Button",
+            "props": {
+                "value": "Mark Complete / 标记完成",
+                "icon": "check",
+                "color": "success"
+            }
+        },
+        {
+            "id": "editBtn",
+            "component": "Button",
+            "props": {
+                "value": "Edit / 编辑",
+                "icon": "edit"
+            }
+        },
+        {
+            "id": "moreBtn",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal"
+            }
+        },
+        {
+            "id": "taskBody",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "leftColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "leftColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 flex flex-col gap-gutter"
+            },
+            "children": [
+                "descCard",
+                "subtaskCard",
+                "executionCard"
+            ]
+        },
+        {
+            "id": "descCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "descTitle",
+                "descText",
+                "descBullets"
+            ]
+        },
+        {
+            "id": "descTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-stack",
+                "value": {
+                    "path": "/task/description/title"
+                }
+            }
+        },
+        {
+            "id": "descText",
+            "component": "p",
+            "props": {
+                "className": "text-on-surface-variant mb-stack",
+                "value": {
+                    "path": "/task/description/text"
+                }
+            }
+        },
+        {
+            "id": "descBullets",
+            "component": "ul",
+            "props": {
+                "className": "list-disc pl-gutter text-on-surface-variant"
+            },
+            "children": {
+                "path": "/task/description/bullets",
+                "componentId": "bulletItem"
+            }
+        },
+        {
+            "id": "bulletItem",
+            "component": "li",
+            "props": {
+                "value": {
+                    "path": ""
+                }
+            }
+        },
+        {
+            "id": "subtaskCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "subtaskHeader",
+                "subtaskList"
+            ]
+        },
+        {
+            "id": "subtaskHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-stack"
+            },
+            "children": [
+                "subtaskTitleGroup",
+                "addSubtaskBtn"
+            ]
+        },
+        {
+            "id": "subtaskTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "subtaskTitle",
+                "subtaskStats"
+            ]
+        },
+        {
+            "id": "subtaskTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": {
+                    "path": "/task/subtasks/title"
+                }
+            }
+        },
+        {
+            "id": "subtaskStats",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/task/subtasks/stats"
+                },
+                "color": "processing"
+            }
+        },
+        {
+            "id": "addSubtaskBtn",
+            "component": "Button",
+            "props": {
+                "icon": "plus",
+                "size": "small"
+            }
+        },
+        {
+            "id": "subtaskList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/task/subtasks/items",
+                "componentId": "subtaskItemRow"
+            }
+        },
+        {
+            "id": "subtaskItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-2 hover:bg-surface-variant rounded-md"
+            },
+            "children": [
+                "subtaskLeft",
+                "subtaskRight"
+            ]
+        },
+        {
+            "id": "subtaskLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "subtaskCheck",
+                "subtaskName"
+            ]
+        },
+        {
+            "id": "subtaskCheck",
+            "component": "Icon",
+            "props": {
+                "name": "circle",
+                "className": "w-4 h-4 text-divider"
+            }
+        },
+        {
+            "id": "subtaskName",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "subtaskRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "subtaskStatus",
+                "subtaskAvatar"
+            ]
+        },
+        {
+            "id": "subtaskStatus",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "subtaskAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "img"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "executionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "executionTitle",
+                "executionSteps"
+            ]
+        },
+        {
+            "id": "executionTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-gutter",
+                "value": "Execution Steps / 执行步骤"
+            }
+        },
+        {
+            "id": "executionSteps",
+            "component": "Steps",
+            "props": {
+                "current": 1,
+                "size": "small"
+            },
+            "children": {
+                "path": "/task/steps",
+                "componentId": "executionStepItem"
+            }
+        },
+        {
+            "id": "executionStepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-gutter"
+            },
+            "children": [
+                "assignCard",
+                "progressCard",
+                "discussionCard"
+            ]
+        },
+        {
+            "id": "assignCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "assignTitle",
+                "ownerRow",
+                "divider1",
+                "contributorRow"
+            ]
+        },
+        {
+            "id": "assignTitle",
+            "component": "h4",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant uppercase mb-stack",
+                "value": "ASSIGNMENT / 责任人分配"
+            }
+        },
+        {
+            "id": "ownerRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-stack"
+            },
+            "children": [
+                "ownerImg",
+                "ownerInfo"
+            ]
+        },
+        {
+            "id": "ownerImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/task/assignment/owner/img"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "ownerInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "ownerName",
+                "ownerRole"
+            ]
+        },
+        {
+            "id": "ownerName",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold",
+                "value": {
+                    "path": "/task/assignment/owner/name"
+                }
+            }
+        },
+        {
+            "id": "ownerRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/task/assignment/owner/role"
+                }
+            }
+        },
+        {
+            "id": "divider1",
+            "component": "Divider",
+            "props": {
+                "className": "my-2"
+            }
+        },
+        {
+            "id": "contributorRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center -space-x-2"
+            },
+            "children": {
+                "path": "/task/assignment/contributors",
+                "componentId": "contributorImg"
+            }
+        },
+        {
+            "id": "contributorImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "img"
+                },
+                "className": "w-8 h-8 rounded-full border-2 border-surface-container-highest"
+            }
+        },
+        {
+            "id": "progressCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "progressHeader",
+                "progressBar",
+                "metricGrid"
+            ]
+        },
+        {
+            "id": "progressHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between mb-stack"
+            },
+            "children": [
+                "startInfo",
+                "dueInfo"
+            ]
+        },
+        {
+            "id": "startInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "startLabel",
+                "startDate"
+            ]
+        },
+        {
+            "id": "startLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "START DATE"
+            }
+        },
+        {
+            "id": "startDate",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "/task/progress/start"
+                }
+            }
+        },
+        {
+            "id": "dueInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "dueLabel",
+                "dueDate"
+            ]
+        },
+        {
+            "id": "dueLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "DUE DATE"
+            }
+        },
+        {
+            "id": "dueDate",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-error",
+                "value": {
+                    "path": "/task/progress/due"
+                }
+            }
+        },
+        {
+            "id": "progressBar",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "/task/progress/percent"
+                },
+                "strokeColor": "#0067D1"
+            }
+        },
+        {
+            "id": "metricGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-2 mt-stack"
+            },
+            "children": [
+                "estMetric",
+                "actMetric"
+            ]
+        },
+        {
+            "id": "estMetric",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-2 rounded-md"
+            },
+            "children": [
+                "estLabel",
+                "estVal"
+            ]
+        },
+        {
+            "id": "estLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant block",
+                "value": "ESTIMATED"
+            }
+        },
+        {
+            "id": "estVal",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold",
+                "value": "45h"
+            }
+        },
+        {
+            "id": "actMetric",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-2 rounded-md"
+            },
+            "children": [
+                "actLabel",
+                "actVal"
+            ]
+        },
+        {
+            "id": "actLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant block",
+                "value": "ACTUAL"
+            }
+        },
+        {
+            "id": "actVal",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-primary",
+                "value": "32.5h"
+            }
+        },
+        {
+            "id": "discussionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "discHeader",
+                "discTimeline"
+            ]
+        },
+        {
+            "id": "discHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-gutter"
+            },
+            "children": [
+                "discTitle",
+                "discCount"
+            ]
+        },
+        {
+            "id": "discTitle",
+            "component": "h4",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": "Internal Discussion / 讨论"
+            }
+        },
+        {
+            "id": "discCount",
+            "component": "Tag",
+            "props": {
+                "value": "12",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "discTimeline",
+            "component": "Timeline",
+            "props": {
+                "className": "mt-2"
+            },
+            "children": {
+                "path": "/task/discussion",
+                "componentId": "discItem"
+            }
+        },
+        {
+            "id": "discItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "userName"
+                },
+                "content": {
+                    "componentId": "discContent"
+                }
+            }
+        },
+        {
+            "id": "discContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "discMsg",
+                "discTime"
+            ]
+        },
+        {
+            "id": "discMsg",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "msg"
+                }
+            }
+        },
+        {
+            "id": "discTime",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant mt-1",
+                "value": {
+                    "path": "time"
+                }
+            }
+        }
+    ]
+}

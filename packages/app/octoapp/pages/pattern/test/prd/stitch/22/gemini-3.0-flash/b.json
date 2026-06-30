@@ -1,0 +1,902 @@
+{
+    "state": {
+        "brandName": "Nexus ERP",
+        "menuItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Inventory",
+                "icon": "package",
+                "isActive": true
+            },
+            {
+                "label": "Purchasing",
+                "icon": "shopping-cart",
+                "isActive": false
+            },
+            {
+                "label": "Sales",
+                "icon": "trending-up",
+                "isActive": false
+            },
+            {
+                "label": "Warehouse",
+                "icon": "warehouse",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "icon": "bar-chart-3",
+                "isActive": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "isActive": false
+            }
+        ],
+        "breadcrumbItems": [
+            {
+                "title": "Inventory Management"
+            },
+            {
+                "title": "Stock Ledger"
+            }
+        ],
+        "searchVal": "",
+        "metrics": [
+            {
+                "label": "库存总市值",
+                "value": "¥12,840,500",
+                "trend": "+5.2% 环比增长",
+                "icon": "banknote",
+                "color": "primary"
+            },
+            {
+                "label": "库存预警",
+                "value": "24",
+                "unit": "项",
+                "trend": "需立即补货",
+                "icon": "alert-triangle",
+                "color": "error"
+            },
+            {
+                "label": "临期批次",
+                "value": "156",
+                "unit": "批",
+                "trend": "30天内过期",
+                "icon": "clock",
+                "color": "warning"
+            },
+            {
+                "label": "活跃站点",
+                "value": "18/20",
+                "unit": "个",
+                "trend": "运行状态良好",
+                "icon": "activity",
+                "color": "success"
+            }
+        ],
+        "filterWarehouse": "全部仓库",
+        "filterCategory": "全部分类",
+        "filterPeriod": "最近30天",
+        "stockItems": [
+            {
+                "id": "1",
+                "materialImage": "https://picsum.photos/seed/sku-1/200/200",
+                "materialName": "高精密传感器 RT-200",
+                "skuCode": "SN-992031",
+                "location": "华东仓-A12-04",
+                "stockLevel": 85,
+                "expiryDate": "2025-12-20",
+                "change24h": "+120",
+                "status": "充足",
+                "statusType": "success"
+            },
+            {
+                "id": "2",
+                "materialImage": "https://picsum.photos/seed/sku-2/200/200",
+                "materialName": "锂电池组 5000mAh",
+                "skuCode": "SN-441022",
+                "location": "华南仓-B03-01",
+                "stockLevel": 9,
+                "expiryDate": "2024-08-15",
+                "change24h": "-200",
+                "status": "预警",
+                "statusType": "error"
+            },
+            {
+                "id": "3",
+                "materialImage": "https://picsum.photos/seed/sku-3/200/200",
+                "materialName": "工业级连接线 5m",
+                "skuCode": "SN-102933",
+                "location": "西北仓-C01-12",
+                "stockLevel": 80,
+                "expiryDate": "2024-05-01",
+                "change24h": "0",
+                "status": "临期",
+                "statusType": "warning"
+            },
+            {
+                "id": "4",
+                "materialImage": "https://picsum.photos/seed/sku-4/200/200",
+                "materialName": "不锈钢外壳组件",
+                "skuCode": "SN-882711",
+                "location": "华东仓-D05-09",
+                "stockLevel": 50,
+                "expiryDate": "2026-01-10",
+                "change24h": "+50",
+                "status": "充足",
+                "statusType": "success"
+            },
+            {
+                "id": "5",
+                "materialImage": "https://picsum.photos/seed/sku-5/200/200",
+                "materialName": "控制面板主板 V3",
+                "skuCode": "SN-332190",
+                "location": "华南仓-A02-11",
+                "stockLevel": 6,
+                "expiryDate": "2025-03-22",
+                "change24h": "-5",
+                "status": "预警",
+                "statusType": "error"
+            },
+            {
+                "id": "6",
+                "materialImage": "https://picsum.photos/seed/sku-6/200/200",
+                "materialName": "散热风扇 12V",
+                "skuCode": "SN-772102",
+                "location": "华东仓-B09-04",
+                "stockLevel": 90,
+                "expiryDate": "2027-06-18",
+                "change24h": "+300",
+                "status": "充足",
+                "statusType": "success"
+            },
+            {
+                "id": "7",
+                "materialImage": "https://picsum.photos/seed/sku-7/200/200",
+                "materialName": "绝缘胶带 黑色",
+                "skuCode": "SN-221099",
+                "location": "西北仓-E12-01",
+                "stockLevel": 15,
+                "expiryDate": "2024-04-20",
+                "change24h": "-10",
+                "status": "临期",
+                "statusType": "warning"
+            },
+            {
+                "id": "8",
+                "materialImage": "https://picsum.photos/seed/sku-8/200/200",
+                "materialName": "紧固螺栓 M8",
+                "skuCode": "SN-554321",
+                "location": "华东仓-F02-22",
+                "stockLevel": 50,
+                "expiryDate": "2029-12-31",
+                "change24h": "0",
+                "status": "充足",
+                "statusType": "success"
+            },
+            {
+                "id": "9",
+                "materialImage": "https://picsum.photos/seed/sku-9/200/200",
+                "materialName": "显示屏模组 7寸",
+                "skuCode": "SN-667123",
+                "location": "华南仓-C04-05",
+                "stockLevel": 17,
+                "expiryDate": "2025-07-14",
+                "change24h": "-12",
+                "status": "充足",
+                "statusType": "success"
+            },
+            {
+                "id": "10",
+                "materialImage": "https://picsum.photos/seed/sku-10/200/200",
+                "materialName": "电源适配器 24V",
+                "skuCode": "SN-112233",
+                "location": "华东仓-A01-01",
+                "stockLevel": 5,
+                "expiryDate": "2025-11-11",
+                "change24h": "-45",
+                "status": "预警",
+                "statusType": "error"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-60 bg-inverse-surface flex flex-col shrink-0"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3 border-b border-white/10"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "box",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-white font-bold text-lg"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 py-4 px-3 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors cursor-pointer"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-white/60"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-white/80 text-sm"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "header",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "header",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6 shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "breadcrumb"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbItems"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索 SKU, 物料名称...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifyIcon",
+                "helpIcon"
+            ]
+        },
+        {
+            "id": "notifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": "Admin. Zhang",
+                "className": "text-xs font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": "Senior Manager",
+                "className": "text-[10px] text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "statsGrid",
+                "controlPanel",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "statsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "statCard"
+            }
+        },
+        {
+            "id": "statCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-5 rounded-xl shadow-sm flex flex-col gap-3"
+            },
+            "children": [
+                "statHeader",
+                "statBody"
+            ]
+        },
+        {
+            "id": "statHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "statLabel",
+                "statIcon"
+            ]
+        },
+        {
+            "id": "statLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "square",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "statBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "statValue",
+                "statTrend"
+            ]
+        },
+        {
+            "id": "statValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs mt-1 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "controlPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-xl shadow-sm flex items-center justify-between"
+            },
+            "children": [
+                "filterGroup",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "filterGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "selectWarehouse",
+                "selectCategory",
+                "selectPeriod"
+            ]
+        },
+        {
+            "id": "selectWarehouse",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterWarehouse"
+                },
+                "options": [
+                    {
+                        "label": "华东一号仓",
+                        "value": "1"
+                    },
+                    {
+                        "label": "华南配送中心",
+                        "value": "2"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "selectCategory",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterCategory"
+                },
+                "options": [
+                    {
+                        "label": "电子元器件",
+                        "value": "1"
+                    },
+                    {
+                        "label": "包装辅材",
+                        "value": "2"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "selectPeriod",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterPeriod"
+                },
+                "options": [
+                    {
+                        "label": "最近30天",
+                        "value": "30"
+                    },
+                    {
+                        "label": "今日",
+                        "value": "1"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "btnExport",
+                "btnFilter",
+                "btnRegister"
+            ]
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "btnFilter",
+            "component": "Button",
+            "props": {
+                "value": "高级筛选",
+                "icon": "filter"
+            }
+        },
+        {
+            "id": "btnRegister",
+            "component": "Button",
+            "props": {
+                "value": "出入库登记",
+                "icon": "plus-circle",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm overflow-hidden"
+            },
+            "children": [
+                "tableTitle",
+                "stockTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "div",
+            "props": {
+                "className": "px-6 py-4 border-b border-divider"
+            },
+            "children": [
+                "tableTitleText"
+            ]
+        },
+        {
+            "id": "tableTitleText",
+            "component": "span",
+            "props": {
+                "value": "库存台账明细",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "stockTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/stockItems"
+                },
+                "columns": [
+                    {
+                        "title": "物料信息",
+                        "dataIndex": "material"
+                    },
+                    {
+                        "title": "SKU编号",
+                        "dataIndex": "skuCode"
+                    },
+                    {
+                        "title": "仓库位置",
+                        "dataIndex": "location"
+                    },
+                    {
+                        "title": "当前库存水位",
+                        "dataIndex": "level",
+                        "width": 180
+                    },
+                    {
+                        "title": "批次有效期",
+                        "dataIndex": "expiry"
+                    },
+                    {
+                        "title": "24h变动",
+                        "dataIndex": "change"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 200,
+                        "fixed": "end"
+                    }
+                ],
+                "className": "px-2"
+            },
+            "children": {
+                "path": "/stockItems",
+                "componentId": "stockRow"
+            }
+        },
+        {
+            "id": "stockRow",
+            "component": "TableRow",
+            "children": [
+                "cellMaterial",
+                "cellSku",
+                "cellLocation",
+                "cellLevel",
+                "cellExpiry",
+                "cellChange",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellMaterial",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "cellImg",
+                "cellName"
+            ]
+        },
+        {
+            "id": "cellImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "materialImage"
+                },
+                "className": "w-10 h-10 rounded-md object-cover"
+            }
+        },
+        {
+            "id": "cellName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "materialName"
+                },
+                "className": "text-xs font-medium"
+            }
+        },
+        {
+            "id": "cellSku",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "skuCode"
+                },
+                "className": "text-xs text-on-surface-variant font-mono"
+            }
+        },
+        {
+            "id": "cellLocation",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "location"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "cellLevel",
+            "component": "div",
+            "props": {
+                "className": "w-full"
+            },
+            "children": [
+                "stockProgress"
+            ]
+        },
+        {
+            "id": "stockProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "stockLevel"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellExpiry",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "expiryDate"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "cellChange",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "change24h"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "btnHistory",
+                "btnEdit",
+                "btnTruck"
+            ]
+        },
+        {
+            "id": "btnHistory",
+            "component": "Button",
+            "props": {
+                "value": "流水",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "value": "调整",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnTruck",
+            "component": "Button",
+            "props": {
+                "value": "补货",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

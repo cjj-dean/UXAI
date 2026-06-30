@@ -1,0 +1,937 @@
+{
+    "state": {
+        "brandName": "Nexus ERP",
+        "currentUser": {
+            "nickName": "陈静 (财务主管)",
+            "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+            "role": "Admin"
+        },
+        "menuItems": [
+            {
+                "label": "概览",
+                "icon": "layout-dashboard",
+                "isActive": true
+            },
+            {
+                "label": "应收应付管理",
+                "icon": "receipt",
+                "isActive": false
+            },
+            {
+                "label": "采购管理",
+                "icon": "shopping-cart",
+                "isActive": false
+            },
+            {
+                "label": "物流追踪",
+                "icon": "truck",
+                "isActive": false
+            },
+            {
+                "label": "资产负债",
+                "icon": "bar-chart-3",
+                "isActive": false
+            },
+            {
+                "label": "税务申报",
+                "icon": "file-text",
+                "isActive": false
+            }
+        ],
+        "kpiMetrics": [
+            {
+                "name": "应收账款",
+                "value": "¥4,280,500.00",
+                "trend": "+12.5%",
+                "icon": "trending-up",
+                "status": "primary"
+            },
+            {
+                "name": "逾期账款",
+                "value": "¥125,400.00",
+                "trend": "+2.3%",
+                "icon": "alert-circle",
+                "status": "warning"
+            },
+            {
+                "name": "应付账款",
+                "value": "¥2,150,000.00",
+                "trend": "-5.1%",
+                "icon": "trending-down",
+                "status": "primary"
+            },
+            {
+                "name": "现金预测 (30天)",
+                "value": "¥8,900,000.00",
+                "trend": "稳健",
+                "icon": "line-chart",
+                "status": "success"
+            }
+        ],
+        "activeTab": "all",
+        "invoiceTabs": [
+            {
+                "id": "all",
+                "label": "全部发票"
+            },
+            {
+                "id": "pending",
+                "label": "待付款"
+            },
+            {
+                "id": "paid",
+                "label": "已支付"
+            },
+            {
+                "id": "overdue",
+                "label": "已逾期"
+            },
+            {
+                "id": "draft",
+                "label": "草稿"
+            }
+        ],
+        "invoiceData": [
+            {
+                "id": "INV-2023-001",
+                "partner": "华为技术有限公司",
+                "date": "2023-10-25",
+                "amount": "¥120,000.00",
+                "status": "已支付",
+                "type": "success"
+            },
+            {
+                "id": "INV-2023-002",
+                "partner": "腾讯云服务",
+                "date": "2023-10-26",
+                "amount": "¥45,000.00",
+                "status": "待付款",
+                "type": "processing"
+            },
+            {
+                "id": "INV-2023-003",
+                "partner": "顺丰速运",
+                "date": "2023-10-20",
+                "amount": "¥12,800.00",
+                "status": "已逾期",
+                "type": "error"
+            },
+            {
+                "id": "INV-2023-004",
+                "partner": "阿里巴巴集团",
+                "date": "2023-10-27",
+                "amount": "¥89,200.00",
+                "status": "待付款",
+                "type": "processing"
+            },
+            {
+                "id": "INV-2023-005",
+                "partner": "京东物流",
+                "date": "2023-10-28",
+                "amount": "¥33,000.00",
+                "status": "草稿",
+                "type": "default"
+            },
+            {
+                "id": "INV-2023-006",
+                "partner": "美团外卖",
+                "date": "2023-10-29",
+                "amount": "¥5,600.00",
+                "status": "已支付",
+                "type": "success"
+            },
+            {
+                "id": "INV-2023-007",
+                "partner": "字节跳动",
+                "date": "2023-10-30",
+                "amount": "¥210,000.00",
+                "status": "待付款",
+                "type": "processing"
+            },
+            {
+                "id": "INV-2023-008",
+                "partner": "小米科技",
+                "date": "2023-10-15",
+                "amount": "¥67,000.00",
+                "status": "已逾期",
+                "type": "error"
+            },
+            {
+                "id": "INV-2023-009",
+                "partner": "百度在线",
+                "date": "2023-11-01",
+                "amount": "¥44,500.00",
+                "status": "待付款",
+                "type": "processing"
+            },
+            {
+                "id": "INV-2023-010",
+                "partner": "滴滴出行",
+                "date": "2023-11-02",
+                "amount": "¥15,000.00",
+                "status": "已支付",
+                "type": "success"
+            }
+        ],
+        "liquidityInsights": [
+            {
+                "type": "优化",
+                "content": "当前现金储备充足，建议提前支付供应商 '华为' 的账单以获取 2% 的现金折扣。",
+                "impact": "节省 ¥2,400",
+                "level": "success"
+            },
+            {
+                "type": "预警",
+                "content": "下周预计有三笔大额支出，现金流可能出现短期缺口，建议加速催收逾期账款。",
+                "impact": "风险规避",
+                "level": "warning"
+            }
+        ],
+        "liquidityChartData": [
+            {
+                "date": "11-01",
+                "value": 850
+            },
+            {
+                "date": "11-02",
+                "value": 820
+            },
+            {
+                "date": "11-03",
+                "value": 900
+            },
+            {
+                "date": "11-04",
+                "value": 880
+            },
+            {
+                "date": "11-05",
+                "value": 950
+            },
+            {
+                "date": "11-06",
+                "value": 1100
+            },
+            {
+                "date": "11-07",
+                "value": 1050
+            },
+            {
+                "date": "11-08",
+                "value": 1200
+            },
+            {
+                "date": "11-09",
+                "value": 1150
+            },
+            {
+                "date": "11-10",
+                "value": 1300
+            }
+        ],
+        "upcomingBills": [
+            {
+                "date": "明天",
+                "vendor": "阿里云计算",
+                "amount": "¥8,400.00",
+                "priority": "error"
+            },
+            {
+                "date": "11-15",
+                "vendor": "自来水公司",
+                "amount": "¥1,200.00",
+                "priority": "warning"
+            },
+            {
+                "date": "11-18",
+                "vendor": "物业管理费",
+                "amount": "¥15,000.00",
+                "priority": "default"
+            },
+            {
+                "date": "11-20",
+                "vendor": "中国电信",
+                "amount": "¥3,500.00",
+                "priority": "default"
+            }
+        ]
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-inverse-surface flex flex-col p-inset"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarAction",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-section"
+            },
+            "children": [
+                "brandIcon",
+                "brandTitle"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-xl font-bold text-inverse-on-surface"
+            }
+        },
+        {
+            "id": "sidebarAction",
+            "component": "Button",
+            "props": {
+                "value": "新建交易",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full mb-gutter"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 cursor-pointer transition-colors"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-inverse-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "globalHeader",
+                "scrollContent"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset"
+            },
+            "children": [
+                "headerSearch",
+                "headerUserArea"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索发票、合作伙伴或交易 ID...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerUserArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerNotify",
+                "headerHelp",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerNotify",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/nickName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "scrollContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "kpiGrid",
+                "tableSection",
+                "bottomGrid"
+            ]
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/kpiMetrics",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-sm flex flex-col gap-2"
+            },
+            "children": [
+                "kpiHeader",
+                "kpiValue",
+                "kpiFooter"
+            ]
+        },
+        {
+            "id": "kpiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "kpiName",
+                "kpiIcon"
+            ]
+        },
+        {
+            "id": "kpiName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kpiIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "status"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "kpiValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiFooter",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs text-success font-medium"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-sm p-inset"
+            },
+            "children": [
+                "tableTitle",
+                "tableTabs"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h3",
+            "props": {
+                "value": "发票清单",
+                "className": "text-lg font-bold mb-gutter"
+            }
+        },
+        {
+            "id": "tableTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                }
+            },
+            "children": {
+                "path": "/invoiceTabs",
+                "componentId": "invoiceTabItem"
+            }
+        },
+        {
+            "id": "invoiceTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                },
+                "content": {
+                    "componentId": "invoiceTable"
+                }
+            }
+        },
+        {
+            "id": "invoiceTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/invoiceData"
+                },
+                "columns": [
+                    {
+                        "title": "发票 ID",
+                        "dataIndex": "id"
+                    },
+                    {
+                        "title": "合作伙伴",
+                        "dataIndex": "partner"
+                    },
+                    {
+                        "title": "开票日期",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "金额",
+                        "dataIndex": "amount"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/invoiceData",
+                "componentId": "invoiceTableRow"
+            }
+        },
+        {
+            "id": "invoiceTableRow",
+            "component": "TableRow",
+            "children": [
+                "colId",
+                "colPartner",
+                "colDate",
+                "colAmount",
+                "colStatus",
+                "colAction"
+            ]
+        },
+        {
+            "id": "colId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "text-primary font-medium"
+            }
+        },
+        {
+            "id": "colPartner",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "partner"
+                }
+            }
+        },
+        {
+            "id": "colDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "colAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "colStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "colAction",
+            "component": "Button",
+            "props": {
+                "value": "详情",
+                "size": "small"
+            }
+        },
+        {
+            "id": "bottomGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-gutter mb-inset"
+            },
+            "children": [
+                "insightCard",
+                "billsCard"
+            ]
+        },
+        {
+            "id": "insightCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-sm flex flex-col gap-gutter"
+            },
+            "children": [
+                "insightHeader",
+                "insightContentWrapper"
+            ]
+        },
+        {
+            "id": "insightHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "insightTitle",
+                "insightBadge"
+            ]
+        },
+        {
+            "id": "insightTitle",
+            "component": "span",
+            "props": {
+                "value": "流动性洞察建议",
+                "className": "font-bold text-md"
+            }
+        },
+        {
+            "id": "insightBadge",
+            "component": "Tag",
+            "props": {
+                "value": "AI 建议",
+                "color": "primary",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "insightContentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "insightList",
+                "insightChart"
+            ]
+        },
+        {
+            "id": "insightList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/liquidityInsights",
+                "componentId": "insightItem"
+            }
+        },
+        {
+            "id": "insightItem",
+            "component": "div",
+            "props": {
+                "className": "p-3 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "insightType",
+                "insightText"
+            ]
+        },
+        {
+            "id": "insightType",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "color": {
+                    "path": "level"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "insightText",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "content"
+                },
+                "className": "text-xs mt-2 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "insightChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/liquidityChartData"
+                    },
+                    "xAxis": {
+                        "data": "date"
+                    },
+                    "yAxisTitle": "流动性指数",
+                    "smooth": true,
+                    "area": true
+                },
+                "className": "w-48 h-32"
+            }
+        },
+        {
+            "id": "billsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-sm"
+            },
+            "children": [
+                "billsTitle",
+                "billsList"
+            ]
+        },
+        {
+            "id": "billsTitle",
+            "component": "span",
+            "props": {
+                "value": "近期待付账单",
+                "className": "font-bold text-md block mb-gutter"
+            }
+        },
+        {
+            "id": "billsList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col border-t border-divider"
+            },
+            "children": {
+                "path": "/upcomingBills",
+                "componentId": "billRow"
+            }
+        },
+        {
+            "id": "billRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between py-3 border-b border-divider"
+            },
+            "children": [
+                "billInfo",
+                "billAction"
+            ]
+        },
+        {
+            "id": "billInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "billDate",
+                "billVendor"
+            ]
+        },
+        {
+            "id": "billDate",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "color": {
+                    "path": "priority"
+                }
+            }
+        },
+        {
+            "id": "billVendor",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "vendorName",
+                "billAmount"
+            ]
+        },
+        {
+            "id": "vendorName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "vendor"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "billAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "billAction",
+            "component": "Button",
+            "props": {
+                "value": "支付",
+                "icon": "credit-card",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

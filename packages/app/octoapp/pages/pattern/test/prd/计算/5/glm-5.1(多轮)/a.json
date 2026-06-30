@@ -1,0 +1,1565 @@
+{
+  "state": {
+    "brandLogoIcon": "shield",
+    "brandName": "iMaster Admin",
+    "navMenuItems": [
+      {
+        "menuName": "首页",
+        "menuKey": "home",
+        "isActive": false
+      },
+      {
+        "menuName": "监控大屏",
+        "menuKey": "monitor",
+        "isActive": false
+      },
+      {
+        "menuName": "资源管理",
+        "menuKey": "resource",
+        "isActive": false
+      },
+      {
+        "menuName": "设备管理",
+        "menuKey": "device",
+        "isActive": true
+      },
+      {
+        "menuName": "告警中心",
+        "menuKey": "alarm",
+        "isActive": false
+      },
+      {
+        "menuName": "系统设置",
+        "menuKey": "settings",
+        "isActive": false
+      }
+    ],
+    "tools": {
+      "helpIcon": "help-circle",
+      "langIcon": "languages",
+      "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    "selectedMenuKeys": [
+      "device"
+    ],
+    "menuItems": [
+      {
+        "title": "首页",
+        "key": "home"
+      },
+      {
+        "title": "监控大屏",
+        "key": "monitor"
+      },
+      {
+        "title": "资源管理",
+        "key": "resource"
+      },
+      {
+        "title": "设备管理",
+        "key": "device"
+      },
+      {
+        "title": "告警中心",
+        "key": "alarm"
+      },
+      {
+        "title": "系统设置",
+        "key": "settings"
+      }
+    ],
+    "sectionTitle": "控制台导航",
+    "selectedKeys": [
+      "physical-svr"
+    ],
+    "openKeys": [
+      "compute-resource"
+    ],
+    "metricsItems": [
+      {
+        "cardTitle": "CPU与算力",
+        "mainIcon": "cpu",
+        "details": [
+          {
+            "value": "68.3 %",
+            "label": "使用率",
+            "statusType": "warning"
+          },
+          {
+            "value": "128 核",
+            "label": "总计",
+            "statusType": "default"
+          }
+        ]
+      },
+      {
+        "cardTitle": "节点连接状态",
+        "mainIcon": "check-circle",
+        "details": [
+          {
+            "value": "22 个",
+            "label": "在线",
+            "statusType": "success"
+          },
+          {
+            "value": "5 个",
+            "label": "离线",
+            "statusType": "default"
+          },
+          {
+            "value": "2 个",
+            "label": "异常报警",
+            "statusType": "error"
+          }
+        ]
+      }
+    ],
+    "searchKeyword": "",
+    "totalStatistics": "总计：168 条",
+    "selectedStatistics": "已选：0 条",
+    "currentActivePage": 3,
+    "pageSize": 16,
+    "jumpText": "跳转",
+    "jumpPageValue": "",
+    "pageSizeOptions": [
+      {
+        "label": "10 条/页",
+        "value": 10
+      },
+      {
+        "label": "16 条/页",
+        "value": 16
+      },
+      {
+        "label": "20 条/页",
+        "value": 20
+      },
+      {
+        "label": "50 条/页",
+        "value": 50
+      }
+    ],
+    "statusFilterOptions": [
+      {
+        "label": "正常",
+        "value": "正常"
+      },
+      {
+        "label": "警告",
+        "value": "警告"
+      },
+      {
+        "label": "异常",
+        "value": "异常"
+      }
+    ],
+    "dataCenterFilterOptions": [
+      {
+        "label": "华北一区",
+        "value": "华北一区"
+      },
+      {
+        "label": "华北二区",
+        "value": "华北二区"
+      },
+      {
+        "label": "华东一区",
+        "value": "华东一区"
+      },
+      {
+        "label": "华东二区",
+        "value": "华东二区"
+      },
+      {
+        "label": "华南一区",
+        "value": "华南一区"
+      },
+      {
+        "label": "华南二区",
+        "value": "华南二区"
+      },
+      {
+        "label": "西南区",
+        "value": "西南区"
+      },
+      {
+        "label": "核心交换区",
+        "value": "核心交换区"
+      }
+    ],
+    "statusFilterValue": "",
+    "dataCenterFilterValue": "",
+    "dataSource": [
+      {
+        "rowKey": 1,
+        "deviceId": "SVR-1001",
+        "deviceName": "核心网关A",
+        "ipAddress": "192.168.0.1",
+        "dataCenter": "华北一区",
+        "osSystem": "CentOS 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "12%",
+        "memoryUsage": "24%",
+        "diskCapacity": "45%",
+        "networkThroughput": "150 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 2,
+        "deviceId": "SVR-1002",
+        "deviceName": "核心网关B",
+        "ipAddress": "192.168.0.2",
+        "dataCenter": "华北一区",
+        "osSystem": "CentOS 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "15%",
+        "memoryUsage": "26%",
+        "diskCapacity": "45%",
+        "networkThroughput": "180 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 3,
+        "deviceId": "SVR-1003",
+        "deviceName": "数据库主库",
+        "ipAddress": "10.1.5.10",
+        "dataCenter": "华东二区",
+        "osSystem": "RedHat 8",
+        "runStatus": "警告",
+        "statusColor": "warning",
+        "cpuLoad": "85%",
+        "memoryUsage": "92%",
+        "diskCapacity": "88%",
+        "networkThroughput": "420 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 4,
+        "deviceId": "SVR-1004",
+        "deviceName": "数据库从库",
+        "ipAddress": "10.1.5.11",
+        "dataCenter": "华东二区",
+        "osSystem": "RedHat 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "45%",
+        "memoryUsage": "60%",
+        "diskCapacity": "45%",
+        "networkThroughput": "310 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 5,
+        "deviceId": "SVR-1005",
+        "deviceName": "缓存节点A",
+        "ipAddress": "10.2.1.100",
+        "dataCenter": "华南一区",
+        "osSystem": "CentOS 7",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "22%",
+        "memoryUsage": "80%",
+        "diskCapacity": "15%",
+        "networkThroughput": "800 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 6,
+        "deviceId": "SVR-1006",
+        "deviceName": "缓存节点B",
+        "ipAddress": "10.2.1.101",
+        "dataCenter": "华南一区",
+        "osSystem": "CentOS 7",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "25%",
+        "memoryUsage": "82%",
+        "diskCapacity": "16%",
+        "networkThroughput": "750 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 7,
+        "deviceId": "SVR-1007",
+        "deviceName": "日志服务器",
+        "ipAddress": "10.2.0.50",
+        "dataCenter": "华北二区",
+        "osSystem": "Ubuntu 20",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "15%",
+        "memoryUsage": "40%",
+        "diskCapacity": "75%",
+        "networkThroughput": "900 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 8,
+        "deviceId": "SVR-1008",
+        "deviceName": "消息队列A",
+        "ipAddress": "10.3.1.10",
+        "dataCenter": "华东一区",
+        "osSystem": "CentOS 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "35%",
+        "memoryUsage": "55%",
+        "diskCapacity": "30%",
+        "networkThroughput": "600 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 9,
+        "deviceId": "SVR-1009",
+        "deviceName": "消息队列B",
+        "ipAddress": "10.3.1.11",
+        "dataCenter": "华东一区",
+        "osSystem": "CentOS 8",
+        "runStatus": "异常",
+        "statusColor": "error",
+        "cpuLoad": "99%",
+        "memoryUsage": "98%",
+        "diskCapacity": "95%",
+        "networkThroughput": "15 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 10,
+        "deviceId": "SVR-1010",
+        "deviceName": "业务网关",
+        "ipAddress": "192.168.2.1",
+        "dataCenter": "华南二区",
+        "osSystem": "Debian 11",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "40%",
+        "memoryUsage": "30%",
+        "diskCapacity": "20%",
+        "networkThroughput": "250 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 11,
+        "deviceId": "SVR-1011",
+        "deviceName": "搜索引擎A",
+        "ipAddress": "10.4.0.20",
+        "dataCenter": "华北一区",
+        "osSystem": "CentOS 7",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "60%",
+        "memoryUsage": "75%",
+        "diskCapacity": "50%",
+        "networkThroughput": "400 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 12,
+        "deviceId": "SVR-1012",
+        "deviceName": "搜索引擎B",
+        "ipAddress": "10.4.0.21",
+        "dataCenter": "华北一区",
+        "osSystem": "CentOS 7",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "58%",
+        "memoryUsage": "72%",
+        "diskCapacity": "52%",
+        "networkThroughput": "380 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 13,
+        "deviceId": "SVR-1013",
+        "deviceName": "大数据节点",
+        "ipAddress": "10.5.5.10",
+        "dataCenter": "西南区",
+        "osSystem": "RedHat 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "70%",
+        "memoryUsage": "85%",
+        "diskCapacity": "60%",
+        "networkThroughput": "500 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 14,
+        "deviceId": "SVR-1014",
+        "deviceName": "离线计算库",
+        "ipAddress": "10.5.5.11",
+        "dataCenter": "西南区",
+        "osSystem": "RedHat 8",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "72%",
+        "memoryUsage": "88%",
+        "diskCapacity": "62%",
+        "networkThroughput": "480 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 15,
+        "deviceId": "SVR-1015",
+        "deviceName": "异地备份库",
+        "ipAddress": "192.168.9.99",
+        "dataCenter": "华北二区",
+        "osSystem": "Ubuntu 22",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "5%",
+        "memoryUsage": "15%",
+        "diskCapacity": "90%",
+        "networkThroughput": "1024 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      },
+      {
+        "rowKey": 16,
+        "deviceId": "SVR-1016",
+        "deviceName": "监控探针",
+        "ipAddress": "10.0.0.254",
+        "dataCenter": "核心交换区",
+        "osSystem": "Alpine 3",
+        "runStatus": "正常",
+        "statusColor": "success",
+        "cpuLoad": "2%",
+        "memoryUsage": "10%",
+        "diskCapacity": "5%",
+        "networkThroughput": "10 Mbps",
+        "editActionIcon": "edit",
+        "deleteActionIcon": "trash-2"
+      }
+    ]
+  },
+  "rootId": "rootApp",
+  "elements": [
+    {
+      "id": "rootApp",
+      "component": "div",
+      "props": {
+        "className": "flex h-screen w-full overflow-hidden bg-surface-container-lowest"
+      },
+      "children": [
+        "sideNavWrapper",
+        "rightWorkArea"
+      ]
+    },
+    {
+      "id": "sideNavWrapper",
+      "component": "aside",
+      "props": {
+        "className": "w-60 flex-shrink-0 flex flex-col bg-surface-container-highest shadow-sm z-10"
+      },
+      "children": [
+        "sidNTitleSection",
+        "sidNDivider",
+        "sidNMenuWrapper"
+      ]
+    },
+    {
+      "id": "rightWorkArea",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1 min-w-0 overflow-hidden"
+      },
+      "children": [
+        "headerNavWrapper",
+        "mainContentArea"
+      ]
+    },
+    {
+      "id": "headerNavWrapper",
+      "component": "header",
+      "props": {
+        "className": "h-12 flex items-center px-page border-b border-divider bg-surface-container-highest flex-shrink-0 z-10"
+      },
+      "children": [
+        "hdrNLeftZone",
+        "hdrNCenterZone",
+        "hdrNRightZone"
+      ]
+    },
+    {
+      "id": "mainContentArea",
+      "component": "main",
+      "props": {
+        "className": "flex-1 p-page flex flex-col gap-section overflow-y-auto bg-surface-container-lowest"
+      },
+      "children": [
+        "metricsCardsWrapper",
+        "serverTableWrapper"
+      ]
+    },
+    {
+      "id": "metricsCardsWrapper",
+      "component": "section",
+      "props": {
+        "className": "flex-shrink-0"
+      },
+      "children": [
+        "kpiMSectionHeader",
+        "kpiMCardsGrid"
+      ]
+    },
+    {
+      "id": "serverTableWrapper",
+      "component": "section",
+      "props": {
+        "className": "flex flex-col flex-1 min-h-0 bg-surface-container-highest rounded-container shadow-card p-gutter"
+      },
+      "children": [
+        "svrTHeaderSection",
+        "svrTFilterBar",
+        "svrTTable",
+        "svrTFooterSection"
+      ]
+    },
+    {
+      "id": "hdrNLeftZone",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-6 shrink-0"
+      },
+      "children": [
+        "hdrNLogoIcon",
+        "hdrNBrandText"
+      ]
+    },
+    {
+      "id": "hdrNLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandLogoIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "hdrNBrandText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap",
+        "value": {
+          "path": "/brandName"
+        }
+      }
+    },
+    {
+      "id": "hdrNCenterZone",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0"
+      },
+      "children": [
+        "hdrNNavMenu"
+      ]
+    },
+    {
+      "id": "hdrNNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "hdrNRightZone",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 ml-auto shrink-0"
+      },
+      "children": [
+        "hdrNHelpIcon",
+        "hdrNLangIcon",
+        "hdrNDivider",
+        "hdrNUserAvatar"
+      ]
+    },
+    {
+      "id": "hdrNHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/tools/helpIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "hdrNLangIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/tools/langIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "hdrNDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider"
+      }
+    },
+    {
+      "id": "hdrNUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/tools/userAvatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-8 h-8 rounded-full object-cover cursor-pointer"
+      }
+    },
+    {
+      "id": "sidNTitleSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2.5 px-5 pt-5 pb-3"
+      },
+      "children": [
+        "sidNTitleIcon",
+        "sidNTitleText"
+      ]
+    },
+    {
+      "id": "sidNTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-dashboard",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "sidNTitleText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/sectionTitle"
+        }
+      }
+    },
+    {
+      "id": "sidNDivider",
+      "component": "div",
+      "props": {
+        "className": "mx-4 h-px bg-divider"
+      }
+    },
+    {
+      "id": "sidNMenuWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto py-2 px-2"
+      },
+      "children": [
+        "sidNMenu"
+      ]
+    },
+    {
+      "id": "sidNMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "openKeys": {
+          "path": "/openKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full border-none"
+      }
+    },
+    {
+      "id": "kpiMSectionHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "kpiMSectionTitle",
+        "kpiMSectionRefresh"
+      ]
+    },
+    {
+      "id": "kpiMSectionTitle",
+      "component": "h2",
+      "props": {
+        "className": "text-xl font-semibold text-on-surface",
+        "value": {
+          "path": "/sectionTitle"
+        }
+      }
+    },
+    {
+      "id": "kpiMSectionRefresh",
+      "component": "Icon",
+      "props": {
+        "name": "refresh-cw",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "kpiMCardsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-section"
+      },
+      "children": {
+        "path": "/metricsItems",
+        "componentId": "kpiMCard"
+      }
+    },
+    {
+      "id": "kpiMCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex items-start gap-5"
+      },
+      "children": [
+        "kpiMCardIcon",
+        "kpiMCardContent"
+      ]
+    },
+    {
+      "id": "kpiMCardIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "mainIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-14 h-14"
+      }
+    },
+    {
+      "id": "kpiMCardContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-3"
+      },
+      "children": [
+        "kpiMCardTitleRow",
+        "kpiMCardDivider",
+        "kpiMCardDetails"
+      ]
+    },
+    {
+      "id": "kpiMCardTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "kpiMCardTitle",
+        "kpiMCardAction"
+      ]
+    },
+    {
+      "id": "kpiMCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "cardTitle"
+        }
+      }
+    },
+    {
+      "id": "kpiMCardAction",
+      "component": "Icon",
+      "props": {
+        "name": "more-horizontal",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "kpiMCardDivider",
+      "component": "div",
+      "props": {
+        "className": "h-px bg-divider"
+      }
+    },
+    {
+      "id": "kpiMCardDetails",
+      "component": "div",
+      "props": {
+        "className": "flex flex-wrap gap-4"
+      },
+      "children": {
+        "path": "details",
+        "componentId": "kpiMDetailItem"
+      }
+    },
+    {
+      "id": "kpiMDetailItem",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1 bg-surface-variant rounded-lg p-3 min-w-[110px]"
+      },
+      "children": [
+        "kpiMDetailValue",
+        "kpiMDetailLabel"
+      ]
+    },
+    {
+      "id": "kpiMDetailValue",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "value"
+        }
+      }
+    },
+    {
+      "id": "kpiMDetailLabel",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "label"
+        },
+        "color": {
+          "path": "statusType"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "svrTHeaderSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "svrTTitleGroup",
+        "svrTBtnGroup"
+      ]
+    },
+    {
+      "id": "svrTTitleGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "svrTTitleIcon",
+        "svrTTitle"
+      ]
+    },
+    {
+      "id": "svrTTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "svrTTitle",
+      "component": "h3",
+      "props": {
+        "value": {
+          "path": "/sectionTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "svrTBtnGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "svrTBtnExport",
+        "svrTBtnPrint",
+        "svrTBtnRefresh",
+        "svrTBtnAdd"
+      ]
+    },
+    {
+      "id": "svrTBtnExport",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "icon": "download",
+        "iconPlacement": "start",
+        "types": "default"
+      }
+    },
+    {
+      "id": "svrTBtnPrint",
+      "component": "Button",
+      "props": {
+        "value": "打印",
+        "icon": "printer",
+        "iconPlacement": "start",
+        "types": "default"
+      }
+    },
+    {
+      "id": "svrTBtnRefresh",
+      "component": "Button",
+      "props": {
+        "value": "刷新",
+        "icon": "refresh-cw",
+        "iconPlacement": "start",
+        "types": "default"
+      }
+    },
+    {
+      "id": "svrTBtnAdd",
+      "component": "Button",
+      "props": {
+        "value": "新增设备",
+        "icon": "plus",
+        "iconPlacement": "start",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "svrTFilterBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 mb-section"
+      },
+      "children": [
+        "svrTSearchInput",
+        "svrTStatusFilter",
+        "svrTDataCenterFilter"
+      ]
+    },
+    {
+      "id": "svrTSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchKeyword"
+        },
+        "placeholder": "搜索设备ID、名称或IP地址",
+        "prefix": "search",
+        "className": "w-72"
+      }
+    },
+    {
+      "id": "svrTStatusFilter",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/statusFilterValue"
+        },
+        "placeholder": "运行状态",
+        "options": {
+          "path": "/statusFilterOptions"
+        },
+        "showSearch": true,
+        "className": "w-36"
+      }
+    },
+    {
+      "id": "svrTDataCenterFilter",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/dataCenterFilterValue"
+        },
+        "placeholder": "所属机房",
+        "options": {
+          "path": "/dataCenterFilterOptions"
+        },
+        "showSearch": true,
+        "className": "w-40"
+      }
+    },
+    {
+      "id": "svrTTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "rowKey",
+        "dataSource": {
+          "path": "/dataSource"
+        },
+        "pagination": false,
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "设备ID",
+            "dataIndex": "deviceId",
+            "sort": true,
+            "width": 120
+          },
+          {
+            "title": "设备名称",
+            "dataIndex": "deviceName",
+            "sort": true,
+            "width": 130
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress",
+            "sort": true,
+            "width": 140
+          },
+          {
+            "title": "所属机房",
+            "dataIndex": "dataCenter",
+            "sort": true,
+            "width": 110,
+            "filters": [
+              {
+                "text": "华北一区",
+                "value": "华北一区"
+              },
+              {
+                "text": "华北二区",
+                "value": "华北二区"
+              },
+              {
+                "text": "华东一区",
+                "value": "华东一区"
+              },
+              {
+                "text": "华东二区",
+                "value": "华东二区"
+              },
+              {
+                "text": "华南一区",
+                "value": "华南一区"
+              },
+              {
+                "text": "华南二区",
+                "value": "华南二区"
+              },
+              {
+                "text": "西南区",
+                "value": "西南区"
+              },
+              {
+                "text": "核心交换区",
+                "value": "核心交换区"
+              }
+            ]
+          },
+          {
+            "title": "操作系统",
+            "dataIndex": "osSystem",
+            "sort": true,
+            "width": 110,
+            "filters": [
+              {
+                "text": "CentOS 8",
+                "value": "CentOS 8"
+              },
+              {
+                "text": "CentOS 7",
+                "value": "CentOS 7"
+              },
+              {
+                "text": "RedHat 8",
+                "value": "RedHat 8"
+              },
+              {
+                "text": "Ubuntu 20",
+                "value": "Ubuntu 20"
+              },
+              {
+                "text": "Ubuntu 22",
+                "value": "Ubuntu 22"
+              },
+              {
+                "text": "Debian 11",
+                "value": "Debian 11"
+              },
+              {
+                "text": "Alpine 3",
+                "value": "Alpine 3"
+              }
+            ]
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "runStatus",
+            "sort": true,
+            "width": 100,
+            "filters": [
+              {
+                "text": "正常",
+                "value": "正常"
+              },
+              {
+                "text": "警告",
+                "value": "警告"
+              },
+              {
+                "text": "异常",
+                "value": "异常"
+              }
+            ]
+          },
+          {
+            "title": "CPU负载",
+            "dataIndex": "cpuLoad",
+            "sort": true,
+            "width": 100
+          },
+          {
+            "title": "内存使用",
+            "dataIndex": "memoryUsage",
+            "sort": true,
+            "width": 100
+          },
+          {
+            "title": "磁盘容量",
+            "dataIndex": "diskCapacity",
+            "sort": true,
+            "width": 100
+          },
+          {
+            "title": "网络吞吐",
+            "dataIndex": "networkThroughput",
+            "sort": true,
+            "width": 110
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 120,
+            "fixed": "end"
+          }
+        ]
+      },
+      "children": {
+        "path": "/dataSource",
+        "componentId": "svrTRow"
+      }
+    },
+    {
+      "id": "svrTRow",
+      "component": "TableRow",
+      "children": [
+        "svrTCellDeviceId",
+        "svrTCellDeviceName",
+        "svrTCellIpAddress",
+        "svrTCellDataCenter",
+        "svrTCellOsSystem",
+        "svrTCellRunStatus",
+        "svrTCellCpuLoad",
+        "svrTCellMemoryUsage",
+        "svrTCellDiskCapacity",
+        "svrTCellNetworkThroughput",
+        "svrTCellActions"
+      ]
+    },
+    {
+      "id": "svrTCellDeviceId",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceId"
+        },
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellDeviceName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceName"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellIpAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "svrTCellDataCenter",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "dataCenter"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellOsSystem",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "osSystem"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "svrTCellRunStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "runStatus"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "icon": "activity",
+        "variant": "filled",
+        "size": "small"
+      }
+    },
+    {
+      "id": "svrTCellCpuLoad",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cpuLoad"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellMemoryUsage",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "memoryUsage"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellDiskCapacity",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "diskCapacity"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "svrTCellNetworkThroughput",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "networkThroughput"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "svrTCellActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "svrTCellEditBtn",
+        "svrTCellDeleteBtn"
+      ]
+    },
+    {
+      "id": "svrTCellEditBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "editActionIcon"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "svrTCellDeleteBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "deleteActionIcon"
+        },
+        "types": "link",
+        "size": "small",
+        "color": "danger"
+      }
+    },
+    {
+      "id": "svrTFooterSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mt-section pt-section border-t border-divider"
+      },
+      "children": [
+        "svrTFooterStats",
+        "svrTFooterPagination"
+      ]
+    },
+    {
+      "id": "svrTFooterStats",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "svrTFooterTotalIcon",
+        "svrTFooterTotal",
+        "svrTFooterStatsDivider",
+        "svrTFooterSelectedIcon",
+        "svrTFooterSelected"
+      ]
+    },
+    {
+      "id": "svrTFooterTotalIcon",
+      "component": "Icon",
+      "props": {
+        "name": "database",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "svrTFooterTotal",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/totalStatistics"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "svrTFooterStatsDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-3 bg-divider"
+      }
+    },
+    {
+      "id": "svrTFooterSelectedIcon",
+      "component": "Icon",
+      "props": {
+        "name": "check-square",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "svrTFooterSelected",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/selectedStatistics"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "svrTFooterPagination",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "svrTPaginationPrev",
+        "svrTPaginationPage1",
+        "svrTPaginationPage2",
+        "svrTPaginationPage3",
+        "svrTPaginationPage4",
+        "svrTPaginationPage5",
+        "svrTPaginationEllipsis",
+        "svrTPaginationPage11",
+        "svrTPaginationNext",
+        "svrTPaginationSizeDivider",
+        "svrTPaginationSelect",
+        "svrTPaginationJumpInput",
+        "svrTPaginationJumpBtn"
+      ]
+    },
+    {
+      "id": "svrTPaginationPrev",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationPage1",
+      "component": "Button",
+      "props": {
+        "value": "1",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationPage2",
+      "component": "Button",
+      "props": {
+        "value": "2",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationPage3",
+      "component": "Button",
+      "props": {
+        "value": "3",
+        "size": "small",
+        "shape": "round",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "svrTPaginationPage4",
+      "component": "Button",
+      "props": {
+        "value": "4",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationPage5",
+      "component": "Button",
+      "props": {
+        "value": "5",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationEllipsis",
+      "component": "span",
+      "props": {
+        "value": "...",
+        "className": "text-sm text-on-surface-variant px-1"
+      }
+    },
+    {
+      "id": "svrTPaginationPage11",
+      "component": "Button",
+      "props": {
+        "value": "11",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationNext",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-right",
+        "size": "small",
+        "shape": "round"
+      }
+    },
+    {
+      "id": "svrTPaginationSizeDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-4 bg-divider mx-2"
+      }
+    },
+    {
+      "id": "svrTPaginationSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/pageSize"
+        },
+        "options": {
+          "path": "/pageSizeOptions"
+        },
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "svrTPaginationJumpInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/jumpPageValue"
+        },
+        "placeholder": "页码",
+        "size": "small",
+        "className": "w-16"
+      }
+    },
+    {
+      "id": "svrTPaginationJumpBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/jumpText"
+        },
+        "size": "small",
+        "color": "primary",
+        "types": "default"
+      }
+    }
+  ]
+}

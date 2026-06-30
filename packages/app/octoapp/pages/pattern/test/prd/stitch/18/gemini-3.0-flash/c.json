@@ -1,0 +1,1014 @@
+{
+    "state": {
+        "topNav": [
+            {
+                "label": "ProjectIntelligence",
+                "active": false
+            },
+            {
+                "label": "Dashboard",
+                "active": false
+            },
+            {
+                "label": "Schedules",
+                "active": true
+            },
+            {
+                "label": "Resources",
+                "active": false
+            },
+            {
+                "label": "Analytics",
+                "active": false
+            }
+        ],
+        "searchVal": "",
+        "sidebarMenu": [
+            {
+                "label": "Overview",
+                "icon": "layout",
+                "active": false
+            },
+            {
+                "label": "Gantt View",
+                "icon": "gantt-chart",
+                "active": true
+            },
+            {
+                "label": "Team Load",
+                "icon": "users",
+                "active": false
+            },
+            {
+                "label": "Risk Registry",
+                "icon": "alert-triangle",
+                "active": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings-2",
+                "active": false
+            }
+        ],
+        "timeSegments": [
+            "Day",
+            "Week",
+            "Month",
+            "Quarter"
+        ],
+        "activeSegment": "Week",
+        "tasks": [
+            {
+                "id": "1",
+                "name": "Core Infra Audit",
+                "assignee": "https://randomuser.me/api/portraits/women/44.jpg",
+                "status": "IN PROGRESS",
+                "statusType": "processing",
+                "dates": "Oct 12 - Oct 28",
+                "isMilestone": false
+            },
+            {
+                "id": "2",
+                "name": "Network Hardening",
+                "assignee": "https://randomuser.me/api/portraits/men/12.jpg",
+                "status": "DELAYED",
+                "statusType": "error",
+                "dates": "Oct 15 - Nov 05",
+                "isMilestone": false
+            },
+            {
+                "id": "3",
+                "name": "Server Provisioning",
+                "assignee": "https://randomuser.me/api/portraits/women/65.jpg",
+                "status": "COMPLETED",
+                "statusType": "success",
+                "dates": "Oct 20 - Oct 25",
+                "isMilestone": false
+            },
+            {
+                "id": "4",
+                "name": "Phase 1 Completion",
+                "assignee": null,
+                "status": "MILESTONE",
+                "statusType": "warning",
+                "dates": "Nov 15",
+                "isMilestone": true
+            },
+            {
+                "id": "5",
+                "name": "Security Protocol Sync",
+                "assignee": "https://randomuser.me/api/portraits/men/5.jpg",
+                "status": "TODO",
+                "statusType": "default",
+                "dates": "Nov 16 - Nov 20",
+                "isMilestone": false
+            },
+            {
+                "id": "6",
+                "name": "Final Documentation",
+                "assignee": "https://randomuser.me/api/portraits/women/22.jpg",
+                "status": "TODO",
+                "statusType": "default",
+                "dates": "Nov 21 - Nov 30",
+                "isMilestone": false
+            }
+        ],
+        "ganttData": [
+            {
+                "id": "g1",
+                "label": "Core Infra Audit (85%)",
+                "color": "bg-slate-800",
+                "width": "w-48",
+                "offset": "ml-0",
+                "progress": 85
+            },
+            {
+                "id": "g2",
+                "label": "Network Hardening",
+                "color": "bg-error",
+                "width": "w-64",
+                "offset": "ml-24",
+                "hasIcon": true
+            },
+            {
+                "id": "g3",
+                "label": "Server Provisioning",
+                "color": "bg-slate-400",
+                "width": "w-32",
+                "offset": "ml-48",
+                "progress": 100
+            }
+        ],
+        "footerMetrics": [
+            {
+                "label": "Active Tasks",
+                "value": "24"
+            },
+            {
+                "label": "Critical Path Risks",
+                "value": "3"
+            },
+            {
+                "label": "Resource Conflicts",
+                "value": "1"
+            }
+        ]
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "topHeader",
+                "mainBody",
+                "bottomFooter"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "header",
+            "props": {
+                "className": "h-14 flex items-center justify-between px-gutter bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerNavList"
+            ]
+        },
+        {
+            "id": "headerNavList",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4"
+            },
+            "children": {
+                "path": "/topNav",
+                "componentId": "headerNavItem"
+            }
+        },
+        {
+            "id": "headerNavItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium cursor-pointer"
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "div",
+            "props": {
+                "className": "w-1/3"
+            },
+            "children": [
+                "headerSearch"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "Search project nodes...",
+                "prefix": "search",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerIcons",
+                "publishBtn",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "iconBell",
+                "iconSettings",
+                "iconHelp"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconSettings",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "publishBtn",
+            "component": "Button",
+            "props": {
+                "value": "Publish Plan",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-4"
+            },
+            "children": [
+                "sidebarProjectInfo",
+                "sidebarMenu",
+                "sidebarAction",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarProjectInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 mb-8"
+            },
+            "children": [
+                "projectImg",
+                "projectText"
+            ]
+        },
+        {
+            "id": "projectImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/project-alpha/200/200",
+                "className": "w-10 h-10 rounded-lg"
+            }
+        },
+        {
+            "id": "projectText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "projectName",
+                "projectSub"
+            ]
+        },
+        {
+            "id": "projectName",
+            "component": "span",
+            "props": {
+                "value": "Project Alpha",
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "projectSub",
+            "component": "span",
+            "props": {
+                "value": "Enterprise Infrastructure",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 flex-1"
+            },
+            "children": {
+                "path": "/sidebarMenu",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-2 rounded-md cursor-pointer"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarAction",
+            "component": "Button",
+            "props": {
+                "value": "New Milestone",
+                "icon": "plus",
+                "className": "w-full mb-4"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-on-surface-variant"
+            },
+            "children": [
+                "helpIcon",
+                "helpText"
+            ]
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "life-buoy",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "helpText",
+            "component": "span",
+            "props": {
+                "value": "Help Center",
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col bg-surface"
+            },
+            "children": [
+                "contentHeader",
+                "workspace"
+            ]
+        },
+        {
+            "id": "contentHeader",
+            "component": "div",
+            "props": {
+                "className": "h-14 flex items-center justify-between px-gutter border-b border-divider bg-surface-container-highest"
+            },
+            "children": [
+                "headerControls",
+                "headerLegends"
+            ]
+        },
+        {
+            "id": "headerControls",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "todayBtn",
+                "timeSegments"
+            ]
+        },
+        {
+            "id": "todayBtn",
+            "component": "Button",
+            "props": {
+                "value": "Today",
+                "size": "small"
+            }
+        },
+        {
+            "id": "timeSegments",
+            "component": "div",
+            "props": {
+                "className": "flex bg-surface-variant p-1 rounded-md"
+            },
+            "children": {
+                "path": "/timeSegments",
+                "componentId": "segmentItem"
+            }
+        },
+        {
+            "id": "segmentItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": ""
+                },
+                "className": "px-3 py-1 text-xs cursor-pointer"
+            }
+        },
+        {
+            "id": "headerLegends",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": [
+                "legendCritical",
+                "legendConflict",
+                "legendMilestone"
+            ]
+        },
+        {
+            "id": "legendCritical",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotCritical",
+                "textCritical"
+            ]
+        },
+        {
+            "id": "dotCritical",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-0.5 bg-error"
+            }
+        },
+        {
+            "id": "textCritical",
+            "component": "span",
+            "props": {
+                "value": "Critical Path",
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "legendConflict",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotConflict",
+                "textConflict"
+            ]
+        },
+        {
+            "id": "dotConflict",
+            "component": "div",
+            "props": {
+                "className": "w-2 h-2 rounded-full bg-warning"
+            }
+        },
+        {
+            "id": "textConflict",
+            "component": "span",
+            "props": {
+                "value": "Conflict",
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "legendMilestone",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "diamondMilestone",
+                "textMilestone"
+            ]
+        },
+        {
+            "id": "diamondMilestone",
+            "component": "Icon",
+            "props": {
+                "name": "diamond",
+                "className": "w-3 h-3 text-primary"
+            }
+        },
+        {
+            "id": "textMilestone",
+            "component": "span",
+            "props": {
+                "value": "Milestone",
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "workspace",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "taskTablePane",
+                "ganttTimelinePane"
+            ]
+        },
+        {
+            "id": "taskTablePane",
+            "component": "div",
+            "props": {
+                "className": "w-2/5 border-r border-divider bg-surface-container-highest"
+            },
+            "children": [
+                "taskTable"
+            ]
+        },
+        {
+            "id": "taskTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tasks"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "Task Name",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "Assignee",
+                        "dataIndex": "assignee",
+                        "width": 80
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Dates",
+                        "dataIndex": "dates",
+                        "width": 140
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tasks",
+                "componentId": "taskTableRow"
+            }
+        },
+        {
+            "id": "taskTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellAssignee",
+                "cellStatus",
+                "cellDates"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "nameIcon",
+                "nameText"
+            ]
+        },
+        {
+            "id": "nameIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "nameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "cellAssignee",
+            "component": "div",
+            "props": {
+                "className": "flex justify-center"
+            },
+            "children": [
+                "assigneeImg"
+            ]
+        },
+        {
+            "id": "assigneeImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "assignee"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellDates",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dates"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ganttTimelinePane",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-x-auto"
+            },
+            "children": [
+                "ganttHeader",
+                "ganttBody"
+            ]
+        },
+        {
+            "id": "ganttHeader",
+            "component": "div",
+            "props": {
+                "className": "h-12 border-b border-divider flex flex-col"
+            },
+            "children": [
+                "monthRow",
+                "weekRow"
+            ]
+        },
+        {
+            "id": "monthRow",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex items-center px-4 text-xs font-bold border-b border-divider"
+            },
+            "children": [
+                "monthText"
+            ]
+        },
+        {
+            "id": "monthText",
+            "component": "span",
+            "props": {
+                "value": "OCTOBER 2023"
+            }
+        },
+        {
+            "id": "weekRow",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex"
+            },
+            "children": [
+                "w41",
+                "w42",
+                "w43",
+                "w44",
+                "w45",
+                "w46"
+            ]
+        },
+        {
+            "id": "w41",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center",
+                "value": "WEEK 41"
+            }
+        },
+        {
+            "id": "w42",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center bg-primary-container/20 relative",
+                "value": "WEEK 42"
+            },
+            "children": [
+                "nowLine"
+            ]
+        },
+        {
+            "id": "nowLine",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-1/2 w-px bg-primary z-10"
+            }
+        },
+        {
+            "id": "w43",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center",
+                "value": "WEEK 43"
+            }
+        },
+        {
+            "id": "w44",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center",
+                "value": "WEEK 44"
+            }
+        },
+        {
+            "id": "w45",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center",
+                "value": "WEEK 45"
+            }
+        },
+        {
+            "id": "w46",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider text-[10px] flex items-center justify-center",
+                "value": "WEEK 46"
+            }
+        },
+        {
+            "id": "ganttBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative p-4 flex flex-col gap-8"
+            },
+            "children": [
+                "bar1",
+                "bar2",
+                "bar3"
+            ]
+        },
+        {
+            "id": "bar1",
+            "component": "div",
+            "props": {
+                "className": "h-8 w-48 bg-slate-800 rounded flex items-center px-3 text-white text-xs",
+                "value": "Core Infra Audit (85%)"
+            }
+        },
+        {
+            "id": "bar2",
+            "component": "div",
+            "props": {
+                "className": "h-8 w-64 ml-24 bg-error rounded flex items-center px-3 text-white text-xs relative"
+            },
+            "children": [
+                "bar2Icon",
+                "bar2Text",
+                "dependencyLine"
+            ]
+        },
+        {
+            "id": "bar2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-circle",
+                "className": "w-3 h-3 mr-2"
+            }
+        },
+        {
+            "id": "bar2Text",
+            "component": "span",
+            "props": {
+                "value": "Network Hardening"
+            }
+        },
+        {
+            "id": "dependencyLine",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-4 -left-4 w-4 h-4 border-l border-t border-dashed border-error rounded-tl"
+            }
+        },
+        {
+            "id": "bar3",
+            "component": "div",
+            "props": {
+                "className": "h-8 w-32 ml-48 bg-slate-400 rounded flex items-center px-3 text-white text-xs",
+                "value": "Server Provisioning"
+            }
+        },
+        {
+            "id": "bottomFooter",
+            "component": "footer",
+            "props": {
+                "className": "h-10 bg-surface-container-highest border-t border-divider px-gutter flex items-center justify-between"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": {
+                "path": "/footerMetrics",
+                "componentId": "footerMetricItem"
+            }
+        },
+        {
+            "id": "footerMetricItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "metricLabel",
+                "metricValue"
+            ]
+        },
+        {
+            "id": "metricLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "lastUpdated",
+                "syncStatus"
+            ]
+        },
+        {
+            "id": "lastUpdated",
+            "component": "span",
+            "props": {
+                "value": "Last updated: Today, 09:42 AM",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "syncStatus",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "syncDot",
+                "syncLabel"
+            ]
+        },
+        {
+            "id": "syncDot",
+            "component": "div",
+            "props": {
+                "className": "w-2 h-2 rounded-full bg-success"
+            }
+        },
+        {
+            "id": "syncLabel",
+            "component": "span",
+            "props": {
+                "value": "Live Sync Active",
+                "className": "text-xs text-success"
+            }
+        }
+    ]
+}

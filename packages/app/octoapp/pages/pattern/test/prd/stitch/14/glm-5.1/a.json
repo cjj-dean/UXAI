@@ -1,0 +1,1245 @@
+{
+    "state": {
+        "searchValue": "",
+        "activeTabFilter": "all",
+        "logoImage": "https://picsum.photos/seed/crm-logo/200/200",
+        "menuItems": [
+            {
+                "menuId": "dashboard",
+                "label": "Dashboard",
+                "iconName": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "menuId": "customers",
+                "label": "Customers",
+                "iconName": "users",
+                "isActive": false
+            },
+            {
+                "menuId": "contracts",
+                "label": "Contracts",
+                "iconName": "file-text",
+                "isActive": false
+            },
+            {
+                "menuId": "payments",
+                "label": "Payments",
+                "iconName": "credit-card",
+                "isActive": true
+            },
+            {
+                "menuId": "reports",
+                "label": "Reports",
+                "iconName": "bar-chart-3",
+                "isActive": false
+            },
+            {
+                "menuId": "settings",
+                "label": "Settings",
+                "iconName": "settings",
+                "isActive": false
+            }
+        ],
+        "quickCreateLabel": "新建计划",
+        "searchPlaceholder": "搜索合同名称、客户或金额...",
+        "notifications": [
+            {
+                "id": "n1",
+                "text": "客户「字节跳动」的第二期款项已逾期3天",
+                "iconName": "alert-triangle",
+                "read": false
+            }
+        ],
+        "notificationText": "客户「字节跳动」的第二期款项已逾期3天",
+        "userInfo": {
+            "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+            "name": "林晓慧",
+            "role": "财务主管"
+        },
+        "pageTitle": "回款计划与记录",
+        "actions": [
+            {
+                "label": "导出报表",
+                "iconName": "download",
+                "type": "secondary"
+            },
+            {
+                "label": "新增计划",
+                "iconName": "plus",
+                "type": "primary"
+            }
+        ],
+        "kpiCards": [
+            {
+                "cardTitle": "本月预估收款",
+                "metricValue": "¥ 1,284,500.00",
+                "trendIcon": "trending-up",
+                "changePercentage": "↑ 12.3%",
+                "trendColor": "success",
+                "comparisonText": "较上月同期",
+                "kpiIcon": "wallet",
+                "kpiIconColor": "primary"
+            },
+            {
+                "cardTitle": "已到账金额",
+                "metricValue": "¥ 852,300.00",
+                "trendIcon": "trending-up",
+                "changePercentage": "↑ 8.1%",
+                "trendColor": "success",
+                "comparisonText": "较上月同期",
+                "kpiIcon": "circle-dollar-sign",
+                "kpiIconColor": "success"
+            },
+            {
+                "cardTitle": "逾期未付",
+                "metricValue": "¥ 153,000.00",
+                "trendIcon": "trending-up",
+                "changePercentage": "↑ 23.5%",
+                "trendColor": "error",
+                "comparisonText": "较上月同期",
+                "kpiIcon": "alert-triangle",
+                "kpiIconColor": "error"
+            },
+            {
+                "cardTitle": "回款率",
+                "metricValue": "66.3%",
+                "trendIcon": "trending-down",
+                "changePercentage": "↓ 4.2%",
+                "trendColor": "warning",
+                "comparisonText": "较上月同期",
+                "kpiIcon": "percent",
+                "kpiIconColor": "warning"
+            }
+        ],
+        "tabFilters": [
+            {
+                "key": "all",
+                "label": "全部 (24)",
+                "count": 24
+            },
+            {
+                "key": "pending",
+                "label": "待支付 (8)",
+                "count": 8
+            },
+            {
+                "key": "paid",
+                "label": "已支付 (12)",
+                "count": 12
+            },
+            {
+                "key": "overdue",
+                "label": "逾期 (3)",
+                "count": 3
+            },
+            {
+                "key": "cancelled",
+                "label": "已取消 (1)",
+                "count": 1
+            }
+        ],
+        "tableItems": [
+            {
+                "id": "row1",
+                "contractName": "阿里云年度框架采购协议",
+                "stage": "第一期 (首付款)",
+                "clientName": "阿里云计算有限公司",
+                "expectedDate": "2023-11-05",
+                "amount": 250000,
+                "formattedAmount": "¥ 250,000",
+                "status": "paid",
+                "statusText": "已支付",
+                "statusColor": "success",
+                "actions": [
+                    "查看回执",
+                    "详情"
+                ],
+                "actionPrimary": "查看回执"
+            },
+            {
+                "id": "row2",
+                "contractName": "字节跳动广告投放服务合同",
+                "stage": "第二期 (进度款)",
+                "clientName": "北京字节跳动科技有限公司",
+                "expectedDate": "2023-11-15",
+                "amount": 180000,
+                "formattedAmount": "¥ 180,000",
+                "status": "pending",
+                "statusText": "待支付",
+                "statusColor": "processing",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row3",
+                "contractName": "腾讯企点客服系统定制",
+                "stage": "尾款",
+                "clientName": "腾讯科技（深圳）有限公司",
+                "expectedDate": "2023-11-01",
+                "amount": 95000,
+                "formattedAmount": "¥ 95,000",
+                "status": "overdue",
+                "statusText": "逾期",
+                "statusColor": "error",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row4",
+                "contractName": "华为云伙伴合作计划",
+                "stage": "第一期 (首付款)",
+                "clientName": "华为软件技术有限公司",
+                "expectedDate": "2023-11-20",
+                "amount": 320000,
+                "formattedAmount": "¥ 320,000",
+                "status": "pending",
+                "statusText": "待支付",
+                "statusColor": "processing",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row5",
+                "contractName": "美团到店事业部数据平台建设",
+                "stage": "尾款",
+                "clientName": "北京三快科技有限公司",
+                "expectedDate": "2023-10-28",
+                "amount": 155000,
+                "formattedAmount": "¥ 155,000",
+                "status": "paid",
+                "statusText": "已支付",
+                "statusColor": "success",
+                "actions": [
+                    "查看回执",
+                    "详情"
+                ],
+                "actionPrimary": "查看回执"
+            },
+            {
+                "id": "row6",
+                "contractName": "京东物流智能调度系统升级",
+                "stage": "第二期 (进度款)",
+                "clientName": "北京京邦达贸易有限公司",
+                "expectedDate": "2023-11-10",
+                "amount": 210000,
+                "formattedAmount": "¥ 210,000",
+                "status": "overdue",
+                "statusText": "逾期",
+                "statusColor": "error",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row7",
+                "contractName": "网易严选电商数据挖掘服务",
+                "stage": "第一期 (首付款)",
+                "clientName": "杭州网易严选贸易有限公司",
+                "expectedDate": "2023-11-25",
+                "amount": 80000,
+                "formattedAmount": "¥ 80,000",
+                "status": "pending",
+                "statusText": "待支付",
+                "statusColor": "processing",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row8",
+                "contractName": "小米IoT平台接口接入合同",
+                "stage": "尾款",
+                "clientName": "小米通讯技术有限公司",
+                "expectedDate": "2023-11-12",
+                "amount": 120000,
+                "formattedAmount": "¥ 120,000",
+                "status": "cancelled",
+                "statusText": "已取消",
+                "statusColor": "default",
+                "actions": [
+                    "详情"
+                ],
+                "actionPrimary": "详情"
+            },
+            {
+                "id": "row9",
+                "contractName": "百度Apollo自动驾驶数据标注",
+                "stage": "第一期 (首付款)",
+                "clientName": "北京百度网讯科技有限公司",
+                "expectedDate": "2023-11-08",
+                "amount": 45000,
+                "formattedAmount": "¥ 45,000",
+                "status": "paid",
+                "statusText": "已支付",
+                "statusColor": "success",
+                "actions": [
+                    "查看回执",
+                    "详情"
+                ],
+                "actionPrimary": "查看回执"
+            },
+            {
+                "id": "row10",
+                "contractName": "滴滴出行用户增长策略咨询",
+                "stage": "第二期 (进度款)",
+                "clientName": "北京小桔科技有限公司",
+                "expectedDate": "2023-11-18",
+                "amount": 175000,
+                "formattedAmount": "¥ 175,000",
+                "status": "pending",
+                "statusText": "待支付",
+                "statusColor": "processing",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            },
+            {
+                "id": "row11",
+                "contractName": "拼多多农产品供应链管理系统",
+                "stage": "尾款",
+                "clientName": "上海寻梦信息技术有限公司",
+                "expectedDate": "2023-11-30",
+                "amount": 200000,
+                "formattedAmount": "¥ 200,000",
+                "status": "pending",
+                "statusText": "待支付",
+                "statusColor": "processing",
+                "actions": [
+                    "催收",
+                    "详情"
+                ],
+                "actionPrimary": "催收"
+            }
+        ],
+        "pagination": {
+            "currentPage": 1,
+            "pageSize": 10,
+            "totalItems": 24,
+            "totalPages": 3
+        },
+        "chartData": [
+            {
+                "Month": "2023-06",
+                "预计回款额": 850000,
+                "实际回款额": 820000
+            },
+            {
+                "Month": "2023-07",
+                "预计回款额": 920000,
+                "实际回款额": 890000
+            },
+            {
+                "Month": "2023-08",
+                "预计回款额": 880000,
+                "实际回款额": 910000
+            },
+            {
+                "Month": "2023-09",
+                "预计回款额": 1050000,
+                "实际回款额": 950000
+            },
+            {
+                "Month": "2023-10",
+                "预计回款额": 1150000,
+                "实际回款额": 1080000
+            },
+            {
+                "Month": "2023-11",
+                "预计回款额": 1280000,
+                "实际回款额": 850000
+            }
+        ],
+        "paymentTrendChart": {
+            "chartTitle": "月度回款趋势分析"
+        },
+        "activityItems": [
+            {
+                "id": "act1",
+                "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+                "userName": "张三",
+                "action": "确认了「阿里云年度框架采购协议」的尾款到账",
+                "timestamp": "10 分钟前"
+            },
+            {
+                "id": "act2",
+                "avatarImage": "https://randomuser.me/api/portraits/women/68.jpg",
+                "userName": "李四",
+                "action": "对「腾讯企点客服系统定制」发送了催收邮件",
+                "timestamp": "1 小时前"
+            },
+            {
+                "id": "act3",
+                "avatarImage": "https://randomuser.me/api/portraits/men/45.jpg",
+                "userName": "王五",
+                "action": "新建了「小米IoT平台接口接入合同」的回款计划",
+                "timestamp": "3 小时前"
+            },
+            {
+                "id": "act4",
+                "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+                "userName": "林晓慧",
+                "action": "导出了 10月份的所有流水报表",
+                "timestamp": "昨天 16:30"
+            },
+            {
+                "id": "act5",
+                "avatarImage": "https://randomuser.me/api/portraits/men/22.jpg",
+                "userName": "赵六",
+                "action": "修改了「京东物流智能调度系统升级」的预计回款日期",
+                "timestamp": "昨天 14:15"
+            }
+        ]
+    },
+    "rootId": "rootApp",
+    "elements": [
+        {
+            "id": "rootApp",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainArea"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-56 h-screen bg-surface-container-highest shadow-card shrink-0"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarDivider",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-5 py-5"
+            },
+            "children": [
+                "sidebarLogoImg",
+                "sidebarLogoText"
+            ]
+        },
+        {
+            "id": "sidebarLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/logoImage"
+                },
+                "alt": "FinCRM Logo",
+                "className": "w-8 h-8 rounded-lg object-cover"
+            }
+        },
+        {
+            "id": "sidebarLogoText",
+            "component": "span",
+            "props": {
+                "value": "FinCRM",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarDivider",
+            "component": "div",
+            "props": {
+                "className": "border-b border-divider mx-4"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-auto py-3 px-3"
+            },
+            "children": [
+                "sidebarMenuList"
+            ]
+        },
+        {
+            "id": "sidebarMenuList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "iconName"
+                },
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "sidebarCreateBtn"
+            ]
+        },
+        {
+            "id": "sidebarCreateBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/quickCreateLabel"
+                },
+                "icon": "plus-circle",
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "mainArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-h-screen overflow-auto"
+            },
+            "children": [
+                "headerContainer",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "headerContainer",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between h-16 px-6 bg-surface-container-highest border-b border-divider shrink-0"
+            },
+            "children": [
+                "headerSearch",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-5"
+            },
+            "children": [
+                "headerNotifWrapper",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerNotifWrapper",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "headerNotifIcon",
+                "headerNotifDot"
+            ]
+        },
+        {
+            "id": "headerNotifIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "headerNotifDot",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-1 -right-1 w-2.5 h-2.5 bg-error rounded-full"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "headerAvatar",
+                "headerUserName",
+                "headerUserRole"
+            ]
+        },
+        {
+            "id": "headerAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userInfo/avatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-8 h-8 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "headerUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/userInfo/name"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "headerUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/userInfo/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-6 flex flex-col gap-6 overflow-auto"
+            },
+            "children": [
+                "contentAlert",
+                "titleRow",
+                "kpiRow",
+                "tableSection",
+                "bottomRow"
+            ]
+        },
+        {
+            "id": "contentAlert",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 bg-warning-container rounded-lg px-4 py-3"
+            },
+            "children": [
+                "contentAlertIcon",
+                "contentAlertText"
+            ]
+        },
+        {
+            "id": "contentAlertIcon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-triangle",
+                "color": "warning",
+                "shape": "outline",
+                "className": "w-4 h-4 shrink-0"
+            }
+        },
+        {
+            "id": "contentAlertText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/notificationText"
+                },
+                "className": "text-sm text-on-warning-container"
+            }
+        },
+        {
+            "id": "titleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "titleText",
+                "titleActions"
+            ]
+        },
+        {
+            "id": "titleText",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "titleActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "titleExportBtn",
+                "titleAddBtn"
+            ]
+        },
+        {
+            "id": "titleExportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出报表",
+                "icon": "download",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "titleAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "新增计划",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "kpiRow",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/kpiCards",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-5 flex flex-col"
+            },
+            "children": [
+                "kpiCardTop",
+                "kpiCardValue",
+                "kpiCardTrend"
+            ]
+        },
+        {
+            "id": "kpiCardTop",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "kpiCardTitle",
+                "kpiCardIcon"
+            ]
+        },
+        {
+            "id": "kpiCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cardTitle"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kpiCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "kpiIcon"
+                },
+                "color": {
+                    "path": "kpiIconColor"
+                },
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "kpiCardValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "metricValue"
+                },
+                "className": "block text-2xl font-bold text-on-surface mb-3"
+            }
+        },
+        {
+            "id": "kpiCardTrend",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "kpiCardTrendIcon",
+                "kpiCardTrendPct",
+                "kpiCardTrendCompare"
+            ]
+        },
+        {
+            "id": "kpiCardTrendIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "trendIcon"
+                },
+                "color": {
+                    "path": "trendColor"
+                },
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "kpiCardTrendPct",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "changePercentage"
+                },
+                "className": "text-xs font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "kpiCardTrendCompare",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "comparisonText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card"
+            },
+            "children": [
+                "tableTabsWrap"
+            ]
+        },
+        {
+            "id": "tableTabsWrap",
+            "component": "div",
+            "props": {
+                "className": "px-6 pt-5 border-b border-divider"
+            },
+            "children": [
+                "tableTabs"
+            ]
+        },
+        {
+            "id": "tableTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTabFilter"
+                }
+            },
+            "children": {
+                "path": "/tabFilters",
+                "componentId": "tableTabItem"
+            }
+        },
+        {
+            "id": "tableTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                },
+                "content": {
+                    "componentId": "tableTabContent"
+                }
+            }
+        },
+        {
+            "id": "tableTabContent",
+            "component": "div",
+            "props": {
+                "className": "p-6"
+            },
+            "children": [
+                "paymentTable"
+            ]
+        },
+        {
+            "id": "paymentTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "columns": [
+                    {
+                        "title": "合同名称",
+                        "dataIndex": "contractName",
+                        "minWidth": 200
+                    },
+                    {
+                        "title": "回款阶段",
+                        "dataIndex": "stage"
+                    },
+                    {
+                        "title": "客户名称",
+                        "dataIndex": "clientName"
+                    },
+                    {
+                        "title": "预计到账日",
+                        "dataIndex": "expectedDate"
+                    },
+                    {
+                        "title": "计划金额 (¥)",
+                        "dataIndex": "formattedAmount",
+                        "align": "right"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "statusText",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 160
+                    }
+                ],
+                "dataSource": {
+                    "path": "/tableItems"
+                },
+                "pagination": true,
+                "className": "mb-4"
+            },
+            "children": {
+                "path": "/tableItems",
+                "componentId": "tableRow"
+            }
+        },
+        {
+            "id": "tableRow",
+            "component": "TableRow",
+            "children": [
+                "cellContract",
+                "cellStage",
+                "cellClient",
+                "cellDate",
+                "cellAmount",
+                "cellStatus",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellContract",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "contractName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "cellStage",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "stage"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellClient",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "clientName"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "expectedDate"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "formattedAmount"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "statusText"
+                },
+                "color": {
+                    "path": "statusColor"
+                }
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "cellActionPrimary",
+                "cellActionDetail"
+            ]
+        },
+        {
+            "id": "cellActionPrimary",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "actionPrimary"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellActionDetail",
+            "component": "Button",
+            "props": {
+                "value": "详情",
+                "size": "small"
+            }
+        },
+        {
+            "id": "bottomRow",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-6"
+            },
+            "children": [
+                "chartSection",
+                "activitySection"
+            ]
+        },
+        {
+            "id": "chartSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "chartTitle",
+                "chartComponent"
+            ]
+        },
+        {
+            "id": "chartTitle",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/paymentTrendChart/chartTitle"
+                },
+                "className": "text-lg font-semibold text-on-surface mb-4"
+            }
+        },
+        {
+            "id": "chartComponent",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/chartData"
+                    },
+                    "xAxis": {
+                        "data": "Month"
+                    },
+                    "yAxisTitle": "金额 (¥)",
+                    "color": [
+                        "#2070F3",
+                        "#62B42E"
+                    ]
+                },
+                "className": "w-full h-72"
+            }
+        },
+        {
+            "id": "activitySection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "activityTitle",
+                "activityList"
+            ]
+        },
+        {
+            "id": "activityTitle",
+            "component": "h3",
+            "props": {
+                "value": "最近活动",
+                "className": "text-lg font-semibold text-on-surface mb-4"
+            }
+        },
+        {
+            "id": "activityList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col divide-y divide-divider flex-1"
+            },
+            "children": {
+                "path": "/activityItems",
+                "componentId": "activityItem"
+            }
+        },
+        {
+            "id": "activityItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-3 py-3 first:pt-0 last:pb-0"
+            },
+            "children": [
+                "activityAvatar",
+                "activityTextBlock"
+            ]
+        },
+        {
+            "id": "activityAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatarImage"
+                },
+                "alt": "Avatar",
+                "className": "w-9 h-9 rounded-full object-cover shrink-0"
+            }
+        },
+        {
+            "id": "activityTextBlock",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": [
+                "activityTopRow",
+                "activityAction"
+            ]
+        },
+        {
+            "id": "activityTopRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "activityUserName",
+                "activityTime"
+            ]
+        },
+        {
+            "id": "activityUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "userName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "activityTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "timestamp"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "activityAction",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "action"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        }
+    ]
+}

@@ -1,0 +1,758 @@
+{
+  "state": {
+    "searchValue": "",
+    "commentValue": "",
+    "activeDocTab": "全部",
+    "currentStep": 2,
+    "totalRecordsText": "共 142 条记录",
+    "brandInfo": {
+      "logoIcon": "hexagon",
+      "mainTitle": "Nexus ERP",
+      "subTitle": "SUPPLY CHAIN MANAGEMENT"
+    },
+    "mainNavItems": [
+      { "menuLabel": "Dashboard", "menuIcon": "layout-dashboard", "isActive": false },
+      { "menuLabel": "Performance", "menuIcon": "bar-chart-3", "isActive": true },
+      { "menuLabel": "Directory", "menuIcon": "users", "isActive": false },
+      { "menuLabel": "Qualifications", "menuIcon": "shield-check", "isActive": false },
+      { "menuLabel": "Audit Logs", "menuIcon": "file-text", "isActive": false }
+    ],
+    "bottomNavItems": [
+      { "menuLabel": "Settings", "menuIcon": "settings" },
+      { "menuLabel": "Support", "menuIcon": "life-buoy" }
+    ],
+    "topRightActions": [
+      { "actionName": "通知", "actionIcon": "bell", "badgeCount": 5 },
+      { "actionName": "帮助", "actionIcon": "help-circle", "badgeCount": 0 }
+    ],
+    "userProfile": {
+      "userName": "李梦",
+      "userRole": "财务管理员",
+      "userAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    "kpis": [
+      { "cardTitle": "待支付报销额", "metricValue": "¥458,200.00", "trendIcon": "trending-up", "trendValue": "12%", "comparisonText": "较上月增长", "cardIcon": "wallet" },
+      { "cardTitle": "本月总支出", "metricValue": "¥2,140,500.00", "trendIcon": "bar-chart", "trendValue": "", "comparisonText": "统计截至今天", "cardIcon": "credit-card" },
+      { "cardTitle": "审计完成度", "metricValue": "84%", "trendIcon": "pie-chart", "progressValue": 84, "progressStatus": "normal", "comparisonText": "持续跟进中", "cardIcon": "shield-check" },
+      { "cardTitle": "平均处理耗时", "metricValue": "2.4 天", "trendIcon": "timer", "trendValue": "3.5天", "comparisonText": "低于行业标准", "cardIcon": "clock" }
+    ],
+    "documentItems": [
+      { "id": "#EXP-2024-0812", "submitterName": "张伟", "submitterAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg", "department": "全球物流部", "category": "商务差旅", "amount": 12450.0, "status": "审核中", "statusColor": "processing" },
+      { "id": "#EXP-2024-0811", "submitterName": "王芳", "submitterAvatarImage": "https://randomuser.me/api/portraits/women/65.jpg", "department": "采购中心", "category": "供应商招待", "amount": 8200.5, "status": "已通过", "statusColor": "success" },
+      { "id": "#EXP-2024-0810", "submitterName": "李强", "submitterAvatarImage": "https://randomuser.me/api/portraits/men/12.jpg", "department": "研发中心", "category": "云服务订阅", "amount": 45600.0, "status": "已驳回", "statusColor": "error" }
+    ],
+    "trackingSteps": [
+      { "title": "已审计", "description": "2024-08-12 09:30", "status": "finish", "icon": "clipboard-check" },
+      { "title": "合规核准", "description": "进行中", "status": "process", "icon": "shield-check" },
+      { "title": "支付排程", "description": "等待", "status": "wait", "icon": "calendar-clock" },
+      { "title": "资金到账", "description": "等待", "status": "wait", "icon": "landmark" }
+    ],
+    "approvalDocInfo": { "docId": "#EXP-2024-0812", "amount": "¥12,450.00" },
+    "voucherPreview": {
+      "cardTitle": "发票/凭证预览",
+      "previewImage": "https://picsum.photos/seed/invoice-0812/800/600",
+      "details": [
+        { "label": "单据类型", "value": "增值税专用发票" },
+        { "label": "发票号码", "value": "82934021394" },
+        { "label": "验证状态", "value": "已验真", "statusIcon": "shield-check" }
+      ]
+    },
+    "legends": [
+      { "label": "核心支出", "colorCode": "#1890ff" },
+      { "label": "运营支出", "colorCode": "#52c41a" },
+      { "label": "风险单据", "colorCode": "#f5222d" }
+    ],
+    "copyright": "© 2024 Nexus ERP Systems - 财务合规模块 v4.2.1"
+  },
+  "rootId": "rootLayout",
+  "elements": [
+    {
+      "id": "rootLayout",
+      "component": "div",
+      "props": { "className": "flex h-screen overflow-hidden" },
+      "children": ["sidebarContainer", "mainArea"]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "div",
+      "props": { "className": "w-60 flex flex-col bg-inverse-surface shrink-0" },
+      "children": ["sidebarBrandSection", "sidebarMainNav", "sidebarSpacer", "sidebarBottomSection"]
+    },
+    {
+      "id": "sidebarBrandSection",
+      "component": "div",
+      "props": { "className": "px-5 py-5 flex items-center gap-3 border-b border-white/10" },
+      "children": ["sidebarBrandIcon", "sidebarBrandText"]
+    },
+    {
+      "id": "sidebarBrandIcon",
+      "component": "Icon",
+      "props": { "name": { "path": "/brandInfo/logoIcon" }, "color": "primary", "shape": "fill", "className": "w-8 h-8" }
+    },
+    {
+      "id": "sidebarBrandText",
+      "component": "div",
+      "props": { "className": "flex flex-col" },
+      "children": ["sidebarBrandTitle", "sidebarBrandSubtitle"]
+    },
+    {
+      "id": "sidebarBrandTitle",
+      "component": "span",
+      "props": { "value": { "path": "/brandInfo/mainTitle" }, "className": "text-lg font-bold text-inverse-on-surface" }
+    },
+    {
+      "id": "sidebarBrandSubtitle",
+      "component": "span",
+      "props": { "value": { "path": "/brandInfo/subTitle" }, "className": "text-[9px] tracking-widest text-inverse-on-surface-variant uppercase" }
+    },
+    {
+      "id": "sidebarMainNav",
+      "component": "div",
+      "props": { "className": "flex flex-col gap-1 px-3 pt-5" },
+      "children": ["sidebarNavItem1", "sidebarNavItem2", "sidebarNavItem3", "sidebarNavItem4", "sidebarNavItem5"]
+    },
+    {
+      "id": "sidebarNavItem1",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem1Icon", "sidebarNavItem1Label"]
+    },
+    {
+      "id": "sidebarNavItem1Icon",
+      "component": "Icon",
+      "props": { "name": "layout-dashboard", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem1Label",
+      "component": "span",
+      "props": { "value": "Dashboard", "className": "text-sm" }
+    },
+    {
+      "id": "sidebarNavItem2",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-white/10 text-inverse-on-surface cursor-pointer" },
+      "children": ["sidebarNavItem2Icon", "sidebarNavItem2Label"]
+    },
+    {
+      "id": "sidebarNavItem2Icon",
+      "component": "Icon",
+      "props": { "name": "bar-chart-3", "className": "w-5 h-5", "color": "primary" }
+    },
+    {
+      "id": "sidebarNavItem2Label",
+      "component": "span",
+      "props": { "value": "Performance", "className": "text-sm font-medium" }
+    },
+    {
+      "id": "sidebarNavItem3",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem3Icon", "sidebarNavItem3Label"]
+    },
+    {
+      "id": "sidebarNavItem3Icon",
+      "component": "Icon",
+      "props": { "name": "users", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem3Label",
+      "component": "span",
+      "props": { "value": "Directory", "className": "text-sm" }
+    },
+    {
+      "id": "sidebarNavItem4",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem4Icon", "sidebarNavItem4Label"]
+    },
+    {
+      "id": "sidebarNavItem4Icon",
+      "component": "Icon",
+      "props": { "name": "shield-check", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem4Label",
+      "component": "span",
+      "props": { "value": "Qualifications", "className": "text-sm" }
+    },
+    {
+      "id": "sidebarNavItem5",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem5Icon", "sidebarNavItem5Label"]
+    },
+    {
+      "id": "sidebarNavItem5Icon",
+      "component": "Icon",
+      "props": { "name": "file-text", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem5Label",
+      "component": "span",
+      "props": { "value": "Audit Logs", "className": "text-sm" }
+    },
+    { "id": "sidebarSpacer", "component": "div", "props": { "className": "flex-1" } },
+    {
+      "id": "sidebarBottomSection",
+      "component": "div",
+      "props": { "className": "px-3 pb-4 flex flex-col gap-1 border-t border-white/10 pt-3" },
+      "children": ["sidebarNavItem6", "sidebarNavItem7"]
+    },
+    {
+      "id": "sidebarNavItem6",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem6Icon", "sidebarNavItem6Label"]
+    },
+    {
+      "id": "sidebarNavItem6Icon",
+      "component": "Icon",
+      "props": { "name": "settings", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem6Label",
+      "component": "span",
+      "props": { "value": "Settings", "className": "text-sm" }
+    },
+    {
+      "id": "sidebarNavItem7",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-inverse-on-surface-variant hover:bg-white/5 cursor-pointer transition-colors" },
+      "children": ["sidebarNavItem7Icon", "sidebarNavItem7Label"]
+    },
+    {
+      "id": "sidebarNavItem7Icon",
+      "component": "Icon",
+      "props": { "name": "life-buoy", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "sidebarNavItem7Label",
+      "component": "span",
+      "props": { "value": "Support", "className": "text-sm" }
+    },
+    {
+      "id": "mainArea",
+      "component": "div",
+      "props": { "className": "flex-1 flex flex-col h-full overflow-hidden bg-surface-container-lowest" },
+      "children": ["headerBar", "contentBody"]
+    },
+    {
+      "id": "headerBar",
+      "component": "div",
+      "props": { "className": "h-14 flex items-center justify-between px-6 bg-surface-container-highest shadow-sm shrink-0" },
+      "children": ["headerSearchInput", "headerRightSection"]
+    },
+    {
+      "id": "headerSearchInput",
+      "component": "Input",
+      "props": { "value": { "path": "/searchValue" }, "placeholder": "搜索报销单据...", "prefix": "search", "className": "w-80" }
+    },
+    {
+      "id": "headerRightSection",
+      "component": "div",
+      "props": { "className": "flex items-center gap-4" },
+      "children": ["headerAction1", "headerAction2", "headerDivider", "headerUserSection"]
+    },
+    {
+      "id": "headerAction1",
+      "component": "div",
+      "props": { "className": "relative cursor-pointer p-1.5 rounded-lg hover:bg-surface-variant transition-colors" },
+      "children": ["headerAction1Icon", "headerAction1Badge"]
+    },
+    {
+      "id": "headerAction1Icon",
+      "component": "Icon",
+      "props": { "name": "bell", "className": "w-5 h-5", "color": "default" }
+    },
+    {
+      "id": "headerAction1Badge",
+      "component": "span",
+      "props": { "value": "5", "className": "absolute -top-0.5 -right-0.5 bg-error text-on-error text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center" }
+    },
+    {
+      "id": "headerAction2",
+      "component": "div",
+      "props": { "className": "cursor-pointer p-1.5 rounded-lg hover:bg-surface-variant transition-colors" },
+      "children": ["headerAction2Icon"]
+    },
+    {
+      "id": "headerAction2Icon",
+      "component": "Icon",
+      "props": { "name": "help-circle", "className": "w-5 h-5", "color": "default" }
+    },
+    { "id": "headerDivider", "component": "div", "props": { "className": "w-px h-6 bg-divider" } },
+    {
+      "id": "headerUserSection",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3 cursor-pointer" },
+      "children": ["headerUserAvatar", "headerUserInfo"]
+    },
+    {
+      "id": "headerUserAvatar",
+      "component": "img",
+      "props": { "src": { "path": "/userProfile/userAvatarImage" }, "alt": "avatar", "className": "w-8 h-8 rounded-full object-cover" }
+    },
+    {
+      "id": "headerUserInfo",
+      "component": "div",
+      "props": { "className": "flex flex-col" },
+      "children": ["headerUserName", "headerUserRole"]
+    },
+    {
+      "id": "headerUserName",
+      "component": "span",
+      "props": { "value": { "path": "/userProfile/userName" }, "className": "text-sm font-medium text-on-surface" }
+    },
+    {
+      "id": "headerUserRole",
+      "component": "span",
+      "props": { "value": { "path": "/userProfile/userRole" }, "className": "text-xs text-on-surface-variant" }
+    },
+    {
+      "id": "contentBody",
+      "component": "div",
+      "props": { "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6" },
+      "children": ["statsGrid", "businessArea", "footerBar"]
+    },
+    {
+      "id": "statsGrid",
+      "component": "div",
+      "props": { "className": "grid grid-cols-4 gap-4" },
+      "children": ["statsCard1", "statsCard2", "statsCard3", "statsCard4"]
+    },
+    {
+      "id": "statsCard1",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-3" },
+      "children": ["statsCard1Header", "statsCard1Value", "statsCard1Trend"]
+    },
+    {
+      "id": "statsCard1Header",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between" },
+      "children": ["statsCard1Title", "statsCard1Icon"]
+    },
+    {
+      "id": "statsCard1Title",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/0/cardTitle" }, "className": "text-sm text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard1Icon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/0/cardIcon" }, "color": "primary", "shape": "square", "className": "w-9 h-9" }
+    },
+    {
+      "id": "statsCard1Value",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/0/metricValue" }, "className": "text-2xl font-bold text-on-surface" }
+    },
+    {
+      "id": "statsCard1Trend",
+      "component": "div",
+      "props": { "className": "flex items-center gap-1.5" },
+      "children": ["statsCard1TrendIcon", "statsCard1TrendValue", "statsCard1Comparison"]
+    },
+    {
+      "id": "statsCard1TrendIcon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/0/trendIcon" }, "color": "success", "className": "w-4 h-4" }
+    },
+    {
+      "id": "statsCard1TrendValue",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/0/trendValue" }, "className": "text-xs font-medium text-success" }
+    },
+    {
+      "id": "statsCard1Comparison",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/0/comparisonText" }, "className": "text-xs text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard2",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-3" },
+      "children": ["statsCard2Header", "statsCard2Value", "statsCard2Trend"]
+    },
+    {
+      "id": "statsCard2Header",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between" },
+      "children": ["statsCard2Title", "statsCard2Icon"]
+    },
+    {
+      "id": "statsCard2Title",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/1/cardTitle" }, "className": "text-sm text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard2Icon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/1/cardIcon" }, "color": "primary", "shape": "square", "className": "w-9 h-9" }
+    },
+    {
+      "id": "statsCard2Value",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/1/metricValue" }, "className": "text-2xl font-bold text-on-surface" }
+    },
+    {
+      "id": "statsCard2Trend",
+      "component": "div",
+      "props": { "className": "flex items-center gap-1.5" },
+      "children": ["statsCard2TrendIcon", "statsCard2Comparison"]
+    },
+    {
+      "id": "statsCard2TrendIcon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/1/trendIcon" }, "color": "default", "className": "w-4 h-4" }
+    },
+    {
+      "id": "statsCard2Comparison",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/1/comparisonText" }, "className": "text-xs text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard3",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-3" },
+      "children": ["statsCard3Header", "statsCard3Value", "statsCard3Progress"]
+    },
+    {
+      "id": "statsCard3Header",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between" },
+      "children": ["statsCard3Title", "statsCard3Icon"]
+    },
+    {
+      "id": "statsCard3Title",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/2/cardTitle" }, "className": "text-sm text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard3Icon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/2/cardIcon" }, "color": "primary", "shape": "square", "className": "w-9 h-9" }
+    },
+    {
+      "id": "statsCard3Value",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/2/metricValue" }, "className": "text-2xl font-bold text-on-surface" }
+    },
+    {
+      "id": "statsCard3Progress",
+      "component": "div",
+      "props": { "className": "flex items-center gap-3" },
+      "children": ["statsCard3ProgressBar", "statsCard3Comparison"]
+    },
+    {
+      "id": "statsCard3ProgressBar",
+      "component": "Progress",
+      "props": { "percent": { "path": "/kpis/2/progressValue" }, "status": "normal", "size": "small", "className": "flex-1" }
+    },
+    {
+      "id": "statsCard3Comparison",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/2/comparisonText" }, "className": "text-xs text-on-surface-variant shrink-0" }
+    },
+    {
+      "id": "statsCard4",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-3" },
+      "children": ["statsCard4Header", "statsCard4Value", "statsCard4Trend"]
+    },
+    {
+      "id": "statsCard4Header",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between" },
+      "children": ["statsCard4Title", "statsCard4Icon"]
+    },
+    {
+      "id": "statsCard4Title",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/3/cardTitle" }, "className": "text-sm text-on-surface-variant" }
+    },
+    {
+      "id": "statsCard4Icon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/3/cardIcon" }, "color": "primary", "shape": "square", "className": "w-9 h-9" }
+    },
+    {
+      "id": "statsCard4Value",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/3/metricValue" }, "className": "text-2xl font-bold text-on-surface" }
+    },
+    {
+      "id": "statsCard4Trend",
+      "component": "div",
+      "props": { "className": "flex items-center gap-1.5" },
+      "children": ["statsCard4TrendIcon", "statsCard4TrendValue", "statsCard4Comparison"]
+    },
+    {
+      "id": "statsCard4TrendIcon",
+      "component": "Icon",
+      "props": { "name": { "path": "/kpis/3/trendIcon" }, "color": "default", "className": "w-4 h-4" }
+    },
+    {
+      "id": "statsCard4TrendValue",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/3/trendValue" }, "className": "text-xs font-medium text-on-surface" }
+    },
+    {
+      "id": "statsCard4Comparison",
+      "component": "span",
+      "props": { "value": { "path": "/kpis/3/comparisonText" }, "className": "text-xs text-success" }
+    },
+    {
+      "id": "businessArea",
+      "component": "div",
+      "props": { "className": "flex gap-4" },
+      "children": ["leftPanel", "rightPanel"]
+    },
+    {
+      "id": "leftPanel",
+      "component": "div",
+      "props": { "className": "w-[70%] flex flex-col gap-4" },
+      "children": ["leftDocListCard", "leftTrackingCard"]
+    },
+    {
+      "id": "leftDocListCard",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5" },
+      "children": ["leftDocListHeader", "leftDocListTabs"]
+    },
+    {
+      "id": "leftDocListHeader",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between mb-4" },
+      "children": ["leftDocListTitle", "leftDocListSubtitle"]
+    },
+    {
+      "id": "leftDocListTitle",
+      "component": "span",
+      "props": { "value": "报销单据列表", "className": "text-base font-semibold text-on-surface" }
+    },
+    {
+      "id": "leftDocListSubtitle",
+      "component": "span",
+      "props": { "value": { "path": "/totalRecordsText" }, "className": "text-xs text-on-surface-variant" }
+    },
+    {
+      "id": "leftDocListTabs",
+      "component": "Tabs",
+      "props": { "activeKey": { "path": "/activeDocTab" }, "size": "medium", "className": "mt-1" },
+      "children": ["leftDocTabAll", "leftDocTabPending", "leftDocApproved", "leftDocRejected"]
+    },
+    {
+      "id": "leftDocTabAll",
+      "component": "TabItem",
+      "props": { "key": "全部", "label": "全部", "content": { "componentId": "leftDocTableWrapper" } }
+    },
+    { "id": "leftDocTabPending", "component": "TabItem", "props": { "key": "待审核", "label": "待审核", "content": "筛选待审核的单据" } },
+    { "id": "leftDocApproved", "component": "TabItem", "props": { "key": "已通过", "label": "已通过", "content": "筛选已通过的单据" } },
+    { "id": "leftDocRejected", "component": "TabItem", "props": { "key": "已驳回", "label": "已驳回", "content": "筛选已驳回的单据" } },
+    {
+      "id": "leftDocTableWrapper",
+      "component": "div",
+      "props": { "className": "mt-3" },
+      "children": ["leftDocTable"]
+    },
+    {
+      "id": "leftDocTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": { "path": "/documentItems" },
+        "columns": [
+          { "title": "单据 ID", "dataIndex": "id", "width": 140 },
+          { "title": "提交人", "dataIndex": "submitterName" },
+          { "title": "部门", "dataIndex": "department" },
+          { "title": "报销类别", "dataIndex": "category", "width": 110 },
+          { "title": "金额", "dataIndex": "amount", "align": "right", "width": 120 },
+          { "title": "合规状态", "dataIndex": "status", "width": 100 }
+        ],
+        "pagination": true,
+        "className": "mb-4"
+      },
+      "children": { "path": "/documentItems", "componentId": "leftDocRow" }
+    },
+    {
+      "id": "leftDocRow",
+      "component": "TableRow",
+      "children": ["leftDocCellId", "leftDocCellSubmitter", "leftDocCellDept", "leftDocCellCategory", "leftDocCellAmount", "leftDocCellStatus"]
+    },
+    {
+      "id": "leftDocCellId",
+      "component": "span",
+      "props": { "value": { "path": "id" }, "className": "text-sm font-medium text-primary" }
+    },
+    {
+      "id": "leftDocCellSubmitter",
+      "component": "div",
+      "props": { "className": "flex items-center gap-2" },
+      "children": ["leftDocCellAvatar", "leftDocCellName"]
+    },
+    {
+      "id": "leftDocCellAvatar",
+      "component": "img",
+      "props": { "src": { "path": "submitterAvatarImage" }, "alt": "avatar", "className": "w-7 h-7 rounded-full object-cover" }
+    },
+    {
+      "id": "leftDocCellName",
+      "component": "span",
+      "props": { "value": { "path": "submitterName" }, "className": "text-sm text-on-surface" }
+    },
+    {
+      "id": "leftDocCellDept",
+      "component": "span",
+      "props": { "value": { "path": "department" }, "className": "text-sm text-on-surface-variant" }
+    },
+    {
+      "id": "leftDocCellCategory",
+      "component": "span",
+      "props": { "value": { "path": "category" }, "className": "text-sm text-on-surface" }
+    },
+    {
+      "id": "leftDocCellAmount",
+      "component": "div",
+      "props": { "className": "flex items-center justify-end gap-0.5" },
+      "children": ["leftDocCellAmountSign", "leftDocCellAmountVal"]
+    },
+    { "id": "leftDocCellAmountSign", "component": "span", "props": { "value": "¥", "className": "text-sm text-on-surface-variant" } },
+    { "id": "leftDocCellAmountVal", "component": "span", "props": { "value": { "path": "amount" }, "className": "text-sm font-medium text-on-surface" } },
+    { "id": "leftDocCellStatus", "component": "Tag", "props": { "value": { "path": "status" }, "color": { "path": "statusColor" } } },
+    {
+      "id": "leftTrackingCard",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5" },
+      "children": ["leftTrackingTitle", "leftTrackingSteps"]
+    },
+    {
+      "id": "leftTrackingTitle",
+      "component": "div",
+      "props": { "className": "flex items-center gap-2 mb-4" },
+      "children": ["leftTrackingTitleIcon", "leftTrackingTitleText"]
+    },
+    { "id": "leftTrackingTitleIcon", "component": "Icon", "props": { "name": "git-branch", "color": "primary", "className": "w-5 h-5" } },
+    { "id": "leftTrackingTitleText", "component": "span", "props": { "value": "支付状态追踪 (当前选中: #EXP-2024-0812)", "className": "text-sm font-semibold text-on-surface" } },
+    {
+      "id": "leftTrackingSteps",
+      "component": "Steps",
+      "props": { "current": { "path": "/currentStep" }, "size": "small" },
+      "children": { "path": "/trackingSteps", "componentId": "leftTrackingStepItem" }
+    },
+    {
+      "id": "leftTrackingStepItem",
+      "component": "StepItem",
+      "props": { "title": { "path": "title" }, "content": { "path": "description" }, "status": { "path": "status" }, "icon": { "path": "icon" } }
+    },
+    {
+      "id": "rightPanel",
+      "component": "div",
+      "props": { "className": "w-[30%] flex flex-col gap-4" },
+      "children": ["rightApprovalCard", "rightVoucherCard"]
+    },
+    {
+      "id": "rightApprovalCard",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-4" },
+      "children": ["rightApprovalTitle", "rightApprovalDocInfo", "rightApprovalBtnGroup", "rightApprovalComment"]
+    },
+    {
+      "id": "rightApprovalTitle",
+      "component": "div",
+      "props": { "className": "flex items-center gap-2" },
+      "children": ["rightApprovalTitleIcon", "rightApprovalTitleText"]
+    },
+    { "id": "rightApprovalTitleIcon", "component": "Icon", "props": { "name": "stamp", "color": "primary", "className": "w-5 h-5" } },
+    { "id": "rightApprovalTitleText", "component": "span", "props": { "value": "审批操作", "className": "text-sm font-semibold text-on-surface" } },
+    {
+      "id": "rightApprovalDocInfo",
+      "component": "div",
+      "props": { "className": "bg-surface-variant rounded-lg p-3 flex flex-col gap-2" },
+      "children": ["rightApprovalDocRow1", "rightApprovalDocRow2"]
+    },
+    {
+      "id": "rightApprovalDocRow1",
+      "component": "div",
+      "props": { "className": "flex justify-between items-center" },
+      "children": ["rightApprovalDocRow1Label", "rightApprovalDocRow1Value"]
+    },
+    { "id": "rightApprovalDocRow1Label", "component": "span", "props": { "value": "单据编号", "className": "text-xs text-on-surface-variant" } },
+    { "id": "rightApprovalDocRow1Value", "component": "span", "props": { "value": { "path": "/approvalDocInfo/docId" }, "className": "text-sm font-medium text-primary" } },
+    {
+      "id": "rightApprovalDocRow2",
+      "component": "div",
+      "props": { "className": "flex justify-between items-center" },
+      "children": ["rightApprovalDocRow2Label", "rightApprovalDocRow2Value"]
+    },
+    { "id": "rightApprovalDocRow2Label", "component": "span", "props": { "value": "报销金额", "className": "text-xs text-on-surface-variant" } },
+    { "id": "rightApprovalDocRow2Value", "component": "span", "props": { "value": { "path": "/approvalDocInfo/amount" }, "className": "text-sm font-bold text-on-surface" } },
+    {
+      "id": "rightApprovalBtnGroup",
+      "component": "div",
+      "props": { "className": "flex flex-col gap-2" },
+      "children": ["rightApprovalBtn1", "rightApprovalBtn2", "rightApprovalBtn3"]
+    },
+    { "id": "rightApprovalBtn1", "component": "Button", "props": { "value": "批准报销", "color": "primary", "icon": "check-circle", "iconPlacement": "start", "className": "w-full" } },
+    { "id": "rightApprovalBtn2", "component": "Button", "props": { "value": "要求补充材料", "color": "default", "icon": "file-plus", "iconPlacement": "start", "className": "w-full" } },
+    { "id": "rightApprovalBtn3", "component": "Button", "props": { "value": "驳回申请", "color": "danger", "icon": "x-circle", "iconPlacement": "start", "className": "w-full" } },
+    {
+      "id": "rightApprovalComment",
+      "component": "div",
+      "props": { "className": "flex flex-col gap-2" },
+      "children": ["rightApprovalCommentLabel", "rightApprovalTextArea"]
+    },
+    { "id": "rightApprovalCommentLabel", "component": "span", "props": { "value": "审批意见", "className": "text-xs font-medium text-on-surface-variant" } },
+    { "id": "rightApprovalTextArea", "component": "TextArea", "props": { "value": { "path": "/commentValue" }, "placeholder": "输入审批意见或驳回理由...", "className": "w-full" } },
+    {
+      "id": "rightVoucherCard",
+      "component": "div",
+      "props": { "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex flex-col gap-4" },
+      "children": ["rightVoucherTitle", "rightVoucherImage", "rightVoucherDetails"]
+    },
+    {
+      "id": "rightVoucherTitle",
+      "component": "div",
+      "props": { "className": "flex items-center gap-2" },
+      "children": ["rightVoucherTitleIcon", "rightVoucherTitleText"]
+    },
+    { "id": "rightVoucherTitleIcon", "component": "Icon", "props": { "name": "file-search", "color": "primary", "className": "w-5 h-5" } },
+    { "id": "rightVoucherTitleText", "component": "span", "props": { "value": { "path": "/voucherPreview/cardTitle" }, "className": "text-sm font-semibold text-on-surface" } },
+    { "id": "rightVoucherImage", "component": "div", "props": { "className": "rounded-lg overflow-hidden border border-base" }, "children": ["rightVoucherImg"] },
+    { "id": "rightVoucherImg", "component": "img", "props": { "src": { "path": "/voucherPreview/previewImage" }, "alt": "凭证预览", "className": "w-full h-36 object-cover" } },
+    {
+      "id": "rightVoucherDetails",
+      "component": "div",
+      "props": { "className": "flex flex-col gap-2.5" },
+      "children": ["rightVoucherDetail1", "rightVoucherDetail2", "rightVoucherDetail3"]
+    },
+    { "id": "rightVoucherDetail1", "component": "div", "props": { "className": "flex justify-between items-center" }, "children": ["rightVoucherDetail1Label", "rightVoucherDetail1Value"] },
+    { "id": "rightVoucherDetail1Label", "component": "span", "props": { "value": { "path": "/voucherPreview/details/0/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "rightVoucherDetail1Value", "component": "span", "props": { "value": { "path": "/voucherPreview/details/0/value" }, "className": "text-xs font-medium text-on-surface" } },
+    { "id": "rightVoucherDetail2", "component": "div", "props": { "className": "flex justify-between items-center" }, "children": ["rightVoucherDetail2Label", "rightVoucherDetail2Value"] },
+    { "id": "rightVoucherDetail2Label", "component": "span", "props": { "value": { "path": "/voucherPreview/details/1/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "rightVoucherDetail2Value", "component": "span", "props": { "value": { "path": "/voucherPreview/details/1/value" }, "className": "text-xs font-medium text-on-surface" } },
+    { "id": "rightVoucherDetail3", "component": "div", "props": { "className": "flex justify-between items-center" }, "children": ["rightVoucherDetail3Label", "rightVoucherDetail3Right"] },
+    { "id": "rightVoucherDetail3Label", "component": "span", "props": { "value": { "path": "/voucherPreview/details/2/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "rightVoucherDetail3Right", "component": "div", "props": { "className": "flex items-center gap-1.5" }, "children": ["rightVoucherDetail3Value", "rightVoucherDetail3Icon"] },
+    { "id": "rightVoucherDetail3Value", "component": "span", "props": { "value": { "path": "/voucherPreview/details/2/value" }, "className": "text-xs font-medium text-success" } },
+    { "id": "rightVoucherDetail3Icon", "component": "Icon", "props": { "name": { "path": "/voucherPreview/details/2/statusIcon" }, "color": "success", "className": "w-3.5 h-3.5" } },
+    {
+      "id": "footerBar",
+      "component": "div",
+      "props": { "className": "flex items-center justify-between py-4 border-t border-divider" },
+      "children": ["footerLegends", "footerCopyright"]
+    },
+    { "id": "footerLegends", "component": "div", "props": { "className": "flex items-center gap-5" }, "children": ["footerLegend1", "footerLegend2", "footerLegend3"] },
+    { "id": "footerLegend1", "component": "div", "props": { "className": "flex items-center gap-2" }, "children": ["footerLegend1Dot", "footerLegend1Label"] },
+    { "id": "footerLegend1Dot", "component": "div", "props": { "className": "w-3 h-3 rounded-full bg-[#1890ff]" } },
+    { "id": "footerLegend1Label", "component": "span", "props": { "value": { "path": "/legends/0/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "footerLegend2", "component": "div", "props": { "className": "flex items-center gap-2" }, "children": ["footerLegend2Dot", "footerLegend2Label"] },
+    { "id": "footerLegend2Dot", "component": "div", "props": { "className": "w-3 h-3 rounded-full bg-[#52c41a]" } },
+    { "id": "footerLegend2Label", "component": "span", "props": { "value": { "path": "/legends/1/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "footerLegend3", "component": "div", "props": { "className": "flex items-center gap-2" }, "children": ["footerLegend3Dot", "footerLegend3Label"] },
+    { "id": "footerLegend3Dot", "component": "div", "props": { "className": "w-3 h-3 rounded-full bg-[#f5222d]" } },
+    { "id": "footerLegend3Label", "component": "span", "props": { "value": { "path": "/legends/2/label" }, "className": "text-xs text-on-surface-variant" } },
+    { "id": "footerCopyright", "component": "span", "props": { "value": { "path": "/copyright" }, "className": "text-xs text-on-surface-variant" } }
+  ]
+}

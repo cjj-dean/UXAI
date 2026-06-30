@@ -1,0 +1,921 @@
+{
+    "state": {
+        "nav": {
+            "logo": "https://picsum.photos/seed/huawei-mae/200/200",
+            "moduleName": "NOC Spirit",
+            "breadcrumbs": [
+                {
+                    "title": "首页"
+                },
+                {
+                    "title": "网络监控"
+                },
+                {
+                    "title": "故障诊断工作台"
+                }
+            ],
+            "languages": [
+                {
+                    "label": "简体中文",
+                    "key": "zh"
+                },
+                {
+                    "label": "English",
+                    "key": "en"
+                }
+            ],
+            "userMenu": [
+                {
+                    "label": "个人中心",
+                    "key": "profile",
+                    "icon": "user"
+                },
+                {
+                    "label": "退出登录",
+                    "key": "logout",
+                    "icon": "log-out"
+                }
+            ],
+            "userInfo": {
+                "name": "Admin_NOC_01",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+        },
+        "faultOverview": {
+            "processData": [
+                {
+                    "name": "待处理",
+                    "value": 45
+                },
+                {
+                    "name": "处理中",
+                    "value": 32
+                },
+                {
+                    "name": "已解决",
+                    "value": 123
+                }
+            ],
+            "diagData": [
+                {
+                    "name": "已自动诊断",
+                    "value": 156
+                },
+                {
+                    "name": "待人工干预",
+                    "value": 44
+                }
+            ],
+            "typeData": [
+                {
+                    "type": "传输链路故障",
+                    "count": 88
+                },
+                {
+                    "type": "基站硬件告警",
+                    "count": 65
+                },
+                {
+                    "type": "核心网信令异常",
+                    "count": 42
+                },
+                {
+                    "type": "电源环境告警",
+                    "count": 29
+                },
+                {
+                    "type": "软件配置冲突",
+                    "count": 15
+                }
+            ]
+        },
+        "history": {
+            "kpis": [
+                {
+                    "label": "平均故障时长",
+                    "value": "42",
+                    "unit": "min",
+                    "icon": "clock",
+                    "status": "success"
+                },
+                {
+                    "label": "最大故障时长",
+                    "value": "185",
+                    "unit": "min",
+                    "icon": "alert-triangle",
+                    "status": "error"
+                },
+                {
+                    "label": "最小故障时长",
+                    "value": "5",
+                    "unit": "min",
+                    "icon": "zap",
+                    "status": "primary"
+                },
+                {
+                    "label": "诊断成功率",
+                    "value": "94.2",
+                    "unit": "%",
+                    "icon": "check-circle",
+                    "status": "success"
+                }
+            ],
+            "counts": [
+                {
+                    "date": "05-01",
+                    "count": 12
+                },
+                {
+                    "date": "05-02",
+                    "count": 18
+                },
+                {
+                    "date": "05-03",
+                    "count": 15
+                },
+                {
+                    "date": "05-04",
+                    "count": 25
+                },
+                {
+                    "date": "05-05",
+                    "count": 30
+                },
+                {
+                    "date": "05-06",
+                    "count": 22
+                },
+                {
+                    "date": "05-07",
+                    "count": 19
+                },
+                {
+                    "date": "05-08",
+                    "count": 14
+                },
+                {
+                    "date": "05-09",
+                    "count": 28
+                },
+                {
+                    "date": "05-10",
+                    "count": 35
+                }
+            ],
+            "trends": [
+                {
+                    "time": "00:00",
+                    "duration": 35
+                },
+                {
+                    "time": "04:00",
+                    "duration": 28
+                },
+                {
+                    "time": "08:00",
+                    "duration": 45
+                },
+                {
+                    "time": "12:00",
+                    "duration": 52
+                },
+                {
+                    "time": "16:00",
+                    "duration": 48
+                },
+                {
+                    "time": "20:00",
+                    "duration": 40
+                },
+                {
+                    "time": "23:59",
+                    "duration": 33
+                }
+            ]
+        },
+        "records": [
+            {
+                "id": "DIAG-20231027-001",
+                "neName": "BBU_Beijing_Chaoyang_05",
+                "time": "2023-10-27 14:20",
+                "operator": "张伟",
+                "status": "已完成",
+                "severity": "Critical"
+            },
+            {
+                "id": "DIAG-20231027-002",
+                "neName": "RRU_Shanghai_Pudong_12",
+                "time": "2023-10-27 14:25",
+                "operator": "李芳",
+                "status": "诊断中",
+                "severity": "Major"
+            },
+            {
+                "id": "DIAG-20231027-003",
+                "neName": "MME_Shenzhen_Nanshan_01",
+                "time": "2023-10-27 14:30",
+                "operator": "王强",
+                "status": "待复核",
+                "severity": "Minor"
+            },
+            {
+                "id": "DIAG-20231027-004",
+                "neName": "BBU_Guangzhou_Tianhe_08",
+                "time": "2023-10-27 14:45",
+                "operator": "赵敏",
+                "status": "已完成",
+                "severity": "Warning"
+            },
+            {
+                "id": "DIAG-20231027-005",
+                "neName": "PGW_Chengdu_HiTech_02",
+                "time": "2023-10-27 15:02",
+                "operator": "孙磊",
+                "status": "已完成",
+                "severity": "Critical"
+            },
+            {
+                "id": "DIAG-20231027-006",
+                "neName": "RRU_Hangzhou_Xihu_21",
+                "time": "2023-10-27 15:10",
+                "operator": "周杰",
+                "status": "诊断中",
+                "severity": "Major"
+            },
+            {
+                "id": "DIAG-20231027-007",
+                "neName": "BBU_Wuhan_Hongshan_03",
+                "time": "2023-10-27 15:22",
+                "operator": "吴丽",
+                "status": "已完成",
+                "severity": "Minor"
+            },
+            {
+                "id": "DIAG-20231027-008",
+                "neName": "MME_Xian_Beilin_09",
+                "time": "2023-10-27 15:35",
+                "operator": "郑凯",
+                "status": "异常中断",
+                "severity": "Critical"
+            },
+            {
+                "id": "DIAG-20231027-009",
+                "neName": "RRU_Nanjing_Gulou_15",
+                "time": "2023-10-27 15:48",
+                "operator": "冯晨",
+                "status": "已完成",
+                "severity": "Warning"
+            },
+            {
+                "id": "DIAG-20231027-010",
+                "neName": "BBU_Suzhou_Industrial_04",
+                "time": "2023-10-27 16:05",
+                "operator": "陈龙",
+                "status": "已完成",
+                "severity": "Major"
+            }
+        ],
+        "searchText": ""
+    },
+    "rootId": "pageContainer",
+    "elements": [
+        {
+            "id": "pageContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "navHeader",
+                "mainLayout",
+                "footerBar"
+            ]
+        },
+        {
+            "id": "navHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "navLeft",
+                "navRight"
+            ]
+        },
+        {
+            "id": "navLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navLogo",
+                "navTitle",
+                "navDivider",
+                "navBreadcrumb"
+            ]
+        },
+        {
+            "id": "navLogo",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/nav/logo"
+                },
+                "className": "h-8 w-8 rounded"
+            }
+        },
+        {
+            "id": "navTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/nav/moduleName"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "navDivider",
+            "component": "div",
+            "props": {
+                "className": "w-px h-4 bg-divider"
+            }
+        },
+        {
+            "id": "navBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/nav/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "navRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "langDropdown",
+                "userDropdown"
+            ]
+        },
+        {
+            "id": "langDropdown",
+            "component": "Dropdown",
+            "props": {
+                "menu": {
+                    "path": "/nav/languages"
+                }
+            },
+            "children": [
+                "langBtn"
+            ]
+        },
+        {
+            "id": "langBtn",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 cursor-pointer text-sm text-on-surface-variant"
+            },
+            "children": [
+                "langIcon",
+                "langText"
+            ]
+        },
+        {
+            "id": "langIcon",
+            "component": "Icon",
+            "props": {
+                "name": "languages",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "langText",
+            "component": "span",
+            "props": {
+                "value": "简体中文"
+            }
+        },
+        {
+            "id": "userDropdown",
+            "component": "Dropdown",
+            "props": {
+                "menu": {
+                    "path": "/nav/userMenu"
+                }
+            },
+            "children": [
+                "userProfile"
+            ]
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/nav/userInfo/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/nav/userInfo/name"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex-1 grid grid-cols-12 gap-gutter p-gutter overflow-hidden"
+            },
+            "children": [
+                "leftCol",
+                "rightCol"
+            ]
+        },
+        {
+            "id": "leftCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 flex flex-col gap-gutter"
+            },
+            "children": [
+                "faultOverviewCard",
+                "historyCard"
+            ]
+        },
+        {
+            "id": "faultOverviewCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "faultOverviewHeader",
+                "faultOverviewCharts"
+            ]
+        },
+        {
+            "id": "faultOverviewHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-6"
+            },
+            "children": [
+                "faultOverviewIcon",
+                "faultOverviewTitle"
+            ]
+        },
+        {
+            "id": "faultOverviewIcon",
+            "component": "Icon",
+            "props": {
+                "name": "activity",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "faultOverviewTitle",
+            "component": "span",
+            "props": {
+                "value": "故障总览",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "faultOverviewCharts",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-6"
+            },
+            "children": [
+                "chartProcess",
+                "chartDiag",
+                "chartType"
+            ]
+        },
+        {
+            "id": "chartProcess",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "title": {
+                        "text": "处理状态"
+                    },
+                    "data": {
+                        "path": "/faultOverview/processData"
+                    },
+                    "color": [
+                        "#E02128",
+                        "#F4840C",
+                        "#09AA71"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartDiag",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "title": {
+                        "text": "诊断完成"
+                    },
+                    "data": {
+                        "path": "/faultOverview/diagData"
+                    },
+                    "color": [
+                        "#0067D1",
+                        "#715AFB"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartType",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "direction": "horizontal",
+                    "xAxis": {
+                        "data": "type"
+                    },
+                    "yAxisTitle": "数量",
+                    "data": {
+                        "path": "/faultOverview/typeDistribution"
+                    }
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "historyCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "historyHeader",
+                "historyKpis",
+                "historyCharts"
+            ]
+        },
+        {
+            "id": "historyHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-6"
+            },
+            "children": [
+                "historyIcon",
+                "historyTitle"
+            ]
+        },
+        {
+            "id": "historyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "history",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "historyTitle",
+            "component": "span",
+            "props": {
+                "value": "历史故障分析",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "historyKpis",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4 mb-8"
+            },
+            "children": {
+                "path": "/history/kpis",
+                "componentId": "kpiItem"
+            }
+        },
+        {
+            "id": "kpiItem",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "kpiLabel",
+                "kpiValueGroup"
+            ]
+        },
+        {
+            "id": "kpiLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant block mb-1"
+            }
+        },
+        {
+            "id": "kpiValueGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "kpiValue",
+                "kpiUnit"
+            ]
+        },
+        {
+            "id": "kpiValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "historyCharts",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-6"
+            },
+            "children": [
+                "chartHistoryCount",
+                "chartHistoryDuration"
+            ]
+        },
+        {
+            "id": "chartHistoryCount",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "xAxis": {
+                        "data": "date"
+                    },
+                    "yAxisTitle": "故障数",
+                    "data": {
+                        "path": "/history/counts"
+                    },
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartHistoryDuration",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "area": true,
+                    "smooth": true,
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "时长(min)",
+                    "data": {
+                        "path": "/history/trends"
+                    },
+                    "color": [
+                        "#715AFB"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "rightCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-4"
+            },
+            "children": [
+                "recordsCard"
+            ]
+        },
+        {
+            "id": "recordsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card h-full flex flex-col"
+            },
+            "children": [
+                "recordsHeader",
+                "recordsSearch",
+                "recordsTable"
+            ]
+        },
+        {
+            "id": "recordsHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset pb-2 flex items-center gap-2"
+            },
+            "children": [
+                "recordsIcon",
+                "recordsTitle"
+            ]
+        },
+        {
+            "id": "recordsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "clipboard-list",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "recordsTitle",
+            "component": "span",
+            "props": {
+                "value": "人工诊断记录",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "recordsSearch",
+            "component": "div",
+            "props": {
+                "className": "px-inset py-2"
+            },
+            "children": [
+                "searchInput"
+            ]
+        },
+        {
+            "id": "searchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchText"
+                },
+                "placeholder": "搜索网元名称...",
+                "prefix": "search",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "recordsTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/records"
+                },
+                "className": "flex-1 px-inset overflow-auto",
+                "columns": [
+                    {
+                        "title": "网元名称",
+                        "dataIndex": "neName"
+                    },
+                    {
+                        "title": "操作员",
+                        "dataIndex": "operator"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/records",
+                "componentId": "recordRow"
+            }
+        },
+        {
+            "id": "recordRow",
+            "component": "TableRow",
+            "children": [
+                "cellNe",
+                "cellOp",
+                "cellStatus"
+            ]
+        },
+        {
+            "id": "cellNe",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "neNameText",
+                "diagTimeText"
+            ]
+        },
+        {
+            "id": "neNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "neName"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "diagTimeText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellOp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "operator"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "processing",
+                "size": "small"
+            }
+        },
+        {
+            "id": "footerBar",
+            "component": "div",
+            "props": {
+                "className": "h-10 px-gutter bg-surface-container-highest border-t border-divider flex items-center justify-between text-xs text-on-surface-variant"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "span",
+            "props": {
+                "value": "系统状态: 运行良好 | 数据刷新频率: 30s"
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "span",
+            "props": {
+                "value": "© 2024 iMaster MAE NOC Spirit. All Rights Reserved."
+            }
+        }
+    ]
+}

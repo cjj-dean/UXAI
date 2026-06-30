@@ -1,0 +1,955 @@
+{
+    "state": {
+        "brandName": "Nexus CRM",
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Clients",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Projects",
+                "icon": "briefcase",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "icon": "bar-chart-3",
+                "isActive": true
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "isActive": false
+            }
+        ],
+        "projectTitle": "Q3 Global Expansion",
+        "searchVal": "",
+        "metrics": [
+            {
+                "title": "Overall Progress",
+                "value": "65%",
+                "sub": "+5% from last week",
+                "icon": "target",
+                "color": "primary"
+            },
+            {
+                "title": "Days Remaining",
+                "value": "45 Days",
+                "sub": "Deadline: Dec 15",
+                "icon": "clock",
+                "color": "warning"
+            },
+            {
+                "title": "Team Size",
+                "value": "12 Members",
+                "sub": "2 new this month",
+                "icon": "users-2",
+                "color": "info"
+            },
+            {
+                "title": "Remaining Budget",
+                "value": "$250k",
+                "sub": "42% of total used",
+                "icon": "wallet",
+                "color": "success"
+            }
+        ],
+        "timeline": [
+            {
+                "phase": "Phase 1: Market Research",
+                "status": "finish",
+                "date": "July 2023",
+                "icon": "search"
+            },
+            {
+                "phase": "Phase 2: Infrastructure Setup",
+                "status": "process",
+                "date": "August 2023",
+                "icon": "server"
+            },
+            {
+                "phase": "Phase 3: Local Hiring",
+                "status": "wait",
+                "date": "September 2023",
+                "icon": "user-plus"
+            }
+        ],
+        "recentTasks": [
+            {
+                "id": "1",
+                "name": "Legal Compliance Review",
+                "user": "Sarah Chen",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+                "status": "In Review",
+                "priority": "High",
+                "stColor": "warning"
+            },
+            {
+                "id": "2",
+                "name": "Server Migration - EU West",
+                "user": "James Wilson",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                "status": "Completed",
+                "priority": "Medium",
+                "stColor": "success"
+            },
+            {
+                "id": "3",
+                "name": "Local Partner Outreach",
+                "user": "Elena Rodriguez",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                "status": "In Progress",
+                "priority": "High",
+                "stColor": "processing"
+            },
+            {
+                "id": "4",
+                "name": "Brand Localization Assets",
+                "user": "Michael Wu",
+                "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+                "status": "Pending",
+                "priority": "Low",
+                "stColor": "default"
+            },
+            {
+                "id": "5",
+                "name": "Office Lease Negotiation",
+                "user": "Sarah Chen",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+                "status": "In Progress",
+                "priority": "High",
+                "stColor": "processing"
+            },
+            {
+                "id": "6",
+                "name": "Data Privacy Audit",
+                "user": "James Wilson",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                "status": "Pending",
+                "priority": "Medium",
+                "stColor": "default"
+            },
+            {
+                "id": "7",
+                "name": "Recruitment Agency Briefing",
+                "user": "Elena Rodriguez",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                "status": "Completed",
+                "priority": "Medium",
+                "stColor": "success"
+            },
+            {
+                "id": "8",
+                "name": "Budget Reconciliation Q2",
+                "user": "Michael Wu",
+                "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+                "status": "In Review",
+                "priority": "High",
+                "stColor": "warning"
+            },
+            {
+                "id": "9",
+                "name": "PR Agency Selection",
+                "user": "Sarah Chen",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+                "status": "Pending",
+                "priority": "Low",
+                "stColor": "default"
+            },
+            {
+                "id": "10",
+                "name": "IT Security Protocol Setup",
+                "user": "James Wilson",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                "status": "In Progress",
+                "priority": "High",
+                "stColor": "processing"
+            }
+        ],
+        "teamMembers": [
+            {
+                "name": "Sarah Chen",
+                "role": "Lead",
+                "img": "https://randomuser.me/api/portraits/women/12.jpg"
+            },
+            {
+                "name": "James Wilson",
+                "role": "Dev",
+                "img": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "name": "Elena Rodriguez",
+                "role": "Ops",
+                "img": "https://randomuser.me/api/portraits/women/44.jpg"
+            }
+        ],
+        "resourceData": [
+            {
+                "name": "Engineering",
+                "value": 45
+            },
+            {
+                "name": "Marketing",
+                "value": 25
+            },
+            {
+                "name": "Legal",
+                "value": 15
+            },
+            {
+                "name": "Operations",
+                "value": 15
+            }
+        ]
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebar",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarNav"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "brandIcon",
+                "brandNameText"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "activity",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea",
+                "fabButton"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-8 flex items-center justify-between shrink-0"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "Search project data...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "genReportBtn",
+                "editProjBtn"
+            ]
+        },
+        {
+            "id": "genReportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Generate Report",
+                "icon": "file-text",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "editProjBtn",
+            "component": "Button",
+            "props": {
+                "value": "Edit Project",
+                "icon": "edit-3",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8 flex flex-col gap-8"
+            },
+            "children": [
+                "projectTitleRow",
+                "kpiGrid",
+                "detailsGrid"
+            ]
+        },
+        {
+            "id": "projectTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "projectTitleText",
+                "projectBreadcrumb"
+            ]
+        },
+        {
+            "id": "projectTitleText",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/projectTitle"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "projectBreadcrumb",
+            "component": "span",
+            "props": {
+                "value": "Projects / Reports / Global Expansion",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-6"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "kpiHeader",
+                "kpiValue",
+                "kpiSub"
+            ]
+        },
+        {
+            "id": "kpiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "kpiTitle",
+                "kpiIcon"
+            ]
+        },
+        {
+            "id": "kpiTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant font-medium"
+            }
+        },
+        {
+            "id": "kpiIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "circle",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "kpiValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiSub",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "sub"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "detailsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-10 gap-8"
+            },
+            "children": [
+                "leftDetails",
+                "rightDetails"
+            ]
+        },
+        {
+            "id": "leftDetails",
+            "component": "div",
+            "props": {
+                "className": "col-span-7 flex flex-col gap-8"
+            },
+            "children": [
+                "timelineCard",
+                "tasksCard"
+            ]
+        },
+        {
+            "id": "timelineCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card"
+            },
+            "children": [
+                "timelineTitle",
+                "timelineSteps"
+            ]
+        },
+        {
+            "id": "timelineTitle",
+            "component": "h3",
+            "props": {
+                "value": "Project Timeline",
+                "className": "text-lg font-bold mb-8"
+            }
+        },
+        {
+            "id": "timelineSteps",
+            "component": "Steps",
+            "props": {
+                "current": 1,
+                "className": "px-4"
+            },
+            "children": {
+                "path": "/timeline",
+                "componentId": "timelineItem"
+            }
+        },
+        {
+            "id": "timelineItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "phase"
+                },
+                "content": {
+                    "componentId": "timelineDate"
+                },
+                "status": {
+                    "path": "status"
+                },
+                "icon": {
+                    "path": "icon"
+                }
+            }
+        },
+        {
+            "id": "timelineDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tasksCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card"
+            },
+            "children": [
+                "tasksTitle",
+                "tasksTable"
+            ]
+        },
+        {
+            "id": "tasksTitle",
+            "component": "h3",
+            "props": {
+                "value": "Recent Task Updates",
+                "className": "text-lg font-bold mb-4"
+            }
+        },
+        {
+            "id": "tasksTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/recentTasks"
+                },
+                "columns": [
+                    {
+                        "title": "Task Name",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "Assignee",
+                        "dataIndex": "user"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Priority",
+                        "dataIndex": "priority",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/recentTasks",
+                "componentId": "taskRow"
+            }
+        },
+        {
+            "id": "taskRow",
+            "component": "TableRow",
+            "children": [
+                "taskNameCell",
+                "taskUserCell",
+                "taskStatusCell",
+                "taskPriorityCell"
+            ]
+        },
+        {
+            "id": "taskNameCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "taskUserCell",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "taskUserAvatar",
+                "taskUserName"
+            ]
+        },
+        {
+            "id": "taskUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "taskUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "user"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "taskStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "stColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "taskPriorityCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "priority"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "rightDetails",
+            "component": "div",
+            "props": {
+                "className": "col-span-3 flex flex-col gap-8"
+            },
+            "children": [
+                "teamCard",
+                "resourceCard",
+                "healthCard"
+            ]
+        },
+        {
+            "id": "teamCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card"
+            },
+            "children": [
+                "teamHeader",
+                "teamList",
+                "manageTeamBtn"
+            ]
+        },
+        {
+            "id": "teamHeader",
+            "component": "h3",
+            "props": {
+                "value": "Project Team",
+                "className": "text-lg font-bold mb-4"
+            }
+        },
+        {
+            "id": "teamList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4 mb-6"
+            },
+            "children": {
+                "path": "/teamMembers",
+                "componentId": "teamMemberRow"
+            }
+        },
+        {
+            "id": "teamMemberRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "memberInfo",
+                "memberRole"
+            ]
+        },
+        {
+            "id": "memberInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "memberAvatar",
+                "memberName"
+            ]
+        },
+        {
+            "id": "memberAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "img"
+                },
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "memberName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "memberRole",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "role"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "manageTeamBtn",
+            "component": "Button",
+            "props": {
+                "value": "Manage Team",
+                "className": "w-full",
+                "size": "small"
+            }
+        },
+        {
+            "id": "resourceCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card"
+            },
+            "children": [
+                "resourceTitle",
+                "resourceChart"
+            ]
+        },
+        {
+            "id": "resourceTitle",
+            "component": "h3",
+            "props": {
+                "value": "Resource Allocation",
+                "className": "text-lg font-bold mb-2"
+            }
+        },
+        {
+            "id": "resourceChart",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "title": {
+                        "text": "100%",
+                        "subtext": "Allocated"
+                    },
+                    "data": {
+                        "path": "/resourceData"
+                    }
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "healthCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "healthHeader",
+                "healthMetrics"
+            ]
+        },
+        {
+            "id": "healthHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "healthIcon",
+                "healthTitle"
+            ]
+        },
+        {
+            "id": "healthIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "healthTitle",
+            "component": "span",
+            "props": {
+                "value": "Financial Health: Stable",
+                "className": "font-bold text-success"
+            }
+        },
+        {
+            "id": "healthMetrics",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-3 rounded-lg flex flex-col gap-2"
+            },
+            "children": [
+                "burnRateRow",
+                "forecastRow"
+            ]
+        },
+        {
+            "id": "burnRateRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "burnLabel",
+                "burnVal"
+            ]
+        },
+        {
+            "id": "burnLabel",
+            "component": "span",
+            "props": {
+                "value": "Burn Rate",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "burnVal",
+            "component": "span",
+            "props": {
+                "value": "$12,500 / week",
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "forecastRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "forecastLabel",
+                "forecastVal"
+            ]
+        },
+        {
+            "id": "forecastLabel",
+            "component": "span",
+            "props": {
+                "value": "Forecast",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "forecastVal",
+            "component": "span",
+            "props": {
+                "value": "On Track",
+                "className": "text-success font-medium"
+            }
+        },
+        {
+            "id": "fabButton",
+            "component": "Button",
+            "props": {
+                "icon": "plus",
+                "shape": "circle",
+                "color": "primary",
+                "className": "fixed bottom-8 right-8 w-14 h-14 shadow-xl flex items-center justify-center"
+            }
+        }
+    ]
+}

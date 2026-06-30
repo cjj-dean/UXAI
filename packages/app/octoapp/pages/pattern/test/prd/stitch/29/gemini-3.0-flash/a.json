@@ -1,0 +1,1119 @@
+{
+    "state": {
+        "brandName": "HRConnect Pro",
+        "menuItems": [
+            {
+                "label": "仪表盘",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "排班管理",
+                "icon": "calendar-days",
+                "isActive": true
+            },
+            {
+                "label": "考勤统计",
+                "icon": "clock",
+                "isActive": false
+            },
+            {
+                "label": "员工档案",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "系统设置",
+                "icon": "settings",
+                "isActive": false
+            }
+        ],
+        "punchButton": {
+            "text": "立即打卡",
+            "icon": "fingerprint",
+            "currentTime": "09:00:24"
+        },
+        "header": {
+            "title": "排班与考勤",
+            "notificationsCount": 12,
+            "userName": "张经理",
+            "userAvatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "ruleSettings": [
+            {
+                "label": "弹性上班时间",
+                "value": "30分钟",
+                "type": "select",
+                "options": [
+                    {
+                        "label": "不允许",
+                        "value": "0"
+                    },
+                    {
+                        "label": "15分钟",
+                        "value": "15"
+                    },
+                    {
+                        "label": "30分钟",
+                        "value": "30"
+                    },
+                    {
+                        "label": "60分钟",
+                        "value": "60"
+                    }
+                ]
+            },
+            {
+                "label": "午休开始时间",
+                "value": "12:00",
+                "type": "time"
+            },
+            {
+                "label": "午休结束时间",
+                "value": "13:30",
+                "type": "time"
+            },
+            {
+                "label": "开启晚到补偿",
+                "value": true,
+                "type": "switch"
+            }
+        ],
+        "exceptions": [
+            {
+                "employeeName": "李晓明",
+                "type": "缺卡",
+                "time": "09:05",
+                "status": "error",
+                "statusIcon": "alert-circle"
+            },
+            {
+                "employeeName": "王建国",
+                "type": "迟到",
+                "time": "09:45",
+                "status": "warning",
+                "statusIcon": "clock"
+            },
+            {
+                "employeeName": "陈静",
+                "type": "早退",
+                "time": "17:30",
+                "status": "warning",
+                "statusIcon": "log-out"
+            },
+            {
+                "employeeName": "赵敏",
+                "type": "地点异常",
+                "time": "08:55",
+                "status": "error",
+                "statusIcon": "map-pin"
+            },
+            {
+                "employeeName": "孙志平",
+                "type": "未排班打卡",
+                "time": "10:00",
+                "status": "info",
+                "statusIcon": "help-circle"
+            },
+            {
+                "employeeName": "周杰",
+                "type": "缺卡",
+                "time": "18:00",
+                "status": "error",
+                "statusIcon": "alert-circle"
+            },
+            {
+                "employeeName": "吴芳",
+                "type": "迟到",
+                "time": "09:15",
+                "status": "warning",
+                "statusIcon": "clock"
+            },
+            {
+                "employeeName": "郑和",
+                "type": "缺卡",
+                "time": "09:00",
+                "status": "error",
+                "statusIcon": "alert-circle"
+            },
+            {
+                "employeeName": "冯小刚",
+                "type": "地点异常",
+                "time": "14:20",
+                "status": "error",
+                "statusIcon": "map-pin"
+            },
+            {
+                "employeeName": "褚健",
+                "type": "早退",
+                "time": "16:45",
+                "status": "warning",
+                "statusIcon": "log-out"
+            }
+        ],
+        "weekCalendar": {
+            "title": "九月排班周历 (Sep 11 - Sep 17)",
+            "days": [
+                {
+                    "date": "2023-09-11",
+                    "dayName": "周一",
+                    "shifts": [
+                        {
+                            "employee": "李晓明",
+                            "shiftName": "早班",
+                            "hasConflict": false
+                        },
+                        {
+                            "employee": "王建国",
+                            "shiftName": "晚班",
+                            "hasConflict": true,
+                            "conflictReason": "工时超限"
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-12",
+                    "dayName": "周二",
+                    "shifts": [
+                        {
+                            "employee": "陈静",
+                            "shiftName": "中班",
+                            "hasConflict": false
+                        },
+                        {
+                            "employee": "赵敏",
+                            "shiftName": "早班",
+                            "hasConflict": false
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-13",
+                    "dayName": "周三",
+                    "shifts": [
+                        {
+                            "employee": "孙志平",
+                            "shiftName": "全天",
+                            "hasConflict": true,
+                            "conflictReason": "技能不匹配"
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-14",
+                    "dayName": "周四",
+                    "shifts": [
+                        {
+                            "employee": "周杰",
+                            "shiftName": "早班",
+                            "hasConflict": false
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-15",
+                    "dayName": "周五",
+                    "shifts": [
+                        {
+                            "employee": "吴芳",
+                            "shiftName": "晚班",
+                            "hasConflict": false
+                        },
+                        {
+                            "employee": "郑和",
+                            "shiftName": "晚班",
+                            "hasConflict": false
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-16",
+                    "dayName": "周六",
+                    "shifts": [
+                        {
+                            "employee": "冯小刚",
+                            "shiftName": "值班",
+                            "hasConflict": false
+                        }
+                    ]
+                },
+                {
+                    "date": "2023-09-17",
+                    "dayName": "周日",
+                    "shifts": [
+                        {
+                            "employee": "褚健",
+                            "shiftName": "休息",
+                            "hasConflict": false
+                        }
+                    ]
+                }
+            ]
+        },
+        "changeLogs": [
+            {
+                "operatorName": "林小溪",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                "action": "修改了",
+                "target": "李晓明的周三班次",
+                "time": "10分钟前"
+            },
+            {
+                "operatorName": "陈大为",
+                "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+                "action": "新增了",
+                "target": "技术部周六加班计划",
+                "time": "1小时前"
+            },
+            {
+                "operatorName": "系统自动",
+                "avatar": "https://picsum.photos/seed/system-bot/200/200",
+                "action": "同步了",
+                "target": "法定节假日排班规则",
+                "time": "5小时前"
+            },
+            {
+                "operatorName": "张经理",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                "action": "批准了",
+                "target": "全员九月排班表",
+                "time": "昨天"
+            }
+        ]
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-card flex flex-col p-inset z-10"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-section"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "fingerprint",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-stack"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-inline rounded-action cursor-pointer transition-colors hover:bg-surface-variant"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto pt-gutter border-t border-divider"
+            },
+            "children": [
+                "punchBtnContainer"
+            ]
+        },
+        {
+            "id": "punchBtnContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "punchTime",
+                "punchBtn"
+            ]
+        },
+        {
+            "id": "punchTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/punchButton/currentTime"
+                },
+                "className": "text-xs text-center text-on-surface-variant"
+            }
+        },
+        {
+            "id": "punchBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/punchButton/text"
+                },
+                "icon": {
+                    "path": "/punchButton/icon"
+                },
+                "color": "primary",
+                "size": "large",
+                "className": "w-full py-4 shadow-lg"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "header",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "header",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerTitle",
+                "headerBreadcrumb"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/header/title"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerBreadcrumb",
+            "component": "span",
+            "props": {
+                "value": "管理后台 / 考勤中心 / 排班计划",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerNotify",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索员工或排班...",
+                "prefix": "search",
+                "className": "w-48"
+            }
+        },
+        {
+            "id": "headerNotify",
+            "component": "Badge",
+            "props": {
+                "count": {
+                    "path": "/header/notificationsCount"
+                },
+                "status": "error"
+            },
+            "children": [
+                "notifyIcon"
+            ]
+        },
+        {
+            "id": "notifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/header/userAvatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/header/userName"
+                },
+                "className": "text-md font-medium"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "topGrid",
+                "bottomSection"
+            ]
+        },
+        {
+            "id": "topGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-gutter"
+            },
+            "children": [
+                "leftCol",
+                "rightCol"
+            ]
+        },
+        {
+            "id": "leftCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 flex flex-col gap-gutter"
+            },
+            "children": [
+                "ruleCard",
+                "exceptionCard"
+            ]
+        },
+        {
+            "id": "ruleCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container p-inset shadow-card"
+            },
+            "children": [
+                "ruleCardTitle",
+                "ruleList"
+            ]
+        },
+        {
+            "id": "ruleCardTitle",
+            "component": "h3",
+            "props": {
+                "value": "排班规则设置",
+                "className": "text-lg font-bold mb-gutter flex items-center gap-inline"
+            }
+        },
+        {
+            "id": "ruleList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": {
+                "path": "/ruleSettings",
+                "componentId": "ruleItem"
+            }
+        },
+        {
+            "id": "ruleItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "ruleLabel",
+                "ruleControl"
+            ]
+        },
+        {
+            "id": "ruleLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ruleControl",
+            "component": "div",
+            "props": {
+                "className": "w-full"
+            },
+            "children": [
+                "ruleInput"
+            ]
+        },
+        {
+            "id": "ruleInput",
+            "component": "div",
+            "props": {
+                "className": "w-full"
+            },
+            "children": [
+                "ruleSelect",
+                "ruleTime",
+                "ruleSwitch"
+            ]
+        },
+        {
+            "id": "ruleSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "options": {
+                    "path": "options"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "ruleTime",
+            "component": "TimePicker",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "ruleSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "exceptionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "exceptionHeader",
+                "exceptionList"
+            ]
+        },
+        {
+            "id": "exceptionHeader",
+            "component": "div",
+            "props": {
+                "className": "p-gutter bg-error-container flex justify-between items-center"
+            },
+            "children": [
+                "exceptionTitle",
+                "exceptionBadge"
+            ]
+        },
+        {
+            "id": "exceptionTitle",
+            "component": "span",
+            "props": {
+                "value": "打卡异常监控",
+                "className": "font-bold text-on-error-container"
+            }
+        },
+        {
+            "id": "exceptionBadge",
+            "component": "Tag",
+            "props": {
+                "value": "10条待处理",
+                "color": "error",
+                "size": "small"
+            }
+        },
+        {
+            "id": "exceptionList",
+            "component": "div",
+            "props": {
+                "className": "max-h-80 overflow-y-auto"
+            },
+            "children": {
+                "path": "/exceptions",
+                "componentId": "exceptionItem"
+            }
+        },
+        {
+            "id": "exceptionItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-gutter border-b border-divider hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "exceptionInfo",
+                "exceptionAction"
+            ]
+        },
+        {
+            "id": "exceptionInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "exceptionIcon",
+                "exceptionText"
+            ]
+        },
+        {
+            "id": "exceptionIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "statusIcon"
+                },
+                "color": {
+                    "path": "status"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "exceptionText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "exceptionName",
+                "exceptionDetail"
+            ]
+        },
+        {
+            "id": "exceptionName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "employeeName"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "exceptionDetail",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "exceptionAction",
+            "component": "Button",
+            "props": {
+                "value": "处理",
+                "size": "small",
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "rightCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 bg-surface-container-highest rounded-container p-inset shadow-card flex flex-col"
+            },
+            "children": [
+                "calendarHeader",
+                "calendarGrid"
+            ]
+        },
+        {
+            "id": "calendarHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-gutter"
+            },
+            "children": [
+                "calendarTitle",
+                "calendarActions"
+            ]
+        },
+        {
+            "id": "calendarTitle",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/weekCalendar/title"
+                },
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "calendarActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "prevWeek",
+                "nextWeek",
+                "addShift"
+            ]
+        },
+        {
+            "id": "prevWeek",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-left",
+                "size": "small"
+            }
+        },
+        {
+            "id": "nextWeek",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-right",
+                "size": "small"
+            }
+        },
+        {
+            "id": "addShift",
+            "component": "Button",
+            "props": {
+                "value": "新增排班",
+                "color": "primary",
+                "size": "small",
+                "icon": "plus"
+            }
+        },
+        {
+            "id": "calendarGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-7 gap-px bg-divider border border-divider rounded-md overflow-hidden"
+            },
+            "children": {
+                "path": "/weekCalendar/days",
+                "componentId": "calendarDay"
+            }
+        },
+        {
+            "id": "calendarDay",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest min-h-64 flex flex-col"
+            },
+            "children": [
+                "dayHeader",
+                "dayShifts"
+            ]
+        },
+        {
+            "id": "dayHeader",
+            "component": "div",
+            "props": {
+                "className": "p-2 text-center border-b border-divider bg-surface-variant"
+            },
+            "children": [
+                "dayName",
+                "dayDate"
+            ]
+        },
+        {
+            "id": "dayName",
+            "component": "div",
+            "props": {
+                "value": {
+                    "path": "dayName"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "dayDate",
+            "component": "div",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-[10px] text-on-surface-variant"
+            }
+        },
+        {
+            "id": "dayShifts",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-2 flex flex-col gap-2"
+            },
+            "children": {
+                "path": "shifts",
+                "componentId": "shiftCard"
+            }
+        },
+        {
+            "id": "shiftCard",
+            "component": "div",
+            "props": {
+                "className": "p-2 rounded border border-divider bg-surface-container-low flex flex-col gap-1"
+            },
+            "children": [
+                "shiftEmp",
+                "shiftTagContainer"
+            ]
+        },
+        {
+            "id": "shiftEmp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "employee"
+                },
+                "className": "text-xs font-medium"
+            }
+        },
+        {
+            "id": "shiftTagContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-1"
+            },
+            "children": [
+                "shiftMainTag",
+                "conflictTag"
+            ]
+        },
+        {
+            "id": "shiftMainTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "shiftName"
+                },
+                "size": "small",
+                "color": "processing"
+            }
+        },
+        {
+            "id": "conflictTag",
+            "component": "Tag",
+            "props": {
+                "value": "冲突",
+                "color": "error",
+                "size": "small",
+                "icon": "alert-triangle"
+            }
+        },
+        {
+            "id": "bottomSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container p-inset shadow-card"
+            },
+            "children": [
+                "logTitle",
+                "logScroll"
+            ]
+        },
+        {
+            "id": "logTitle",
+            "component": "h3",
+            "props": {
+                "value": "最近排班变动记录",
+                "className": "text-md font-bold mb-gutter"
+            }
+        },
+        {
+            "id": "logScroll",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter overflow-x-auto pb-2"
+            },
+            "children": {
+                "path": "/changeLogs",
+                "componentId": "logItem"
+            }
+        },
+        {
+            "id": "logItem",
+            "component": "div",
+            "props": {
+                "className": "flex-shrink-0 w-64 bg-surface-variant p-gutter rounded-lg flex items-start gap-inline"
+            },
+            "children": [
+                "logAvatar",
+                "logContent"
+            ]
+        },
+        {
+            "id": "logAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full border-2 border-surface-container-highest"
+            }
+        },
+        {
+            "id": "logContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "logDesc",
+                "logTime"
+            ]
+        },
+        {
+            "id": "logDesc",
+            "component": "div",
+            "props": {
+                "className": "text-xs text-on-surface leading-tight"
+            },
+            "children": [
+                "logOp",
+                "logAct",
+                "logTgt"
+            ]
+        },
+        {
+            "id": "logOp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "operatorName"
+                },
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "logAct",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "action"
+                },
+                "className": "mx-1"
+            }
+        },
+        {
+            "id": "logTgt",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "target"
+                },
+                "className": "text-primary font-medium"
+            }
+        },
+        {
+            "id": "logTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-[10px] text-on-surface-variant mt-1"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1499 @@
+{
+  "state": {
+    "searchValue": "",
+    "selectedMenuKeys": [
+      "network-config"
+    ],
+    "menuItems": [
+      {
+        "title": "网络配置",
+        "key": "network-config",
+        "icon": "globe"
+      },
+      {
+        "title": "网络监控",
+        "key": "network-monitor",
+        "icon": "activity"
+      },
+      {
+        "title": "故障管理",
+        "key": "fault-management",
+        "icon": "alert-triangle"
+      },
+      {
+        "title": "报表中心",
+        "key": "report-center",
+        "icon": "bar-chart-2"
+      }
+    ],
+    "notificationCount": 5,
+    "brandName": "iMaster NCE",
+    "userName": "Admin_Lee",
+    "roleName": "超级管理员",
+    "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "userMenu": [
+      {
+        "label": "个人中心",
+        "key": "profile",
+        "icon": "user"
+      },
+      {
+        "label": "修改密码",
+        "key": "change-password",
+        "icon": "key-round"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "settingsMenu": [
+      {
+        "label": "系统设置",
+        "key": "system-settings",
+        "icon": "settings"
+      },
+      {
+        "label": "帮助文档",
+        "key": "help",
+        "icon": "book-open"
+      },
+      {
+        "label": "关于系统",
+        "key": "about",
+        "icon": "info"
+      }
+    ],
+    "openMenuKeys": [
+      "networkTopology",
+      "deviceConfig",
+      "globalConfig"
+    ],
+    "sideMenuGroups": [
+      {
+        "groupKey": "networkTopology",
+        "groupIcon": "Globe",
+        "groupName": "站点与拓扑",
+        "menuItems": [
+          {
+            "menuName": "站点管理",
+            "menuIcon": "MapPin"
+          },
+          {
+            "menuName": "拓扑视图",
+            "menuIcon": "Share2"
+          }
+        ]
+      },
+      {
+        "groupKey": "deviceConfig",
+        "groupIcon": "Server",
+        "groupName": "设备配置",
+        "menuItems": [
+          {
+            "menuName": "设备列表",
+            "menuIcon": "LayoutList"
+          }
+        ]
+      },
+      {
+        "groupKey": "globalConfig",
+        "groupIcon": "Settings",
+        "groupName": "全局配置",
+        "menuItems": [
+          {
+            "menuName": "策略管理",
+            "menuIcon": "FileText",
+            "isActive": false
+          },
+          {
+            "menuName": "模板管理",
+            "menuIcon": "FileCode2",
+            "isActive": true
+          }
+        ]
+      }
+    ],
+    "breadcrumbPath": [
+      {
+        "title": "全局配置",
+        "link": "#"
+      },
+      {
+        "title": "模板管理",
+        "link": "#"
+      }
+    ],
+    "currentTab": "ponTemplate",
+    "tabsList": [
+      {
+        "tabKey": "ponTemplate",
+        "tabName": "PON全局模板"
+      },
+      {
+        "tabKey": "p2pTemplate",
+        "tabName": "P2P全局模板"
+      },
+      {
+        "tabKey": "ponLine",
+        "tabName": "PON线路模板"
+      }
+    ],
+    "treeSearchValue": "",
+    "tableSearchValue": "",
+    "selectedRowKeys": [],
+    "expandedKeys": [
+      "region-east",
+      "region-south",
+      "region-north"
+    ],
+    "selectedKeys": [
+      "device-pudong-01"
+    ],
+    "networkTreeData": [
+      {
+        "title": "华东区域 (Region East)",
+        "key": "region-east",
+        "icon": "globe",
+        "children": [
+          {
+            "title": "上海节点",
+            "key": "node-sh",
+            "icon": "building-2",
+            "children": [
+              {
+                "title": "浦东新区 OLT-01",
+                "key": "device-pudong-01",
+                "icon": "hard-drive"
+              },
+              {
+                "title": "徐汇区 OLT-02",
+                "key": "device-xuhui-02",
+                "icon": "hard-drive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "华南区域 (Region South)",
+        "key": "region-south",
+        "icon": "globe",
+        "children": [
+          {
+            "title": "深圳节点",
+            "key": "node-sz",
+            "icon": "building-2",
+            "children": [
+              {
+                "title": "南山区 OLT-05",
+                "key": "device-nanshan-05",
+                "icon": "hard-drive"
+              },
+              {
+                "title": "福田区 OLT-06",
+                "key": "device-futian-06",
+                "icon": "hard-drive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "华北区域 (Region North)",
+        "key": "region-north",
+        "icon": "globe",
+        "children": [
+          {
+            "title": "北京节点",
+            "key": "node-bj",
+            "icon": "building-2",
+            "children": [
+              {
+                "title": "海淀区 OLT-08",
+                "key": "device-haidian-08",
+                "icon": "hard-drive"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tableToolbar": {
+      "searchPlaceholder": "输入模板名称或ID搜索...",
+      "actions": [
+        {
+          "label": "新增模板",
+          "icon": "PlusCircle",
+          "type": "primary"
+        },
+        {
+          "label": "批量删除",
+          "icon": "Trash2",
+          "type": "default"
+        },
+        {
+          "label": "导出数据",
+          "icon": "Download",
+          "type": "default"
+        }
+      ]
+    },
+    "templateTableData": {
+      "columns": [
+        {
+          "title": "模板名称",
+          "dataIndex": "templateInfo"
+        },
+        {
+          "title": "2.4GHz频段配置",
+          "dataIndex": "config2G"
+        },
+        {
+          "title": "5GHz频段配置",
+          "dataIndex": "config5G"
+        },
+        {
+          "title": "状态",
+          "dataIndex": "status"
+        },
+        {
+          "title": "最近更新",
+          "dataIndex": "updatedAt"
+        },
+        {
+          "title": "操作",
+          "dataIndex": "actions"
+        }
+      ],
+      "dataSource": [
+        {
+          "key": "1",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=0067D1,2070F3&text_color=ffffff&text=RF",
+            "templateName": "5G高频增强射频模板",
+            "templateId": "TPL-20231024-001"
+          },
+          "config2G": {
+            "power": "20 dBm",
+            "channel": "1/6/11",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "149/153/157",
+            "bandwidth": "80MHz"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-10-24 10:30:22",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "2",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=09AA71,62B42E&text_color=ffffff&text=STD",
+            "templateName": "企业级标准覆盖模板",
+            "templateId": "TPL-20231020-014"
+          },
+          "config2G": {
+            "power": "15 dBm",
+            "channel": "1/6/11",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "20 dBm",
+            "channel": "36/40/44",
+            "bandwidth": "40MHz"
+          },
+          "status": {
+            "text": "草稿",
+            "color": "gold",
+            "tagColor": "warning"
+          },
+          "updatedAt": "2023-10-20 14:15:05",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "3",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=E02128,F4840C&text_color=ffffff&text=HIGH",
+            "templateName": "高密场馆竞技射频策略",
+            "templateId": "TPL-20231018-088"
+          },
+          "config2G": {
+            "power": "10 dBm",
+            "channel": "1/6/11",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "36-48",
+            "bandwidth": "160MHz"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-10-18 09:42:11",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "4",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=715AFB,5CA2E9&text_color=ffffff&text=LOW",
+            "templateName": "仓储环境低功耗常连接模板",
+            "templateId": "TPL-20231012-005"
+          },
+          "config2G": {
+            "power": "10 dBm",
+            "channel": "1",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "12 dBm",
+            "channel": "36",
+            "bandwidth": "20MHz"
+          },
+          "status": {
+            "text": "已停用",
+            "color": "red",
+            "tagColor": "error"
+          },
+          "updatedAt": "2023-10-12 16:20:44",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "5",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=F4840C,FCC800&text_color=000000&text=HOT",
+            "templateName": "室外热点覆盖基站模板",
+            "templateId": "TPL-20231010-022"
+          },
+          "config2G": {
+            "power": "20 dBm",
+            "channel": "1/6/11",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "149/153/157",
+            "bandwidth": "80MHz"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-10-10 11:05:33",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "6",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=0067D1,2CB8C9&text_color=ffffff&text=OFDMA",
+            "templateName": "Wi-Fi 6E OFDMA优化测试",
+            "templateId": "TPL-20231009-099"
+          },
+          "config2G": {
+            "power": "Disabled",
+            "channel": "-",
+            "bandwidth": "-"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "1/21/41",
+            "bandwidth": "160MHz"
+          },
+          "status": {
+            "text": "测试中",
+            "color": "blue",
+            "tagColor": "processing"
+          },
+          "updatedAt": "2023-10-09 08:45:00",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "7",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=E02128,FEE7E8&text_color=000000&text=WPA3",
+            "templateName": "园区高安全WPA3企业模板",
+            "templateId": "TPL-20230928-044"
+          },
+          "config2G": {
+            "power": "15 dBm",
+            "channel": "1/6/11",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "18 dBm",
+            "channel": "36/40/44/48",
+            "bandwidth": "40MHz"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-09-28 13:22:19",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "8",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=191919,777777&text_color=ffffff&text=MESH",
+            "templateName": "无线Mesh回传专网配置",
+            "templateId": "TPL-20230925-011"
+          },
+          "config2G": {
+            "power": "Disabled",
+            "channel": "-",
+            "bandwidth": "-"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "149/153",
+            "bandwidth": "80MHz"
+          },
+          "status": {
+            "text": "草稿",
+            "color": "gold",
+            "tagColor": "warning"
+          },
+          "updatedAt": "2023-09-25 17:50:12",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "9",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=09AA71,FCC800,0067D1&text_color=000000&text=VIP",
+            "templateName": "VIP独立信道高优先级保障",
+            "templateId": "TPL-20230922-065"
+          },
+          "config2G": {
+            "power": "20 dBm",
+            "channel": "6",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "23 dBm",
+            "channel": "161",
+            "bandwidth": "160MHz"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-09-22 10:15:42",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "10",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=715AFB,5CA2E9&text_color=ffffff&text=IOT",
+            "templateName": "物联网终端低频窄带模板",
+            "templateId": "TPL-20230918-033"
+          },
+          "config2G": {
+            "power": "10 dBm",
+            "channel": "1",
+            "bandwidth": "10MHz"
+          },
+          "config5G": {
+            "power": "Disabled",
+            "channel": "-",
+            "bandwidth": "-"
+          },
+          "status": {
+            "text": "已生效",
+            "color": "green",
+            "tagColor": "success"
+          },
+          "updatedAt": "2023-09-18 14:30:00",
+          "actions": [
+            "编辑",
+            "复制",
+            "删除"
+          ]
+        },
+        {
+          "key": "11",
+          "templateInfo": {
+            "templateImage": "https://fpoimg.com/120x120?gradient=F4840C,F69E39&text_color=ffffff&text=DEFAULT",
+            "templateName": "系统默认出厂基础模板",
+            "templateId": "TPL-SYS-DEFAULT-001"
+          },
+          "config2G": {
+            "power": "20 dBm",
+            "channel": "Auto",
+            "bandwidth": "20MHz"
+          },
+          "config5G": {
+            "power": "20 dBm",
+            "channel": "Auto",
+            "bandwidth": "80MHz"
+          },
+          "status": {
+            "text": "系统内置",
+            "color": "purple",
+            "tagColor": "default"
+          },
+          "updatedAt": "2023-01-01 00:00:00",
+          "actions": [
+            "查看"
+          ]
+        }
+      ]
+    },
+    "nodeCount": "共 3 个区域 · 5 台设备"
+  },
+  "rootId": "appShellContainer",
+  "elements": [
+    {
+      "id": "appShellContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col w-screen h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "headerShellZone",
+        "bodyShellZone"
+      ]
+    },
+    {
+      "id": "headerShellZone",
+      "component": "header",
+      "props": {
+        "className": "h-16 flex items-center px-page bg-surface-container-highest shadow-sm z-10"
+      },
+      "children": [
+        "topNavBrandSection",
+        "topNavMainMenu",
+        "topNavRightSection"
+      ]
+    },
+    {
+      "id": "bodyShellZone",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "asideShellZone",
+        "mainShellZone"
+      ]
+    },
+    {
+      "id": "asideShellZone",
+      "component": "aside",
+      "props": {
+        "className": "w-60 flex-shrink-0 bg-surface-container-highest shadow-sm border-r border-divider overflow-y-auto"
+      },
+      "children": [
+        "sideNavTitleSection",
+        "sideNavDivider",
+        "sideNavMenu"
+      ]
+    },
+    {
+      "id": "mainShellZone",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-hidden p-page gap-section"
+      },
+      "children": [
+        "mainBctSlotZone",
+        "mainWorkSlotZone"
+      ]
+    },
+    {
+      "id": "mainBctSlotZone",
+      "component": "section",
+      "props": {
+        "className": "flex-shrink-0"
+      },
+      "children": [
+        "mainBctBreadcrumb",
+        "mainBctTabs"
+      ]
+    },
+    {
+      "id": "mainWorkSlotZone",
+      "component": "section",
+      "props": {
+        "className": "flex-1 bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+      },
+      "children": [
+        "coreWsSplitLayout"
+      ]
+    },
+    {
+      "id": "topNavBrandSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-8 shrink-0"
+      },
+      "children": [
+        "topNavLogoIcon",
+        "topNavBrandName"
+      ]
+    },
+    {
+      "id": "topNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "nfc",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "topNavBrandName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandName"
+        },
+        "className": "text-lg font-bold text-primary whitespace-nowrap"
+      }
+    },
+    {
+      "id": "topNavMainMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "flex-1 min-w-0"
+      }
+    },
+    {
+      "id": "topNavRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 shrink-0 ml-6"
+      },
+      "children": [
+        "topNavSearchInput",
+        "topNavNotifBadge",
+        "topNavDivider",
+        "topNavUserDropdown",
+        "topNavSettingsDropdown"
+      ]
+    },
+    {
+      "id": "topNavSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "全局搜索...",
+        "prefix": "search",
+        "className": "w-52"
+      }
+    },
+    {
+      "id": "topNavNotifBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/notificationCount"
+        },
+        "overflowCount": 99,
+        "className": "cursor-pointer"
+      },
+      "children": [
+        "topNavNotifIcon"
+      ]
+    },
+    {
+      "id": "topNavNotifIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "topNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-6 bg-surface-dim"
+      }
+    },
+    {
+      "id": "topNavUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": {
+          "path": "/userMenu"
+        }
+      },
+      "children": [
+        "topNavUserTrigger"
+      ]
+    },
+    {
+      "id": "topNavUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "topNavUserAvatar",
+        "topNavUserInfo"
+      ]
+    },
+    {
+      "id": "topNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/avatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "topNavUserInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "topNavUserName",
+        "topNavUserRole"
+      ]
+    },
+    {
+      "id": "topNavUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-sm font-medium text-on-surface leading-tight"
+      }
+    },
+    {
+      "id": "topNavUserRole",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/roleName"
+        },
+        "className": "text-xs text-on-surface-variant leading-tight"
+      }
+    },
+    {
+      "id": "topNavSettingsDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": {
+          "path": "/settingsMenu"
+        }
+      },
+      "children": [
+        "topNavSettingsTrigger"
+      ]
+    },
+    {
+      "id": "topNavSettingsTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center cursor-pointer rounded-md hover:bg-surface-variant p-1 transition-colors"
+      },
+      "children": [
+        "topNavSettingsIcon"
+      ]
+    },
+    {
+      "id": "topNavSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sideNavTitleSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-4 py-4"
+      },
+      "children": [
+        "sideNavTitleIcon",
+        "sideNavTitleText"
+      ]
+    },
+    {
+      "id": "sideNavTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "globe",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "sideNavTitleText",
+      "component": "span",
+      "props": {
+        "value": "网络配置",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "sideNavDivider",
+      "component": "Divider",
+      "props": {
+        "className": "mx-3 my-0"
+      }
+    },
+    {
+      "id": "sideNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "openKeys": {
+          "path": "/openMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full border-none bg-transparent"
+      }
+    },
+    {
+      "id": "mainBctBreadcrumb",
+      "component": "Breadcrumb",
+      "props": {
+        "items": {
+          "path": "/breadcrumbPath"
+        },
+        "separator": "/",
+        "className": "px-page pt-4 pb-2"
+      }
+    },
+    {
+      "id": "mainBctTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/currentTab"
+        },
+        "className": "px-page pb-2"
+      },
+      "children": {
+        "path": "/tabsList",
+        "componentId": "mainBctTabItem"
+      }
+    },
+    {
+      "id": "mainBctTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "tabKey"
+        },
+        "label": {
+          "path": "tabName"
+        },
+        "content": {
+          "componentId": "mainBctTabContent"
+        }
+      }
+    },
+    {
+      "id": "mainBctTabContent",
+      "component": "div",
+      "props": {
+        "className": "p-4 text-sm text-on-surface-variant",
+        "value": "请在此管理您的模板配置数据"
+      }
+    },
+    {
+      "id": "coreWsSplitLayout",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row h-full"
+      },
+      "children": [
+        "coreWsLeftPanel",
+        "coreWsRightPanel"
+      ]
+    },
+    {
+      "id": "coreWsLeftPanel",
+      "component": "div",
+      "props": {
+        "className": "w-[280px] shrink-0 flex flex-col border-r border-divider bg-surface-variant"
+      },
+      "children": [
+        "coreWsLeftHeader",
+        "coreWsTreeSearchDiv",
+        "coreWsTreeDiv",
+        "coreWsLeftFooter"
+      ]
+    },
+    {
+      "id": "coreWsLeftHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-4 py-3"
+      },
+      "children": [
+        "coreWsLeftHeaderIcon",
+        "coreWsLeftHeaderText"
+      ]
+    },
+    {
+      "id": "coreWsLeftHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": "sitemap",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "coreWsLeftHeaderText",
+      "component": "span",
+      "props": {
+        "value": "网络拓扑",
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "coreWsTreeSearchDiv",
+      "component": "div",
+      "props": {
+        "className": "px-4 pb-3"
+      },
+      "children": [
+        "coreWsTreeSearchInput"
+      ]
+    },
+    {
+      "id": "coreWsTreeSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/treeSearchValue"
+        },
+        "placeholder": "搜索网络节点...",
+        "prefix": "search",
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "coreWsTreeDiv",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-auto px-4 pb-3"
+      },
+      "children": [
+        "coreWsNetworkTree"
+      ]
+    },
+    {
+      "id": "coreWsNetworkTree",
+      "component": "Tree",
+      "props": {
+        "options": {
+          "path": "/networkTreeData"
+        },
+        "defaultExpandedKeys": {
+          "path": "/expandedKeys"
+        },
+        "defaultSelectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "coreWsLeftFooter",
+      "component": "div",
+      "props": {
+        "className": "px-4 py-3 border-t border-divider flex items-center gap-2"
+      },
+      "children": [
+        "coreWsLeftFooterIcon",
+        "coreWsLeftFooterText"
+      ]
+    },
+    {
+      "id": "coreWsLeftFooterIcon",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "coreWsLeftFooterText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/nodeCount"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWsRightPanel",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col min-w-0"
+      },
+      "children": [
+        "coreWsToolbar",
+        "coreWsTableWrap"
+      ]
+    },
+    {
+      "id": "coreWsToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-3 border-b border-divider"
+      },
+      "children": [
+        "coreWsToolbarSearchDiv",
+        "coreWsToolbarSpacer",
+        "coreWsAddBtn",
+        "coreWsDeleteBtn",
+        "coreWsExportBtn"
+      ]
+    },
+    {
+      "id": "coreWsToolbarSearchDiv",
+      "component": "div",
+      "props": {
+        "className": "w-64"
+      },
+      "children": [
+        "coreWsToolbarSearch"
+      ]
+    },
+    {
+      "id": "coreWsToolbarSearch",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/tableSearchValue"
+        },
+        "placeholder": {
+          "path": "/tableToolbar/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "coreWsToolbarSpacer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "coreWsAddBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/tableToolbar/actions/0/label"
+        },
+        "icon": {
+          "path": "/tableToolbar/actions/0/icon"
+        },
+        "iconPlacement": "start",
+        "color": {
+          "path": "/tableToolbar/actions/0/type"
+        }
+      }
+    },
+    {
+      "id": "coreWsDeleteBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/tableToolbar/actions/1/label"
+        },
+        "icon": {
+          "path": "/tableToolbar/actions/1/icon"
+        },
+        "iconPlacement": "start",
+        "color": {
+          "path": "/tableToolbar/actions/1/type"
+        }
+      }
+    },
+    {
+      "id": "coreWsExportBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/tableToolbar/actions/2/label"
+        },
+        "icon": {
+          "path": "/tableToolbar/actions/2/icon"
+        },
+        "iconPlacement": "start",
+        "color": {
+          "path": "/tableToolbar/actions/2/type"
+        }
+      }
+    },
+    {
+      "id": "coreWsTableWrap",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-auto p-4"
+      },
+      "children": [
+        "coreWsDataTable"
+      ]
+    },
+    {
+      "id": "coreWsDataTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "key",
+        "columns": [
+          {
+            "title": "模板名称",
+            "dataIndex": "templateInfo",
+            "width": 260
+          },
+          {
+            "title": "2.4GHz频段配置",
+            "dataIndex": "config2G",
+            "width": 155
+          },
+          {
+            "title": "5GHz频段配置",
+            "dataIndex": "config5G",
+            "width": 155
+          },
+          {
+            "title": "状态",
+            "dataIndex": "status",
+            "width": 100,
+            "align": "center"
+          },
+          {
+            "title": "最近更新",
+            "dataIndex": "updatedAt",
+            "width": 170
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 180,
+            "fixed": "end"
+          }
+        ],
+        "dataSource": {
+          "path": "/templateTableData/dataSource"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedRowKeys"
+          }
+        },
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/templateTableData/dataSource",
+        "componentId": "coreWsTableRow"
+      }
+    },
+    {
+      "id": "coreWsTableRow",
+      "component": "TableRow",
+      "children": [
+        "coreWsTplInfoCell",
+        "coreWsConfig2GCell",
+        "coreWsConfig5GCell",
+        "coreWsStatusCell",
+        "coreWsUpdatedCell",
+        "coreWsActionsCell"
+      ]
+    },
+    {
+      "id": "coreWsTplInfoCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "coreWsTplImg",
+        "coreWsTplTextGroup"
+      ]
+    },
+    {
+      "id": "coreWsTplImg",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "templateInfo/templateImage"
+        },
+        "alt": "模板图标",
+        "className": "w-10 h-10 rounded-md object-cover shrink-0"
+      }
+    },
+    {
+      "id": "coreWsTplTextGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5 min-w-0"
+      },
+      "children": [
+        "coreWsTplName",
+        "coreWsTplId"
+      ]
+    },
+    {
+      "id": "coreWsTplName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "templateInfo/templateName"
+        },
+        "className": "text-sm font-medium text-on-surface truncate"
+      }
+    },
+    {
+      "id": "coreWsTplId",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "templateInfo/templateId"
+        },
+        "className": "text-xs text-on-surface-variant truncate"
+      }
+    },
+    {
+      "id": "coreWsConfig2GCell",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5"
+      },
+      "children": [
+        "coreWs2GPower",
+        "coreWs2GChannel",
+        "coreWs2GBandwidth"
+      ]
+    },
+    {
+      "id": "coreWs2GPower",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config2G/power"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "coreWs2GChannel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config2G/channel"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWs2GBandwidth",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config2G/bandwidth"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWsConfig5GCell",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5"
+      },
+      "children": [
+        "coreWs5GPower",
+        "coreWs5GChannel",
+        "coreWs5GBandwidth"
+      ]
+    },
+    {
+      "id": "coreWs5GPower",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config5G/power"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "coreWs5GChannel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config5G/channel"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWs5GBandwidth",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "config5G/bandwidth"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWsStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status/text"
+        },
+        "color": {
+          "path": "status/tagColor"
+        }
+      }
+    },
+    {
+      "id": "coreWsUpdatedCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "updatedAt"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "coreWsActionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "coreWsActionBtn1",
+        "coreWsActionBtn2",
+        "coreWsActionBtn3"
+      ]
+    },
+    {
+      "id": "coreWsActionBtn1",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "actions/0"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "coreWsActionBtn2",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "actions/1"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "coreWsActionBtn3",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "actions/2"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    }
+  ]
+}

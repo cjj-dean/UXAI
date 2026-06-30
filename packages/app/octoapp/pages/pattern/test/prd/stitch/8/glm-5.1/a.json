@@ -1,0 +1,1294 @@
+{
+    "state": {
+      "currentActiveMenu": "security-audit",
+      "logoIcon": "shield",
+      "menuItems": [
+        {
+          "menuId": "dashboard",
+          "menuName": "系统概览",
+          "menuIcon": "layout-dashboard"
+        },
+        {
+          "menuId": "threat-intel",
+          "menuName": "威胁情报",
+          "menuIcon": "radar"
+        },
+        {
+          "menuId": "security-audit",
+          "menuName": "安全审计",
+          "menuIcon": "file-search"
+        },
+        {
+          "menuId": "api-management",
+          "menuName": "API管理",
+          "menuIcon": "waypoints"
+        },
+        {
+          "menuId": "system-settings",
+          "menuName": "系统设置",
+          "menuIcon": "settings"
+        }
+      ],
+      "currentUser": {
+        "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "userName": "Alex Chen",
+        "roleName": "Super Admin"
+      },
+      "globalSearchValue": "",
+      "searchPlaceholderText": "搜索事件ID、IP或策略...",
+      "unreadCount": 5,
+      "currentLanguage": "zh-CN",
+      "languageOptions": [
+        {
+          "label": "简体中文",
+          "key": "zh-CN"
+        },
+        {
+          "label": "English",
+          "key": "en-US"
+        }
+      ],
+      "cardTitle": "审计日志分析",
+      "subTitle": "Audit Log Analysis",
+      "timeRangeValue": "last-24-hours",
+      "timeRangeOptions": [
+        {
+          "label": "最近1小时",
+          "value": "last-1-hour"
+        },
+        {
+          "label": "最近24小时",
+          "value": "last-24-hours"
+        },
+        {
+          "label": "最近7天",
+          "value": "last-7-days"
+        },
+        {
+          "label": "自定义范围",
+          "value": "custom"
+        }
+      ],
+      "levelFilterValue": "all",
+      "levelFilterOptions": [
+        {
+          "label": "All",
+          "value": "all"
+        },
+        {
+          "label": "Info",
+          "value": "info"
+        },
+        {
+          "label": "Warn",
+          "value": "warn"
+        },
+        {
+          "label": "Error",
+          "value": "error"
+        }
+      ],
+      "statusFilterValue": "all",
+      "statusFilterOptions": [
+        {
+          "label": "All",
+          "value": "all"
+        },
+        {
+          "label": "200",
+          "value": "200"
+        },
+        {
+          "label": "401",
+          "value": "401"
+        },
+        {
+          "label": "403",
+          "value": "403"
+        },
+        {
+          "label": "404",
+          "value": "404"
+        },
+        {
+          "label": "500",
+          "value": "500"
+        }
+      ],
+      "logs": [
+        {
+          "eventId": "evt-8f9a1b2c",
+          "timestamp": "2023-10-27 10:05:30",
+          "sourceIp": "192.168.1.50",
+          "method": "POST",
+          "methodColor": "processing",
+          "requestPath": "/api/v1/auth/login",
+          "statusCode": 200,
+          "statusTag": "Success",
+          "statusColor": "success",
+          "level": "Info",
+          "levelColor": "processing"
+        },
+        {
+          "eventId": "evt-4c3d9e1f",
+          "timestamp": "2023-10-27 10:12:15",
+          "sourceIp": "203.0.113.45",
+          "method": "GET",
+          "methodColor": "primary",
+          "requestPath": "/api/v1/users/admin",
+          "statusCode": 401,
+          "statusTag": "Client Error",
+          "statusColor": "warning",
+          "level": "Warn",
+          "levelColor": "warning"
+        },
+        {
+          "eventId": "evt-7a8b2c9d",
+          "timestamp": "2023-10-27 10:25:44",
+          "sourceIp": "10.0.0.12",
+          "method": "DELETE",
+          "methodColor": "error",
+          "requestPath": "/api/v1/policies/pt-002",
+          "statusCode": 403,
+          "statusTag": "Forbidden",
+          "statusColor": "error",
+          "level": "Error",
+          "levelColor": "error"
+        },
+        {
+          "eventId": "evt-5e6f1g3h",
+          "timestamp": "2023-10-27 10:33:10",
+          "sourceIp": "192.168.1.62",
+          "method": "GET",
+          "methodColor": "primary",
+          "requestPath": "/api/v1/dashboard",
+          "statusCode": 200,
+          "statusTag": "Success",
+          "statusColor": "success",
+          "level": "Info",
+          "levelColor": "processing"
+        }
+      ],
+      "panelTitle": "Log Details",
+      "metaInfo": {
+        "eventId": "evt-4c3d9e1f",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "geoLocation": "Beijing, China",
+        "locationFlagIcon": "map-pin"
+      },
+      "rawJsonData": {
+        "language": "",
+        "codeContent": "{\n  \"request_id\": \"req-9872-xy-z1\",\n  \"headers\": {\n    \"content-type\": \"application/\",\n    \"x-forwarded-for\": \"203.0.113.45\"\n  },\n  \"payload\": {\n    \"action\": \"read\",\n    \"resource\": \"admin_panel\"\n  }\n}"
+      },
+      "eventTimeline": [
+        {
+          "status": "completed",
+          "title": "Request Received",
+          "timestamp": "2023-10-27 10:12:15.120",
+          "dotColor": "primary",
+          "icon": "log-in"
+        },
+        {
+          "status": "completed",
+          "title": "Token Validation",
+          "timestamp": "2023-10-27 10:12:15.345",
+          "dotColor": "warning",
+          "icon": "key"
+        },
+        {
+          "status": "error",
+          "title": "Authorization Failed",
+          "timestamp": "2023-10-27 10:12:15.348",
+          "dotColor": "error",
+          "icon": "shield-alert"
+        }
+      ],
+      "actionButtons": [
+        {
+          "label": "复制事件URL",
+          "icon": "copy",
+          "urlToCopy": "https://security-gate.example.com/logs/evt-4c3d9e1f"
+        }
+      ]
+    },
+    "rootId": "pageRoot",
+    "elements": [
+      {
+        "id": "pageRoot",
+        "component": "div",
+        "props": {
+          "className": "flex h-screen overflow-hidden bg-surface-container-lowest"
+        },
+        "children": [
+          "sidebar",
+          "mainArea"
+        ]
+      },
+      {
+        "id": "sidebar",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col w-60 bg-surface-container-highest shadow-sm border-r border-divider shrink-0"
+        },
+        "children": [
+          "sidebarLogo",
+          "sidebarDivider",
+          "sidebarMenu",
+          "sidebarUserCard"
+        ]
+      },
+      {
+        "id": "mainArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col flex-1 overflow-hidden"
+        },
+        "children": [
+          "headerBar",
+          "contentArea"
+        ]
+      },
+      {
+        "id": "sidebarLogo",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2.5 px-5 py-5"
+        },
+        "children": [
+          "sidebarLogoIcon",
+          "sidebarLogoText"
+        ]
+      },
+      {
+        "id": "sidebarLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/logoIcon"
+          },
+          "color": "primary",
+          "shape": "fill",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "sidebarLogoText",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-primary",
+          "value": "Security Gate"
+        }
+      },
+      {
+        "id": "sidebarDivider",
+        "component": "Divider",
+        "props": {
+          "className": "mx-4"
+        }
+      },
+      {
+        "id": "sidebarMenu",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1 px-3 flex-1"
+        },
+        "children": [
+          "sidebarMenuDashboard",
+          "sidebarMenuThreatIntel",
+          "sidebarMenuSecurityAudit",
+          "sidebarMenuApiManagement",
+          "sidebarMenuSystemSettings"
+        ]
+      },
+      {
+        "id": "sidebarMenuDashboard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer"
+        },
+        "children": [
+          "sidebarMenuDashboardIcon",
+          "sidebarMenuDashboardText"
+        ]
+      },
+      {
+        "id": "sidebarMenuDashboardIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuDashboardText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "系统概览"
+        }
+      },
+      {
+        "id": "sidebarMenuThreatIntel",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer"
+        },
+        "children": [
+          "sidebarMenuThreatIntelIcon",
+          "sidebarMenuThreatIntelText"
+        ]
+      },
+      {
+        "id": "sidebarMenuThreatIntelIcon",
+        "component": "Icon",
+        "props": {
+          "name": "radar",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuThreatIntelText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "威胁情报"
+        }
+      },
+      {
+        "id": "sidebarMenuSecurityAudit",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-primary font-medium cursor-pointer"
+        },
+        "children": [
+          "sidebarMenuSecurityAuditIcon",
+          "sidebarMenuSecurityAuditText"
+        ]
+      },
+      {
+        "id": "sidebarMenuSecurityAuditIcon",
+        "component": "Icon",
+        "props": {
+          "name": "file-search",
+          "color": "primary",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuSecurityAuditText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "安全审计"
+        }
+      },
+      {
+        "id": "sidebarMenuApiManagement",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer"
+        },
+        "children": [
+          "sidebarMenuApiManagementIcon",
+          "sidebarMenuApiManagementText"
+        ]
+      },
+      {
+        "id": "sidebarMenuApiManagementIcon",
+        "component": "Icon",
+        "props": {
+          "name": "waypoints",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuApiManagementText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "API管理"
+        }
+      },
+      {
+        "id": "sidebarMenuSystemSettings",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer"
+        },
+        "children": [
+          "sidebarMenuSystemSettingsIcon",
+          "sidebarMenuSystemSettingsText"
+        ]
+      },
+      {
+        "id": "sidebarMenuSystemSettingsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "settings",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuSystemSettingsText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "系统设置"
+        }
+      },
+      {
+        "id": "sidebarUserCard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-4 border-t border-divider"
+        },
+        "children": [
+          "sidebarUserAvatar",
+          "sidebarUserInfo"
+        ]
+      },
+      {
+        "id": "sidebarUserAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/currentUser/avatarImage"
+          },
+          "className": "w-9 h-9 rounded-full object-cover"
+        }
+      },
+      {
+        "id": "sidebarUserInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "sidebarUserName",
+          "sidebarUserRole"
+        ]
+      },
+      {
+        "id": "sidebarUserName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-on-surface",
+          "value": {
+            "path": "/currentUser/userName"
+          }
+        }
+      },
+      {
+        "id": "sidebarUserRole",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": {
+            "path": "/currentUser/roleName"
+          }
+        }
+      },
+      {
+        "id": "headerBar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center h-14 px-6 bg-surface-container-highest shadow-sm border-b border-divider shrink-0"
+        },
+        "children": [
+          "headerSpacer",
+          "headerSearchInput",
+          "headerNotifyWrap",
+          "headerLangDropdown"
+        ]
+      },
+      {
+        "id": "contentArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-1 overflow-hidden relative"
+        },
+        "children": [
+          "contentInner",
+          "drawerPanel"
+        ]
+      },
+      {
+        "id": "headerSpacer",
+        "component": "div",
+        "props": {
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "headerSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/globalSearchValue"
+          },
+          "placeholder": {
+            "path": "/searchPlaceholderText"
+          },
+          "prefix": "search",
+          "className": "w-80 mr-4"
+        }
+      },
+      {
+        "id": "headerNotifyWrap",
+        "component": "div",
+        "props": {
+          "className": "relative cursor-pointer mr-4"
+        },
+        "children": [
+          "headerNotifyBell",
+          "headerNotifyBadge"
+        ]
+      },
+      {
+        "id": "headerNotifyBell",
+        "component": "Icon",
+        "props": {
+          "name": "bell",
+          "className": "w-5 h-5 text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerNotifyBadge",
+        "component": "div",
+        "props": {
+          "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-xs rounded-full min-w-4 h-4 flex items-center justify-center px-1",
+          "value": {
+            "path": "/unreadCount"
+          }
+        }
+      },
+      {
+        "id": "headerLangDropdown",
+        "component": "Dropdown",
+        "props": {
+          "trigger": [
+            "click"
+          ],
+          "placement": "bottomRight",
+          "menu": {
+            "path": "/languageOptions"
+          }
+        },
+        "children": [
+          "headerLangTrigger"
+        ]
+      },
+      {
+        "id": "headerLangTrigger",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5 cursor-pointer text-sm text-on-surface-variant"
+        },
+        "children": [
+          "headerLangIcon",
+          "headerLangText",
+          "headerLangChevron"
+        ]
+      },
+      {
+        "id": "headerLangIcon",
+        "component": "Icon",
+        "props": {
+          "name": "globe",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "headerLangText",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "中文"
+        }
+      },
+      {
+        "id": "headerLangChevron",
+        "component": "Icon",
+        "props": {
+          "name": "chevron-down",
+          "className": "w-3 h-3"
+        }
+      },
+      {
+        "id": "contentInner",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col flex-1 p-6 overflow-y-auto"
+        },
+        "children": [
+          "filterArea",
+          "tableWrapper"
+        ]
+      },
+      {
+        "id": "drawerPanel",
+        "component": "div",
+        "props": {
+          "className": "absolute right-0 top-0 bottom-0 w-96 bg-surface-container-highest shadow-xl z-20 flex flex-col border-l border-divider"
+        },
+        "children": [
+          "drawerHeader",
+          "drawerBody",
+          "drawerFooter"
+        ]
+      },
+      {
+        "id": "filterArea",
+        "component": "div",
+        "props": {
+          "className": "mb-5"
+        },
+        "children": [
+          "filterTitleRow",
+          "filterControlsRow"
+        ]
+      },
+      {
+        "id": "tableWrapper",
+        "component": "div",
+        "props": {
+          "className": "flex-1 bg-surface-container-highest rounded-xl shadow-sm overflow-hidden mb-4"
+        },
+        "children": [
+          "auditTable"
+        ]
+      },
+      {
+        "id": "filterTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mb-4"
+        },
+        "children": [
+          "filterTitleIcon",
+          "filterTitleTextGroup"
+        ]
+      },
+      {
+        "id": "filterTitleIcon",
+        "component": "Icon",
+        "props": {
+          "name": "scan-search",
+          "color": "primary",
+          "shape": "square",
+          "className": "w-10 h-10"
+        }
+      },
+      {
+        "id": "filterTitleTextGroup",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "filterTitleText",
+          "filterSubTitleText"
+        ]
+      },
+      {
+        "id": "filterTitleText",
+        "component": "h2",
+        "props": {
+          "className": "text-2xl font-bold text-on-surface",
+          "value": {
+            "path": "/cardTitle"
+          }
+        }
+      },
+      {
+        "id": "filterSubTitleText",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant",
+          "value": {
+            "path": "/subTitle"
+          }
+        }
+      },
+      {
+        "id": "filterControlsRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "filterTimeSelect",
+          "filterLevelSelect",
+          "filterStatusSelect",
+          "filterSpacer",
+          "filterResultCount",
+          "filterSearchBtn"
+        ]
+      },
+      {
+        "id": "filterTimeSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/timeRangeValue"
+          },
+          "options": {
+            "path": "/timeRangeOptions"
+          },
+          "className": "w-40"
+        }
+      },
+      {
+        "id": "filterLevelSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/levelFilterValue"
+          },
+          "options": {
+            "path": "/levelFilterOptions"
+          },
+          "className": "w-28"
+        }
+      },
+      {
+        "id": "filterStatusSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/statusFilterValue"
+          },
+          "options": {
+            "path": "/statusFilterOptions"
+          },
+          "className": "w-28"
+        }
+      },
+      {
+        "id": "filterSpacer",
+        "component": "div",
+        "props": {
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "filterResultCount",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface-variant",
+          "value": "共 4 条日志"
+        }
+      },
+      {
+        "id": "filterSearchBtn",
+        "component": "Button",
+        "props": {
+          "value": "查询",
+          "icon": "search",
+          "iconPlacement": "start",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "auditTable",
+        "component": "Table",
+        "props": {
+          "rowKey": "eventId",
+          "dataSource": {
+            "path": "/logs"
+          },
+          "pagination": true,
+          "columns": [
+            {
+              "title": "Event ID",
+              "dataIndex": "eventId",
+              "width": 160
+            },
+            {
+              "title": "Time",
+              "dataIndex": "timestamp",
+              "width": 180
+            },
+            {
+              "title": "Source IP",
+              "dataIndex": "sourceIp",
+              "width": 140
+            },
+            {
+              "title": "Method",
+              "dataIndex": "method",
+              "width": 100
+            },
+            {
+              "title": "Request Path",
+              "dataIndex": "requestPath"
+            },
+            {
+              "title": "Status",
+              "dataIndex": "statusCode",
+              "width": 180
+            },
+            {
+              "title": "Level",
+              "dataIndex": "level",
+              "width": 90
+            }
+          ],
+          "className": "mb-4"
+        },
+        "children": {
+          "path": "/logs",
+          "componentId": "tableRowTemplate"
+        }
+      },
+      {
+        "id": "tableRowTemplate",
+        "component": "TableRow",
+        "children": [
+          "tableEventIdCell",
+          "tableTimeCell",
+          "tableIpCell",
+          "tableMethodCell",
+          "tablePathCell",
+          "tableStatusCell",
+          "tableLevelCell"
+        ]
+      },
+      {
+        "id": "tableEventIdCell",
+        "component": "span",
+        "props": {
+          "className": "font-mono text-xs text-primary",
+          "value": {
+            "path": "eventId"
+          }
+        }
+      },
+      {
+        "id": "tableTimeCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface",
+          "value": {
+            "path": "timestamp"
+          }
+        }
+      },
+      {
+        "id": "tableIpCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-mono text-on-surface",
+          "value": {
+            "path": "sourceIp"
+          }
+        }
+      },
+      {
+        "id": "tableMethodCell",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "method"
+          },
+          "color": {
+            "path": "methodColor"
+          },
+          "variant": "solid",
+          "size": "small"
+        }
+      },
+      {
+        "id": "tablePathCell",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-mono text-on-surface-variant truncate",
+          "value": {
+            "path": "requestPath"
+          }
+        }
+      },
+      {
+        "id": "tableStatusCell",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "tableStatusCode",
+          "tableStatusTag"
+        ]
+      },
+      {
+        "id": "tableStatusCode",
+        "component": "span",
+        "props": {
+          "className": "text-xs font-mono text-on-surface-variant",
+          "value": {
+            "path": "statusCode"
+          }
+        }
+      },
+      {
+        "id": "tableStatusTag",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "statusTag"
+          },
+          "color": {
+            "path": "statusColor"
+          },
+          "size": "small",
+          "variant": "outlined"
+        }
+      },
+      {
+        "id": "tableLevelCell",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "level"
+          },
+          "color": {
+            "path": "levelColor"
+          },
+          "size": "small",
+          "variant": "filled"
+        }
+      },
+      {
+        "id": "drawerHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-6 py-4 border-b border-divider shrink-0"
+        },
+        "children": [
+          "drawerTitle",
+          "drawerCloseBtn"
+        ]
+      },
+      {
+        "id": "drawerTitle",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-on-surface",
+          "value": {
+            "path": "/panelTitle"
+          }
+        }
+      },
+      {
+        "id": "drawerCloseBtn",
+        "component": "Button",
+        "props": {
+          "icon": "x",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "drawerBody",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto px-6 py-5 flex flex-col gap-5"
+        },
+        "children": [
+          "drawerMetaSection",
+          "drawerDivider1",
+          "drawerJsonSection",
+          "drawerDivider2",
+          "drawerTimelineSection"
+        ]
+      },
+      {
+        "id": "drawerFooter",
+        "component": "div",
+        "props": {
+          "className": "px-6 py-4 border-t border-divider shrink-0"
+        },
+        "children": [
+          "drawerActionBtn"
+        ]
+      },
+      {
+        "id": "drawerMetaSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-4"
+        },
+        "children": [
+          "drawerMetaSectionTitle",
+          "drawerMetaEventIdRow",
+          "drawerMetaUserAgentRow",
+          "drawerMetaGeoRow"
+        ]
+      },
+      {
+        "id": "drawerMetaSectionTitle",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mb-1"
+        },
+        "children": [
+          "drawerMetaSectionIcon",
+          "drawerMetaSectionText"
+        ]
+      },
+      {
+        "id": "drawerMetaSectionIcon",
+        "component": "Icon",
+        "props": {
+          "name": "info",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "drawerMetaSectionText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "基本信息"
+        }
+      },
+      {
+        "id": "drawerMetaEventIdRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "drawerMetaEventIdLabel",
+          "drawerMetaEventIdValue"
+        ]
+      },
+      {
+        "id": "drawerMetaEventIdLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant w-20 shrink-0",
+          "value": "Event ID"
+        }
+      },
+      {
+        "id": "drawerMetaEventIdValue",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-mono font-medium text-primary",
+          "value": {
+            "path": "/metaInfo/eventId"
+          }
+        }
+      },
+      {
+        "id": "drawerMetaUserAgentRow",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "drawerMetaUserAgentLabel",
+          "drawerMetaUserAgentValue"
+        ]
+      },
+      {
+        "id": "drawerMetaUserAgentLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "User Agent"
+        }
+      },
+      {
+        "id": "drawerMetaUserAgentValue",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface break-all",
+          "value": {
+            "path": "/metaInfo/userAgent"
+          }
+        }
+      },
+      {
+        "id": "drawerMetaGeoRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "drawerMetaGeoIcon",
+          "drawerMetaGeoLabel",
+          "drawerMetaGeoValue"
+        ]
+      },
+      {
+        "id": "drawerMetaGeoIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/metaInfo/locationFlagIcon"
+          },
+          "color": "error",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "drawerMetaGeoLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant w-16 shrink-0",
+          "value": "Location"
+        }
+      },
+      {
+        "id": "drawerMetaGeoValue",
+        "component": "span",
+        "props": {
+          "className": "text-sm text-on-surface",
+          "value": {
+            "path": "/metaInfo/geoLocation"
+          }
+        }
+      },
+      {
+        "id": "drawerDivider1",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "drawerJsonSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3"
+        },
+        "children": [
+          "drawerJsonTitleRow",
+          "drawerJsonCode"
+        ]
+      },
+      {
+        "id": "drawerJsonTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "drawerJsonTitleIcon",
+          "drawerJsonTitleText"
+        ]
+      },
+      {
+        "id": "drawerJsonTitleIcon",
+        "component": "Icon",
+        "props": {
+          "name": "code-2",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "drawerJsonTitleText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "Raw Data"
+        }
+      },
+      {
+        "id": "drawerJsonCode",
+        "component": "div",
+        "props": {
+          "className": "bg-inverse-surface text-inverse-on-surface p-4 rounded-lg font-mono text-xs whitespace-pre-wrap overflow-x-auto leading-relaxed",
+          "value": {
+            "path": "/rawJsonData/codeContent"
+          }
+        }
+      },
+      {
+        "id": "drawerDivider2",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "drawerTimelineSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3"
+        },
+        "children": [
+          "drawerTimelineTitleRow",
+          "drawerTimeline"
+        ]
+      },
+      {
+        "id": "drawerTimelineTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "drawerTimelineTitleIcon",
+          "drawerTimelineTitleText"
+        ]
+      },
+      {
+        "id": "drawerTimelineTitleIcon",
+        "component": "Icon",
+        "props": {
+          "name": "clock",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "drawerTimelineTitleText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "Event Timeline"
+        }
+      },
+      {
+        "id": "drawerTimeline",
+        "component": "Timeline",
+        "props": {
+          "orientation": "vertical",
+          "variant": "outlined"
+        },
+        "children": {
+          "path": "/eventTimeline",
+          "componentId": "drawerTimelineItem"
+        }
+      },
+      {
+        "id": "drawerTimelineItem",
+        "component": "TimelineItem",
+        "props": {
+          "title": {
+            "path": "title"
+          },
+          "content": {
+            "path": "timestamp"
+          },
+          "icon": {
+            "path": "icon"
+          },
+          "color": {
+            "path": "dotColor"
+          }
+        }
+      },
+      {
+        "id": "drawerActionBtn",
+        "component": "Button",
+        "props": {
+          "value": "复制事件URL",
+          "icon": "copy",
+          "iconPlacement": "start",
+          "color": "primary",
+          "className": "w-full"
+        }
+      }
+    ]
+  },

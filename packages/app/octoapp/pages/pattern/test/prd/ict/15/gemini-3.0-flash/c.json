@@ -1,0 +1,1177 @@
+{
+    "state": {
+        "activeWorkMode": "workbench",
+        "modeTabs": [
+            {
+                "id": "workbench",
+                "label": "工作台",
+                "icon": "layout-dashboard"
+            },
+            {
+                "id": "screen",
+                "label": "大屏",
+                "icon": "monitor"
+            }
+        ],
+        "navMenus": [
+            "开局",
+            "资源中心",
+            "任务中心",
+            "系统"
+        ],
+        "sideMenu": [
+            {
+                "name": "站点配置",
+                "badge": "NEW",
+                "icon": "chevron-right"
+            },
+            {
+                "name": "VLAN",
+                "icon": "chevron-down"
+            },
+            {
+                "name": "SD-WAN",
+                "icon": "chevron-down"
+            },
+            {
+                "name": "全局配置",
+                "icon": "chevron-down",
+                "expanded": true,
+                "children": [
+                    {
+                        "name": "资源池管理",
+                        "active": false
+                    },
+                    {
+                        "name": "资源分组",
+                        "active": false
+                    },
+                    {
+                        "name": "模板管理",
+                        "active": true
+                    },
+                    {
+                        "name": "配置模式",
+                        "active": false
+                    }
+                ]
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "title": "网络配置"
+            },
+            {
+                "title": "全局配置"
+            },
+            {
+                "title": "模板管理"
+            }
+        ],
+        "activeSubTab": "pon",
+        "subTabs": [
+            {
+                "id": "global",
+                "label": "全局模板"
+            },
+            {
+                "id": "pon",
+                "label": "PON全局模板"
+            }
+        ],
+        "treeSearch": "",
+        "networkTree": [
+            {
+                "id": 1,
+                "label": "核心交换机区域_01",
+                "icon": "server"
+            },
+            {
+                "id": 2,
+                "label": "汇聚层_上海分部",
+                "icon": "git-branch"
+            },
+            {
+                "id": 3,
+                "label": "接入层_研发楼A",
+                "icon": "cpu"
+            },
+            {
+                "id": 4,
+                "label": "接入层_研发楼B",
+                "icon": "cpu"
+            },
+            {
+                "id": 5,
+                "label": "无线接入点_大厅",
+                "icon": "wifi"
+            },
+            {
+                "id": 6,
+                "label": "边缘计算节点_05",
+                "icon": "hard-drive"
+            },
+            {
+                "id": 7,
+                "label": "数据中心_A1区",
+                "icon": "database"
+            },
+            {
+                "id": 8,
+                "label": "数据中心_B2区",
+                "icon": "database"
+            },
+            {
+                "id": 9,
+                "label": "海外节点_新加坡",
+                "icon": "globe"
+            },
+            {
+                "id": 10,
+                "label": "海外节点_法兰克福",
+                "icon": "globe"
+            },
+            {
+                "id": 11,
+                "label": "访客网络隔离区",
+                "icon": "shield-check"
+            },
+            {
+                "id": 12,
+                "label": "IoT设备专用网",
+                "icon": "zap"
+            },
+            {
+                "id": 13,
+                "label": "测试环境_Alpha",
+                "icon": "test-tube"
+            },
+            {
+                "id": 14,
+                "label": "测试环境_Beta",
+                "icon": "test-tube"
+            },
+            {
+                "id": 15,
+                "label": "生产环境_核心",
+                "icon": "activity"
+            },
+            {
+                "id": 16,
+                "label": "备份链路_01",
+                "icon": "repeat"
+            },
+            {
+                "id": 17,
+                "label": "备份链路_02",
+                "icon": "repeat"
+            },
+            {
+                "id": 18,
+                "label": "监控流量镜像",
+                "icon": "eye"
+            },
+            {
+                "id": 19,
+                "label": "VoIP专用通道",
+                "icon": "phone"
+            },
+            {
+                "id": 20,
+                "label": "财务部专用VLAN",
+                "icon": "lock"
+            }
+        ],
+        "tableSearch": "",
+        "templates": [
+            {
+                "id": "T-001",
+                "name": "标准办公区模板_V1",
+                "desc": "适用于普通办公区域的PON接入配置",
+                "img": "https://picsum.photos/seed/tpl1/40/40",
+                "rf24": "已启用 (Channel 6)",
+                "rf5": "已启用 (Channel 149)",
+                "rf6": "未启用"
+            },
+            {
+                "id": "T-002",
+                "name": "高带宽会议室模板",
+                "desc": "针对视频会议优化的QoS配置",
+                "img": "https://picsum.photos/seed/tpl2/40/40",
+                "rf24": "已启用 (Channel 1)",
+                "rf5": "已启用 (Channel 44)",
+                "rf6": "已启用 (Channel 5)"
+            },
+            {
+                "id": "T-003",
+                "name": "访客隔离模板",
+                "desc": "仅提供互联网访问，禁止访问内部私有子网",
+                "img": "https://picsum.photos/seed/tpl3/40/40",
+                "rf24": "已启用 (Auto)",
+                "rf5": "未启用",
+                "rf6": "未启用"
+            },
+            {
+                "id": "T-004",
+                "name": "IoT设备专用模板",
+                "desc": "低功耗模式优化，支持大量小包并发连接",
+                "img": "https://picsum.photos/seed/tpl4/40/40",
+                "rf24": "已启用 (Channel 11)",
+                "rf5": "未启用",
+                "rf6": "未启用"
+            },
+            {
+                "id": "T-005",
+                "name": "研发核心区_加密模板",
+                "desc": "强制WPA3加密，开启MAC地址白名单校验",
+                "img": "https://picsum.photos/seed/tpl5/40/40",
+                "rf24": "已启用 (Channel 6)",
+                "rf5": "已启用 (Channel 161)",
+                "rf6": "已启用 (Channel 37)"
+            },
+            {
+                "id": "T-006",
+                "name": "仓库物流区模板",
+                "desc": "增强覆盖范围，优化漫游切换阈值",
+                "img": "https://picsum.photos/seed/tpl6/40/40",
+                "rf24": "已启用 (High Power)",
+                "rf5": "未启用",
+                "rf6": "未启用"
+            },
+            {
+                "id": "T-007",
+                "name": "实验室测试模板",
+                "desc": "全频段开启，用于干扰分析",
+                "img": "https://picsum.photos/seed/tpl7/40/40",
+                "rf24": "已启用",
+                "rf5": "已启用",
+                "rf6": "已启用"
+            },
+            {
+                "id": "T-008",
+                "name": "公共走廊模板",
+                "desc": "最小功率配置，仅满足基本连接需求",
+                "img": "https://picsum.photos/seed/tpl8/40/40",
+                "rf24": "已启用 (Low)",
+                "rf5": "未启用",
+                "rf6": "未启用"
+            },
+            {
+                "id": "T-009",
+                "name": "VIP客户区模板",
+                "desc": "专属SSID，无带宽限制",
+                "img": "https://picsum.photos/seed/tpl9/40/40",
+                "rf24": "已启用",
+                "rf5": "已启用",
+                "rf6": "已启用"
+            },
+            {
+                "id": "T-010",
+                "name": "备用应急模板",
+                "desc": "主链路故障时自动切换的最小化配置模板",
+                "img": "https://picsum.photos/seed/tpl10/40/40",
+                "rf24": "已启用",
+                "rf5": "已启用",
+                "rf6": "未启用"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "header",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "header",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": [
+                "brand",
+                "modeTabs"
+            ]
+        },
+        {
+            "id": "brand",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "brandLogo",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "Icon",
+            "props": {
+                "name": "network",
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "iMaster Nce"
+            }
+        },
+        {
+            "id": "modeTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeWorkMode"
+                },
+                "className": "h-full"
+            },
+            "children": {
+                "path": "/modeTabs",
+                "componentId": "modeTabItem"
+            }
+        },
+        {
+            "id": "modeTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                },
+                "icon": {
+                    "path": "icon"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "navMenus",
+                "userActions"
+            ]
+        },
+        {
+            "id": "navMenus",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navMenus",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface-variant cursor-pointer hover:text-primary",
+                "value": {
+                    "path": ""
+                }
+            }
+        },
+        {
+            "id": "userActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 border-l border-divider pl-6"
+            },
+            "children": [
+                "actionIcons",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "actionIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "iconSun",
+                "iconLang",
+                "iconHelp",
+                "iconUser"
+            ]
+        },
+        {
+            "id": "iconSun",
+            "component": "Icon",
+            "props": {
+                "name": "sun",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconLang",
+            "component": "Icon",
+            "props": {
+                "name": "languages",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconUser",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "userName",
+                "icon3d"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium text-on-surface",
+                "value": "Admin"
+            }
+        },
+        {
+            "id": "icon3d",
+            "component": "Icon",
+            "props": {
+                "name": "box",
+                "color": "primary",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex items-center gap-2 border-b border-divider"
+            },
+            "children": [
+                "sidebarIcon",
+                "sidebarTitle"
+            ]
+        },
+        {
+            "id": "sidebarIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings-2",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-on-surface",
+                "value": "网络配置"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto py-2"
+            },
+            "children": [
+                "menuItem1",
+                "menuItem2",
+                "menuItem3",
+                "menuItem4",
+                "subMenuContainer"
+            ]
+        },
+        {
+            "id": "menuItem1",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-3 flex items-center justify-between hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "menuItem1Left",
+                "menuItem1Right"
+            ]
+        },
+        {
+            "id": "menuItem1Left",
+            "component": "span",
+            "props": {
+                "value": "站点配置",
+                "className": "text-md"
+            }
+        },
+        {
+            "id": "menuItem1Right",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "newTag",
+                "arrowRight"
+            ]
+        },
+        {
+            "id": "newTag",
+            "component": "Tag",
+            "props": {
+                "value": "NEW",
+                "color": "error",
+                "size": "small"
+            }
+        },
+        {
+            "id": "arrowRight",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "menuItem2",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-3 flex items-center justify-between hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "menuItem2Text",
+                "arrowDown2"
+            ]
+        },
+        {
+            "id": "menuItem2Text",
+            "component": "span",
+            "props": {
+                "value": "VLAN"
+            }
+        },
+        {
+            "id": "arrowDown2",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "menuItem3",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-3 flex items-center justify-between hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "menuItem3Text",
+                "arrowDown3"
+            ]
+        },
+        {
+            "id": "menuItem3Text",
+            "component": "span",
+            "props": {
+                "value": "SD-WAN"
+            }
+        },
+        {
+            "id": "arrowDown3",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "menuItem4",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-3 flex items-center justify-between bg-primary-container text-primary"
+            },
+            "children": [
+                "menuItem4Text",
+                "arrowDown4"
+            ]
+        },
+        {
+            "id": "menuItem4Text",
+            "component": "span",
+            "props": {
+                "value": "全局配置",
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "arrowDown4",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "subMenuContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant"
+            },
+            "children": [
+                "subItem1",
+                "subItem2",
+                "subItem3",
+                "subItem4"
+            ]
+        },
+        {
+            "id": "subItem1",
+            "component": "div",
+            "props": {
+                "className": "pl-12 py-2 text-sm text-on-surface-variant hover:text-primary cursor-pointer",
+                "value": "资源池管理"
+            }
+        },
+        {
+            "id": "subItem2",
+            "component": "div",
+            "props": {
+                "className": "pl-12 py-2 text-sm text-on-surface-variant hover:text-primary cursor-pointer",
+                "value": "资源分组"
+            }
+        },
+        {
+            "id": "subItem3",
+            "component": "div",
+            "props": {
+                "className": "pl-12 py-2 text-sm text-primary font-bold bg-white/50 border-r-2 border-primary",
+                "value": "模板管理"
+            }
+        },
+        {
+            "id": "subItem4",
+            "component": "div",
+            "props": {
+                "className": "pl-12 py-2 text-sm text-on-surface-variant hover:text-primary cursor-pointer",
+                "value": "配置模式"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col p-gutter overflow-hidden gap-stack"
+            },
+            "children": [
+                "breadcrumb",
+                "subTabs",
+                "mainCard"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "subTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeSubTab"
+                },
+                "types": "line"
+            },
+            "children": {
+                "path": "/subTabs",
+                "componentId": "subTabItem"
+            }
+        },
+        {
+            "id": "subTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "mainCard",
+            "component": "div",
+            "props": {
+                "className": "flex-1 bg-surface-container-highest rounded-container shadow-card flex overflow-hidden"
+            },
+            "children": [
+                "treePanel",
+                "dividerLine",
+                "tablePanel"
+            ]
+        },
+        {
+            "id": "treePanel",
+            "component": "div",
+            "props": {
+                "className": "w-72 flex flex-col border-r border-divider"
+            },
+            "children": [
+                "treeSearchArea",
+                "treeList"
+            ]
+        },
+        {
+            "id": "treeSearchArea",
+            "component": "div",
+            "props": {
+                "className": "p-4"
+            },
+            "children": [
+                "treeSearchInput"
+            ]
+        },
+        {
+            "id": "treeSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/treeSearch"
+                },
+                "placeholder": "搜索网络节点...",
+                "prefix": "search",
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-2"
+            },
+            "children": [
+                "treeRoot",
+                "treeChildren"
+            ]
+        },
+        {
+            "id": "treeRoot",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-2 hover:bg-surface-variant rounded cursor-pointer"
+            },
+            "children": [
+                "treeRootLeft",
+                "treeRootIcon"
+            ]
+        },
+        {
+            "id": "treeRootLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "netIcon",
+                "netText"
+            ]
+        },
+        {
+            "id": "netIcon",
+            "component": "Icon",
+            "props": {
+                "name": "network",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "netText",
+            "component": "span",
+            "props": {
+                "value": "网络",
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "treeRootIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-up",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "treeChildren",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": {
+                "path": "/networkTree",
+                "componentId": "treeNode"
+            }
+        },
+        {
+            "id": "treeNode",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 pl-8 py-2 hover:bg-surface-variant rounded cursor-pointer text-sm text-on-surface-variant"
+            },
+            "children": [
+                "nodeIcon",
+                "nodeLabel"
+            ]
+        },
+        {
+            "id": "nodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "nodeLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "dividerLine",
+            "component": "div",
+            "props": {
+                "className": "w-[1px] bg-divider h-full"
+            }
+        },
+        {
+            "id": "tablePanel",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "toolbar",
+                "tableContainer"
+            ]
+        },
+        {
+            "id": "toolbar",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex items-center justify-between"
+            },
+            "children": [
+                "tableSearchInput",
+                "tableButtons"
+            ]
+        },
+        {
+            "id": "tableSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/tableSearch"
+                },
+                "placeholder": "搜索模板名称...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "tableButtons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "btnDelete",
+                "btnExport",
+                "btnImport",
+                "btnCreate"
+            ]
+        },
+        {
+            "id": "btnDelete",
+            "component": "Button",
+            "props": {
+                "value": "删除",
+                "icon": "trash-2",
+                "color": "danger",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnImport",
+            "component": "Button",
+            "props": {
+                "value": "导入",
+                "icon": "upload",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnCreate",
+            "component": "Button",
+            "props": {
+                "value": "创建",
+                "icon": "plus",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "tableContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-auto px-4"
+            },
+            "children": [
+                "mainTable"
+            ]
+        },
+        {
+            "id": "mainTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/templates"
+                },
+                "columns": [
+                    {
+                        "title": "模板名称",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "2.4G射频",
+                        "dataIndex": "rf24"
+                    },
+                    {
+                        "title": "5G射频",
+                        "dataIndex": "rf5"
+                    },
+                    {
+                        "title": "6G射频",
+                        "dataIndex": "rf6"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 180
+                    }
+                ]
+            },
+            "children": {
+                "path": "/templates",
+                "componentId": "mainTableRow"
+            }
+        },
+        {
+            "id": "mainTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellTemplateInfo",
+                "cellRf24",
+                "cellRf5",
+                "cellRf6",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellTemplateInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 py-2"
+            },
+            "children": [
+                "tplImg",
+                "tplTextContent"
+            ]
+        },
+        {
+            "id": "tplImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "img"
+                },
+                "className": "w-10 h-10 rounded-md object-cover border border-divider"
+            }
+        },
+        {
+            "id": "tplTextContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "tplName",
+                "tplDesc"
+            ]
+        },
+        {
+            "id": "tplName",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-on-surface",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "tplDesc",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "desc"
+                }
+            }
+        },
+        {
+            "id": "cellRf24",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "rf24"
+                }
+            }
+        },
+        {
+            "id": "cellRf5",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "rf5"
+                }
+            }
+        },
+        {
+            "id": "cellRf6",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "rf6"
+                }
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "actionEdit",
+                "actionCopy",
+                "actionExport"
+            ]
+        },
+        {
+            "id": "actionEdit",
+            "component": "span",
+            "props": {
+                "className": "text-primary cursor-pointer hover:underline text-sm",
+                "value": "编辑"
+            }
+        },
+        {
+            "id": "actionCopy",
+            "component": "span",
+            "props": {
+                "className": "text-primary cursor-pointer hover:underline text-sm",
+                "value": "复制"
+            }
+        },
+        {
+            "id": "actionExport",
+            "component": "span",
+            "props": {
+                "className": "text-primary cursor-pointer hover:underline text-sm",
+                "value": "导出"
+            }
+        }
+    ]
+}

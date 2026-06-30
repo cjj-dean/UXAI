@@ -1,0 +1,1809 @@
+{
+    "state": {
+        "breadcrumb": [
+            {
+                "label": "工作流管理",
+                "path": "/workflows"
+            },
+            {
+                "label": "销售线索自动化培育",
+                "path": "/workflow/edit/wf_8842"
+            }
+        ],
+        "workflowMeta": {
+            "workflowId": "wf_8842",
+            "workflowName": "销售线索自动化培育",
+            "lastSavedTime": "2 分钟前",
+            "currentStatus": "草稿",
+            "statusIcon": "CircleDot"
+        },
+        "actionButtons": [
+            {
+                "btnLabel": "撤销",
+                "btnIcon": "Undo2",
+                "btnType": "icon"
+            },
+            {
+                "btnLabel": "重做",
+                "btnIcon": "Redo2",
+                "btnType": "icon"
+            },
+            {
+                "btnLabel": "测试运行",
+                "btnIcon": "Play",
+                "btnType": "outline"
+            },
+            {
+                "btnLabel": "保存",
+                "btnIcon": "Save",
+                "btnType": "default"
+            },
+            {
+                "btnLabel": "发布上线",
+                "btnIcon": "Rocket",
+                "btnType": "primary"
+            }
+        ],
+        "userInfo": {
+            "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+            "userName": "Alex Chen"
+        },
+        "logo": {
+            "logoIcon": "Workflow",
+            "logoText": "FlowEngine"
+        },
+        "menuItems": [
+            {
+                "menuId": "nav_01",
+                "menuLabel": "控制台概览",
+                "menuIcon": "LayoutDashboard",
+                "isActive": false
+            },
+            {
+                "menuId": "nav_02",
+                "menuLabel": "工作流列表",
+                "menuIcon": "GitBranch",
+                "isActive": true
+            },
+            {
+                "menuId": "nav_03",
+                "menuLabel": "模板市场",
+                "menuIcon": "Store",
+                "isActive": false
+            },
+            {
+                "menuId": "nav_04",
+                "menuLabel": "连接器管理",
+                "menuIcon": "Puzzle",
+                "isActive": false
+            },
+            {
+                "menuId": "nav_05",
+                "menuLabel": "执行日志",
+                "menuIcon": "ScrollText",
+                "isActive": false
+            }
+        ],
+        "bottomMenuItems": [
+            {
+                "menuId": "nav_b01",
+                "menuLabel": "系统设置",
+                "menuIcon": "Settings"
+            },
+            {
+                "menuId": "nav_b02",
+                "menuLabel": "帮助文档",
+                "menuIcon": "LifeBuoy"
+            }
+        ],
+        "panelTitle": "组件库",
+        "searchPlaceholder": "搜索触发器、条件或动作...",
+        "searchValue": "",
+        "activeCollapseKey": [
+            "cat_triggers"
+        ],
+        "categories": [
+            {
+                "categoryId": "cat_triggers",
+                "categoryName": "触发器",
+                "categoryIcon": "Zap",
+                "components": [
+                    {
+                        "compId": "comp_01",
+                        "compName": "新销售线索",
+                        "compDesc": "当CRM产生新线索时触发",
+                        "compIcon": "UserPlus"
+                    },
+                    {
+                        "compId": "comp_02",
+                        "compName": "定时触发",
+                        "compDesc": "根据Cron表达式定时执行",
+                        "compIcon": "Clock"
+                    },
+                    {
+                        "compId": "comp_03",
+                        "compName": "邮件接收",
+                        "compDesc": "收到特定邮件时触发",
+                        "compIcon": "Mail"
+                    },
+                    {
+                        "compId": "comp_04",
+                        "compName": "Webhook",
+                        "compDesc": "接收外部HTTP请求触发",
+                        "compIcon": "Webhook"
+                    }
+                ]
+            },
+            {
+                "categoryId": "cat_logic",
+                "categoryName": "逻辑控制",
+                "categoryIcon": "GitBranch",
+                "components": [
+                    {
+                        "compId": "comp_05",
+                        "compName": "条件判断",
+                        "compDesc": "根据条件执行不同分支",
+                        "compIcon": "Split"
+                    },
+                    {
+                        "compId": "comp_06",
+                        "compName": "循环执行",
+                        "compDesc": "遍历列表数据重复操作",
+                        "compIcon": "Repeat"
+                    },
+                    {
+                        "compId": "comp_07",
+                        "compName": "数据筛选",
+                        "compDesc": "过滤不符合条件的数据",
+                        "compIcon": "Filter"
+                    }
+                ]
+            },
+            {
+                "categoryId": "cat_actions",
+                "categoryName": "动作执行",
+                "categoryIcon": "PlayCircle",
+                "components": [
+                    {
+                        "compId": "comp_08",
+                        "compName": "发送通知",
+                        "compDesc": "发送企业微信或邮件通知",
+                        "compIcon": "Bell"
+                    },
+                    {
+                        "compId": "comp_09",
+                        "compName": "更新记录",
+                        "compDesc": "更新数据库或CRM记录",
+                        "compIcon": "RefreshCcw"
+                    },
+                    {
+                        "compId": "comp_10",
+                        "compName": "发送HTTP请求",
+                        "compDesc": "向外部系统发送数据",
+                        "compIcon": "Send"
+                    },
+                    {
+                        "compId": "comp_11",
+                        "compName": "数据延迟",
+                        "compDesc": "暂停流程等待指定时间",
+                        "compIcon": "Timer"
+                    }
+                ]
+            }
+        ],
+        "canvasSettings": {
+            "backgroundStyle": "dots",
+            "scale": 0.9,
+            "position": [
+                150,
+                80
+            ]
+        },
+        "flowNodes": [
+            {
+                "nodeId": "node_trigger_01",
+                "nodeType": "trigger",
+                "nodeTitle": "新销售线索",
+                "nodeIcon": "Zap",
+                "position": {
+                    "x": 300,
+                    "y": 50
+                },
+                "status": "success"
+            },
+            {
+                "nodeId": "node_condition_01",
+                "nodeType": "condition",
+                "nodeTitle": "线索评分大于80",
+                "nodeIcon": "Split",
+                "position": {
+                    "x": 300,
+                    "y": 220
+                },
+                "status": "success"
+            },
+            {
+                "nodeId": "node_action_01",
+                "nodeType": "action",
+                "nodeTitle": "通知销售主管",
+                "nodeIcon": "Bell",
+                "position": {
+                    "x": 120,
+                    "y": 420
+                },
+                "status": "editing",
+                "isSelected": true
+            },
+            {
+                "nodeId": "node_action_02",
+                "nodeType": "action",
+                "nodeTitle": "更新线索池",
+                "nodeIcon": "RefreshCcw",
+                "position": {
+                    "x": 480,
+                    "y": 420
+                },
+                "status": "success"
+            }
+        ],
+        "flowEdges": [
+            {
+                "edgeId": "e1",
+                "sourceNodeId": "node_trigger_01",
+                "targetNodeId": "node_condition_01",
+                "sourceAnchor": "bottom",
+                "targetAnchor": "top"
+            },
+            {
+                "edgeId": "e2",
+                "sourceNodeId": "node_condition_01",
+                "targetNodeId": "node_action_01",
+                "sourceAnchor": "left",
+                "targetAnchor": "top",
+                "edgeLabel": "是",
+                "labelColor": "green"
+            },
+            {
+                "edgeId": "e3",
+                "sourceNodeId": "node_condition_01",
+                "targetNodeId": "node_action_02",
+                "sourceAnchor": "right",
+                "targetAnchor": "top",
+                "edgeLabel": "否",
+                "labelColor": "red"
+            }
+        ],
+        "zoomControls": {
+            "currentZoom": "90%",
+            "zoomInIcon": "ZoomIn",
+            "zoomOutIcon": "ZoomOut",
+            "fitViewIcon": "Maximize"
+        },
+        "cardTitle": "节点配置 - 通知销售主管",
+        "drawerIcon": "Bell",
+        "selectedNode": {
+            "nodeId": "node_action_01",
+            "nodeType": "action",
+            "nodeTitle": "通知销售主管"
+        },
+        "formConfig": {
+            "formFields": [
+                {
+                    "fieldId": "field_01",
+                    "label": "通知标题",
+                    "type": "text",
+                    "placeholder": "输入标题，可按 / 插入变量",
+                    "required": true,
+                    "value": "【高优线索】新客户 {{lead.name}} 提交了表单",
+                    "variableSupport": true
+                },
+                {
+                    "fieldId": "field_02",
+                    "label": "通知内容模板",
+                    "type": "select",
+                    "placeholder": "请选择消息模板",
+                    "required": true,
+                    "value": "tpl_sales_alert_01",
+                    "options": [
+                        {
+                            "value": "tpl_sales_alert_01",
+                            "label": "销售线索立即跟进模板"
+                        },
+                        {
+                            "value": "tpl_general_02",
+                            "label": "通用常规通知模板"
+                        },
+                        {
+                            "value": "tpl_digest_03",
+                            "label": "每日线索汇总模板"
+                        }
+                    ]
+                },
+                {
+                    "fieldId": "field_03",
+                    "label": "接收者",
+                    "type": "tags",
+                    "placeholder": "输入账号或按 / 选择角色",
+                    "required": true,
+                    "value": [
+                        {
+                            "tagId": "tag_01",
+                            "tagLabel": "张经理 (Sales_01)",
+                            "tagType": "user"
+                        },
+                        {
+                            "tagId": "tag_02",
+                            "tagLabel": "销售一组主管",
+                            "tagType": "role"
+                        }
+                    ]
+                }
+            ],
+            "bottomActions": {
+                "resetButton": {
+                    "btnLabel": "重置修改",
+                    "btnIcon": "RotateCcw"
+                },
+                "applyButton": {
+                    "btnLabel": "应用到节点",
+                    "btnIcon": "Check"
+                }
+            }
+        },
+        "notifyTitle": "【高优线索】新客户 {{lead.name}} 提交了表单",
+        "selectedTemplate": "tpl_sales_alert_01",
+        "templateOptions": [
+            {
+                "value": "tpl_sales_alert_01",
+                "label": "销售线索立即跟进模板"
+            },
+            {
+                "value": "tpl_general_02",
+                "label": "通用常规通知模板"
+            },
+            {
+                "value": "tpl_digest_03",
+                "label": "每日线索汇总模板"
+            }
+        ]
+    },
+    "rootId": "rootAppShell",
+    "elements": [
+        {
+            "id": "rootAppShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainArea"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-52 bg-surface-container-highest shadow-sm shrink-0 border-r border-divider"
+            },
+            "children": [
+                "sidebarLogoArea",
+                "sidebarMenuSection",
+                "sidebarSpacer",
+                "sidebarDividerEl",
+                "sidebarBottomSection"
+            ]
+        },
+        {
+            "id": "sidebarLogoArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2.5 px-5 py-4 border-b border-divider"
+            },
+            "children": [
+                "sidebarLogoIcon",
+                "sidebarLogoText"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "workflow",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-7 h-7"
+            }
+        },
+        {
+            "id": "sidebarLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/logo/logoText"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenuSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3 py-3"
+            },
+            "children": [
+                "sidebarItem1",
+                "sidebarItem2",
+                "sidebarItem3",
+                "sidebarItem4",
+                "sidebarItem5"
+            ]
+        },
+        {
+            "id": "sidebarItem1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarItem1Icon",
+                "sidebarItem1Label",
+                "sidebarItem1Id"
+            ]
+        },
+        {
+            "id": "sidebarItem1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "layout-dashboard",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarItem1Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/0/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarItem1Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/0/menuId"
+                },
+                "className": "text-xs text-on-surface-variant ml-auto opacity-50"
+            }
+        },
+        {
+            "id": "sidebarItem2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-medium cursor-pointer"
+            },
+            "children": [
+                "sidebarItem2Icon",
+                "sidebarItem2Label",
+                "sidebarItem2Active"
+            ]
+        },
+        {
+            "id": "sidebarItem2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "git-branch",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarItem2Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/1/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarItem2Active",
+            "component": "span",
+            "props": {
+                "value": "active",
+                "className": "text-xs text-primary ml-auto"
+            }
+        },
+        {
+            "id": "sidebarItem3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarItem3Icon",
+                "sidebarItem3Label"
+            ]
+        },
+        {
+            "id": "sidebarItem3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "store",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarItem3Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/2/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarItem4",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarItem4Icon",
+                "sidebarItem4Label"
+            ]
+        },
+        {
+            "id": "sidebarItem4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "puzzle",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarItem4Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/3/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarItem5",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarItem5Icon",
+                "sidebarItem5Label"
+            ]
+        },
+        {
+            "id": "sidebarItem5Icon",
+            "component": "Icon",
+            "props": {
+                "name": "scroll-text",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarItem5Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/menuItems/4/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarSpacer",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "sidebarDividerEl",
+            "component": "Divider",
+            "props": {
+                "className": "mx-3"
+            }
+        },
+        {
+            "id": "sidebarBottomSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3 py-3"
+            },
+            "children": [
+                "sidebarBottomItem1",
+                "sidebarBottomItem2"
+            ]
+        },
+        {
+            "id": "sidebarBottomItem1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarBottomItem1Icon",
+                "sidebarBottomItem1Label"
+            ]
+        },
+        {
+            "id": "sidebarBottomItem1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarBottomItem1Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/bottomMenuItems/0/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarBottomItem2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarBottomItem2Icon",
+                "sidebarBottomItem2Label"
+            ]
+        },
+        {
+            "id": "sidebarBottomItem2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "life-buoy",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarBottomItem2Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/bottomMenuItems/1/menuLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 min-w-0"
+            },
+            "children": [
+                "topNavbar",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "topNavbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between h-14 px-4 bg-surface-container-highest shadow-sm border-b border-divider shrink-0"
+            },
+            "children": [
+                "navLeftSection",
+                "navCenterSection",
+                "navRightSection"
+            ]
+        },
+        {
+            "id": "navLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "navBackBtn",
+                "navBreadcrumb"
+            ]
+        },
+        {
+            "id": "navBackBtn",
+            "component": "Button",
+            "props": {
+                "icon": "arrow-left",
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "工作流管理"
+                    },
+                    {
+                        "title": "销售线索自动化培育"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "navCenterSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5 text-on-surface-variant"
+            },
+            "children": [
+                "navClockIcon",
+                "navLastSavedText"
+            ]
+        },
+        {
+            "id": "navClockIcon",
+            "component": "Icon",
+            "props": {
+                "name": "clock",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "navLastSavedText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/workflowMeta/lastSavedTime"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "navRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navStatusTag",
+                "navUndoBtn",
+                "navRedoBtn",
+                "navDividerEl",
+                "navTestBtn",
+                "navSaveBtn",
+                "navPublishBtn",
+                "navAvatarImg"
+            ]
+        },
+        {
+            "id": "navStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/workflowMeta/currentStatus"
+                },
+                "icon": {
+                    "path": "/workflowMeta/statusIcon"
+                },
+                "color": "default",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "navUndoBtn",
+            "component": "Button",
+            "props": {
+                "icon": "undo-2",
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navRedoBtn",
+            "component": "Button",
+            "props": {
+                "icon": "redo-2",
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navDividerEl",
+            "component": "Divider",
+            "props": {
+                "orientation": "vertical",
+                "className": "h-5"
+            }
+        },
+        {
+            "id": "navTestBtn",
+            "component": "Button",
+            "props": {
+                "value": "测试运行",
+                "icon": "play",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navSaveBtn",
+            "component": "Button",
+            "props": {
+                "value": "保存",
+                "icon": "save",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navPublishBtn",
+            "component": "Button",
+            "props": {
+                "value": "发布上线",
+                "icon": "rocket",
+                "iconPlacement": "start",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userInfo/userAvatarImage"
+                },
+                "alt": {
+                    "path": "/userInfo/userName"
+                },
+                "className": "w-8 h-8 rounded-full ml-2 object-cover"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 min-h-0 overflow-hidden"
+            },
+            "children": [
+                "compLibPanel",
+                "canvasArea",
+                "configDrawer"
+            ]
+        },
+        {
+            "id": "compLibPanel",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-72 bg-surface-container-highest border-r border-divider shrink-0"
+            },
+            "children": [
+                "compLibHeader",
+                "compLibSearchInput",
+                "compLibCollapseWrap"
+            ]
+        },
+        {
+            "id": "compLibHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-4 py-3 border-b border-divider"
+            },
+            "children": [
+                "compLibTitle",
+                "compLibCloseIcon"
+            ]
+        },
+        {
+            "id": "compLibTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/panelTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "compLibCloseIcon",
+            "component": "Button",
+            "props": {
+                "icon": "panel-left-close",
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "compLibSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "mx-3 mt-3"
+            },
+            "children": []
+        },
+        {
+            "id": "compLibCollapseWrap",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-3 py-2"
+            },
+            "children": [
+                "compLibCollapse"
+            ]
+        },
+        {
+            "id": "compLibCollapse",
+            "component": "Collapse",
+            "props": {
+                "activeKey": {
+                    "path": "/activeCollapseKey"
+                },
+                "size": "small",
+                "expandIcon": "chevron-down",
+                "expandIconPlacement": "end"
+            },
+            "children": {
+                "path": "/categories",
+                "componentId": "compLibCatItem"
+            }
+        },
+        {
+            "id": "compLibCatItem",
+            "component": "CollapseItem",
+            "props": {
+                "key": {
+                    "path": "categoryId"
+                },
+                "label": {
+                    "path": "categoryName"
+                },
+                "content": {
+                    "componentId": "compLibCatContent"
+                }
+            }
+        },
+        {
+            "id": "compLibCatContent",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-2 pb-2"
+            },
+            "children": {
+                "path": "components",
+                "componentId": "compLibCard"
+            }
+        },
+        {
+            "id": "compLibCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center gap-1.5 p-3 rounded-lg bg-surface-container-highest shadow-card cursor-pointer hover:shadow-md transition-shadow"
+            },
+            "children": [
+                "compLibCardIcon",
+                "compLibCardName",
+                "compLibCardDesc"
+            ]
+        },
+        {
+            "id": "compLibCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "compIcon"
+                },
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "compLibCardName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "compName"
+                },
+                "className": "text-xs font-medium text-on-surface text-center"
+            }
+        },
+        {
+            "id": "compLibCardDesc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "compDesc"
+                },
+                "className": "text-xs text-on-surface-variant text-center leading-tight"
+            }
+        },
+        {
+            "id": "canvasArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative overflow-auto bg-surface-container-lowest"
+            },
+            "children": [
+                "canvasInner",
+                "canvasZoomBar"
+            ]
+        },
+        {
+            "id": "canvasInner",
+            "component": "div",
+            "props": {
+                "className": "relative w-[700px] h-[500px] mx-auto my-auto min-w-[700px] min-h-[500px]"
+            },
+            "children": [
+                "canvasConn1V",
+                "canvasTriggerNode",
+                "canvasConn2H",
+                "canvasConn2V",
+                "canvasEdgeLabelYes",
+                "canvasConn3H",
+                "canvasConn3V",
+                "canvasEdgeLabelNo",
+                "canvasConditionNode",
+                "canvasAction1Node",
+                "canvasAction2Node"
+            ]
+        },
+        {
+            "id": "canvasConn1V",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[349px] top-[78px] w-[2px] h-[72px] bg-on-surface-variant opacity-30"
+            }
+        },
+        {
+            "id": "canvasTriggerNode",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[250px] top-[20px] w-[200px] flex items-center gap-2.5 px-3 py-3 rounded-lg bg-white shadow-card"
+            },
+            "children": [
+                "canvasTriggerIc",
+                "canvasTriggerInfo",
+                "canvasTriggerDot"
+            ]
+        },
+        {
+            "id": "canvasTriggerIc",
+            "component": "Icon",
+            "props": {
+                "name": "zap",
+                "color": "warning",
+                "shape": "circle",
+                "className": "w-8 h-8 shrink-0"
+            }
+        },
+        {
+            "id": "canvasTriggerInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "canvasTriggerTitle",
+                "canvasTriggerType"
+            ]
+        },
+        {
+            "id": "canvasTriggerTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/0/nodeTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "canvasTriggerType",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/0/nodeType"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "canvasTriggerDot",
+            "component": "div",
+            "props": {
+                "className": "w-2.5 h-2.5 rounded-full bg-success ml-auto shrink-0"
+            }
+        },
+        {
+            "id": "canvasConn2H",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[130px] top-[178px] w-[122px] h-[2px] bg-success"
+            }
+        },
+        {
+            "id": "canvasConn2V",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[129px] top-[178px] w-[2px] h-[162px] bg-success"
+            }
+        },
+        {
+            "id": "canvasEdgeLabelYes",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[145px] top-[165px] px-1.5 py-0.5 rounded bg-success-container text-xs font-medium text-success"
+            },
+            "children": [
+                "canvasEdgeLabelYesText"
+            ]
+        },
+        "canvasEdgeLabelYesText",
+        {
+            "id": "canvasEdgeLabelYesText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowEdges/1/edgeLabel"
+                }
+            }
+        },
+        {
+            "id": "canvasConn3H",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[450px] top-[178px] w-[122px] h-[2px] bg-error"
+            }
+        },
+        {
+            "id": "canvasConn3V",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[570px] top-[178px] w-[2px] h-[162px] bg-error"
+            }
+        },
+        {
+            "id": "canvasEdgeLabelNo",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[465px] top-[165px] px-1.5 py-0.5 rounded bg-error-container text-xs font-medium text-error"
+            },
+            "children": [
+                "canvasEdgeLabelNoText"
+            ]
+        },
+        "canvasEdgeLabelNoText",
+        {
+            "id": "canvasEdgeLabelNoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowEdges/2/edgeLabel"
+                }
+            }
+        },
+        {
+            "id": "canvasConditionNode",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[250px] top-[150px] w-[200px] flex items-center gap-2.5 px-3 py-3 rounded-lg bg-white shadow-card"
+            },
+            "children": [
+                "canvasCondIc",
+                "canvasCondInfo",
+                "canvasCondDot"
+            ]
+        },
+        {
+            "id": "canvasCondIc",
+            "component": "Icon",
+            "props": {
+                "name": "split",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-8 h-8 shrink-0"
+            }
+        },
+        {
+            "id": "canvasCondInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "canvasCondTitle",
+                "canvasCondType"
+            ]
+        },
+        {
+            "id": "canvasCondTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/1/nodeTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "canvasCondType",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/1/nodeType"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "canvasCondDot",
+            "component": "div",
+            "props": {
+                "className": "w-2.5 h-2.5 rounded-full bg-success ml-auto shrink-0"
+            }
+        },
+        {
+            "id": "canvasAction1Node",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[30px] top-[340px] w-[200px] flex items-center gap-2.5 px-3 py-3 rounded-lg bg-primary-container shadow-card ring-2 ring-primary"
+            },
+            "children": [
+                "canvasAct1Ic",
+                "canvasAct1Info",
+                "canvasAct1Dot"
+            ]
+        },
+        {
+            "id": "canvasAct1Ic",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-8 h-8 shrink-0"
+            }
+        },
+        {
+            "id": "canvasAct1Info",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "canvasAct1Title",
+                "canvasAct1Type"
+            ]
+        },
+        {
+            "id": "canvasAct1Title",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/2/nodeTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "canvasAct1Type",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-primary",
+                "value": {
+                    "path": "/flowNodes/2/nodeType"
+                }
+            }
+        },
+        {
+            "id": "canvasAct1Dot",
+            "component": "div",
+            "props": {
+                "className": "w-2.5 h-2.5 rounded-full bg-primary ml-auto shrink-0 animate-pulse"
+            }
+        },
+        {
+            "id": "canvasAction2Node",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[470px] top-[340px] w-[200px] flex items-center gap-2.5 px-3 py-3 rounded-lg bg-white shadow-card"
+            },
+            "children": [
+                "canvasAct2Ic",
+                "canvasAct2Info",
+                "canvasAct2Dot"
+            ]
+        },
+        {
+            "id": "canvasAct2Ic",
+            "component": "Icon",
+            "props": {
+                "name": "refresh-ccw",
+                "color": "success",
+                "shape": "circle",
+                "className": "w-8 h-8 shrink-0"
+            }
+        },
+        {
+            "id": "canvasAct2Info",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "canvasAct2Title",
+                "canvasAct2Type"
+            ]
+        },
+        {
+            "id": "canvasAct2Title",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/3/nodeTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "canvasAct2Type",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/flowNodes/3/nodeType"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "canvasAct2Dot",
+            "component": "div",
+            "props": {
+                "className": "w-2.5 h-2.5 rounded-full bg-success ml-auto shrink-0"
+            }
+        },
+        {
+            "id": "canvasZoomBar",
+            "component": "div",
+            "props": {
+                "className": "absolute bottom-4 right-4 flex items-center gap-1 bg-surface-container-highest shadow-card rounded-lg px-2 py-1.5"
+            },
+            "children": [
+                "canvasZoomOutBtn",
+                "canvasZoomText",
+                "canvasZoomInBtn",
+                "canvasZoomFitBtn"
+            ]
+        },
+        {
+            "id": "canvasZoomOutBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/zoomControls/zoomOutIcon"
+                },
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "canvasZoomText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/zoomControls/currentZoom"
+                },
+                "className": "text-xs text-on-surface-variant px-1 min-w-[32px] text-center"
+            }
+        },
+        {
+            "id": "canvasZoomInBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/zoomControls/zoomInIcon"
+                },
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "canvasZoomFitBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/zoomControls/fitViewIcon"
+                },
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "configDrawer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-96 bg-surface-container-highest shadow-lg border-l border-divider shrink-0"
+            },
+            "children": [
+                "drawerHeader",
+                "drawerDivider",
+                "drawerBody",
+                "drawerFooter"
+            ]
+        },
+        {
+            "id": "drawerHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-5 py-4"
+            },
+            "children": [
+                "drawerIc",
+                "drawerTitleArea",
+                "drawerCloseBtn"
+            ]
+        },
+        {
+            "id": "drawerIc",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/drawerIcon"
+                },
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-8 h-8 shrink-0"
+            }
+        },
+        {
+            "id": "drawerTitleArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0 flex-1"
+            },
+            "children": [
+                "drawerTitle",
+                "drawerSubtitle"
+            ]
+        },
+        {
+            "id": "drawerTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/cardTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "drawerSubtitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/selectedNode/nodeId"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "drawerCloseBtn",
+            "component": "Button",
+            "props": {
+                "icon": "x",
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "drawerDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "drawerBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-5 py-4 flex flex-col gap-5"
+            },
+            "children": [
+                "drawerField1",
+                "drawerField2",
+                "drawerField3"
+            ]
+        },
+        {
+            "id": "drawerField1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "drawerField1LabelRow",
+                "drawerField1Hint",
+                "drawerField1Input"
+            ]
+        },
+        {
+            "id": "drawerField1LabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "drawerField1Label",
+                "drawerField1Req"
+            ]
+        },
+        {
+            "id": "drawerField1Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/formConfig/formFields/0/label"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "drawerField1Req",
+            "component": "span",
+            "props": {
+                "value": "*",
+                "className": "text-error text-sm"
+            }
+        },
+        {
+            "id": "drawerField1Hint",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-xs text-on-surface-variant"
+            },
+            "children": [
+                "drawerField1HintIcon",
+                "drawerField1HintText"
+            ]
+        },
+        "drawerField1HintIcon",
+        {
+            "id": "drawerField1HintIcon",
+            "component": "Icon",
+            "props": {
+                "name": "code",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "drawerField1HintText",
+            "component": "span",
+            "props": {
+                "value": "支持使用 {{变量名}} 插入动态内容"
+            }
+        },
+        {
+            "id": "drawerField1Input",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/notifyTitle"
+                },
+                "placeholder": {
+                    "path": "/formConfig/formFields/0/placeholder"
+                },
+                "suffix": "brackets",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "drawerField2",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "drawerField2LabelRow",
+                "drawerField2Select"
+            ]
+        },
+        {
+            "id": "drawerField2LabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "drawerField2Label",
+                "drawerField2Req"
+            ]
+        },
+        {
+            "id": "drawerField2Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/formConfig/formFields/1/label"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "drawerField2Req",
+            "component": "span",
+            "props": {
+                "value": "*",
+                "className": "text-error text-sm"
+            }
+        },
+        {
+            "id": "drawerField2Select",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/selectedTemplate"
+                },
+                "options": {
+                    "path": "/templateOptions"
+                },
+                "placeholder": {
+                    "path": "/formConfig/formFields/1/placeholder"
+                },
+                "showSearch": true,
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "drawerField3",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "drawerField3LabelRow",
+                "drawerField3TagsWrap",
+                "drawerField3Input"
+            ]
+        },
+        {
+            "id": "drawerField3LabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "drawerField3Label",
+                "drawerField3Req"
+            ]
+        },
+        {
+            "id": "drawerField3Label",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/formConfig/formFields/2/label"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "drawerField3Req",
+            "component": "span",
+            "props": {
+                "value": "*",
+                "className": "text-error text-sm"
+            }
+        },
+        {
+            "id": "drawerField3TagsWrap",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-2 p-2 rounded-lg border border-base bg-surface-container-lowest"
+            },
+            "children": [
+                "drawerField3Tag1",
+                "drawerField3Tag2"
+            ]
+        },
+        {
+            "id": "drawerField3Tag1",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/formConfig/formFields/2/value/0/tagLabel"
+                },
+                "closable": true,
+                "closeIcon": "x",
+                "color": "primary",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "drawerField3Tag2",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/formConfig/formFields/2/value/1/tagLabel"
+                },
+                "closable": true,
+                "closeIcon": "x",
+                "color": "warning",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "drawerField3Input",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/formConfig/formFields/2/placeholder"
+                },
+                "prefix": "user-plus",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "drawerFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-5 py-4 border-t border-divider"
+            },
+            "children": [
+                "drawerResetBtn",
+                "drawerApplyBtn"
+            ]
+        },
+        {
+            "id": "drawerResetBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/formConfig/bottomActions/resetButton/btnLabel"
+                },
+                "icon": {
+                    "path": "/formConfig/bottomActions/resetButton/btnIcon"
+                },
+                "iconPlacement": "start",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "drawerApplyBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/formConfig/bottomActions/applyButton/btnLabel"
+                },
+                "icon": {
+                    "path": "/formConfig/bottomActions/applyButton/btnIcon"
+                },
+                "iconPlacement": "start",
+                "color": "primary",
+                "size": "medium"
+            }
+        }
+    ]
+}

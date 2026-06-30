@@ -1,0 +1,1092 @@
+{
+    "state": {
+        "searchQuery": "",
+        "logoUrl": "https://picsum.photos/seed/llm-logo/200/200",
+        "currentUser": {
+            "name": "路政坤",
+            "role": "管理员",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "menuItems": [
+            {
+                "title": "评测总览",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "title": "评测集",
+                "icon": "database",
+                "active": false
+            },
+            {
+                "title": "评测工作台",
+                "icon": "terminal",
+                "active": true,
+                "children": [
+                    {
+                        "title": "部署任务",
+                        "active": false
+                    },
+                    {
+                        "title": "人工评测",
+                        "active": false
+                    },
+                    {
+                        "title": "研发评测",
+                        "active": true
+                    },
+                    {
+                        "title": "版本评测",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "title": "平台看板",
+                "icon": "bar-chart-3",
+                "active": false
+            },
+            {
+                "title": "分析实验室",
+                "icon": "flask-conical",
+                "active": false
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "title": "评测工作台"
+            },
+            {
+                "title": "研发评测"
+            },
+            {
+                "title": "评测任务组详情"
+            },
+            {
+                "title": "子任务详情"
+            }
+        ],
+        "taskInfo": {
+            "id": "TASK-20231229-0718B",
+            "time": "2023-12-29 14:30:05",
+            "creator": "路政坤",
+            "title": "1229_盘古718B_指令微调_性能评测_V2"
+        },
+        "workflowSteps": [
+            {
+                "title": "资源部署",
+                "desc": "耗时 2m 15s",
+                "status": "finish"
+            },
+            {
+                "title": "模型推理",
+                "desc": "1000/1000 样本",
+                "status": "finish"
+            },
+            {
+                "title": "自动评分",
+                "desc": "Exact Match 已完成",
+                "status": "finish"
+            }
+        ],
+        "processMetrics": [
+            {
+                "label": "样本总数与进度",
+                "value": "1,000",
+                "progress": 100,
+                "status": "已全部完成",
+                "icon": "files"
+            },
+            {
+                "label": "推理成功率",
+                "value": "99.2%",
+                "sub": "成功: 992 | 失败: 8",
+                "icon": "check-circle-2",
+                "color": "success"
+            },
+            {
+                "label": "总耗时 (Latency)",
+                "value": "142.5s",
+                "sub": "P90: 185ms | P95: 210ms | P99: 350ms",
+                "icon": "timer"
+            },
+            {
+                "label": "平均 Tokens",
+                "value": "842",
+                "sub": "Input: 312 | Output: 530",
+                "icon": "cpu"
+            }
+        ],
+        "scoreData": {
+            "mainScore": "87.45",
+            "metric": "Exact Match (准确匹配)",
+            "dataset": "C-Eval_Hard_Set_V4",
+            "model": "Pangu-718B-Instruct",
+            "temp": "0.7",
+            "topP": "0.95",
+            "maxTokens": "2048"
+        },
+        "summaryTable": [
+            {
+                "subName": "数学逻辑推理_初级",
+                "count": 200,
+                "score": "92.50",
+                "status": "Excellent"
+            },
+            {
+                "subName": "代码生成_Python",
+                "count": 150,
+                "score": "88.20",
+                "status": "Good"
+            },
+            {
+                "subName": "常识问答_中文",
+                "count": 300,
+                "score": "85.15",
+                "status": "Good"
+            },
+            {
+                "subName": "文本摘要_新闻类",
+                "count": 100,
+                "score": "79.40",
+                "status": "Average"
+            },
+            {
+                "subName": "情感分析_多语言",
+                "count": 250,
+                "score": "91.10",
+                "status": "Excellent"
+            },
+            {
+                "subName": "法律条文理解",
+                "count": 120,
+                "score": "82.30",
+                "status": "Good"
+            },
+            {
+                "subName": "医疗问诊模拟",
+                "count": 80,
+                "score": "76.80",
+                "status": "Average"
+            },
+            {
+                "subName": "逻辑谬误识别",
+                "count": 140,
+                "score": "89.90",
+                "status": "Good"
+            },
+            {
+                "subName": "SQL查询生成",
+                "count": 160,
+                "score": "94.20",
+                "status": "Excellent"
+            },
+            {
+                "subName": "诗歌创作与鉴赏",
+                "count": 50,
+                "score": "65.40",
+                "status": "Poor"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "navLogoArea",
+                "navMenuArea",
+                "navUserArea"
+            ]
+        },
+        {
+            "id": "navLogoArea",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-3 border-b border-divider"
+            },
+            "children": [
+                "navLogoImg",
+                "navLogoText"
+            ]
+        },
+        {
+            "id": "navLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/logoUrl"
+                },
+                "className": "w-8 h-8 rounded-md"
+            }
+        },
+        {
+            "id": "navLogoText",
+            "component": "span",
+            "props": {
+                "value": "LLMDevOps",
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "navMenuArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inline"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "navMenuLabel",
+                "navSubMenuArea"
+            ]
+        },
+        {
+            "id": "navMenuLabel",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-action transition-colors cursor-pointer mb-1"
+            },
+            "children": [
+                "navMenuIcon",
+                "navMenuTitle"
+            ]
+        },
+        {
+            "id": "navMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navMenuTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-md font-medium"
+            }
+        },
+        {
+            "id": "navSubMenuArea",
+            "component": "div",
+            "props": {
+                "className": "ml-8 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "children",
+                "componentId": "navSubItem"
+            }
+        },
+        {
+            "id": "navSubItem",
+            "component": "div",
+            "props": {
+                "className": "p-2 text-sm rounded-action cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "navSubText"
+            ]
+        },
+        {
+            "id": "navSubText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navUserArea",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-t border-divider flex items-center gap-3"
+            },
+            "children": [
+                "navUserAvatar",
+                "navUserInfo"
+            ]
+        },
+        {
+            "id": "navUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "navUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "navUserName",
+                "navUserRole"
+            ]
+        },
+        {
+            "id": "navUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-md font-bold"
+            }
+        },
+        {
+            "id": "navUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center px-gutter justify-between"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchQuery"
+                },
+                "placeholder": "搜索评测任务、模型或数据集...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerNotifyIcon",
+                "headerHelpIcon"
+            ]
+        },
+        {
+            "id": "headerNotifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter space-y-gutter"
+            },
+            "children": [
+                "taskHeader",
+                "taskTitleSection",
+                "workflowStepsSection",
+                "processAnalysisSection",
+                "scoreOverviewSection",
+                "summaryTableSection"
+            ]
+        },
+        {
+            "id": "taskHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "breadcrumbComp",
+                "taskMetaRow"
+            ]
+        },
+        {
+            "id": "breadcrumbComp",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "taskMetaRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6 text-sm text-on-surface-variant"
+            },
+            "children": [
+                "metaTaskId",
+                "metaTaskTime",
+                "metaTaskCreator"
+            ]
+        },
+        {
+            "id": "metaTaskId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskInfo/id"
+                }
+            }
+        },
+        {
+            "id": "metaTaskTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskInfo/time"
+                }
+            }
+        },
+        {
+            "id": "metaTaskCreator",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskInfo/creator"
+                }
+            }
+        },
+        {
+            "id": "taskTitleSection",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "taskTitleText",
+                "taskActions"
+            ]
+        },
+        {
+            "id": "taskTitleText",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/taskInfo/title"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "taskActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "btnSettings",
+                "btnClone",
+                "btnDelete"
+            ]
+        },
+        {
+            "id": "btnSettings",
+            "component": "Button",
+            "props": {
+                "value": "评价设置",
+                "icon": "settings"
+            }
+        },
+        {
+            "id": "btnClone",
+            "component": "Button",
+            "props": {
+                "value": "克隆",
+                "icon": "copy"
+            }
+        },
+        {
+            "id": "btnDelete",
+            "component": "Button",
+            "props": {
+                "value": "删除",
+                "color": "danger",
+                "icon": "trash-2"
+            }
+        },
+        {
+            "id": "workflowStepsSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "stepsComp"
+            ]
+        },
+        {
+            "id": "stepsComp",
+            "component": "Steps",
+            "props": {
+                "current": 2,
+                "className": "max-w-4xl"
+            },
+            "children": {
+                "path": "/workflowSteps",
+                "componentId": "stepItemComp"
+            }
+        },
+        {
+            "id": "stepItemComp",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "content": {
+                    "path": "desc"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "processAnalysisSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "processTitle",
+                "processGrid"
+            ]
+        },
+        {
+            "id": "processTitle",
+            "component": "h3",
+            "props": {
+                "value": "过程分析",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "processGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/processMetrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "metricHeader",
+                "metricValue",
+                "metricFooter"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-on-surface-variant"
+            },
+            "children": [
+                "metricIcon",
+                "metricLabel"
+            ]
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "metricLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-primary"
+            }
+        },
+        {
+            "id": "metricFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-2"
+            },
+            "children": [
+                "metricSubText",
+                "metricProgress"
+            ]
+        },
+        {
+            "id": "metricSubText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "sub"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "progress"
+                },
+                "size": "small",
+                "className": "mt-1"
+            }
+        },
+        {
+            "id": "scoreOverviewSection",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": [
+                "scoreMainCard",
+                "scoreConfigCard",
+                "scoreLabCard"
+            ]
+        },
+        {
+            "id": "scoreMainCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col items-center justify-center text-center"
+            },
+            "children": [
+                "scoreMetricName",
+                "scoreMainValue",
+                "scoreExportBtn"
+            ]
+        },
+        {
+            "id": "scoreMetricName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/metric"
+                },
+                "className": "text-sm text-on-surface-variant mb-2"
+            }
+        },
+        {
+            "id": "scoreMainValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/mainScore"
+                },
+                "className": "text-5xl font-bold text-success"
+            }
+        },
+        {
+            "id": "scoreExportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出报告",
+                "icon": "download",
+                "className": "mt-4",
+                "size": "small"
+            }
+        },
+        {
+            "id": "scoreConfigCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "configTitle",
+                "configGrid"
+            ]
+        },
+        {
+            "id": "configTitle",
+            "component": "span",
+            "props": {
+                "value": "评测配置",
+                "className": "text-sm font-bold block mb-4"
+            }
+        },
+        {
+            "id": "configGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-4"
+            },
+            "children": [
+                "configItem1",
+                "configItem2",
+                "configItem3",
+                "configItem4"
+            ]
+        },
+        {
+            "id": "configItem1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "confLabel1",
+                "confVal1"
+            ]
+        },
+        {
+            "id": "confLabel1",
+            "component": "span",
+            "props": {
+                "value": "评测集",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "confVal1",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/dataset"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "configItem2",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "confLabel2",
+                "confVal2"
+            ]
+        },
+        {
+            "id": "confLabel2",
+            "component": "span",
+            "props": {
+                "value": "模型",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "confVal2",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/model"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "configItem3",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "confLabel3",
+                "confVal3"
+            ]
+        },
+        {
+            "id": "confLabel3",
+            "component": "span",
+            "props": {
+                "value": "Temperature",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "confVal3",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/temp"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "configItem4",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "confLabel4",
+                "confVal4"
+            ]
+        },
+        {
+            "id": "confLabel4",
+            "component": "span",
+            "props": {
+                "value": "Max Tokens",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "confVal4",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/scoreData/maxTokens"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "scoreLabCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 bg-primary text-on-primary p-inset rounded-container shadow-card flex flex-col justify-between"
+            },
+            "children": [
+                "labHeader",
+                "labFooter"
+            ]
+        },
+        {
+            "id": "labHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "labTitle",
+                "labDesc"
+            ]
+        },
+        {
+            "id": "labTitle",
+            "component": "span",
+            "props": {
+                "value": "分析实验室",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "labDesc",
+            "component": "span",
+            "props": {
+                "value": "基于Badcase的语义聚类分析与归因",
+                "className": "text-xs opacity-80"
+            }
+        },
+        {
+            "id": "labFooter",
+            "component": "Button",
+            "props": {
+                "value": "深度分析",
+                "icon": "zap",
+                "className": "w-full bg-white text-primary border-none"
+            }
+        },
+        {
+            "id": "summaryTableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "summaryTitle",
+                "summaryTableComp"
+            ]
+        },
+        {
+            "id": "summaryTitle",
+            "component": "h3",
+            "props": {
+                "value": "评分结果汇总",
+                "className": "text-lg font-bold mb-4"
+            }
+        },
+        {
+            "id": "summaryTableComp",
+            "component": "Table",
+            "props": {
+                "rowKey": "subName",
+                "dataSource": {
+                    "path": "/summaryTable"
+                },
+                "columns": [
+                    {
+                        "title": "子评测集名称",
+                        "dataIndex": "subName"
+                    },
+                    {
+                        "title": "样本数量",
+                        "dataIndex": "count"
+                    },
+                    {
+                        "title": "Exact Match 评分",
+                        "dataIndex": "score"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/summaryTable",
+                "componentId": "summaryTableRow"
+            }
+        },
+        {
+            "id": "summaryTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellSubName",
+                "cellCount",
+                "cellScore",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellSubName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subName"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellCount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "count"
+                }
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "font-bold text-primary"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "success"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "value": "详情",
+                "size": "small"
+            }
+        }
+    ]
+}

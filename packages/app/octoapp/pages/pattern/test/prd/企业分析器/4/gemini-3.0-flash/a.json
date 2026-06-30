@@ -1,0 +1,939 @@
+{
+    "state": {
+        "ghSelectedMenu": [
+            "health"
+        ],
+        "ghMenuItems": [
+            {
+                "title": "健康看板",
+                "key": "health",
+                "icon": "activity"
+            },
+            {
+                "title": "网络拓扑",
+                "key": "topology",
+                "icon": "network"
+            },
+            {
+                "title": "智能运维",
+                "key": "ops",
+                "icon": "cpu"
+            }
+        ],
+        "ghUser": {
+            "name": "Admin",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "snSelectedKeys": [
+            "overview"
+        ],
+        "snNavItems": [
+            {
+                "title": "概览",
+                "key": "overview"
+            },
+            {
+                "title": "会话详情",
+                "key": "session"
+            },
+            {
+                "title": "随流分析配置",
+                "key": "config"
+            }
+        ],
+        "chActiveTaskKey": "multi",
+        "chTaskTabs": [
+            {
+                "label": "多机任务",
+                "key": "multi",
+                "active": true
+            },
+            {
+                "label": "单机任务",
+                "key": "single",
+                "active": false
+            }
+        ],
+        "mgr1TaskDistribution": {
+            "title": "任务分布",
+            "centerValue": "116",
+            "centerLabel": "会话指标",
+            "chartData": [
+                {
+                    "name": "正常",
+                    "value": 92
+                },
+                {
+                    "name": "时延超阈值",
+                    "value": 8
+                },
+                {
+                    "name": "丢包",
+                    "value": 8
+                },
+                {
+                    "name": "丢包或时延超阈值",
+                    "value": 8
+                }
+            ],
+            "colors": [
+                "#09AA71",
+                "#FCC800",
+                "#E02128",
+                "#8B5CF6"
+            ]
+        },
+        "mgr1DeviceLoss": {
+            "title": "Top10丢包设备分布（单节点）",
+            "yAxisLabel": "丢包数",
+            "chartData": [
+                {
+                    "deviceName": "BR-01",
+                    "lossCount": 385
+                },
+                {
+                    "deviceName": "Leaf-01",
+                    "lossCount": 320
+                },
+                {
+                    "deviceName": "Leaf-02",
+                    "lossCount": 280
+                },
+                {
+                    "deviceName": "Leaf-03",
+                    "lossCount": 210
+                },
+                {
+                    "deviceName": "Leaf-04",
+                    "lossCount": 180
+                },
+                {
+                    "deviceName": "Leaf-05",
+                    "lossCount": 150
+                },
+                {
+                    "deviceName": "Leaf-06",
+                    "lossCount": 120
+                },
+                {
+                    "deviceName": "Leaf-07",
+                    "lossCount": 90
+                },
+                {
+                    "deviceName": "Leaf-08",
+                    "lossCount": 60
+                },
+                {
+                    "deviceName": "Leaf-09",
+                    "lossCount": 45
+                }
+            ]
+        },
+        "mgr1LinkLoss": {
+            "title": "Top10丢包设备分布（链路）",
+            "yAxisLabel": "丢包数",
+            "chartData": [
+                {
+                    "linkName": "Leaf_core1",
+                    "lossCount": 390
+                },
+                {
+                    "linkName": "Leaf_core2",
+                    "lossCount": 240
+                },
+                {
+                    "linkName": "Spine_Leaf1",
+                    "lossCount": 180
+                },
+                {
+                    "linkName": "Spine_Leaf2",
+                    "lossCount": 110
+                }
+            ]
+        },
+        "mgr2SourceIpLoss": {
+            "cardTitle": "Top10源IP丢包分布",
+            "chartData": [
+                {
+                    "name": "192.168.10.124",
+                    "value": 4120
+                },
+                {
+                    "name": "192.168.1.55",
+                    "value": 3850
+                },
+                {
+                    "name": "10.0.4.21",
+                    "value": 3200
+                },
+                {
+                    "name": "172.16.8.99",
+                    "value": 2900
+                },
+                {
+                    "name": "192.168.20.12",
+                    "value": 2450
+                },
+                {
+                    "name": "10.10.5.6",
+                    "value": 1800
+                },
+                {
+                    "name": "192.168.100.4",
+                    "value": 1400
+                },
+                {
+                    "name": "172.20.1.45",
+                    "value": 980
+                },
+                {
+                    "name": "192.168.5.8",
+                    "value": 720
+                },
+                {
+                    "name": "10.0.0.15",
+                    "value": 510
+                }
+            ]
+        },
+        "mgr2DestIpLoss": {
+            "cardTitle": "Top10目的IP丢包分布",
+            "chartData": [
+                {
+                    "name": "10.255.0.1",
+                    "value": 4050
+                },
+                {
+                    "name": "192.168.50.22",
+                    "value": 3700
+                },
+                {
+                    "name": "172.18.4.10",
+                    "value": 3100
+                },
+                {
+                    "name": "10.1.1.5",
+                    "value": 2850
+                },
+                {
+                    "name": "192.168.30.88",
+                    "value": 2300
+                },
+                {
+                    "name": "10.20.30.40",
+                    "value": 1950
+                },
+                {
+                    "name": "172.16.0.100",
+                    "value": 1550
+                },
+                {
+                    "name": "192.168.1.1",
+                    "value": 1100
+                },
+                {
+                    "name": "10.5.5.5",
+                    "value": 800
+                },
+                {
+                    "name": "192.168.9.9",
+                    "value": 490
+                }
+            ]
+        },
+        "mgr2LatencySession": {
+            "cardTitle": "Top10时延会话",
+            "chartData": [
+                {
+                    "name": "Session_ID_8842",
+                    "value": 4200
+                },
+                {
+                    "name": "Session_ID_1204",
+                    "value": 3900
+                },
+                {
+                    "name": "Session_ID_5521",
+                    "value": 3300
+                },
+                {
+                    "name": "Session_ID_0943",
+                    "value": 2750
+                },
+                {
+                    "name": "Session_ID_3310",
+                    "value": 2200
+                },
+                {
+                    "name": "Session_ID_7761",
+                    "value": 1850
+                },
+                {
+                    "name": "Session_ID_2290",
+                    "value": 1400
+                },
+                {
+                    "name": "Session_ID_4412",
+                    "value": 1050
+                },
+                {
+                    "name": "Session_ID_6678",
+                    "value": 780
+                },
+                {
+                    "name": "Session_ID_1102",
+                    "value": 520
+                }
+            ]
+        }
+    },
+    "rootId": "mainAppContainer",
+    "elements": [
+        {
+            "id": "mainAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "appGlobalHeader",
+                "appSecondaryNav",
+                "appMainContent"
+            ]
+        },
+        {
+            "id": "appGlobalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-12 flex items-center justify-between px-page bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "ghLeftSection",
+                "ghRightSection"
+            ]
+        },
+        {
+            "id": "appSecondaryNav",
+            "component": "nav",
+            "props": {
+                "className": "h-10 flex items-center px-page bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "snMenuWrapper"
+            ]
+        },
+        {
+            "id": "appMainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col p-page gap-section overflow-auto"
+            },
+            "children": [
+                "appContentHeader",
+                "appMetricGrid"
+            ]
+        },
+        {
+            "id": "appContentHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center"
+            },
+            "children": [
+                "chTaskTabsContainer"
+            ]
+        },
+        {
+            "id": "appMetricGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-1 gap-section"
+            },
+            "children": [
+                "appMetricRow1",
+                "appMetricRow2"
+            ]
+        },
+        {
+            "id": "appMetricRow1",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "mgr1TaskDistCard",
+                "mgr1DeviceLossCard",
+                "mgr1LinkLossCard"
+            ]
+        },
+        {
+            "id": "appMetricRow2",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "mgr2SourceIpCard",
+                "mgr2DestIpCard",
+                "mgr2LatencyCard"
+            ]
+        },
+        {
+            "id": "ghLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter h-full"
+            },
+            "children": [
+                "ghBrandWrapper",
+                "ghMainMenu"
+            ]
+        },
+        {
+            "id": "ghBrandWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mr-4"
+            },
+            "children": [
+                "ghBrandIcon",
+                "ghBrandName"
+            ]
+        },
+        {
+            "id": "ghBrandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layout-grid",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "ghBrandName",
+            "component": "span",
+            "props": {
+                "value": "iMaster NCE-FabricInsight",
+                "className": "text-lg font-bold text-on-surface whitespace-nowrap"
+            }
+        },
+        {
+            "id": "ghMainMenu",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/ghSelectedMenu"
+                },
+                "items": {
+                    "path": "/ghMenuItems"
+                },
+                "className": "border-none bg-transparent h-full leading-[48px]"
+            }
+        },
+        {
+            "id": "ghRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "ghActionLinks",
+                "ghDivider",
+                "ghUserModule"
+            ]
+        },
+        {
+            "id": "ghActionLinks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inset"
+            },
+            "children": [
+                "ghPolicyCenter",
+                "ghHelpIcon",
+                "ghConfigIcon",
+                "ghThemeIcon"
+            ]
+        },
+        {
+            "id": "ghPolicyCenter",
+            "component": "span",
+            "props": {
+                "value": "策略中心",
+                "className": "text-md text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "ghHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary",
+                "title": "帮助"
+            }
+        },
+        {
+            "id": "ghConfigIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary",
+                "title": "配置"
+            }
+        },
+        {
+            "id": "ghThemeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "palette",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary",
+                "title": "主题"
+            }
+        },
+        {
+            "id": "ghDivider",
+            "component": "div",
+            "props": {
+                "className": "w-[1px] h-4 bg-divider"
+            }
+        },
+        {
+            "id": "ghUserModule",
+            "component": "Dropdown",
+            "props": {
+                "trigger": [
+                    "hover"
+                ],
+                "placement": "bottomRight",
+                "menu": [
+                    {
+                        "label": "个人中心",
+                        "key": "profile",
+                        "icon": "user"
+                    },
+                    {
+                        "label": "退出登录",
+                        "key": "logout",
+                        "icon": "log-out"
+                    }
+                ]
+            },
+            "children": [
+                "ghUserTrigger"
+            ]
+        },
+        {
+            "id": "ghUserTrigger",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline cursor-pointer"
+            },
+            "children": [
+                "ghUserAvatar",
+                "ghUserName"
+            ]
+        },
+        {
+            "id": "ghUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/ghUser/avatar"
+                },
+                "className": "w-7 h-7 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "ghUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghUser/name"
+                },
+                "className": "text-md font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "snMenuWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 h-full"
+            },
+            "children": [
+                "snHorizontalMenu"
+            ]
+        },
+        {
+            "id": "snHorizontalMenu",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/snSelectedKeys"
+                },
+                "items": {
+                    "path": "/snNavItems"
+                },
+                "className": "border-none bg-transparent h-full leading-[40px]"
+            }
+        },
+        {
+            "id": "chTaskTabsContainer",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/chActiveTaskKey"
+                },
+                "types": "line",
+                "className": "w-full"
+            },
+            "children": {
+                "path": "/chTaskTabs",
+                "componentId": "chTaskTabItem"
+            }
+        },
+        {
+            "id": "chTaskTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "mgr1TaskDistCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col"
+            },
+            "children": [
+                "mgr1TaskDistHeader",
+                "mgr1TaskDistChart"
+            ]
+        },
+        {
+            "id": "mgr1TaskDistHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-stack"
+            },
+            "children": [
+                "mgr1TaskDistTitle"
+            ]
+        },
+        {
+            "id": "mgr1TaskDistTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr1TaskDistribution/title"
+                }
+            }
+        },
+        {
+            "id": "mgr1TaskDistChart",
+            "component": "PieChart",
+            "props": {
+                "className": "h-64 w-full",
+                "option": {
+                    "data": {
+                        "path": "/mgr1TaskDistribution/chartData"
+                    },
+                    "color": {
+                        "path": "/mgr1TaskDistribution/colors"
+                    },
+                    "title": {
+                        "text": {
+                            "path": "/mgr1TaskDistribution/centerValue"
+                        },
+                        "subtext": {
+                            "path": "/mgr1TaskDistribution/centerLabel"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": "mgr1DeviceLossCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col"
+            },
+            "children": [
+                "mgr1DeviceLossHeader",
+                "mgr1DeviceLossChart"
+            ]
+        },
+        {
+            "id": "mgr1DeviceLossHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-stack"
+            },
+            "children": [
+                "mgr1DeviceLossTitle",
+                "mgr1DeviceLossYAxisInfo"
+            ]
+        },
+        {
+            "id": "mgr1DeviceLossTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr1DeviceLoss/title"
+                }
+            }
+        },
+        {
+            "id": "mgr1DeviceLossYAxisInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-on-surface-variant"
+            },
+            "children": [
+                "mgr1DeviceLossYIcon",
+                "mgr1DeviceLossYLabel"
+            ]
+        },
+        {
+            "id": "mgr1DeviceLossYIcon",
+            "component": "Icon",
+            "props": {
+                "name": "arrow-up",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "mgr1DeviceLossYLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "/mgr1DeviceLoss/yAxisLabel"
+                }
+            }
+        },
+        {
+            "id": "mgr1DeviceLossChart",
+            "component": "BarChart",
+            "props": {
+                "className": "h-64 w-full",
+                "option": {
+                    "data": {
+                        "path": "/mgr1DeviceLoss/chartData"
+                    },
+                    "xAxis": {
+                        "data": "deviceName"
+                    },
+                    "yAxisTitle": "丢包数",
+                    "color": [
+                        "#0067D1"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "mgr1LinkLossCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col"
+            },
+            "children": [
+                "mgr1LinkLossHeader",
+                "mgr1LinkLossChart"
+            ]
+        },
+        {
+            "id": "mgr1LinkLossHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-stack"
+            },
+            "children": [
+                "mgr1LinkLossTitle"
+            ]
+        },
+        {
+            "id": "mgr1LinkLossTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr1LinkLoss/title"
+                }
+            }
+        },
+        {
+            "id": "mgr1LinkLossChart",
+            "component": "BarChart",
+            "props": {
+                "className": "h-64 w-full",
+                "option": {
+                    "data": {
+                        "path": "/mgr1LinkLoss/chartData"
+                    },
+                    "xAxis": {
+                        "data": "linkName"
+                    },
+                    "yAxisTitle": "丢包数",
+                    "color": [
+                        "#0067D1"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "mgr2SourceIpCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-card rounded-container p-inset h-[500px] flex flex-col"
+            },
+            "children": [
+                "mgr2SourceIpHeader",
+                "mgr2SourceIpChart"
+            ]
+        },
+        {
+            "id": "mgr2SourceIpHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-stack"
+            },
+            "children": [
+                "mgr2SourceIpTitle"
+            ]
+        },
+        {
+            "id": "mgr2SourceIpTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr2SourceIpLoss/cardTitle"
+                }
+            }
+        },
+        {
+            "id": "mgr2SourceIpChart",
+            "component": "ProcessChart",
+            "props": {
+                "option": {
+                    "name": "ProcessBarChart",
+                    "data": {
+                        "path": "/mgr2SourceIpLoss/chartData"
+                    },
+                    "unit": " Pkts"
+                },
+                "className": "flex-1 w-full"
+            }
+        },
+        {
+            "id": "mgr2DestIpCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-card rounded-container p-inset h-[500px] flex flex-col"
+            },
+            "children": [
+                "mgr2DestIpHeader",
+                "mgr2DestIpChart"
+            ]
+        },
+        {
+            "id": "mgr2DestIpHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-stack"
+            },
+            "children": [
+                "mgr2DestIpTitle"
+            ]
+        },
+        {
+            "id": "mgr2DestIpTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr2DestIpLoss/cardTitle"
+                }
+            }
+        },
+        {
+            "id": "mgr2DestIpChart",
+            "component": "ProcessChart",
+            "props": {
+                "option": {
+                    "name": "ProcessBarChart",
+                    "data": {
+                        "path": "/mgr2DestIpLoss/chartData"
+                    },
+                    "unit": " Pkts"
+                },
+                "className": "flex-1 w-full"
+            }
+        },
+        {
+            "id": "mgr2LatencyCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-card rounded-container p-inset h-[500px] flex flex-col"
+            },
+            "children": [
+                "mgr2LatencyHeader",
+                "mgr2LatencyChart"
+            ]
+        },
+        {
+            "id": "mgr2LatencyHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-stack"
+            },
+            "children": [
+                "mgr2LatencyTitle",
+                "mgr2LatencyInfoIcon"
+            ]
+        },
+        {
+            "id": "mgr2LatencyTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/mgr2LatencySession/cardTitle"
+                }
+            }
+        },
+        {
+            "id": "mgr2LatencyInfoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "className": "w-4 h-4",
+                "color": "on-surface-variant",
+                "shape": "outline"
+            }
+        },
+        {
+            "id": "mgr2LatencyChart",
+            "component": "ProcessChart",
+            "props": {
+                "option": {
+                    "name": "ProcessBarChart",
+                    "data": {
+                        "path": "/mgr2LatencySession/chartData"
+                    },
+                    "unit": " ms"
+                },
+                "className": "flex-1 w-full"
+            }
+        }
+    ]
+}

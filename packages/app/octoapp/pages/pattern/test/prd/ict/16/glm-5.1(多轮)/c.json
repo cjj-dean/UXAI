@@ -1,0 +1,496 @@
+{
+  "state": {
+    "logoIcon": "hexagon",
+    "brandName": "iMaster Nce",
+    "viewTabs": [
+      {
+        "tabName": "工作台",
+        "tabIcon": "layout-dashboard",
+        "isActive": true
+      },
+      {
+        "tabName": "大屏",
+        "tabIcon": "monitor",
+        "isActive": false
+      }
+    ],
+    "globalNavItems": [
+      {
+        "title": "开局",
+        "key": "start"
+      },
+      {
+        "title": "资源中心",
+        "key": "resource"
+      },
+      {
+        "title": "任务中心",
+        "key": "task"
+      },
+      {
+        "title": "系统",
+        "key": "system"
+      }
+    ],
+    "selectedNavKey": [
+      "system"
+    ],
+    "tools": [
+      {
+        "toolName": "亮度调节",
+        "toolIcon": "sun"
+      },
+      {
+        "toolName": "语言切换",
+        "toolIcon": "languages"
+      },
+      {
+        "toolName": "帮助中心",
+        "toolIcon": "help-circle"
+      }
+    ],
+    "userName": "Admin",
+    "avatarIcon": "circle-user-round",
+    "threeDIcon": "box",
+    "profileMenuItems": [
+      {
+        "label": "个人设置",
+        "key": "profile-settings",
+        "icon": "settings"
+      },
+      {
+        "label": "账户安全",
+        "key": "account-security",
+        "icon": "shield"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "moduleIcon": "settings-2",
+    "moduleName": "网络配置",
+    "selectedKeys": [
+      "template_mgmt"
+    ],
+    "openKeys": [
+      "global_config"
+    ],
+    "menuItems": [
+      {
+        "title": "站点配置",
+        "key": "site_config",
+        "icon": "building-2",
+        "isNew": true,
+        "badgeText": "NEW",
+        "badgeColor": "blue",
+        "hasRightArrow": true
+      },
+      {
+        "title": "VLAN",
+        "key": "vlan",
+        "icon": "layers",
+        "hasExpandArrow": true,
+        "isExpanded": false
+      },
+      {
+        "title": "SD-WAN",
+        "key": "sdwan",
+        "icon": "globe",
+        "hasExpandArrow": true,
+        "isExpanded": false
+      },
+      {
+        "title": "全局配置",
+        "key": "global_config",
+        "icon": "settings",
+        "hasExpandArrow": true,
+        "isExpanded": true,
+        "children": [
+          {
+            "title": "资源池管理",
+            "key": "resource_pool",
+            "icon": "database",
+            "isActive": false
+          },
+          {
+            "title": "资源分组",
+            "key": "resource_group",
+            "icon": "folder-tree",
+            "isActive": false
+          },
+          {
+            "title": "模板管理",
+            "key": "template_mgmt",
+            "icon": "file-text",
+            "isActive": true
+          },
+          {
+            "title": "配置模式",
+            "key": "config_mode",
+            "icon": "sliders-horizontal",
+            "isActive": false
+          }
+        ]
+      }
+    ]
+  },
+  "rootId": "shellRootContainer",
+  "elements": [
+    {
+      "id": "shellRootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-screen overflow-hidden bg-surface-container-lowest"
+      },
+      "children": [
+        "shellHeader",
+        "shellBodyRow"
+      ]
+    },
+    {
+      "id": "shellHeader",
+      "component": "header",
+      "props": {
+        "className": "flex items-center h-[48px] shrink-0 bg-surface-container-highest shadow-sm px-page z-10 border-b border-divider"
+      },
+      "children": [
+        "headLeftSection",
+        "headGlobalNav",
+        "headRightSection"
+      ]
+    },
+    {
+      "id": "shellBodyRow",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "shellSidebar",
+        "shellMain"
+      ]
+    },
+    {
+      "id": "shellSidebar",
+      "component": "aside",
+      "props": {
+        "className": "w-[240px] shrink-0 bg-surface-container-highest shadow-sm border-r border-divider overflow-y-auto"
+      },
+      "children": [
+        "sideHeaderWrap",
+        "sideDivider",
+        "sideMenuNav"
+      ]
+    },
+    {
+      "id": "shellMain",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-y-auto p-page"
+      },
+      "children": []
+    },
+    {
+      "id": "headLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "headBrandLogo",
+        "headBrandName",
+        "headBrandDivider",
+        "headViewTabGroup"
+      ]
+    },
+    {
+      "id": "headBrandLogo",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/logoIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "headBrandName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandName"
+        },
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "headBrandDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-border-divider mx-1"
+      }
+    },
+    {
+      "id": "headViewTabGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "headViewTabWorkstation",
+        "headViewTabScreen"
+      ]
+    },
+    {
+      "id": "headViewTabWorkstation",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1 rounded-md bg-primary-container cursor-pointer transition-colors"
+      },
+      "children": [
+        "headViewTabWorkstationIcon",
+        "headViewTabWorkstationLabel"
+      ]
+    },
+    {
+      "id": "headViewTabWorkstationIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/viewTabs/0/tabIcon"
+        },
+        "color": "primary",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "headViewTabWorkstationLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/viewTabs/0/tabName"
+        },
+        "className": "text-md font-medium text-primary"
+      }
+    },
+    {
+      "id": "headViewTabScreen",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1 rounded-md text-on-surface-variant cursor-pointer hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "headViewTabScreenIcon",
+        "headViewTabScreenLabel"
+      ]
+    },
+    {
+      "id": "headViewTabScreenIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/viewTabs/1/tabIcon"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "headViewTabScreenLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/viewTabs/1/tabName"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "headGlobalNav",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedNavKey"
+        },
+        "items": {
+          "path": "/globalNavItems"
+        },
+        "className": "flex-1 justify-center"
+      }
+    },
+    {
+      "id": "headRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 shrink-0"
+      },
+      "children": [
+        "headToolGroup",
+        "headRightDivider",
+        "headProfileDropdown"
+      ]
+    },
+    {
+      "id": "headToolGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": {
+        "path": "/tools",
+        "componentId": "headToolItem"
+      }
+    },
+    {
+      "id": "headToolItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center w-8 h-8 rounded-md cursor-pointer hover:bg-surface-container transition-colors",
+        "title": {
+          "path": "toolName"
+        }
+      },
+      "children": [
+        "headToolIcon"
+      ]
+    },
+    {
+      "id": "headToolIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "toolIcon"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "headRightDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-border-divider"
+      }
+    },
+    {
+      "id": "headProfileDropdown",
+      "component": "Dropdown",
+      "props": {
+        "placement": "bottomRight",
+        "trigger": [
+          "click"
+        ],
+        "menu": {
+          "path": "/profileMenuItems"
+        }
+      },
+      "children": [
+        "headProfileTrigger"
+      ]
+    },
+    {
+      "id": "headProfileTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer px-2 py-1 rounded-md hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "headAvatarIcon",
+        "headUserName",
+        "head3DIcon"
+      ]
+    },
+    {
+      "id": "headAvatarIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/avatarIcon"
+        },
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "headUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-md text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "head3DIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/threeDIcon"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "sideHeaderWrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-5"
+      },
+      "children": [
+        "sideHeaderIcon",
+        "sideHeaderTitle"
+      ]
+    },
+    {
+      "id": "sideHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/moduleIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "sideHeaderTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/moduleName"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "sideDivider",
+      "component": "Divider",
+      "props": {
+        "className": "!mx-0"
+      }
+    },
+    {
+      "id": "sideMenuNav",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "openKeys": {
+          "path": "/openKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full border-none"
+      }
+    }
+  ]
+}

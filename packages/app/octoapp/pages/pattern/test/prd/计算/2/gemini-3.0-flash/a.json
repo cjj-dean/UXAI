@@ -1,0 +1,1504 @@
+{
+    "state": {
+        "ghPlatformName": "iMaster 智能监控平台",
+        "ghPlatformIcon": "activity",
+        "ghSelectedKeys": [
+            "overview"
+        ],
+        "ghNavMenus": [
+            {
+                "title": "系统概览",
+                "key": "overview"
+            },
+            {
+                "title": "部门业务",
+                "key": "department"
+            },
+            {
+                "title": "作业状态",
+                "key": "jobStatus"
+            },
+            {
+                "title": "资源配置",
+                "key": "resource"
+            },
+            {
+                "title": "权限管理",
+                "key": "permission"
+            },
+            {
+                "title": "操作日志",
+                "key": "logs"
+            },
+            {
+                "title": "子系统设置",
+                "key": "subsystem"
+            }
+        ],
+        "ghLastUpdateTime": "2026-05-27 14:30:21",
+        "ghCurrentUser": {
+            "userName": "系统管理员",
+            "userRole": "Admin",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "ghNotificationCount": 12,
+        "lmpActiveTab": "coreBusiness",
+        "lmpTabs": [
+            {
+                "id": "coreBusiness",
+                "label": "核心业务区"
+            },
+            {
+                "id": "edgeComputing",
+                "label": "边缘计算区"
+            },
+            {
+                "id": "disasterRecovery",
+                "label": "容灾区"
+            }
+        ],
+        "lmpRealtimeMetrics": [
+            {
+                "cardTitle": "核心业务负载 (Core Cluster)",
+                "loadPercentage": 78.5,
+                "loadChartData": [
+                    {
+                        "time": "14:00",
+                        "负载": 65
+                    },
+                    {
+                        "time": "14:05",
+                        "负载": 72
+                    },
+                    {
+                        "time": "14:10",
+                        "负载": 68
+                    },
+                    {
+                        "time": "14:15",
+                        "负载": 85
+                    },
+                    {
+                        "time": "14:20",
+                        "负载": 78
+                    },
+                    {
+                        "time": "14:25",
+                        "负载": 82
+                    },
+                    {
+                        "time": "14:30",
+                        "负载": 78
+                    }
+                ],
+                "topRankingList": [
+                    {
+                        "rank": 1,
+                        "id": "SRV-APP-001-PROD",
+                        "metricValue": "45.2 GB/s",
+                        "percentage": 92,
+                        "status": "error"
+                    },
+                    {
+                        "rank": 2,
+                        "id": "SRV-DB-MASTER-04",
+                        "metricValue": "38.1 GB/s",
+                        "percentage": 85,
+                        "status": "warning"
+                    },
+                    {
+                        "rank": 3,
+                        "id": "SRV-CACHE-REDIS-09",
+                        "metricValue": "31.5 GB/s",
+                        "percentage": 76,
+                        "status": "success"
+                    }
+                ]
+            },
+            {
+                "cardTitle": "边缘节点压力 (Edge Nodes)",
+                "loadPercentage": 62.3,
+                "loadChartData": [
+                    {
+                        "time": "14:00",
+                        "负载": 45
+                    },
+                    {
+                        "time": "14:05",
+                        "负载": 50
+                    },
+                    {
+                        "time": "14:10",
+                        "负载": 55
+                    },
+                    {
+                        "time": "14:15",
+                        "负载": 60
+                    },
+                    {
+                        "time": "14:20",
+                        "负载": 65
+                    },
+                    {
+                        "time": "14:25",
+                        "负载": 62
+                    },
+                    {
+                        "time": "14:30",
+                        "负载": 62
+                    }
+                ],
+                "topRankingList": [
+                    {
+                        "rank": 1,
+                        "id": "EDGE-NODE-SH-01",
+                        "metricValue": "12.8 ms",
+                        "percentage": 88,
+                        "status": "error"
+                    },
+                    {
+                        "rank": 2,
+                        "id": "EDGE-NODE-BJ-05",
+                        "metricValue": "15.4 ms",
+                        "percentage": 72,
+                        "status": "warning"
+                    },
+                    {
+                        "rank": 3,
+                        "id": "EDGE-NODE-GZ-12",
+                        "metricValue": "18.9 ms",
+                        "percentage": 65,
+                        "status": "success"
+                    }
+                ]
+            }
+        ],
+        "lmpTrendCharts": [
+            {
+                "id": "computeResource",
+                "cardTitle": "计算资源池监控",
+                "chartData": [
+                    {
+                        "time": "10:00",
+                        "核心集群": 80,
+                        "高频区": 10,
+                        "闲置区": 10
+                    },
+                    {
+                        "time": "14:00",
+                        "核心集群": 84,
+                        "高频区": 9,
+                        "闲置区": 7
+                    }
+                ]
+            },
+            {
+                "id": "storageCapacity",
+                "cardTitle": "存储容量使用趋势",
+                "chartData": [
+                    {
+                        "time": "10:00",
+                        "固态存储": 50,
+                        "机械硬盘": 10,
+                        "备份区": 40
+                    },
+                    {
+                        "time": "14:00",
+                        "固态存储": 58,
+                        "机械硬盘": 14,
+                        "备份区": 28
+                    }
+                ]
+            },
+            {
+                "id": "networkIO",
+                "cardTitle": "网络IO流量监控",
+                "chartData": [
+                    {
+                        "time": "10:00",
+                        "下行流量": 60,
+                        "上行流量": 10,
+                        "广播包": 30
+                    },
+                    {
+                        "time": "14:00",
+                        "下行流量": 63,
+                        "上行流量": 12,
+                        "广播包": 25
+                    }
+                ]
+            },
+            {
+                "id": "concurrentConn",
+                "cardTitle": "系统并发连接数",
+                "chartData": [
+                    {
+                        "time": "10:00",
+                        "TCP连接": 1200,
+                        "UDP协议": 400,
+                        "其他": 100
+                    },
+                    {
+                        "time": "14:00",
+                        "TCP连接": 1650,
+                        "UDP协议": 480,
+                        "其他": 130
+                    }
+                ]
+            }
+        ],
+        "rsSummary": {
+            "title": "设备在线数(6119) | 异常告警(766)",
+            "indicators": [
+                {
+                    "label": "严重",
+                    "value": "25%",
+                    "color": "#E02128",
+                    "count": "115",
+                    "glow": "shadow-[0_0_12px_rgba(224,33,40,0.6)]"
+                },
+                {
+                    "label": "警告",
+                    "value": "20%",
+                    "color": "#F4840C",
+                    "count": "192",
+                    "glow": "shadow-[0_0_12px_rgba(244,132,12,0.6)]"
+                },
+                {
+                    "label": "次要",
+                    "value": "15%",
+                    "color": "#FCC800",
+                    "count": "153",
+                    "glow": "shadow-[0_0_12px_rgba(252,200,0,0.6)]"
+                },
+                {
+                    "label": "正常",
+                    "value": "40%",
+                    "color": "#0067D1",
+                    "count": "306",
+                    "glow": "shadow-[0_0_12px_rgba(0,103,209,0.6)]"
+                }
+            ]
+        },
+        "rsNodeTracking": {
+            "title": "节点追踪详情",
+            "activeTab": "tab2",
+            "groups": [
+                {
+                    "groupName": "管理节点",
+                    "items": [
+                        {
+                            "name": "主控服务器集群",
+                            "icon": "server",
+                            "metricA": "296",
+                            "labelA": "当前连接",
+                            "metricB": "99.2%",
+                            "labelB": "可用性",
+                            "hasHelp": true,
+                             "color": "primary"
+                        },
+                        {
+                            "name": "备用控制节点",
+                            "icon": "shield-check",
+                            "metricA": "68",
+                            "labelA": "活跃会话",
+                            "metricB": "7.6ms",
+                            "labelB": "同步延迟",
+                             "color": "primary"
+                        },
+                        {
+                            "name": "安全审计网关",
+                            "icon": "lock",
+                            "metricA": "88",
+                            "labelA": "拦截次数",
+                            "metricB": "3.5k",
+                            "labelB": "并发数",
+                            "hasHelp": true,
+                            "color": "primary"
+                        }
+                    ]
+                },
+                {
+                    "groupName": "转发节点",
+                    "items": [
+                        {
+                            "name": "专线接入集群",
+                            "icon": "zap",
+                            "metricA": "5.7Gbps",
+                            "labelA": "实时带宽",
+                            "metricB": "2.5k",
+                            "labelB": "PPS",
+                            "color": "success"
+                        },
+                        {
+                            "name": "公网接入节点",
+                            "icon": "globe",
+                            "metricA": "99ms",
+                            "labelA": "平均时延",
+                            "metricB": "0.34%",
+                            "labelB": "丢包率",
+                            "hasHelp": true,
+                            "color": "success"
+                        }
+                    ]
+                },
+                {
+                    "groupName": "数据节点",
+                    "items": [
+                        {
+                            "name": "核心分布式数据库",
+                            "icon": "database",
+                            "metricA": "3ms",
+                            "labelA": "查询延迟",
+                            "metricB": "5.8k",
+                            "labelB": "IOPS",
+                            "hasHelp": true,
+                             "color": "primary"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "rootId": "shellRoot",
+    "elements": [
+        {
+            "id": "shellRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "shellHeader",
+                "shellMain"
+            ]
+        },
+        {
+            "id": "shellHeader",
+            "component": "header",
+            "props": {
+                "className": "h-12 w-full bg-surface-container-highest shadow-sm z-50 flex items-center px-page sticky top-0"
+            },
+            "children": [
+                "ghLeftSection",
+                "ghCenterSection",
+                "ghRightSection"
+            ]
+        },
+        {
+            "id": "shellMain",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col p-page gap-section"
+            },
+            "children": [
+                "shellTitleBar",
+                "shellContentGrid"
+            ]
+        },
+        {
+            "id": "shellTitleBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "shellPageTitle"
+            ]
+        },
+        {
+            "id": "shellPageTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": "云服务资源监控大屏"
+            },
+            "children": null
+        },
+        {
+            "id": "shellContentGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-24 gap-section flex-1"
+            },
+            "children": [
+                "shellLeftCol",
+                "shellRightCol"
+            ]
+        },
+        {
+            "id": "shellLeftCol",
+            "component": "section",
+            "props": {
+                "className": "col-span-18 flex flex-col gap-section bg-surface-container-highest rounded-container p-inset shadow-sm"
+            },
+            "children": [
+                "lmpTabsContainer",
+                "lmpRealtimeGrid",
+                "lmpTrendGrid"
+            ]
+        },
+        {
+            "id": "shellRightCol",
+            "component": "aside",
+            "props": {
+                "className": "col-span-6 flex flex-col gap-section"
+            },
+            "children": [
+                "rsSumCard",
+                "rsNodeTrackingCard"
+            ]
+        },
+        {
+            "id": "rsSummaryCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container p-inset shadow-card flex flex-col gap-gutter border-none"
+            },
+            "children": []
+        },
+        {
+            "id": "rsNodeTrackingList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 bg-surface-container-highest rounded-container p-inset shadow-sm overflow-hidden"
+            },
+            "children": []
+        },
+        {
+            "id": "ghLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 shrink-0"
+            },
+            "children": [
+                "ghLogoIcon",
+                "ghLogoTitle"
+            ]
+        },
+        {
+            "id": "ghLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/ghPlatformIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-7 h-7"
+            }
+        },
+        {
+            "id": "ghLogoTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghPlatformName"
+                },
+                "className": "text-lg font-bold text-on-surface tracking-tight"
+            }
+        },
+        {
+            "id": "ghCenterSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-gutter overflow-hidden"
+            },
+            "children": [
+                "ghTopMenu"
+            ]
+        },
+        {
+            "id": "ghTopMenu",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/ghSelectedKeys"
+                },
+                "items": {
+                    "path": "/ghNavMenus"
+                },
+                "className": "border-none bg-transparent h-12 leading-[48px]"
+            }
+        },
+        {
+            "id": "ghRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 shrink-0"
+            },
+            "children": [
+                "ghStatusInfo",
+                "ghActionGroup",
+                "ghUserSection"
+            ]
+        },
+        {
+            "id": "ghStatusInfo",
+            "component": "div",
+            "props": {
+                "className": "hidden xl:flex items-center gap-2 text-on-surface-variant"
+            },
+            "children": [
+                "ghUpdateLabel",
+                "ghUpdateTime"
+            ]
+        },
+        {
+            "id": "ghUpdateLabel",
+            "component": "span",
+            "props": {
+                "value": "最后更新:",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "ghUpdateTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghLastUpdateTime"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "ghActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "ghSearchBtn",
+                "ghNotifyBadge",
+                "ghSettingsBtn",
+                "ghHelpBtn"
+            ]
+        },
+        {
+            "id": "ghSearchBtn",
+            "component": "Button",
+            "props": {
+                "icon": "search",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ghNotifyBadge",
+            "component": "Badge",
+            "props": {
+                "count": {
+                    "path": "/ghNotificationCount"
+                },
+                "offset": [
+                    2,
+                    2
+                ]
+            },
+            "children": [
+                "ghBellBtn"
+            ]
+        },
+        {
+            "id": "ghBellBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ghSettingsBtn",
+            "component": "Button",
+            "props": {
+                "icon": "settings",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ghHelpBtn",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ghUserSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 pl-4 border-l border-divider"
+            },
+            "children": [
+                "ghUserInfo",
+                "ghUserAvatar"
+            ]
+        },
+        {
+            "id": "ghUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "ghUserName",
+                "ghUserRole"
+            ]
+        },
+        {
+            "id": "ghUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghCurrentUser/userName"
+                },
+                "className": "text-sm font-semibold text-on-surface leading-none"
+            }
+        },
+        {
+            "id": "ghUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghCurrentUser/userRole"
+                },
+                "className": "text-xs text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "ghUserAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "ghAvatarImg"
+            ]
+        },
+        {
+            "id": "ghAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/ghCurrentUser/avatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "lmpTabsContainer",
+            "component": "div",
+            "props": {
+                "className": "mb-stack"
+            },
+            "children": [
+                "lmpTabs"
+            ]
+        },
+        {
+            "id": "lmpTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/lmpActiveTab"
+                },
+                "size": "large"
+            },
+            "children": {
+                "path": "/lmpTabs",
+                "componentId": "lmpTabItem"
+            }
+        },
+        {
+            "id": "lmpTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "lmpRealtimeGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-gutter mb-section relative after:absolute after:inset-y-0 after:left-1/2 after:-translate-x-1/2 after:w-px after:bg-divider "
+            },
+            "children": {
+                "path": "/lmpRealtimeMetrics",
+                "componentId": "lmpMetricCard"
+            }
+            
+            
+        },
+        {
+            "id": "lmpMetricCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col bg-surface-container-highest rounded-xl overflow-hidden"
+            },
+            "children": [
+                "lmpMetricHeader",
+                "lmpMetricTopSection",
+                "lmpMetricRankingList"
+            ]
+        },
+        {
+            "id": "lmpMetricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center p-gutter border-b border-divider"
+            },
+            "children": [
+                "lmpMetricTitle",
+                "lmpMetricStatus"
+            ]
+        },
+        {
+            "id": "lmpMetricTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "cardTitle"
+                }
+            }
+        },
+        {
+            "id": "lmpMetricStatus",
+            "component": "Tag",
+            "props": {
+                "value": "实时",
+                "color": "success",
+                "size": "small",
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "lmpMetricTopSection",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-gutter p-gutter items-center bg-surface-variant/30"
+            },
+            "children": [
+                "lmpMetricNeonGauge",
+                "lmpMetricSparklineBox"
+            ]
+        },
+        {
+            "id": "lmpMetricNeonGauge",
+            "component": "div",
+            "props": {
+                "className": "relative flex items-center justify-center h-32"
+            },
+            "children": [
+                "lmpMetricNeonCircle",
+                "lmpMetricNeonValue"
+            ]
+        },
+
+        {
+            "id": "lmpMetricNeonCircle",
+            "component": "CircleProcessChart",
+            "props": {
+                "option": {
+                    "data": [{ "value": 71, "name": "Utilization rate" }]
+                    
+                },
+                "className": "w-28 h-28"
+            }
+        },
+        {
+            "id": "lmpMetricNeonValue",
+            "component": "div",
+            "props": {
+                "className": "absolute flex flex-col items-center"
+            },
+            "children": [
+                "lmpMetricNeonNum",
+                "lmpMetricNeonUnit"
+            ]
+        },
+        {
+            "id": "lmpMetricNeonNum",
+            "component": "span",
+            "props": {
+                "className": "text-3xl font-black text-primary",
+                "value": {
+                    "path": "loadPercentage"
+                }
+            }
+        },
+        {
+            "id": "lmpMetricNeonUnit",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant font-medium",
+                "value": "负载率 %"
+            }
+        },
+        {
+            "id": "lmpMetricSparklineBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "lmpMetricSparklineLabel",
+                "lmpMetricSparkline"
+            ]
+        },
+        {
+            "id": "lmpMetricSparklineLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-semibold text-on-surface-variant uppercase tracking-wider",
+                "value": "30min Trend"
+            }
+        },
+        {
+            "id": "lmpMetricSparkline",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "loadChartData"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "%",
+                    "smooth": true,
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-20 w-full"
+            }
+        },
+        {
+            "id": "lmpMetricRankingList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": {
+                "path": "topRankingList",
+                "componentId": "lmpRankingItem"
+            }
+        },
+        {
+            "id": "lmpRankingItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center h-[90px] px-gutter border-b border-divider last:border-none hover:bg-surface-variant/50 transition-colors"
+            },
+            "children": [
+                "lmpRankingBadgeBox",
+                "lmpRankingInfo",
+                "lmpRankingMetrics"
+            ]
+        },
+        {
+            "id": "lmpRankingBadgeBox",
+            "component": "div",
+            "props": {
+                "className": "w-12 shrink-0"
+            },
+            "children": [
+                "lmpRankingBadge"
+            ]
+        },
+        {
+            "id": "lmpRankingBadge",
+            "component": "span",
+            "props": {
+                "className": "w-6 h-6 flex items-center justify-center bg-primary-container text-primary font-bold rounded-md text-sm",
+                "value": {
+                    "path": "rank"
+                }
+            }
+        },
+        {
+            "id": "lmpRankingInfo",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-w-0 flex flex-col gap-1"
+            },
+            "children": [
+                "lmpRankingId",
+                "lmpRankingProgress"
+            ]
+        },
+        {
+            "id": "lmpRankingId",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-on-surface truncate",
+                "value": {
+                    "path": "id"
+                }
+            }
+        },
+        {
+            "id": "lmpRankingProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "percentage"
+                },
+                "size": "small",
+                "showInfo": false,
+                "className": "w-4/5"
+            }
+        },
+        {
+            "id": "lmpRankingMetrics",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter shrink-0 ml-gutter"
+            },
+            "children": [
+                "lmpRankingValBox",
+                "lmpRankingPercBox"
+            ]
+        },
+        {
+            "id": "lmpRankingValBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end w-24"
+            },
+            "children": [
+                "lmpRankingValLabel",
+                "lmpRankingValText"
+            ]
+        },
+        {
+            "id": "lmpRankingValLabel",
+            "component": "span",
+            "props": {
+                "className": "text-[10px] text-on-surface-variant uppercase",
+                "value": "Metric"
+            }
+        },
+        {
+            "id": "lmpRankingValText",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-surface",
+                "value": {
+                    "path": "metricValue"
+                }
+            }
+        },
+        {
+            "id": "lmpRankingPercBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end w-16"
+            },
+            "children": [
+                "lmpRankingPercLabel",
+                "lmpRankingPercText"
+            ]
+        },
+        {
+            "id": "lmpRankingPercLabel",
+            "component": "span",
+            "props": {
+                "className": "text-[10px] text-on-surface-variant uppercase",
+                "value": "Ratio"
+            }
+        },
+        {
+            "id": "lmpRankingPercText",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-primary",
+                "value": {
+                    "path": "percentage"
+                }
+            }
+        },
+        {
+            "id": "lmpTrendGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/lmpTrendCharts",
+                "componentId": "lmpTrendCard"
+            }
+        },
+        {
+            "id": "lmpTrendCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "lmpTrendHeader",
+                "lmpTrendChart"
+            ]
+        },
+        {
+            "id": "lmpTrendHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "lmpTrendIcon",
+                "lmpTrendTitle"
+            ]
+        },
+        {
+            "id": "lmpTrendIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-3",
+                "shape": "square",
+                "className": "w-5 h-5",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "lmpTrendTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-on-surface",
+                "value": {
+                    "path": "cardTitle"
+                }
+            }
+        },
+        {
+            "id": "lmpTrendChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "chartData"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "Value",
+                    "smooth": true
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "rsSumCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container p-inset shadow-card flex flex-col gap-gutter border-none"
+            },
+            "children": [
+                "rsSumHeader",
+                "rsSumIndicatorBar",
+                "rsSumDataGrid"
+            ]
+        },
+        {
+            "id": "rsSumHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "rsSumTitle",
+                "rsSumMore"
+            ]
+        },
+        {
+            "id": "rsSumTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/rsSummary/title"
+                }
+            }
+        },
+        {
+            "id": "rsSumMore",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "text-on-surface-variant cursor-pointer w-5 h-5"
+            }
+        },
+        {
+            "id": "rsSumIndicatorBar",
+            "component": "div",
+            "props": {
+                "className": "flex h-2 w-full gap-1.5"
+            },
+            "children": {
+                "path": "/rsSummary/indicators",
+                "componentId": "rsSumIndicatorSegment"
+            }
+        },
+        {
+            "id": "rsSumIndicatorSegment",
+            "component": "div",
+            "props": {
+                "className": "h-full rounded-full transition-all duration-500",
+                "style": {
+                    "width": {
+                        "path": "value"
+                    },
+                    "backgroundColor": {
+                        "path": "color"
+                    }
+                }
+            }
+        },
+        {
+            "id": "rsSumDataGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-2"
+            },
+            "children": {
+                "path": "/rsSummary/indicators",
+                "componentId": "rsSumDataBlock"
+            }
+        },
+        {
+            "id": "rsSumDataBlock",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center"
+            },
+            "children": [
+                "rsSumDataValue",
+                "rsSumDataLabelRow"
+            ]
+        },
+        {
+            "id": "rsSumDataValue",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface mb-1 font-sans",
+                "value": {
+                    "path": "count"
+                }
+            }
+        },
+        {
+            "id": "rsSumDataLabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "rsSumDataDot",
+                "rsSumDataLabel"
+            ]
+        },
+        {
+            "id": "rsSumDataDot",
+            "component": "div",
+            "props": {
+                "className": "w-2 h-2 rounded-full",
+                "style": {
+                    "backgroundColor": {
+                        "path": "color"
+                    }
+                }
+            }
+        },
+        {
+            "id": "rsSumDataLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "rsNodeTrackingCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card flex flex-col"
+            },
+            "children": [
+                "rsNodeTrackingHeader",
+                "rsNodeTrackingTabs",
+                "rsNodeTrackingContent"
+            ]
+        },
+        {
+            "id": "rsNodeTrackingHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset pb-0"
+            },
+            "children": [
+                "rsNodeTrackingTitle"
+            ]
+        },
+        {
+            "id": "rsNodeTrackingTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/rsNodeTracking/title"
+                }
+            }
+        },
+        {
+            "id": "rsNodeTrackingTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/rsNodeTracking/activeTab"
+                },
+                "className": "px-inset"
+            },
+            "children": [
+                "rsNodeTab1",
+                "rsNodeTab2"
+            ]
+        },
+        {
+            "id": "rsNodeTab1",
+            "component": "TabItem",
+            "props": {
+                "key": "tab1",
+                "label": "区域流量排行(TOP 27)"
+            }
+        },
+        {
+            "id": "rsNodeTab2",
+            "component": "TabItem",
+            "props": {
+                "key": "tab2",
+                "label": "异常节点追踪(处理中28)"
+            }
+        },
+        {
+            "id": "rsNodeTrackingContent",
+            "component": "div",
+            "props": {
+                "className": "p-inset pt-stack flex flex-col gap-inset overflow-y-auto max-h-[600px]"
+            },
+            "children": {
+                "path": "/rsNodeTracking/groups",
+                "componentId": "rsNodeGroup"
+            }
+        },
+        {
+            "id": "rsNodeGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "rsNodeGroupTitle",
+                "rsNodeGroupContainer"
+            ]
+        },
+        {
+            "id": "rsNodeGroupTitle",
+            "component": "div",
+            "props": {
+                "className": "text-sm font-bold text-on-surface-variant flex items-center gap-2"
+            },
+            "children": [
+                "rsNodeGroupTitleText",
+                "rsNodeGroupDivider"
+            ]
+        },
+        {
+            "id": "rsNodeGroupTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "groupName"
+                }
+            }
+        },
+        {
+            "id": "rsNodeGroupDivider",
+            "component": "div",
+            "props": {
+                "className": "flex-1 h-[1px] bg-divider"
+            }
+        },
+        {
+            "id": "rsNodeGroupContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col rounded-lg border border-base overflow-hidden"
+            },
+            "children": {
+                "path": "items",
+                "componentId": "rsNodeItemRow"
+            }
+        },
+        {
+            "id": "rsNodeItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-stack bg-surface-container-highest border-b border-divider last:border-b-0 hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "rsNodeItemLeft",
+                "rsNodeItemRight"
+            ]
+        },
+        {
+            "id": "rsNodeItemLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "rsNodeItemIcon",
+                "rsNodeItemTitleArea"
+            ]
+        },
+        {
+            "id": "rsNodeItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "shape": "square",
+                "color": {
+                    "path": "color"
+                },
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "rsNodeItemTitleArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "rsNodeItemName",
+                "rsNodeItemHelp"
+            ]
+        },
+        {
+            "id": "rsNodeItemName",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium text-on-surface",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "rsNodeItemHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-3 h-3 text-on-surface-variant opacity-40 cursor-help"
+            }
+        },
+        {
+            "id": "rsNodeItemRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "rsNodeMetricBlockA",
+                "rsNodeMetricDivider",
+                "rsNodeMetricBlockB"
+            ]
+        },
+        {
+            "id": "rsNodeMetricBlockA",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "rsNodeMetricAVal",
+                "rsNodeMetricALabel"
+            ]
+        },
+        {
+            "id": "rsNodeMetricAVal",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-on-surface",
+                "value": {
+                    "path": "metricA"
+                }
+            }
+        },
+        {
+            "id": "rsNodeMetricALabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "labelA"
+                }
+            }
+        },
+        {
+            "id": "rsNodeMetricDivider",
+            "component": "div",
+            "props": {
+                "className": "w-[1px] h-6 bg-divider"
+            }
+        },
+        {
+            "id": "rsNodeMetricBlockB",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end min-w-[60px]"
+            },
+            "children": [
+                "rsNodeMetricBVal",
+                "rsNodeMetricBLabel"
+            ]
+        },
+        {
+            "id": "rsNodeMetricBVal",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-on-surface",
+                "value": {
+                    "path": "metricB"
+                }
+            }
+        },
+        {
+            "id": "rsNodeMetricBLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "labelB"
+                }
+            }
+        }
+    ]
+}

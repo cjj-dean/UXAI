@@ -1,0 +1,924 @@
+{
+    "state": {
+        "brand": {
+            "logoIcon": "cpu",
+            "brandName": "IntelEngine"
+        },
+        "menuItems": [
+            {
+                "label": "Market Overview",
+                "icon": "globe",
+                "isActive": false
+            },
+            {
+                "label": "Benchmarking",
+                "icon": "bar-chart-3",
+                "isActive": true
+            },
+            {
+                "label": "Trend Analysis",
+                "icon": "trending-up",
+                "isActive": false
+            },
+            {
+                "label": "Report Center",
+                "icon": "file-text",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "userName": "Alex Chen",
+            "userRole": "Senior Product Strategist",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "breadcrumbs": [
+            {
+                "title": "Analysis"
+            },
+            {
+                "title": "Benchmarking"
+            },
+            {
+                "title": "Product Capability"
+            }
+        ],
+        "compareOptions": [
+            {
+                "label": "Top 3 Market Leaders",
+                "key": "leaders"
+            },
+            {
+                "label": "Direct Competitors",
+                "key": "direct"
+            },
+            {
+                "label": "Emerging Threats",
+                "key": "threats"
+            }
+        ],
+        "radarData": {
+            "Our Product": {
+                "PERFORMANCE": 85,
+                "SECURITY": 92,
+                "SCALABILITY": 78,
+                "USABILITY": 95,
+                "INTEGRATION": 70,
+                "RELIABILITY": 88
+            },
+            "Competitor Average": {
+                "PERFORMANCE": 70,
+                "SECURITY": 88,
+                "SCALABILITY": 82,
+                "USABILITY": 75,
+                "INTEGRATION": 85,
+                "RELIABILITY": 80
+            }
+        },
+        "gapChartData": [
+            {
+                "month": "Jan",
+                "gap": 12
+            },
+            {
+                "month": "Feb",
+                "gap": 15
+            },
+            {
+                "month": "Mar",
+                "gap": 18
+            },
+            {
+                "month": "Apr",
+                "gap": 14
+            },
+            {
+                "month": "May",
+                "gap": 22
+            },
+            {
+                "month": "Jun",
+                "gap": 25
+            },
+            {
+                "month": "Jul",
+                "gap": 28
+            },
+            {
+                "month": "Aug",
+                "gap": 24
+            },
+            {
+                "month": "Sep",
+                "gap": 30
+            },
+            {
+                "month": "Oct",
+                "gap": 32
+            }
+        ],
+        "matrixData": [
+            {
+                "id": "g1",
+                "feature": "CORE INTELLIGENCE",
+                "isHeader": true
+            },
+            {
+                "id": "1",
+                "feature": "Real-time NLP",
+                "ourProduct": "circle-check",
+                "compA": "circle-check",
+                "compB": "minus",
+                "compC": "circle-x"
+            },
+            {
+                "id": "2",
+                "feature": "Predictive Analytics",
+                "ourProduct": "circle-check",
+                "compA": "circle-check",
+                "compB": "circle-check",
+                "compC": "minus"
+            },
+            {
+                "id": "3",
+                "feature": "Automated Labeling",
+                "ourProduct": "circle-check",
+                "compA": "circle-x",
+                "compB": "circle-x",
+                "compC": "circle-x"
+            },
+            {
+                "id": "4",
+                "feature": "Edge Computing Support",
+                "ourProduct": "minus",
+                "compA": "circle-check",
+                "compB": "minus",
+                "compC": "circle-x"
+            },
+            {
+                "id": "5",
+                "feature": "Multi-modal Learning",
+                "ourProduct": "circle-check",
+                "compA": "minus",
+                "compB": "circle-x",
+                "compC": "circle-x"
+            },
+            {
+                "id": "g2",
+                "feature": "INTEGRATION & SECURITY",
+                "isHeader": true
+            },
+            {
+                "id": "6",
+                "feature": "SSO / SAML 2.0",
+                "ourProduct": "circle-check",
+                "compA": "circle-check",
+                "compB": "circle-check",
+                "compC": "circle-check"
+            },
+            {
+                "id": "7",
+                "feature": "API Rate Limiting",
+                "ourProduct": "circle-check",
+                "compA": "circle-check",
+                "compB": "minus",
+                "compC": "circle-check"
+            },
+            {
+                "id": "8",
+                "feature": "SOC2 Compliance",
+                "ourProduct": "circle-check",
+                "compA": "circle-check",
+                "compB": "circle-x",
+                "compC": "circle-check"
+            },
+            {
+                "id": "9",
+                "feature": "Custom Webhooks",
+                "ourProduct": "circle-check",
+                "compA": "minus",
+                "compB": "minus",
+                "compC": "circle-x"
+            },
+            {
+                "id": "10",
+                "feature": "Data Residency Control",
+                "ourProduct": "circle-check",
+                "compA": "circle-x",
+                "compB": "circle-x",
+                "compC": "circle-x"
+            }
+        ]
+    },
+    "rootId": "mainLayout",
+    "elements": [
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarNav",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest border-r border-divider"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "brandLogo",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 space-y-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider space-y-4"
+            },
+            "children": [
+                "addCompBtn",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "addCompBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add Competitor",
+                "icon": "plus-circle",
+                "className": "w-full",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-2 bg-surface-variant rounded-xl"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-bold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userRole"
+                },
+                "className": "text-xs text-on-surface-variant truncate"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 flex items-center justify-between px-6 bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "headerLeft",
+                "headerSearch",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "span",
+            "props": {
+                "value": "Strategic Intel",
+                "className": "text-md font-semibold text-primary"
+            }
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search metrics, competitors or reports...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifIcon",
+                "settingsIcon",
+                "helpIcon"
+            ]
+        },
+        {
+            "id": "notifIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "settingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8 space-y-8"
+            },
+            "children": [
+                "pageHeader",
+                "middleGrid",
+                "bottomMatrix"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "titleGroup",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "titleGroup",
+            "component": "div",
+            "props": {
+                "className": "space-y-2"
+            },
+            "children": [
+                "breadcrumb",
+                "mainTitle",
+                "subTitle"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "mainTitle",
+            "component": "h1",
+            "props": {
+                "value": "Product Capability Benchmarking",
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "subTitle",
+            "component": "p",
+            "props": {
+                "value": "Comprehensive technical evaluation against top market performers updated as of Q3 2023.",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "compareDropdown",
+                "metricsBtn"
+            ]
+        },
+        {
+            "id": "compareDropdown",
+            "component": "Dropdown",
+            "props": {
+                "menu": {
+                    "path": "/compareOptions"
+                }
+            },
+            "children": [
+                "compareTrigger"
+            ]
+        },
+        {
+            "id": "compareTrigger",
+            "component": "Button",
+            "props": {
+                "value": "Compare To: Top 3 Leaders",
+                "icon": "chevron-down",
+                "iconPlacement": "end"
+            }
+        },
+        {
+            "id": "metricsBtn",
+            "component": "Button",
+            "props": {
+                "value": "All Metrics",
+                "icon": "filter"
+            }
+        },
+        {
+            "id": "middleGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-6"
+            },
+            "children": [
+                "radarCard",
+                "insightsColumn"
+            ]
+        },
+        {
+            "id": "radarCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-7 bg-surface-container-highest p-6 rounded-2xl shadow-card"
+            },
+            "children": [
+                "radarTitle",
+                "radarChart"
+            ]
+        },
+        {
+            "id": "radarTitle",
+            "component": "h3",
+            "props": {
+                "value": "Capability Distribution",
+                "className": "text-lg font-bold mb-6"
+            }
+        },
+        {
+            "id": "radarChart",
+            "component": "RadarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/radarData"
+                    },
+                    "color": [
+                        "#0067D1",
+                        "#94A3B8"
+                    ]
+                },
+                "className": "h-80 w-full"
+            }
+        },
+        {
+            "id": "insightsColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-5 flex flex-col gap-6"
+            },
+            "children": [
+                "advantagesCard",
+                "gapCard"
+            ]
+        },
+        {
+            "id": "advantagesCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-2xl shadow-card"
+            },
+            "children": [
+                "advTitle",
+                "advList"
+            ]
+        },
+        {
+            "id": "advTitle",
+            "component": "h3",
+            "props": {
+                "value": "Core Advantages",
+                "className": "text-lg font-bold mb-4"
+            }
+        },
+        {
+            "id": "advList",
+            "component": "div",
+            "props": {
+                "className": "space-y-4"
+            },
+            "children": [
+                "advItem1",
+                "advItem2"
+            ]
+        },
+        {
+            "id": "advItem1",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-success-container rounded-xl"
+            },
+            "children": [
+                "advItem1Title",
+                "advItem1Desc"
+            ]
+        },
+        {
+            "id": "advItem1Title",
+            "component": "div",
+            "props": {
+                "value": "Superior AI Processing",
+                "className": "text-sm font-bold text-on-success-container"
+            }
+        },
+        {
+            "id": "advItem1Desc",
+            "component": "div",
+            "props": {
+                "value": "24% faster inference speed compared to industry standard.",
+                "className": "text-xs text-on-success-container mt-1"
+            }
+        },
+        {
+            "id": "advItem2",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-primary-container rounded-xl"
+            },
+            "children": [
+                "advItem2Title",
+                "advItem2Desc"
+            ]
+        },
+        {
+            "id": "advItem2Title",
+            "component": "div",
+            "props": {
+                "value": "Zero-Trust Architecture",
+                "className": "text-sm font-bold text-on-primary-container"
+            }
+        },
+        {
+            "id": "advItem2Desc",
+            "component": "div",
+            "props": {
+                "value": "Native integration of advanced encryption protocols.",
+                "className": "text-xs text-on-primary-container mt-1"
+            }
+        },
+        {
+            "id": "gapCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-2xl shadow-card"
+            },
+            "children": [
+                "gapHeader",
+                "gapChart"
+            ]
+        },
+        {
+            "id": "gapHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-4"
+            },
+            "children": [
+                "gapTitle",
+                "gapBadge"
+            ]
+        },
+        {
+            "id": "gapTitle",
+            "component": "h3",
+            "props": {
+                "value": "Strategic Gap Analysis",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "gapBadge",
+            "component": "Tag",
+            "props": {
+                "value": "+14.2%",
+                "color": "success",
+                "icon": "trending-up"
+            }
+        },
+        {
+            "id": "gapChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/gapChartData"
+                    },
+                    "xAxis": {
+                        "data": "month"
+                    },
+                    "yAxisTitle": "Gap Index",
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-40 w-full"
+            }
+        },
+        {
+            "id": "bottomMatrix",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-2xl shadow-card"
+            },
+            "children": [
+                "matrixHeader",
+                "matrixTable"
+            ]
+        },
+        {
+            "id": "matrixHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "matrixTitle",
+                "matrixActions"
+            ]
+        },
+        {
+            "id": "matrixTitle",
+            "component": "h3",
+            "props": {
+                "value": "Feature-by-Feature Matrix",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "matrixActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "exportBtn",
+                "shareBtn"
+            ]
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Export CSV",
+                "icon": "download",
+                "size": "small"
+            }
+        },
+        {
+            "id": "shareBtn",
+            "component": "Button",
+            "props": {
+                "value": "Share View",
+                "icon": "share-2",
+                "size": "small"
+            }
+        },
+        {
+            "id": "matrixTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/matrixData"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "FEATURE SET",
+                        "dataIndex": "feature"
+                    },
+                    {
+                        "title": "OUR PRODUCT",
+                        "dataIndex": "ourProduct",
+                        "align": "center"
+                    },
+                    {
+                        "title": "NEXUS TECH",
+                        "dataIndex": "compA",
+                        "align": "center"
+                    },
+                    {
+                        "title": "QUANTUM INC",
+                        "dataIndex": "compB",
+                        "align": "center"
+                    },
+                    {
+                        "title": "APEX SOLUTIONS",
+                        "dataIndex": "compC",
+                        "align": "center"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/matrixData",
+                "componentId": "matrixRow"
+            }
+        },
+        {
+            "id": "matrixRow",
+            "component": "TableRow",
+            "children": [
+                "featCell",
+                "ourCell",
+                "compACell",
+                "compBCell",
+                "compCCell"
+            ]
+        },
+        {
+            "id": "featCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "feature"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "ourCell",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "ourProduct"
+                },
+                "color": "primary",
+                "className": "w-5 h-5 mx-auto"
+            }
+        },
+        {
+            "id": "compACell",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "compA"
+                },
+                "className": "w-5 h-5 mx-auto text-on-surface-variant"
+            }
+        },
+        {
+            "id": "compBCell",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "compB"
+                },
+                "className": "w-5 h-5 mx-auto text-on-surface-variant"
+            }
+        },
+        {
+            "id": "compCCell",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "compC"
+                },
+                "className": "w-5 h-5 mx-auto text-on-surface-variant"
+            }
+        }
+    ]
+}

@@ -1,0 +1,2188 @@
+{
+    "state": {
+      "searchValue": "",
+      "searchPlaceholder": "搜索员工姓名、工号或申请单号...",
+      "notificationCount": 3,
+      "breadcrumbItems": [
+        {
+          "title": "首页"
+        },
+        {
+          "title": "考勤管理"
+        },
+        {
+          "title": "请假与调休"
+        }
+      ],
+      "userInfo": {
+        "userName": "张经理",
+        "userRole": "技术研发部主管",
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      "appName": "HR Core Pro",
+      "menuItems": [
+        {
+          "menuId": "nav_1",
+          "menuName": "工作台仪表盘",
+          "menuIcon": "layout-dashboard",
+          "isActive": false
+        },
+        {
+          "menuId": "nav_2",
+          "menuName": "团队日程视图",
+          "menuIcon": "calendar-days",
+          "isActive": false
+        },
+        {
+          "menuId": "nav_3",
+          "menuName": "请假与调休管理",
+          "menuIcon": "folder-check",
+          "isActive": true
+        },
+        {
+          "menuId": "nav_4",
+          "menuName": "员工档案库",
+          "menuIcon": "users",
+          "isActive": false
+        },
+        {
+          "menuId": "nav_5",
+          "menuName": "系统设置",
+          "menuIcon": "settings",
+          "isActive": false
+        }
+      ],
+      "balanceCards": [
+        {
+          "cardTitle": "团队年假余额",
+          "remainDays": 45,
+          "totalDays": 120,
+          "progressPercentage": 37.5,
+          "statusIcon": "sun",
+          "footerText": "本月已使用 15 天"
+        },
+        {
+          "cardTitle": "团队病假余额",
+          "remainDays": 88,
+          "totalDays": 100,
+          "progressPercentage": 88,
+          "statusIcon": "heart-pulse",
+          "footerText": "本月已使用 2 天"
+        },
+        {
+          "cardTitle": "团队事假余额",
+          "remainDays": 12,
+          "totalDays": 60,
+          "progressPercentage": 20,
+          "statusIcon": "file-text",
+          "footerText": "本月已使用 8 天"
+        },
+        {
+          "cardTitle": "HR 智能建议",
+          "suggestionContent": "下周五（11月24日）有3名核心前端开发申请年假，建议与后端组协调合并上线窗口，规避项目风险。",
+          "statusIcon": "bot",
+          "priorityLevel": "高优预警",
+          "footerText": "点击查看团队日程排期"
+        }
+      ],
+      "tableTitle": "待处理申请列表",
+      "requestList": [
+        {
+          "requestId": "REQ-20231120-001",
+          "employeeName": "李四",
+          "employeeId": "EMP0012",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+          "leaveType": "年假",
+          "leaveTagColor": "#2070F3",
+          "startDate": "2023-11-22",
+          "endDate": "2023-11-24",
+          "duration": 3,
+          "reason": "回老家处理家庭房屋过户事宜。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231120-002",
+          "employeeName": "王五",
+          "employeeId": "EMP0045",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/22.jpg",
+          "leaveType": "病假",
+          "leaveTagColor": "#F4840C",
+          "startDate": "2023-11-20",
+          "endDate": "2023-11-21",
+          "duration": 2,
+          "reason": "重感冒发烧，需要在家休息，已提供医院挂号截图。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231120-003",
+          "employeeName": "赵六",
+          "employeeId": "EMP0067",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/55.jpg",
+          "leaveType": "事假",
+          "leaveTagColor": "#2CB8C9",
+          "startDate": "2023-11-23",
+          "endDate": "2023-11-23",
+          "duration": 1,
+          "reason": "上午需要去车管所办理车辆年检。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231119-004",
+          "employeeName": "陈七",
+          "employeeId": "EMP0089",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/women/68.jpg",
+          "leaveType": "调休",
+          "leaveTagColor": "#715AFB",
+          "startDate": "2023-11-25",
+          "endDate": "2023-11-25",
+          "duration": 1,
+          "reason": "抵扣上周六参与项目紧急上线的加班时长。",
+          "status": "已通过",
+          "statusColor": "success"
+        },
+        {
+          "requestId": "REQ-20231119-005",
+          "employeeName": "孙八",
+          "employeeId": "EMP0091",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/77.jpg",
+          "leaveType": "年假",
+          "leaveTagColor": "#2070F3",
+          "startDate": "2023-12-24",
+          "endDate": "2023-12-29",
+          "duration": 4,
+          "reason": "圣诞节及年底家庭长途旅行计划。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231118-006",
+          "employeeName": "周九",
+          "employeeId": "EMP0023",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/women/12.jpg",
+          "leaveType": "产检假",
+          "leaveTagColor": "#E91E8C",
+          "startDate": "2023-11-21",
+          "endDate": "2023-11-21",
+          "duration": 0.5,
+          "reason": "例行产检，下午请假半天。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231118-007",
+          "employeeName": "吴十",
+          "employeeId": "EMP0034",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/99.jpg",
+          "leaveType": "病假",
+          "leaveTagColor": "#F4840C",
+          "startDate": "2023-11-20",
+          "endDate": "2023-11-20",
+          "duration": 1,
+          "reason": "急性肠胃炎，需就医。",
+          "status": "已驳回",
+          "statusColor": "error"
+        },
+        {
+          "requestId": "REQ-20231117-008",
+          "employeeName": "郑十一",
+          "employeeId": "EMP0011",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/women/85.jpg",
+          "leaveType": "事假",
+          "leaveTagColor": "#2CB8C9",
+          "startDate": "2023-11-21",
+          "endDate": "2023-11-22",
+          "duration": 2,
+          "reason": "陪同家人就医检查。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231116-009",
+          "employeeName": "冯十二",
+          "employeeId": "EMP0056",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/11.jpg",
+          "leaveType": "年假",
+          "leaveTagColor": "#2070F3",
+          "startDate": "2023-11-27",
+          "endDate": "2023-11-28",
+          "duration": 2,
+          "reason": "个人搬家事宜处理。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231116-010",
+          "employeeName": "卫十三",
+          "employeeId": "EMP0078",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/men/45.jpg",
+          "leaveType": "婚假",
+          "leaveTagColor": "#E02128",
+          "startDate": "2023-12-01",
+          "endDate": "2023-12-08",
+          "duration": 7,
+          "reason": "回老家举办婚礼及蜜月旅行。",
+          "status": "待审批",
+          "statusColor": "warning"
+        },
+        {
+          "requestId": "REQ-20231115-011",
+          "employeeName": "蒋十四",
+          "employeeId": "EMP0021",
+          "employeeAvatarImage": "https://randomuser.me/api/portraits/women/33.jpg",
+          "leaveType": "调休",
+          "leaveTagColor": "#715AFB",
+          "startDate": "2023-11-22",
+          "endDate": "2023-11-22",
+          "duration": 1,
+          "reason": "上周通宵处理故障补偿调休。",
+          "status": "待审批",
+          "statusColor": "warning"
+        }
+      ],
+      "bannerTitle": "今日团队出勤概况",
+      "dateString": "2023年11月20日 星期一",
+      "presentText": "实到 38 人",
+      "leaveText": "请假 3 人",
+      "fieldText": "外勤 1 人",
+      "announcement": "系统提示：下周起年终考核即将启动，请各部门提前安排好单据审批。",
+      "drawerTitle": "申请单详情",
+      "selectedRequestId": "REQ-20231120-001",
+      "applicantInfo": {
+        "employeeName": "李四",
+        "employeeId": "EMP0012",
+        "jobTitle": "高级前端工程师",
+        "department": "技术研发部",
+        "employeeAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      "leaveDetails": {
+        "leaveType": "年假",
+        "duration": "3天",
+        "startDate": "2023-11-22 09:00",
+        "endDate": "2023-11-24 18:00",
+        "reason": "回老家处理家庭房屋过户事宜，已与同事做好代码交接。"
+      },
+      "approvalSteps": [
+        {
+          "stepName": "提交申请",
+          "operatorName": "李四",
+          "operateTime": "2023-11-20 09:30",
+          "stepStatus": "finish",
+          "statusIcon": "check-circle"
+        },
+        {
+          "stepName": "直属主管审批",
+          "operatorName": "张经理 (您)",
+          "operateTime": "等待审批中...",
+          "stepStatus": "process",
+          "statusIcon": "clock"
+        },
+        {
+          "stepName": "HR 人事备案",
+          "operatorName": "系统流转",
+          "operateTime": "未开始",
+          "stepStatus": "wait",
+          "statusIcon": "circle"
+        }
+      ],
+      "actionButtons": [
+        {
+          "btnLabel": "驳回申请",
+          "btnType": "danger",
+          "reasonRequired": true
+        },
+        {
+          "btnLabel": "同意并转交HR",
+          "btnType": "primary",
+          "reasonRequired": false
+        }
+      ],
+      "approvalNote": "",
+      "rejectReasonHint": "* 驳回时需要填写理由"
+    },
+    "rootId": "pageRoot",
+    "elements": [
+      {
+        "id": "pageRoot",
+        "component": "div",
+        "props": {
+          "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+        },
+        "children": [
+          "sidebarContainer",
+          "rightArea"
+        ]
+      },
+      {
+        "id": "sidebarContainer",
+        "component": "div",
+        "props": {
+          "className": "w-60 bg-surface-container-highest shadow-card flex flex-col shrink-0 h-full"
+        },
+        "children": [
+          "sidebarLogoArea",
+          "sidebarDivider",
+          "sidebarMenuList"
+        ]
+      },
+      {
+        "id": "sidebarLogoArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-6 py-5"
+        },
+        "children": [
+          "sidebarLogoIcon",
+          "sidebarAppName"
+        ]
+      },
+      {
+        "id": "sidebarLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "color": "primary",
+          "shape": "square",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "sidebarAppName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/appName"
+          },
+          "className": "text-lg font-bold text-primary"
+        }
+      },
+      {
+        "id": "sidebarDivider",
+        "component": "Divider",
+        "props": {
+          "className": "mx-4"
+        }
+      },
+      {
+        "id": "sidebarMenuList",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1 px-3 mt-2"
+        },
+        "children": [
+          "sidebarMenuItem1",
+          "sidebarMenuItem2",
+          "sidebarMenuItem3",
+          "sidebarMenuItem4",
+          "sidebarMenuItem5"
+        ]
+      },
+      {
+        "id": "sidebarMenuItem1",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuIcon1",
+          "sidebarMenuLabel1"
+        ]
+      },
+      {
+        "id": "sidebarMenuIcon1",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "color": "default",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLabel1",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/0/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuItem2",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuIcon2",
+          "sidebarMenuLabel2"
+        ]
+      },
+      {
+        "id": "sidebarMenuIcon2",
+        "component": "Icon",
+        "props": {
+          "name": "calendar-days",
+          "color": "default",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLabel2",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/1/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuItem3",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer bg-primary text-on-primary"
+        },
+        "children": [
+          "sidebarMenuIcon3",
+          "sidebarMenuLabel3"
+        ]
+      },
+      {
+        "id": "sidebarMenuIcon3",
+        "component": "Icon",
+        "props": {
+          "name": "folder-check",
+          "color": "inverse",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLabel3",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/2/menuName"
+          },
+          "className": "text-sm font-semibold"
+        }
+      },
+      {
+        "id": "sidebarMenuItem4",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuIcon4",
+          "sidebarMenuLabel4"
+        ]
+      },
+      {
+        "id": "sidebarMenuIcon4",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "color": "default",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLabel4",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/3/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuItem5",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-4 py-3 rounded-action cursor-pointer text-on-surface-variant"
+        },
+        "children": [
+          "sidebarMenuIcon5",
+          "sidebarMenuLabel5"
+        ]
+      },
+      {
+        "id": "sidebarMenuIcon5",
+        "component": "Icon",
+        "props": {
+          "name": "settings",
+          "color": "default",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarMenuLabel5",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/4/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "rightArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col overflow-hidden min-w-0"
+        },
+        "children": [
+          "topNavBar",
+          "contentArea"
+        ]
+      },
+      {
+        "id": "topNavBar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4 px-6 py-3 bg-surface-container-highest shadow-card shrink-0"
+        },
+        "children": [
+          "topBreadcrumb",
+          "topSearchInput",
+          "topRightActions"
+        ]
+      },
+      {
+        "id": "topBreadcrumb",
+        "component": "Breadcrumb",
+        "props": {
+          "items": [
+            {
+              "title": "首页"
+            },
+            {
+              "title": "考勤管理"
+            },
+            {
+              "title": "请假与调休"
+            }
+          ],
+          "className": "shrink-0"
+        }
+      },
+      {
+        "id": "topSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/searchValue"
+          },
+          "placeholder": {
+            "path": "/searchPlaceholder"
+          },
+          "prefix": "search",
+          "className": "flex-1 max-w-md"
+        }
+      },
+      {
+        "id": "topRightActions",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4 ml-auto shrink-0"
+        },
+        "children": [
+          "topNotifWrapper",
+          "topUserDropdown"
+        ]
+      },
+      {
+        "id": "topNotifWrapper",
+        "component": "div",
+        "props": {
+          "className": "relative cursor-pointer p-2 rounded-action hover:bg-surface-variant"
+        },
+        "children": [
+          "topNotifIcon",
+          "topNotifBadge"
+        ]
+      },
+      {
+        "id": "topNotifIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bell",
+          "className": "w-5 h-5 text-on-surface"
+        }
+      },
+      {
+        "id": "topNotifBadge",
+        "component": "div",
+        "props": {
+          "className": "absolute -top-0.5 -right-0.5 bg-error text-on-error rounded-full min-w-4 h-4 flex items-center justify-center text-xs px-1",
+          "value": {
+            "path": "/notificationCount"
+          }
+        }
+      },
+      {
+        "id": "topUserDropdown",
+        "component": "Dropdown",
+        "props": {
+          "trigger": [
+            "click"
+          ],
+          "placement": "bottomRight",
+          "menu": [
+            {
+              "label": "个人中心",
+              "key": "profile",
+              "icon": "user"
+            },
+            {
+              "label": "系统设置",
+              "key": "settings",
+              "icon": "settings"
+            },
+            {
+              "label": "退出登录",
+              "key": "logout",
+              "icon": "log-out"
+            }
+          ]
+        },
+        "children": [
+          "topUserTrigger"
+        ]
+      },
+      {
+        "id": "topUserTrigger",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 cursor-pointer p-1 rounded-action hover:bg-surface-variant"
+        },
+        "children": [
+          "topUserAvatar",
+          "topUserInfo"
+        ]
+      },
+      {
+        "id": "topUserAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/userInfo/userAvatarImage"
+          },
+          "className": "w-8 h-8 rounded-full object-cover"
+        }
+      },
+      {
+        "id": "topUserInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "topUserName",
+          "topUserRole"
+        ]
+      },
+      {
+        "id": "topUserName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/userInfo/userName"
+          },
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "topUserRole",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/userInfo/userRole"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "contentArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-1 overflow-hidden"
+        },
+        "children": [
+          "mainScrollArea",
+          "drawerContainer"
+        ]
+      },
+      {
+        "id": "mainScrollArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6 min-w-0"
+        },
+        "children": [
+          "kpiGrid",
+          "tableSection",
+          "bannerContainer"
+        ]
+      },
+      {
+        "id": "kpiGrid",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-4 gap-4"
+        },
+        "children": [
+          "kpiCard1",
+          "kpiCard2",
+          "kpiCard3",
+          "kpiCard4"
+        ]
+      },
+      {
+        "id": "kpiCard1",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card p-5 flex flex-col gap-3"
+        },
+        "children": [
+          "kpiCard1Header",
+          "kpiCard1ValueRow",
+          "kpiCard1Progress",
+          "kpiCard1Footer"
+        ]
+      },
+      {
+        "id": "kpiCard1Header",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "kpiCard1Icon",
+          "kpiCard1Title"
+        ]
+      },
+      {
+        "id": "kpiCard1Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/balanceCards/0/statusIcon"
+          },
+          "color": "primary",
+          "shape": "circle",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "kpiCard1Title",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/0/cardTitle"
+          },
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "kpiCard1ValueRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-baseline gap-1"
+        },
+        "children": [
+          "kpiCard1Remain",
+          "kpiCard1Slash",
+          "kpiCard1Total",
+          "kpiCard1Unit"
+        ]
+      },
+      {
+        "id": "kpiCard1Remain",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/0/remainDays"
+          },
+          "className": "text-3xl font-bold text-primary"
+        }
+      },
+      {
+        "id": "kpiCard1Slash",
+        "component": "span",
+        "props": {
+          "value": "/",
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard1Total",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/0/totalDays"
+          },
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard1Unit",
+        "component": "span",
+        "props": {
+          "value": "天",
+          "className": "text-sm text-on-surface-variant ml-1"
+        }
+      },
+      {
+        "id": "kpiCard1Progress",
+        "component": "Progress",
+        "props": {
+          "percent": {
+            "path": "/balanceCards/0/progressPercentage"
+          },
+          "strokeColor": "#0067D1",
+          "showInfo": true,
+          "size": "small"
+        }
+      },
+      {
+        "id": "kpiCard1Footer",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/0/footerText"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard2",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card p-5 flex flex-col gap-3"
+        },
+        "children": [
+          "kpiCard2Header",
+          "kpiCard2ValueRow",
+          "kpiCard2Progress",
+          "kpiCard2Footer"
+        ]
+      },
+      {
+        "id": "kpiCard2Header",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "kpiCard2Icon",
+          "kpiCard2Title"
+        ]
+      },
+      {
+        "id": "kpiCard2Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/balanceCards/1/statusIcon"
+          },
+          "color": "success",
+          "shape": "circle",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "kpiCard2Title",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/1/cardTitle"
+          },
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "kpiCard2ValueRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-baseline gap-1"
+        },
+        "children": [
+          "kpiCard2Remain",
+          "kpiCard2Slash",
+          "kpiCard2Total",
+          "kpiCard2Unit"
+        ]
+      },
+      {
+        "id": "kpiCard2Remain",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/1/remainDays"
+          },
+          "className": "text-3xl font-bold text-success"
+        }
+      },
+      {
+        "id": "kpiCard2Slash",
+        "component": "span",
+        "props": {
+          "value": "/",
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard2Total",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/1/totalDays"
+          },
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard2Unit",
+        "component": "span",
+        "props": {
+          "value": "天",
+          "className": "text-sm text-on-surface-variant ml-1"
+        }
+      },
+      {
+        "id": "kpiCard2Progress",
+        "component": "Progress",
+        "props": {
+          "percent": {
+            "path": "/balanceCards/1/progressPercentage"
+          },
+          "strokeColor": "#09AA71",
+          "showInfo": true,
+          "status": "success",
+          "size": "small"
+        }
+      },
+      {
+        "id": "kpiCard2Footer",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/1/footerText"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard3",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card p-5 flex flex-col gap-3"
+        },
+        "children": [
+          "kpiCard3Header",
+          "kpiCard3ValueRow",
+          "kpiCard3Progress",
+          "kpiCard3Footer"
+        ]
+      },
+      {
+        "id": "kpiCard3Header",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "kpiCard3Icon",
+          "kpiCard3Title"
+        ]
+      },
+      {
+        "id": "kpiCard3Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/balanceCards/2/statusIcon"
+          },
+          "color": "error",
+          "shape": "circle",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "kpiCard3Title",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/2/cardTitle"
+          },
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "kpiCard3ValueRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-baseline gap-1"
+        },
+        "children": [
+          "kpiCard3Remain",
+          "kpiCard3Slash",
+          "kpiCard3Total",
+          "kpiCard3Unit"
+        ]
+      },
+      {
+        "id": "kpiCard3Remain",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/2/remainDays"
+          },
+          "className": "text-3xl font-bold text-error"
+        }
+      },
+      {
+        "id": "kpiCard3Slash",
+        "component": "span",
+        "props": {
+          "value": "/",
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard3Total",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/2/totalDays"
+          },
+          "className": "text-lg text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard3Unit",
+        "component": "span",
+        "props": {
+          "value": "天",
+          "className": "text-sm text-on-surface-variant ml-1"
+        }
+      },
+      {
+        "id": "kpiCard3Progress",
+        "component": "Progress",
+        "props": {
+          "percent": {
+            "path": "/balanceCards/2/progressPercentage"
+          },
+          "strokeColor": "#E02128",
+          "showInfo": true,
+          "status": "exception",
+          "size": "small"
+        }
+      },
+      {
+        "id": "kpiCard3Footer",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/2/footerText"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "kpiCard4",
+        "component": "div",
+        "props": {
+          "className": "bg-warning-container rounded-container shadow-card p-5 flex flex-col gap-3"
+        },
+        "children": [
+          "kpiCard4Header",
+          "kpiCard4Suggestion",
+          "kpiCard4Footer"
+        ]
+      },
+      {
+        "id": "kpiCard4Header",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "kpiCard4Icon",
+          "kpiCard4Title",
+          "kpiCard4Priority"
+        ]
+      },
+      {
+        "id": "kpiCard4Icon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "/balanceCards/3/statusIcon"
+          },
+          "color": "warning",
+          "shape": "circle",
+          "className": "w-8 h-8"
+        }
+      },
+      {
+        "id": "kpiCard4Title",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/3/cardTitle"
+          },
+          "className": "text-sm font-semibold text-on-warning-container"
+        }
+      },
+      {
+        "id": "kpiCard4Priority",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "/balanceCards/3/priorityLevel"
+          },
+          "color": "warning",
+          "size": "small"
+        }
+      },
+      {
+        "id": "kpiCard4Suggestion",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/3/suggestionContent"
+          },
+          "className": "text-sm text-on-warning-container leading-relaxed"
+        }
+      },
+      {
+        "id": "kpiCard4Footer",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 mt-1 cursor-pointer"
+        },
+        "children": [
+          "kpiCard4FooterIcon",
+          "kpiCard4FooterText"
+        ]
+      },
+      {
+        "id": "kpiCard4FooterIcon",
+        "component": "Icon",
+        "props": {
+          "name": "external-link",
+          "color": "warning",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "kpiCard4FooterText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/balanceCards/3/footerText"
+          },
+          "className": "text-xs font-medium text-warning"
+        }
+      },
+      {
+        "id": "tableSection",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card flex flex-col overflow-hidden"
+        },
+        "children": [
+          "tableHeader",
+          "mainTable"
+        ]
+      },
+      {
+        "id": "tableHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-5 py-4"
+        },
+        "children": [
+          "tableTitleSpan",
+          "tableHeaderActions"
+        ]
+      },
+      {
+        "id": "tableTitleSpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/tableTitle"
+          },
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "tableHeaderActions",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "tableFilterBtn",
+          "tableNewBtn"
+        ]
+      },
+      {
+        "id": "tableFilterBtn",
+        "component": "Button",
+        "props": {
+          "value": "筛选",
+          "icon": "filter",
+          "size": "small"
+        }
+      },
+      {
+        "id": "tableNewBtn",
+        "component": "Button",
+        "props": {
+          "value": "新建申请",
+          "icon": "plus",
+          "size": "small",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "mainTable",
+        "component": "Table",
+        "props": {
+          "rowKey": "requestId",
+          "dataSource": {
+            "path": "/requestList"
+          },
+          "pagination": true,
+          "className": "mb-4",
+          "columns": [
+            {
+              "title": "员工信息",
+              "dataIndex": "employeeName",
+              "width": 200
+            },
+            {
+              "title": "请假类型",
+              "dataIndex": "leaveType",
+              "width": 110
+            },
+            {
+              "title": "起止时间",
+              "dataIndex": "startDate",
+              "width": 200
+            },
+            {
+              "title": "时长",
+              "dataIndex": "duration",
+              "width": 90,
+              "align": "center"
+            },
+            {
+              "title": "申请原因",
+              "dataIndex": "reason"
+            },
+            {
+              "title": "状态",
+              "dataIndex": "status",
+              "width": 110
+            },
+            {
+              "title": "操作",
+              "dataIndex": "action",
+              "width": 160,
+              "align": "center"
+            }
+          ]
+        },
+        "children": {
+          "path": "/requestList",
+          "componentId": "tblRow"
+        }
+      },
+      {
+        "id": "tblRow",
+        "component": "TableRow",
+        "children": [
+          "tblCellEmployee",
+          "tblCellLeaveType",
+          "tblCellDate",
+          "tblCellDuration",
+          "tblCellReason",
+          "tblCellStatus",
+          "tblCellActions"
+        ]
+      },
+      {
+        "id": "tblCellEmployee",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "tblCellAvatar",
+          "tblCellEmpInfo"
+        ]
+      },
+      {
+        "id": "tblCellAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "employeeAvatarImage"
+          },
+          "className": "w-8 h-8 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "tblCellEmpInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "tblCellEmpName",
+          "tblCellEmpId"
+        ]
+      },
+      {
+        "id": "tblCellEmpName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "employeeName"
+          },
+          "className": "text-sm font-medium text-on-surface truncate"
+        }
+      },
+      {
+        "id": "tblCellEmpId",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "employeeId"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "tblCellLeaveType",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "leaveType"
+          },
+          "color": {
+            "path": "leaveTagColor"
+          },
+          "variant": "filled"
+        }
+      },
+      {
+        "id": "tblCellDate",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1"
+        },
+        "children": [
+          "tblCellDateStart",
+          "tblCellDateTilde",
+          "tblCellDateEnd"
+        ]
+      },
+      {
+        "id": "tblCellDateStart",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "startDate"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "tblCellDateTilde",
+        "component": "span",
+        "props": {
+          "value": "~",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "tblCellDateEnd",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "endDate"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "tblCellDuration",
+        "component": "div",
+        "props": {
+          "className": "flex items-baseline gap-1 justify-center"
+        },
+        "children": [
+          "tblCellDurNum",
+          "tblCellDurUnit"
+        ]
+      },
+      {
+        "id": "tblCellDurNum",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "duration"
+          },
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "tblCellDurUnit",
+        "component": "span",
+        "props": {
+          "value": "天",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "tblCellReason",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "reason"
+          },
+          "className": "text-sm text-on-surface truncate max-w-xs"
+        }
+      },
+      {
+        "id": "tblCellStatus",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "status"
+          },
+          "color": {
+            "path": "statusColor"
+          }
+        }
+      },
+      {
+        "id": "tblCellActions",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 justify-center"
+        },
+        "children": [
+          "tblCellApproveBtn",
+          "tblCellRejectBtn"
+        ]
+      },
+      {
+        "id": "tblCellApproveBtn",
+        "component": "Button",
+        "props": {
+          "value": "同意",
+          "size": "small",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "tblCellRejectBtn",
+        "component": "Button",
+        "props": {
+          "value": "驳回",
+          "size": "small",
+          "color": "danger"
+        }
+      },
+      {
+        "id": "bannerContainer",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card px-5 py-4 flex items-center justify-between gap-4 flex-wrap"
+        },
+        "children": [
+          "bannerLeft",
+          "bannerCenter",
+          "bannerRight"
+        ]
+      },
+      {
+        "id": "bannerLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 shrink-0"
+        },
+        "children": [
+          "bannerTitleText",
+          "bannerSep1",
+          "bannerDateIcon",
+          "bannerDateText"
+        ]
+      },
+      {
+        "id": "bannerTitleText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/bannerTitle"
+          },
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "bannerSep1",
+        "component": "span",
+        "props": {
+          "value": "·",
+          "className": "text-on-surface-variant"
+        }
+      },
+      {
+        "id": "bannerDateIcon",
+        "component": "Icon",
+        "props": {
+          "name": "calendar-clock",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "bannerDateText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/dateString"
+          },
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "bannerCenter",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4"
+        },
+        "children": [
+          "bannerPresentGroup",
+          "bannerLeaveGroup",
+          "bannerFieldGroup"
+        ]
+      },
+      {
+        "id": "bannerPresentGroup",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5"
+        },
+        "children": [
+          "bannerPresentDot",
+          "bannerPresentText"
+        ]
+      },
+      {
+        "id": "bannerPresentDot",
+        "component": "div",
+        "props": {
+          "className": "w-2 h-2 rounded-full bg-success"
+        }
+      },
+      {
+        "id": "bannerPresentText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/presentText"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "bannerLeaveGroup",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5"
+        },
+        "children": [
+          "bannerLeaveDot",
+          "bannerLeaveText"
+        ]
+      },
+      {
+        "id": "bannerLeaveDot",
+        "component": "div",
+        "props": {
+          "className": "w-2 h-2 rounded-full bg-warning"
+        }
+      },
+      {
+        "id": "bannerLeaveText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/leaveText"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "bannerFieldGroup",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5"
+        },
+        "children": [
+          "bannerFieldDot",
+          "bannerFieldText"
+        ]
+      },
+      {
+        "id": "bannerFieldDot",
+        "component": "div",
+        "props": {
+          "className": "w-2 h-2 rounded-full bg-info"
+        }
+      },
+      {
+        "id": "bannerFieldText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/fieldText"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "bannerRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 min-w-0"
+        },
+        "children": [
+          "bannerAnnounceIcon",
+          "bannerAnnounceText"
+        ]
+      },
+      {
+        "id": "bannerAnnounceIcon",
+        "component": "Icon",
+        "props": {
+          "name": "megaphone",
+          "color": "warning",
+          "className": "w-4 h-4 shrink-0"
+        }
+      },
+      {
+        "id": "bannerAnnounceText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/announcement"
+          },
+          "className": "text-xs text-on-surface-variant truncate"
+        }
+      },
+      {
+        "id": "drawerContainer",
+        "component": "div",
+        "props": {
+          "className": "w-96 bg-surface-container-highest shadow-popover flex flex-col shrink-0 border-l border-divider overflow-hidden"
+        },
+        "children": [
+          "drawerHeader",
+          "drawerBody",
+          "drawerFooter"
+        ]
+      },
+      {
+        "id": "drawerHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-5 py-4 border-b border-divider shrink-0"
+        },
+        "children": [
+          "drawerTitleArea",
+          "drawerCloseBtn"
+        ]
+      },
+      {
+        "id": "drawerTitleArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "drawerTitleSpan",
+          "drawerRequestId"
+        ]
+      },
+      {
+        "id": "drawerTitleSpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/drawerTitle"
+          },
+          "className": "text-base font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "drawerRequestId",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/selectedRequestId"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerCloseBtn",
+        "component": "Button",
+        "props": {
+          "icon": "x",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "drawerBody",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto px-5 py-4 flex flex-col gap-5"
+        },
+        "children": [
+          "drawerApplicantCard",
+          "drawerDivider1",
+          "drawerLeaveSection",
+          "drawerDivider2",
+          "drawerStepsSection",
+          "drawerNoteSection"
+        ]
+      },
+      {
+        "id": "drawerApplicantCard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-4 p-4 bg-surface-variant rounded-container"
+        },
+        "children": [
+          "drawerApplicantAvatar",
+          "drawerApplicantInfo"
+        ]
+      },
+      {
+        "id": "drawerApplicantAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/applicantInfo/employeeAvatarImage"
+          },
+          "className": "w-12 h-12 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "drawerApplicantInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "drawerApplicantName",
+          "drawerApplicantIdRow",
+          "drawerApplicantMeta"
+        ]
+      },
+      {
+        "id": "drawerApplicantName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/applicantInfo/employeeName"
+          },
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "drawerApplicantIdRow",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/applicantInfo/employeeId"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerApplicantMeta",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mt-0.5"
+        },
+        "children": [
+          "drawerApplicantJobTitle",
+          "drawerApplicantDeptSep",
+          "drawerApplicantDept"
+        ]
+      },
+      {
+        "id": "drawerApplicantJobTitle",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/applicantInfo/jobTitle"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerApplicantDeptSep",
+        "component": "span",
+        "props": {
+          "value": "·",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerApplicantDept",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/applicantInfo/department"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerDivider1",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "drawerLeaveSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3"
+        },
+        "children": [
+          "drawerLeaveTitle",
+          "drawerLeaveGrid",
+          "drawerLeaveReasonArea"
+        ]
+      },
+      {
+        "id": "drawerLeaveTitle",
+        "component": "span",
+        "props": {
+          "value": "请假详情",
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "drawerLeaveGrid",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-2 gap-3"
+        },
+        "children": [
+          "drawerTypeLabel",
+          "drawerTypeValue",
+          "drawerDurLabel",
+          "drawerDurValue",
+          "drawerStartLabel",
+          "drawerStartValue",
+          "drawerEndLabel",
+          "drawerEndValue"
+        ]
+      },
+      {
+        "id": "drawerTypeLabel",
+        "component": "span",
+        "props": {
+          "value": "请假类型",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerTypeValue",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "/leaveDetails/leaveType"
+          },
+          "color": "processing"
+        }
+      },
+      {
+        "id": "drawerDurLabel",
+        "component": "span",
+        "props": {
+          "value": "请假时长",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerDurValue",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/leaveDetails/duration"
+          },
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "drawerStartLabel",
+        "component": "span",
+        "props": {
+          "value": "开始时间",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerStartValue",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/leaveDetails/startDate"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "drawerEndLabel",
+        "component": "span",
+        "props": {
+          "value": "结束时间",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerEndValue",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/leaveDetails/endDate"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "drawerLeaveReasonArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1 mt-1"
+        },
+        "children": [
+          "drawerReasonLabel",
+          "drawerReasonValue"
+        ]
+      },
+      {
+        "id": "drawerReasonLabel",
+        "component": "span",
+        "props": {
+          "value": "申请原因",
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerReasonValue",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/leaveDetails/reason"
+          },
+          "className": "text-sm text-on-surface leading-relaxed"
+        }
+      },
+      {
+        "id": "drawerDivider2",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "drawerStepsSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3"
+        },
+        "children": [
+          "drawerStepsTitle",
+          "drawerSteps"
+        ]
+      },
+      {
+        "id": "drawerStepsTitle",
+        "component": "span",
+        "props": {
+          "value": "审批流程",
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "drawerSteps",
+        "component": "Steps",
+        "props": {
+          "current": 1,
+          "orientation": "vertical",
+          "types": "default",
+          "size": "small"
+        },
+        "children": {
+          "path": "/approvalSteps",
+          "componentId": "drawerStepItem"
+        }
+      },
+      {
+        "id": "drawerStepItem",
+        "component": "StepItem",
+        "props": {
+          "title": {
+            "path": "stepName"
+          },
+          "content": {
+            "componentId": "drawerStepContent"
+          },
+          "status": {
+            "path": "stepStatus"
+          },
+          "icon": {
+            "path": "statusIcon"
+          }
+        }
+      },
+      {
+        "id": "drawerStepContent",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5"
+        },
+        "children": [
+          "drawerStepOperator",
+          "drawerStepTime"
+        ]
+      },
+      {
+        "id": "drawerStepOperator",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "operatorName"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "drawerStepTime",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "operateTime"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "drawerNoteSection",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-2"
+        },
+        "children": [
+          "drawerNoteLabel",
+          "drawerNoteInput",
+          "drawerRejectHint"
+        ]
+      },
+      {
+        "id": "drawerNoteLabel",
+        "component": "span",
+        "props": {
+          "value": "审批备注",
+          "className": "text-sm font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "drawerNoteInput",
+        "component": "TextArea",
+        "props": {
+          "value": {
+            "path": "/approvalNote"
+          },
+          "placeholder": "请输入审批意见...",
+          "autoSize": true,
+          "className": "w-full"
+        }
+      },
+      {
+        "id": "drawerRejectHint",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/rejectReasonHint"
+          },
+          "className": "text-xs text-warning"
+        }
+      },
+      {
+        "id": "drawerFooter",
+        "component": "div",
+        "props": {
+          "className": "px-5 py-4 border-t border-divider shrink-0"
+        },
+        "children": [
+          "drawerActionBtns"
+        ]
+      },
+      {
+        "id": "drawerActionBtns",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "drawerRejectBtn",
+          "drawerApproveBtn"
+        ]
+      },
+      {
+        "id": "drawerRejectBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/actionButtons/0/btnLabel"
+          },
+          "color": "danger",
+          "icon": "x-circle",
+          "iconPlacement": "start",
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "drawerApproveBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/actionButtons/1/btnLabel"
+          },
+          "color": "primary",
+          "icon": "check-circle",
+          "iconPlacement": "start",
+          "className": "flex-1"
+        }
+      }
+    ]
+  }

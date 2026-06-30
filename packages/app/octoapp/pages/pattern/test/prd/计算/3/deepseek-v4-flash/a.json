@@ -1,0 +1,1120 @@
+{
+  "state": {
+    "logoText": "DataConfig Pro",
+    "selectedMenuKeys": [
+      "nodeConfig"
+    ],
+    "menuItems": [
+      {
+        "title": "首页",
+        "key": "home",
+        "icon": "home"
+      },
+      {
+        "title": "数据面板",
+        "key": "dashboard",
+        "icon": "layout-dashboard"
+      },
+      {
+        "title": "权限控制",
+        "key": "permission",
+        "icon": "shield"
+      },
+      {
+        "title": "模块管理",
+        "key": "module",
+        "icon": "puzzle"
+      },
+      {
+        "title": "节点配置",
+        "key": "nodeConfig",
+        "icon": "network"
+      },
+      {
+        "title": "扩展中心",
+        "key": "extension",
+        "icon": "puzzle"
+      }
+    ],
+    "steps": [
+      {
+        "title": "3 规则设置",
+        "status": "process"
+      },
+      {
+        "title": "5 确认发布",
+        "status": "wait"
+      }
+    ],
+    "configFormNodeCategory": "direct",
+    "configFormEnvironment": "prod-cluster-a",
+    "configFormRouteType": "intercept",
+    "leftSelectedKeys": [],
+    "leftTableData": [
+      {
+        "id": "1",
+        "sourceIp": "192.168.1.101",
+        "mappedIp": "10.0.0.5",
+        "statusLabel": "正常在线",
+        "statusIcon": "check-circle",
+        "statusColor": "success",
+        "deviceId": "NODE-407307-A3B2",
+        "firmwareVersion": "v1.0-648"
+      },
+      {
+        "id": "2",
+        "sourceIp": "192.168.1.102",
+        "mappedIp": "10.0.0.6",
+        "statusLabel": "维护中",
+        "statusIcon": "alert-triangle",
+        "statusColor": "warning",
+        "deviceId": "NODE-248824-C1D8",
+        "firmwareVersion": "v1.0-529"
+      },
+      {
+        "id": "3",
+        "sourceIp": "192.168.1.103",
+        "mappedIp": "10.0.0.7",
+        "statusLabel": "正常在线",
+        "statusIcon": "check-circle",
+        "statusColor": "success",
+        "deviceId": "NODE-903645-E4F0",
+        "firmwareVersion": "v1.1-032"
+      },
+      {
+        "id": "4",
+        "sourceIp": "192.168.1.104",
+        "mappedIp": "10.0.0.8",
+        "statusLabel": "离线",
+        "statusIcon": "x-circle",
+        "statusColor": "error",
+        "deviceId": "NODE-512890-G7H6",
+        "firmwareVersion": "v1.0-410"
+      },
+      {
+        "id": "5",
+        "sourceIp": "192.168.1.105",
+        "mappedIp": "10.0.0.9",
+        "statusLabel": "正常在线",
+        "statusIcon": "check-circle",
+        "statusColor": "success",
+        "deviceId": "NODE-770231-B5K2",
+        "firmwareVersion": "v1.2-101"
+      },
+      {
+        "id": "6",
+        "sourceIp": "192.168.1.106",
+        "mappedIp": "10.0.0.10",
+        "statusLabel": "维护中",
+        "statusIcon": "alert-triangle",
+        "statusColor": "warning",
+        "deviceId": "NODE-134887-L9M1",
+        "firmwareVersion": "v1.0-855"
+      },
+      {
+        "id": "7",
+        "sourceIp": "192.168.1.107",
+        "mappedIp": "10.0.0.11",
+        "statusLabel": "正常在线",
+        "statusIcon": "check-circle",
+        "statusColor": "success",
+        "deviceId": "NODE-569204-P3Q4",
+        "firmwareVersion": "v1.1-220"
+      },
+      {
+        "id": "8",
+        "sourceIp": "192.168.1.108",
+        "mappedIp": "10.0.0.12",
+        "statusLabel": "离线",
+        "statusIcon": "x-circle",
+        "statusColor": "error",
+        "deviceId": "NODE-318906-R6S7",
+        "firmwareVersion": "v1.0-347"
+      },
+      {
+        "id": "9",
+        "sourceIp": "192.168.1.109",
+        "mappedIp": "10.0.0.13",
+        "statusLabel": "正常在线",
+        "statusIcon": "check-circle",
+        "statusColor": "success",
+        "deviceId": "NODE-882315-T8U9",
+        "firmwareVersion": "v1.0-613"
+      },
+      {
+        "id": "10",
+        "sourceIp": "192.168.1.110",
+        "mappedIp": "10.0.0.14",
+        "statusLabel": "维护中",
+        "statusIcon": "alert-triangle",
+        "statusColor": "warning",
+        "deviceId": "NODE-447623-V1W2",
+        "firmwareVersion": "v1.2-077"
+      }
+    ],
+    "rightSelectedKeys": [],
+    "rightTableData": [],
+    "cascadeSwitch": true,
+    "statusText": "系统连接正常",
+    "tasksCount": 7,
+    "tasksLabel": "待同步任务"
+  },
+  "rootId": "pageRoot",
+  "elements": [
+    {
+      "id": "pageRoot",
+      "component": "div",
+      "props": {
+        "className": "min-h-screen flex flex-col bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavBarContainer",
+        "auxiliaryNavContainer",
+        "mainContentContainer",
+        "bottomActionBarContainer"
+      ]
+    },
+    {
+      "id": "topNavBarContainer",
+      "component": "div",
+      "props": {
+        "className": "fixed top-0 left-0 right-0 h-12 bg-surface-container-highest shadow-sm z-50 flex items-center px-gutter"
+      },
+      "children": [
+        "topNavLeftGroup",
+        "topNavMenuWrapper",
+        "topNavRightGroup"
+      ]
+    },
+    {
+      "id": "auxiliaryNavContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center px-page py-stack mt-12 bg-surface"
+      },
+      "children": [
+        "auxNavBackBtn",
+        "auxNavStepsWrapper"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-section px-page py-section overflow-y-auto"
+      },
+      "children": [
+        "configFormContainer",
+        "transferBoxContainer"
+      ]
+    },
+    {
+      "id": "configFormContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-shrink-0"
+      },
+      "children": [
+        "configFormCard"
+      ]
+    },
+    {
+      "id": "transferBoxContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      },
+      "children": [
+        "transferBoxMain"
+      ]
+    },
+    {
+      "id": "bottomActionBarContainer",
+      "component": "div",
+      "props": {
+        "className": "fixed bottom-0 left-0 right-0 h-16 bg-surface-container-highest shadow-sm z-50 flex items-center px-page"
+      },
+      "children": [
+        "bottomActionLeftSection",
+        "bottomActionRightSection"
+      ]
+    },
+    {
+      "id": "topNavLeftGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center mr-auto"
+      },
+      "children": [
+        "topNavLogo"
+      ]
+    },
+    {
+      "id": "topNavLogo",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/logoText"
+        },
+        "className": "text-lg font-bold text-primary tracking-tight"
+      }
+    },
+    {
+      "id": "topNavMenuWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "topNavMenu"
+      ]
+    },
+    {
+      "id": "topNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full max-w-4xl"
+      }
+    },
+    {
+      "id": "topNavRightGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center ml-auto"
+      },
+      "children": [
+        "topNavSearchIcon"
+      ]
+    },
+    {
+      "id": "topNavSearchIcon",
+      "component": "Icon",
+      "props": {
+        "name": "search",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "auxNavBackBtn",
+      "component": "Button",
+      "props": {
+        "value": "返回节点列表",
+        "icon": "arrow-left",
+        "iconPlacement": "start",
+        "types": "link",
+        "className": "shrink-0"
+      }
+    },
+    {
+      "id": "auxNavStepsWrapper",
+      "component": "div",
+      "props": {
+        "className": "ml-auto"
+      },
+      "children": [
+        "auxNavSteps"
+      ]
+    },
+    {
+      "id": "auxNavSteps",
+      "component": "Steps",
+      "props": {
+        "current": 0,
+        "size": "small"
+      },
+      "children": {
+        "path": "/steps",
+        "componentId": "auxNavStepItem"
+      }
+    },
+    {
+      "id": "auxNavStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "title"
+        },
+        "status": {
+          "path": "status"
+        }
+      }
+    },
+    {
+      "id": "configFormCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-6"
+      },
+      "children": [
+        "configFormHeader",
+        "configFormBody"
+      ]
+    },
+    {
+      "id": "configFormHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "configFormTitle"
+      ]
+    },
+    {
+      "id": "configFormTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "基础配置"
+      }
+    },
+    {
+      "id": "configFormBody",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-5 mt-5"
+      },
+      "children": [
+        "configFormNodeCategoryField",
+        "configFormEnvironmentField",
+        "configFormRouteTypeField"
+      ]
+    },
+    {
+      "id": "configFormNodeCategoryField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "configFormNodeCategoryLabelRow",
+        "configFormNodeCategorySegmented"
+      ]
+    },
+    {
+      "id": "configFormNodeCategoryLabelRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mb-2"
+      },
+      "children": [
+        "configFormNodeCategoryLabel",
+        "configFormNodeCategoryRequired"
+      ]
+    },
+    {
+      "id": "configFormNodeCategoryLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-on-surface",
+        "value": "节点类别"
+      }
+    },
+    {
+      "id": "configFormNodeCategoryRequired",
+      "component": "span",
+      "props": {
+        "className": "text-error text-sm",
+        "value": "*"
+      }
+    },
+    {
+      "id": "configFormNodeCategorySegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/configFormNodeCategory"
+        },
+        "options": [
+          {
+            "label": "系统内置",
+            "value": "system"
+          },
+          {
+            "label": "自定义",
+            "value": "custom"
+          },
+          {
+            "label": "直连节点",
+            "value": "direct"
+          }
+        ],
+        "block": true,
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "configFormEnvironmentField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "configFormEnvironmentLabelRow",
+        "configFormEnvironmentSelect"
+      ]
+    },
+    {
+      "id": "configFormEnvironmentLabelRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mb-2"
+      },
+      "children": [
+        "configFormEnvironmentLabel",
+        "configFormEnvironmentRequired"
+      ]
+    },
+    {
+      "id": "configFormEnvironmentLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-on-surface",
+        "value": "关联环境"
+      }
+    },
+    {
+      "id": "configFormEnvironmentRequired",
+      "component": "span",
+      "props": {
+        "className": "text-error text-sm",
+        "value": "*"
+      }
+    },
+    {
+      "id": "configFormEnvironmentSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/configFormEnvironment"
+        },
+        "options": [
+          {
+            "label": "生产环境-集群A",
+            "value": "prod-cluster-a"
+          },
+          {
+            "label": "预发布环境-集群B",
+            "value": "staging-cluster-b"
+          },
+          {
+            "label": "开发环境-集群C",
+            "value": "dev-cluster-c"
+          }
+        ],
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "configFormRouteTypeField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "configFormRouteTypeLabelRow",
+        "configFormRouteTypeRadio"
+      ]
+    },
+    {
+      "id": "configFormRouteTypeLabelRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mb-2"
+      },
+      "children": [
+        "configFormRouteTypeLabel",
+        "configFormRouteTypeRequired"
+      ]
+    },
+    {
+      "id": "configFormRouteTypeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-on-surface",
+        "value": "路由类型"
+      }
+    },
+    {
+      "id": "configFormRouteTypeRequired",
+      "component": "span",
+      "props": {
+        "className": "text-error text-sm",
+        "value": "*"
+      }
+    },
+    {
+      "id": "configFormRouteTypeRadio",
+      "component": "RadioGroup",
+      "props": {
+        "value": {
+          "path": "/configFormRouteType"
+        },
+        "options": [
+          {
+            "label": "前置转发",
+            "value": "forward"
+          },
+          {
+            "label": "条件拦截",
+            "value": "intercept"
+          }
+        ],
+        "orientation": "horizontal"
+      }
+    },
+    {
+      "id": "transferBoxMain",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row gap-gutter h-full items-stretch"
+      },
+      "children": [
+        "transferLeftCard",
+        "transferCenterActions",
+        "transferRightCard"
+      ]
+    },
+    {
+      "id": "transferLeftCard",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col"
+      },
+      "children": [
+        "transferLeftHeader",
+        "transferLeftDesc",
+        "transferLeftTable",
+        "transferLeftSummary"
+      ]
+    },
+    {
+      "id": "transferLeftHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-stack"
+      },
+      "children": [
+        "transferLeftTitle",
+        "transferLeftClearBtn"
+      ]
+    },
+    {
+      "id": "transferLeftTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "可用数据源(102)"
+      }
+    },
+    {
+      "id": "transferLeftClearBtn",
+      "component": "Button",
+      "props": {
+        "types": "link",
+        "icon": "trash-2",
+        "value": "清空",
+        "size": "small"
+      }
+    },
+    {
+      "id": "transferLeftDesc",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant mb-stack",
+        "value": "请勾选需要绑定的目标节点，点击右箭头将其添加至右侧列表。"
+      }
+    },
+    {
+      "id": "transferLeftTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/leftTableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/leftSelectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "源IP地址",
+            "dataIndex": "sourceIp",
+            "minWidth": 140
+          },
+          {
+            "title": "映射IP",
+            "dataIndex": "mappedIp",
+            "minWidth": 140
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "status"
+          },
+          {
+            "title": "设备标识",
+            "dataIndex": "deviceId",
+            "minWidth": 180
+          },
+          {
+            "title": "固件版本",
+            "dataIndex": "firmwareVersion",
+            "minWidth": 120
+          }
+        ],
+        "pagination": true,
+        "className": "mb-0"
+      },
+      "children": {
+        "path": "/leftTableData",
+        "componentId": "transferLeftTableRow"
+      }
+    },
+    {
+      "id": "transferLeftTableRow",
+      "component": "TableRow",
+      "children": [
+        "transferLeftCellSourceIp",
+        "transferLeftCellMappedIp",
+        "transferLeftCellStatus",
+        "transferLeftCellDeviceId",
+        "transferLeftCellFirmware"
+      ]
+    },
+    {
+      "id": "transferLeftCellSourceIp",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "sourceIp"
+        }
+      }
+    },
+    {
+      "id": "transferLeftCellMappedIp",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "mappedIp"
+        }
+      }
+    },
+    {
+      "id": "transferLeftCellStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusLabel"
+        },
+        "icon": {
+          "path": "statusIcon"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "variant": "filled"
+      }
+    },
+    {
+      "id": "transferLeftCellDeviceId",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "deviceId"
+        }
+      }
+    },
+    {
+      "id": "transferLeftCellFirmware",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "firmwareVersion"
+        }
+      }
+    },
+    {
+      "id": "transferLeftSummary",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mt-stack pt-stack border-t border-divider"
+      },
+      "children": [
+        "transferLeftSummaryText",
+        "transferLeftPaginationInfo"
+      ]
+    },
+    {
+      "id": "transferLeftSummaryText",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "总计: 91 选中: 0"
+      }
+    },
+    {
+      "id": "transferLeftPaginationInfo",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "< 2/5 >"
+      }
+    },
+    {
+      "id": "transferCenterActions",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col justify-center items-center gap-stack px-2"
+      },
+      "children": [
+        "transferMoveRightBtn",
+        "transferMoveLeftBtn"
+      ]
+    },
+    {
+      "id": "transferMoveRightBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-right",
+        "value": "右移",
+        "iconPlacement": "start",
+        "color": "primary",
+        "className": "w-24"
+      }
+    },
+    {
+      "id": "transferMoveLeftBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left",
+        "value": "左移",
+        "iconPlacement": "start",
+        "className": "w-24"
+      }
+    },
+    {
+      "id": "transferRightCard",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col"
+      },
+      "children": [
+        "transferRightHeader",
+        "transferRightDesc",
+        "transferRightTable"
+      ]
+    },
+    {
+      "id": "transferRightHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-stack"
+      },
+      "children": [
+        "transferRightTitle",
+        "transferRightHeaderActions"
+      ]
+    },
+    {
+      "id": "transferRightTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "已选节点(5)"
+      }
+    },
+    {
+      "id": "transferRightHeaderActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "transferRightControls",
+        "transferRightClearBtn"
+      ]
+    },
+    {
+      "id": "transferRightControls",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "transferCascadeSwitch",
+        "transferInfoIcon"
+      ]
+    },
+    {
+      "id": "transferCascadeSwitch",
+      "component": "Switch",
+      "props": {
+        "value": {
+          "path": "/cascadeSwitch"
+        },
+        "checkedChildren": "开启深层级联",
+        "unCheckedChildren": "关闭",
+        "size": "small"
+      }
+    },
+    {
+      "id": "transferInfoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "className": "w-4 h-4",
+        "shape": "outline",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "transferRightClearBtn",
+      "component": "Button",
+      "props": {
+        "types": "link",
+        "icon": "trash-2",
+        "value": "清空",
+        "size": "small"
+      }
+    },
+    {
+      "id": "transferRightDesc",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant mb-stack",
+        "value": "当前暂未向目标池中分配任何可用节点。"
+      }
+    },
+    {
+      "id": "transferRightTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/rightTableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/rightSelectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "源IP地址",
+            "dataIndex": "sourceIp"
+          },
+          {
+            "title": "映射IP",
+            "dataIndex": "mappedIp"
+          },
+          {
+            "title": "响应策略",
+            "dataIndex": "responsePolicy"
+          },
+          {
+            "title": "所属用户组",
+            "dataIndex": "userGroup"
+          },
+          {
+            "title": "重试次数",
+            "dataIndex": "retryCount"
+          }
+        ],
+        "pagination": false
+      },
+      "children": {
+        "path": "/rightTableData",
+        "componentId": "transferRightTableRow"
+      }
+    },
+    {
+      "id": "transferRightTableRow",
+      "component": "TableRow",
+      "children": [
+        "transferRightCellSourceIp",
+        "transferRightCellMappedIp",
+        "transferRightCellPolicy",
+        "transferRightCellUserGroup",
+        "transferRightCellRetry"
+      ]
+    },
+    {
+      "id": "transferRightCellSourceIp",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "sourceIp"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "transferRightCellMappedIp",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "mappedIp"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "transferRightCellPolicy",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "responsePolicy"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "transferRightCellUserGroup",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "userGroup"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "transferRightCellRetry",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "retryCount"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "bottomActionLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "bottomActionStatusIcon",
+        "bottomActionStatusText",
+        "bottomActionDivider",
+        "bottomActionPendingIcon",
+        "bottomActionPendingBadge"
+      ]
+    },
+    {
+      "id": "bottomActionStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": "Wifi",
+        "color": "success",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "bottomActionStatusText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/statusText"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "bottomActionDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-6 bg-divider"
+      }
+    },
+    {
+      "id": "bottomActionPendingIcon",
+      "component": "Icon",
+      "props": {
+        "name": "Clock",
+        "color": "warning",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "bottomActionPendingBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/tasksCount"
+        },
+        "color": "warning",
+        "overflowCount": 99
+      },
+      "children": [
+        "bottomActionPendingLabel"
+      ]
+    },
+    {
+      "id": "bottomActionPendingLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/tasksLabel"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "bottomActionRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 ml-auto"
+      },
+      "children": [
+        "bottomActionCancelBtn",
+        "bottomActionDraftBtn",
+        "bottomActionSubmitBtn"
+      ]
+    },
+    {
+      "id": "bottomActionCancelBtn",
+      "component": "Button",
+      "props": {
+        "value": "取消",
+        "color": "default"
+      }
+    },
+    {
+      "id": "bottomActionDraftBtn",
+      "component": "Button",
+      "props": {
+        "value": "保存草稿",
+        "color": "default"
+      }
+    },
+    {
+      "id": "bottomActionSubmitBtn",
+      "component": "Button",
+      "props": {
+        "value": "提交配置",
+        "color": "primary"
+      }
+    }
+  ]
+}

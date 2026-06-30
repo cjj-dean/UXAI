@@ -1,0 +1,961 @@
+{
+    "state": {
+        "activeNavTab": "workbench",
+        "activeMenuKey": "tenant-overview",
+        "activeCollapseKeys": [
+            "概览",
+            "管理"
+        ],
+        "searchVal": "",
+        "metrics": [
+            {
+                "cardTitle": "租户总数",
+                "mainValue": 12840,
+                "unit": "家",
+                "compareIcon": "trending-up",
+                "compareText": "较上月新增",
+                "compareValue": "842",
+                "statusColor": "success",
+                "subDetails": [
+                    {
+                        "label": "企业租户",
+                        "value": "8,420"
+                    },
+                    {
+                        "label": "个人开发者",
+                        "value": "4,420"
+                    }
+                ]
+            },
+            {
+                "cardTitle": "各类设备数量",
+                "mainValue": 456291,
+                "unit": "台",
+                "compareIcon": "trending-up",
+                "compareText": "在线率",
+                "compareValue": "94.2%",
+                "statusColor": "primary",
+                "subDetails": [
+                    {
+                        "label": "计算节点",
+                        "value": "120,400"
+                    },
+                    {
+                        "label": "存储设备",
+                        "value": "235,891"
+                    },
+                    {
+                        "label": "网络边缘",
+                        "value": "100,000"
+                    }
+                ]
+            }
+        ],
+        "growthData": [
+            {
+                "month": "2023-05",
+                "totalCount": 310000
+            },
+            {
+                "month": "2023-06",
+                "totalCount": 325000
+            },
+            {
+                "month": "2023-07",
+                "totalCount": 338000
+            },
+            {
+                "month": "2023-08",
+                "totalCount": 355000
+            },
+            {
+                "month": "2023-09",
+                "totalCount": 370000
+            },
+            {
+                "month": "2023-10",
+                "totalCount": 392000
+            },
+            {
+                "month": "2023-11",
+                "totalCount": 410000
+            },
+            {
+                "month": "2023-12",
+                "totalCount": 425000
+            },
+            {
+                "month": "2024-01",
+                "totalCount": 432000
+            },
+            {
+                "month": "2024-02",
+                "totalCount": 440000
+            },
+            {
+                "month": "2024-03",
+                "totalCount": 451000
+            },
+            {
+                "month": "2024-04",
+                "totalCount": 456291
+            }
+        ],
+        "rankingData": [
+            {
+                "industryName": "智能制造",
+                "tenantCount": 3200
+            },
+            {
+                "industryName": "智慧城市",
+                "tenantCount": 2800
+            },
+            {
+                "industryName": "医疗健康",
+                "tenantCount": 1900
+            },
+            {
+                "industryName": "金融科技",
+                "tenantCount": 1500
+            },
+            {
+                "industryName": "教育科研",
+                "tenantCount": 1100
+            },
+            {
+                "industryName": "电子商务",
+                "tenantCount": 950
+            },
+            {
+                "industryName": "交通物流",
+                "tenantCount": 800
+            },
+            {
+                "industryName": "其他行业",
+                "tenantCount": 590
+            }
+        ],
+        "trendData": [
+            {
+                "period": "Jan",
+                "newTenants": 450,
+                "activeTenants": 8900
+            },
+            {
+                "period": "Feb",
+                "newTenants": 380,
+                "activeTenants": 9100
+            },
+            {
+                "period": "Mar",
+                "newTenants": 520,
+                "activeTenants": 9400
+            },
+            {
+                "period": "Apr",
+                "newTenants": 610,
+                "activeTenants": 9800
+            },
+            {
+                "period": "May",
+                "newTenants": 590,
+                "activeTenants": 10200
+            },
+            {
+                "period": "Jun",
+                "newTenants": 720,
+                "activeTenants": 10800
+            },
+            {
+                "period": "Jul",
+                "newTenants": 810,
+                "activeTenants": 11200
+            },
+            {
+                "period": "Aug",
+                "newTenants": 750,
+                "activeTenants": 11500
+            },
+            {
+                "period": "Sep",
+                "newTenants": 880,
+                "activeTenants": 11900
+            },
+            {
+                "period": "Oct",
+                "newTenants": 920,
+                "activeTenants": 12300
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": [
+                "brandLogo",
+                "navTabs"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/imaster-logo/200/60",
+                "className": "h-8 object-contain"
+            }
+        },
+        {
+            "id": "navTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeNavTab"
+                },
+                "className": "h-full"
+            },
+            "children": [
+                "tabWorkbench",
+                "tabBusiness"
+            ]
+        },
+        {
+            "id": "tabWorkbench",
+            "component": "TabItem",
+            "props": {
+                "key": "workbench",
+                "label": "工作台"
+            }
+        },
+        {
+            "id": "tabBusiness",
+            "component": "TabItem",
+            "props": {
+                "key": "business",
+                "label": "经营中心"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "globalSearch",
+                "actionIcons",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索功能或资源",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "actionIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "helpIcon",
+                "settingsIcon",
+                "notificationBadge"
+            ]
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "settingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "notificationBadge",
+            "component": "Badge",
+            "props": {
+                "count": 12,
+                "overflowCount": 99
+            },
+            "children": [
+                "bellIcon"
+            ]
+        },
+        {
+            "id": "bellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "Dropdown",
+            "props": {
+                "menu": [
+                    {
+                        "label": "个人中心",
+                        "key": "profile",
+                        "icon": "user"
+                    },
+                    {
+                        "label": "退出登录",
+                        "key": "logout",
+                        "icon": "log-out"
+                    }
+                ]
+            },
+            "children": [
+                "userAvatarWrapper"
+            ]
+        },
+        {
+            "id": "userAvatarWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "userAvatarImg",
+                "userNameText"
+            ]
+        },
+        {
+            "id": "userAvatarImg",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userNameText",
+            "component": "span",
+            "props": {
+                "value": "Admin_Zhang",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-60 bg-surface-container-highest border-r border-divider overflow-y-auto"
+            },
+            "children": [
+                "sideNavTitle",
+                "sideNavCollapse"
+            ]
+        },
+        {
+            "id": "sideNavTitle",
+            "component": "div",
+            "props": {
+                "className": "px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider",
+                "value": "运营中心"
+            }
+        },
+        {
+            "id": "sideNavCollapse",
+            "component": "Collapse",
+            "props": {
+                "activeKey": {
+                    "path": "/activeCollapseKeys"
+                },
+                "className": "border-none bg-transparent"
+            },
+            "children": [
+                "groupOverview",
+                "groupManagement"
+            ]
+        },
+        {
+            "id": "groupOverview",
+            "component": "CollapseItem",
+            "props": {
+                "key": "概览",
+                "label": "概览",
+                "content": {
+                    "componentId": "overviewMenuItems"
+                }
+            }
+        },
+        {
+            "id": "overviewMenuItems",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "menuTenantOverview",
+                "menuResourceMonitor"
+            ]
+        },
+        {
+            "id": "menuTenantOverview",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 py-2 bg-primary-container text-primary cursor-pointer border-r-2 border-primary"
+            },
+            "children": [
+                "iconUsers",
+                "labelTenantOverview"
+            ]
+        },
+        {
+            "id": "iconUsers",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelTenantOverview",
+            "component": "span",
+            "props": {
+                "value": "租户概览",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "menuResourceMonitor",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 py-2 text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconActivity",
+                "labelResourceMonitor"
+            ]
+        },
+        {
+            "id": "iconActivity",
+            "component": "Icon",
+            "props": {
+                "name": "activity",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelResourceMonitor",
+            "component": "span",
+            "props": {
+                "value": "资源监控",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "groupManagement",
+            "component": "CollapseItem",
+            "props": {
+                "key": "管理",
+                "label": "管理",
+                "content": {
+                    "componentId": "managementMenuItems"
+                }
+            }
+        },
+        {
+            "id": "managementMenuItems",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "menuTenantList",
+                "menuDeviceAuth",
+                "menuPolicyConfig"
+            ]
+        },
+        {
+            "id": "menuTenantList",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 py-2 text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconList",
+                "labelTenantList"
+            ]
+        },
+        {
+            "id": "iconList",
+            "component": "Icon",
+            "props": {
+                "name": "list",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelTenantList",
+            "component": "span",
+            "props": {
+                "value": "租户列表",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "menuDeviceAuth",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 py-2 text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconKey",
+                "labelDeviceAuth"
+            ]
+        },
+        {
+            "id": "iconKey",
+            "component": "Icon",
+            "props": {
+                "name": "key",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelDeviceAuth",
+            "component": "span",
+            "props": {
+                "value": "设备授权",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "menuPolicyConfig",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 py-2 text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconSliders",
+                "labelPolicyConfig"
+            ]
+        },
+        {
+            "id": "iconSliders",
+            "component": "Icon",
+            "props": {
+                "name": "sliders",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelPolicyConfig",
+            "component": "span",
+            "props": {
+                "value": "策略配置",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricCardsRow",
+                "growthChartCard",
+                "bottomChartsRow"
+            ]
+        },
+        {
+            "id": "metricCardsRow",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCardItem"
+            }
+        },
+        {
+            "id": "metricCardItem",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "metricCardHeader",
+                "metricCardMain",
+                "metricCardFooter"
+            ]
+        },
+        {
+            "id": "metricCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "metricCardTitle",
+                "metricCardMore"
+            ]
+        },
+        {
+            "id": "metricCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cardTitle"
+                },
+                "className": "text-sm text-on-surface-variant font-medium"
+            }
+        },
+        {
+            "id": "metricCardMore",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "metricCardMain",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2"
+            },
+            "children": [
+                "metricValue",
+                "metricUnit",
+                "metricCompare"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "mainValue"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricCompare",
+            "component": "div",
+            "props": {
+                "className": "ml-auto flex items-center gap-1"
+            },
+            "children": [
+                "compareIcon",
+                "compareLabel",
+                "compareVal"
+            ]
+        },
+        {
+            "id": "compareIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "compareIcon"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "compareLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "compareText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "compareVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "compareValue"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "metricCardFooter",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant rounded p-3 flex justify-around"
+            },
+            "children": {
+                "path": "subDetails",
+                "componentId": "metricSubDetail"
+            }
+        },
+        {
+            "id": "metricSubDetail",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center"
+            },
+            "children": [
+                "subDetailLabel",
+                "subDetailValue"
+            ]
+        },
+        {
+            "id": "subDetailLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "subDetailValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "growthChartCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "growthChartHeader",
+                "growthChartBody"
+            ]
+        },
+        {
+            "id": "growthChartHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "growthChartTitleGroup",
+                "growthChartFilter"
+            ]
+        },
+        {
+            "id": "growthChartTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "growthChartTitle",
+                "growthChartDesc"
+            ]
+        },
+        {
+            "id": "growthChartTitle",
+            "component": "span",
+            "props": {
+                "value": "设备增长趋势图",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "growthChartDesc",
+            "component": "span",
+            "props": {
+                "value": "展示近一年内全平台接入设备的累计增长情况",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "growthChartFilter",
+            "component": "Button",
+            "props": {
+                "value": "最近12个月",
+                "icon": "calendar",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "growthChartBody",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/growthData"
+                    },
+                    "xAxis": {
+                        "data": "month"
+                    },
+                    "yAxisTitle": "设备总量 (台)",
+                    "smooth": true,
+                    "area": true,
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-80 w-full"
+            }
+        },
+        {
+            "id": "bottomChartsRow",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-gutter"
+            },
+            "children": [
+                "industryRankingCard",
+                "monthlyTrendCard"
+            ]
+        },
+        {
+            "id": "industryRankingCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "rankingTitle",
+                "rankingChart"
+            ]
+        },
+        {
+            "id": "rankingTitle",
+            "component": "span",
+            "props": {
+                "value": "行业租户排名",
+                "className": "block text-base font-bold text-on-surface mb-6"
+            }
+        },
+        {
+            "id": "rankingChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/rankingData"
+                    },
+                    "direction": "horizontal",
+                    "xAxis": {
+                        "data": "industryName"
+                    },
+                    "yAxisTitle": "租户数",
+                    "color": [
+                        "#62B42E"
+                    ]
+                },
+                "className": "h-72 w-full"
+            }
+        },
+        {
+            "id": "monthlyTrendCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "trendTitle",
+                "trendChart"
+            ]
+        },
+        {
+            "id": "trendTitle",
+            "component": "span",
+            "props": {
+                "value": "月度增长趋势",
+                "className": "block text-base font-bold text-on-surface mb-6"
+            }
+        },
+        {
+            "id": "trendChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/trendData"
+                    },
+                    "type": "stack",
+                    "xAxis": {
+                        "data": "period"
+                    },
+                    "yAxisTitle": "租户数量",
+                    "color": [
+                        "#715AFB",
+                        "#2CB8C9"
+                    ]
+                },
+                "className": "h-72 w-full"
+            }
+        }
+    ]
+}

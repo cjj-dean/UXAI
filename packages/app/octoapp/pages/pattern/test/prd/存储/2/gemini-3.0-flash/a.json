@@ -1,0 +1,1283 @@
+{
+  "state": {
+    "sideNavSelectedKeys": [
+      "alarm"
+    ],
+    "sideNavOpenKeys": [
+      "device",
+      "message",
+      "support",
+      "management"
+    ],
+    "sideNavMenuItems": [
+      {
+        "title": "首页",
+        "key": "home",
+        "icon": "home"
+      },
+      {
+        "title": "设备",
+        "key": "device",
+        "icon": "server",
+        "children": [
+          {
+            "title": "存储",
+            "key": "storage"
+          },
+          {
+            "title": "超融合",
+            "key": "hci"
+          },
+          {
+            "title": "服务器",
+            "key": "server"
+          },
+          {
+            "title": "网络",
+            "key": "network"
+          }
+        ]
+      },
+      {
+        "title": "消息",
+        "key": "message",
+        "icon": "bell",
+        "children": [
+          {
+            "title": "告警",
+            "key": "alarm"
+          }
+        ]
+      },
+      {
+        "title": "支持",
+        "key": "support",
+        "icon": "life-buoy",
+        "children": [
+          {
+            "title": "工单",
+            "key": "ticket"
+          }
+        ]
+      },
+      {
+        "title": "管理",
+        "key": "management",
+        "icon": "settings",
+        "children": [
+          {
+            "title": "用户管理",
+            "key": "user-mgmt"
+          },
+          {
+            "title": "日志管理",
+            "key": "log-mgmt"
+          },
+          {
+            "title": "通知管理",
+            "key": "notice-mgmt"
+          }
+        ]
+      }
+    ],
+    "topHeadUser": {
+      "userName": "Jasper",
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    "topHeadActions": [
+      {
+        "id": "notice",
+        "icon": "bell",
+        "count": 12,
+        "title": "消息通知"
+      },
+      {
+        "id": "docs",
+        "icon": "list",
+        "title": "文档列表"
+      },
+      {
+        "id": "help",
+        "icon": "help-circle",
+        "title": "在线帮助"
+      }
+    ],
+    "topHeadUserMenu": [
+      {
+        "label": "个人中心",
+        "key": "profile",
+        "icon": "user"
+      },
+      {
+        "label": "账号设置",
+        "key": "settings",
+        "icon": "settings"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "almHeadPageTitle": "告警",
+    "almHeadConfigLabel": "告警通知管理",
+    "almHeadConfigIcon": "settings",
+    "almMainActiveTab": "current",
+    "almMainTabs": [
+      {
+        "key": "current",
+        "label": "当前告警"
+      },
+      {
+        "key": "history",
+        "label": "历史告警"
+      }
+    ],
+    "almMainLevelChart": {
+      "title": {
+        "text": "50",
+        "subtext": "总数"
+      },
+      "data": [
+        {
+          "name": "紧急",
+          "value": 3
+        },
+        {
+          "name": "重要",
+          "value": 5
+        },
+        {
+          "name": "次要",
+          "value": 7
+        },
+        {
+          "name": "提示",
+          "value": 32
+        }
+      ],
+      "color": [
+        "#E02128",
+        "#F4840C",
+        "#FCC800",
+        "#0067D1"
+      ]
+    },
+    "almMainDurationChart": {
+      "data": [
+        {
+          "name": "0分钟",
+          "value": 8
+        },
+        {
+          "name": "10分钟",
+          "value": 6
+        },
+        {
+          "name": "1小时",
+          "value": 14
+        },
+        {
+          "name": "1天",
+          "value": 2
+        },
+        {
+          "name": ">1天",
+          "value": 1
+        }
+      ]
+    },
+    "almMainTopAlarmChart": {
+      "data": [
+        {
+          "name": "The License Is About To Expire",
+          "value": 23
+        },
+        {
+          "name": "The License Has Expired",
+          "value": 15
+        },
+        {
+          "name": "The Link Between A Host And The Storage Array...",
+          "value": 15
+        },
+        {
+          "name": "Availability violation",
+          "value": 7
+        },
+        {
+          "name": "The Disk Model Is Incompatible With The Device",
+          "value": 4
+        }
+      ]
+    },
+    "almMainTopSourceChart": {
+      "data": [
+        {
+          "name": "V3.185.224",
+          "value": 37
+        },
+        {
+          "name": "Huawei.Storage(9.159.5.128)",
+          "value": 32
+        },
+        {
+          "name": "18.154_v6_single5681(110.2.190.238)",
+          "value": 20
+        },
+        {
+          "name": "Doradov6-Remote_replication_B12(110.2.190.217)",
+          "value": 17
+        },
+        {
+          "name": "Conference2020_NAS",
+          "value": 13
+        }
+      ]
+    },
+    "almMainSearchValue": "",
+    "almMainTableData": [
+      {
+        "id": "1",
+        "name": "SNMP 连接失败",
+        "level": "紧急",
+        "levelIcon": "alert-circle",
+        "levelColor": "error",
+        "details": "SNMP 连接失败，告警上报消息可能无法接收。",
+        "site": "site01",
+        "category": "存储",
+        "source": "OceanStor-6800-V5",
+        "sn": "sn12345",
+        "firstTime": "2025-07-20 10:00:00",
+        "lastTime": "2025-07-20 10:05:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "工单跟踪"
+      },
+      {
+        "id": "2",
+        "name": "磁盘利用率过高",
+        "level": "重要",
+        "levelIcon": "alert-triangle",
+        "levelColor": "critical",
+        "details": "节点 A 磁盘利用率超过 90% 阈值。",
+        "site": "site02",
+        "category": "服务器",
+        "source": "TaiShan-2280",
+        "sn": "sn67890",
+        "firstTime": "2025-07-20 09:30:00",
+        "lastTime": "2025-07-20 11:00:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "扩容建议"
+      },
+      {
+        "id": "3",
+        "name": "License 即将过期",
+        "level": "提示",
+        "levelIcon": "info",
+        "levelColor": "info",
+        "details": "系统 License 将在 7 天内过期。",
+        "site": "site01",
+        "category": "存储",
+        "source": "Dorado-V6",
+        "sn": "sn11223",
+        "firstTime": "2025-07-19 08:00:00",
+        "lastTime": "2025-07-20 08:00:00",
+        "status": "已确认",
+        "statusIcon": "check-circle",
+        "strategy": "续费处理"
+      },
+      {
+        "id": "4",
+        "name": "控制器离线",
+        "level": "紧急",
+        "levelIcon": "alert-circle",
+        "levelColor": "error",
+        "details": "控制器 B 失去心跳连接。",
+        "site": "site03",
+        "category": "存储",
+        "source": "OceanStor-5300",
+        "sn": "sn44556",
+        "firstTime": "2025-07-20 11:20:00",
+        "lastTime": "2025-07-20 11:25:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "硬件更换"
+      },
+      {
+        "id": "5",
+        "name": "风扇转速异常",
+        "level": "次要",
+        "levelIcon": "minus-circle",
+        "levelColor": "warning",
+        "details": "机箱 1 号风扇转速低于 2000 RPM。",
+        "site": "site01",
+        "category": "服务器",
+        "source": "FusionServer",
+        "sn": "sn99887",
+        "firstTime": "2025-07-20 07:00:00",
+        "lastTime": "2025-07-20 07:10:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "环境检查"
+      },
+      {
+        "id": "6",
+        "name": "电源模块故障",
+        "level": "重要",
+        "levelIcon": "alert-triangle",
+        "levelColor": "critical",
+        "details": "电源模块 2 输入电压异常。",
+        "site": "site02",
+        "category": "网络",
+        "source": "CloudEngine-S12700",
+        "sn": "sn77665",
+        "firstTime": "2025-07-20 06:00:00",
+        "lastTime": "2025-07-20 06:30:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "电力排查"
+      },
+      {
+        "id": "7",
+        "name": "链路中断",
+        "level": "紧急",
+        "levelIcon": "alert-circle",
+        "levelColor": "error",
+        "details": "与远端复制站点的链路已断开。",
+        "site": "site04",
+        "category": "存储",
+        "source": "Dorado-V6-Remote",
+        "sn": "sn33221",
+        "firstTime": "2025-07-20 12:00:00",
+        "lastTime": "2025-07-20 12:05:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "网络修复"
+      },
+      {
+        "id": "8",
+        "name": "内存校验错误",
+        "level": "次要",
+        "levelIcon": "minus-circle",
+        "levelColor": "warning",
+        "details": "检测到多次可纠正的内存 ECC 错误。",
+        "site": "site01",
+        "category": "服务器",
+        "source": "TaiShan-V2",
+        "sn": "sn55443",
+        "firstTime": "2025-07-20 05:00:00",
+        "lastTime": "2025-07-20 05:15:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "观察运行"
+      },
+      {
+        "id": "9",
+        "name": "BBU 寿命告警",
+        "level": "提示",
+        "levelIcon": "info",
+        "levelColor": "info",
+        "details": "电池备用单元寿命剩余不足 10%。",
+        "site": "site02",
+        "category": "存储",
+        "source": "OceanStor-V3",
+        "sn": "sn22110",
+        "firstTime": "2025-07-18 14:00:00",
+        "lastTime": "2025-07-20 14:00:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "备件申请"
+      },
+      {
+        "id": "10",
+        "name": "控制器 A 缓存故障",
+        "level": "紧急",
+        "levelIcon": "alert-circle",
+        "levelColor": "error",
+        "details": "控制器 A 缓存镜像同步失败。",
+        "site": "site01",
+        "category": "存储",
+        "source": "OceanStor-18500",
+        "sn": "sn88776",
+        "firstTime": "2025-07-20 15:00:00",
+        "lastTime": "2025-07-20 15:10:00",
+        "status": "未确认",
+        "statusIcon": "info",
+        "strategy": "联系技术支持"
+      }
+    ]
+  },
+  "rootId": "mainLayoutRoot",
+  "elements": [
+    {
+      "id": "mainLayoutRoot",
+      "component": "div",
+      "props": {
+        "className": "flex h-screen w-full bg-surface-container-lowest overflow-hidden"
+      },
+      "children": [
+        "sideNavigationSlot",
+        "mainContentWrapper"
+      ]
+    },
+    {
+      "id": "sideNavigationSlot",
+      "component": "aside",
+      "props": {
+        "className": "w-[15.5rem] h-full bg-surface-container-highest shadow-sm z-20 flex flex-col"
+      },
+      "children": [
+        "sideNavHeader",
+        "sideNavDivider",
+        "sideNavMenuContainer"
+      ]
+    },
+    {
+      "id": "mainContentWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col min-w-0"
+      },
+      "children": [
+        "topHeaderSlot",
+        "scrollableArea"
+      ]
+    },
+    {
+      "id": "topHeaderSlot",
+      "component": "header",
+      "props": {
+        "className": "h-12 w-full bg-surface-container-highest shadow-sm flex items-center px-page z-10"
+      },
+      "children": [
+        "topHeadRightArea"
+      ]
+    },
+    {
+      "id": "scrollableArea",
+      "component": "main",
+      "props": {
+        "className": "flex-1 overflow-y-auto flex flex-col text-sm font-normal p-8 rounded-none"
+      },
+      "children": [
+        "alarmHeaderSlot",
+        "alarmMainContentSlot"
+      ]
+    },
+    {
+      "id": "alarmHeaderSlot",
+      "component": "section",
+      "props": {
+        "className": "flex justify-between items-center w-full py-gutter"
+      },
+      "children": [
+        "almHeadTitleContainer",
+        "almHeadActionContainer"
+      ]
+    },
+    {
+      "id": "alarmMainContentSlot",
+      "component": "section",
+      "props": {
+        "className": "flex-1 bg-surface-container-lowest"
+      },
+      "children": [
+        "almMainCard"
+      ]
+    },
+    {
+      "id": "sideNavHeader",
+      "component": "div",
+      "props": {
+        "className": "h-12 px-4 flex items-center justify-between shrink-0"
+      },
+      "children": [
+        "sideNavLogoGroup",
+        "sideNavCollapseBtn"
+      ]
+    },
+    {
+      "id": "sideNavLogoGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "sideNavHuaweiIcon",
+        "sideNavBrandName"
+      ]
+    },
+    {
+      "id": "sideNavHuaweiIcon",
+      "component": "Icon",
+      "props": {
+        "name": "hexagon",
+        "color": "error",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "sideNavBrandName",
+      "component": "span",
+      "props": {
+        "value": "DME IQ",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "sideNavCollapseBtn",
+      "component": "Icon",
+      "props": {
+        "name": "menu",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "sideNavDivider",
+      "component": "Divider",
+      "props": {
+        "className": "m-0"
+      }
+    },
+    {
+      "id": "sideNavMenuContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto py-2"
+      },
+      "children": [
+        "sideNavMenu"
+      ]
+    },
+    {
+      "id": "sideNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/sideNavSelectedKeys"
+        },
+        "openKeys": {
+          "path": "/sideNavOpenKeys"
+        },
+        "items": {
+          "path": "/sideNavMenuItems"
+        },
+        "className": "border-none"
+      }
+    },
+    {
+      "id": "topHeadRightArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter ml-auto"
+      },
+      "children": [
+        "topHeadActionList",
+        "topHeadDivider",
+        "topHeadUserDropdown"
+      ]
+    },
+    {
+      "id": "topHeadActionList",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-stack"
+      },
+      "children": {
+        "path": "/topHeadActions",
+        "componentId": "topHeadActionItem"
+      }
+    },
+    {
+      "id": "topHeadActionItem",
+      "component": "div",
+      "props": {
+        "className": "cursor-pointer hover:bg-surface-variant p-1.5 rounded-action transition-colors"
+      },
+      "children": [
+        "topHeadActionBadge"
+      ]
+    },
+    {
+      "id": "topHeadActionBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "count"
+        },
+        "overflowCount": 99,
+        "offset": [
+          2,
+          2
+        ]
+      },
+      "children": [
+        "topHeadActionIcon"
+      ]
+    },
+    {
+      "id": "topHeadActionIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topHeadDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-4 bg-divider mx-2"
+      }
+    },
+    {
+      "id": "topHeadUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "menu": {
+          "path": "/topHeadUserMenu"
+        },
+        "placement": "bottomRight",
+        "trigger": [
+          "click"
+        ]
+      },
+      "children": [
+        "topHeadUserInfo"
+      ]
+    },
+    {
+      "id": "topHeadUserInfo",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer hover:bg-surface-variant px-2 py-1 rounded-action transition-colors"
+      },
+      "children": [
+        "topHeadUserAvatar",
+        "topHeadUserName",
+        "topHeadUserChevron"
+      ]
+    },
+    {
+      "id": "topHeadUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/topHeadUser/avatarImage"
+        },
+        "className": "w-8 h-8 rounded-full border border-divider object-cover"
+      }
+    },
+    {
+      "id": "topHeadUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/topHeadUser/userName"
+        },
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "topHeadUserChevron",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "almHeadTitleContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "almHeadTitleText"
+      ]
+    },
+    {
+      "id": "almHeadTitleText",
+      "component": "h1",
+      "props": {
+        "className": "text-3xl font-bold text-on-surface",
+        "value": {
+          "path": "/almHeadPageTitle"
+        }
+      }
+    },
+    {
+      "id": "almHeadActionContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "almHeadConfigBtn"
+      ]
+    },
+    {
+      "id": "almHeadConfigBtn",
+      "component": "Button",
+      "props": {
+        "types": "link",
+        "value": {
+          "path": "/almHeadConfigLabel"
+        },
+        "icon": {
+          "path": "/almHeadConfigIcon"
+        },
+        "iconPlacement": "start",
+        "className": "text-primary hover:text-primary-fixed-dim"
+      }
+    },
+    {
+      "id": "almMainCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card flex flex-col"
+      },
+      "children": [
+        "almMainTabsContainer"
+      ]
+    },
+    {
+      "id": "almMainTabsContainer",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/almMainActiveTab"
+        },
+        "className": "px-inset pt-stack"
+      },
+      "children": {
+        "path": "/almMainTabs",
+        "componentId": "almMainTabItem"
+      }
+    },
+    {
+      "id": "almMainTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "label"
+        },
+        "content": {
+          "componentId": "almMainTabContent"
+        }
+      }
+    },
+    {
+      "id": "almMainTabContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section py-inset"
+      },
+      "children": [
+        "almMainStatsGrid",
+        "almMainTableSection"
+      ]
+    },
+    {
+      "id": "almMainStatsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-gutter"
+      },
+      "children": [
+        "almMainLevelBox",
+        "almMainDurationBox",
+        "almMainTopAlarmBox",
+        "almMainTopSourceBox"
+      ]
+    },
+    {
+      "id": "almMainLevelBox",
+      "component": "div",
+      "props": {
+        "className": "p-stack flex flex-col text-sm font-normal p-0 rounded-none"
+      },
+      "children": [
+        "almMainLevelTitle",
+        "almMainLevelChart"
+      ]
+    },
+    {
+      "id": "almMainLevelTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-stack",
+        "value": "告警级别"
+      }
+    },
+    {
+      "id": "almMainLevelChart",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/almMainLevelChart/data"
+          },
+          "title": {
+            "path": "/almMainLevelChart/title"
+          },
+          "color": {
+            "path": "/almMainLevelChart/color"
+          }
+        },
+        "className": "h-48 w-full"
+      }
+    },
+    {
+      "id": "almMainDurationBox",
+      "component": "div",
+      "props": {
+        "className": "p-stack flex flex-col text-sm font-normal p-0 rounded-none"
+      },
+      "children": [
+        "almMainDurationTitle",
+        "almMainDurationChart"
+      ]
+    },
+    {
+      "id": "almMainDurationTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-stack",
+        "value": "告警持续时间"
+      }
+    },
+    {
+      "id": "almMainDurationChart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/almMainDurationChart/data"
+          }
+        },
+        "className": "h-48 w-full"
+      }
+    },
+    {
+      "id": "almMainTopAlarmBox",
+      "component": "div",
+      "props": {
+        "className": "p-stack flex flex-col text-sm font-normal p-0 rounded-none"
+      },
+      "children": [
+        "almMainTopAlarmTitle",
+        "almMainTopAlarmChart"
+      ]
+    },
+    {
+      "id": "almMainTopAlarmTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-stack",
+        "value": "TOP 5 告警"
+      }
+    },
+    {
+      "id": "almMainTopAlarmChart",
+      "component": "ProcessChart",
+      "props": {
+        "option": {
+          "name": "ProcessBarChart",
+          "data": {
+            "path": "/almMainTopAlarmChart/data"
+          }
+        },
+        "className": "h-48 w-full"
+      }
+    },
+    {
+      "id": "almMainTopSourceBox",
+      "component": "div",
+      "props": {
+        "className": "p-stack flex flex-col text-sm font-normal p-0 rounded-none"
+      },
+      "children": [
+        "almMainTopSourceTitle",
+        "almMainTopSourceChart"
+      ]
+    },
+    {
+      "id": "almMainTopSourceTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-stack",
+        "value": "TOP 5 告警源"
+      }
+    },
+    {
+      "id": "almMainTopSourceChart",
+      "component": "ProcessChart",
+      "props": {
+        "option": {
+          "name": "ProcessBarChart",
+          "data": {
+            "path": "/almMainTopSourceChart/data"
+          }
+        },
+        "className": "h-48 w-full"
+      }
+    },
+    {
+      "id": "almMainTableSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack"
+      },
+      "children": [
+        "almMainToolbar",
+        "almMainTable"
+      ]
+    },
+    {
+      "id": "almMainToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center"
+      },
+      "children": [
+        "almMainToolbarLeft",
+        "almMainToolbarRight"
+      ]
+    },
+    {
+      "id": "almMainToolbarLeft",
+      "component": "div",
+      "props": {
+        "className": "flex gap-inline"
+      },
+      "children": [
+        "almMainBtnConfirm",
+        "almMainBtnClear",
+        "almMainSearchInput"
+      ]
+    },
+    {
+      "id": "almMainBtnConfirm",
+      "component": "Button",
+      "props": {
+        "value": "确认",
+        "color": "primary",
+        "icon": "chevron-down",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "almMainBtnClear",
+      "component": "Button",
+      "props": {
+        "value": "清除",
+        "icon": "chevron-down",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "almMainSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/almMainSearchValue"
+        },
+        "placeholder": "搜索告警名称...",
+        "prefix": "search",
+        "className": "w-64"
+      }
+    },
+    {
+      "id": "almMainToolbarRight",
+      "component": "div",
+      "props": {
+        "className": "flex gap-inline"
+      },
+      "children": [
+        "almMainBtnExport",
+        "almMainBtnRefresh"
+      ]
+    },
+    {
+      "id": "almMainBtnExport",
+      "component": "Button",
+      "props": {
+        "icon": "download"
+      }
+    },
+    {
+      "id": "almMainBtnRefresh",
+      "component": "Button",
+      "props": {
+        "icon": "refresh-cw"
+      }
+    },
+    {
+      "id": "almMainTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/almMainTableData"
+        },
+        "rowSelection": {
+          "type": "checkbox"
+        },
+        "columns": [
+          {
+            "title": "名称",
+            "dataIndex": "name",
+            "minWidth": 180
+          },
+          {
+            "title": "级别",
+            "dataIndex": "level",
+            "width": 100
+          },
+          {
+            "title": "详情",
+            "dataIndex": "details",
+            "minWidth": 250
+          },
+          {
+            "title": "站点",
+            "dataIndex": "site"
+          },
+          {
+            "title": "告警源分类",
+            "dataIndex": "category"
+          },
+          {
+            "title": "告警源",
+            "dataIndex": "source",
+            "minWidth": 150
+          },
+          {
+            "title": "设备SN",
+            "dataIndex": "sn"
+          },
+          {
+            "title": "首次发生时间",
+            "dataIndex": "firstTime",
+            "width": 180
+          },
+          {
+            "title": "末次发生时间",
+            "dataIndex": "lastTime",
+            "width": 180
+          },
+          {
+            "title": "是否确认",
+            "dataIndex": "status",
+            "width": 100
+          },
+          {
+            "title": "处理策略",
+            "dataIndex": "strategy"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "action",
+            "fixed": "end",
+            "width": 80
+          }
+        ]
+      },
+      "children": {
+        "path": "/almMainTableData",
+        "componentId": "almMainTableRow"
+      }
+    },
+    {
+      "id": "almMainTableRow",
+      "component": "TableRow",
+      "children": [
+        "almMainCellName",
+        "almMainCellLevel",
+        "almMainCellDetails",
+        "almMainCellSite",
+        "almMainCellCategory",
+        "almMainCellSource",
+        "almMainCellSN",
+        "almMainCellFirstTime",
+        "almMainCellLastTime",
+        "almMainCellStatus",
+        "almMainCellStrategy",
+        "almMainCellAction"
+      ]
+    },
+    {
+      "id": "almMainCellName",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "name"
+        }
+      }
+    },
+    {
+      "id": "almMainCellLevel",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "almMainLevelIcon",
+        "almMainLevelText"
+      ]
+    },
+    {
+      "id": "almMainLevelIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "levelIcon"
+        },
+        "color": {
+          "path": "levelColor"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "almMainLevelText",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "level"
+        }
+      }
+    },
+    {
+      "id": "almMainCellDetails",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant truncate",
+        "value": {
+          "path": "details"
+        }
+      }
+    },
+    {
+      "id": "almMainCellSite",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "site"
+        }
+      }
+    },
+    {
+      "id": "almMainCellCategory",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "category"
+        },
+        "variant": "outlined"
+      }
+    },
+    {
+      "id": "almMainCellSource",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "source"
+        }
+      }
+    },
+    {
+      "id": "almMainCellSN",
+      "component": "span",
+      "props": {
+        "className": "text-md font-mono",
+        "value": {
+          "path": "sn"
+        }
+      }
+    },
+    {
+      "id": "almMainCellFirstTime",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "firstTime"
+        }
+      }
+    },
+    {
+      "id": "almMainCellLastTime",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "lastTime"
+        }
+      }
+    },
+    {
+      "id": "almMainCellStatus",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "almMainStatusIcon",
+        "almMainStatusText"
+      ]
+    },
+    {
+      "id": "almMainStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "statusIcon"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "almMainStatusText",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "status"
+        }
+      }
+    },
+    {
+      "id": "almMainCellStrategy",
+      "component": "span",
+      "props": {
+        "className": "text-md",
+        "value": {
+          "path": "strategy"
+        }
+      }
+    },
+    {
+      "id": "almMainCellAction",
+      "component": "Button",
+      "props": {
+        "icon": "more-horizontal",
+        "types": "link"
+      }
+    }
+  ]
+}

@@ -1,0 +1,911 @@
+{
+  "state": {
+    "logoText": "iMaster Admin",
+    "navMenuItems": [
+      {
+        "menuName": "首页",
+        "isSelected": false,
+        "title": "首页",
+        "key": "首页"
+      },
+      {
+        "menuName": "项目管理",
+        "isSelected": false,
+        "title": "项目管理",
+        "key": "项目管理"
+      },
+      {
+        "menuName": "任务调度",
+        "isSelected": false,
+        "title": "任务调度",
+        "key": "任务调度"
+      },
+      {
+        "menuName": "资源监控",
+        "isSelected": false,
+        "title": "资源监控",
+        "key": "资源监控"
+      },
+      {
+        "menuName": "告警中心",
+        "isSelected": false,
+        "title": "告警中心",
+        "key": "告警中心"
+      },
+      {
+        "menuName": "安全策略",
+        "isSelected": true,
+        "title": "安全策略",
+        "key": "安全策略"
+      },
+      {
+        "menuName": "操作日志",
+        "isSelected": false,
+        "title": "操作日志",
+        "key": "操作日志"
+      },
+      {
+        "menuName": "系统设置",
+        "isSelected": false,
+        "title": "系统设置",
+        "key": "系统设置"
+      }
+    ],
+    "selectedKeys": [
+      "安全策略"
+    ],
+    "userName": "Admin",
+    "helpIcon": "help-circle",
+    "sideBarTitle": "视图导航",
+    "newVersionTag": "全新版本",
+    "searchPlaceholder": "搜索菜单...",
+    "searchValue": "",
+    "selectedMenuKeys": [
+      "bandwidth"
+    ],
+    "openMenuKeys": [
+      "network"
+    ],
+    "menuItems": [
+      {
+        "title": "网络连接",
+        "key": "network",
+        "icon": "network",
+        "children": [
+          {
+            "title": "本地网络",
+            "key": "local-network"
+          },
+          {
+            "title": "带宽需求",
+            "key": "bandwidth"
+          },
+          {
+            "title": "系统占用",
+            "key": "system-usage"
+          },
+          {
+            "title": "对等网络",
+            "key": "peer-network"
+          },
+          {
+            "title": "速度测试",
+            "key": "speed-test"
+          }
+        ]
+      },
+      {
+        "title": "性能优化",
+        "key": "performance",
+        "icon": "gauge"
+      },
+      {
+        "title": "分支业务",
+        "key": "branch",
+        "icon": "git-branch"
+      },
+      {
+        "title": "策略管理",
+        "key": "policy",
+        "icon": "shield"
+      },
+      {
+        "title": "基础设施",
+        "key": "infrastructure",
+        "icon": "building-2"
+      },
+      {
+        "title": "组织架构",
+        "key": "organization",
+        "icon": "sitemap"
+      }
+    ],
+    "pageTitle": "安全防护策略列表",
+    "activeTab": "tab1",
+    "tabItems": [
+      {
+        "key": "tab1",
+        "tabName": "当前应用策略"
+      },
+      {
+        "key": "tab2",
+        "tabName": "历史归档策略"
+      }
+    ],
+    "alertBanner": {
+      "alertIcon": "shield-alert",
+      "alertMessage": "系统检测到近期有大量针对核心业务的异常访问请求，系统已自动拦截并记录。建议管理员定期复核安全访问控制列表及防火墙配置，确保系统处于最佳安全状态。",
+      "closeIcon": "circle-x"
+    },
+    "toolBar": {
+      "searchPlaceholder": "请输入策略名称或ID",
+      "createButtonText": "新建安全策略",
+      "createButtonIcon": "circle-plus"
+    },
+    "policyCardList": [
+      {
+        "cardIcon": "file-text",
+        "policyTitle": "北京机房核心交换机DDoS防护（日间）",
+        "policyTag": "高优策略",
+        "tagColor": "error",
+        "metrics": [
+          {
+            "metricValue": "93,620",
+            "metricLabel": "拦截次数"
+          },
+          {
+            "metricValue": "6",
+            "metricLabel": "风险源IP数"
+          },
+          {
+            "metricValue": "26 Mbps",
+            "metricLabel": "峰值流量"
+          }
+        ],
+        "timeRecords": [
+          {
+            "timeValue": "2026-05-27 14:30:00",
+            "timeLabel": "最新拦截时间"
+          },
+          {
+            "timeValue": "2026-05-27 09:00:00",
+            "timeLabel": "策略生效时间"
+          }
+        ]
+      },
+      {
+        "cardIcon": "file-text",
+        "policyTitle": "华南区CDN边缘节点防刷策略（子网）",
+        "policyTag": "监控中",
+        "tagColor": "processing",
+        "metrics": [
+          {
+            "metricValue": "33,393",
+            "metricLabel": "分析包数"
+          },
+          {
+            "metricValue": "6",
+            "metricLabel": "异常频次"
+          },
+          {
+            "metricValue": "21 ms",
+            "metricLabel": "平均延迟"
+          }
+        ],
+        "timeRecords": [
+          {
+            "timeValue": "2026-05-26 18:45:12",
+            "timeLabel": "最新拦截时间"
+          },
+          {
+            "timeValue": "2026-05-20 00:00:00",
+            "timeLabel": "策略生效时间"
+          }
+        ]
+      },
+      {
+        "cardIcon": "file-text",
+        "policyTitle": "内部管理系统越权访问拦截（全局）",
+        "policyTag": "已生效",
+        "tagColor": "success",
+        "metrics": [
+          {
+            "metricValue": "30,283",
+            "metricLabel": "访问请求总数"
+          },
+          {
+            "metricValue": "3",
+            "metricLabel": "越权尝试数"
+          },
+          {
+            "metricValue": "89 %",
+            "metricLabel": "规则匹配率"
+          }
+        ],
+        "timeRecords": [
+          {
+            "timeValue": "2026-05-27 11:20:30",
+            "timeLabel": "最新拦截时间"
+          },
+          {
+            "timeValue": "2026-01-01 08:00:00",
+            "timeLabel": "策略生效时间"
+          }
+        ]
+      }
+    ]
+  },
+  "rootId": "appRoot",
+  "elements": [
+    {
+      "id": "appRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-full bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavBarContainer",
+        "layoutBodyWrapper"
+      ]
+    },
+    {
+      "id": "topNavBarContainer",
+      "component": "header",
+      "props": {
+        "className": "h-12 flex items-center bg-surface-container-highest shadow-sm z-10 px-page"
+      },
+      "children": [
+        "topNavLogoSection",
+        "topNavMenu",
+        "topNavRightSection"
+      ]
+    },
+    {
+      "id": "layoutBodyWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "leftSideBarContainer",
+        "mainContentAreaContainer"
+      ]
+    },
+    {
+      "id": "leftSideBarContainer",
+      "component": "aside",
+      "props": {
+        "className": "w-60 flex flex-col bg-surface-container-highest border-r border-divider"
+      },
+      "children": [
+        "leftSideHeader",
+        "leftSideSearchWrap",
+        "leftSideMenuArea",
+        "leftSideFooter"
+      ]
+    },
+    {
+      "id": "mainContentAreaContainer",
+      "component": "main",
+      "props": {
+        "className": "flex-1 p-page overflow-y-auto bg-surface-container-lowest"
+      },
+      "children": [
+        "mainAreaHeader",
+        "mainAreaTabs"
+      ]
+    },
+    {
+      "id": "topNavLogoSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-6 shrink-0"
+      },
+      "children": [
+        "topNavLogoIcon",
+        "topNavLogoText"
+      ]
+    },
+    {
+      "id": "topNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield-check",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "topNavLogoText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/logoText"
+        },
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "topNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "items": {
+          "path": "/navMenuItems"
+        },
+        "className": "flex-1 min-w-0"
+      }
+    },
+    {
+      "id": "topNavRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 ml-4 shrink-0"
+      },
+      "children": [
+        "topNavHelpBtn",
+        "topNavDivider",
+        "topNavUserAvatar",
+        "topNavUserName"
+      ]
+    },
+    {
+      "id": "topNavHelpBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "/helpIcon"
+        },
+        "types": "link",
+        "className": "flex items-center justify-center"
+      }
+    },
+    {
+      "id": "topNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider"
+      }
+    },
+    {
+      "id": "topNavUserAvatar",
+      "component": "Icon",
+      "props": {
+        "name": "user",
+        "color": "primary",
+        "shape": "circle",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "topNavUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "leftSideHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-4 pt-4 pb-2"
+      },
+      "children": [
+        "leftSideTitle",
+        "leftSideVersionTag"
+      ]
+    },
+    {
+      "id": "leftSideTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/sideBarTitle"
+        }
+      }
+    },
+    {
+      "id": "leftSideVersionTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "/newVersionTag"
+        },
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "leftSideSearchWrap",
+      "component": "div",
+      "props": {
+        "className": "px-4 py-2"
+      },
+      "children": [
+        "leftSideSearchInput"
+      ]
+    },
+    {
+      "id": "leftSideSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": {
+          "path": "/searchPlaceholder"
+        },
+        "prefix": "search",
+        "suffix": "scan-line",
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "leftSideMenuArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto px-2 py-1"
+      },
+      "children": [
+        "leftSideMenu"
+      ]
+    },
+    {
+      "id": "leftSideMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "openKeys": {
+          "path": "/openMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full border-none"
+      }
+    },
+    {
+      "id": "leftSideFooter",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center px-4 py-3 border-t border-divider cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "leftSideCollapseIcon"
+      ]
+    },
+    {
+      "id": "leftSideCollapseIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevrons-left",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "mainAreaHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "mainAreaTitle"
+      ]
+    },
+    {
+      "id": "mainAreaTitle",
+      "component": "h1",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "/pageTitle"
+        }
+      }
+    },
+    {
+      "id": "mainAreaTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        }
+      },
+      "children": [
+        "mainAreaTab1",
+        "mainAreaTab2"
+      ]
+    },
+    {
+      "id": "mainAreaTab1",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "/tabItems/0/key"
+        },
+        "label": {
+          "path": "/tabItems/0/tabName"
+        },
+        "content": {
+          "componentId": "mainAreaTab1Content"
+        }
+      }
+    },
+    {
+      "id": "mainAreaTab2",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "/tabItems/1/key"
+        },
+        "label": {
+          "path": "/tabItems/1/tabName"
+        },
+        "content": {
+          "componentId": "mainAreaTab2Content"
+        }
+      }
+    },
+    {
+      "id": "mainAreaTab1Content",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section mt-section"
+      },
+      "children": [
+        "mainAreaAlertBanner",
+        "mainAreaToolBar",
+        "mainAreaCardList"
+      ]
+    },
+    {
+      "id": "mainAreaAlertBanner",
+      "component": "div",
+      "props": {
+        "className": "flex items-start gap-3 p-4 bg-critical-container rounded-xl"
+      },
+      "children": [
+        "mainAreaAlertIcon",
+        "mainAreaAlertBody",
+        "mainAreaAlertCloseIcon"
+      ]
+    },
+    {
+      "id": "mainAreaAlertIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/alertBanner/alertIcon"
+        },
+        "color": "critical",
+        "shape": "outline",
+        "className": "w-5 h-5 shrink-0 mt-0.5"
+      }
+    },
+    {
+      "id": "mainAreaAlertBody",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0"
+      },
+      "children": [
+        "mainAreaAlertMessage"
+      ]
+    },
+    {
+      "id": "mainAreaAlertMessage",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-critical-container leading-relaxed",
+        "value": {
+          "path": "/alertBanner/alertMessage"
+        }
+      }
+    },
+    {
+      "id": "mainAreaAlertCloseIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/alertBanner/closeIcon"
+        },
+        "color": "critical",
+        "shape": "outline",
+        "className": "w-5 h-5 shrink-0 cursor-pointer"
+      }
+    },
+    {
+      "id": "mainAreaToolBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "mainAreaSearchInput",
+        "mainAreaCreateBtn"
+      ]
+    },
+    {
+      "id": "mainAreaSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": {
+          "path": "/toolBar/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-80"
+      }
+    },
+    {
+      "id": "mainAreaCreateBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolBar/createButtonText"
+        },
+        "icon": {
+          "path": "/toolBar/createButtonIcon"
+        },
+        "iconPlacement": "start",
+        "color": "primary",
+        "className": "ml-auto"
+      }
+    },
+    {
+      "id": "mainAreaCardList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section"
+      },
+      "children": {
+        "path": "/policyCardList",
+        "componentId": "mainAreaPolicyCard"
+      }
+    },
+    {
+      "id": "mainAreaPolicyCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card rounded-xl p-gutter flex flex-col gap-4"
+      },
+      "children": [
+        "mainAreaCardHeader",
+        "mainAreaCardDivider",
+        "mainAreaCardMetrics",
+        "mainAreaCardTimeDivider",
+        "mainAreaCardTimeSection",
+        "mainAreaCardFooter"
+      ]
+    },
+    {
+      "id": "mainAreaCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "mainAreaCardIcon",
+        "mainAreaCardTitle",
+        "mainAreaCardTag",
+        "mainAreaCardMoreBtn"
+      ]
+    },
+    {
+      "id": "mainAreaCardIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "cardIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "mainAreaCardTitle",
+      "component": "span",
+      "props": {
+        "className": "flex-1 text-lg font-semibold text-on-surface truncate",
+        "value": {
+          "path": "policyTitle"
+        }
+      }
+    },
+    {
+      "id": "mainAreaCardTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "policyTag"
+        },
+        "color": {
+          "path": "tagColor"
+        }
+      }
+    },
+    {
+      "id": "mainAreaCardMoreBtn",
+      "component": "Button",
+      "props": {
+        "icon": "more-horizontal",
+        "types": "link"
+      }
+    },
+    {
+      "id": "mainAreaCardDivider",
+      "component": "Divider",
+      "props": {
+        "className": "my-0"
+      }
+    },
+    {
+      "id": "mainAreaCardMetrics",
+      "component": "div",
+      "props": {
+        "className": "flex gap-8"
+      },
+      "children": {
+        "path": "metrics",
+        "componentId": "mainAreaMetricItem"
+      }
+    },
+    {
+      "id": "mainAreaMetricItem",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "mainAreaMetricValue",
+        "mainAreaMetricLabel"
+      ]
+    },
+    {
+      "id": "mainAreaMetricValue",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "metricValue"
+        }
+      }
+    },
+    {
+      "id": "mainAreaMetricLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "metricLabel"
+        }
+      }
+    },
+    {
+      "id": "mainAreaCardTimeDivider",
+      "component": "Divider",
+      "props": {
+        "className": "my-0"
+      }
+    },
+    {
+      "id": "mainAreaCardTimeSection",
+      "component": "div",
+      "props": {
+        "className": "flex gap-6 flex-wrap"
+      },
+      "children": {
+        "path": "timeRecords",
+        "componentId": "mainAreaTimeItem"
+      }
+    },
+    {
+      "id": "mainAreaTimeItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "mainAreaTimeIcon",
+        "mainAreaTimeLabel",
+        "mainAreaTimeValue"
+      ]
+    },
+    {
+      "id": "mainAreaTimeIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "mainAreaTimeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "timeLabel"
+        }
+      }
+    },
+    {
+      "id": "mainAreaTimeValue",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface font-medium",
+        "value": {
+          "path": "timeValue"
+        }
+      }
+    },
+    {
+      "id": "mainAreaCardFooter",
+      "component": "div",
+      "props": {
+        "className": "flex justify-end"
+      },
+      "children": [
+        "mainAreaCardDetailBtn"
+      ]
+    },
+    {
+      "id": "mainAreaCardDetailBtn",
+      "component": "Button",
+      "props": {
+        "value": "查看详情",
+        "types": "link",
+        "color": "primary",
+        "icon": "chevron-right",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "mainAreaTab2Content",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center py-16"
+      },
+      "children": [
+        "mainAreaTab2Icon",
+        "mainAreaTab2Text"
+      ]
+    },
+    {
+      "id": "mainAreaTab2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "archive",
+        "color": "default",
+        "shape": "square",
+        "className": "w-12 h-12"
+      }
+    },
+    {
+      "id": "mainAreaTab2Text",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant mt-4",
+        "value": "暂无历史归档策略数据"
+      }
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "state": {
+    "pageTitle": "故障智能驾驶舱",
+    "brandName": "iMaster MAE",
+    "switchButtonText": "切换到智能故障管理",
+    "kpiCardTitle": "故障管理驾驶舱",
+    "networkTag": "网络中心",
+    "trendCardTitle": "故障诊断趋势",
+    "currentStep": 2,
+    "metrics": [
+      {
+        "metricIcon": "activity",
+        "metricLabel": "故障总数",
+        "metricValue": 1284,
+        "valueColor": "#3B82F6"
+      },
+      {
+        "metricIcon": "circle-check",
+        "metricLabel": "诊断成功",
+        "metricValue": 1052,
+        "valueColor": "#10B981"
+      },
+      {
+        "metricIcon": "loader",
+        "metricLabel": "诊断中",
+        "metricValue": 186,
+        "valueColor": "#F59E0B"
+      },
+      {
+        "metricIcon": "triangle-alert",
+        "metricLabel": "诊断失败",
+        "metricValue": 46,
+        "valueColor": "#EF4444"
+      },
+      {
+        "metricIcon": "timer",
+        "metricLabel": "平均诊断时长",
+        "metricValue": "3.2s",
+        "valueColor": "#8B5CF6"
+      },
+      {
+        "metricIcon": "refresh-ccw",
+        "metricLabel": "自动恢复率",
+        "metricValue": "85.4%",
+        "valueColor": "#06B6D4"
+      }
+    ],
+    "toolIcons": [
+      {
+        "iconName": "moon"
+      },
+      {
+        "iconName": "alert-circle"
+      },
+      {
+        "iconName": "help-circle"
+      }
+    ],
+    "steps": [
+      {
+        "stepName": "主动发现",
+        "stepIcon": "search"
+      },
+      {
+        "stepName": "故障诊断",
+        "stepIcon": "clipboard-list"
+      },
+      {
+        "stepName": "故障上报",
+        "stepIcon": "send"
+      }
+    ]
+  },
+  "rootId": "rootPage",
+  "elements": [
+    {
+      "id": "rootPage",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-[#0B1120]"
+      },
+      "children": [
+        "navBar",
+        "mainContent"
+      ]
+    },
+    {
+      "id": "navBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-6 h-14 shrink-0 bg-[#0F172A] border-b border-[#1E293B]"
+      },
+      "children": [
+        "navLeft",
+        "navCenterTitle",
+        "navSwitchBtn",
+        "navRightTools"
+      ]
+    },
+    {
+      "id": "navLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2.5"
+      },
+      "children": [
+        "navBrandIcon",
+        "navBrandText"
+      ]
+    },
+    {
+      "id": "navBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": "hexagon",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "navBrandText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandName"
+        },
+        "className": "text-lg font-bold text-white"
+      }
+    },
+    {
+      "id": "navCenterTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/pageTitle"
+        },
+        "className": "text-base font-semibold text-slate-300"
+      }
+    },
+    {
+      "id": "navSwitchBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/switchButtonText"
+        },
+        "icon": "arrow-right",
+        "iconPlacement": "end",
+        "shape": "round",
+        "size": "small"
+      }
+    },
+    {
+      "id": "navRightTools",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": {
+        "path": "/toolIcons",
+        "componentId": "navToolBtn"
+      }
+    },
+    {
+      "id": "navToolBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "iconName"
+        },
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+      },
+      "children": [
+        "kpiCard",
+        "analysisCard",
+        "trendCard"
+      ]
+    },
+    {
+      "id": "kpiCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0F172A] rounded-xl border border-[#1E293B] p-5"
+      },
+      "children": [
+        "kpiHeader",
+        "kpiMetricsRow"
+      ]
+    },
+    {
+      "id": "kpiHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-5"
+      },
+      "children": [
+        "kpiTitle",
+        "kpiTag"
+      ]
+    },
+    {
+      "id": "kpiTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpiCardTitle"
+        },
+        "className": "text-base font-semibold text-white"
+      }
+    },
+    {
+      "id": "kpiTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "/networkTag"
+        },
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "kpiMetricsRow",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-6 gap-4"
+      },
+      "children": {
+        "path": "/metrics",
+        "componentId": "kpiMetricItem"
+      }
+    },
+    {
+      "id": "kpiMetricItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 bg-[#111B2E] rounded-lg p-4"
+      },
+      "children": [
+        "kpiMetricIcon",
+        "kpiMetricTextWrap"
+      ]
+    },
+    {
+      "id": "kpiMetricIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "metricIcon"
+        },
+        "color": {
+          "path": "valueColor"
+        },
+        "shape": "circle",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "kpiMetricTextWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5"
+      },
+      "children": [
+        "kpiMetricLabel",
+        "kpiMetricValue"
+      ]
+    },
+    {
+      "id": "kpiMetricLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricLabel"
+        },
+        "className": "text-xs text-slate-400"
+      }
+    },
+    {
+      "id": "kpiMetricValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricValue"
+        },
+        "className": "text-xl font-bold text-white"
+      }
+    },
+    {
+      "id": "analysisCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0F172A] rounded-xl border border-[#1E293B] p-5"
+      },
+      "children": [
+        "analysisSteps",
+        "analysisCharts"
+      ]
+    },
+    {
+      "id": "analysisSteps",
+      "component": "Steps",
+      "props": {
+        "current": {
+          "path": "/currentStep"
+        },
+        "className": "mb-6"
+      },
+      "children": {
+        "path": "/steps",
+        "componentId": "analysisStepItem"
+      }
+    },
+    {
+      "id": "analysisStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "stepName"
+        },
+        "icon": {
+          "path": "stepIcon"
+        }
+      }
+    },
+    {
+      "id": "analysisCharts",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-4"
+      },
+      "children": [
+        "chart1Box",
+        "chart2Box",
+        "chart3Box",
+        "chart4Box"
+      ]
+    },
+    {
+      "id": "chart1Box",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111B2E] rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chart1Title",
+        "chart1Pie"
+      ]
+    },
+    {
+      "id": "chart1Title",
+      "component": "span",
+      "props": {
+        "value": "故障总次数统计",
+        "className": "text-sm font-medium text-slate-300 mb-3"
+      }
+    },
+    {
+      "id": "chart1Pie",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "title": {
+            "text": "1284",
+            "subtext": "故障总数"
+          },
+          "data": [
+            {
+              "value": 450,
+              "name": "硬件故障"
+            },
+            {
+              "value": 380,
+              "name": "软件异常"
+            },
+            {
+              "value": 284,
+              "name": "网络波动"
+            },
+            {
+              "value": 170,
+              "name": "配置错误"
+            }
+          ],
+          "color": [
+            "#3B82F6",
+            "#10B981",
+            "#F59E0B",
+            "#8B5CF6"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "chart2Box",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111B2E] rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chart2Title",
+        "chart2Bar"
+      ]
+    },
+    {
+      "id": "chart2Title",
+      "component": "span",
+      "props": {
+        "value": "故障类型统计",
+        "className": "text-sm font-medium text-slate-300 mb-3"
+      }
+    },
+    {
+      "id": "chart2Bar",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "stack": true,
+          "data": [
+            {
+              "Time": "01:00",
+              "链路中断": 12,
+              "设备宕机": 5,
+              "性能劣化": 20
+            },
+            {
+              "Time": "04:00",
+              "链路中断": 5,
+              "设备宕机": 8,
+              "性能劣化": 15
+            },
+            {
+              "Time": "08:00",
+              "链路中断": 18,
+              "设备宕机": 10,
+              "性能劣化": 30
+            },
+            {
+              "Time": "12:00",
+              "链路中断": 25,
+              "设备宕机": 12,
+              "性能劣化": 45
+            },
+            {
+              "Time": "16:00",
+              "链路中断": 15,
+              "设备宕机": 8,
+              "性能劣化": 35
+            },
+            {
+              "Time": "20:00",
+              "链路中断": 10,
+              "设备宕机": 6,
+              "性能劣化": 25
+            }
+          ],
+          "xAxis": {
+            "data": "Time"
+          },
+          "yAxisTitle": "故障数(次)",
+          "color": [
+            "#EF4444",
+            "#F59E0B",
+            "#3B82F6"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "chart3Box",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111B2E] rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chart3Title",
+        "chart3Bar"
+      ]
+    },
+    {
+      "id": "chart3Title",
+      "component": "span",
+      "props": {
+        "value": "故障原因TOP10统计",
+        "className": "text-sm font-medium text-slate-300 mb-3"
+      }
+    },
+    {
+      "id": "chart3Bar",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "direction": "horizontal",
+          "data": [
+            {
+              "Reason": "光衰过大",
+              "Count": 150
+            },
+            {
+              "Reason": "内存溢出",
+              "Count": 138
+            },
+            {
+              "Reason": "端口拥塞",
+              "Count": 124
+            },
+            {
+              "Reason": "CPU过载",
+              "Count": 112
+            },
+            {
+              "Reason": "路由震荡",
+              "Count": 98
+            },
+            {
+              "Reason": "DNS解析失败",
+              "Count": 85
+            },
+            {
+              "Reason": "电源异常",
+              "Count": 76
+            },
+            {
+              "Reason": "ARP攻击",
+              "Count": 65
+            },
+            {
+              "Reason": "配置冲突",
+              "Count": 52
+            },
+            {
+              "Reason": "License过期",
+              "Count": 40
+            }
+          ],
+          "xAxis": {
+            "data": "Reason"
+          },
+          "yAxisTitle": "次数",
+          "color": [
+            "#3B82F6"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "chart4Box",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111B2E] rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chart4Title",
+        "chart4Pie"
+      ]
+    },
+    {
+      "id": "chart4Title",
+      "component": "span",
+      "props": {
+        "value": "诊断结果统计",
+        "className": "text-sm font-medium text-slate-300 mb-3"
+      }
+    },
+    {
+      "id": "chart4Pie",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "title": {
+            "text": "1284",
+            "subtext": "诊断结果"
+          },
+          "data": [
+            {
+              "value": 850,
+              "name": "自动恢复"
+            },
+            {
+              "value": 202,
+              "name": "需人工介入"
+            },
+            {
+              "value": 46,
+              "name": "诊断失败"
+            },
+            {
+              "value": 186,
+              "name": "诊断中"
+            }
+          ],
+          "color": [
+            "#10B981",
+            "#F59E0B",
+            "#EF4444",
+            "#3B82F6"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "trendCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0F172A] rounded-xl border border-[#1E293B] p-5 flex-1 flex flex-col min-h-[400px]"
+      },
+      "children": [
+        "trendTitle",
+        "trendLineChart"
+      ]
+    },
+    {
+      "id": "trendTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/trendCardTitle"
+        },
+        "className": "text-base font-semibold text-white mb-4"
+      }
+    },
+    {
+      "id": "trendLineChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "smooth": true,
+          "area": true,
+          "data": [
+            {
+              "Date": "10-01",
+              "总故障数": 120,
+              "自动诊断成功": 95,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-02",
+              "总故障数": 105,
+              "自动诊断成功": 85,
+              "人工介入处理": 20
+            },
+            {
+              "Date": "10-03",
+              "总故障数": 135,
+              "自动诊断成功": 110,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-04",
+              "总故障数": 150,
+              "自动诊断成功": 125,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-05",
+              "总故障数": 125,
+              "自动诊断成功": 100,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-06",
+              "总故障数": 140,
+              "自动诊断成功": 115,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-07",
+              "总故障数": 180,
+              "自动诊断成功": 150,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-08",
+              "总故障数": 165,
+              "自动诊断成功": 135,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-09",
+              "总故障数": 155,
+              "自动诊断成功": 125,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-10",
+              "总故障数": 140,
+              "自动诊断成功": 110,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-11",
+              "总故障数": 160,
+              "自动诊断成功": 130,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-12",
+              "总故障数": 145,
+              "自动诊断成功": 115,
+              "人工介入处理": 30
+            },
+            {
+              "Date": "10-13",
+              "总故障数": 130,
+              "自动诊断成功": 105,
+              "人工介入处理": 25
+            },
+            {
+              "Date": "10-14",
+              "总故障数": 120,
+              "自动诊断成功": 95,
+              "人工介入处理": 25
+            }
+          ],
+          "xAxis": {
+            "data": "Date"
+          },
+          "yAxisTitle": "数量(次)",
+          "color": [
+            "#3B82F6",
+            "#10B981",
+            "#F59E0B"
+          ]
+        },
+        "className": "flex-1 w-full"
+      }
+    }
+  ]
+}

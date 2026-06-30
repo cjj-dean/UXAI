@@ -1,0 +1,906 @@
+{
+    "state": {
+        "sidebarNav": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "User Directory",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Roles & Permissions",
+                "icon": "shield-check",
+                "isActive": true
+            },
+            {
+                "label": "Security Audit",
+                "icon": "file-search",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "name": "Admin User",
+            "email": "admin@securitygate.com",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "globalSearch": "",
+        "roleSearch": "",
+        "roles": [
+            {
+                "id": "r1",
+                "title": "Super Admin",
+                "desc": "Full system access and master controls",
+                "selected": true
+            },
+            {
+                "id": "r2",
+                "title": "Security Lead",
+                "desc": "Advanced threat monitoring and overrides",
+                "selected": false
+            },
+            {
+                "id": "r3",
+                "title": "IT Operator",
+                "desc": "Standard maintenance and user provisioning",
+                "selected": false
+            },
+            {
+                "id": "r4",
+                "title": "Compliance Officer",
+                "desc": "Audit log access and policy reviews",
+                "selected": false
+            },
+            {
+                "id": "r5",
+                "title": "Analyst",
+                "desc": "Read-only access to logs and reports",
+                "selected": false
+            }
+        ],
+        "activeTab": "menuAccess",
+        "permissionTree": [
+            {
+                "id": "m1",
+                "label": "Dashboard",
+                "expanded": true,
+                "enabled": true,
+                "children": [
+                    "m1-1",
+                    "m1-2"
+                ]
+            },
+            {
+                "id": "m1-1",
+                "label": "Global Overview",
+                "checked": true
+            },
+            {
+                "id": "m1-2",
+                "label": "Threat Map",
+                "checked": true
+            },
+            {
+                "id": "m2",
+                "label": "Users",
+                "expanded": false,
+                "enabled": true
+            },
+            {
+                "id": "m3",
+                "label": "Threat Logs",
+                "expanded": false,
+                "enabled": true
+            },
+            {
+                "id": "m4",
+                "label": "System Settings",
+                "expanded": false,
+                "enabled": true
+            }
+        ]
+    },
+    "rootId": "pageLayout",
+    "elements": [
+        {
+            "id": "pageLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col"
+            },
+            "children": [
+                "sidebarBranding",
+                "sidebarNavList",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBranding",
+            "component": "div",
+            "props": {
+                "className": "p-6"
+            },
+            "children": [
+                "sidebarBrandingText"
+            ]
+        },
+        {
+            "id": "sidebarBrandingText",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-primary tracking-tight leading-tight",
+                "value": "Security Gate ENTERPRISE ADMIN"
+            }
+        },
+        {
+            "id": "sidebarNavList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-3 space-y-1"
+            },
+            "children": {
+                "path": "/sidebarNav",
+                "componentId": "sidebarNavItem"
+            }
+        },
+        {
+            "id": "sidebarNavItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md transition-colors cursor-pointer"
+            },
+            "children": [
+                "sidebarNavItemIcon",
+                "sidebarNavItemLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarNavItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface-variant",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto"
+            },
+            "children": [
+                "sidebarDivider",
+                "sidebarUserProfile"
+            ]
+        },
+        {
+            "id": "sidebarDivider",
+            "component": "Divider",
+            "props": {
+                "className": "my-0"
+            }
+        },
+        {
+            "id": "sidebarUserProfile",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex items-center gap-3"
+            },
+            "children": [
+                "sidebarAvatar",
+                "sidebarUserInfo"
+            ]
+        },
+        {
+            "id": "sidebarAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "sidebarUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "sidebarUserName",
+                "sidebarUserEmail"
+            ]
+        },
+        {
+            "id": "sidebarUserName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface truncate",
+                "value": {
+                    "path": "/currentUser/name"
+                }
+            }
+        },
+        {
+            "id": "sidebarUserEmail",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "/currentUser/email"
+                }
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "mainHeader",
+                "mainContentSplit"
+            ]
+        },
+        {
+            "id": "mainHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-6 flex items-center justify-between shrink-0"
+            },
+            "children": [
+                "mainHeaderTitle",
+                "mainHeaderActions"
+            ]
+        },
+        {
+            "id": "mainHeaderTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-xl font-bold text-on-surface",
+                "value": "Roles & Permissions"
+            }
+        },
+        {
+            "id": "mainHeaderActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "mainHeaderSearch",
+                "mainHeaderIcons"
+            ]
+        },
+        {
+            "id": "mainHeaderSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/globalSearch"
+                },
+                "placeholder": "Global search...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "mainHeaderIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "iconBell",
+                "iconSettings",
+                "iconHelp"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconSettings",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "mainContentSplit",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "roleListColumn",
+                "roleDetailColumn"
+            ]
+        },
+        {
+            "id": "roleListColumn",
+            "component": "div",
+            "props": {
+                "className": "w-80 bg-surface-container-low border-r border-divider flex flex-col p-4"
+            },
+            "children": [
+                "addRoleBtn",
+                "roleSearchInput",
+                "roleCardList"
+            ]
+        },
+        {
+            "id": "addRoleBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add New Role",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "w-full mb-4"
+            }
+        },
+        {
+            "id": "roleSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/roleSearch"
+                },
+                "placeholder": "Search roles...",
+                "prefix": "search",
+                "className": "mb-4"
+            }
+        },
+        {
+            "id": "roleCardList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto space-y-3"
+            },
+            "children": {
+                "path": "/roles",
+                "componentId": "roleCardItem"
+            }
+        },
+        {
+            "id": "roleCardItem",
+            "component": "div",
+            "props": {
+                "className": "p-4 rounded-xl border border-divider bg-surface-container-highest shadow-sm cursor-pointer transition-all"
+            },
+            "children": [
+                "roleCardTitle",
+                "roleCardDesc"
+            ]
+        },
+        {
+            "id": "roleCardTitle",
+            "component": "span",
+            "props": {
+                "className": "block text-sm font-bold text-on-surface mb-1",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "roleCardDesc",
+            "component": "span",
+            "props": {
+                "className": "block text-xs text-on-surface-variant leading-relaxed",
+                "value": {
+                    "path": "desc"
+                }
+            }
+        },
+        {
+            "id": "roleDetailColumn",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden relative"
+            },
+            "children": [
+                "roleDetailScrollArea",
+                "roleDetailFooter"
+            ]
+        },
+        {
+            "id": "roleDetailScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8"
+            },
+            "children": [
+                "roleDetailHeader",
+                "roleDetailDescription",
+                "roleDetailTabs",
+                "roleDetailTree",
+                "inheritanceNoteBlock"
+            ]
+        },
+        {
+            "id": "roleDetailHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "roleDetailTitleGroup",
+                "roleDetailHeaderActions"
+            ]
+        },
+        {
+            "id": "roleDetailTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "roleDetailTitle",
+                "roleDetailTag"
+            ]
+        },
+        {
+            "id": "roleDetailTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": "Super Admin"
+            }
+        },
+        {
+            "id": "roleDetailTag",
+            "component": "Tag",
+            "props": {
+                "value": "SYSTEM DEFAULT",
+                "color": "primary",
+                "variant": "filled",
+                "size": "small"
+            }
+        },
+        {
+            "id": "roleDetailHeaderActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "btnEditRole",
+                "btnCopyRole"
+            ]
+        },
+        {
+            "id": "btnEditRole",
+            "component": "Icon",
+            "props": {
+                "name": "edit-3",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "btnCopyRole",
+            "component": "Icon",
+            "props": {
+                "name": "copy",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "roleDetailDescription",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-surface-variant leading-relaxed mb-8 max-w-3xl",
+                "value": "Provides unrestricted access to all aspects of the Security Gate platform, including configuration, user management, and sensitive security audit data."
+            }
+        },
+        {
+            "id": "roleDetailTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "mb-6"
+            },
+            "children": [
+                "tabMenuAccess",
+                "tabActions",
+                "tabDataScope"
+            ]
+        },
+        {
+            "id": "tabMenuAccess",
+            "component": "TabItem",
+            "props": {
+                "key": "menuAccess",
+                "label": "Menu Access"
+            }
+        },
+        {
+            "id": "tabActions",
+            "component": "TabItem",
+            "props": {
+                "key": "actions",
+                "label": "Actions & Buttons"
+            }
+        },
+        {
+            "id": "tabDataScope",
+            "component": "TabItem",
+            "props": {
+                "key": "dataScope",
+                "label": "Data Scope"
+            }
+        },
+        {
+            "id": "roleDetailTree",
+            "component": "div",
+            "props": {
+                "className": "border border-divider rounded-xl overflow-hidden mb-8"
+            },
+            "children": [
+                "treeRow1",
+                "treeRow1Sub1",
+                "treeRow1Sub2",
+                "treeRow2",
+                "treeRow3",
+                "treeRow4"
+            ]
+        },
+        {
+            "id": "treeRow1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-4 bg-surface-container-high border-b border-divider"
+            },
+            "children": [
+                "treeRow1Left",
+                "treeRow1Right"
+            ]
+        },
+        {
+            "id": "treeRow1Left",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "iconChevronDown",
+                "treeLabel1"
+            ]
+        },
+        {
+            "id": "iconChevronDown",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "treeLabel1",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold",
+                "value": "Dashboard"
+            }
+        },
+        {
+            "id": "treeRow1Right",
+            "component": "Switch",
+            "props": {
+                "value": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeRow1Sub1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-4 pl-12 border-b border-divider"
+            },
+            "children": [
+                "check1-1",
+                "label1-1"
+            ]
+        },
+        {
+            "id": "check1-1",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "label1-1",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "Global Overview"
+            }
+        },
+        {
+            "id": "treeRow1Sub2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-4 pl-12 border-b border-divider"
+            },
+            "children": [
+                "check1-2",
+                "label1-2"
+            ]
+        },
+        {
+            "id": "check1-2",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "label1-2",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "Threat Map"
+            }
+        },
+        {
+            "id": "treeRow2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-4 border-b border-divider"
+            },
+            "children": [
+                "treeRow2Left",
+                "treeRow2Right"
+            ]
+        },
+        {
+            "id": "treeRow2Left",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "iconChevronRight2",
+                "treeLabel2"
+            ]
+        },
+        {
+            "id": "iconChevronRight2",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "treeLabel2",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "Users"
+            }
+        },
+        {
+            "id": "treeRow2Right",
+            "component": "Switch",
+            "props": {
+                "value": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeRow3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-4 border-b border-divider"
+            },
+            "children": [
+                "treeRow3Left",
+                "treeRow3Right"
+            ]
+        },
+        {
+            "id": "treeRow3Left",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "iconChevronRight3",
+                "treeLabel3"
+            ]
+        },
+        {
+            "id": "iconChevronRight3",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "treeLabel3",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "Threat Logs"
+            }
+        },
+        {
+            "id": "treeRow3Right",
+            "component": "Switch",
+            "props": {
+                "value": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeRow4",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-4"
+            },
+            "children": [
+                "treeRow4Left",
+                "treeRow4Right"
+            ]
+        },
+        {
+            "id": "treeRow4Left",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "iconChevronRight4",
+                "treeLabel4"
+            ]
+        },
+        {
+            "id": "iconChevronRight4",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "treeLabel4",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "System Settings"
+            }
+        },
+        {
+            "id": "treeRow4Right",
+            "component": "Switch",
+            "props": {
+                "value": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "inheritanceNoteBlock",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-info-container rounded-xl flex gap-4"
+            },
+            "children": [
+                "noteIcon",
+                "noteContent"
+            ]
+        },
+        {
+            "id": "noteIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "color": "info",
+                "className": "w-6 h-6 shrink-0"
+            }
+        },
+        {
+            "id": "noteContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "noteTitle",
+                "noteDesc"
+            ]
+        },
+        {
+            "id": "noteTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-info-container",
+                "value": "Inheritance Note"
+            }
+        },
+        {
+            "id": "noteDesc",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-info-container leading-relaxed",
+                "value": "The Super Admin role inherently possesses all menu access points. Disabling items here will only affect the primary UI rendering for this role."
+            }
+        },
+        {
+            "id": "roleDetailFooter",
+            "component": "div",
+            "props": {
+                "className": "h-20 bg-surface-container-highest border-t border-divider px-8 flex items-center justify-end gap-4 shrink-0"
+            },
+            "children": [
+                "btnReset",
+                "btnSave"
+            ]
+        },
+        {
+            "id": "btnReset",
+            "component": "Button",
+            "props": {
+                "value": "Reset to Defaults",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "btnSave",
+            "component": "Button",
+            "props": {
+                "value": "Save Changes",
+                "color": "primary"
+            }
+        }
+    ]
+}

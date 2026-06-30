@@ -1,0 +1,910 @@
+{
+  "state": {
+    "sidebar": {
+      "brandName": "Office Admin",
+      "brandIcon": "layout-dashboard",
+      "actionLabel": "New Request",
+      "actionIcon": "plus",
+      "navItems": [
+        {
+          "label": "Home",
+          "icon": "home",
+          "isActive": true
+        },
+        {
+          "label": "Approvals",
+          "icon": "check-square",
+          "isActive": false
+        },
+        {
+          "label": "Resources",
+          "icon": "box",
+          "isActive": false
+        },
+        {
+          "label": "Assets",
+          "icon": "monitor",
+          "isActive": false
+        },
+        {
+          "label": "Reports",
+          "icon": "bar-chart-3",
+          "isActive": false
+        },
+        {
+          "label": "Settings",
+          "icon": "settings",
+          "isActive": false
+        }
+      ]
+    },
+    "header": {
+      "logoIcon": "hexagon",
+      "searchPlaceholder": "搜索应用或文档...",
+      "unreadCount": 5,
+      "userName": "系统管理员",
+      "role": "Admin",
+      "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userMenu": [
+        {
+          "label": "个人中心",
+          "key": "profile",
+          "icon": "user"
+        },
+        {
+          "label": "账号设置",
+          "key": "settings",
+          "icon": "settings"
+        },
+        {
+          "label": "退出登录",
+          "key": "logout",
+          "icon": "log-out"
+        }
+      ]
+    },
+    "statistics": [
+      {
+        "title": "待办审批",
+        "value": 12,
+        "unit": "项",
+        "status": "warning",
+        "icon": "clock"
+      },
+      {
+        "title": "今日会议",
+        "value": 5,
+        "unit": "场",
+        "status": "info",
+        "icon": "calendar"
+      },
+      {
+        "title": "资源占用率",
+        "value": 85,
+        "unit": "%",
+        "status": "error",
+        "icon": "pie-chart"
+      },
+      {
+        "title": "新公告",
+        "value": 3,
+        "unit": "条",
+        "status": "success",
+        "icon": "megaphone"
+      }
+    ],
+    "approvals": [
+      {
+        "id": "REQ-001",
+        "icon": "car",
+        "title": "市场部车辆使用申请",
+        "user": "张伟",
+        "pos": "市场经理",
+        "time": "09:00"
+      },
+      {
+        "id": "REQ-002",
+        "icon": "laptop",
+        "title": "研发部办公设备领用",
+        "user": "李芳",
+        "pos": "前端开发",
+        "time": "10:30"
+      },
+      {
+        "id": "REQ-003",
+        "icon": "briefcase",
+        "title": "行政部出差差旅报销",
+        "user": "王强",
+        "pos": "行政主管",
+        "time": "11:15"
+      }
+    ],
+    "feeds": [
+      {
+        "id": 1,
+        "content": "新员工「林小溪」入职欢迎仪式",
+        "time": "10 分钟前",
+        "status": "success",
+        "icon": "user-plus"
+      },
+      {
+        "id": 2,
+        "content": "3号会议室多媒体设备升级完成",
+        "time": "45 分钟前",
+        "status": "info",
+        "icon": "settings"
+      },
+      {
+        "id": 3,
+        "content": "年度消防演习通知已下发",
+        "time": "2 小时前",
+        "status": "warning",
+        "icon": "alert-triangle"
+      },
+      {
+        "id": 4,
+        "content": "行政系统维护公告：本周六凌晨",
+        "time": "5 小时前",
+        "status": "error",
+        "icon": "info"
+      }
+    ],
+    "apps": [
+      {
+        "name": "用车申请",
+        "icon": "car-front",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "资产领用",
+        "icon": "package",
+        "color": "#10b981"
+      },
+      {
+        "name": "差旅报销",
+        "icon": "plane",
+        "color": "#f59e0b"
+      },
+      {
+        "name": "会议预订",
+        "icon": "video",
+        "color": "#8b5cf6"
+      },
+      {
+        "name": "访客登记",
+        "icon": "user-check",
+        "color": "#ec4899"
+      },
+      {
+        "name": "维修申报",
+        "icon": "wrench",
+        "color": "#ef4444"
+      }
+    ],
+    "floatMenu": [
+      {
+        "label": "意见反馈",
+        "key": "feedback",
+        "icon": "edit-3"
+      },
+      {
+        "label": "联系技术支持",
+        "key": "support",
+        "icon": "phone"
+      }
+    ]
+  },
+  "rootId": "appLayout",
+  "elements": [
+    {
+      "id": "appLayout",
+      "component": "div",
+      "props": {
+        "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+      },
+      "children": [
+        "sidebarContainer",
+        "mainWrapper"
+      ]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "div",
+      "props": {
+        "className": "w-64 bg-surface-container-highest shadow-sm flex flex-col z-20"
+      },
+      "children": [
+        "sidebarBrand",
+        "sidebarAction",
+        "sidebarNav"
+      ]
+    },
+    {
+      "id": "sidebarBrand",
+      "component": "div",
+      "props": {
+        "className": "p-6 flex items-center gap-3"
+      },
+      "children": [
+        "sidebarBrandIcon",
+        "sidebarBrandName"
+      ]
+    },
+    {
+      "id": "sidebarBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/sidebar/brandIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "sidebarBrandName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/sidebar/brandName"
+        },
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "sidebarAction",
+      "component": "div",
+      "props": {
+        "className": "px-4 mb-6"
+      },
+      "children": [
+        "sidebarActionBtn"
+      ]
+    },
+    {
+      "id": "sidebarActionBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/sidebar/actionLabel"
+        },
+        "icon": {
+          "path": "/sidebar/actionIcon"
+        },
+        "color": "primary",
+        "className": "w-full shadow-md"
+      }
+    },
+    {
+      "id": "sidebarNav",
+      "component": "div",
+      "props": {
+        "className": "flex-1 px-3 space-y-1"
+      },
+      "children": {
+        "path": "/sidebar/navItems",
+        "componentId": "sidebarNavItem"
+      }
+    },
+    {
+      "id": "sidebarNavItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarNavItemIcon",
+        "sidebarNavItemLabel"
+      ]
+    },
+    {
+      "id": "sidebarNavItemIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "sidebarNavItemLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "label"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-hidden"
+      },
+      "children": [
+        "headerContainer",
+        "contentScrollArea",
+        "floatingAction"
+      ]
+    },
+    {
+      "id": "headerContainer",
+      "component": "div",
+      "props": {
+        "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6 z-10"
+      },
+      "children": [
+        "headerLeft",
+        "headerRight"
+      ]
+    },
+    {
+      "id": "headerLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 w-1/3"
+      },
+      "children": [
+        "headerSearch"
+      ]
+    },
+    {
+      "id": "headerSearch",
+      "component": "Input",
+      "props": {
+        "value": "",
+        "placeholder": {
+          "path": "/header/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-full bg-surface-variant border-none rounded-full"
+      }
+    },
+    {
+      "id": "headerRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-6"
+      },
+      "children": [
+        "headerNotify",
+        "headerUser"
+      ]
+    },
+    {
+      "id": "headerNotify",
+      "component": "div",
+      "props": {
+        "className": "relative cursor-pointer"
+      },
+      "children": [
+        "headerNotifyIcon",
+        "headerNotifyBadge"
+      ]
+    },
+    {
+      "id": "headerNotifyIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "className": "w-6 h-6 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "headerNotifyBadge",
+      "component": "div",
+      "props": {
+        "className": "absolute -top-1 -right-1 bg-error text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full",
+        "value": "5"
+      }
+    },
+    {
+      "id": "headerUser",
+      "component": "Dropdown",
+      "props": {
+        "menu": {
+          "path": "/header/userMenu"
+        },
+        "trigger": [
+          "hover"
+        ]
+      },
+      "children": [
+        "headerUserTrigger"
+      ]
+    },
+    {
+      "id": "headerUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 cursor-pointer"
+      },
+      "children": [
+        "headerUserAvatar",
+        "headerUserInfo"
+      ]
+    },
+    {
+      "id": "headerUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/header/avatar"
+        },
+        "className": "w-8 h-8 rounded-full border border-divider"
+      }
+    },
+    {
+      "id": "headerUserInfo",
+      "component": "div",
+      "props": {
+        "className": "hidden md:block"
+      },
+      "children": [
+        "headerUserName",
+        "headerUserRole"
+      ]
+    },
+    {
+      "id": "headerUserName",
+      "component": "div",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface leading-none",
+        "value": {
+          "path": "/header/userName"
+        }
+      }
+    },
+    {
+      "id": "headerUserRole",
+      "component": "div",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1",
+        "value": {
+          "path": "/header/role"
+        }
+      }
+    },
+    {
+      "id": "contentScrollArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-6 space-y-6"
+      },
+      "children": [
+        "statsGrid",
+        "middleSection",
+        "appsSection"
+      ]
+    },
+    {
+      "id": "statsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      },
+      "children": {
+        "path": "/statistics",
+        "componentId": "statCard"
+      }
+    },
+    {
+      "id": "statCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest p-5 rounded-xl shadow-card flex items-center gap-4"
+      },
+      "children": [
+        "statIcon",
+        "statContent"
+      ]
+    },
+    {
+      "id": "statIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "color": {
+          "path": "status"
+        },
+        "shape": "circle",
+        "className": "w-12 h-12"
+      }
+    },
+    {
+      "id": "statContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "statTitle",
+        "statValueWrapper"
+      ]
+    },
+    {
+      "id": "statTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "title"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "statValueWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex items-baseline gap-1"
+      },
+      "children": [
+        "statValue",
+        "statUnit"
+      ]
+    },
+    {
+      "id": "statValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "value"
+        },
+        "className": "text-2xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "statUnit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "unit"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "middleSection",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-1 lg:grid-cols-3 gap-6"
+      },
+      "children": [
+        "approvalsCard",
+        "feedsCard"
+      ]
+    },
+    {
+      "id": "approvalsCard",
+      "component": "div",
+      "props": {
+        "className": "lg:col-span-2 bg-surface-container-highest rounded-xl shadow-card p-6"
+      },
+      "children": [
+        "approvalsHeader",
+        "approvalsList"
+      ]
+    },
+    {
+      "id": "approvalsHeader",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center mb-6"
+      },
+      "children": [
+        "approvalsTitle",
+        "approvalsMore"
+      ]
+    },
+    {
+      "id": "approvalsTitle",
+      "component": "h3",
+      "props": {
+        "value": "待办事项",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "approvalsMore",
+      "component": "Button",
+      "props": {
+        "value": "查看全部",
+        "size": "small",
+        "className": "text-primary"
+      }
+    },
+    {
+      "id": "approvalsList",
+      "component": "div",
+      "props": {
+        "className": "space-y-4"
+      },
+      "children": {
+        "path": "/approvals",
+        "componentId": "approvalItem"
+      }
+    },
+    {
+      "id": "approvalItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between p-4 bg-surface-variant rounded-lg"
+      },
+      "children": [
+        "approvalLeft",
+        "approvalActions"
+      ]
+    },
+    {
+      "id": "approvalLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "approvalIcon",
+        "approvalInfo"
+      ]
+    },
+    {
+      "id": "approvalIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "shape": "square",
+        "className": "w-10 h-10 text-primary"
+      }
+    },
+    {
+      "id": "approvalInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "approvalTitle",
+        "approvalMeta"
+      ]
+    },
+    {
+      "id": "approvalTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "title"
+        },
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "approvalMeta",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1",
+        "value": "申请人: 张伟 | 09:00"
+      }
+    },
+    {
+      "id": "approvalActions",
+      "component": "div",
+      "props": {
+        "className": "flex gap-2"
+      },
+      "children": [
+        "approvalReject",
+        "approvalPass"
+      ]
+    },
+    {
+      "id": "approvalReject",
+      "component": "Button",
+      "props": {
+        "value": "驳回",
+        "size": "small",
+        "color": "danger"
+      }
+    },
+    {
+      "id": "approvalPass",
+      "component": "Button",
+      "props": {
+        "value": "通过",
+        "size": "small",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "feedsCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden flex flex-col"
+      },
+      "children": [
+        "feedsBanner",
+        "feedsBody"
+      ]
+    },
+    {
+      "id": "feedsBanner",
+      "component": "img",
+      "props": {
+        "src": "https://picsum.photos/seed/office-news/800/200",
+        "className": "w-full h-32 object-cover"
+      }
+    },
+    {
+      "id": "feedsBody",
+      "component": "div",
+      "props": {
+        "className": "p-6 flex-1"
+      },
+      "children": [
+        "feedsTitle",
+        "feedsTimeline"
+      ]
+    },
+    {
+      "id": "feedsTitle",
+      "component": "h3",
+      "props": {
+        "value": "动态与公告",
+        "className": "text-lg font-bold text-on-surface mb-6"
+      }
+    },
+    {
+      "id": "feedsTimeline",
+      "component": "Timeline",
+      "props": {
+        "orientation": "vertical"
+      },
+      "children": {
+        "path": "/feeds",
+        "componentId": "feedItem"
+      }
+    },
+    {
+      "id": "feedItem",
+      "component": "TimelineItem",
+      "props": {
+        "title": {
+          "path": "time"
+        },
+        "content": {
+          "path": "content"
+        },
+        "icon": {
+          "path": "icon"
+        },
+        "color": {
+          "path": "status"
+        }
+      }
+    },
+    {
+      "id": "appsSection",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card p-6"
+      },
+      "children": [
+        "appsHeader",
+        "appsGrid"
+      ]
+    },
+    {
+      "id": "appsHeader",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center mb-6"
+      },
+      "children": [
+        "appsTitle",
+        "appsConfig"
+      ]
+    },
+    {
+      "id": "appsTitle",
+      "component": "h3",
+      "props": {
+        "value": "常用应用",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "appsConfig",
+      "component": "Button",
+      "props": {
+        "value": "自定义",
+        "icon": "settings-2",
+        "size": "small"
+      }
+    },
+    {
+      "id": "appsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"
+      },
+      "children": {
+        "path": "/apps",
+        "componentId": "appItem"
+      }
+    },
+    {
+      "id": "appItem",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-surface-variant cursor-pointer transition-all"
+      },
+      "children": [
+        "appIcon",
+        "appName"
+      ]
+    },
+    {
+      "id": "appIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "shape": "square",
+        "className": "w-12 h-12",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "appName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "name"
+        },
+        "className": "text-sm text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "floatingAction",
+      "component": "div",
+      "props": {
+        "className": "fixed bottom-8 right-8 z-50"
+      },
+      "children": [
+        "floatDropdown"
+      ]
+    },
+    {
+      "id": "floatDropdown",
+      "component": "Dropdown",
+      "props": {
+        "menu": {
+          "path": "/floatMenu"
+        },
+        "placement": "topLeft",
+        "trigger": [
+          "click"
+        ]
+      },
+      "children": [
+        "floatBtn"
+      ]
+    },
+    {
+      "id": "floatBtn",
+      "component": "Button",
+      "props": {
+        "icon": "message-circle",
+        "shape": "circle",
+        "color": "primary",
+        "className": "w-14 h-14 shadow-xl text-2xl"
+      }
+    }
+  ]
+}

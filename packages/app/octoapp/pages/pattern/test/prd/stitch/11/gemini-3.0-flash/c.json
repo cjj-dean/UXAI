@@ -1,0 +1,837 @@
+{
+    "state": {
+        "brandName": "Nexus CRM",
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Pipeline",
+                "isActive": true
+            },
+            {
+                "label": "Accounts",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "isActive": false
+            }
+        ],
+        "sidebar": {
+            "title": "Sales Hub",
+            "subtitle": "Enterprise Edition",
+            "menu": [
+                {
+                    "label": "Home",
+                    "icon": "home",
+                    "active": false
+                },
+                {
+                    "label": "Deals",
+                    "icon": "briefcase",
+                    "active": true
+                },
+                {
+                    "label": "Contacts",
+                    "icon": "users",
+                    "active": false
+                },
+                {
+                    "label": "Tasks",
+                    "icon": "check-square",
+                    "active": false
+                },
+                {
+                    "label": "Analytics",
+                    "icon": "bar-chart-2",
+                    "active": false
+                }
+            ]
+        },
+        "pipeline": {
+            "title": "销售管线",
+            "subTitle": "实时跟踪您的业务成交进度与预测数据",
+            "searchVal": "",
+            "columns": [
+                {
+                    "id": "stage_1",
+                    "title": "初步接洽",
+                    "count": 4,
+                    "total": "¥1,240,000",
+                    "cards": [
+                        {
+                            "id": "c1",
+                            "tag": "NEW",
+                            "tagColor": "processing",
+                            "title": "云服务采购项目",
+                            "customer": "阿里巴巴集团",
+                            "amount": "¥500,000",
+                            "progress": 40,
+                            "date": "2024-05-12",
+                            "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+                        },
+                        {
+                            "id": "c2",
+                            "tag": "WARM",
+                            "tagColor": "warning",
+                            "title": "智能设备集成",
+                            "customer": "顺丰速运",
+                            "amount": "¥280,000",
+                            "progress": 20,
+                            "date": "2024-06-01",
+                            "avatar": "https://randomuser.me/api/portraits/men/12.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": "stage_2",
+                    "title": "需求分析",
+                    "count": 2,
+                    "total": "¥2,100,000",
+                    "cards": [
+                        {
+                            "id": "c3",
+                            "tag": "DISCOVERY",
+                            "tagColor": "#715AFB",
+                            "title": "跨境支付系统升级",
+                            "customer": "招商银行",
+                            "amount": "¥1,500,000",
+                            "progress": 60,
+                            "date": "2024-04-30",
+                            "avatar": "https://randomuser.me/api/portraits/women/22.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": "stage_3",
+                    "title": "方案报价",
+                    "count": 1,
+                    "total": "¥850,000",
+                    "cards": [
+                        {
+                            "id": "c4",
+                            "tag": "ACTIVE",
+                            "tagColor": "success",
+                            "title": "安全审计咨询",
+                            "customer": "美团点评",
+                            "amount": "¥450,000",
+                            "progress": 75,
+                            "date": "2024-05-18",
+                            "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "rootId": "crmPageWrapper",
+    "elements": [
+        {
+            "id": "crmPageWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "crmMainLayout"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-inset h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerNav",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "headerLogoIcon",
+                "headerBrandName"
+            ]
+        },
+        {
+            "id": "headerLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layers",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "headerBrandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerNav",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "headerNavItem"
+            }
+        },
+        {
+            "id": "headerNavItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerIconBell",
+                "headerIconSettings",
+                "headerAvatar"
+            ]
+        },
+        {
+            "id": "headerIconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "headerIconSettings",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "headerAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "crmMainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "salesSidebar",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "salesSidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-gutter"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-8"
+            },
+            "children": [
+                "sidebarTitle",
+                "sidebarSubtitle"
+            ]
+        },
+        {
+            "id": "sidebarTitle",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/sidebar/title"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarSubtitle",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/sidebar/subtitle"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/sidebar/menu",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-variant cursor-pointer group"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-on-surface-variant group-hover:text-primary"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md text-on-surface font-medium"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto pt-gutter border-t border-divider flex flex-col gap-3"
+            },
+            "children": [
+                "btnNewDeal",
+                "linkHelp"
+            ]
+        },
+        {
+            "id": "btnNewDeal",
+            "component": "Button",
+            "props": {
+                "value": "+ New Deal",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "linkHelp",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 px-3 py-2 text-on-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconHelp",
+                "textHelp"
+            ]
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "textHelp",
+            "component": "span",
+            "props": {
+                "value": "Help",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "pipelineHeader",
+                "viewControlBar",
+                "kanbanContainer",
+                "floatingMsg"
+            ]
+        },
+        {
+            "id": "pipelineHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "pipelineTitleGroup",
+                "pipelineActionGroup"
+            ]
+        },
+        {
+            "id": "pipelineTitleGroup",
+            "component": "div",
+            "children": [
+                "pipelineMainTitle",
+                "pipelineSubTitle"
+            ]
+        },
+        {
+            "id": "pipelineMainTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/pipeline/title"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pipelineSubTitle",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/pipeline/subTitle"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "pipelineActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "pipelineSearch",
+                "pipelineCreateBtn"
+            ]
+        },
+        {
+            "id": "pipelineSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/pipeline/searchVal"
+                },
+                "placeholder": "搜索商机...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "pipelineCreateBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ 新建商机",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "viewControlBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between py-2 border-b border-divider"
+            },
+            "children": [
+                "viewSegments",
+                "viewActions"
+            ]
+        },
+        {
+            "id": "viewSegments",
+            "component": "div",
+            "props": {
+                "className": "flex bg-surface-variant p-1 rounded-lg"
+            },
+            "children": [
+                "segMine",
+                "segAll"
+            ]
+        },
+        {
+            "id": "segMine",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-1 bg-surface-container-highest rounded-md shadow-sm text-sm font-medium text-primary cursor-pointer",
+                "value": "我的商机"
+            }
+        },
+        {
+            "id": "segAll",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-1 text-sm font-medium text-on-surface-variant cursor-pointer",
+                "value": "全部商机"
+            }
+        },
+        {
+            "id": "viewActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "btnFilter",
+                "btnSort"
+            ]
+        },
+        {
+            "id": "btnFilter",
+            "component": "Button",
+            "props": {
+                "value": "筛选",
+                "icon": "filter",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnSort",
+            "component": "Button",
+            "props": {
+                "value": "排序",
+                "icon": "arrow-up-down",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "kanbanContainer",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter overflow-x-auto pb-4"
+            },
+            "children": {
+                "path": "/pipeline/columns",
+                "componentId": "kanbanColumn"
+            }
+        },
+        {
+            "id": "kanbanColumn",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-w-[320px] bg-surface-container-low rounded-xl p-stack flex flex-col gap-stack"
+            },
+            "children": [
+                "columnHeader",
+                "columnCardList"
+            ]
+        },
+        {
+            "id": "columnHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-1 mb-2"
+            },
+            "children": [
+                "columnTitleRow",
+                "columnTotalRow"
+            ]
+        },
+        {
+            "id": "columnTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "columnTitleGroup",
+                "columnMoreIcon"
+            ]
+        },
+        {
+            "id": "columnTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "columnTitleText",
+                "columnCountBadge"
+            ]
+        },
+        {
+            "id": "columnTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "columnCountBadge",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "count"
+                },
+                "className": "px-2 py-0.5 bg-surface-variant text-xs rounded-full text-on-surface-variant"
+            }
+        },
+        {
+            "id": "columnMoreIcon",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "columnTotalRow",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "total"
+                },
+                "className": "text-sm font-semibold text-primary"
+            }
+        },
+        {
+            "id": "columnCardList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": {
+                "path": "cards",
+                "componentId": "dealCard"
+            }
+        },
+        {
+            "id": "dealCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-lg shadow-card hover:shadow-md transition-shadow cursor-grab active:cursor-grabbing flex flex-col gap-3"
+            },
+            "children": [
+                "cardHeader",
+                "cardTitle",
+                "cardCustomer",
+                "cardAmount",
+                "cardProgressArea",
+                "cardFooter"
+            ]
+        },
+        {
+            "id": "cardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "cardTag",
+                "cardOwner"
+            ]
+        },
+        {
+            "id": "cardTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "tag"
+                },
+                "color": {
+                    "path": "tagColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cardOwner",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "cardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-md font-bold text-on-surface line-clamp-1"
+            }
+        },
+        {
+            "id": "cardCustomer",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-xs text-on-surface-variant"
+            },
+            "children": [
+                "iconCustomer",
+                "textCustomer"
+            ]
+        },
+        {
+            "id": "iconCustomer",
+            "component": "Icon",
+            "props": {
+                "name": "building-2",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "textCustomer",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "customer"
+                }
+            }
+        },
+        {
+            "id": "cardAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "text-lg font-bold text-on-surface mt-1"
+            }
+        },
+        {
+            "id": "cardProgressArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "cardProgressLabel",
+                "cardProgressBar"
+            ]
+        },
+        {
+            "id": "cardProgressLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-[10px] text-on-surface-variant"
+            },
+            "children": [
+                "progressText",
+                "percentText"
+            ]
+        },
+        {
+            "id": "progressText",
+            "component": "span",
+            "props": {
+                "value": "完成度"
+            }
+        },
+        {
+            "id": "percentText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "progress"
+                }
+            }
+        },
+        {
+            "id": "cardProgressBar",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "progress"
+                },
+                "showInfo": false,
+                "size": "small",
+                "strokeColor": "#0067D1"
+            }
+        },
+        {
+            "id": "cardFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-[10px] text-on-surface-variant mt-1"
+            },
+            "children": [
+                "iconCalendar",
+                "textDate"
+            ]
+        },
+        {
+            "id": "iconCalendar",
+            "component": "Icon",
+            "props": {
+                "name": "calendar",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "textDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "floatingMsg",
+            "component": "div",
+            "props": {
+                "className": "fixed bottom-8 right-8 z-50"
+            },
+            "children": [
+                "floatingBtn"
+            ]
+        },
+        {
+            "id": "floatingBtn",
+            "component": "Button",
+            "props": {
+                "icon": "message-circle",
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-14 h-14 shadow-xl flex items-center justify-center"
+            }
+        }
+    ]
+}

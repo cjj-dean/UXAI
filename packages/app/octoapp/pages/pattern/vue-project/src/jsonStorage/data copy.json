@@ -1,0 +1,1401 @@
+{
+    "state": {
+        "logoIcon": "LayoutDashboard",
+        "menuItems": [
+            "首页",
+            "分析",
+            "设置"
+        ],
+        "notificationIcon": "Bell",
+        "notificationCount": 5,
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "userName": "张三",
+        "searchValue": "",
+        "menuGroups": [
+            {
+                "groupName": "主要",
+                "items": [
+                    {
+                        "icon": "layout-dashboard",
+                        "label": "仪表盘",
+                        "active": true,
+                        "iconColor": "primary"
+                    },
+                    {
+                        "icon": "shopping-cart",
+                        "label": "订单管理",
+                        "iconColor": "default"
+                    },
+                    {
+                        "icon": "users",
+                        "label": "用户管理",
+                        "iconColor": "default"
+                    }
+                ]
+            },
+            {
+                "groupName": "分析",
+                "items": [
+                    {
+                        "icon": "bar-chart-3",
+                        "label": "报表分析",
+                        "iconColor": "default"
+                    },
+                    {
+                        "icon": "settings",
+                        "label": "系统设置",
+                        "iconColor": "default"
+                    }
+                ]
+            }
+        ],
+        "pageTitle": "数据看板",
+        "currentTimeRange": "本月",
+        "timeRangeOptions": [
+            {
+                "label": "今日",
+                "value": "今日"
+            },
+            {
+                "label": "本周",
+                "value": "本周"
+            },
+            {
+                "label": "本月",
+                "value": "本月"
+            },
+            {
+                "label": "自定义",
+                "value": "自定义"
+            }
+        ],
+        "kpis": [
+            {
+                "cardTitle": "总订单量",
+                "value": "12,847",
+                "trendIcon": "trending-up",
+                "trendColor": "success",
+                "changePercentage": "+12.3%",
+                "compareText": "较昨日同期"
+            },
+            {
+                "cardTitle": "总销售额",
+                "value": "¥452,800",
+                "trendIcon": "trending-up",
+                "trendColor": "success",
+                "changePercentage": "+8.7%",
+                "compareText": "较上周同期"
+            },
+            {
+                "cardTitle": "新增用户",
+                "value": "342",
+                "trendIcon": "trending-down",
+                "trendColor": "error",
+                "changePercentage": "-3.2%",
+                "compareText": "较上月同期"
+            },
+            {
+                "cardTitle": "活跃用户",
+                "value": "2,105",
+                "trendIcon": "trending-up",
+                "trendColor": "success",
+                "changePercentage": "+5.1%",
+                "compareText": "较昨日同期"
+            }
+        ],
+        "trendCardTitle": "趋势分析",
+        "trendActiveTimeRange": "30d",
+        "trendTimeOptions": [
+            {
+                "label": "近 7 天",
+                "value": "7d"
+            },
+            {
+                "label": "近 30 天",
+                "value": "30d"
+            },
+            {
+                "label": "近 90 天",
+                "value": "90d"
+            }
+        ],
+        "distCardTitle": "订单来源分布",
+        "distChartSeries": [
+            {
+                "name": "直接访问",
+                "value": 35
+            },
+            {
+                "name": "搜索引擎",
+                "value": 25
+            },
+            {
+                "name": "社交媒体",
+                "value": 20
+            },
+            {
+                "name": "广告推广",
+                "value": 15
+            },
+            {
+                "name": "其他",
+                "value": 5
+            }
+        ],
+        "distChartColors": [
+            "#1890FF",
+            "#52C41A",
+            "#FADB14",
+            "#FA8C16",
+            "#722ED1"
+        ],
+        "ordersCardTitle": "最新订单",
+        "ordersColumns": [
+            {
+                "title": "订单号",
+                "dataIndex": "orderId",
+                "width": 130
+            },
+            {
+                "title": "客户名称",
+                "dataIndex": "customerName",
+                "width": 120
+            },
+            {
+                "title": "订单金额",
+                "dataIndex": "amount",
+                "width": 120,
+                "align": "right"
+            },
+            {
+                "title": "状态",
+                "dataIndex": "status",
+                "width": 100
+            },
+            {
+                "title": "下单时间",
+                "dataIndex": "createdAt",
+                "width": 170
+            },
+            {
+                "title": "操作",
+                "dataIndex": "action",
+                "width": 100
+            }
+        ],
+        "ordersItems": [
+            {
+                "orderId": "ORD-1001",
+                "customerName": "李明",
+                "amount": "¥299.00",
+                "status": "已完成",
+                "statusColor": "success",
+                "createdAt": "2025-03-30 14:23",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1002",
+                "customerName": "王芳",
+                "amount": "¥1,599.00",
+                "status": "待发货",
+                "statusColor": "processing",
+                "createdAt": "2025-03-30 13:45",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1003",
+                "customerName": "刘洋",
+                "amount": "¥88.00",
+                "status": "已取消",
+                "statusColor": "error",
+                "createdAt": "2025-03-30 12:30",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1004",
+                "customerName": "陈静",
+                "amount": "¥460.00",
+                "status": "已完成",
+                "statusColor": "success",
+                "createdAt": "2025-03-30 11:50",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1005",
+                "customerName": "赵强",
+                "amount": "¥1,250.00",
+                "status": "待支付",
+                "statusColor": "warning",
+                "createdAt": "2025-03-30 10:20",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1006",
+                "customerName": "孙丽",
+                "amount": "¥79.99",
+                "status": "已完成",
+                "statusColor": "success",
+                "createdAt": "2025-03-29 18:15",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1007",
+                "customerName": "周杰",
+                "amount": "¥2,400.00",
+                "status": "待发货",
+                "statusColor": "processing",
+                "createdAt": "2025-03-29 16:40",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1008",
+                "customerName": "吴宇",
+                "amount": "¥35.50",
+                "status": "已取消",
+                "statusColor": "error",
+                "createdAt": "2025-03-29 15:00",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1009",
+                "customerName": "郑敏",
+                "amount": "¥680.00",
+                "status": "已完成",
+                "statusColor": "success",
+                "createdAt": "2025-03-29 14:10",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1010",
+                "customerName": "林浩",
+                "amount": "¥1,520.00",
+                "status": "待支付",
+                "statusColor": "warning",
+                "createdAt": "2025-03-29 11:30",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1011",
+                "customerName": "何晓",
+                "amount": "¥99.00",
+                "status": "已完成",
+                "statusColor": "success",
+                "createdAt": "2025-03-28 20:00",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            },
+            {
+                "orderId": "ORD-1012",
+                "customerName": "宋涛",
+                "amount": "¥4,350.00",
+                "status": "待发货",
+                "statusColor": "processing",
+                "createdAt": "2025-03-28 19:25",
+                "action": {
+                    "type": "button",
+                    "label": "查看详情"
+                }
+            }
+        ]
+    },
+    "rootId": "shellRoot",
+    "elements": [
+        {
+            "id": "shellRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "shellNavContainer",
+                "shellBodyContainer"
+            ]
+        },
+        {
+            "id": "shellNavContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full h-16 bg-surface-container-highest shadow-sm"
+            },
+            "children": [
+                "navInnerContainer"
+            ]
+        },
+        {
+            "id": "shellBodyContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "shellMenuContainer",
+                "shellMainContainer"
+            ]
+        },
+        {
+            "id": "shellMenuContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 shrink-0 bg-surface-container-highest"
+            },
+            "children": [
+                "menuBrandArea",
+                "menuDividerLine",
+                "menuGroupLoop"
+            ]
+        },
+        {
+            "id": "shellMainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col p-gutter overflow-auto"
+            },
+            "children": [
+                "shellDashHeaderContainer",
+                "shellKpiCardsContainer",
+                "shellChartsAreaContainer",
+                "shellOrdersTableContainer"
+            ]
+        },
+        {
+            "id": "shellDashHeaderContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full mb-stack"
+            },
+            "children": [
+                "dashHdrInner"
+            ]
+        },
+        {
+            "id": "shellKpiCardsContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full grid grid-cols-4 gap-gutter mb-gutter"
+            },
+            "children": {
+                "path": "/kpis",
+                "componentId": "kpiCardItem"
+            }
+        },
+        {
+            "id": "shellChartsAreaContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full flex flex-row gap-gutter mb-gutter"
+            },
+            "children": [
+                "shellTrendChartContainer",
+                "shellDistChartContainer"
+            ]
+        },
+        {
+            "id": "shellTrendChartContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-h-0"
+            },
+            "children": [
+                "trendCardContainer"
+            ]
+        },
+        {
+            "id": "shellDistChartContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-h-0"
+            },
+            "children": [
+                "distCardWrapper"
+            ]
+        },
+        {
+            "id": "shellOrdersTableContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full flex-1"
+            },
+            "children": [
+                "ordersMainCard"
+            ]
+        },
+        {
+            "id": "navInnerContainer",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between w-full h-full px-gutter"
+            },
+            "children": [
+                "navLeftSection",
+                "navMenuSection",
+                "navRightSection"
+            ]
+        },
+        {
+            "id": "navLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navLogoIcon",
+                "navLogoText"
+            ]
+        },
+        {
+            "id": "navLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "navLogoText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "运营平台"
+            }
+        },
+        {
+            "id": "navMenuSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "navMenuItemHome",
+                "navMenuItemAnalysis",
+                "navMenuItemSettings"
+            ]
+        },
+        {
+            "id": "navMenuItemHome",
+            "component": "span",
+            "props": {
+                "className": "px-3 py-2 text-md text-primary bg-primary-container rounded-lg cursor-pointer",
+                "value": {
+                    "path": "/menuItems/0"
+                }
+            }
+        },
+        {
+            "id": "navMenuItemAnalysis",
+            "component": "span",
+            "props": {
+                "className": "px-3 py-2 text-md text-on-surface-variant hover:bg-surface-variant rounded-lg cursor-pointer",
+                "value": {
+                    "path": "/menuItems/1"
+                }
+            }
+        },
+        {
+            "id": "navMenuItemSettings",
+            "component": "span",
+            "props": {
+                "className": "px-3 py-2 text-md text-on-surface-variant hover:bg-surface-variant rounded-lg cursor-pointer",
+                "value": {
+                    "path": "/menuItems/2"
+                }
+            }
+        },
+        {
+            "id": "navRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "navSearchInput",
+                "navNotificationBadge",
+                "navUserDropdown"
+            ]
+        },
+        {
+            "id": "navSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": "搜索...",
+                "prefix": "search",
+                "className": "w-56"
+            }
+        },
+        {
+            "id": "navNotificationBadge",
+            "component": "Badge",
+            "props": {
+                "count": {
+                    "path": "/notificationCount"
+                },
+                "overflowCount": 99
+            },
+            "children": [
+                "navNotificationBtn"
+            ]
+        },
+        {
+            "id": "navNotificationBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/notificationIcon"
+                },
+                "shape": "circle",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navUserDropdown",
+            "component": "Dropdown",
+            "props": {
+                "placement": "bottomRight",
+                "trigger": [
+                    "click"
+                ],
+                "menu": [
+                    {
+                        "label": "个人中心",
+                        "key": "profile",
+                        "icon": "user"
+                    },
+                    {
+                        "label": "系统设置",
+                        "key": "settings",
+                        "icon": "settings"
+                    },
+                    {
+                        "label": "退出登录",
+                        "key": "logout",
+                        "icon": "log-out"
+                    }
+                ]
+            },
+            "children": [
+                "navUserTrigger"
+            ]
+        },
+        {
+            "id": "navUserTrigger",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "navUserAvatar",
+                "navUserName"
+            ]
+        },
+        {
+            "id": "navUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userAvatarImage"
+                },
+                "className": "w-8 h-8 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "navUserName",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface",
+                "value": {
+                    "path": "/userName"
+                }
+            }
+        },
+        {
+            "id": "menuBrandArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-inset py-5"
+            },
+            "children": [
+                "menuBrandIcon",
+                "menuBrandName"
+            ]
+        },
+        {
+            "id": "menuBrandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "hexagon",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "menuBrandName",
+            "component": "span",
+            "props": {
+                "value": "运营管理平台",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "menuDividerLine",
+            "component": "div",
+            "props": {
+                "className": "h-px bg-divider mx-inset"
+            }
+        },
+        {
+            "id": "menuGroupLoop",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-6 py-4 px-3"
+            },
+            "children": {
+                "path": "/menuGroups",
+                "componentId": "menuGroupSection"
+            }
+        },
+        {
+            "id": "menuGroupSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "menuGroupLabel",
+                "menuItemsLoop"
+            ]
+        },
+        {
+            "id": "menuGroupLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "groupName"
+                },
+                "className": "text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-3 py-2"
+            }
+        },
+        {
+            "id": "menuItemsLoop",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-0.5"
+            },
+            "children": {
+                "path": "items",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-surface-variant"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel",
+                "menuItemArrow"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "iconColor"
+                },
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "menuItemArrow",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "shape": "outline",
+                "className": "w-4 h-4 ml-auto text-on-surface-variant"
+            }
+        },
+        {
+            "id": "dashHdrInner",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between w-full"
+            },
+            "children": [
+                "dashHdrTitle",
+                "dashHdrActions"
+            ]
+        },
+        {
+            "id": "dashHdrTitle",
+            "component": "span",
+            "props": {
+                "className": "text-xl font-bold text-on-surface",
+                "value": {
+                    "path": "/pageTitle"
+                }
+            }
+        },
+        {
+            "id": "dashHdrActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "dashHdrTimeSelect",
+                "dashHdrRefreshBtn"
+            ]
+        },
+        {
+            "id": "dashHdrTimeSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/currentTimeRange"
+                },
+                "options": {
+                    "path": "/timeRangeOptions"
+                },
+                "className": "w-36"
+            }
+        },
+        {
+            "id": "dashHdrRefreshBtn",
+            "component": "Button",
+            "props": {
+                "icon": "refresh-cw",
+                "color": "default"
+            }
+        },
+        {
+            "id": "kpiCardItem",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "kpiCardItemTitle",
+                "kpiCardItemValue",
+                "kpiCardItemTrendRow"
+            ]
+        },
+        {
+            "id": "kpiCardItemTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cardTitle"
+                },
+                "className": "text-lg font-semibold text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kpiCardItemValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiCardItemTrendRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "kpiCardItemTrendIcon",
+                "kpiCardItemChangePct",
+                "kpiCardItemCompareText"
+            ]
+        },
+        {
+            "id": "kpiCardItemTrendIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "trendIcon"
+                },
+                "color": {
+                    "path": "trendColor"
+                },
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "kpiCardItemChangePct",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "changePercentage"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiCardItemCompareText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "compareText"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "trendCardContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest shadow-sm rounded-xl p-4 h-full flex flex-col"
+            },
+            "children": [
+                "trendCardHeader",
+                "trendChartWrapper"
+            ]
+        },
+        {
+            "id": "trendCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4 shrink-0"
+            },
+            "children": [
+                "trendCardTitle",
+                "trendHeaderActions"
+            ]
+        },
+        {
+            "id": "trendCardTitle",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "trendTitleIcon",
+                "trendTitleText"
+            ]
+        },
+        {
+            "id": "trendTitleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chart-line",
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "trendTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/trendCardTitle"
+                },
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "trendHeaderActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "trendTimeSegmented",
+                "trendRefreshBtn"
+            ]
+        },
+        {
+            "id": "trendTimeSegmented",
+            "component": "Segmented",
+            "props": {
+                "value": {
+                    "path": "/trendActiveTimeRange"
+                },
+                "options": {
+                    "path": "/trendTimeOptions"
+                },
+                "size": "small",
+                "className": "w-fit"
+            }
+        },
+        {
+            "id": "trendRefreshBtn",
+            "component": "Button",
+            "props": {
+                "icon": "refresh-cw",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "trendChartWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-h-0"
+            },
+            "children": [
+                "trendLineChart"
+            ]
+        },
+        {
+            "id": "trendLineChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": [
+                        {
+                            "date": "2025-03-01",
+                            "订单量": 320,
+                            "销售额": 12000
+                        },
+                        {
+                            "date": "2025-03-02",
+                            "订单量": 410,
+                            "销售额": 15000
+                        },
+                        {
+                            "date": "2025-03-03",
+                            "订单量": 380,
+                            "销售额": 14000
+                        },
+                        {
+                            "date": "2025-03-04",
+                            "订单量": 450,
+                            "销售额": 16000
+                        },
+                        {
+                            "date": "2025-03-05",
+                            "订单量": 420,
+                            "销售额": 15500
+                        },
+                        {
+                            "date": "2025-03-06",
+                            "订单量": 500,
+                            "销售额": 18000
+                        },
+                        {
+                            "date": "2025-03-07",
+                            "订单量": 470,
+                            "销售额": 17000
+                        },
+                        {
+                            "date": "2025-03-08",
+                            "订单量": 520,
+                            "销售额": 19000
+                        },
+                        {
+                            "date": "2025-03-09",
+                            "订单量": 490,
+                            "销售额": 17500
+                        },
+                        {
+                            "date": "2025-03-10",
+                            "订单量": 530,
+                            "销售额": 19500
+                        },
+                        {
+                            "date": "2025-03-11",
+                            "订单量": 510,
+                            "销售额": 18500
+                        },
+                        {
+                            "date": "2025-03-12",
+                            "订单量": 560,
+                            "销售额": 20000
+                        },
+                        {
+                            "date": "2025-03-13",
+                            "订单量": 540,
+                            "销售额": 19200
+                        },
+                        {
+                            "date": "2025-03-14",
+                            "订单量": 580,
+                            "销售额": 21000
+                        },
+                        {
+                            "date": "2025-03-15",
+                            "订单量": 550,
+                            "销售额": 20200
+                        },
+                        {
+                            "date": "2025-03-16",
+                            "订单量": 600,
+                            "销售额": 22000
+                        },
+                        {
+                            "date": "2025-03-17",
+                            "订单量": 570,
+                            "销售额": 20500
+                        },
+                        {
+                            "date": "2025-03-18",
+                            "订单量": 620,
+                            "销售额": 23000
+                        },
+                        {
+                            "date": "2025-03-19",
+                            "订单量": 590,
+                            "销售额": 21500
+                        },
+                        {
+                            "date": "2025-03-20",
+                            "订单量": 640,
+                            "销售额": 24000
+                        },
+                        {
+                            "date": "2025-03-21",
+                            "订单量": 610,
+                            "销售额": 22500
+                        },
+                        {
+                            "date": "2025-03-22",
+                            "订单量": 660,
+                            "销售额": 25000
+                        },
+                        {
+                            "date": "2025-03-23",
+                            "订单量": 630,
+                            "销售额": 23500
+                        },
+                        {
+                            "date": "2025-03-24",
+                            "订单量": 680,
+                            "销售额": 26000
+                        },
+                        {
+                            "date": "2025-03-25",
+                            "订单量": 650,
+                            "销售额": 24500
+                        },
+                        {
+                            "date": "2025-03-26",
+                            "订单量": 700,
+                            "销售额": 27000
+                        },
+                        {
+                            "date": "2025-03-27",
+                            "订单量": 670,
+                            "销售额": 25500
+                        },
+                        {
+                            "date": "2025-03-28",
+                            "订单量": 720,
+                            "销售额": 28000
+                        },
+                        {
+                            "date": "2025-03-29",
+                            "订单量": 690,
+                            "销售额": 26500
+                        },
+                        {
+                            "date": "2025-03-30",
+                            "订单量": 750,
+                            "销售额": 29000
+                        }
+                    ],
+                    "xAxis": {
+                        "data": "date"
+                    },
+                    "yAxisTitle": "单位",
+                    "color": [
+                        "#2070F3",
+                        "#62B42E"
+                    ],
+                    "smooth": true
+                },
+                "className": "w-full h-full"
+            }
+        },
+        {
+            "id": "distCardWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-full p-gutter bg-surface-container-highest rounded-xl shadow-sm"
+            },
+            "children": [
+                "distCardHeader",
+                "distChartBody"
+            ]
+        },
+        {
+            "id": "distCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-stack"
+            },
+            "children": [
+                "distCardTitle",
+                "distHeaderActions"
+            ]
+        },
+        {
+            "id": "distCardTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-semibold text-on-surface",
+                "value": {
+                    "path": "/distCardTitle"
+                }
+            }
+        },
+        {
+            "id": "distHeaderActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "distRefreshBtn",
+                "distMoreBtn"
+            ]
+        },
+        {
+            "id": "distRefreshBtn",
+            "component": "Button",
+            "props": {
+                "icon": "refresh-cw",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "distMoreBtn",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "types": "link",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "distChartBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex items-center justify-center min-h-0"
+            },
+            "children": [
+                "distPieChart"
+            ]
+        },
+        {
+            "id": "distPieChart",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "data": {
+                        "path": "/distChartSeries"
+                    },
+                    "color": {
+                        "path": "/distChartColors"
+                    },
+                    "label": {
+                        "show": true
+                    },
+                    "title": {
+                        "text": "100",
+                        "subtext": "总数"
+                    }
+                },
+                "className": "h-full w-full"
+            }
+        },
+        {
+            "id": "ordersMainCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-4"
+            },
+            "children": [
+                "ordersCardHeader",
+                "ordersCardTable"
+            ]
+        },
+        {
+            "id": "ordersCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "ordersCardTitle",
+                "ordersCardExtra"
+            ]
+        },
+        {
+            "id": "ordersCardTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/ordersCardTitle"
+                }
+            }
+        },
+        {
+            "id": "ordersCardExtra",
+            "component": "Button",
+            "props": {
+                "value": "查看全部",
+                "types": "link",
+                "color": "primary",
+                "icon": "arrow-right",
+                "iconPlacement": "end",
+                "size": "small"
+            }
+        },
+        {
+            "id": "ordersCardTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "orderId",
+                "dataSource": {
+                    "path": "/ordersItems"
+                },
+                "columns": {
+                    "path": "/ordersColumns"
+                },
+                "pagination": true,
+                "className": "mb-4"
+            },
+            "children": {
+                "path": "/ordersItems",
+                "componentId": "ordersTableRow"
+            }
+        },
+        {
+            "id": "ordersTableRow",
+            "component": "TableRow",
+            "children": [
+                "ordersCellOrderId",
+                "ordersCellCustomer",
+                "ordersCellAmount",
+                "ordersCellStatus",
+                "ordersCellTime",
+                "ordersCellAction"
+            ]
+        },
+        {
+            "id": "ordersCellOrderId",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface font-mono",
+                "value": {
+                    "path": "/orderId"
+                }
+            }
+        },
+        {
+            "id": "ordersCellCustomer",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface",
+                "value": {
+                    "path": "/customerName"
+                }
+            }
+        },
+        {
+            "id": "ordersCellAmount",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface font-medium",
+                "value": {
+                    "path": "/amount"
+                }
+            }
+        },
+        {
+            "id": "ordersCellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/status"
+                },
+                "color": {
+                    "path": "/statusColor"
+                }
+            }
+        },
+        {
+            "id": "ordersCellTime",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface-variant",
+                "value": {
+                    "path": "/createdAt"
+                }
+            }
+        },
+        {
+            "id": "ordersCellAction",
+            "component": "Button",
+            "props": {
+                "value": "查看详情",
+                "types": "link",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

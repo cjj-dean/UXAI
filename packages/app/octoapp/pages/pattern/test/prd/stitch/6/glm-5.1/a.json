@@ -1,0 +1,1690 @@
+{
+    "state": {
+        "globalSearchValue": "",
+        "globalSearchPlaceholder": "搜索角色、策略或日志...",
+        "logoIcon": "Shield",
+        "systemName": "Security Gate",
+        "alertIcon": "Bell",
+        "alertCount": 3,
+        "adminAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "menuItems": [
+            {
+                "menuName": "控制台",
+                "menuIcon": "LayoutDashboard",
+                "isActive": false
+            },
+            {
+                "menuName": "角色与权限",
+                "menuIcon": "ShieldCheck",
+                "isActive": true
+            },
+            {
+                "menuName": "访问策略",
+                "menuIcon": "FileText",
+                "isActive": false
+            },
+            {
+                "menuName": "安全日志",
+                "menuIcon": "ScrollText",
+                "isActive": false
+            },
+            {
+                "menuName": "系统设置",
+                "menuIcon": "Settings",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "userName": "Alex Thompson",
+            "userRole": "Super Admin",
+            "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "roleSearchValue": "",
+        "roleSearchPlaceholder": "搜索角色...",
+        "panelTitle": "角色列表",
+        "addRoleButtonIcon": "PlusCircle",
+        "roles": [
+            {
+                "roleId": "role_001",
+                "roleName": "Super Admin",
+                "roleDescription": "拥有系统所有功能的绝对控制权",
+                "userCount": 2,
+                "isSelected": true
+            },
+            {
+                "roleId": "role_002",
+                "roleName": "Security Lead",
+                "roleDescription": "负责安全策略制定与审计",
+                "userCount": 4,
+                "isSelected": false
+            },
+            {
+                "roleId": "role_003",
+                "roleName": "IT Manager",
+                "roleDescription": "管理日常IT运维和基础配置",
+                "userCount": 6,
+                "isSelected": false
+            },
+            {
+                "roleId": "role_004",
+                "roleName": "Auditor",
+                "roleDescription": "只读查看系统日志与合规报告",
+                "userCount": 8,
+                "isSelected": false
+            },
+            {
+                "roleId": "role_005",
+                "roleName": "Support Agent",
+                "roleDescription": "处理用户工单及基础支持",
+                "userCount": 15,
+                "isSelected": false
+            }
+        ],
+        "detailTitle": "Super Admin",
+        "detailDescription": "超级管理员，拥有不受限制的系统访问权限，能够管理所有安全策略、角色定义及系统底层配置。建议仅授予核心运维人员。",
+        "associatedUserCount": 2,
+        "roleTag": "系统内置",
+        "activePermissionTab": "menu",
+        "permissionTabs": [
+            {
+                "tabName": "Menu Access",
+                "tabKey": "menu",
+                "isActive": true
+            },
+            {
+                "tabName": "API Access",
+                "tabKey": "api",
+                "isActive": false
+            },
+            {
+                "tabName": "Data Scope",
+                "tabKey": "data",
+                "isActive": false
+            }
+        ],
+        "expandedNodes": [
+            "Dashboard"
+        ],
+        "menuAccessTree": [
+            {
+                "nodeKey": "Dashboard",
+                "nodeName": "Dashboard",
+                "nodeIcon": "LayoutDashboard",
+                "isExpanded": true,
+                "switchEnabled": true,
+                "children": [
+                    {
+                        "nodeName": "Analytics Dashboard",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Security Center Dashboard",
+                        "isChecked": true
+                    }
+                ],
+                "checkboxOptions": [
+                    {
+                        "label": "Analytics Dashboard",
+                        "value": "analytics_dashboard"
+                    },
+                    {
+                        "label": "Security Center Dashboard",
+                        "value": "security_center_dashboard"
+                    }
+                ],
+                "checkboxValues": [
+                    "analytics_dashboard",
+                    "security_center_dashboard"
+                ]
+            },
+            {
+                "nodeKey": "User Management",
+                "nodeName": "User Management",
+                "nodeIcon": "Users",
+                "isExpanded": false,
+                "switchEnabled": true,
+                "children": [
+                    {
+                        "nodeName": "View User List",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Create/Edit User",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Delete User",
+                        "isChecked": true
+                    }
+                ],
+                "checkboxOptions": [
+                    {
+                        "label": "View User List",
+                        "value": "view_user_list"
+                    },
+                    {
+                        "label": "Create/Edit User",
+                        "value": "create_edit_user"
+                    },
+                    {
+                        "label": "Delete User",
+                        "value": "delete_user"
+                    }
+                ],
+                "checkboxValues": [
+                    "view_user_list",
+                    "create_edit_user",
+                    "delete_user"
+                ]
+            },
+            {
+                "nodeKey": "Firewall & Network",
+                "nodeName": "Firewall & Network",
+                "nodeIcon": "Network",
+                "isExpanded": false,
+                "switchEnabled": true,
+                "children": [
+                    {
+                        "nodeName": "View Network Topology",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Modify Firewall Rules",
+                        "isChecked": true
+                    }
+                ],
+                "checkboxOptions": [
+                    {
+                        "label": "View Network Topology",
+                        "value": "view_network_topology"
+                    },
+                    {
+                        "label": "Modify Firewall Rules",
+                        "value": "modify_firewall_rules"
+                    }
+                ],
+                "checkboxValues": [
+                    "view_network_topology",
+                    "modify_firewall_rules"
+                ]
+            },
+            {
+                "nodeKey": "System Settings",
+                "nodeName": "System Settings",
+                "nodeIcon": "Settings",
+                "isExpanded": false,
+                "switchEnabled": true,
+                "children": [
+                    {
+                        "nodeName": "General Configuration",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Mail Server Settings",
+                        "isChecked": true
+                    },
+                    {
+                        "nodeName": "Integration Webhooks",
+                        "isChecked": false
+                    }
+                ],
+                "checkboxOptions": [
+                    {
+                        "label": "General Configuration",
+                        "value": "general_configuration"
+                    },
+                    {
+                        "label": "Mail Server Settings",
+                        "value": "mail_server_settings"
+                    },
+                    {
+                        "label": "Integration Webhooks",
+                        "value": "integration_webhooks"
+                    }
+                ],
+                "checkboxValues": [
+                    "general_configuration",
+                    "mail_server_settings"
+                ]
+            },
+            {
+                "nodeKey": "Reports",
+                "nodeName": "Reports",
+                "nodeIcon": "FileText",
+                "isExpanded": false,
+                "switchEnabled": false,
+                "children": [
+                    {
+                        "nodeName": "Generate Threat Report",
+                        "isChecked": false
+                    },
+                    {
+                        "nodeName": "Export Audit Logs",
+                        "isChecked": false
+                    }
+                ],
+                "checkboxOptions": [
+                    {
+                        "label": "Generate Threat Report",
+                        "value": "generate_threat_report"
+                    },
+                    {
+                        "label": "Export Audit Logs",
+                        "value": "export_audit_logs"
+                    }
+                ],
+                "checkboxValues": []
+            }
+        ],
+        "inheritanceTipIcon": "Info",
+        "inheritanceTipText": "注意：子项的开启依赖于父模块的总开关。关闭父模块将自动收回所有子权限。",
+        "lastSavedTime": "2023-10-27 14:30:00",
+        "resetButtonText": "重置修改",
+        "saveButtonText": "保存配置"
+    },
+    "rootId": "rootAppContainer",
+    "elements": [
+        {
+            "id": "rootAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainAreaContainer"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-60 flex flex-col bg-surface-container-highest border-r border-divider shrink-0"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarDivider",
+                "sidebarMenuList",
+                "sidebarSpacer",
+                "sidebarUserCard"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-5 py-5"
+            },
+            "children": [
+                "sidebarLogoIcon",
+                "sidebarLogoText"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-7 h-7"
+            }
+        },
+        {
+            "id": "sidebarLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/systemName"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "sidebarDivider",
+            "component": "Divider",
+            "props": {
+                "className": "mx-4"
+            }
+        },
+        {
+            "id": "sidebarMenuList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3"
+            },
+            "children": [
+                "sidebarMenuDashboard",
+                "sidebarMenuRBAC",
+                "sidebarMenuPolicy",
+                "sidebarMenuLog",
+                "sidebarMenuSettings"
+            ]
+        },
+        {
+            "id": "sidebarMenuDashboard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sidebarMenuDashboardIcon",
+                "sidebarMenuDashboardText"
+            ]
+        },
+        {
+            "id": "sidebarMenuDashboardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "LayoutDashboard",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuDashboardText",
+            "component": "span",
+            "props": {
+                "value": "控制台",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarMenuRBAC",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-primary cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuRBACIcon",
+                "sidebarMenuRBACText"
+            ]
+        },
+        {
+            "id": "sidebarMenuRBACIcon",
+            "component": "Icon",
+            "props": {
+                "name": "ShieldCheck",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuRBACText",
+            "component": "span",
+            "props": {
+                "value": "角色与权限",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarMenuPolicy",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sidebarMenuPolicyIcon",
+                "sidebarMenuPolicyText"
+            ]
+        },
+        {
+            "id": "sidebarMenuPolicyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "FileText",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuPolicyText",
+            "component": "span",
+            "props": {
+                "value": "访问策略",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarMenuLog",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sidebarMenuLogIcon",
+                "sidebarMenuLogText"
+            ]
+        },
+        {
+            "id": "sidebarMenuLogIcon",
+            "component": "Icon",
+            "props": {
+                "name": "ScrollText",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuLogText",
+            "component": "span",
+            "props": {
+                "value": "安全日志",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarMenuSettings",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sidebarMenuSettingsIcon",
+                "sidebarMenuSettingsText"
+            ]
+        },
+        {
+            "id": "sidebarMenuSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "Settings",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuSettingsText",
+            "component": "span",
+            "props": {
+                "value": "系统设置",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarSpacer",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "sidebarUserCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-4 border-t border-divider"
+            },
+            "children": [
+                "sidebarUserAvatarImg",
+                "sidebarUserInfo",
+                "sidebarUserMoreIcon"
+            ]
+        },
+        {
+            "id": "sidebarUserAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/userAvatarImage"
+                },
+                "className": "w-9 h-9 rounded-full object-cover shrink-0"
+            }
+        },
+        {
+            "id": "sidebarUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex-1 min-w-0"
+            },
+            "children": [
+                "sidebarUserName",
+                "sidebarUserRole"
+            ]
+        },
+        {
+            "id": "sidebarUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-medium text-on-surface truncate block"
+            }
+        },
+        {
+            "id": "sidebarUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userRole"
+                },
+                "className": "text-xs text-on-surface-variant truncate block"
+            }
+        },
+        {
+            "id": "sidebarUserMoreIcon",
+            "component": "Icon",
+            "props": {
+                "name": "more-vertical",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 shrink-0"
+            }
+        },
+        {
+            "id": "mainAreaContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-w-0"
+            },
+            "children": [
+                "headerBar",
+                "bodyArea"
+            ]
+        },
+        {
+            "id": "headerBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6 px-6 h-16 bg-surface-container-highest border-b border-divider shrink-0"
+            },
+            "children": [
+                "headerBrandSection",
+                "headerSearchSection",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerBrandSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 shrink-0"
+            },
+            "children": [
+                "headerBrandIcon",
+                "headerBrandText"
+            ]
+        },
+        {
+            "id": "headerBrandIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/logoIcon"
+                },
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "headerBrandText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/systemName"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "headerSearchSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center"
+            },
+            "children": [
+                "headerSearchInput"
+            ]
+        },
+        {
+            "id": "headerSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/globalSearchValue"
+                },
+                "placeholder": {
+                    "path": "/globalSearchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "max-w-md w-full"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 shrink-0"
+            },
+            "children": [
+                "headerBellWrapper",
+                "headerAvatarImg"
+            ]
+        },
+        {
+            "id": "headerBellWrapper",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "headerBellIcon",
+                "headerBellBadge"
+            ]
+        },
+        {
+            "id": "headerBellIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/alertIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "headerBellBadge",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-1.5 -right-1.5 w-4 h-4 bg-error rounded-full flex items-center justify-center"
+            },
+            "children": [
+                "headerBellBadgeText"
+            ]
+        },
+        {
+            "id": "headerBellBadgeText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/alertCount"
+                },
+                "className": "text-[10px] text-on-error font-bold leading-none"
+            }
+        },
+        {
+            "id": "headerAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/adminAvatarImage"
+                },
+                "className": "w-8 h-8 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "bodyArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex gap-6 p-6 overflow-hidden"
+            },
+            "children": [
+                "roleListPanel",
+                "permissionPanel"
+            ]
+        },
+        {
+            "id": "roleListPanel",
+            "component": "div",
+            "props": {
+                "className": "w-80 flex flex-col bg-surface-container-highest rounded-xl shadow-card overflow-hidden shrink-0"
+            },
+            "children": [
+                "rolePanelHeader",
+                "roleSearchWrapper",
+                "roleListBody"
+            ]
+        },
+        {
+            "id": "rolePanelHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-5 py-4 border-b border-divider"
+            },
+            "children": [
+                "rolePanelTitle",
+                "roleAddBtn"
+            ]
+        },
+        {
+            "id": "rolePanelTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/panelTitle"
+                },
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "roleAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "添加角色",
+                "icon": {
+                    "path": "/addRoleButtonIcon"
+                },
+                "iconPlacement": "start",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "roleSearchWrapper",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-3"
+            },
+            "children": [
+                "roleSearchInput"
+            ]
+        },
+        {
+            "id": "roleSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/roleSearchValue"
+                },
+                "placeholder": {
+                    "path": "/roleSearchPlaceholder"
+                },
+                "prefix": "search",
+                "size": "small",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "roleListBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-4 pb-4 flex flex-col gap-2"
+            },
+            "children": [
+                "roleCard1",
+                "roleCard2",
+                "roleCard3",
+                "roleCard4",
+                "roleCard5"
+            ]
+        },
+        {
+            "id": "roleCard1",
+            "component": "div",
+            "props": {
+                "className": "p-3 rounded-lg bg-primary-container border border-selected cursor-pointer transition-colors"
+            },
+            "children": [
+                "roleCard1Header",
+                "roleCard1Desc",
+                "roleCard1Id"
+            ]
+        },
+        {
+            "id": "roleCard1Header",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "roleCard1NameWrap",
+                "roleCard1CountWrap"
+            ]
+        },
+        {
+            "id": "roleCard1NameWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "roleCard1CheckIcon",
+                "roleCard1NameText"
+            ]
+        },
+        {
+            "id": "roleCard1CheckIcon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check-big",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "roleCard1NameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/0/roleName"
+                },
+                "className": "text-sm font-semibold text-primary"
+            }
+        },
+        {
+            "id": "roleCard1CountWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "roleCard1UserIcon",
+                "roleCard1CountNum",
+                "roleCard1CountLabel"
+            ]
+        },
+        {
+            "id": "roleCard1UserIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "roleCard1CountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/0/userCount"
+                },
+                "className": "text-xs text-primary"
+            }
+        },
+        {
+            "id": "roleCard1CountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名用户",
+                "className": "text-xs text-primary"
+            }
+        },
+        {
+            "id": "roleCard1Desc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/0/roleDescription"
+                },
+                "className": "text-xs text-on-primary-container block"
+            }
+        },
+        {
+            "id": "roleCard1Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/0/roleId"
+                },
+                "className": "text-[10px] text-on-primary-container opacity-50 block mt-0.5"
+            }
+        },
+        {
+            "id": "roleCard2",
+            "component": "div",
+            "props": {
+                "className": "p-3 rounded-lg bg-surface-variant border border-transparent hover:bg-surface-container-high cursor-pointer transition-colors"
+            },
+            "children": [
+                "roleCard2Header",
+                "roleCard2Desc",
+                "roleCard2Id"
+            ]
+        },
+        {
+            "id": "roleCard2Header",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "roleCard2Name",
+                "roleCard2CountWrap"
+            ]
+        },
+        {
+            "id": "roleCard2Name",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/1/roleName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "roleCard2CountWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "roleCard2UserIcon",
+                "roleCard2CountNum",
+                "roleCard2CountLabel"
+            ]
+        },
+        {
+            "id": "roleCard2UserIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "roleCard2CountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/1/userCount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard2CountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名用户",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard2Desc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/1/roleDescription"
+                },
+                "className": "text-xs text-on-surface-variant block"
+            }
+        },
+        {
+            "id": "roleCard2Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/1/roleId"
+                },
+                "className": "text-[10px] text-on-surface-variant opacity-50 block mt-0.5"
+            }
+        },
+        {
+            "id": "roleCard3",
+            "component": "div",
+            "props": {
+                "className": "p-3 rounded-lg bg-surface-variant border border-transparent hover:bg-surface-container-high cursor-pointer transition-colors"
+            },
+            "children": [
+                "roleCard3Header",
+                "roleCard3Desc",
+                "roleCard3Id"
+            ]
+        },
+        {
+            "id": "roleCard3Header",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "roleCard3Name",
+                "roleCard3CountWrap"
+            ]
+        },
+        {
+            "id": "roleCard3Name",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/2/roleName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "roleCard3CountWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "roleCard3UserIcon",
+                "roleCard3CountNum",
+                "roleCard3CountLabel"
+            ]
+        },
+        {
+            "id": "roleCard3UserIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "roleCard3CountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/2/userCount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard3CountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名用户",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard3Desc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/2/roleDescription"
+                },
+                "className": "text-xs text-on-surface-variant block"
+            }
+        },
+        {
+            "id": "roleCard3Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/2/roleId"
+                },
+                "className": "text-[10px] text-on-surface-variant opacity-50 block mt-0.5"
+            }
+        },
+        {
+            "id": "roleCard4",
+            "component": "div",
+            "props": {
+                "className": "p-3 rounded-lg bg-surface-variant border border-transparent hover:bg-surface-container-high cursor-pointer transition-colors"
+            },
+            "children": [
+                "roleCard4Header",
+                "roleCard4Desc",
+                "roleCard4Id"
+            ]
+        },
+        {
+            "id": "roleCard4Header",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "roleCard4Name",
+                "roleCard4CountWrap"
+            ]
+        },
+        {
+            "id": "roleCard4Name",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/3/roleName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "roleCard4CountWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "roleCard4UserIcon",
+                "roleCard4CountNum",
+                "roleCard4CountLabel"
+            ]
+        },
+        {
+            "id": "roleCard4UserIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "roleCard4CountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/3/userCount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard4CountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名用户",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard4Desc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/3/roleDescription"
+                },
+                "className": "text-xs text-on-surface-variant block"
+            }
+        },
+        {
+            "id": "roleCard4Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/3/roleId"
+                },
+                "className": "text-[10px] text-on-surface-variant opacity-50 block mt-0.5"
+            }
+        },
+        {
+            "id": "roleCard5",
+            "component": "div",
+            "props": {
+                "className": "p-3 rounded-lg bg-surface-variant border border-transparent hover:bg-surface-container-high cursor-pointer transition-colors"
+            },
+            "children": [
+                "roleCard5Header",
+                "roleCard5Desc",
+                "roleCard5Id"
+            ]
+        },
+        {
+            "id": "roleCard5Header",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "roleCard5Name",
+                "roleCard5CountWrap"
+            ]
+        },
+        {
+            "id": "roleCard5Name",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/4/roleName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "roleCard5CountWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "roleCard5UserIcon",
+                "roleCard5CountNum",
+                "roleCard5CountLabel"
+            ]
+        },
+        {
+            "id": "roleCard5UserIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "roleCard5CountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/4/userCount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard5CountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名用户",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "roleCard5Desc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/4/roleDescription"
+                },
+                "className": "text-xs text-on-surface-variant block"
+            }
+        },
+        {
+            "id": "roleCard5Id",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/roles/4/roleId"
+                },
+                "className": "text-[10px] text-on-surface-variant opacity-50 block mt-0.5"
+            }
+        },
+        {
+            "id": "permissionPanel",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col bg-surface-container-highest rounded-xl shadow-card overflow-hidden min-w-0"
+            },
+            "children": [
+                "permPanelHeader",
+                "permTabsArea",
+                "permFooter"
+            ]
+        },
+        {
+            "id": "permPanelHeader",
+            "component": "div",
+            "props": {
+                "className": "px-6 py-5 border-b border-divider"
+            },
+            "children": [
+                "permTitleRow",
+                "permDesc",
+                "permUserCountInfo"
+            ]
+        },
+        {
+            "id": "permTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 mb-2"
+            },
+            "children": [
+                "permTitleIcon",
+                "permTitle",
+                "permRoleTag"
+            ]
+        },
+        {
+            "id": "permTitleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "ShieldCheck",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "permTitle",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/detailTitle"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "permRoleTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/roleTag"
+                },
+                "color": "processing",
+                "variant": "filled",
+                "icon": "lock"
+            }
+        },
+        {
+            "id": "permDesc",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/detailDescription"
+                },
+                "className": "text-sm text-on-surface-variant mb-3 leading-relaxed"
+            }
+        },
+        {
+            "id": "permUserCountInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "permUserCountIcon",
+                "permUserCountNum",
+                "permUserCountLabel"
+            ]
+        },
+        {
+            "id": "permUserCountIcon",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "permUserCountNum",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/associatedUserCount"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "permUserCountLabel",
+            "component": "span",
+            "props": {
+                "value": " 名关联用户",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "permTabsArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "permTabs"
+            ]
+        },
+        {
+            "id": "permTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activePermissionTab"
+                }
+            },
+            "children": [
+                "permTabMenu",
+                "permTabApi",
+                "permTabData"
+            ]
+        },
+        {
+            "id": "permTabMenu",
+            "component": "TabItem",
+            "props": {
+                "key": "menu",
+                "label": "Menu Access",
+                "icon": "LayoutDashboard",
+                "content": {
+                    "componentId": "permTabMenuContent"
+                }
+            }
+        },
+        {
+            "id": "permTabApi",
+            "component": "TabItem",
+            "props": {
+                "key": "api",
+                "label": "API Access",
+                "icon": "code",
+                "content": "配置 API 接口的访问权限，控制角色可调用的接口范围。支持按 HTTP 方法（GET/POST/PUT/DELETE）进行细粒度管控。"
+            }
+        },
+        {
+            "id": "permTabData",
+            "component": "TabItem",
+            "props": {
+                "key": "data",
+                "label": "Data Scope",
+                "icon": "database",
+                "content": "配置数据范围权限，控制角色可查看和操作的数据边界。支持按部门、区域、业务线等维度划分数据可见性。"
+            }
+        },
+        {
+            "id": "permTabMenuContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6"
+            },
+            "children": [
+                "permTreeCollapse"
+            ]
+        },
+        {
+            "id": "permTreeCollapse",
+            "component": "Collapse",
+            "props": {
+                "activeKey": {
+                    "path": "/expandedNodes"
+                },
+                "expandIcon": "chevron-down",
+                "expandIconPlacement": "end"
+            },
+            "children": {
+                "path": "/menuAccessTree",
+                "componentId": "treeNodeItem"
+            }
+        },
+        {
+            "id": "treeNodeItem",
+            "component": "CollapseItem",
+            "props": {
+                "key": {
+                    "path": "nodeKey"
+                },
+                "label": {
+                    "path": "nodeName"
+                },
+                "extra": {
+                    "componentId": "treeNodeExtra"
+                },
+                "content": {
+                    "componentId": "treeNodeContent"
+                }
+            }
+        },
+        {
+            "id": "treeNodeExtra",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "treeNodeIcon",
+                "treeNodeSwitch"
+            ]
+        },
+        {
+            "id": "treeNodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "nodeIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "treeNodeSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "switchEnabled"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeNodeContent",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-2"
+            },
+            "children": [
+                "treeNodeCheckboxGroup"
+            ]
+        },
+        {
+            "id": "treeNodeCheckboxGroup",
+            "component": "CheckboxGroup",
+            "props": {
+                "value": {
+                    "path": "checkboxValues"
+                },
+                "options": {
+                    "path": "checkboxOptions"
+                }
+            }
+        },
+        {
+            "id": "permFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-6 py-4 border-t border-divider shrink-0"
+            },
+            "children": [
+                "footerTip",
+                "footerActions"
+            ]
+        },
+        {
+            "id": "footerTip",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-2 flex-1 min-w-0 mr-4"
+            },
+            "children": [
+                "footerTipIcon",
+                "footerTipText"
+            ]
+        },
+        {
+            "id": "footerTipIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/inheritanceTipIcon"
+                },
+                "color": "info",
+                "shape": "circle",
+                "className": "w-4 h-4 mt-0.5 shrink-0"
+            }
+        },
+        {
+            "id": "footerTipText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/inheritanceTipText"
+                },
+                "className": "text-xs text-on-surface-variant leading-relaxed"
+            }
+        },
+        {
+            "id": "footerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 shrink-0"
+            },
+            "children": [
+                "footerSavedTimeWrap",
+                "footerResetBtn",
+                "footerSaveBtn"
+            ]
+        },
+        {
+            "id": "footerSavedTimeWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 mr-2"
+            },
+            "children": [
+                "footerSavedTimeIcon",
+                "footerSavedTimeText"
+            ]
+        },
+        {
+            "id": "footerSavedTimeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "clock",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "footerSavedTimeText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/lastSavedTime"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "footerResetBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/resetButtonText"
+                },
+                "size": "medium"
+            }
+        },
+        {
+            "id": "footerSaveBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/saveButtonText"
+                },
+                "color": "primary",
+                "size": "medium",
+                "icon": "save",
+                "iconPlacement": "start"
+            }
+        }
+    ]
+}

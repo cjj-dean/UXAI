@@ -1,0 +1,811 @@
+{
+    "state": {
+        "brand": {
+            "logoIcon": "cloud",
+            "brandName": "iMasterCloud"
+        },
+        "activeTab": "Workbench",
+        "navTabs": [
+            {
+                "id": "Workbench",
+                "label": "工作台",
+                "icon": "layout-dashboard"
+            },
+            {
+                "id": "Monitor",
+                "label": "监控",
+                "icon": "activity"
+            }
+        ],
+        "functionalLinks": [
+            "工具中心",
+            "租户",
+            "服务",
+            "设备",
+            "运营中心",
+            "系统"
+        ],
+        "sidebar": {
+            "title": "运营中心",
+            "activeKey": "tenant-overview",
+            "menuGroups": [
+                {
+                    "groupName": "概览",
+                    "items": [
+                        {
+                            "label": "租户概览",
+                            "key": "tenant-overview",
+                            "icon": "users"
+                        },
+                        {
+                            "label": "生命周期概览",
+                            "key": "lifecycle",
+                            "icon": "refresh-cw"
+                        },
+                        {
+                            "label": "设备容量概览",
+                            "key": "capacity",
+                            "icon": "hard-drive"
+                        },
+                        {
+                            "label": "特征库License管理",
+                            "key": "license",
+                            "icon": "key"
+                        }
+                    ]
+                },
+                {
+                    "groupName": "管理",
+                    "items": [
+                        {
+                            "label": "线索管理",
+                            "key": "leads",
+                            "icon": "target"
+                        },
+                        {
+                            "label": "任务管理",
+                            "key": "tasks",
+                            "icon": "check-square"
+                        },
+                        {
+                            "label": "运营报告",
+                            "key": "reports",
+                            "icon": "file-text"
+                        }
+                    ]
+                }
+            ]
+        },
+        "breadcrumbPaths": [
+            {
+                "title": "运营中心"
+            },
+            {
+                "title": "概览"
+            },
+            {
+                "title": "租户概览"
+            }
+        ],
+        "topMetrics": {
+            "customerCount": 21,
+            "deviceStats": [
+                {
+                    "name": "云主机",
+                    "value": 32,
+                    "icon": "server"
+                },
+                {
+                    "name": "AP",
+                    "value": 5,
+                    "icon": "wifi"
+                },
+                {
+                    "name": "路由器",
+                    "value": 9,
+                    "icon": "network"
+                },
+                {
+                    "name": "防火墙",
+                    "value": 7,
+                    "icon": "shield-check"
+                },
+                {
+                    "name": "WAC",
+                    "value": 11,
+                    "icon": "radio"
+                }
+            ]
+        },
+        "monthlyGrowthData": [
+            {
+                "month": "1月",
+                "云主机": 12,
+                "AP": 2,
+                "路由器": 3,
+                "防火墙": 1,
+                "WAC": 4
+            },
+            {
+                "month": "2月",
+                "云主机": 15,
+                "AP": 3,
+                "路由器": 4,
+                "防火墙": 2,
+                "WAC": 5
+            },
+            {
+                "month": "3月",
+                "云主机": 18,
+                "AP": 4,
+                "路由器": 5,
+                "防火墙": 3,
+                "WAC": 6
+            },
+            {
+                "month": "4月",
+                "云主机": 22,
+                "AP": 5,
+                "路由器": 6,
+                "防火墙": 4,
+                "WAC": 7
+            },
+            {
+                "month": "5月",
+                "云主机": 25,
+                "AP": 4,
+                "路由器": 7,
+                "防火墙": 5,
+                "WAC": 8
+            },
+            {
+                "month": "6月",
+                "云主机": 28,
+                "AP": 5,
+                "路由器": 8,
+                "防火墙": 6,
+                "WAC": 9
+            },
+            {
+                "month": "7月",
+                "云主机": 32,
+                "AP": 5,
+                "路由器": 9,
+                "防火墙": 7,
+                "WAC": 11
+            }
+        ],
+        "industryTop5": [
+            {
+                "industry": "钢铁",
+                "count": 45
+            },
+            {
+                "industry": "通讯",
+                "count": 38
+            },
+            {
+                "industry": "食品",
+                "count": 32
+            },
+            {
+                "industry": "媒体",
+                "count": 28
+            },
+            {
+                "industry": "教育",
+                "count": 22
+            }
+        ],
+        "yearlyGrowth": [
+            {
+                "month": "1月",
+                "tenants": 10
+            },
+            {
+                "month": "2月",
+                "tenants": 12
+            },
+            {
+                "month": "3月",
+                "tenants": 11
+            },
+            {
+                "month": "4月",
+                "tenants": 15
+            },
+            {
+                "month": "5月",
+                "tenants": 18
+            },
+            {
+                "month": "6月",
+                "tenants": 21
+            },
+            {
+                "month": "7月",
+                "tenants": 25
+            },
+            {
+                "month": "8月",
+                "tenants": 24
+            },
+            {
+                "month": "9月",
+                "tenants": 28
+            },
+            {
+                "month": "10月",
+                "tenants": 32
+            },
+            {
+                "month": "11月",
+                "tenants": 35
+            },
+            {
+                "month": "12月",
+                "tenants": 40
+            }
+        ]
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainLayout"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "headerLogo",
+                "headerBrandName"
+            ]
+        },
+        {
+            "id": "headerLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logoIcon"
+                },
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "headerBrandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/brand/brandName"
+                }
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center"
+            },
+            "children": [
+                "headerTabs"
+            ]
+        },
+        {
+            "id": "headerTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "h-full"
+            },
+            "children": {
+                "path": "/navTabs",
+                "componentId": "navTabItem"
+            }
+        },
+        {
+            "id": "navTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                },
+                "icon": {
+                    "path": "icon"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerLinks",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerLinks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": {
+                "path": "/functionalLinks",
+                "componentId": "headerLinkBtn"
+            }
+        },
+        {
+            "id": "headerLinkBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": ""
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 border-l border-divider pl-4"
+            },
+            "children": [
+                "helpIcon",
+                "themeIcon",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "themeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "sun",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col"
+            },
+            "children": [
+                "sideNavTitle",
+                "sideNavMenu",
+                "sideNavFooter"
+            ]
+        },
+        {
+            "id": "sideNavTitle",
+            "component": "div",
+            "props": {
+                "className": "p-4 text-sm font-semibold text-on-surface-variant border-b border-divider",
+                "value": {
+                    "path": "/sidebar/sidebarTitle"
+                }
+            }
+        },
+        {
+            "id": "sideNavMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-2"
+            },
+            "children": {
+                "path": "/sidebar/menuGroups",
+                "componentId": "menuGroup"
+            }
+        },
+        {
+            "id": "menuGroup",
+            "component": "div",
+            "props": {
+                "className": "mb-4"
+            },
+            "children": [
+                "groupLabel",
+                "groupItems"
+            ]
+        },
+        {
+            "id": "groupLabel",
+            "component": "div",
+            "props": {
+                "className": "px-3 py-2 text-xs text-on-surface-variant opacity-60 uppercase tracking-wider",
+                "value": {
+                    "path": "groupName"
+                }
+            }
+        },
+        {
+            "id": "groupItems",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": {
+                "path": "items",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md transition-colors cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sideNavFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex justify-center"
+            },
+            "children": [
+                "collapseBtn"
+            ]
+        },
+        {
+            "id": "collapseBtn",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-left",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "breadcrumb",
+                "topCardsRow",
+                "growthChartCard",
+                "bottomChartsRow"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbPaths"
+                },
+                "separator": "/"
+            }
+        },
+        {
+            "id": "topCardsRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "customerCard",
+                "deviceStatsCard"
+            ]
+        },
+        {
+            "id": "customerCard",
+            "component": "div",
+            "props": {
+                "className": "w-1/6 bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col items-center justify-center gap-2"
+            },
+            "children": [
+                "custIcon",
+                "custCount",
+                "custLabel"
+            ]
+        },
+        {
+            "id": "custIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user-check",
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "custCount",
+            "component": "span",
+            "props": {
+                "className": "text-3xl font-bold text-on-surface",
+                "value": {
+                    "path": "/topMetrics/customerCount"
+                }
+            }
+        },
+        {
+            "id": "custLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": "客户"
+            }
+        },
+        {
+            "id": "deviceStatsCard",
+            "component": "div",
+            "props": {
+                "className": "w-5/6 bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "deviceCardTitle",
+                "deviceItemsGrid"
+            ]
+        },
+        {
+            "id": "deviceCardTitle",
+            "component": "div",
+            "props": {
+                "className": "text-md font-semibold mb-6",
+                "value": "租户设备统计（总数64）"
+            }
+        },
+        {
+            "id": "deviceItemsGrid",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": {
+                "path": "/topMetrics/deviceStats",
+                "componentId": "deviceStatItem"
+            }
+        },
+        {
+            "id": "deviceStatItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center gap-2"
+            },
+            "children": [
+                "deviceIcon",
+                "deviceValue",
+                "deviceName"
+            ]
+        },
+        {
+            "id": "deviceIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "shape": "square",
+                "className": "w-8 h-8 text-primary"
+            }
+        },
+        {
+            "id": "deviceValue",
+            "component": "span",
+            "props": {
+                "className": "text-xl font-bold",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "deviceName",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "growthChartCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "growthChartTitle",
+                "growthChart"
+            ]
+        },
+        {
+            "id": "growthChartTitle",
+            "component": "div",
+            "props": {
+                "className": "text-md font-semibold mb-4",
+                "value": "设备类型月度增长分布"
+            }
+        },
+        {
+            "id": "growthChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/monthlyGrowthData"
+                    },
+                    "xAxis": {
+                        "data": "month"
+                    },
+                    "yAxisTitle": "设备数量",
+                    "area": true,
+                    "smooth": true
+                },
+                "className": "h-80 w-full"
+            }
+        },
+        {
+            "id": "bottomChartsRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "industryCard",
+                "yearlyGrowthCard"
+            ]
+        },
+        {
+            "id": "industryCard",
+            "component": "div",
+            "props": {
+                "className": "w-1/4 bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "industryTitle",
+                "industryChart"
+            ]
+        },
+        {
+            "id": "industryTitle",
+            "component": "div",
+            "props": {
+                "className": "text-md font-semibold mb-4",
+                "value": "租户行业top5"
+            }
+        },
+        {
+            "id": "industryChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/industryTop5"
+                    },
+                    "xAxis": {
+                        "data": "industry"
+                    },
+                    "yAxisTitle": "租户数",
+                    "direction": "horizontal"
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "yearlyGrowthCard",
+            "component": "div",
+            "props": {
+                "className": "w-3/4 bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "yearlyTitle",
+                "yearlyChart"
+            ]
+        },
+        {
+            "id": "yearlyTitle",
+            "component": "div",
+            "props": {
+                "className": "text-md font-semibold mb-4",
+                "value": "2023年租户月度增长趋势图"
+            }
+        },
+        {
+            "id": "yearlyChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/yearlyGrowth"
+                    },
+                    "xAxis": {
+                        "data": "month"
+                    },
+                    "yAxisTitle": "租户总数",
+                    "area": true,
+                    "color": [
+                        "#2070F3"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        }
+    ]
+}

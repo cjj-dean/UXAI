@@ -1,0 +1,618 @@
+{
+  "state": {
+    "logoIcon": "layers",
+    "platformName": "iMaster NCE-FabricInsight",
+    "leftNavLinks": [
+      {
+        "linkText": "健康看板",
+        "linkIcon": "activity"
+      },
+      {
+        "linkText": "大屏",
+        "linkIcon": "monitor"
+      }
+    ],
+    "rightNavLink": {
+      "linkText": "策略中心"
+    },
+    "systemActionIcons": [
+      {
+        "icon": "settings"
+      },
+      {
+        "icon": "bell"
+      },
+      {
+        "icon": "help-circle"
+      },
+      {
+        "icon": "thumbs-up"
+      }
+    ],
+    "userInfo": {
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userName": "Admin"
+    },
+    "activeTab": "inspection",
+    "tabs": [
+      {
+        "tabKey": "inspection",
+        "label": "巡检结果"
+      },
+      {
+        "tabKey": "planning",
+        "label": "链路规划"
+      }
+    ],
+    "cardTitle": "巡检结果概览",
+    "overviewImage": "https://fpoimg.com/400x300?gradient=0067D1,004EA8&text_color=ffffff&text=Insight+Overview",
+    "statusInfo": {
+      "mainTitle": "检测完成",
+      "lastCheckTime": "2025-11-27 10:09:18",
+      "nextCheckTime": "2025-11-27 10:49:17"
+    },
+    "summaryText": "检测结果：共152条链路，已检测152条链路，其中有2条链路存在异常。异常类型统计如下：异常分光 1个 脏污 1个",
+    "statusMetrics": [
+      {
+        "metricName": "正常",
+        "value": 45,
+        "statusIcon": "circle-check",
+        "statusColor": "success"
+      },
+      {
+        "metricName": "Down",
+        "value": 0,
+        "statusIcon": "circle-arrow-down",
+        "statusColor": "error"
+      },
+      {
+        "metricName": "异常",
+        "value": 2,
+        "statusIcon": "triangle-alert",
+        "statusColor": "critical"
+      },
+      {
+        "metricName": "风险",
+        "value": 0,
+        "statusIcon": "shield-alert",
+        "statusColor": "warning"
+      }
+    ]
+  },
+  "rootId": "rootAppContainer",
+  "elements": [
+    {
+      "id": "rootAppContainer",
+      "component": "div",
+      "props": {
+        "className": "min-h-screen w-full flex flex-col bg-surface-container-lowest"
+      },
+      "children": [
+        "shellHeaderSlot",
+        "shellBodyContainer"
+      ]
+    },
+    {
+      "id": "shellHeaderSlot",
+      "component": "header",
+      "props": {
+        "className": "w-full h-12 flex items-center bg-surface-container-highest shadow-sm px-page z-10"
+      },
+      "children": [
+        "gHdLeftSection",
+        "gHdRightSection"
+      ]
+    },
+    {
+      "id": "shellBodyContainer",
+      "component": "main",
+      "props": {
+        "className": "flex-1 w-full flex flex-col px-page py-page overflow-y-auto"
+      },
+      "children": [
+        "shellTabSlot",
+        "shellOverviewSlot",
+        "shellTableSlot"
+      ]
+    },
+    {
+      "id": "shellTabSlot",
+      "component": "div",
+      "props": {
+        "className": "w-full"
+      },
+      "children": [
+        "pTabTabs"
+      ]
+    },
+    {
+      "id": "shellOverviewSlot",
+      "component": "div",
+      "props": {
+        "className": "w-full mt-section"
+      },
+      "children": [
+        "ovCardMainContainer"
+      ]
+    },
+    {
+      "id": "shellTableSlot",
+      "component": "div",
+      "props": {
+        "className": "w-full mt-section"
+      },
+      "children": []
+    },
+    {
+      "id": "gHdLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "gHdMenuIcon",
+        "gHdLogoIcon",
+        "gHdPlatformName",
+        "gHdDivider1",
+        "gHdLeftNavLinksGroup"
+      ]
+    },
+    {
+      "id": "gHdMenuIcon",
+      "component": "Icon",
+      "props": {
+        "name": "panel-left",
+        "color": "default",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "gHdLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/logoIcon"
+        },
+        "color": "primary",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "gHdPlatformName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/platformName"
+        },
+        "className": "text-md font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "gHdDivider1",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-on-surface-variant opacity-20"
+      }
+    },
+    {
+      "id": "gHdLeftNavLinksGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": {
+        "path": "/leftNavLinks",
+        "componentId": "gHdLeftNavLink"
+      }
+    },
+    {
+      "id": "gHdLeftNavLink",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "linkText"
+        },
+        "icon": {
+          "path": "linkIcon"
+        },
+        "iconPlacement": "start",
+        "types": "link",
+        "className": "text-on-surface-variant"
+      }
+    },
+    {
+      "id": "gHdRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 ml-auto"
+      },
+      "children": [
+        "gHdPolicyLink",
+        "gHdDivider2",
+        "gHdSystemIconsGroup",
+        "gHdDivider3",
+        "gHdUserGroup"
+      ]
+    },
+    {
+      "id": "gHdPolicyLink",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/rightNavLink/linkText"
+        },
+        "types": "link",
+        "className": "text-on-surface-variant"
+      }
+    },
+    {
+      "id": "gHdDivider2",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-on-surface-variant opacity-20"
+      }
+    },
+    {
+      "id": "gHdSystemIconsGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": {
+        "path": "/systemActionIcons",
+        "componentId": "gHdSystemIcon"
+      }
+    },
+    {
+      "id": "gHdSystemIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "icon"
+        },
+        "color": "default",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "gHdDivider3",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-on-surface-variant opacity-20"
+      }
+    },
+    {
+      "id": "gHdUserGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "gHdUserAvatar",
+        "gHdUserName"
+      ]
+    },
+    {
+      "id": "gHdUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/avatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "gHdUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/userName"
+        },
+        "className": "text-md font-medium text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "pTabTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "types": "line",
+        "size": "medium",
+        "className": ""
+      },
+      "children": {
+        "path": "/tabs",
+        "componentId": "pTabItem"
+      }
+    },
+    {
+      "id": "pTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "tabKey"
+        },
+        "label": {
+          "path": "label"
+        },
+        "content": {
+          "componentId": "pTabContent"
+        }
+      }
+    },
+    {
+      "id": "pTabContent",
+      "component": "div",
+      "props": {
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "ovCardMainContainer",
+      "component": "div",
+      "props": {
+        "className": "flex bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+      },
+      "children": [
+        "ovCardImageArea",
+        "ovCardContentArea"
+      ]
+    },
+    {
+      "id": "ovCardImageArea",
+      "component": "div",
+      "props": {
+        "className": "flex-shrink-0 w-[260px] min-h-[180px] bg-primary-container flex items-center justify-center"
+      },
+      "children": [
+        "ovCardImage"
+      ]
+    },
+    {
+      "id": "ovCardImage",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/overviewImage"
+        },
+        "alt": "巡检结果概览插图",
+        "className": "w-full h-full object-cover"
+      }
+    },
+    {
+      "id": "ovCardContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-inset flex flex-col justify-center gap-stack"
+      },
+      "children": [
+        "ovCardTitleSection",
+        "ovCardTimeSection",
+        "ovCardSummarySection",
+        "ovCardMetricsSection"
+      ]
+    },
+    {
+      "id": "ovCardTitleSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "ovCardTitleIcon",
+        "ovCardTitleText"
+      ]
+    },
+    {
+      "id": "ovCardTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clipboard-check",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "ovCardTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "ovCardTimeSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "ovCardMainTitleRow",
+        "ovCardTimeRow"
+      ]
+    },
+    {
+      "id": "ovCardMainTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "ovCardStatusIcon",
+        "ovCardMainTitle"
+      ]
+    },
+    {
+      "id": "ovCardStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": "circle-check",
+        "color": "success",
+        "shape": "fill",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "ovCardMainTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/statusInfo/mainTitle"
+        },
+        "className": "text-xl font-bold text-success"
+      }
+    },
+    {
+      "id": "ovCardTimeRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline text-md flex-wrap"
+      },
+      "children": [
+        "ovCardTimeCheckLabel",
+        "ovCardTimeCheckValue",
+        "ovCardTimeDivider",
+        "ovCardTimeNextLabel",
+        "ovCardTimeNextValue"
+      ]
+    },
+    {
+      "id": "ovCardTimeCheckLabel",
+      "component": "span",
+      "props": {
+        "value": "检测时间：",
+        "className": "text-on-surface-variant"
+      }
+    },
+    {
+      "id": "ovCardTimeCheckValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/statusInfo/lastCheckTime"
+        },
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "ovCardTimeDivider",
+      "component": "span",
+      "props": {
+        "value": "|",
+        "className": "text-on-surface-variant"
+      }
+    },
+    {
+      "id": "ovCardTimeNextLabel",
+      "component": "span",
+      "props": {
+        "value": "预计下一次周期检测时间：",
+        "className": "text-on-surface-variant"
+      }
+    },
+    {
+      "id": "ovCardTimeNextValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/statusInfo/nextCheckTime"
+        },
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "ovCardSummarySection",
+      "component": "div",
+      "props": {
+        "className": "py-inline"
+      },
+      "children": [
+        "ovCardSummaryText"
+      ]
+    },
+    {
+      "id": "ovCardSummaryText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/summaryText"
+        },
+        "className": "text-md text-on-surface-variant leading-relaxed"
+      }
+    },
+    {
+      "id": "ovCardMetricsSection",
+      "component": "div",
+      "props": {
+        "className": "flex gap-gutter mt-2"
+      },
+      "children": {
+        "path": "/statusMetrics",
+        "componentId": "ovCardMetricBlock"
+      }
+    },
+    {
+      "id": "ovCardMetricBlock",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-3 bg-surface-variant rounded-lg flex-1"
+      },
+      "children": [
+        "ovCardMetricIcon",
+        "ovCardMetricInfo"
+      ]
+    },
+    {
+      "id": "ovCardMetricIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "statusIcon"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "ovCardMetricInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "ovCardMetricValue",
+        "ovCardMetricName"
+      ]
+    },
+    {
+      "id": "ovCardMetricValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "value"
+        },
+        "className": "text-2xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "ovCardMetricName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricName"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    }
+  ]
+}

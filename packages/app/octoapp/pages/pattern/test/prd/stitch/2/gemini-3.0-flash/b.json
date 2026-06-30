@@ -1,0 +1,755 @@
+{
+    "state": {
+        "brandName": "Security Gate",
+        "navLinks": [
+            {
+                "label": "Dashboard",
+                "isActive": true,
+                "path": "/dashboard"
+            },
+            {
+                "label": "Threats",
+                "isActive": false,
+                "path": "/threats"
+            },
+            {
+                "label": "Assets",
+                "isActive": false,
+                "path": "/assets"
+            },
+            {
+                "label": "Reports",
+                "isActive": false,
+                "path": "/reports"
+            }
+        ],
+        "metrics": [
+            {
+                "title": "Total Users",
+                "value": "12,482",
+                "unit": "",
+                "mainIcon": "users",
+                "trendText": "较上月增长 5.2%",
+                "trendStatus": "up",
+                "trendIcon": "trending-up",
+                "color": "primary"
+            },
+            {
+                "title": "Security Threats",
+                "value": "04",
+                "unit": "Active",
+                "mainIcon": "shield-alert",
+                "trendText": "较昨日下降 25%",
+                "trendStatus": "down",
+                "trendIcon": "trending-down",
+                "color": "error"
+            },
+            {
+                "title": "System Uptime",
+                "value": "99.98",
+                "unit": "%",
+                "mainIcon": "activity",
+                "trendText": "运行状态极佳",
+                "trendStatus": "stable",
+                "trendIcon": "check-circle",
+                "color": "success"
+            },
+            {
+                "title": "Compliance Score",
+                "value": "94",
+                "unit": "/100",
+                "mainIcon": "clipboard-check",
+                "trendText": "已超过 88% 的同类企业",
+                "trendStatus": "up",
+                "trendIcon": "trending-up",
+                "color": "info"
+            }
+        ],
+        "eventTrends": [
+            {
+                "day": "Mon",
+                "Blocked": 120,
+                "Detected": 45
+            },
+            {
+                "day": "Tue",
+                "Blocked": 132,
+                "Detected": 52
+            },
+            {
+                "day": "Wed",
+                "Blocked": 101,
+                "Detected": 48
+            },
+            {
+                "day": "Thu",
+                "Blocked": 134,
+                "Detected": 61
+            },
+            {
+                "day": "Fri",
+                "Blocked": 90,
+                "Detected": 32
+            },
+            {
+                "day": "Sat",
+                "Blocked": 230,
+                "Detected": 88
+            },
+            {
+                "day": "Sun",
+                "Blocked": 210,
+                "Detected": 76
+            }
+        ],
+        "departmentCompliance": [
+            {
+                "department": "Engineering",
+                "percentage": 98
+            },
+            {
+                "department": "Operations",
+                "percentage": 92
+            },
+            {
+                "department": "Sales",
+                "percentage": 85
+            }
+        ],
+        "tasks": [
+            {
+                "id": "t1",
+                "taskName": "更新防火墙策略",
+                "deadline": "今天 18:00",
+                "icon": "alert-circle",
+                "color": "error"
+            },
+            {
+                "id": "t2",
+                "taskName": "审核新用户权限申请",
+                "deadline": "明天 10:00",
+                "icon": "clock",
+                "color": "warning"
+            },
+            {
+                "id": "t3",
+                "taskName": "导出季度合规报告",
+                "deadline": "2天后",
+                "icon": "file-text",
+                "color": "primary"
+            }
+        ],
+        "policyLinks": [
+            {
+                "label": "Privacy Policy"
+            },
+            {
+                "label": "Terms of Service"
+            },
+            {
+                "label": "Cookie Settings"
+            },
+            {
+                "label": "Security Standards"
+            },
+            {
+                "label": "SLA Agreement"
+            }
+        ]
+    },
+    "rootId": "globalPageWrapper",
+    "elements": [
+        {
+            "id": "globalPageWrapper",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen bg-surface-container-lowest flex flex-col"
+            },
+            "children": [
+                "headerNav",
+                "mainContent",
+                "footerSection"
+            ]
+        },
+        {
+            "id": "headerNav",
+            "component": "div",
+            "props": {
+                "className": "h-16 px-gutter bg-surface-container-highest shadow-sm flex items-center justify-between sticky top-0 z-50"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": [
+                "brandLogo",
+                "navMenu"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navMenu",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navLinks",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "helpBtn",
+                "langBtn",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "helpBtn",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "shape": "circle",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "langBtn",
+            "component": "Button",
+            "props": {
+                "icon": "globe",
+                "shape": "circle",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "avatarImg"
+            ]
+        },
+        {
+            "id": "avatarImg",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "kpiGrid",
+                "analyticsGrid"
+            ]
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "kpiHeader",
+                "kpiValue",
+                "kpiFooter"
+            ]
+        },
+        {
+            "id": "kpiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "kpiTitle",
+                "kpiIcon"
+            ]
+        },
+        {
+            "id": "kpiTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-on-surface-variant text-sm"
+            }
+        },
+        {
+            "id": "kpiIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "mainIcon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "kpiValue",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "kpiMainVal",
+                "kpiUnit"
+            ]
+        },
+        {
+            "id": "kpiMainVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "kpiFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 mt-2"
+            },
+            "children": [
+                "trendIcon",
+                "trendText"
+            ]
+        },
+        {
+            "id": "trendIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "trendIcon"
+                },
+                "className": "w-4 h-4",
+                "color": "success"
+            }
+        },
+        {
+            "id": "trendText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trendText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "analyticsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "leftAnalytics",
+                "rightActions"
+            ]
+        },
+        {
+            "id": "leftAnalytics",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 flex flex-col gap-gutter"
+            },
+            "children": [
+                "eventTrendCard",
+                "deptComplianceCard"
+            ]
+        },
+        {
+            "id": "eventTrendCard",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "eventTrendTitle",
+                "eventTrendChart"
+            ]
+        },
+        {
+            "id": "eventTrendTitle",
+            "component": "h3",
+            "props": {
+                "value": "Security Event Trends",
+                "className": "text-lg font-bold text-on-surface mb-6"
+            }
+        },
+        {
+            "id": "eventTrendChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/eventTrends"
+                    },
+                    "xAxis": {
+                        "data": "day"
+                    },
+                    "yAxisTitle": "Events Count",
+                    "smooth": true,
+                    "area": true
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "deptComplianceCard",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "deptComplianceTitle",
+                "deptComplianceChart"
+            ]
+        },
+        {
+            "id": "deptComplianceTitle",
+            "component": "h3",
+            "props": {
+                "value": "Compliance Status by Department",
+                "className": "text-lg font-bold text-on-surface mb-6"
+            }
+        },
+        {
+            "id": "deptComplianceChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/departmentCompliance"
+                    },
+                    "xAxis": {
+                        "data": "department"
+                    },
+                    "yAxisTitle": "Percentage (%)",
+                    "direction": "horizontal"
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "rightActions",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 flex flex-col gap-gutter"
+            },
+            "children": [
+                "taskPanel",
+                "aiPromoCard"
+            ]
+        },
+        {
+            "id": "taskPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "taskHeader",
+                "taskList",
+                "taskFooter"
+            ]
+        },
+        {
+            "id": "taskHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex justify-between items-center border-b border-divider"
+            },
+            "children": [
+                "taskTitle",
+                "dueBadge"
+            ]
+        },
+        {
+            "id": "taskTitle",
+            "component": "span",
+            "props": {
+                "value": "Administrative Tasks",
+                "className": "font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "dueBadge",
+            "component": "Tag",
+            "props": {
+                "value": "03 DUE",
+                "color": "error",
+                "size": "small"
+            }
+        },
+        {
+            "id": "taskList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": {
+                "path": "/tasks",
+                "componentId": "taskItem"
+            }
+        },
+        {
+            "id": "taskItem",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-4 border-b border-divider hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "taskIcon",
+                "taskInfo"
+            ]
+        },
+        {
+            "id": "taskIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "circle",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "taskInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "taskName",
+                "taskDeadline"
+            ]
+        },
+        {
+            "id": "taskName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "taskDeadline",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deadline"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "taskFooter",
+            "component": "div",
+            "props": {
+                "className": "p-stack text-center"
+            },
+            "children": [
+                "viewAllBtn"
+            ]
+        },
+        {
+            "id": "viewAllBtn",
+            "component": "Button",
+            "props": {
+                "value": "View All Tasks (12)",
+                "className": "w-full border-none text-primary"
+            }
+        },
+        {
+            "id": "aiPromoCard",
+            "component": "div",
+            "props": {
+                "className": "bg-primary text-on-primary rounded-container shadow-card p-inset flex flex-col gap-stack relative overflow-hidden"
+            },
+            "children": [
+                "aiPromoTitle",
+                "aiPromoDesc",
+                "aiPromoBtn"
+            ]
+        },
+        {
+            "id": "aiPromoTitle",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "aiIcon",
+                "aiTitleText"
+            ]
+        },
+        {
+            "id": "aiIcon",
+            "component": "Icon",
+            "props": {
+                "name": "zap",
+                "color": "inverse",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "aiTitleText",
+            "component": "span",
+            "props": {
+                "value": "AI Threat Guard Beta",
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "aiPromoDesc",
+            "component": "p",
+            "props": {
+                "value": "利用深度学习模型实时预测零日漏洞攻击，提升 40% 的响应速度。",
+                "className": "text-xs opacity-90 leading-relaxed"
+            }
+        },
+        {
+            "id": "aiPromoBtn",
+            "component": "Button",
+            "props": {
+                "value": "Enable Early Access",
+                "className": "mt-2 bg-white text-primary font-bold border-none"
+            }
+        },
+        {
+            "id": "footerSection",
+            "component": "div",
+            "props": {
+                "className": "h-16 px-gutter border-t border-divider flex items-center justify-between text-xs text-on-surface-variant"
+            },
+            "children": [
+                "footerLinks",
+                "copyrightText"
+            ]
+        },
+        {
+            "id": "footerLinks",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": {
+                "path": "/policyLinks",
+                "componentId": "footerLinkItem"
+            }
+        },
+        {
+            "id": "footerLinkItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "copyrightText",
+            "component": "span",
+            "props": {
+                "value": "© 2024 Enterprise Secure Solutions. All rights reserved."
+            }
+        }
+    ]
+}

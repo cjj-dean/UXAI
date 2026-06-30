@@ -1,0 +1,1063 @@
+{
+    "state": {
+        "sidebar": {
+            "brand": {
+                "logoIcon": "shield-check",
+                "brandName": "Security Gate"
+            },
+            "navItems": [
+                {
+                    "label": "Dashboard",
+                    "icon": "layout-dashboard",
+                    "isActive": false
+                },
+                {
+                    "label": "Security Audit",
+                    "icon": "file-search",
+                    "isActive": true
+                },
+                {
+                    "label": "Threat Detection",
+                    "icon": "zap",
+                    "isActive": false
+                },
+                {
+                    "label": "Access Control",
+                    "icon": "lock",
+                    "isActive": false
+                },
+                {
+                    "label": "System Settings",
+                    "icon": "settings",
+                    "isActive": false
+                }
+            ],
+            "currentUser": {
+                "userName": "Alex Chen",
+                "userRole": "Senior Security Engineer",
+                "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+        },
+        "header": {
+            "searchVal": "",
+            "searchPlaceholder": "Search audit logs (e.g. user:admin or action:delete)",
+            "langMenu": [
+                {
+                    "label": "English (EN)",
+                    "key": "en"
+                },
+                {
+                    "label": "中文 (ZH)",
+                    "key": "zh"
+                }
+            ]
+        },
+        "auditLogs": {
+            "title": "Audit Logs (操作审计日志)",
+            "description": "Track all administrative actions and security-sensitive events across the infrastructure.",
+            "filterDate": [],
+            "filterUser": "All Users",
+            "filterAction": "All Actions",
+            "filterStatus": "Success/Failed",
+            "dataSource": [
+                {
+                    "id": "log-001",
+                    "timestamp": "2023-10-27 14:20:05",
+                    "user": "John Doe",
+                    "action": "Delete Production DB",
+                    "resource": "RDS-Instance-01",
+                    "status": "Success",
+                    "statusType": "success"
+                },
+                {
+                    "id": "log-002",
+                    "timestamp": "2023-10-27 14:18:12",
+                    "user": "Jane Smith",
+                    "action": "Update IAM Policy",
+                    "resource": "Policy-Admin-Access",
+                    "status": "Warning",
+                    "statusType": "warning"
+                },
+                {
+                    "id": "log-003",
+                    "timestamp": "2023-10-27 13:45:30",
+                    "user": "John Doe",
+                    "action": "Export User List",
+                    "resource": "User-Table",
+                    "status": "Success",
+                    "statusType": "success"
+                },
+                {
+                    "id": "log-004",
+                    "timestamp": "2023-10-27 12:05:00",
+                    "user": "System",
+                    "action": "Auto-scaling Trigger",
+                    "resource": "ASG-Web-Cluster",
+                    "status": "Info",
+                    "statusType": "processing"
+                },
+                {
+                    "id": "log-005",
+                    "timestamp": "2023-10-27 11:30:22",
+                    "user": "Admin",
+                    "action": "Login Success",
+                    "resource": "Console",
+                    "status": "Success",
+                    "statusType": "success"
+                },
+                {
+                    "id": "log-006",
+                    "timestamp": "2023-10-27 10:15:45",
+                    "user": "Unknown",
+                    "action": "Failed Login Attempt",
+                    "resource": "SSH-Gateway",
+                    "status": "Failed",
+                    "statusType": "error"
+                },
+                {
+                    "id": "log-007",
+                    "timestamp": "2023-10-27 09:00:10",
+                    "user": "John Doe",
+                    "action": "Create S3 Bucket",
+                    "resource": "Logs-2023-Backup",
+                    "status": "Success",
+                    "statusType": "success"
+                },
+                {
+                    "id": "log-008",
+                    "timestamp": "2023-10-27 08:45:33",
+                    "user": "Jane Smith",
+                    "action": "Modify Security Group",
+                    "resource": "SG-Default-VPC",
+                    "status": "Success",
+                    "statusType": "success"
+                },
+                {
+                    "id": "log-009",
+                    "timestamp": "2023-10-27 08:20:15",
+                    "user": "Admin",
+                    "action": "Disable MFA",
+                    "resource": "User-JohnDoe",
+                    "status": "Critical",
+                    "statusType": "error"
+                },
+                {
+                    "id": "log-010",
+                    "timestamp": "2023-10-27 07:55:00",
+                    "user": "System",
+                    "action": "Certificate Renewal",
+                    "resource": "SSL-Wildcard",
+                    "status": "Success",
+                    "statusType": "success"
+                }
+            ],
+            "paginationText": "Showing 1 to 10 of 128 entries"
+        },
+        "drawer": {
+            "isOpen": true,
+            "eventId": "evt_8h2k9s1m0l5p",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+            "location": "San Francisco, US (IP: 192.168.1.105)",
+            "rawJson": "{\n  \"action\": \"iam.user.delete\",\n  \"actor\": {\n    \"id\": \"user_001\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@securitygate.io\"\n  },\n  \"request_metadata\": {\n    \"request_id\": \"req_f9a2b3c4\",\n    \"source_ip\": \"192.168.1.105\",\n    \"timestamp\": \"2023-10-27T14:20:05Z\"\n  }\n}",
+            "timelineData": [
+                {
+                    "time": "2023-10-27 14:20:00",
+                    "content": "Request initiated by John Doe",
+                    "icon": "circle-dot"
+                },
+                {
+                    "time": "2023-10-27 14:20:05",
+                    "content": "Action completed successfully",
+                    "icon": "check-circle"
+                }
+            ]
+        }
+    },
+    "rootId": "pageLayout",
+    "elements": [
+        {
+            "id": "pageLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper",
+                "detailDrawer"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col"
+            },
+            "children": [
+                "sideBrand",
+                "sideMenu",
+                "sideUser"
+            ]
+        },
+        {
+            "id": "sideBrand",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-inline"
+            },
+            "children": [
+                "brandIcon",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/sidebar/brand/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/sidebar/brand/brandName"
+                }
+            }
+        },
+        {
+            "id": "sideMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 px-inline py-stack flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/sidebar/navItems",
+                "componentId": "sideMenuItem"
+            }
+        },
+        {
+            "id": "sideMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-stack rounded-md cursor-pointer transition-colors"
+            },
+            "children": [
+                "sideMenuItemIcon",
+                "sideMenuItemLabel"
+            ]
+        },
+        {
+            "id": "sideMenuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sideMenuItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sideUser",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-t border-divider flex items-center gap-inline"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/sidebar/currentUser/avatarImage"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface truncate",
+                "value": {
+                    "path": "/sidebar/currentUser/userName"
+                }
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "/sidebar/currentUser/userRole"
+                }
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/header/searchVal"
+                },
+                "placeholder": {
+                    "path": "/header/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "actionBell",
+                "actionHelp",
+                "actionLang"
+            ]
+        },
+        {
+            "id": "actionBell",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "relative"
+            }
+        },
+        {
+            "id": "actionHelp",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "actionLang",
+            "component": "Dropdown",
+            "props": {
+                "menu": {
+                    "path": "/header/langMenu"
+                },
+                "trigger": [
+                    "click"
+                ]
+            },
+            "children": [
+                "langTrigger"
+            ]
+        },
+        {
+            "id": "langTrigger",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 cursor-pointer text-on-surface font-medium"
+            },
+            "children": [
+                "langIcon",
+                "langText",
+                "langChevron"
+            ]
+        },
+        {
+            "id": "langIcon",
+            "component": "Icon",
+            "props": {
+                "name": "globe",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "langText",
+            "component": "span",
+            "props": {
+                "value": "EN",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "langChevron",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter bg-surface-container-lowest"
+            },
+            "children": [
+                "contentHeader",
+                "filterBar",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "contentHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-gutter"
+            },
+            "children": [
+                "contentTitle",
+                "contentDesc"
+            ]
+        },
+        {
+            "id": "contentTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface mb-1",
+                "value": {
+                    "path": "/auditLogs/title"
+                }
+            }
+        },
+        {
+            "id": "contentDesc",
+            "component": "p",
+            "props": {
+                "className": "text-on-surface-variant text-md",
+                "value": {
+                    "path": "/auditLogs/description"
+                }
+            }
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-stack mb-gutter items-end"
+            },
+            "children": [
+                "filterDateBox",
+                "filterUserBox",
+                "filterActionBox",
+                "filterStatusBox"
+            ]
+        },
+        {
+            "id": "filterDateBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "filterDateLabel",
+                "filterDatePicker"
+            ]
+        },
+        {
+            "id": "filterDateLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-on-surface-variant",
+                "value": "Date Range"
+            }
+        },
+        {
+            "id": "filterDatePicker",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/auditLogs/filterDate"
+                },
+                "range": true,
+                "placeholder": [
+                    "Start",
+                    "End"
+                ],
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "filterUserBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "filterUserLabel",
+                "filterUserSelect"
+            ]
+        },
+        {
+            "id": "filterUserLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-on-surface-variant",
+                "value": "User (操作人)"
+            }
+        },
+        {
+            "id": "filterUserSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/auditLogs/filterUser"
+                },
+                "options": [
+                    {
+                        "label": "John Doe",
+                        "value": "John Doe"
+                    },
+                    {
+                        "label": "Jane Smith",
+                        "value": "Jane Smith"
+                    },
+                    {
+                        "label": "System",
+                        "value": "System"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterActionBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "filterActionLabel",
+                "filterActionSelect"
+            ]
+        },
+        {
+            "id": "filterActionLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-on-surface-variant",
+                "value": "Action Type"
+            }
+        },
+        {
+            "id": "filterActionSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/auditLogs/filterAction"
+                },
+                "options": [
+                    {
+                        "label": "Login",
+                        "value": "Login"
+                    },
+                    {
+                        "label": "Delete",
+                        "value": "Delete"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterStatusBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "filterStatusLabel",
+                "filterStatusSelect"
+            ]
+        },
+        {
+            "id": "filterStatusLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-on-surface-variant",
+                "value": "Status"
+            }
+        },
+        {
+            "id": "filterStatusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/auditLogs/filterStatus"
+                },
+                "options": [
+                    {
+                        "label": "Success",
+                        "value": "Success"
+                    },
+                    {
+                        "label": "Failed",
+                        "value": "Failed"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-stack"
+            },
+            "children": [
+                "auditTable",
+                "tableFooter"
+            ]
+        },
+        {
+            "id": "auditTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/auditLogs/dataSource"
+                },
+                "columns": [
+                    {
+                        "title": "Timestamp",
+                        "dataIndex": "timestamp",
+                        "width": 180
+                    },
+                    {
+                        "title": "User",
+                        "dataIndex": "user"
+                    },
+                    {
+                        "title": "Action",
+                        "dataIndex": "action"
+                    },
+                    {
+                        "title": "Resource",
+                        "dataIndex": "resource"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/auditLogs/dataSource",
+                "componentId": "auditTableRow"
+            }
+        },
+        {
+            "id": "auditTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellTime",
+                "cellUser",
+                "cellAction",
+                "cellResource",
+                "cellStatus"
+            ]
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "timestamp"
+                }
+            }
+        },
+        {
+            "id": "cellUser",
+            "component": "span",
+            "props": {
+                "className": "font-medium",
+                "value": {
+                    "path": "user"
+                }
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface",
+                "value": {
+                    "path": "action"
+                }
+            }
+        },
+        {
+            "id": "cellResource",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "resource"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "tableFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-stack flex justify-between items-center px-stack"
+            },
+            "children": [
+                "footerSummary"
+            ]
+        },
+        {
+            "id": "footerSummary",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/auditLogs/paginationText"
+                }
+            }
+        },
+        {
+            "id": "detailDrawer",
+            "component": "div",
+            "props": {
+                "className": "fixed right-0 top-0 h-full w-[400px] bg-surface-container-highest shadow-xl border-l border-divider flex flex-col z-50"
+            },
+            "children": [
+                "drawerHeader",
+                "drawerBody",
+                "drawerFooter"
+            ]
+        },
+        {
+            "id": "drawerHeader",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "drawerTitle",
+                "drawerClose"
+            ]
+        },
+        {
+            "id": "drawerTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": "Log Details"
+            }
+        },
+        {
+            "id": "drawerClose",
+            "component": "Button",
+            "props": {
+                "icon": "x",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "drawerBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-section"
+            },
+            "children": [
+                "summarySection",
+                "payloadSection",
+                "timelineSection"
+            ]
+        },
+        {
+            "id": "summarySection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "summaryLabel",
+                "summaryList"
+            ]
+        },
+        {
+            "id": "summaryLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-primary tracking-wider uppercase",
+                "value": "Action Summary"
+            }
+        },
+        {
+            "id": "summaryList",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-stack rounded-lg flex flex-col gap-3"
+            },
+            "children": [
+                "sumItem1",
+                "sumItem2",
+                "sumItem3"
+            ]
+        },
+        {
+            "id": "sumItem1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "sumKey1",
+                "sumVal1"
+            ]
+        },
+        {
+            "id": "sumKey1",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Event ID"
+            }
+        },
+        {
+            "id": "sumVal1",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-mono",
+                "value": {
+                    "path": "/drawer/eventId"
+                }
+            }
+        },
+        {
+            "id": "sumItem2",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "sumKey2",
+                "sumVal2"
+            ]
+        },
+        {
+            "id": "sumKey2",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "User Agent"
+            }
+        },
+        {
+            "id": "sumVal2",
+            "component": "span",
+            "props": {
+                "className": "text-xs break-all leading-relaxed",
+                "value": {
+                    "path": "/drawer/userAgent"
+                }
+            }
+        },
+        {
+            "id": "sumItem3",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "sumKey3",
+                "sumVal3"
+            ]
+        },
+        {
+            "id": "sumKey3",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Location"
+            }
+        },
+        {
+            "id": "sumVal3",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "/drawer/location"
+                }
+            }
+        },
+        {
+            "id": "payloadSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "payloadLabel",
+                "payloadCode"
+            ]
+        },
+        {
+            "id": "payloadLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-primary tracking-wider uppercase",
+                "value": "Raw JSON Payload"
+            }
+        },
+        {
+            "id": "payloadCode",
+            "component": "pre",
+            "props": {
+                "className": "bg-on-surface text-surface text-xs p-stack rounded-lg overflow-x-auto font-mono leading-normal",
+                "value": {
+                    "path": "/drawer/rawJson"
+                }
+            }
+        },
+        {
+            "id": "timelineSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "timelineLabel",
+                "timelineComp"
+            ]
+        },
+        {
+            "id": "timelineLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-primary tracking-wider uppercase",
+                "value": "Timeline"
+            }
+        },
+        {
+            "id": "timelineComp",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical"
+            },
+            "children": {
+                "path": "/drawer/timelineData",
+                "componentId": "timelineItem"
+            }
+        },
+        {
+            "id": "timelineItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "time"
+                },
+                "content": {
+                    "componentId": "timelineContent"
+                },
+                "icon": {
+                    "path": "icon"
+                }
+            }
+        },
+        {
+            "id": "timelineContent",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface",
+                "value": {
+                    "path": "content"
+                }
+            }
+        },
+        {
+            "id": "drawerFooter",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-t border-divider"
+            },
+            "children": [
+                "copyBtn"
+            ]
+        },
+        {
+            "id": "copyBtn",
+            "component": "Button",
+            "props": {
+                "value": "Copy Event URL",
+                "color": "primary",
+                "icon": "copy",
+                "iconPlacement": "start",
+                "className": "w-full"
+            }
+        }
+    ]
+}

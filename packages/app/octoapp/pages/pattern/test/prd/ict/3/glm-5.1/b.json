@@ -1,0 +1,1174 @@
+{
+  "state": {
+    "brandName": "iMaster MAE",
+    "moduleName": "NOC Spirit",
+    "currentLanguage": "CN",
+    "userName": "User1",
+    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "kpiMetrics": [
+      {
+        "metricName": "平均故障时长",
+        "metricValue": "2.5h",
+        "trendIcon": "trending-down",
+        "changePercentage": "-5.2%",
+        "comparisonDesc": "较上周",
+        "trendColor": "success"
+      },
+      {
+        "metricName": "最大故障时长",
+        "metricValue": "12.3h",
+        "trendIcon": "trending-up",
+        "changePercentage": "+1.8%",
+        "comparisonDesc": "较上周",
+        "trendColor": "error"
+      },
+      {
+        "metricName": "最小故障时长",
+        "metricValue": "0.2h",
+        "trendIcon": "trending-down",
+        "changePercentage": "-15%",
+        "comparisonDesc": "较上周",
+        "trendColor": "success"
+      },
+      {
+        "metricName": "诊断成功率",
+        "metricValue": "94.8%",
+        "trendIcon": "trending-up",
+        "changePercentage": "+2.1%",
+        "comparisonDesc": "较上周",
+        "trendColor": "success"
+      }
+    ],
+    "diagnosisRecords": [
+      {
+        "recordId": "INC20231024001",
+        "detailLink": "#/diagnosis/detail/001",
+        "diagnosisTime": "2023-10-24 09:15:32",
+        "neName": "NE-SW-Beijing-01",
+        "incidentTitle": "端口 GE0/0/1 链路异常中断",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      },
+      {
+        "recordId": "INC20231024002",
+        "detailLink": "#/diagnosis/detail/002",
+        "diagnosisTime": "2023-10-24 09:18:45",
+        "neName": "NE-RT-Shanghai-03",
+        "incidentTitle": "BGP 邻居建立失败导致路由震荡",
+        "statusIcon": "loader",
+        "statusColor": "warning"
+      },
+      {
+        "recordId": "INC20231024003",
+        "detailLink": "#/diagnosis/detail/003",
+        "diagnosisTime": "2023-10-24 09:22:10",
+        "neName": "NE-AP-Guangzhou-12",
+        "incidentTitle": "AP 射频干扰导致丢包率过高",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      },
+      {
+        "recordId": "INC20231024004",
+        "detailLink": "#/diagnosis/detail/004",
+        "diagnosisTime": "2023-10-24 09:25:05",
+        "neName": "NE-FW-Shenzhen-02",
+        "incidentTitle": "防火墙策略拦截正常业务流量",
+        "statusIcon": "alert-triangle",
+        "statusColor": "warning"
+      },
+      {
+        "recordId": "INC20231024005",
+        "detailLink": "#/diagnosis/detail/005",
+        "diagnosisTime": "2023-10-24 09:30:22",
+        "neName": "NE-SW-Chengdu-04",
+        "incidentTitle": "OSPF 邻居状态频繁切换",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      },
+      {
+        "recordId": "INC20231024006",
+        "detailLink": "#/diagnosis/detail/006",
+        "diagnosisTime": "2023-10-24 09:35:18",
+        "neName": "NE-AC-Hangzhou-01",
+        "incidentTitle": "WAC 下发配置超时失败",
+        "statusIcon": "loader",
+        "statusColor": "warning"
+      },
+      {
+        "recordId": "INC20231024007",
+        "detailLink": "#/diagnosis/detail/007",
+        "diagnosisTime": "2023-10-24 09:42:55",
+        "neName": "NE-RR-Nanjing-02",
+        "incidentTitle": "CPU 利用率超过阈值 95%",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      },
+      {
+        "recordId": "INC20231024008",
+        "detailLink": "#/diagnosis/detail/008",
+        "diagnosisTime": "2023-10-24 09:48:30",
+        "neName": "NE-CE-Wuhan-01",
+        "incidentTitle": "光模块接收光功率过低",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      },
+      {
+        "recordId": "INC20231024009",
+        "detailLink": "#/diagnosis/detail/009",
+        "diagnosisTime": "2023-10-24 09:55:12",
+        "neName": "NE-PE-Xian-03",
+        "incidentTitle": "L2VPN 状态变为 Down",
+        "statusIcon": "alert-triangle",
+        "statusColor": "warning"
+      },
+      {
+        "recordId": "INC20231024010",
+        "detailLink": "#/diagnosis/detail/010",
+        "diagnosisTime": "2023-10-24 10:01:08",
+        "neName": "NE-DC-Beijing-02",
+        "incidentTitle": "存储设备磁盘阵列重建异常",
+        "statusIcon": "check-circle",
+        "statusColor": "success"
+      }
+    ]
+  },
+  "rootId": "pageContainer",
+  "elements": [
+    {
+      "id": "pageContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "globalNav",
+        "breadcrumbSection",
+        "mainContent"
+      ]
+    },
+    {
+      "id": "globalNav",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-6 h-14 bg-inverse-surface shadow-md"
+      },
+      "children": [
+        "globalNavLeft",
+        "globalNavRight"
+      ]
+    },
+    {
+      "id": "globalNavLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "navBrandIcon",
+        "navBrandName",
+        "navDividerSpan",
+        "navModuleName"
+      ]
+    },
+    {
+      "id": "navBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": "activity",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "navBrandName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandName"
+        },
+        "className": "text-lg font-bold text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navDividerSpan",
+      "component": "span",
+      "props": {
+        "className": "w-px h-5 bg-inverse-on-surface-variant",
+        "value": "/"
+      }
+    },
+    {
+      "id": "navModuleName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/moduleName"
+        },
+        "className": "text-sm text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "globalNavRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "navLangBtn",
+        "navUserDropdown"
+      ]
+    },
+    {
+      "id": "navLangBtn",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-md cursor-pointer hover:bg-inverse-on-surface-variant"
+      },
+      "children": [
+        "navLangIcon",
+        "navLangText"
+      ]
+    },
+    {
+      "id": "navLangIcon",
+      "component": "Icon",
+      "props": {
+        "name": "globe",
+        "color": "inverse",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "navLangText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/currentLanguage"
+        },
+        "className": "text-sm text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": [
+          {
+            "label": "个人中心",
+            "key": "profile",
+            "icon": "user"
+          },
+          {
+            "label": "系统设置",
+            "key": "settings",
+            "icon": "settings"
+          },
+          {
+            "label": "退出登录",
+            "key": "logout",
+            "icon": "log-out"
+          }
+        ]
+      },
+      "children": [
+        "navUserTrigger"
+      ]
+    },
+    {
+      "id": "navUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "navUserAvatar",
+        "navUserNameSpan",
+        "navUserChevronIcon"
+      ]
+    },
+    {
+      "id": "navUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userAvatarImage"
+        },
+        "className": "w-8 h-8 rounded-full object-cover",
+        "alt": "User Avatar"
+      }
+    },
+    {
+      "id": "navUserNameSpan",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-sm text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navUserChevronIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "inverse",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "breadcrumbSection",
+      "component": "div",
+      "props": {
+        "className": "px-6 py-2.5 bg-surface-container-highest"
+      },
+      "children": [
+        "breadcrumbComponent"
+      ]
+    },
+    {
+      "id": "breadcrumbComponent",
+      "component": "Breadcrumb",
+      "props": {
+        "separator": "/",
+        "items": [
+          {
+            "title": {
+              "componentId": "breadcrumbItem1Slot"
+            }
+          },
+          {
+            "title": {
+              "componentId": "breadcrumbItem2Slot"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "breadcrumbItem1Slot",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "breadcrumbItem1Icon",
+        "breadcrumbItem1Text"
+      ]
+    },
+    {
+      "id": "breadcrumbItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "home",
+        "color": "primary",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "breadcrumbItem1Text",
+      "component": "span",
+      "props": {
+        "value": "NOC Spirit",
+        "className": "text-sm text-primary"
+      }
+    },
+    {
+      "id": "breadcrumbItem2Slot",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "breadcrumbItem2Icon",
+        "breadcrumbItem2Text"
+      ]
+    },
+    {
+      "id": "breadcrumbItem2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-dashboard",
+        "color": "default",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "breadcrumbItem2Text",
+      "component": "span",
+      "props": {
+        "value": "首页",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainContent",
+      "component": "div",
+      "props": {
+        "className": "flex gap-6 p-6 flex-1 min-h-0 items-stretch"
+      },
+      "children": [
+        "leftColumn",
+        "rightColumn"
+      ]
+    },
+    {
+      "id": "leftColumn",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0 flex flex-col gap-6"
+      },
+      "children": [
+        "faultOverviewCard",
+        "historicalCard"
+      ]
+    },
+    {
+      "id": "faultOverviewCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-5"
+      },
+      "children": [
+        "faultOverviewHeader",
+        "faultOverviewCharts"
+      ]
+    },
+    {
+      "id": "faultOverviewHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "faultOverviewTitleIcon",
+        "faultOverviewTitle"
+      ]
+    },
+    {
+      "id": "faultOverviewTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield-alert",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "faultOverviewTitle",
+      "component": "span",
+      "props": {
+        "value": "故障总览",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "faultOverviewCharts",
+      "component": "div",
+      "props": {
+        "className": "flex gap-4 items-stretch"
+      },
+      "children": [
+        "processingSection",
+        "completionSection",
+        "faultTypeSection"
+      ]
+    },
+    {
+      "id": "processingSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center w-[200px] shrink-0 bg-surface-variant rounded-lg p-3"
+      },
+      "children": [
+        "processingChartLabel",
+        "processingChart"
+      ]
+    },
+    {
+      "id": "processingChartLabel",
+      "component": "span",
+      "props": {
+        "value": "故障处理状态",
+        "className": "text-xs font-medium text-on-surface-variant mb-2"
+      }
+    },
+    {
+      "id": "processingChart",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "data": [
+            {
+              "value": 15,
+              "name": "诊断中"
+            },
+            {
+              "value": 82,
+              "name": "完成"
+            }
+          ],
+          "color": [
+            "#f59e0b",
+            "#10b981"
+          ],
+          "title": {
+            "text": "97",
+            "subtext": "总计"
+          },
+          "label": {
+            "show": false
+          }
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "completionSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center w-[200px] shrink-0 bg-surface-variant rounded-lg p-3"
+      },
+      "children": [
+        "completionChartLabel",
+        "completionChart"
+      ]
+    },
+    {
+      "id": "completionChartLabel",
+      "component": "span",
+      "props": {
+        "value": "诊断完成状态",
+        "className": "text-xs font-medium text-on-surface-variant mb-2"
+      }
+    },
+    {
+      "id": "completionChart",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "data": [
+            {
+              "value": 75,
+              "name": "诊断成功"
+            },
+            {
+              "value": 7,
+              "name": "诊断失败"
+            }
+          ],
+          "color": [
+            "#3b82f6",
+            "#ef4444"
+          ],
+          "title": {
+            "text": "82",
+            "subtext": "总计"
+          },
+          "label": {
+            "show": false
+          }
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "faultTypeSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1 min-w-0 bg-surface-variant rounded-lg p-3"
+      },
+      "children": [
+        "faultTypeChartLabel",
+        "faultTypeChart"
+      ]
+    },
+    {
+      "id": "faultTypeChartLabel",
+      "component": "span",
+      "props": {
+        "value": "故障类型",
+        "className": "text-xs font-medium text-on-surface-variant mb-2"
+      }
+    },
+    {
+      "id": "faultTypeChart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "direction": "horizontal",
+          "data": [
+            {
+              "类型": "硬件故障",
+              "数量": 45
+            },
+            {
+              "类型": "软件异常",
+              "数量": 32
+            },
+            {
+              "类型": "光功率越限",
+              "数量": 28
+            },
+            {
+              "类型": "链路中断",
+              "数量": 22
+            },
+            {
+              "类型": "配置错误",
+              "数量": 15
+            },
+            {
+              "类型": "性能劣化",
+              "数量": 8
+            }
+          ],
+          "xAxis": {
+            "data": "类型"
+          },
+          "yAxisTitle": "数量",
+          "color": [
+            "#2070F3"
+          ]
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "historicalCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex-1 flex flex-col"
+      },
+      "children": [
+        "historicalHeader",
+        "kpiRow",
+        "chartRow"
+      ]
+    },
+    {
+      "id": "historicalHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "historicalTitleIcon",
+        "historicalTitle"
+      ]
+    },
+    {
+      "id": "historicalTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "history",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "historicalTitle",
+      "component": "span",
+      "props": {
+        "value": "历史故障",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "kpiRow",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-3 mb-4"
+      },
+      "children": {
+        "path": "/kpiMetrics",
+        "componentId": "kpiCard"
+      }
+    },
+    {
+      "id": "kpiCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-variant rounded-lg p-3 flex flex-col gap-1.5"
+      },
+      "children": [
+        "kpiCardName",
+        "kpiCardValue",
+        "kpiCardTrend"
+      ]
+    },
+    {
+      "id": "kpiCardName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricName"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCardValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "metricValue"
+        },
+        "className": "text-xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "kpiCardTrend",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "kpiCardTrendIcon",
+        "kpiCardChangeText",
+        "kpiCardComparisonText"
+      ]
+    },
+    {
+      "id": "kpiCardTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "trendIcon"
+        },
+        "color": {
+          "path": "trendColor"
+        },
+        "className": "w-3.5 h-3.5"
+      }
+    },
+    {
+      "id": "kpiCardChangeText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "changePercentage"
+        },
+        "className": "text-xs font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "kpiCardComparisonText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "comparisonDesc"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "chartRow",
+      "component": "div",
+      "props": {
+        "className": "flex gap-4 flex-1 min-h-0"
+      },
+      "children": [
+        "countChartSection",
+        "durationChartSection"
+      ]
+    },
+    {
+      "id": "countChartSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0 flex flex-col"
+      },
+      "children": [
+        "countChartTitle",
+        "countChart"
+      ]
+    },
+    {
+      "id": "countChartTitle",
+      "component": "span",
+      "props": {
+        "value": "数量统计",
+        "className": "text-xs font-medium text-on-surface-variant mb-2"
+      }
+    },
+    {
+      "id": "countChart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "type": "stack",
+          "data": [
+            {
+              "日期": "10-01",
+              "紧急": 5,
+              "重要": 12,
+              "一般": 20
+            },
+            {
+              "日期": "10-02",
+              "紧急": 3,
+              "重要": 8,
+              "一般": 15
+            },
+            {
+              "日期": "10-03",
+              "紧急": 8,
+              "重要": 14,
+              "一般": 22
+            },
+            {
+              "日期": "10-04",
+              "紧急": 2,
+              "重要": 6,
+              "一般": 11
+            },
+            {
+              "日期": "10-05",
+              "紧急": 6,
+              "重要": 10,
+              "一般": 18
+            },
+            {
+              "日期": "10-06",
+              "紧急": 4,
+              "重要": 9,
+              "一般": 16
+            },
+            {
+              "日期": "10-07",
+              "紧急": 7,
+              "重要": 11,
+              "一般": 19
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "数量",
+          "color": [
+            "#E02128",
+            "#F4840C",
+            "#0067D1"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "durationChartSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0 flex flex-col"
+      },
+      "children": [
+        "durationChartTitle",
+        "durationChart"
+      ]
+    },
+    {
+      "id": "durationChartTitle",
+      "component": "span",
+      "props": {
+        "value": "处理时长统计",
+        "className": "text-xs font-medium text-on-surface-variant mb-2"
+      }
+    },
+    {
+      "id": "durationChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "area": true,
+          "smooth": true,
+          "data": [
+            {
+              "日期": "10-01",
+              "平均时长": 2.8,
+              "最大时长": 6.5
+            },
+            {
+              "日期": "10-02",
+              "平均时长": 2.2,
+              "最大时长": 5.1
+            },
+            {
+              "日期": "10-03",
+              "平均时长": 3.5,
+              "最大时长": 8.2
+            },
+            {
+              "日期": "10-04",
+              "平均时长": 1.9,
+              "最大时长": 4.2
+            },
+            {
+              "日期": "10-05",
+              "平均时长": 2.6,
+              "最大时长": 7.4
+            },
+            {
+              "日期": "10-06",
+              "平均时长": 2.4,
+              "最大时长": 5.9
+            },
+            {
+              "日期": "10-07",
+              "平均时长": 3.1,
+              "最大时长": 6.8
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "时长",
+          "color": [
+            "#2070F3",
+            "#F69E39"
+          ]
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "rightColumn",
+      "component": "div",
+      "props": {
+        "className": "w-[380px] shrink-0 flex flex-col min-h-0"
+      },
+      "children": [
+        "manualDiagCard"
+      ]
+    },
+    {
+      "id": "manualDiagCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-5 flex flex-col h-full min-h-0"
+      },
+      "children": [
+        "manualDiagHeader",
+        "manualDiagList"
+      ]
+    },
+    {
+      "id": "manualDiagHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4 shrink-0"
+      },
+      "children": [
+        "manualDiagTitleIcon",
+        "manualDiagTitle"
+      ]
+    },
+    {
+      "id": "manualDiagTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clipboard-list",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "manualDiagTitle",
+      "component": "span",
+      "props": {
+        "value": "人工诊断记录",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "manualDiagList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-2.5 flex-1 overflow-y-auto min-h-0 pr-1"
+      },
+      "children": {
+        "path": "/diagnosisRecords",
+        "componentId": "recordItem"
+      }
+    },
+    {
+      "id": "recordItem",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-variant rounded-lg p-3.5 flex flex-col gap-2"
+      },
+      "children": [
+        "recordTop",
+        "recordMeta"
+      ]
+    },
+    {
+      "id": "recordTop",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "recordIdWrap",
+        "recordDetailLink"
+      ]
+    },
+    {
+      "id": "recordIdWrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "recordStatusIcon",
+        "recordIdText"
+      ]
+    },
+    {
+      "id": "recordStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "statusIcon"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "shape": "circle",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "recordIdText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "recordId"
+        },
+        "className": "text-sm font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "recordDetailLink",
+      "component": "a",
+      "props": {
+        "href": {
+          "path": "detailLink"
+        },
+        "value": "查看详情",
+        "className": "text-xs text-primary hover:underline"
+      }
+    },
+    {
+      "id": "recordMeta",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1 pl-6"
+      },
+      "children": [
+        "recordTimeRow",
+        "recordNeRow",
+        "recordTitleRow"
+      ]
+    },
+    {
+      "id": "recordTimeRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "recordTimeIcon",
+        "recordTimeText"
+      ]
+    },
+    {
+      "id": "recordTimeIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "default",
+        "className": "w-3 h-3"
+      }
+    },
+    {
+      "id": "recordTimeText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "diagnosisTime"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "recordNeRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "recordNeIcon",
+        "recordNeText"
+      ]
+    },
+    {
+      "id": "recordNeIcon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "default",
+        "className": "w-3 h-3"
+      }
+    },
+    {
+      "id": "recordNeText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "neName"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "recordTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-start gap-1.5"
+      },
+      "children": [
+        "recordTitleIcon",
+        "recordTitleText"
+      ]
+    },
+    {
+      "id": "recordTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "file-text",
+        "color": "default",
+        "className": "w-3 h-3 mt-0.5 shrink-0"
+      }
+    },
+    {
+      "id": "recordTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "incidentTitle"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    }
+  ]
+}

@@ -1,0 +1,960 @@
+{
+    "state": {
+        "brandName": "HRConnect Pro",
+        "logoImage": "https://picsum.photos/seed/hr-logo/200/200",
+        "menuItems": [
+            {
+                "label": "控制台",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "考勤管理",
+                "icon": "clock",
+                "isActive": false
+            },
+            {
+                "label": "请假与调休管理",
+                "icon": "calendar-off",
+                "isActive": true
+            },
+            {
+                "label": "员工档案",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "薪酬福利",
+                "icon": "wallet",
+                "isActive": false
+            }
+        ],
+        "searchPlaceholder": "搜索员工、申请单号...",
+        "notificationCount": 12,
+        "currentUser": {
+            "userName": "张晓明",
+            "role": "HR 经理",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "pageHeader": {
+            "title": "请假与调休管理",
+            "description": "查看、审批并管理全公司员工的请假申请及调休额度。",
+            "actionButtonText": "申请假期"
+        },
+        "statistics": [
+            {
+                "title": "年假消耗",
+                "usedDays": 12,
+                "totalDays": 20,
+                "unit": "天",
+                "progress": 60,
+                "statusColor": "#0067D1"
+            },
+            {
+                "title": "病假统计",
+                "usedDays": 3,
+                "totalDays": 10,
+                "unit": "天",
+                "progress": 30,
+                "statusColor": "#E02128"
+            },
+            {
+                "title": "事假统计",
+                "usedDays": 5,
+                "totalDays": 15,
+                "unit": "天",
+                "progress": 33,
+                "statusColor": "#F4840C"
+            },
+            {
+                "title": "团队建议",
+                "suggestionText": "研发部本周有 15% 成员休假，建议暂缓非紧急项目发布。",
+                "suggestionIcon": "lightbulb"
+            }
+        ],
+        "requests": [
+            {
+                "id": "REQ-001",
+                "employeeName": "李青",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "type": "年假",
+                "start": "2024-05-21",
+                "end": "2024-05-23",
+                "duration": "3天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-002",
+                "employeeName": "王芳",
+                "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+                "type": "病假",
+                "start": "2024-05-20",
+                "end": "2024-05-20",
+                "duration": "1天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-003",
+                "employeeName": "赵雷",
+                "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+                "type": "事假",
+                "start": "2024-05-25",
+                "end": "2024-05-26",
+                "duration": "2天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-004",
+                "employeeName": "孙悦",
+                "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+                "type": "调休",
+                "start": "2024-05-22",
+                "end": "2024-05-22",
+                "duration": "0.5天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-005",
+                "employeeName": "周杰",
+                "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+                "type": "年假",
+                "start": "2024-06-01",
+                "end": "2024-06-05",
+                "duration": "5天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-006",
+                "employeeName": "吴敏",
+                "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+                "type": "产假",
+                "start": "2024-06-10",
+                "end": "2024-09-10",
+                "duration": "92天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-007",
+                "employeeName": "郑强",
+                "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+                "type": "事假",
+                "start": "2024-05-21",
+                "end": "2024-05-21",
+                "duration": "1天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-008",
+                "employeeName": "冯雪",
+                "avatar": "https://randomuser.me/api/portraits/women/8.jpg",
+                "type": "年假",
+                "start": "2024-05-28",
+                "end": "2024-05-30",
+                "duration": "3天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-009",
+                "employeeName": "陈坤",
+                "avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+                "type": "调休",
+                "start": "2024-05-20",
+                "end": "2024-05-20",
+                "duration": "1天",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "REQ-010",
+                "employeeName": "褚卫",
+                "avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+                "type": "病假",
+                "start": "2024-05-22",
+                "end": "2024-05-23",
+                "duration": "2天",
+                "status": "待审批",
+                "statusType": "warning"
+            }
+        ],
+        "footer": {
+            "currentDate": "2024年5月20日",
+            "summaryText": "研发部今日状态：3人休假，2人调休，部门整体出勤率 92%。"
+        },
+        "timelineData": [
+            {
+                "nodeName": "直接主管审批",
+                "status": "已通过",
+                "operator": "王经理",
+                "time": "2024-05-19 14:00",
+                "icon": "check",
+                "color": "success"
+            },
+            {
+                "nodeName": "HR 总监审核",
+                "status": "审批中",
+                "operator": "张晓明",
+                "time": "进行中",
+                "icon": "clock",
+                "color": "primary"
+            },
+            {
+                "nodeName": "行政终审",
+                "status": "待开始",
+                "operator": "刘副总",
+                "time": "-",
+                "icon": "circle",
+                "color": "default"
+            }
+        ]
+    },
+    "rootId": "hrAppLayout",
+    "elements": [
+        {
+            "id": "hrAppLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sideNavContainer",
+                "mainContentWrapper"
+            ]
+        },
+        {
+            "id": "sideNavContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sideNavLogo",
+                "sideNavMenu"
+            ]
+        },
+        {
+            "id": "sideNavLogo",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-3"
+            },
+            "children": [
+                "sideNavLogoImg",
+                "sideNavLogoText"
+            ]
+        },
+        {
+            "id": "sideNavLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/logoImage"
+                },
+                "className": "w-8 h-8 rounded-lg"
+            }
+        },
+        {
+            "id": "sideNavLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "sideNavMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-inline py-stack flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sideNavMenuItem"
+            }
+        },
+        {
+            "id": "sideNavMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action transition-colors cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sideNavMenuIcon",
+                "sideNavMenuLabel"
+            ]
+        },
+        {
+            "id": "sideNavMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sideNavMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "globalHeader",
+                "scrollableContent"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerNotify",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerNotify",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "relative"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "headerUserAvatar",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerUserName",
+                "headerUserRole"
+            ]
+        },
+        {
+            "id": "headerUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "headerUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "scrollableContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "pageHeaderSection",
+                "statsGrid",
+                "tableSection",
+                "footerSection"
+            ]
+        },
+        {
+            "id": "pageHeaderSection",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "pageHeaderTitleArea",
+                "pageHeaderAction"
+            ]
+        },
+        {
+            "id": "pageHeaderTitleArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "pageHeaderTitle",
+                "pageHeaderDesc"
+            ]
+        },
+        {
+            "id": "pageHeaderTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/pageHeader/title"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pageHeaderDesc",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/pageHeader/description"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "pageHeaderAction",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/pageHeader/actionButtonText"
+                },
+                "color": "primary",
+                "icon": "plus-circle",
+                "iconPlacement": "start",
+                "size": "large"
+            }
+        },
+        {
+            "id": "statsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": [
+                "statCard1",
+                "statCard2",
+                "statCard3",
+                "adviceCard"
+            ]
+        },
+        {
+            "id": "statCard1",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "statTitle1",
+                "statProgress1",
+                "statDetail1"
+            ]
+        },
+        {
+            "id": "statTitle1",
+            "component": "span",
+            "props": {
+                "value": "年假消耗",
+                "className": "text-sm font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statProgress1",
+            "component": "Progress",
+            "props": {
+                "percent": 60,
+                "strokeColor": "#0067D1",
+                "size": "small"
+            }
+        },
+        {
+            "id": "statDetail1",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "statValue1",
+                "statUnit1"
+            ]
+        },
+        {
+            "id": "statValue1",
+            "component": "span",
+            "props": {
+                "value": "12 / 20",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "statUnit1",
+            "component": "span",
+            "props": {
+                "value": "天",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statCard2",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "statTitle2",
+                "statProgress2",
+                "statDetail2"
+            ]
+        },
+        {
+            "id": "statTitle2",
+            "component": "span",
+            "props": {
+                "value": "病假统计",
+                "className": "text-sm font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statProgress2",
+            "component": "Progress",
+            "props": {
+                "percent": 30,
+                "strokeColor": "#E02128",
+                "size": "small"
+            }
+        },
+        {
+            "id": "statDetail2",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "statValue2",
+                "statUnit2"
+            ]
+        },
+        {
+            "id": "statValue2",
+            "component": "span",
+            "props": {
+                "value": "3 / 10",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "statUnit2",
+            "component": "span",
+            "props": {
+                "value": "天",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statCard3",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "statTitle3",
+                "statProgress3",
+                "statDetail3"
+            ]
+        },
+        {
+            "id": "statTitle3",
+            "component": "span",
+            "props": {
+                "value": "事假统计",
+                "className": "text-sm font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statProgress3",
+            "component": "Progress",
+            "props": {
+                "percent": 33,
+                "strokeColor": "#F4840C",
+                "size": "small"
+            }
+        },
+        {
+            "id": "statDetail3",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "statValue3",
+                "statUnit3"
+            ]
+        },
+        {
+            "id": "statValue3",
+            "component": "span",
+            "props": {
+                "value": "5 / 15",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "statUnit3",
+            "component": "span",
+            "props": {
+                "value": "天",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "adviceCard",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container p-inset rounded-container flex items-start gap-3"
+            },
+            "children": [
+                "adviceIcon",
+                "adviceText"
+            ]
+        },
+        {
+            "id": "adviceIcon",
+            "component": "Icon",
+            "props": {
+                "name": "lightbulb",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-6 h-6 shrink-0"
+            }
+        },
+        {
+            "id": "adviceText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/statistics/3/suggestionText"
+                },
+                "className": "text-sm text-on-primary-container leading-relaxed"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "tableTitle",
+                "approvalTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h2",
+            "props": {
+                "value": "待处理申请",
+                "className": "text-lg font-bold mb-gutter"
+            }
+        },
+        {
+            "id": "approvalTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/requests"
+                },
+                "columns": [
+                    {
+                        "title": "员工姓名",
+                        "dataIndex": "employeeName"
+                    },
+                    {
+                        "title": "请假类型",
+                        "dataIndex": "type"
+                    },
+                    {
+                        "title": "开始时间",
+                        "dataIndex": "start"
+                    },
+                    {
+                        "title": "结束时间",
+                        "dataIndex": "end"
+                    },
+                    {
+                        "title": "时长",
+                        "dataIndex": "duration"
+                    },
+                    {
+                        "title": "当前状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 120,
+                        "align": "center"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/requests",
+                "componentId": "approvalTableRow"
+            }
+        },
+        {
+            "id": "approvalTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellType",
+                "cellStart",
+                "cellEnd",
+                "cellDuration",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "cellAvatar",
+                "cellNameText"
+            ]
+        },
+        {
+            "id": "cellAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "cellNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "employeeName"
+                }
+            }
+        },
+        {
+            "id": "cellType",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellStart",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "start"
+                }
+            }
+        },
+        {
+            "id": "cellEnd",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "end"
+                }
+            }
+        },
+        {
+            "id": "cellDuration",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "duration"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "warning"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2 justify-center"
+            },
+            "children": [
+                "btnApprove",
+                "btnReject"
+            ]
+        },
+        {
+            "id": "btnApprove",
+            "component": "Button",
+            "props": {
+                "icon": "check-circle-2",
+                "size": "small",
+                "color": "primary",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "btnReject",
+            "component": "Button",
+            "props": {
+                "icon": "x-circle",
+                "size": "small",
+                "color": "danger",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "footerSection",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center py-stack border-t border-divider mt-auto"
+            },
+            "children": [
+                "footerDate",
+                "footerSummary"
+            ]
+        },
+        {
+            "id": "footerDate",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-on-surface-variant"
+            },
+            "children": [
+                "footerDateIcon",
+                "footerDateText"
+            ]
+        },
+        {
+            "id": "footerDateIcon",
+            "component": "Icon",
+            "props": {
+                "name": "calendar",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "footerDateText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/footer/currentDate"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "footerSummary",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-primary font-medium"
+            },
+            "children": [
+                "footerSummaryIcon",
+                "footerSummaryText"
+            ]
+        },
+        {
+            "id": "footerSummaryIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "footerSummaryText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/footer/summaryText"
+                },
+                "className": "text-sm"
+            }
+        }
+    ]
+}

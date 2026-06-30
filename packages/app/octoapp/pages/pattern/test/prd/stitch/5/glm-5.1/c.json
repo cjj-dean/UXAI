@@ -1,0 +1,1406 @@
+{
+    "state": {
+      "searchValue": "",
+      "zoomPercentage": "85%"
+    },
+    "rootId": "pageContainer",
+    "elements": [
+      {
+        "id": "pageContainer",
+        "component": "div",
+        "props": {
+          "className": "flex h-screen overflow-hidden bg-surface-container-lowest"
+        },
+        "children": [
+          "sidebarContainer",
+          "mainArea"
+        ]
+      },
+      {
+        "id": "sidebarContainer",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col w-56 shrink-0 bg-surface-container-highest shadow-sm border-r border-divider"
+        },
+        "children": [
+          "sidebarBrandArea",
+          "sidebarQuickArea",
+          "sidebarMenuArea",
+          "sidebarSpacer",
+          "sidebarBottomDivider",
+          "sidebarBottomArea"
+        ]
+      },
+      {
+        "id": "sidebarBrandArea",
+        "component": "div",
+        "props": {
+          "className": "px-4 pt-5 pb-3"
+        },
+        "children": [
+          "sidebarBrandAdmin",
+          "sidebarBrandTier"
+        ]
+      },
+      {
+        "id": "sidebarBrandAdmin",
+        "component": "span",
+        "props": {
+          "className": "block text-sm font-bold text-on-surface",
+          "value": "Admin Console"
+        }
+      },
+      {
+        "id": "sidebarBrandTier",
+        "component": "span",
+        "props": {
+          "className": "block text-xs text-on-surface-variant mt-0.5",
+          "value": "Enterprise Tier"
+        }
+      },
+      {
+        "id": "sidebarQuickArea",
+        "component": "div",
+        "props": {
+          "className": "px-3 mb-3"
+        },
+        "children": [
+          "sidebarAddDeptBtn"
+        ]
+      },
+      {
+        "id": "sidebarAddDeptBtn",
+        "component": "Button",
+        "props": {
+          "value": "+ Add Department",
+          "icon": "circle-plus",
+          "iconPlacement": "start",
+          "className": "w-full",
+          "size": "medium"
+        }
+      },
+      {
+        "id": "sidebarMenuArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5 px-2"
+        },
+        "children": [
+          "sidebarMenuDashboard",
+          "sidebarMenuOrganization",
+          "sidebarMenuDepartments",
+          "sidebarMenuPermissions",
+          "sidebarMenuAuditLogs"
+        ]
+      },
+      {
+        "id": "sidebarMenuDashboard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarMenuDashboardIcon",
+          "sidebarMenuDashboardLabel"
+        ]
+      },
+      {
+        "id": "sidebarMenuDashboardIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarMenuDashboardLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Dashboard"
+        }
+      },
+      {
+        "id": "sidebarMenuOrganization",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-container text-primary cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarMenuOrganizationIcon",
+          "sidebarMenuOrganizationLabel"
+        ]
+      },
+      {
+        "id": "sidebarMenuOrganizationIcon",
+        "component": "Icon",
+        "props": {
+          "name": "network",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarMenuOrganizationLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-medium text-primary",
+          "value": "Organization"
+        }
+      },
+      {
+        "id": "sidebarMenuDepartments",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarMenuDepartmentsIcon",
+          "sidebarMenuDepartmentsLabel"
+        ]
+      },
+      {
+        "id": "sidebarMenuDepartmentsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "building-2",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarMenuDepartmentsLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Departments"
+        }
+      },
+      {
+        "id": "sidebarMenuPermissions",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarMenuPermissionsIcon",
+          "sidebarMenuPermissionsLabel"
+        ]
+      },
+      {
+        "id": "sidebarMenuPermissionsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarMenuPermissionsLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Permissions"
+        }
+      },
+      {
+        "id": "sidebarMenuAuditLogs",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarMenuAuditLogsIcon",
+          "sidebarMenuAuditLogsLabel"
+        ]
+      },
+      {
+        "id": "sidebarMenuAuditLogsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "file-text",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarMenuAuditLogsLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Audit Logs"
+        }
+      },
+      {
+        "id": "sidebarSpacer",
+        "component": "div",
+        "props": {
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "sidebarBottomDivider",
+        "component": "Divider",
+        "props": {
+          "className": "mx-3"
+        }
+      },
+      {
+        "id": "sidebarBottomArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5 px-2 pb-4 pt-2"
+        },
+        "children": [
+          "sidebarSupportLink",
+          "sidebarSettingsLink"
+        ]
+      },
+      {
+        "id": "sidebarSupportLink",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarSupportIcon",
+          "sidebarSupportLabel"
+        ]
+      },
+      {
+        "id": "sidebarSupportIcon",
+        "component": "Icon",
+        "props": {
+          "name": "life-buoy",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarSupportLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Support"
+        }
+      },
+      {
+        "id": "sidebarSettingsLink",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+        },
+        "children": [
+          "sidebarSettingsIcon",
+          "sidebarSettingsLabel"
+        ]
+      },
+      {
+        "id": "sidebarSettingsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "settings",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "sidebarSettingsLabel",
+        "component": "span",
+        "props": {
+          "className": "text-sm",
+          "value": "Settings"
+        }
+      },
+      {
+        "id": "mainArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col flex-1 min-w-0"
+        },
+        "children": [
+          "topBarContainer",
+          "workspaceHeader",
+          "canvasArea"
+        ]
+      },
+      {
+        "id": "topBarContainer",
+        "component": "div",
+        "props": {
+          "className": "flex items-center h-14 px-4 bg-surface-container-highest shadow-sm border-b border-divider gap-4 shrink-0"
+        },
+        "children": [
+          "topBarIdentity",
+          "topBarSearchInput",
+          "topBarActionsArea"
+        ]
+      },
+      {
+        "id": "topBarIdentity",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface shrink-0",
+          "value": "Security Gate"
+        }
+      },
+      {
+        "id": "topBarSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/searchValue"
+          },
+          "placeholder": "搜索架构...",
+          "prefix": "search",
+          "className": "flex-1 max-w-md"
+        }
+      },
+      {
+        "id": "topBarActionsArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 ml-auto shrink-0"
+        },
+        "children": [
+          "topBarBellBtn",
+          "topBarGearBtn",
+          "topBarAvatarImg"
+        ]
+      },
+      {
+        "id": "topBarBellBtn",
+        "component": "Button",
+        "props": {
+          "icon": "bell",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "topBarGearBtn",
+        "component": "Button",
+        "props": {
+          "icon": "settings",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "topBarAvatarImg",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/men/32.jpg",
+          "alt": "User Avatar",
+          "className": "w-8 h-8 rounded-full object-cover ml-1"
+        }
+      },
+      {
+        "id": "workspaceHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between px-6 py-3 bg-surface-container-highest border-b border-divider shrink-0"
+        },
+        "children": [
+          "workspaceHeaderLeft",
+          "workspaceHeaderRight"
+        ]
+      },
+      {
+        "id": "workspaceHeaderLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "workspaceHeaderTitle",
+          "workspaceHeaderVersionTag"
+        ]
+      },
+      {
+        "id": "workspaceHeaderTitle",
+        "component": "span",
+        "props": {
+          "className": "text-lg font-bold text-on-surface",
+          "value": "组织架构图"
+        }
+      },
+      {
+        "id": "workspaceHeaderVersionTag",
+        "component": "Tag",
+        "props": {
+          "value": "正式版本 V2.4",
+          "color": "success",
+          "size": "small"
+        }
+      },
+      {
+        "id": "workspaceHeaderRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "workspaceHeaderImportBtn",
+          "workspaceHeaderExportBtn",
+          "workspaceHeaderAddRootBtn"
+        ]
+      },
+      {
+        "id": "workspaceHeaderImportBtn",
+        "component": "Button",
+        "props": {
+          "value": "导入数据",
+          "icon": "upload",
+          "iconPlacement": "start",
+          "size": "small"
+        }
+      },
+      {
+        "id": "workspaceHeaderExportBtn",
+        "component": "Button",
+        "props": {
+          "value": "导出图表",
+          "icon": "download",
+          "iconPlacement": "start",
+          "size": "small"
+        }
+      },
+      {
+        "id": "workspaceHeaderAddRootBtn",
+        "component": "Button",
+        "props": {
+          "value": "添加根部门",
+          "icon": "folder-plus",
+          "iconPlacement": "start",
+          "color": "primary",
+          "size": "small"
+        }
+      },
+      {
+        "id": "canvasArea",
+        "component": "div",
+        "props": {
+          "className": "relative flex-1 overflow-auto bg-surface-container-lowest"
+        },
+        "children": [
+          "orgTreeContainer",
+          "statsPanel",
+          "zoomControls",
+          "miniMapContainer"
+        ]
+      },
+      {
+        "id": "orgTreeContainer",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col items-center pt-10 pb-20 min-h-full px-8"
+        },
+        "children": [
+          "rootNodeCard",
+          "connectorVertDown",
+          "connectorBranch"
+        ]
+      },
+      {
+        "id": "rootNodeCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest shadow-card rounded-xl p-4 w-60 border border-divider"
+        },
+        "children": [
+          "rootNodeHeader",
+          "rootNodeBody"
+        ]
+      },
+      {
+        "id": "rootNodeHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-start justify-between"
+        },
+        "children": [
+          "rootNodeTitleArea",
+          "rootNodeMoreIcon"
+        ]
+      },
+      {
+        "id": "rootNodeTitleArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "rootNodeTitle",
+          "rootNodeSubtitle"
+        ]
+      },
+      {
+        "id": "rootNodeTitle",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-bold text-on-surface",
+          "value": "董事会"
+        }
+      },
+      {
+        "id": "rootNodeSubtitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant mt-0.5",
+          "value": "总部核心"
+        }
+      },
+      {
+        "id": "rootNodeMoreIcon",
+        "component": "Icon",
+        "props": {
+          "name": "more-horizontal",
+          "className": "w-4 h-4 text-on-surface-variant cursor-pointer"
+        }
+      },
+      {
+        "id": "rootNodeBody",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mt-3 pt-3 border-t border-divider"
+        },
+        "children": [
+          "rootNodeAvatarImg",
+          "rootNodeInfoArea"
+        ]
+      },
+      {
+        "id": "rootNodeAvatarImg",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/men/10.jpg",
+          "alt": "张大卫",
+          "className": "w-10 h-10 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "rootNodeInfoArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "rootNodeLeaderName",
+          "rootNodeRoleTitle",
+          "rootNodeStaffCount"
+        ]
+      },
+      {
+        "id": "rootNodeLeaderName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "张大卫"
+        }
+      },
+      {
+        "id": "rootNodeRoleTitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "首席执行官 (CEO)"
+        }
+      },
+      {
+        "id": "rootNodeStaffCount",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-primary font-medium mt-0.5",
+          "value": "12 / 15 人"
+        }
+      },
+      {
+        "id": "connectorVertDown",
+        "component": "div",
+        "props": {
+          "className": "w-0.5 h-8 bg-border-base"
+        }
+      },
+      {
+        "id": "connectorBranch",
+        "component": "div",
+        "props": {
+          "className": "flex w-full max-w-2xl"
+        },
+        "children": [
+          "leftBranch",
+          "rightBranch"
+        ]
+      },
+      {
+        "id": "leftBranch",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col items-center"
+        },
+        "children": [
+          "leftBranchHoriz",
+          "leftBranchVert",
+          "childNodeEngCard",
+          "childNodeEngExpand"
+        ]
+      },
+      {
+        "id": "leftBranchHoriz",
+        "component": "div",
+        "props": {
+          "className": "w-full border-t-2 border-border-base"
+        }
+      },
+      {
+        "id": "leftBranchVert",
+        "component": "div",
+        "props": {
+          "className": "w-0.5 h-6 bg-border-base"
+        }
+      },
+      {
+        "id": "childNodeEngCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest shadow-card rounded-xl p-4 w-56 border border-divider"
+        },
+        "children": [
+          "childNodeEngHeader",
+          "childNodeEngBody",
+          "childNodeEngBudgetArea"
+        ]
+      },
+      {
+        "id": "childNodeEngHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-start justify-between"
+        },
+        "children": [
+          "childNodeEngTitleArea",
+          "childNodeEngStatusTag"
+        ]
+      },
+      {
+        "id": "childNodeEngTitleArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "childNodeEngTitle",
+          "childNodeEngSubtitle"
+        ]
+      },
+      {
+        "id": "childNodeEngTitle",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-bold text-on-surface",
+          "value": "研发中心"
+        }
+      },
+      {
+        "id": "childNodeEngSubtitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant mt-0.5",
+          "value": "Engineering"
+        }
+      },
+      {
+        "id": "childNodeEngStatusTag",
+        "component": "Tag",
+        "props": {
+          "value": "缺口: 3",
+          "color": "warning",
+          "size": "small"
+        }
+      },
+      {
+        "id": "childNodeEngBody",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mt-3 pt-3 border-t border-divider"
+        },
+        "children": [
+          "childNodeEngAvatarImg",
+          "childNodeEngInfoArea"
+        ]
+      },
+      {
+        "id": "childNodeEngAvatarImg",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/women/44.jpg",
+          "alt": "李敏",
+          "className": "w-10 h-10 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "childNodeEngInfoArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "childNodeEngLeaderName",
+          "childNodeEngRoleTitle"
+        ]
+      },
+      {
+        "id": "childNodeEngLeaderName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "李敏"
+        }
+      },
+      {
+        "id": "childNodeEngRoleTitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "技术总监 (CTO)"
+        }
+      },
+      {
+        "id": "childNodeEngBudgetArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5 mt-2 pt-2 border-t border-divider"
+        },
+        "children": [
+          "childNodeEngBudgetIcon",
+          "childNodeEngBudgetLabel"
+        ]
+      },
+      {
+        "id": "childNodeEngBudgetIcon",
+        "component": "Icon",
+        "props": {
+          "name": "wallet",
+          "color": "warning",
+          "className": "w-3.5 h-3.5"
+        }
+      },
+      {
+        "id": "childNodeEngBudgetLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-warning font-medium",
+          "value": "预算: 85%"
+        }
+      },
+      {
+        "id": "childNodeEngExpand",
+        "component": "div",
+        "props": {
+          "className": "flex justify-center mt-2"
+        },
+        "children": [
+          "childNodeEngExpandIcon"
+        ]
+      },
+      {
+        "id": "childNodeEngExpandIcon",
+        "component": "Icon",
+        "props": {
+          "name": "chevron-down",
+          "color": "default",
+          "className": "w-5 h-5 cursor-pointer"
+        }
+      },
+      {
+        "id": "rightBranch",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex flex-col items-center"
+        },
+        "children": [
+          "rightBranchHoriz",
+          "rightBranchVert",
+          "childNodeMktCard",
+          "childNodeMktExpand"
+        ]
+      },
+      {
+        "id": "rightBranchHoriz",
+        "component": "div",
+        "props": {
+          "className": "w-full border-t-2 border-border-base"
+        }
+      },
+      {
+        "id": "rightBranchVert",
+        "component": "div",
+        "props": {
+          "className": "w-0.5 h-6 bg-border-base"
+        }
+      },
+      {
+        "id": "childNodeMktCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest shadow-card rounded-xl p-4 w-56 border border-divider"
+        },
+        "children": [
+          "childNodeMktHeader",
+          "childNodeMktBody",
+          "childNodeMktAchieveArea"
+        ]
+      },
+      {
+        "id": "childNodeMktHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-start justify-between"
+        },
+        "children": [
+          "childNodeMktTitleArea",
+          "childNodeMktStatusTag"
+        ]
+      },
+      {
+        "id": "childNodeMktTitleArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "childNodeMktTitle",
+          "childNodeMktSubtitle"
+        ]
+      },
+      {
+        "id": "childNodeMktTitle",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-bold text-on-surface",
+          "value": "市场营销部"
+        }
+      },
+      {
+        "id": "childNodeMktSubtitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant mt-0.5",
+          "value": "Marketing"
+        }
+      },
+      {
+        "id": "childNodeMktStatusTag",
+        "component": "Tag",
+        "props": {
+          "value": "全员",
+          "color": "success",
+          "size": "small"
+        }
+      },
+      {
+        "id": "childNodeMktBody",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mt-3 pt-3 border-t border-divider"
+        },
+        "children": [
+          "childNodeMktAvatarImg",
+          "childNodeMktInfoArea"
+        ]
+      },
+      {
+        "id": "childNodeMktAvatarImg",
+        "component": "img",
+        "props": {
+          "src": "https://randomuser.me/api/portraits/men/22.jpg",
+          "alt": "王建国",
+          "className": "w-10 h-10 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "childNodeMktInfoArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col min-w-0"
+        },
+        "children": [
+          "childNodeMktLeaderName",
+          "childNodeMktRoleTitle"
+        ]
+      },
+      {
+        "id": "childNodeMktLeaderName",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface",
+          "value": "王建国"
+        }
+      },
+      {
+        "id": "childNodeMktRoleTitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "市场总监 (CMO)"
+        }
+      },
+      {
+        "id": "childNodeMktAchieveArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mt-2 pt-2 border-t border-divider"
+        },
+        "children": [
+          "childNodeMktAchieveLeft",
+          "childNodeMktActionIcon"
+        ]
+      },
+      {
+        "id": "childNodeMktAchieveLeft",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1.5"
+        },
+        "children": [
+          "childNodeMktAchieveIcon",
+          "childNodeMktAchieveLabel"
+        ]
+      },
+      {
+        "id": "childNodeMktAchieveIcon",
+        "component": "Icon",
+        "props": {
+          "name": "circle-check",
+          "color": "success",
+          "className": "w-3.5 h-3.5"
+        }
+      },
+      {
+        "id": "childNodeMktAchieveLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-success font-medium",
+          "value": "100% 达成"
+        }
+      },
+      {
+        "id": "childNodeMktActionIcon",
+        "component": "Icon",
+        "props": {
+          "name": "plus",
+          "color": "primary",
+          "className": "w-4 h-4 cursor-pointer"
+        }
+      },
+      {
+        "id": "childNodeMktExpand",
+        "component": "div",
+        "props": {
+          "className": "flex justify-center mt-2"
+        },
+        "children": [
+          "childNodeMktExpandIcon"
+        ]
+      },
+      {
+        "id": "childNodeMktExpandIcon",
+        "component": "Icon",
+        "props": {
+          "name": "chevron-down",
+          "color": "default",
+          "className": "w-5 h-5 cursor-pointer"
+        }
+      },
+      {
+        "id": "statsPanel",
+        "component": "div",
+        "props": {
+          "className": "absolute right-4 top-4 w-72 bg-surface-container-highest shadow-popover rounded-xl p-4 border border-divider z-10"
+        },
+        "children": [
+          "statsPanelHeader",
+          "statsPanelHeadcount",
+          "statsPanelDivider1",
+          "statsPanelPositions",
+          "statsPanelDivider2",
+          "statsPanelDeptDist",
+          "statsPanelFooterBtn"
+        ]
+      },
+      {
+        "id": "statsPanelHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mb-4"
+        },
+        "children": [
+          "statsPanelTitle",
+          "statsPanelInfoIcon"
+        ]
+      },
+      {
+        "id": "statsPanelTitle",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-bold text-on-surface",
+          "value": "人员统计快报"
+        }
+      },
+      {
+        "id": "statsPanelInfoIcon",
+        "component": "Icon",
+        "props": {
+          "name": "info",
+          "color": "primary",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "statsPanelHeadcount",
+        "component": "div",
+        "props": {
+          "className": "mb-4"
+        },
+        "children": [
+          "statsPanelHeadcountLabel",
+          "statsPanelHeadcountValueRow"
+        ]
+      },
+      {
+        "id": "statsPanelHeadcountLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "总计人数"
+        }
+      },
+      {
+        "id": "statsPanelHeadcountValueRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mt-1"
+        },
+        "children": [
+          "statsPanelHeadcountValue",
+          "statsPanelHeadcountTrendIcon",
+          "statsPanelHeadcountTrendValue"
+        ]
+      },
+      {
+        "id": "statsPanelHeadcountValue",
+        "component": "span",
+        "props": {
+          "className": "text-2xl font-bold text-on-surface",
+          "value": "1,284"
+        }
+      },
+      {
+        "id": "statsPanelHeadcountTrendIcon",
+        "component": "Icon",
+        "props": {
+          "name": "trending-up",
+          "color": "success",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "statsPanelHeadcountTrendValue",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-success font-medium",
+          "value": "+2.4%"
+        }
+      },
+      {
+        "id": "statsPanelDivider1",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "statsPanelPositions",
+        "component": "div",
+        "props": {
+          "className": "my-4"
+        },
+        "children": [
+          "statsPanelPositionsLabel",
+          "statsPanelPositionsValueRow"
+        ]
+      },
+      {
+        "id": "statsPanelPositionsLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant",
+          "value": "开放职位"
+        }
+      },
+      {
+        "id": "statsPanelPositionsValueRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between mt-1"
+        },
+        "children": [
+          "statsPanelPositionsValue",
+          "statsPanelPositionsLinkArea"
+        ]
+      },
+      {
+        "id": "statsPanelPositionsValue",
+        "component": "span",
+        "props": {
+          "className": "text-2xl font-bold text-on-surface",
+          "value": "42"
+        }
+      },
+      {
+        "id": "statsPanelPositionsLinkArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 cursor-pointer"
+        },
+        "children": [
+          "statsPanelPositionsLinkIcon",
+          "statsPanelPositionsLinkText"
+        ]
+      },
+      {
+        "id": "statsPanelPositionsLinkIcon",
+        "component": "Icon",
+        "props": {
+          "name": "external-link",
+          "color": "primary",
+          "className": "w-3.5 h-3.5"
+        }
+      },
+      {
+        "id": "statsPanelPositionsLinkText",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-primary font-medium",
+          "value": "查看详情"
+        }
+      },
+      {
+        "id": "statsPanelDivider2",
+        "component": "Divider",
+        "props": {}
+      },
+      {
+        "id": "statsPanelDeptDist",
+        "component": "div",
+        "props": {
+          "className": "my-4"
+        },
+        "children": [
+          "statsPanelDeptDistTitle",
+          "statsPanelDeptDistList"
+        ]
+      },
+      {
+        "id": "statsPanelDeptDistTitle",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface-variant font-medium mb-3 block",
+          "value": "部门分布"
+        }
+      },
+      {
+        "id": "statsPanelDeptDistList",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-3"
+        },
+        "children": [
+          "statsPanelDeptEngRow",
+          "statsPanelDeptMktRow"
+        ]
+      },
+      {
+        "id": "statsPanelDeptEngRow",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1.5"
+        },
+        "children": [
+          "statsPanelDeptEngInfo",
+          "statsPanelDeptEngProgress"
+        ]
+      },
+      {
+        "id": "statsPanelDeptEngInfo",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between"
+        },
+        "children": [
+          "statsPanelDeptEngLabel",
+          "statsPanelDeptEngCount"
+        ]
+      },
+      {
+        "id": "statsPanelDeptEngLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface",
+          "value": "研发中心"
+        }
+      },
+      {
+        "id": "statsPanelDeptEngCount",
+        "component": "span",
+        "props": {
+          "className": "text-xs font-medium text-on-surface",
+          "value": "450"
+        }
+      },
+      {
+        "id": "statsPanelDeptEngProgress",
+        "component": "Progress",
+        "props": {
+          "percent": 35,
+          "size": "small",
+          "strokeColor": "#0067D1",
+          "showInfo": false
+        }
+      },
+      {
+        "id": "statsPanelDeptMktRow",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1.5"
+        },
+        "children": [
+          "statsPanelDeptMktInfo",
+          "statsPanelDeptMktProgress"
+        ]
+      },
+      {
+        "id": "statsPanelDeptMktInfo",
+        "component": "div",
+        "props": {
+          "className": "flex items-center justify-between"
+        },
+        "children": [
+          "statsPanelDeptMktLabel",
+          "statsPanelDeptMktCount"
+        ]
+      },
+      {
+        "id": "statsPanelDeptMktLabel",
+        "component": "span",
+        "props": {
+          "className": "text-xs text-on-surface",
+          "value": "市场营销部"
+        }
+      },
+      {
+        "id": "statsPanelDeptMktCount",
+        "component": "span",
+        "props": {
+          "className": "text-xs font-medium text-on-surface",
+          "value": "320"
+        }
+      },
+      {
+        "id": "statsPanelDeptMktProgress",
+        "component": "Progress",
+        "props": {
+          "percent": 25,
+          "size": "small",
+          "strokeColor": "#09AA71",
+          "showInfo": false
+        }
+      },
+      {
+        "id": "statsPanelFooterBtn",
+        "component": "Button",
+        "props": {
+          "value": "查看变更记录",
+          "icon": "history",
+          "iconPlacement": "start",
+          "className": "w-full mt-2",
+          "size": "small"
+        }
+      },
+      {
+        "id": "zoomControls",
+        "component": "div",
+        "props": {
+          "className": "absolute bottom-4 left-4 flex items-center gap-1 bg-surface-container-highest shadow-popover rounded-lg px-2 py-1.5 z-10 border border-divider"
+        },
+        "children": [
+          "zoomInBtn",
+          "zoomPercent",
+          "zoomOutBtn",
+          "zoomResetIcon"
+        ]
+      },
+      {
+        "id": "zoomInBtn",
+        "component": "Button",
+        "props": {
+          "icon": "plus",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "zoomPercent",
+        "component": "span",
+        "props": {
+          "className": "text-xs font-medium text-on-surface px-1 min-w-[32px] text-center",
+          "value": {
+            "path": "/zoomPercentage"
+          }
+        }
+      },
+      {
+        "id": "zoomOutBtn",
+        "component": "Button",
+        "props": {
+          "icon": "minus",
+          "shape": "circle",
+          "size": "small"
+        }
+      },
+      {
+        "id": "zoomResetIcon",
+        "component": "Icon",
+        "props": {
+          "name": "maximize",
+          "color": "default",
+          "className": "w-4 h-4 cursor-pointer ml-1"
+        }
+      },
+      {
+        "id": "miniMapContainer",
+        "component": "div",
+        "props": {
+          "className": "absolute bottom-4 right-4 flex flex-col items-end gap-2 z-10"
+        },
+        "children": [
+          "miniMapImage",
+          "miniMapEditBtn"
+        ]
+      },
+      {
+        "id": "miniMapImage",
+        "component": "img",
+        "props": {
+          "src": "https://picsum.photos/seed/minimap-org/240/160",
+          "alt": "Mini Map Preview",
+          "className": "w-48 h-32 rounded-lg shadow-popover object-cover border border-divider"
+        }
+      },
+      {
+        "id": "miniMapEditBtn",
+        "component": "Button",
+        "props": {
+          "icon": "pencil",
+          "shape": "circle",
+          "size": "small",
+          "color": "primary"
+        }
+      }
+    ]
+  },

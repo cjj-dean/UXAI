@@ -1,0 +1,1798 @@
+{
+  "state": {
+    "brandLogoIcon": "radar",
+    "brandName": "iMaster MAE",
+    "pageTitle": "Network Intelligence Monitoring Center",
+    "viewToggles": [
+      {
+        "label": "Dashboard",
+        "isActive": true
+      },
+      {
+        "label": "Topology",
+        "isActive": false
+      }
+    ],
+    "systemIcons": [
+      {
+        "iconName": "bell",
+        "badgeCount": 12
+      },
+      {
+        "iconName": "settings"
+      }
+    ],
+    "userInfo": {
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userName": "Admin"
+    },
+    "metricsCardTitle": "Core Metrics Overview",
+    "metricsList": [
+      {
+        "metricName": "Total Faults",
+        "metricIcon": "alert-circle",
+        "currentValue": 1284,
+        "trendIcon": "trending-up",
+        "changeRate": "+12.5%",
+        "statusColor": "var(--color-danger)",
+        "iconColor": "error",
+        "trendColor": "error"
+      },
+      {
+        "metricName": "Critical Faults",
+        "metricIcon": "shield-alert",
+        "currentValue": 42,
+        "trendIcon": "trending-down",
+        "changeRate": "-3.1%",
+        "statusColor": "var(--color-error)",
+        "iconColor": "error",
+        "trendColor": "success"
+      },
+      {
+        "metricName": "Major Faults",
+        "metricIcon": "alert-triangle",
+        "currentValue": 156,
+        "trendIcon": "trending-up",
+        "changeRate": "+5.4%",
+        "statusColor": "var(--color-warning)",
+        "iconColor": "warning",
+        "trendColor": "warning"
+      },
+      {
+        "metricName": "Minor Faults",
+        "metricIcon": "info",
+        "currentValue": 1086,
+        "trendIcon": "trending-down",
+        "changeRate": "-1.2%",
+        "statusColor": "var(--color-info)",
+        "iconColor": "primary",
+        "trendColor": "success"
+      },
+      {
+        "metricName": "Resolved",
+        "metricIcon": "check-circle",
+        "currentValue": 1150,
+        "trendIcon": "trending-up",
+        "changeRate": "+8.9%",
+        "statusColor": "var(--color-success)",
+        "iconColor": "success",
+        "trendColor": "success"
+      },
+      {
+        "metricName": "Pending",
+        "metricIcon": "clock",
+        "currentValue": 134,
+        "trendIcon": "trending-down",
+        "changeRate": "-2.0%",
+        "statusColor": "var(--color-primary)",
+        "iconColor": "primary",
+        "trendColor": "success"
+      }
+    ],
+    "analysisCardTitle": "Fault Dimension Analysis",
+    "currentStep": 2,
+    "diagnosisSteps": [
+      {
+        "stepId": 1,
+        "title": "Fault Discovery",
+        "status": "completed",
+        "stepStatus": "finish",
+        "icon": "search",
+        "description": "Fault signals detected and collected"
+      },
+      {
+        "stepId": 2,
+        "title": "Fault Location",
+        "status": "completed",
+        "stepStatus": "finish",
+        "icon": "map-pin",
+        "description": "Fault source accurately located"
+      },
+      {
+        "stepId": 3,
+        "title": "Root Cause Analysis",
+        "status": "active",
+        "stepStatus": "process",
+        "icon": "brain",
+        "description": "Analyzing root cause in progress"
+      },
+      {
+        "stepId": 4,
+        "title": "Recovery Execution",
+        "status": "pending",
+        "stepStatus": "wait",
+        "icon": "wrench",
+        "description": "Awaiting recovery execution"
+      }
+    ],
+    "analysisCharts": [
+      {
+        "chartTitle": "Fault Type Distribution",
+        "chartType": "donut",
+        "data": [
+          {
+            "name": "Hardware",
+            "value": 35,
+            "color": "#FF6384"
+          },
+          {
+            "name": "Software",
+            "value": 25,
+            "color": "#36A2EB"
+          },
+          {
+            "name": "Configuration",
+            "value": 20,
+            "color": "#FFCE56"
+          },
+          {
+            "name": "External",
+            "value": 10,
+            "color": "#4BC0C0"
+          },
+          {
+            "name": "Unknown",
+            "value": 10,
+            "color": "#9966FF"
+          }
+        ]
+      },
+      {
+        "chartTitle": "Top 5 Alarm Devices",
+        "chartType": "bar",
+        "data": [
+          {
+            "deviceName": "Router-NE40E-X8",
+            "alarmCount": 45
+          },
+          {
+            "deviceName": "Switch-CE6870",
+            "alarmCount": 38
+          },
+          {
+            "deviceName": "Firewall-USG6625",
+            "alarmCount": 29
+          },
+          {
+            "deviceName": "AP-AirEngine 8760",
+            "alarmCount": 21
+          },
+          {
+            "deviceName": "Server-RH2288",
+            "alarmCount": 15
+          }
+        ]
+      },
+      {
+        "chartTitle": "Faults by Severity (Last 7 Days)",
+        "chartType": "stacked-bar",
+        "data": [
+          {
+            "date": "Mon",
+            "critical": 5,
+            "major": 12,
+            "minor": 20
+          },
+          {
+            "date": "Tue",
+            "critical": 8,
+            "major": 15,
+            "minor": 22
+          },
+          {
+            "date": "Wed",
+            "critical": 4,
+            "major": 10,
+            "minor": 18
+          },
+          {
+            "date": "Thu",
+            "critical": 2,
+            "major": 8,
+            "minor": 25
+          },
+          {
+            "date": "Fri",
+            "critical": 6,
+            "major": 14,
+            "minor": 19
+          },
+          {
+            "date": "Sat",
+            "critical": 1,
+            "major": 5,
+            "minor": 10
+          },
+          {
+            "date": "Sun",
+            "critical": 3,
+            "major": 7,
+            "minor": 12
+          }
+        ]
+      },
+      {
+        "chartTitle": "Diagnosis Success Rate (%)",
+        "chartType": "grouped-bar",
+        "data": [
+          {
+            "method": "Auto-Diag",
+            "success": 92,
+            "fail": 8
+          },
+          {
+            "method": "Manual",
+            "success": 85,
+            "fail": 15
+          },
+          {
+            "method": "AI Predict",
+            "success": 78,
+            "fail": 22
+          }
+        ]
+      }
+    ],
+    "faultTypeData": [
+      {
+        "name": "Hardware",
+        "value": 35
+      },
+      {
+        "name": "Software",
+        "value": 25
+      },
+      {
+        "name": "Configuration",
+        "value": 20
+      },
+      {
+        "name": "External",
+        "value": 10
+      },
+      {
+        "name": "Unknown",
+        "value": 10
+      }
+    ],
+    "faultTypeColors": [
+      "#FF6384",
+      "#36A2EB",
+      "#FFCE56",
+      "#4BC0C0",
+      "#9966FF"
+    ],
+    "top5DeviceData": [
+      {
+        "device": "Router-NE40E-X8",
+        "Alarms": 45
+      },
+      {
+        "device": "Switch-CE6870",
+        "Alarms": 38
+      },
+      {
+        "device": "Firewall-USG6625",
+        "Alarms": 29
+      },
+      {
+        "device": "AP-AirEngine 8760",
+        "Alarms": 21
+      },
+      {
+        "device": "Server-RH2288",
+        "Alarms": 15
+      }
+    ],
+    "severityData": [
+      {
+        "day": "Mon",
+        "Critical": 5,
+        "Major": 12,
+        "Minor": 20
+      },
+      {
+        "day": "Tue",
+        "Critical": 8,
+        "Major": 15,
+        "Minor": 22
+      },
+      {
+        "day": "Wed",
+        "Critical": 4,
+        "Major": 10,
+        "Minor": 18
+      },
+      {
+        "day": "Thu",
+        "Critical": 2,
+        "Major": 8,
+        "Minor": 25
+      },
+      {
+        "day": "Fri",
+        "Critical": 6,
+        "Major": 14,
+        "Minor": 19
+      },
+      {
+        "day": "Sat",
+        "Critical": 1,
+        "Major": 5,
+        "Minor": 10
+      },
+      {
+        "day": "Sun",
+        "Critical": 3,
+        "Major": 7,
+        "Minor": 12
+      }
+    ],
+    "diagSuccessData": [
+      {
+        "method": "Auto-Diag",
+        "Success": 92,
+        "Fail": 8
+      },
+      {
+        "method": "Manual",
+        "Success": 85,
+        "Fail": 15
+      },
+      {
+        "method": "AI Predict",
+        "Success": 78,
+        "Fail": 22
+      }
+    ],
+    "trendCardTitle": "Fault Diagnosis Trend Analysis",
+    "trendChart": {
+      "legends": [
+        "New Faults",
+        "Diagnosed",
+        "Resolved"
+      ],
+      "timeSeriesData": [
+        {
+          "date": "10/01",
+          "newFaults": 120,
+          "diagnosed": 100,
+          "resolved": 90
+        },
+        {
+          "date": "10/02",
+          "newFaults": 132,
+          "diagnosed": 115,
+          "resolved": 110
+        },
+        {
+          "date": "10/03",
+          "newFaults": 101,
+          "diagnosed": 90,
+          "resolved": 85
+        },
+        {
+          "date": "10/04",
+          "newFaults": 134,
+          "diagnosed": 125,
+          "resolved": 120
+        },
+        {
+          "date": "10/05",
+          "newFaults": 190,
+          "diagnosed": 160,
+          "resolved": 150
+        },
+        {
+          "date": "10/06",
+          "newFaults": 230,
+          "diagnosed": 180,
+          "resolved": 170
+        },
+        {
+          "date": "10/07",
+          "newFaults": 180,
+          "diagnosed": 150,
+          "resolved": 140
+        },
+        {
+          "date": "10/08",
+          "newFaults": 155,
+          "diagnosed": 140,
+          "resolved": 130
+        },
+        {
+          "date": "10/09",
+          "newFaults": 140,
+          "diagnosed": 135,
+          "resolved": 125
+        },
+        {
+          "date": "10/10",
+          "newFaults": 115,
+          "diagnosed": 110,
+          "resolved": 105
+        }
+      ]
+    },
+    "trendChartData": [
+      {
+        "date": "10/01",
+        "New Faults": 120,
+        "Diagnosed": 100,
+        "Resolved": 90
+      },
+      {
+        "date": "10/02",
+        "New Faults": 132,
+        "Diagnosed": 115,
+        "Resolved": 110
+      },
+      {
+        "date": "10/03",
+        "New Faults": 101,
+        "Diagnosed": 90,
+        "Resolved": 85
+      },
+      {
+        "date": "10/04",
+        "New Faults": 134,
+        "Diagnosed": 125,
+        "Resolved": 120
+      },
+      {
+        "date": "10/05",
+        "New Faults": 190,
+        "Diagnosed": 160,
+        "Resolved": 150
+      },
+      {
+        "date": "10/06",
+        "New Faults": 230,
+        "Diagnosed": 180,
+        "Resolved": 170
+      },
+      {
+        "date": "10/07",
+        "New Faults": 180,
+        "Diagnosed": 150,
+        "Resolved": 140
+      },
+      {
+        "date": "10/08",
+        "New Faults": 155,
+        "Diagnosed": 140,
+        "Resolved": 130
+      },
+      {
+        "date": "10/09",
+        "New Faults": 140,
+        "Diagnosed": 135,
+        "Resolved": 125
+      },
+      {
+        "date": "10/10",
+        "New Faults": 115,
+        "Diagnosed": 110,
+        "Resolved": 105
+      }
+    ],
+    "alarmsCardTitle": "Active Alarms List",
+    "searchValue": "",
+    "severityFilter": "all",
+    "alarmsList": [
+      {
+        "alarmId": "ALM-20231024-001",
+        "severityIcon": "alert-circle",
+        "severityLevel": "Critical",
+        "severityIconColor": "error",
+        "deviceName": "Router-NE40E-X8",
+        "alarmTitle": "BGP Neighbor Down",
+        "occurTime": "2023-10-24 14:20:10",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-002",
+        "severityIcon": "alert-triangle",
+        "severityLevel": "Major",
+        "severityIconColor": "warning",
+        "deviceName": "Switch-CE6870",
+        "alarmTitle": "Interface Flapping",
+        "occurTime": "2023-10-24 14:15:32",
+        "status": "Acknowledged",
+        "statusTagColor": "success",
+        "actions": [
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-003",
+        "severityIcon": "alert-circle",
+        "severityLevel": "Critical",
+        "severityIconColor": "error",
+        "deviceName": "Firewall-USG6625",
+        "alarmTitle": "High CPU Usage Over 90%",
+        "occurTime": "2023-10-24 14:10:05",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-004",
+        "severityIcon": "info",
+        "severityLevel": "Minor",
+        "severityIconColor": "primary",
+        "deviceName": "AP-AirEngine 8760",
+        "alarmTitle": "Power Supply Voltage Low",
+        "occurTime": "2023-10-24 13:55:12",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-005",
+        "severityIcon": "alert-triangle",
+        "severityLevel": "Major",
+        "severityIconColor": "warning",
+        "deviceName": "Server-RH2288",
+        "alarmTitle": "RAID Controller Degraded",
+        "occurTime": "2023-10-24 13:40:20",
+        "status": "Acknowledged",
+        "statusTagColor": "success",
+        "actions": [
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-006",
+        "severityIcon": "info",
+        "severityLevel": "Minor",
+        "severityIconColor": "primary",
+        "deviceName": "Switch-CE6855",
+        "alarmTitle": "High Memory Usage",
+        "occurTime": "2023-10-24 13:30:45",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-007",
+        "severityIcon": "alert-circle",
+        "severityLevel": "Critical",
+        "severityIconColor": "error",
+        "deviceName": "Router-NE40E-X16",
+        "alarmTitle": "OSPF Neighbor Full to Down",
+        "occurTime": "2023-10-24 13:25:18",
+        "status": "Acknowledged",
+        "statusTagColor": "success",
+        "actions": [
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-008",
+        "severityIcon": "info",
+        "severityLevel": "Minor",
+        "severityIconColor": "primary",
+        "deviceName": "AP-AirEngine 5760",
+        "alarmTitle": "License Expiring Soon",
+        "occurTime": "2023-10-24 13:10:00",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-009",
+        "severityIcon": "alert-triangle",
+        "severityLevel": "Major",
+        "severityIconColor": "warning",
+        "deviceName": "Firewall-USG6555",
+        "alarmTitle": "Session Count Exceeded Threshold",
+        "occurTime": "2023-10-24 12:55:35",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-010",
+        "severityIcon": "alert-circle",
+        "severityLevel": "Critical",
+        "severityIconColor": "error",
+        "deviceName": "Switch-CE12800",
+        "alarmTitle": "Fan Tray Removed",
+        "occurTime": "2023-10-24 12:40:50",
+        "status": "Acknowledged",
+        "statusTagColor": "success",
+        "actions": [
+          "Clear"
+        ]
+      },
+      {
+        "alarmId": "ALM-20231024-011",
+        "severityIcon": "info",
+        "severityLevel": "Minor",
+        "severityIconColor": "primary",
+        "deviceName": "Router-AR6280",
+        "alarmTitle": "Configuration Changed",
+        "occurTime": "2023-10-24 12:30:15",
+        "status": "Unacknowledged",
+        "statusTagColor": "error",
+        "actions": [
+          "Acknowledge",
+          "Clear"
+        ]
+      }
+    ],
+    "systemInfo": {
+      "connectionStatus": "Connected",
+      "statusIndicatorIcon": "check-circle",
+      "systemVersion": "V200R019C10",
+      "dataRefreshRate": "5s",
+      "lastRefreshTime": "2023-10-24 14:35:20"
+    }
+  },
+  "rootId": "mainAppRoot",
+  "elements": [
+    {
+      "id": "mainAppRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-[#0B1120] text-white"
+      },
+      "children": [
+        "navBarContainer",
+        "mainContentArea",
+        "globalFooter"
+      ]
+    },
+    {
+      "id": "navBarContainer",
+      "component": "header",
+      "props": {
+        "className": "flex items-center justify-between px-6 py-3 bg-[#0f172a] border-b border-[#1e3a5f]/50"
+      },
+      "children": [
+        "navLeftSection",
+        "navCenterSection",
+        "navRightSection"
+      ]
+    },
+    {
+      "id": "navLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "navBrandIcon",
+        "navBrandName"
+      ]
+    },
+    {
+      "id": "navBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandLogoIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "navBrandName",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-white tracking-wide",
+        "value": {
+          "path": "/brandName"
+        }
+      }
+    },
+    {
+      "id": "navCenterSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 text-center"
+      },
+      "children": [
+        "navPageTitle"
+      ]
+    },
+    {
+      "id": "navPageTitle",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-white/90 tracking-wider",
+        "value": {
+          "path": "/pageTitle"
+        }
+      }
+    },
+    {
+      "id": "navRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "navToggleGroup",
+        "navSystemIconsGroup",
+        "navUserSection"
+      ]
+    },
+    {
+      "id": "navToggleGroup",
+      "component": "div",
+      "props": {
+        "className": "flex gap-1 bg-[#1e293b] rounded-lg p-1"
+      },
+      "children": [
+        "navToggleDashboard",
+        "navToggleTopology"
+      ]
+    },
+    {
+      "id": "navToggleDashboard",
+      "component": "Button",
+      "props": {
+        "value": "Dashboard",
+        "color": "primary",
+        "size": "small"
+      }
+    },
+    {
+      "id": "navToggleTopology",
+      "component": "Button",
+      "props": {
+        "value": "Topology",
+        "size": "small"
+      }
+    },
+    {
+      "id": "navSystemIconsGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "navBellWrapper",
+        "navSettingsIcon"
+      ]
+    },
+    {
+      "id": "navBellWrapper",
+      "component": "div",
+      "props": {
+        "className": "relative"
+      },
+      "children": [
+        "navBellIcon",
+        "navBellBadge"
+      ]
+    },
+    {
+      "id": "navBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "color": "inverse",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "navBellBadge",
+      "component": "div",
+      "props": {
+        "className": "absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center",
+        "value": {
+          "path": "/systemIcons/0/badgeCount"
+        }
+      }
+    },
+    {
+      "id": "navSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "color": "inverse",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "navUserSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 ml-2 pl-3 border-l border-slate-700"
+      },
+      "children": [
+        "navUserAvatar",
+        "navUserName"
+      ]
+    },
+    {
+      "id": "navUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/avatarImage"
+        },
+        "className": "w-8 h-8 rounded-full border-2 border-blue-500/50",
+        "alt": "User Avatar"
+      }
+    },
+    {
+      "id": "navUserName",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-slate-300 font-medium",
+        "value": {
+          "path": "/userInfo/userName"
+        }
+      }
+    },
+    {
+      "id": "mainContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-6 flex flex-col gap-6 overflow-auto"
+      },
+      "children": [
+        "metricsCardContainer",
+        "analysisCardContainer",
+        "trendCardContainer",
+        "alarmsCardContainer"
+      ]
+    },
+    {
+      "id": "metricsCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111827] border border-[#1e3a5f]/40 rounded-xl p-5"
+      },
+      "children": [
+        "metricsCardHeader",
+        "metricsGrid"
+      ]
+    },
+    {
+      "id": "metricsCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "metricsCardTitle",
+        "metricsLiveTag"
+      ]
+    },
+    {
+      "id": "metricsCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-white",
+        "value": {
+          "path": "/metricsCardTitle"
+        }
+      }
+    },
+    {
+      "id": "metricsLiveTag",
+      "component": "Tag",
+      "props": {
+        "value": "Live",
+        "color": "processing",
+        "icon": "radio",
+        "size": "small"
+      }
+    },
+    {
+      "id": "metricsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-6 gap-4"
+      },
+      "children": {
+        "path": "/metricsList",
+        "componentId": "metricsItem"
+      }
+    },
+    {
+      "id": "metricsItem",
+      "component": "div",
+      "props": {
+        "className": "bg-[#1e293b]/60 border border-[#334155]/40 rounded-lg p-4 flex items-center gap-4"
+      },
+      "children": [
+        "metricsItemIcon",
+        "metricsItemInfo"
+      ]
+    },
+    {
+      "id": "metricsItemIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "metricIcon"
+        },
+        "color": {
+          "path": "iconColor"
+        },
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "metricsItemInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-w-0"
+      },
+      "children": [
+        "metricsItemValue",
+        "metricsItemName",
+        "metricsItemTrend"
+      ]
+    },
+    {
+      "id": "metricsItemValue",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-white",
+        "value": {
+          "path": "currentValue"
+        }
+      }
+    },
+    {
+      "id": "metricsItemName",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-slate-400 mt-0.5",
+        "value": {
+          "path": "metricName"
+        }
+      }
+    },
+    {
+      "id": "metricsItemTrend",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mt-1"
+      },
+      "children": [
+        "metricsItemTrendIcon",
+        "metricsItemTrendText"
+      ]
+    },
+    {
+      "id": "metricsItemTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "trendIcon"
+        },
+        "color": {
+          "path": "trendColor"
+        },
+        "className": "w-3.5 h-3.5"
+      }
+    },
+    {
+      "id": "metricsItemTrendText",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-slate-400",
+        "value": {
+          "path": "changeRate"
+        }
+      }
+    },
+    {
+      "id": "analysisCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111827] border border-[#1e3a5f]/40 rounded-xl p-5"
+      },
+      "children": [
+        "analysisCardHeader",
+        "analysisSteps",
+        "analysisChartsGrid"
+      ]
+    },
+    {
+      "id": "analysisCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-5"
+      },
+      "children": [
+        "analysisTitleIcon",
+        "analysisCardTitle"
+      ]
+    },
+    {
+      "id": "analysisTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "activity",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "analysisCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-white",
+        "value": {
+          "path": "/analysisCardTitle"
+        }
+      }
+    },
+    {
+      "id": "analysisSteps",
+      "component": "Steps",
+      "props": {
+        "current": {
+          "path": "/currentStep"
+        },
+        "status": "process",
+        "className": "mb-6"
+      },
+      "children": {
+        "path": "/diagnosisSteps",
+        "componentId": "analysisStepItem"
+      }
+    },
+    {
+      "id": "analysisStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "title"
+        },
+        "status": {
+          "path": "stepStatus"
+        },
+        "icon": {
+          "path": "icon"
+        },
+        "content": {
+          "componentId": "analysisStepContent"
+        }
+      }
+    },
+    {
+      "id": "analysisStepContent",
+      "component": "div",
+      "props": {
+        "className": "text-xs text-slate-400"
+      },
+      "children": [
+        "analysisStepDescText",
+        "analysisStepIdText"
+      ]
+    },
+    {
+      "id": "analysisStepDescText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "description"
+        }
+      }
+    },
+    {
+      "id": "analysisStepIdText",
+      "component": "span",
+      "props": {
+        "className": "ml-1 text-slate-600",
+        "value": {
+          "path": "stepId"
+        }
+      }
+    },
+    {
+      "id": "analysisChartsGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-4 mt-4"
+      },
+      "children": [
+        "chartFaultTypeContainer",
+        "chartTop5Container",
+        "chartSeverityContainer",
+        "chartDiagContainer"
+      ]
+    },
+    {
+      "id": "chartFaultTypeContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#1e293b]/40 rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chartFaultTypeTitle",
+        "chartFaultTypePie"
+      ]
+    },
+    {
+      "id": "chartFaultTypeTitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-slate-300 mb-3",
+        "value": {
+          "path": "/analysisCharts/0/chartTitle"
+        }
+      }
+    },
+    {
+      "id": "chartFaultTypePie",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "data": {
+            "path": "/faultTypeData"
+          },
+          "title": {
+            "text": "100",
+            "subtext": "Total"
+          },
+          "color": {
+            "path": "/faultTypeColors"
+          }
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "chartTop5Container",
+      "component": "div",
+      "props": {
+        "className": "bg-[#1e293b]/40 rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chartTop5Title",
+        "chartTop5Bar"
+      ]
+    },
+    {
+      "id": "chartTop5Title",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-slate-300 mb-3",
+        "value": {
+          "path": "/analysisCharts/1/chartTitle"
+        }
+      }
+    },
+    {
+      "id": "chartTop5Bar",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/top5DeviceData"
+          },
+          "direction": "horizontal",
+          "xAxis": {
+            "data": "device"
+          },
+          "yAxisTitle": "Alarm Count",
+          "color": [
+            "#2070F3"
+          ]
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "chartSeverityContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#1e293b]/40 rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chartSeverityTitle",
+        "chartSeverityBar"
+      ]
+    },
+    {
+      "id": "chartSeverityTitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-slate-300 mb-3",
+        "value": {
+          "path": "/analysisCharts/2/chartTitle"
+        }
+      }
+    },
+    {
+      "id": "chartSeverityBar",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/severityData"
+          },
+          "stack": true,
+          "xAxis": {
+            "data": "day"
+          },
+          "yAxisTitle": "Fault Count",
+          "color": [
+            "#E02128",
+            "#F4840C",
+            "#0067D1"
+          ]
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "chartDiagContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#1e293b]/40 rounded-lg p-4 flex flex-col"
+      },
+      "children": [
+        "chartDiagTitle",
+        "chartDiagBar"
+      ]
+    },
+    {
+      "id": "chartDiagTitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-slate-300 mb-3",
+        "value": {
+          "path": "/analysisCharts/3/chartTitle"
+        }
+      }
+    },
+    {
+      "id": "chartDiagBar",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/diagSuccessData"
+          },
+          "xAxis": {
+            "data": "method"
+          },
+          "yAxisTitle": "Rate (%)",
+          "color": [
+            "#09AA71",
+            "#E02128"
+          ]
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "trendCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111827] border border-[#1e3a5f]/40 rounded-xl p-5"
+      },
+      "children": [
+        "trendCardHeader",
+        "trendLineChart"
+      ]
+    },
+    {
+      "id": "trendCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "trendTitleIcon",
+        "trendCardTitle"
+      ]
+    },
+    {
+      "id": "trendTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "trendCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-white",
+        "value": {
+          "path": "/trendCardTitle"
+        }
+      }
+    },
+    {
+      "id": "trendLineChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/trendChartData"
+          },
+          "smooth": true,
+          "area": true,
+          "xAxis": {
+            "data": "date",
+            "name": "Date"
+          },
+          "yAxisTitle": "Fault Count",
+          "color": [
+            "#E02128",
+            "#F4840C",
+            "#62B42E"
+          ]
+        },
+        "className": "h-80 w-full"
+      }
+    },
+    {
+      "id": "alarmsCardContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-[#111827] border border-[#1e3a5f]/40 rounded-xl p-5"
+      },
+      "children": [
+        "alarmsCardHeader",
+        "alarmsTable"
+      ]
+    },
+    {
+      "id": "alarmsCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "alarmsTitleSection",
+        "alarmsToolbar"
+      ]
+    },
+    {
+      "id": "alarmsTitleSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "alarmsTitleIcon",
+        "alarmsCardTitle"
+      ]
+    },
+    {
+      "id": "alarmsTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell-ring",
+        "color": "warning",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "alarmsCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-white",
+        "value": {
+          "path": "/alarmsCardTitle"
+        }
+      }
+    },
+    {
+      "id": "alarmsToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "alarmsSearchInput",
+        "alarmsSeveritySelect"
+      ]
+    },
+    {
+      "id": "alarmsSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "Search alarms...",
+        "prefix": "search",
+        "size": "small",
+        "className": "w-56"
+      }
+    },
+    {
+      "id": "alarmsSeveritySelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/severityFilter"
+        },
+        "placeholder": "Severity",
+        "size": "small",
+        "className": "w-36",
+        "options": [
+          {
+            "label": "All",
+            "value": "all"
+          },
+          {
+            "label": "Critical",
+            "value": "critical"
+          },
+          {
+            "label": "Major",
+            "value": "major"
+          },
+          {
+            "label": "Minor",
+            "value": "minor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alarmsTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "alarmId",
+        "dataSource": {
+          "path": "/alarmsList"
+        },
+        "columns": [
+          {
+            "title": "Alarm ID",
+            "dataIndex": "alarmId",
+            "width": 180
+          },
+          {
+            "title": "Severity",
+            "dataIndex": "severityLevel",
+            "width": 130
+          },
+          {
+            "title": "Time",
+            "dataIndex": "occurTime",
+            "width": 170
+          },
+          {
+            "title": "Device",
+            "dataIndex": "deviceName"
+          },
+          {
+            "title": "Alarm Detail",
+            "dataIndex": "alarmTitle"
+          },
+          {
+            "title": "Status",
+            "dataIndex": "status",
+            "width": 140
+          },
+          {
+            "title": "Actions",
+            "dataIndex": "actions",
+            "width": 160
+          }
+        ],
+        "pagination": true,
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/alarmsList",
+        "componentId": "alarmRow"
+      }
+    },
+    {
+      "id": "alarmRow",
+      "component": "TableRow",
+      "children": [
+        "alarmIdCell",
+        "alarmSeverityCell",
+        "alarmTimeCell",
+        "alarmDeviceCell",
+        "alarmDetailCell",
+        "alarmStatusCell",
+        "alarmActionsCell"
+      ]
+    },
+    {
+      "id": "alarmIdCell",
+      "component": "span",
+      "props": {
+        "className": "text-xs font-mono text-slate-400",
+        "value": {
+          "path": "alarmId"
+        }
+      }
+    },
+    {
+      "id": "alarmSeverityCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "alarmSeverityIcon",
+        "alarmSeverityText"
+      ]
+    },
+    {
+      "id": "alarmSeverityIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "severityIcon"
+        },
+        "color": {
+          "path": "severityIconColor"
+        },
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "alarmSeverityText",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-white",
+        "value": {
+          "path": "severityLevel"
+        }
+      }
+    },
+    {
+      "id": "alarmTimeCell",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-slate-400",
+        "value": {
+          "path": "occurTime"
+        }
+      }
+    },
+    {
+      "id": "alarmDeviceCell",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-slate-300",
+        "value": {
+          "path": "deviceName"
+        }
+      }
+    },
+    {
+      "id": "alarmDetailCell",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-slate-300",
+        "value": {
+          "path": "alarmTitle"
+        }
+      }
+    },
+    {
+      "id": "alarmStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status"
+        },
+        "color": {
+          "path": "statusTagColor"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "alarmActionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "alarmAckBtn",
+        "alarmClearBtn"
+      ]
+    },
+    {
+      "id": "alarmAckBtn",
+      "component": "Button",
+      "props": {
+        "value": "Acknowledge",
+        "size": "small",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "alarmClearBtn",
+      "component": "Button",
+      "props": {
+        "value": "Clear",
+        "size": "small"
+      }
+    },
+    {
+      "id": "globalFooter",
+      "component": "footer",
+      "props": {
+        "className": "flex items-center justify-between px-6 py-3 bg-[#070d1a] border-t border-[#1e3a5f]/30"
+      },
+      "children": [
+        "footerLeft",
+        "footerRight"
+      ]
+    },
+    {
+      "id": "footerLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "footerStatusIcon",
+        "footerStatusText"
+      ]
+    },
+    {
+      "id": "footerStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/systemInfo/statusIndicatorIcon"
+        },
+        "color": "success",
+        "shape": "circle",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "footerStatusText",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-emerald-400 font-medium",
+        "value": {
+          "path": "/systemInfo/connectionStatus"
+        }
+      }
+    },
+    {
+      "id": "footerRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 text-xs text-slate-500"
+      },
+      "children": [
+        "footerVersionLabel",
+        "footerVersion",
+        "footerDivider1",
+        "footerRefreshLabel",
+        "footerRefreshRate",
+        "footerDivider2",
+        "footerTimeLabel",
+        "footerLastRefresh"
+      ]
+    },
+    {
+      "id": "footerVersionLabel",
+      "component": "span",
+      "props": {
+        "className": "text-slate-600",
+        "value": "Version:"
+      }
+    },
+    {
+      "id": "footerVersion",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemInfo/systemVersion"
+        }
+      }
+    },
+    {
+      "id": "footerDivider1",
+      "component": "span",
+      "props": {
+        "className": "text-slate-700",
+        "value": "|"
+      }
+    },
+    {
+      "id": "footerRefreshLabel",
+      "component": "span",
+      "props": {
+        "className": "text-slate-600",
+        "value": "Refresh:"
+      }
+    },
+    {
+      "id": "footerRefreshRate",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemInfo/dataRefreshRate"
+        }
+      }
+    },
+    {
+      "id": "footerDivider2",
+      "component": "span",
+      "props": {
+        "className": "text-slate-700",
+        "value": "|"
+      }
+    },
+    {
+      "id": "footerTimeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-slate-600",
+        "value": "Last Update:"
+      }
+    },
+    {
+      "id": "footerLastRefresh",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemInfo/lastRefreshTime"
+        }
+      }
+    }
+  ]
+}

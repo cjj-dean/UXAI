@@ -1,0 +1,847 @@
+{
+    "state": {
+        "brand": {
+            "logo": "shield-check",
+            "name": "Mastor NCE"
+        },
+        "navMenus": [
+            {
+                "label": "首页",
+                "isActive": true,
+                "route": "/home"
+            },
+            {
+                "label": "拓扑管理",
+                "isActive": false,
+                "route": "/topology"
+            },
+            {
+                "label": "告警中心",
+                "isActive": false,
+                "route": "/alerts"
+            },
+            {
+                "label": "性能分析",
+                "isActive": false,
+                "route": "/performance"
+            },
+            {
+                "label": "安全策略",
+                "isActive": false,
+                "route": "/security"
+            }
+        ],
+        "user": {
+            "name": "Admin_Operator",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "charts": {
+            "linkDistribution": [
+                {
+                    "name": "光纤链路",
+                    "value": 45
+                },
+                {
+                    "name": "微波链路",
+                    "value": 25
+                },
+                {
+                    "name": "卫星链路",
+                    "value": 15
+                },
+                {
+                    "name": "租赁链路",
+                    "value": 15
+                }
+            ],
+            "latencyTop5": [
+                {
+                    "linkName": "BJ-SH-Trunk-01",
+                    "latency": 124
+                },
+                {
+                    "linkName": "GZ-HK-Core-05",
+                    "latency": 98
+                },
+                {
+                    "linkName": "CD-CQ-Edge-02",
+                    "latency": 85
+                },
+                {
+                    "linkName": "SH-OS-Intl-09",
+                    "latency": 77
+                },
+                {
+                    "linkName": "WH-XA-Back-03",
+                    "latency": 62
+                }
+            ],
+            "unprotected": [
+                {
+                    "value": 3.2,
+                    "name": "无保护路径"
+                }
+            ],
+            "faultTrend": [
+                {
+                    "time": "00:00",
+                    "faults": 2
+                },
+                {
+                    "time": "04:00",
+                    "faults": 5
+                },
+                {
+                    "time": "08:00",
+                    "faults": 12
+                },
+                {
+                    "time": "12:00",
+                    "faults": 8
+                },
+                {
+                    "time": "16:00",
+                    "faults": 15
+                },
+                {
+                    "time": "20:00",
+                    "faults": 6
+                },
+                {
+                    "time": "23:59",
+                    "faults": 3
+                }
+            ]
+        },
+        "sliceSearch": "",
+        "sliceTable": [
+            {
+                "sliceId": "SL-2024001",
+                "sliceName": "智能工厂低时延切片",
+                "tenant": "华为工业",
+                "serviceType": "uRLLC",
+                "bandwidth": "10Gbps",
+                "latency": "1ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "已激活",
+                "statusColor": "success",
+                "createTime": "2024-05-10 10:00"
+            },
+            {
+                "sliceId": "SL-2024002",
+                "sliceName": "高清视频直播切片",
+                "tenant": "字节跳动",
+                "serviceType": "eMBB",
+                "bandwidth": "100Gbps",
+                "latency": "20ms",
+                "isolationLevel": "逻辑隔离",
+                "activeStatus": "运行中",
+                "statusColor": "processing",
+                "createTime": "2024-05-11 14:20"
+            },
+            {
+                "sliceId": "SL-2024003",
+                "sliceName": "车联网高可靠切片",
+                "tenant": "比亚迪",
+                "serviceType": "uRLLC",
+                "bandwidth": "5Gbps",
+                "latency": "5ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "异常",
+                "statusColor": "error",
+                "createTime": "2024-05-12 09:15"
+            },
+            {
+                "sliceId": "SL-2024004",
+                "sliceName": "智慧城市传感器切片",
+                "tenant": "市政厅",
+                "serviceType": "mMTC",
+                "bandwidth": "1Gbps",
+                "latency": "100ms",
+                "isolationLevel": "共享资源",
+                "activeStatus": "已停用",
+                "statusColor": "warning",
+                "createTime": "2024-05-12 11:00"
+            },
+            {
+                "sliceId": "SL-2024005",
+                "sliceName": "远程医疗专网",
+                "tenant": "协和医院",
+                "serviceType": "uRLLC",
+                "bandwidth": "2Gbps",
+                "latency": "2ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "已激活",
+                "statusColor": "success",
+                "createTime": "2024-05-13 08:30"
+            },
+            {
+                "sliceId": "SL-2024006",
+                "sliceName": "校园网加速切片",
+                "tenant": "清华大学",
+                "serviceType": "eMBB",
+                "bandwidth": "50Gbps",
+                "latency": "15ms",
+                "isolationLevel": "逻辑隔离",
+                "activeStatus": "运行中",
+                "statusColor": "processing",
+                "createTime": "2024-05-13 16:45"
+            },
+            {
+                "sliceId": "SL-2024007",
+                "sliceName": "金融交易加密切片",
+                "tenant": "工商银行",
+                "serviceType": "High-Security",
+                "bandwidth": "500Mbps",
+                "latency": "0.5ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "已激活",
+                "statusColor": "success",
+                "createTime": "2024-05-14 10:10"
+            },
+            {
+                "sliceId": "SL-2024008",
+                "sliceName": "电网配电自动化",
+                "tenant": "国家电网",
+                "serviceType": "uRLLC",
+                "bandwidth": "100Mbps",
+                "latency": "10ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "运行中",
+                "statusColor": "processing",
+                "createTime": "2024-05-14 13:00"
+            },
+            {
+                "sliceId": "SL-2024009",
+                "sliceName": "AR/VR 教学切片",
+                "tenant": "网易教育",
+                "serviceType": "eMBB",
+                "bandwidth": "20Gbps",
+                "latency": "12ms",
+                "isolationLevel": "逻辑隔离",
+                "activeStatus": "异常",
+                "statusColor": "error",
+                "createTime": "2024-05-15 09:00"
+            },
+            {
+                "sliceId": "SL-2024010",
+                "sliceName": "港口自动化龙门吊",
+                "tenant": "上海港",
+                "serviceType": "uRLLC",
+                "bandwidth": "1Gbps",
+                "latency": "8ms",
+                "isolationLevel": "物理隔离",
+                "activeStatus": "已激活",
+                "statusColor": "success",
+                "createTime": "2024-05-15 15:20"
+            }
+        ]
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "navHeader",
+                "mainContent"
+            ]
+        },
+        {
+            "id": "navHeader",
+            "component": "header",
+            "props": {
+                "className": "sticky top-0 z-50 flex items-center justify-between h-16 px-gutter bg-surface-container-highest shadow-sm"
+            },
+            "children": [
+                "navLogoSection",
+                "navMenuSection",
+                "navActionSection"
+            ]
+        },
+        {
+            "id": "navLogoSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navLogoIcon",
+                "navLogoText"
+            ]
+        },
+        {
+            "id": "navLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logo"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "navLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/name"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navMenuSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": {
+                "path": "/navMenus",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "a",
+            "props": {
+                "className": "text-md font-medium transition-colors hover:text-primary"
+            },
+            "children": [
+                "navMenuItemText"
+            ]
+        },
+        {
+            "id": "navMenuItemText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": {
+                    "path": "isActive"
+                }
+            }
+        },
+        {
+            "id": "navActionSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navSearchBtn",
+                "navHelpBtn",
+                "navBellBtn",
+                "navUserAvatar"
+            ]
+        },
+        {
+            "id": "navSearchBtn",
+            "component": "Button",
+            "props": {
+                "icon": "search",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navHelpBtn",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navBellBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/user/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex flex-col gap-gutter p-gutter"
+            },
+            "children": [
+                "dashboardSection",
+                "managementSection"
+            ]
+        },
+        {
+            "id": "dashboardSection",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": [
+                "chartCard1",
+                "chartCard2",
+                "chartCard3",
+                "chartCard4"
+            ]
+        },
+        {
+            "id": "chartCard1",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "chartTitle1",
+                "chartPie"
+            ]
+        },
+        {
+            "id": "chartTitle1",
+            "component": "h3",
+            "props": {
+                "value": "链路占比趋势",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "chartPie",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "pie",
+                    "title": {
+                        "text": "链路分布"
+                    },
+                    "data": {
+                        "path": "/charts/linkDistribution"
+                    },
+                    "color": [
+                        "#0067D1",
+                        "#09AA71",
+                        "#F4840C",
+                        "#715AFB"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartCard2",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "chartTitle2",
+                "chartBar"
+            ]
+        },
+        {
+            "id": "chartTitle2",
+            "component": "h3",
+            "props": {
+                "value": "Top5 时延越限链路 (ms)",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "chartBar",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "direction": "horizontal",
+                    "data": {
+                        "path": "/charts/latencyTop5"
+                    },
+                    "xAxis": {
+                        "data": "linkName"
+                    },
+                    "yAxisTitle": "ms",
+                    "color": [
+                        "#E02128"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartCard3",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card flex flex-col items-center"
+            },
+            "children": [
+                "chartTitle3",
+                "chartGauge"
+            ]
+        },
+        {
+            "id": "chartTitle3",
+            "component": "h3",
+            "props": {
+                "value": "无保护路径占比",
+                "className": "text-md font-bold mb-stack self-start"
+            }
+        },
+        {
+            "id": "chartGauge",
+            "component": "GaugeChart",
+            "props": {
+                "option": {
+                    "progress": true,
+                    "data": {
+                        "path": "/charts/unprotected"
+                    },
+                    "status": "warning"
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "chartCard4",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "chartTitle4",
+                "chartLine"
+            ]
+        },
+        {
+            "id": "chartTitle4",
+            "component": "h3",
+            "props": {
+                "value": "故障链路核心数据 (24h)",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "chartLine",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "area": true,
+                    "smooth": true,
+                    "data": {
+                        "path": "/charts/faultTrend"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "故障数",
+                    "color": [
+                        "#715AFB"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "managementSection",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-card"
+            },
+            "children": [
+                "mgmtHeader",
+                "mgmtToolbar",
+                "mgmtTable"
+            ]
+        },
+        {
+            "id": "mgmtHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-gutter"
+            },
+            "children": [
+                "mgmtTitle"
+            ]
+        },
+        {
+            "id": "mgmtTitle",
+            "component": "h2",
+            "props": {
+                "value": "网络切片管理",
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "mgmtToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-gutter"
+            },
+            "children": [
+                "mgmtSearch",
+                "mgmtActions"
+            ]
+        },
+        {
+            "id": "mgmtSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/sliceSearch"
+                },
+                "placeholder": "搜索切片ID/名称/租户...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "mgmtActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "btnExport",
+                "btnAdd"
+            ]
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "btnAdd",
+            "component": "Button",
+            "props": {
+                "value": "添加切片",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "mgmtTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "sliceId",
+                "dataSource": {
+                    "path": "/sliceTable"
+                },
+                "columns": [
+                    {
+                        "title": "切片ID",
+                        "dataIndex": "sliceId"
+                    },
+                    {
+                        "title": "切片名称",
+                        "dataIndex": "sliceName"
+                    },
+                    {
+                        "title": "租户",
+                        "dataIndex": "tenant"
+                    },
+                    {
+                        "title": "业务类型",
+                        "dataIndex": "serviceType"
+                    },
+                    {
+                        "title": "带宽",
+                        "dataIndex": "bandwidth"
+                    },
+                    {
+                        "title": "时延",
+                        "dataIndex": "latency"
+                    },
+                    {
+                        "title": "隔离级别",
+                        "dataIndex": "isolationLevel"
+                    },
+                    {
+                        "title": "激活状态",
+                        "dataIndex": "activeStatus",
+                        "width": 100
+                    },
+                    {
+                        "title": "创建时间",
+                        "dataIndex": "createTime"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 120,
+                        "align": "center"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/sliceTable",
+                "componentId": "mgmtTableRow"
+            }
+        },
+        {
+            "id": "mgmtTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellName",
+                "cellTenant",
+                "cellType",
+                "cellBandwidth",
+                "cellLatency",
+                "cellIsolation",
+                "cellStatus",
+                "cellTime",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "sliceId"
+                },
+                "className": "text-on-surface-variant font-mono"
+            }
+        },
+        {
+            "id": "cellName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "sliceName"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellTenant",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "tenant"
+                }
+            }
+        },
+        {
+            "id": "cellType",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "serviceType"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellBandwidth",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "bandwidth"
+                }
+            }
+        },
+        {
+            "id": "cellLatency",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "latency"
+                },
+                "className": "text-primary"
+            }
+        },
+        {
+            "id": "cellIsolation",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "isolationLevel"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "activeStatus"
+                },
+                "color": {
+                    "path": "statusColor"
+                }
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "createTime"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2 justify-center"
+            },
+            "children": [
+                "actionEdit",
+                "actionDownload",
+                "actionMore"
+            ]
+        },
+        {
+            "id": "actionEdit",
+            "component": "Button",
+            "props": {
+                "icon": "edit",
+                "size": "small",
+                "shape": "circle",
+                "className": "text-primary"
+            }
+        },
+        {
+            "id": "actionDownload",
+            "component": "Button",
+            "props": {
+                "icon": "file-down",
+                "size": "small",
+                "shape": "circle",
+                "className": "text-success"
+            }
+        },
+        {
+            "id": "actionMore",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small",
+                "shape": "circle"
+            }
+        }
+    ]
+}

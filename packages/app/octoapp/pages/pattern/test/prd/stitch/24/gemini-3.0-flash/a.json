@@ -1,0 +1,978 @@
+{
+    "state": {
+        "brandName": "Nexus ERP",
+        "brandIcon": "layers",
+        "menuItems": [
+            {
+                "label": "仪表盘",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "供应商名录",
+                "icon": "users",
+                "isActive": true
+            },
+            {
+                "label": "资质管理",
+                "icon": "shield-check",
+                "isActive": false
+            },
+            {
+                "label": "绩效评估",
+                "icon": "bar-chart-3",
+                "isActive": false
+            },
+            {
+                "label": "操作日志",
+                "icon": "history",
+                "isActive": false
+            }
+        ],
+        "searchPlaceholder": "搜索供应商、合同或SKU...",
+        "notificationsCount": 12,
+        "currentUser": {
+            "nickName": "陈明远",
+            "role": "高级采购经理",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "suppliers": [
+            {
+                "id": "V001",
+                "supplierName": "嘉兴精工电子有限公司",
+                "type": "生产制造",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.8,
+                "contactPerson": "张强"
+            },
+            {
+                "id": "V002",
+                "supplierName": "Global Logistics Co.",
+                "type": "物流服务",
+                "status": "审核中",
+                "statusType": "warning",
+                "rating": 4.2,
+                "contactPerson": "Sarah Wilson"
+            },
+            {
+                "id": "V003",
+                "supplierName": "深蓝原材料集团",
+                "type": "原材料",
+                "status": "已停用",
+                "statusType": "error",
+                "rating": 3.5,
+                "contactPerson": "李伟"
+            },
+            {
+                "id": "V004",
+                "supplierName": "创维包装技术",
+                "type": "包装材料",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.5,
+                "contactPerson": "王芳"
+            },
+            {
+                "id": "V005",
+                "supplierName": "迅捷国际贸易",
+                "type": "贸易商",
+                "status": "待考察",
+                "statusType": "info",
+                "rating": 3.9,
+                "contactPerson": "赵敏"
+            },
+            {
+                "id": "V006",
+                "supplierName": "泰坦重工设备",
+                "type": "设备维护",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.7,
+                "contactPerson": "刘洋"
+            },
+            {
+                "id": "V007",
+                "supplierName": "绿能化工",
+                "type": "原材料",
+                "status": "资质过期",
+                "statusType": "error",
+                "rating": 4.1,
+                "contactPerson": "孙博"
+            },
+            {
+                "id": "V008",
+                "supplierName": "极客云仓",
+                "type": "物流服务",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.9,
+                "contactPerson": "周杰"
+            },
+            {
+                "id": "V009",
+                "supplierName": "华夏印刷厂",
+                "type": "包装材料",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.3,
+                "contactPerson": "吴娜"
+            },
+            {
+                "id": "V010",
+                "supplierName": "东部电力供应",
+                "type": "能源服务",
+                "status": "合作中",
+                "statusType": "success",
+                "rating": 4.6,
+                "contactPerson": "郑龙"
+            }
+        ],
+        "detail": {
+            "supplierName": "嘉兴精工电子有限公司",
+            "code": "SUP-2024-089",
+            "address": "浙江省嘉兴市南湖区科技大道88号",
+            "coverImage": "https://picsum.photos/seed/factory/800/200"
+        },
+        "qualifications": [
+            {
+                "docName": "营业执照",
+                "status": "有效",
+                "expiryDate": "2028-12-31",
+                "fileIcon": "file-text",
+                "color": "success"
+            },
+            {
+                "docName": "ISO9001质量管理认证",
+                "status": "有效",
+                "expiryDate": "2025-06-15",
+                "fileIcon": "shield-check",
+                "color": "success"
+            },
+            {
+                "docName": "环保排污许可证",
+                "status": "即将过期",
+                "expiryDate": "2024-10-01",
+                "fileIcon": "alert-triangle",
+                "color": "warning"
+            }
+        ],
+        "performanceMetrics": [
+            {
+                "year": "2023",
+                "quality": 98,
+                "delivery": 95,
+                "price": 92,
+                "grade": "A"
+            },
+            {
+                "year": "2022",
+                "quality": 94,
+                "delivery": 92,
+                "price": 90,
+                "grade": "B+"
+            },
+            {
+                "year": "2021",
+                "quality": 90,
+                "delivery": 88,
+                "price": 95,
+                "grade": "B"
+            }
+        ],
+        "chartData": [
+            {
+                "year": "2021",
+                "Quality": 90,
+                "Delivery": 88
+            },
+            {
+                "year": "2022",
+                "Quality": 94,
+                "Delivery": 92
+            },
+            {
+                "year": "2023",
+                "Quality": 98,
+                "Delivery": 95
+            }
+        ]
+    },
+    "rootId": "nexusAppContainer",
+    "elements": [
+        {
+            "id": "nexusAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-sm flex flex-col z-10"
+            },
+            "children": [
+                "sidebarLogoArea",
+                "sidebarMenuArea",
+                "sidebarFooterArea"
+            ]
+        },
+        {
+            "id": "sidebarLogoArea",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "sidebarLogoIcon",
+                "sidebarLogoText"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brandIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "sidebarLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "sidebarMenuArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-3 py-4 space-y-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarFooterArea",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "sidebarLogoutBtn"
+            ]
+        },
+        {
+            "id": "sidebarLogoutBtn",
+            "component": "Button",
+            "props": {
+                "value": "退出登录",
+                "icon": "log-out",
+                "className": "w-full",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-w-0"
+            },
+            "children": [
+                "globalHeader",
+                "contentSplitter"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6 shrink-0"
+            },
+            "children": [
+                "headerSearchBox",
+                "headerUserArea"
+            ]
+        },
+        {
+            "id": "headerSearchBox",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerUserArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerNotifyIcon",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerNotifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "headerUserAvatar",
+                "headerUserDetails"
+            ]
+        },
+        {
+            "id": "headerUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "headerUserDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerUserName",
+                "headerUserRole"
+            ]
+        },
+        {
+            "id": "headerUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/nickName"
+                },
+                "className": "text-sm font-bold leading-tight"
+            }
+        },
+        {
+            "id": "headerUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentSplitter",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "tableSection",
+                "detailSection"
+            ]
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "flex-[7] p-6 overflow-auto"
+            },
+            "children": [
+                "tableCard"
+            ]
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6"
+            },
+            "children": [
+                "tableHeader",
+                "supplierTable"
+            ]
+        },
+        {
+            "id": "tableHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "tableTitle",
+                "tableActions"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h2",
+            "props": {
+                "value": "供应商名录",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "tableActions",
+            "component": "Button",
+            "props": {
+                "value": "新增供应商",
+                "icon": "plus",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "supplierTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/suppliers"
+                },
+                "columns": [
+                    {
+                        "title": "供应商名称",
+                        "dataIndex": "supplierName"
+                    },
+                    {
+                        "title": "类型",
+                        "dataIndex": "type",
+                        "width": 100
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "评分",
+                        "dataIndex": "rating",
+                        "width": 150
+                    },
+                    {
+                        "title": "联系人",
+                        "dataIndex": "contactPerson",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/suppliers",
+                "componentId": "supplierTableRow"
+            }
+        },
+        {
+            "id": "supplierTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellType",
+                "cellStatus",
+                "cellRating",
+                "cellContact"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "supplierName"
+                },
+                "className": "font-medium text-primary"
+            }
+        },
+        {
+            "id": "cellType",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "cellRating",
+            "component": "Rate",
+            "props": {
+                "value": {
+                    "path": "rating"
+                },
+                "count": 5,
+                "disabled": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellContact",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "contactPerson"
+                }
+            }
+        },
+        {
+            "id": "detailSection",
+            "component": "div",
+            "props": {
+                "className": "flex-[3] bg-surface-container-high border-l border-divider overflow-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "detailHeader",
+                "detailBasicInfo",
+                "detailDocs",
+                "detailPerformance"
+            ]
+        },
+        {
+            "id": "detailHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "detailTitle",
+                "detailCloseIcon"
+            ]
+        },
+        {
+            "id": "detailTitle",
+            "component": "h3",
+            "props": {
+                "value": "供应商详情",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "detailCloseIcon",
+            "component": "Icon",
+            "props": {
+                "name": "x",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "detailBasicInfo",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-lg overflow-hidden shadow-sm"
+            },
+            "children": [
+                "detailCover",
+                "detailInfoContent"
+            ]
+        },
+        {
+            "id": "detailCover",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/detail/coverImage"
+                },
+                "className": "w-full h-32 object-cover"
+            }
+        },
+        {
+            "id": "detailInfoContent",
+            "component": "div",
+            "props": {
+                "className": "p-4 space-y-2"
+            },
+            "children": [
+                "detailName",
+                "detailCode",
+                "detailAddress"
+            ]
+        },
+        {
+            "id": "detailName",
+            "component": "div",
+            "props": {
+                "value": {
+                    "path": "/detail/supplierName"
+                },
+                "className": "text-md font-bold"
+            }
+        },
+        {
+            "id": "detailCode",
+            "component": "div",
+            "props": {
+                "className": "text-xs text-on-surface-variant"
+            },
+            "children": [
+                "detailCodeLabel",
+                "detailCodeVal"
+            ]
+        },
+        {
+            "id": "detailCodeLabel",
+            "component": "span",
+            "props": {
+                "value": "编号: "
+            }
+        },
+        {
+            "id": "detailCodeVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/code"
+                }
+            }
+        },
+        {
+            "id": "detailAddress",
+            "component": "div",
+            "props": {
+                "className": "text-xs text-on-surface-variant flex gap-1"
+            },
+            "children": [
+                "detailAddrIcon",
+                "detailAddrText"
+            ]
+        },
+        {
+            "id": "detailAddrIcon",
+            "component": "Icon",
+            "props": {
+                "name": "map-pin",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "detailAddrText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/address"
+                }
+            }
+        },
+        {
+            "id": "detailDocs",
+            "component": "div",
+            "props": {
+                "className": "space-y-3"
+            },
+            "children": [
+                "detailDocsTitle",
+                "detailDocsList"
+            ]
+        },
+        {
+            "id": "detailDocsTitle",
+            "component": "Divider",
+            "props": {
+                "value": "资质文件",
+                "orientation": "left",
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "detailDocsList",
+            "component": "div",
+            "props": {
+                "className": "space-y-2"
+            },
+            "children": {
+                "path": "/qualifications",
+                "componentId": "detailDocItem"
+            }
+        },
+        {
+            "id": "detailDocItem",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-3 rounded-lg flex items-center justify-between"
+            },
+            "children": [
+                "detailDocLeft",
+                "detailDocDownload"
+            ]
+        },
+        {
+            "id": "detailDocLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "detailDocIcon",
+                "detailDocMeta"
+            ]
+        },
+        {
+            "id": "detailDocIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "fileIcon"
+                },
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "detailDocMeta",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "detailDocName",
+                "detailDocStatus"
+            ]
+        },
+        {
+            "id": "detailDocName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "docName"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "detailDocStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "size": "small",
+                "className": "w-fit mt-1"
+            }
+        },
+        {
+            "id": "detailDocDownload",
+            "component": "Icon",
+            "props": {
+                "name": "download",
+                "className": "w-4 h-4 text-primary cursor-pointer"
+            }
+        },
+        {
+            "id": "detailPerformance",
+            "component": "div",
+            "props": {
+                "className": "space-y-4"
+            },
+            "children": [
+                "detailPerfTitle",
+                "detailPerfChart",
+                "detailPerfTable"
+            ]
+        },
+        {
+            "id": "detailPerfTitle",
+            "component": "Divider",
+            "props": {
+                "value": "三年绩效对比",
+                "orientation": "left",
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "detailPerfChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/chartData"
+                    },
+                    "xAxis": {
+                        "data": "year"
+                    },
+                    "yAxisTitle": "Score",
+                    "smooth": true,
+                    "color": [
+                        "#0067D1",
+                        "#09AA71"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "detailPerfTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "year",
+                "dataSource": {
+                    "path": "/performanceMetrics"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "年份",
+                        "dataIndex": "year"
+                    },
+                    {
+                        "title": "质量",
+                        "dataIndex": "quality"
+                    },
+                    {
+                        "title": "交付",
+                        "dataIndex": "delivery"
+                    },
+                    {
+                        "title": "价格",
+                        "dataIndex": "price"
+                    },
+                    {
+                        "title": "评级",
+                        "dataIndex": "grade"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/performanceMetrics",
+                "componentId": "perfTableRow"
+            }
+        },
+        {
+            "id": "perfTableRow",
+            "component": "TableRow",
+            "children": [
+                "perfYear",
+                "perfQuality",
+                "perfDelivery",
+                "perfPrice",
+                "perfGrade"
+            ]
+        },
+        {
+            "id": "perfYear",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "year"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "perfQuality",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "quality"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "perfDelivery",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "delivery"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "perfPrice",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "price"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "perfGrade",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "grade"
+                },
+                "color": "primary",
+                "size": "small"
+            }
+        }
+    ]
+}

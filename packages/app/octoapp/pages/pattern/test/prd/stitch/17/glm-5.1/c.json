@@ -1,0 +1,1432 @@
+{
+    "state": {
+        "searchValue": "",
+        "activeViewTab": "dashboard",
+        "viewTabs": [
+            {
+                "tabName": "Dashboard",
+                "tabKey": "dashboard"
+            },
+            {
+                "tabName": "Pipeline",
+                "tabKey": "pipeline"
+            },
+            {
+                "tabName": "Accounts",
+                "tabKey": "accounts"
+            },
+            {
+                "tabName": "Reports",
+                "tabKey": "reports"
+            }
+        ],
+        "headerActionIcons": [
+            {
+                "actionIcon": "bell"
+            },
+            {
+                "actionIcon": "message-square"
+            },
+            {
+                "actionIcon": "user"
+            }
+        ],
+        "footerActions": [
+            {
+                "actionLabel": "Help",
+                "actionIcon": "help-circle"
+            },
+            {
+                "actionLabel": "Logout",
+                "actionIcon": "log-out"
+            }
+        ],
+        "statusTags": [
+            {
+                "tagLabel": "In Progress / 进行中",
+                "tagColor": "processing"
+            },
+            {
+                "tagLabel": "High Priority / 高优先级",
+                "tagColor": "error"
+            }
+        ],
+        "checklistOptions": [
+            {
+                "label": "Provisioning 3 Availability Zones in Singapore and Tokyo.",
+                "value": "item1"
+            },
+            {
+                "label": "Configuring Cross-Region Replication for critical databases.",
+                "value": "item2"
+            },
+            {
+                "label": "Implementing Geo-routing policies via DNS provider.",
+                "value": "item3"
+            }
+        ],
+        "checklistValue": [
+            "item1",
+            "item2",
+            "item3"
+        ],
+        "subtaskItems": [
+            {
+                "checkIcon": "circle-check",
+                "checkColor": "success",
+                "taskName": "Regional VPC Configuration / 区域网络配置",
+                "statusText": "Completed",
+                "statusColor": "success",
+                "assigneeImage": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "checkIcon": "circle-check",
+                "checkColor": "success",
+                "taskName": "Security Group Audit / 安全组审计",
+                "statusText": "Completed",
+                "statusColor": "success",
+                "assigneeImage": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            {
+                "checkIcon": "circle",
+                "checkColor": "default",
+                "taskName": "IAM Role Provisioning / 身份与访问管理",
+                "statusText": "Due Oct 24",
+                "statusColor": "warning",
+                "assigneeImage": "https://randomuser.me/api/portraits/men/45.jpg"
+            },
+            {
+                "checkIcon": "circle",
+                "checkColor": "default",
+                "taskName": "Load Balancer Setup / 负载均衡设置",
+                "statusText": "Due Oct 26",
+                "statusColor": "warning",
+                "assigneeImage": "https://randomuser.me/api/portraits/men/46.jpg"
+            }
+        ],
+        "executionSteps": [
+            {
+                "stepId": "step1",
+                "stepName": "Infrastructure Baseline Setup",
+                "stepStatus": "finish",
+                "assignee": "Chen Wei",
+                "stepIcon": "server"
+            },
+            {
+                "stepId": "step2",
+                "stepName": "Network Connectivity Tests",
+                "stepStatus": "process",
+                "assignee": "Sarah Jenkins",
+                "stepIcon": "wifi"
+            },
+            {
+                "stepId": "step3",
+                "stepName": "Security & Compliance Review",
+                "stepStatus": "wait",
+                "assignee": "Alex Chen",
+                "stepIcon": "shield"
+            }
+        ],
+        "currentStep": 1,
+        "contributors": [
+            {
+                "avatarUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            {
+                "avatarUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+            },
+            {
+                "avatarUrl": "https://randomuser.me/api/portraits/women/46.jpg"
+            }
+        ],
+        "progressMetrics": [
+            {
+                "metricLabel": "PROGRESS / 任务进度",
+                "metricValue": "68%",
+                "progressPercentage": 68
+            },
+            {
+                "metricLabel": "ESTIMATED",
+                "metricValue": "45h",
+                "progressPercentage": 0
+            },
+            {
+                "metricLabel": "ACTUAL",
+                "metricValue": "32.5h",
+                "progressPercentage": 0
+            }
+        ],
+        "messages": [
+            {
+                "senderName": "Sarah Jenkins",
+                "timestamp": "2h ago",
+                "messageContent": "The regional compliance check requires additional documentation for data sovereignty in Singapore.",
+                "senderAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            {
+                "senderName": "Chen Wei",
+                "timestamp": "1h ago",
+                "messageContent": "Copy that. I will update the IAM policies to restrict cross-region data access by EOD.",
+                "senderAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+        ],
+        "newMessage": ""
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebar",
+                "mainArea"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "w-56 shrink-0 flex flex-col bg-surface-container-highest shadow-sm"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarNav",
+                "sidebarQuickAction",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2.5 px-4 py-4 border-b border-divider"
+            },
+            "children": [
+                "sidebarLogoIcon",
+                "sidebarBrandInfo"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layers",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "sidebarBrandInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sidebarBrandTitle",
+                "sidebarEditionTag"
+            ]
+        },
+        {
+            "id": "sidebarBrandTitle",
+            "component": "span",
+            "props": {
+                "value": "Nexus CRM",
+                "className": "text-md font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarEditionTag",
+            "component": "span",
+            "props": {
+                "value": "ENTERPRISE EDITION",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1 px-3 py-4"
+            },
+            "children": [
+                "sidebarNavHome",
+                "sidebarNavDeals",
+                "sidebarNavContacts",
+                "sidebarNavTasks",
+                "sidebarNavAnalytics"
+            ]
+        },
+        {
+            "id": "sidebarNavHome",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarNavHomeIcon",
+                "sidebarNavHomeLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavHomeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "home",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavHomeLabel",
+            "component": "span",
+            "props": {
+                "value": "Home",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarNavDeals",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarNavDealsIcon",
+                "sidebarNavDealsLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavDealsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "briefcase",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavDealsLabel",
+            "component": "span",
+            "props": {
+                "value": "Deals",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarNavContacts",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarNavContactsIcon",
+                "sidebarNavContactsLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavContactsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavContactsLabel",
+            "component": "span",
+            "props": {
+                "value": "Contacts",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarNavTasks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container cursor-pointer"
+            },
+            "children": [
+                "sidebarNavTasksIcon",
+                "sidebarNavTasksLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavTasksIcon",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavTasksLabel",
+            "component": "span",
+            "props": {
+                "value": "Tasks",
+                "className": "text-sm font-semibold text-primary"
+            }
+        },
+        {
+            "id": "sidebarNavAnalytics",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarNavAnalyticsIcon",
+                "sidebarNavAnalyticsLabel"
+            ]
+        },
+        {
+            "id": "sidebarNavAnalyticsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-2",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavAnalyticsLabel",
+            "component": "span",
+            "props": {
+                "value": "Analytics",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarQuickAction",
+            "component": "div",
+            "props": {
+                "className": "px-3 mb-2"
+            },
+            "children": [
+                "sidebarQuickBtn"
+            ]
+        },
+        {
+            "id": "sidebarQuickBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ New Quote",
+                "icon": "plus-circle",
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3 py-3 border-t border-divider"
+            },
+            "children": {
+                "path": "/footerActions",
+                "componentId": "sidebarFooterItem"
+            }
+        },
+        {
+            "id": "sidebarFooterItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 text-on-surface-variant cursor-pointer rounded-lg hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarFooterIcon",
+                "sidebarFooterLabel"
+            ]
+        },
+        {
+            "id": "sidebarFooterIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "actionIcon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "sidebarFooterLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "actionLabel"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-h-screen overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentWrapper"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6 px-6 h-14 bg-surface-container-highest shadow-sm shrink-0"
+            },
+            "children": [
+                "headerSearchInput",
+                "headerTabs",
+                "headerActionsGroup"
+            ]
+        },
+        {
+            "id": "headerSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": "Search tasks, docs...",
+                "prefix": "search",
+                "className": "w-56"
+            }
+        },
+        {
+            "id": "headerTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeViewTab"
+                },
+                "size": "small",
+                "className": "flex-1"
+            },
+            "children": {
+                "path": "/viewTabs",
+                "componentId": "headerTabItem"
+            }
+        },
+        {
+            "id": "headerTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "tabKey"
+                },
+                "label": {
+                    "path": "tabName"
+                },
+                "content": ""
+            }
+        },
+        {
+            "id": "headerActionsGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 ml-auto"
+            },
+            "children": {
+                "path": "/headerActionIcons",
+                "componentId": "headerActionBtn"
+            }
+        },
+        {
+            "id": "headerActionBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "actionIcon"
+                },
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "contentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-auto p-6 flex flex-col gap-5"
+            },
+            "children": [
+                "contextHeader",
+                "bodySplit"
+            ]
+        },
+        {
+            "id": "contextHeader",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "contextBreadcrumb",
+                "contextHeaderRow"
+            ]
+        },
+        {
+            "id": "contextBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "Projects"
+                    },
+                    {
+                        "title": "APAC Expansion"
+                    }
+                ],
+                "separator": "/",
+                "className": "mb-3"
+            }
+        },
+        {
+            "id": "contextHeaderRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-start justify-between"
+            },
+            "children": [
+                "contextHeaderLeft",
+                "contextHeaderRight"
+            ]
+        },
+        {
+            "id": "contextHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": [
+                "contextTaskTitle",
+                "contextTagsRow"
+            ]
+        },
+        {
+            "id": "contextTaskTitle",
+            "component": "h1",
+            "props": {
+                "value": "Setup APAC Cloud Region / 亚太区云区域部署",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "contextTagsRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": {
+                "path": "/statusTags",
+                "componentId": "contextTag"
+            }
+        },
+        {
+            "id": "contextTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "tagLabel"
+                },
+                "color": {
+                    "path": "tagColor"
+                }
+            }
+        },
+        {
+            "id": "contextHeaderRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 shrink-0"
+            },
+            "children": [
+                "contextCompleteBtn",
+                "contextEditBtn",
+                "contextMoreBtn"
+            ]
+        },
+        {
+            "id": "contextCompleteBtn",
+            "component": "Button",
+            "props": {
+                "value": "Mark Complete / 标记完成",
+                "icon": "check-circle",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "contextEditBtn",
+            "component": "Button",
+            "props": {
+                "value": "Edit / 编辑",
+                "icon": "edit",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "contextMoreBtn",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "bodySplit",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": [
+                "detailColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "detailColumn",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-5 min-w-0"
+            },
+            "children": [
+                "descCard",
+                "subtasksCard",
+                "stepsCard"
+            ]
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "w-80 shrink-0 flex flex-col gap-5"
+            },
+            "children": [
+                "assignCard",
+                "progressCard",
+                "discussCard"
+            ]
+        },
+        {
+            "id": "descCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "descCardTitle",
+                "descContent",
+                "descDivider",
+                "descChecklist"
+            ]
+        },
+        {
+            "id": "descCardTitle",
+            "component": "h3",
+            "props": {
+                "value": "Task Description / 任务详情",
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "descContent",
+            "component": "p",
+            "props": {
+                "value": "Initialize the high-availability infrastructure for the APAC region to ensure compliance and low latency for local services.",
+                "className": "text-sm text-on-surface-variant leading-relaxed mt-2"
+            }
+        },
+        {
+            "id": "descDivider",
+            "component": "Divider",
+            "props": {
+                "className": "my-2"
+            }
+        },
+        {
+            "id": "descChecklist",
+            "component": "CheckboxGroup",
+            "props": {
+                "value": {
+                    "path": "/checklistValue"
+                },
+                "options": {
+                    "path": "/checklistOptions"
+                },
+                "className": "flex flex-col gap-2"
+            }
+        },
+        {
+            "id": "subtasksCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "subtasksHeader",
+                "subtasksList",
+                "subtasksAddBtn"
+            ]
+        },
+        {
+            "id": "subtasksHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "subtasksTitle",
+                "subtasksSummaryTag"
+            ]
+        },
+        {
+            "id": "subtasksTitle",
+            "component": "h3",
+            "props": {
+                "value": "Subtasks / 子任务拆解",
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "subtasksSummaryTag",
+            "component": "Tag",
+            "props": {
+                "value": "3 of 5 Completed",
+                "color": "processing"
+            }
+        },
+        {
+            "id": "subtasksList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 mb-4"
+            },
+            "children": {
+                "path": "/subtaskItems",
+                "componentId": "subtaskItem"
+            }
+        },
+        {
+            "id": "subtaskItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 py-2.5 px-2 rounded-lg hover:bg-surface-variant"
+            },
+            "children": [
+                "subtaskCheckIcon",
+                "subtaskNameText",
+                "subtaskStatusTag",
+                "subtaskAssigneeImg"
+            ]
+        },
+        {
+            "id": "subtaskCheckIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "checkIcon"
+                },
+                "color": {
+                    "path": "checkColor"
+                },
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "subtaskNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskName"
+                },
+                "className": "text-sm text-on-surface flex-1 min-w-0"
+            }
+        },
+        {
+            "id": "subtaskStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "statusText"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "subtaskAssigneeImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "assigneeImage"
+                },
+                "className": "w-6 h-6 rounded-full shrink-0 ml-2"
+            }
+        },
+        {
+            "id": "subtasksAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ Add New Subtask / 添加子任务",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "stepsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "stepsCardTitle",
+                "stepsComponent"
+            ]
+        },
+        {
+            "id": "stepsCardTitle",
+            "component": "h3",
+            "props": {
+                "value": "Execution Steps / 执行步骤",
+                "className": "text-lg font-semibold text-on-surface mb-4"
+            }
+        },
+        {
+            "id": "stepsComponent",
+            "component": "Steps",
+            "props": {
+                "current": {
+                    "path": "/currentStep"
+                },
+                "orientation": "vertical",
+                "className": "mt-2"
+            },
+            "children": {
+                "path": "/executionSteps",
+                "componentId": "stepItem"
+            }
+        },
+        {
+            "id": "stepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "stepName"
+                },
+                "status": {
+                    "path": "stepStatus"
+                },
+                "icon": {
+                    "path": "stepIcon"
+                },
+                "content": {
+                    "componentId": "stepContent"
+                }
+            }
+        },
+        {
+            "id": "stepContent",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 py-1"
+            },
+            "children": [
+                "stepAssigneeIcon",
+                "stepAssigneeName"
+            ]
+        },
+        {
+            "id": "stepAssigneeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "color": "default",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "stepAssigneeName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "assignee"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "assignCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "assignCardTitle",
+                "ownerRow",
+                "assignDivider",
+                "contribTitle",
+                "contribRow"
+            ]
+        },
+        {
+            "id": "assignCardTitle",
+            "component": "h4",
+            "props": {
+                "value": "ASSIGNMENT / 责任人分配",
+                "className": "text-xs font-bold text-on-surface-variant tracking-wider mb-4"
+            }
+        },
+        {
+            "id": "ownerRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 mb-4"
+            },
+            "children": [
+                "ownerAvatar",
+                "ownerInfo"
+            ]
+        },
+        {
+            "id": "ownerAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "ownerInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "ownerName",
+                "ownerRole"
+            ]
+        },
+        {
+            "id": "ownerName",
+            "component": "span",
+            "props": {
+                "value": "Chen Wei",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "ownerRole",
+            "component": "span",
+            "props": {
+                "value": "Project Owner",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "assignDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "contribTitle",
+            "component": "span",
+            "props": {
+                "value": "CONTRIBUTORS",
+                "className": "text-xs font-bold text-on-surface-variant tracking-wider mt-3 mb-2 block"
+            }
+        },
+        {
+            "id": "contribRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center mt-2"
+            },
+            "children": [
+                "contribAvatarsLoop",
+                "extraCountBadge"
+            ]
+        },
+        {
+            "id": "contribAvatarsLoop",
+            "component": "div",
+            "props": {
+                "className": "flex items-center"
+            },
+            "children": {
+                "path": "/contributors",
+                "componentId": "contribAvatar"
+            }
+        },
+        {
+            "id": "contribAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatarUrl"
+                },
+                "className": "w-8 h-8 rounded-full border-2 border-white -ml-2 first:ml-0"
+            }
+        },
+        {
+            "id": "extraCountBadge",
+            "component": "span",
+            "props": {
+                "value": "+4",
+                "className": "ml-2 text-xs text-on-surface-variant bg-surface-variant rounded-full px-2 py-0.5"
+            }
+        },
+        {
+            "id": "progressCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "progressDateRow",
+                "progressDivider",
+                "progressSection"
+            ]
+        },
+        {
+            "id": "progressDateRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between mb-4"
+            },
+            "children": [
+                "progressStartCol",
+                "progressDueCol"
+            ]
+        },
+        {
+            "id": "progressStartCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "progressStartLabel",
+                "progressStartDate"
+            ]
+        },
+        {
+            "id": "progressStartLabel",
+            "component": "span",
+            "props": {
+                "value": "START DATE",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "progressStartDate",
+            "component": "span",
+            "props": {
+                "value": "Oct 10, 2023",
+                "className": "text-sm font-medium text-on-surface mt-1"
+            }
+        },
+        {
+            "id": "progressDueCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "progressDueLabel",
+                "progressDueDate"
+            ]
+        },
+        {
+            "id": "progressDueLabel",
+            "component": "span",
+            "props": {
+                "value": "DUE DATE",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "progressDueDate",
+            "component": "span",
+            "props": {
+                "value": "Oct 30, 2023",
+                "className": "text-sm font-medium text-on-surface mt-1"
+            }
+        },
+        {
+            "id": "progressDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "progressSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4 mt-4"
+            },
+            "children": [
+                "progressMetric1",
+                "progressMetric2",
+                "progressMetric3"
+            ]
+        },
+        {
+            "id": "progressMetric1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "progressLabel1",
+                "progressValueRow1",
+                "progressBar1"
+            ]
+        },
+        {
+            "id": "progressLabel1",
+            "component": "span",
+            "props": {
+                "value": "PROGRESS / 任务进度",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "progressValueRow1",
+            "component": "span",
+            "props": {
+                "value": "68%",
+                "className": "text-2xl font-bold text-primary"
+            }
+        },
+        {
+            "id": "progressBar1",
+            "component": "Progress",
+            "props": {
+                "percent": 68,
+                "strokeColor": "#0067D1",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "progressMetric2",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center py-2 border-b border-divider"
+            },
+            "children": [
+                "metricEstLabel",
+                "metricEstValue"
+            ]
+        },
+        {
+            "id": "metricEstLabel",
+            "component": "span",
+            "props": {
+                "value": "ESTIMATED",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "metricEstValue",
+            "component": "span",
+            "props": {
+                "value": "45h",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "progressMetric3",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center py-2"
+            },
+            "children": [
+                "metricActLabel",
+                "metricActValue"
+            ]
+        },
+        {
+            "id": "metricActLabel",
+            "component": "span",
+            "props": {
+                "value": "ACTUAL",
+                "className": "text-xs text-on-surface-variant tracking-wider"
+            }
+        },
+        {
+            "id": "metricActValue",
+            "component": "span",
+            "props": {
+                "value": "32.5h",
+                "className": "text-sm font-semibold text-success"
+            }
+        },
+        {
+            "id": "discussCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm p-5"
+            },
+            "children": [
+                "discussHeader",
+                "discussMessages",
+                "discussInputArea"
+            ]
+        },
+        {
+            "id": "discussHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-4"
+            },
+            "children": [
+                "discussTitle",
+                "discussCountTag"
+            ]
+        },
+        {
+            "id": "discussTitle",
+            "component": "h4",
+            "props": {
+                "value": "Internal Discussion / 讨论",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "discussCountTag",
+            "component": "Tag",
+            "props": {
+                "value": "12 Messages",
+                "color": "default"
+            }
+        },
+        {
+            "id": "discussMessages",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3 mb-4"
+            },
+            "children": {
+                "path": "/messages",
+                "componentId": "discussMsg"
+            }
+        },
+        {
+            "id": "discussMsg",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "msgAvatar",
+                "msgContentArea"
+            ]
+        },
+        {
+            "id": "msgAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "senderAvatarImage"
+                },
+                "className": "w-8 h-8 rounded-full shrink-0 mt-0.5"
+            }
+        },
+        {
+            "id": "msgContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1 bg-surface-variant rounded-lg p-3"
+            },
+            "children": [
+                "msgHeaderRow",
+                "msgText"
+            ]
+        },
+        {
+            "id": "msgHeaderRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "msgSender",
+                "msgTime"
+            ]
+        },
+        {
+            "id": "msgSender",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "senderName"
+                },
+                "className": "text-xs font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "msgTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "timestamp"
+                },
+                "className": "text-xs text-on-surface-variant ml-auto"
+            }
+        },
+        {
+            "id": "msgText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "messageContent"
+                },
+                "className": "text-xs text-on-surface-variant leading-relaxed"
+            }
+        },
+        {
+            "id": "discussInputArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "discussInput",
+                "discussSendBtn"
+            ]
+        },
+        {
+            "id": "discussInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/newMessage"
+                },
+                "placeholder": "Type a message...",
+                "size": "small",
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "discussSendBtn",
+            "component": "Button",
+            "props": {
+                "icon": "send",
+                "shape": "circle",
+                "color": "primary"
+            }
+        }
+    ]
+}

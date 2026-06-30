@@ -1,0 +1,1067 @@
+{
+    "state": {
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Projects",
+                "icon": "briefcase",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "icon": "file-bar-chart",
+                "isActive": true
+            },
+            {
+                "label": "Clients",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "isActive": false
+            }
+        ],
+        "metrics": [
+            {
+                "title": "OVERALL PROGRESS",
+                "value": "65%",
+                "subText": "On track",
+                "icon": "activity",
+                "progress": 65,
+                "color": "primary"
+            },
+            {
+                "title": "DAYS REMAINING",
+                "value": "45",
+                "subText": "Target: Sept 30",
+                "icon": "calendar",
+                "progress": null,
+                "color": "warning"
+            },
+            {
+                "title": "TEAM SIZE",
+                "value": "12",
+                "subText": "Active members",
+                "icon": "users-2",
+                "progress": null,
+                "color": "info"
+            },
+            {
+                "title": "BUDGET LEFT",
+                "value": "$250k",
+                "subText": "Total: $750k",
+                "icon": "dollar-sign",
+                "progress": 33,
+                "color": "success"
+            }
+        ],
+        "milestones": [
+            {
+                "phase": "Phase 1: Market Research",
+                "status": "Completed",
+                "date": "July 15",
+                "icon": "check-circle",
+                "color": "success"
+            },
+            {
+                "phase": "Phase 2: Strategy & Setup",
+                "status": "In Progress (82%)",
+                "date": "Aug 28",
+                "icon": "refresh-cw",
+                "color": "primary"
+            },
+            {
+                "phase": "Phase 3: Global Launch",
+                "status": "Pending",
+                "date": "Sept 30",
+                "icon": "circle",
+                "color": "default"
+            }
+        ],
+        "tasks": [
+            {
+                "id": "1",
+                "name": "Legal Compliance Review",
+                "assignee": "Sarah Chen",
+                "status": "In Review",
+                "priority": "High"
+            },
+            {
+                "id": "2",
+                "name": "Infrastructure Provisioning",
+                "assignee": "Mike Ross",
+                "status": "Done",
+                "priority": "Medium"
+            },
+            {
+                "id": "3",
+                "name": "Marketing Asset Design",
+                "assignee": "Elena G.",
+                "status": "In Progress",
+                "priority": "Low"
+            }
+        ],
+        "team": [
+            {
+                "name": "Robert Vance",
+                "role": "Project Lead",
+                "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
+            },
+            {
+                "name": "Sophia Miller",
+                "role": "UX Designer",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg"
+            },
+            {
+                "name": "Marcus Thorne",
+                "role": "Lead Engineer",
+                "avatar": "https://randomuser.me/api/portraits/men/13.jpg"
+            }
+        ],
+        "allocation": [
+            {
+                "name": "Engineering",
+                "value": 50
+            },
+            {
+                "name": "Design",
+                "value": 25
+            },
+            {
+                "name": "Operations",
+                "value": 15
+            },
+            {
+                "name": "Legal",
+                "value": 10
+            }
+        ]
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebar",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex flex-col gap-1"
+            },
+            "children": [
+                "logoTitle",
+                "logoSub"
+            ]
+        },
+        {
+            "id": "logoTitle",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-primary font-bold text-lg"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Nexus CRM"
+            }
+        },
+        {
+            "id": "logoSub",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Enterprise Finance"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex flex-col gap-1"
+            },
+            "children": [
+                "footerAccount",
+                "footerLogout"
+            ]
+        },
+        {
+            "id": "footerAccount",
+            "component": "Button",
+            "props": {
+                "value": "Account",
+                "icon": "user-circle",
+                "className": "w-full justify-start",
+                "variant": "text"
+            }
+        },
+        {
+            "id": "footerLogout",
+            "component": "Button",
+            "props": {
+                "value": "Logout",
+                "icon": "log-out",
+                "className": "w-full justify-start text-error",
+                "variant": "text"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "header",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "header",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-8"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search portfolio...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "iconBell",
+                "iconMail",
+                "iconHelp",
+                "iconSliders"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconMail",
+            "component": "Icon",
+            "props": {
+                "name": "mail",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconSliders",
+            "component": "Icon",
+            "props": {
+                "name": "sliders",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8 flex flex-col gap-8"
+            },
+            "children": [
+                "projectHeader",
+                "kpiGrid",
+                "bottomLayout",
+                "fab"
+            ]
+        },
+        {
+            "id": "projectHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "breadcrumb",
+                "titleRow"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "Dashboard"
+                    },
+                    {
+                        "title": "Project Portfolio"
+                    },
+                    {
+                        "title": "Q3 Global Expansion"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "titleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "titleGroup",
+                "actionGroup"
+            ]
+        },
+        {
+            "id": "titleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "projectTitle",
+                "statusTag"
+            ]
+        },
+        {
+            "id": "projectTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-3xl font-bold text-on-surface",
+                "value": "Q3 Global Expansion"
+            }
+        },
+        {
+            "id": "statusTag",
+            "component": "Tag",
+            "props": {
+                "value": "HEALTHY",
+                "color": "success",
+                "icon": "check-circle",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "actionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "btnReport",
+                "btnEdit"
+            ]
+        },
+        {
+            "id": "btnReport",
+            "component": "Button",
+            "props": {
+                "value": "Generate Report",
+                "icon": "file-text"
+            }
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "value": "Edit Project",
+                "icon": "edit-3",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-6"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "metricTop",
+                "metricValue",
+                "metricProgress"
+            ]
+        },
+        {
+            "id": "metricTop",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant tracking-wider",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "metricValue",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "metricValText",
+                "metricSubText"
+            ]
+        },
+        {
+            "id": "metricValText",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "metricSubText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "subText"
+                }
+            }
+        },
+        {
+            "id": "metricProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "progress"
+                },
+                "showInfo": false,
+                "size": "small",
+                "strokeColor": "#0067D1",
+                "className": "mt-auto"
+            }
+        },
+        {
+            "id": "bottomLayout",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-8"
+            },
+            "children": [
+                "leftColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "leftColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 flex flex-col gap-8"
+            },
+            "children": [
+                "timelineCard",
+                "taskCard"
+            ]
+        },
+        {
+            "id": "timelineCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "timelineTitle",
+                "timelineComp"
+            ]
+        },
+        {
+            "id": "timelineTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-6",
+                "value": "Project Timeline & Milestones"
+            }
+        },
+        {
+            "id": "timelineComp",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical"
+            },
+            "children": {
+                "path": "/milestones",
+                "componentId": "timelineItem"
+            }
+        },
+        {
+            "id": "timelineItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "phase"
+                },
+                "content": {
+                    "componentId": "timelineContent"
+                },
+                "icon": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                }
+            }
+        },
+        {
+            "id": "timelineContent",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center w-full"
+            },
+            "children": [
+                "tlStatus",
+                "tlDate"
+            ]
+        },
+        {
+            "id": "tlStatus",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "tlDate",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "taskCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "taskTitle",
+                "taskTable"
+            ]
+        },
+        {
+            "id": "taskTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-4",
+                "value": "Recent Task Updates"
+            }
+        },
+        {
+            "id": "taskTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tasks"
+                },
+                "columns": [
+                    {
+                        "title": "Task Name",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "Assignee",
+                        "dataIndex": "assignee"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "Priority",
+                        "dataIndex": "priority"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tasks",
+                "componentId": "taskRow"
+            }
+        },
+        {
+            "id": "taskRow",
+            "component": "TableRow",
+            "children": [
+                "tCellName",
+                "tCellAssignee",
+                "tCellStatus",
+                "tCellPriority"
+            ]
+        },
+        {
+            "id": "tCellName",
+            "component": "span",
+            "props": {
+                "className": "font-medium",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "tCellAssignee",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "tAvatar",
+                "tName"
+            ]
+        },
+        {
+            "id": "tAvatar",
+            "component": "Icon",
+            "props": {
+                "name": "user",
+                "shape": "circle",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "tName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "assignee"
+                }
+            }
+        },
+        {
+            "id": "tCellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "tCellPriority",
+            "component": "span",
+            "props": {
+                "className": "text-primary font-bold",
+                "value": {
+                    "path": "priority"
+                }
+            }
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 flex flex-col gap-8"
+            },
+            "children": [
+                "teamCard",
+                "resourceCard",
+                "financialCard"
+            ]
+        },
+        {
+            "id": "teamCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "teamTitle",
+                "teamList",
+                "teamBtn"
+            ]
+        },
+        {
+            "id": "teamTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-4",
+                "value": "Project Team"
+            }
+        },
+        {
+            "id": "teamList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4 mb-6"
+            },
+            "children": {
+                "path": "/team",
+                "componentId": "teamMember"
+            }
+        },
+        {
+            "id": "teamMember",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "mAvatar",
+                "mInfo"
+            ]
+        },
+        {
+            "id": "mAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "mInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "mName",
+                "mRole"
+            ]
+        },
+        {
+            "id": "mName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "mRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "role"
+                }
+            }
+        },
+        {
+            "id": "teamBtn",
+            "component": "Button",
+            "props": {
+                "value": "Manage Team",
+                "className": "w-full",
+                "variant": "outlined",
+                "size": "small"
+            }
+        },
+        {
+            "id": "resourceCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "resTitle",
+                "resChart"
+            ]
+        },
+        {
+            "id": "resTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-4",
+                "value": "Resource Allocation"
+            }
+        },
+        {
+            "id": "resChart",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "title": {
+                        "text": "420h/mo",
+                        "subtext": "Total Capacity"
+                    },
+                    "data": {
+                        "path": "/allocation"
+                    },
+                    "color": [
+                        "#3b82f6",
+                        "#ec4899",
+                        "#f59e0b",
+                        "#10b981"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "financialCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "finTitle",
+                "finBurn",
+                "finStats"
+            ]
+        },
+        {
+            "id": "finTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-4",
+                "value": "Financial Health"
+            }
+        },
+        {
+            "id": "finBurn",
+            "component": "div",
+            "props": {
+                "className": "mb-6"
+            },
+            "children": [
+                "burnLabel",
+                "burnProgress"
+            ]
+        },
+        {
+            "id": "burnLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm mb-2"
+            },
+            "children": [
+                "burnText",
+                "burnVal"
+            ]
+        },
+        {
+            "id": "burnText",
+            "component": "span",
+            "props": {
+                "value": "Burn Rate"
+            }
+        },
+        {
+            "id": "burnVal",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": "72%"
+            }
+        },
+        {
+            "id": "burnProgress",
+            "component": "Progress",
+            "props": {
+                "percent": 72,
+                "strokeColor": "#F4840C"
+            }
+        },
+        {
+            "id": "finStats",
+            "component": "div",
+            "props": {
+                "className": "flex items-end justify-between"
+            },
+            "children": [
+                "spentGroup",
+                "budgetTag"
+            ]
+        },
+        {
+            "id": "spentGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "spentLabel",
+                "spentVal"
+            ]
+        },
+        {
+            "id": "spentLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Actual Spent"
+            }
+        },
+        {
+            "id": "spentVal",
+            "component": "span",
+            "props": {
+                "className": "text-xl font-bold",
+                "value": "$500,000"
+            }
+        },
+        {
+            "id": "budgetTag",
+            "component": "Tag",
+            "props": {
+                "value": "3% Under Budget",
+                "color": "success",
+                "icon": "trending-down"
+            }
+        },
+        {
+            "id": "fab",
+            "component": "Button",
+            "props": {
+                "icon": "plus",
+                "shape": "circle",
+                "color": "primary",
+                "className": "fixed bottom-8 right-8 w-14 h-14 shadow-xl flex items-center justify-center text-2xl"
+            }
+        }
+    ]
+}

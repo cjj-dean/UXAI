@@ -1,0 +1,544 @@
+{
+  "state": {
+    "brandInfo": {
+      "logoIcon": "activity",
+      "brandName": "iMaster MAE"
+    },
+    "pageTitle": "故障智能驾驶舱",
+    "primaryAction": {
+      "actionText": "切换到智能故障管理",
+      "actionIcon": "arrow-right"
+    },
+    "toolIcons": [
+      {
+        "toolName": "模式切换",
+        "toolIcon": "moon"
+      },
+      {
+        "toolName": "系统提示",
+        "toolIcon": "alert-circle"
+      },
+      {
+        "toolName": "帮助中心",
+        "toolIcon": "help-circle"
+      }
+    ],
+    "cardTitle": "故障管理驾驶舱",
+    "rightTag": "网络中心",
+    "leftMetrics": [
+      {
+        "metricId": "fault_total",
+        "metricName": "故障总数",
+        "metricValue": 1284,
+        "metricValueColor": "#1890FF",
+        "metricIcon": "alert-triangle"
+      },
+      {
+        "metricId": "diag_success",
+        "metricName": "诊断成功",
+        "metricValue": 1052,
+        "metricValueColor": "#52C41A",
+        "metricIcon": "check-circle"
+      },
+      {
+        "metricId": "diag_progress",
+        "metricName": "诊断中",
+        "metricValue": 156,
+        "metricValueColor": "#FAAD14",
+        "metricIcon": "loader"
+      },
+      {
+        "metricId": "diag_failed",
+        "metricName": "诊断失败",
+        "metricValue": 76,
+        "metricValueColor": "#F5222D",
+        "metricIcon": "x-circle"
+      }
+    ],
+    "rightMetrics": [
+      {
+        "metricId": "nc_online",
+        "metricName": "在线设备",
+        "metricValue": 342,
+        "metricValueColor": "#13C2C2",
+        "metricIcon": "wifi"
+      },
+      {
+        "metricId": "nc_offline",
+        "metricName": "离线设备",
+        "metricValue": 5,
+        "metricValueColor": "#EB2F96",
+        "metricIcon": "wifi-off"
+      }
+    ],
+    "trendData": [
+      {
+        "日期": "10-01",
+        "故障总数": 120,
+        "诊断成功": 90,
+        "诊断失败": 10
+      },
+      {
+        "日期": "10-02",
+        "故障总数": 132,
+        "诊断成功": 112,
+        "诊断失败": 12
+      },
+      {
+        "日期": "10-03",
+        "故障总数": 101,
+        "诊断成功": 91,
+        "诊断失败": 21
+      },
+      {
+        "日期": "10-04",
+        "故障总数": 134,
+        "诊断成功": 114,
+        "诊断失败": 14
+      },
+      {
+        "日期": "10-05",
+        "故障总数": 90,
+        "诊断成功": 70,
+        "诊断失败": 10
+      },
+      {
+        "日期": "10-06",
+        "故障总数": 230,
+        "诊断成功": 180,
+        "诊断失败": 20
+      },
+      {
+        "日期": "10-07",
+        "故障总数": 210,
+        "诊断成功": 170,
+        "诊断失败": 20
+      },
+      {
+        "日期": "10-08",
+        "故障总数": 182,
+        "诊断成功": 152,
+        "诊断失败": 12
+      },
+      {
+        "日期": "10-09",
+        "故障总数": 191,
+        "诊断成功": 161,
+        "诊断失败": 11
+      },
+      {
+        "日期": "10-10",
+        "故障总数": 234,
+        "诊断成功": 204,
+        "诊断失败": 14
+      },
+      {
+        "日期": "10-11",
+        "故障总数": 290,
+        "诊断成功": 250,
+        "诊断失败": 20
+      },
+      {
+        "日期": "10-12",
+        "故障总数": 330,
+        "诊断成功": 290,
+        "诊断失败": 20
+      },
+      {
+        "日期": "10-13",
+        "故障总数": 310,
+        "诊断成功": 270,
+        "诊断失败": 20
+      },
+      {
+        "日期": "10-14",
+        "故障总数": 210,
+        "诊断成功": 180,
+        "诊断失败": 15
+      }
+    ]
+  },
+  "rootId": "shellRoot",
+  "elements": [
+    {
+      "id": "shellRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-screen bg-[#020617] overflow-hidden"
+      },
+      "children": [
+        "shellHeader",
+        "shellMain"
+      ]
+    },
+    {
+      "id": "shellHeader",
+      "component": "header",
+      "props": {
+        "className": "h-16 flex-shrink-0 border-b border-[#1e293b] bg-[#020617]/80 backdrop-blur-md z-10"
+      },
+      "children": [
+        "hdrLeftBrand",
+        "hdrCenterTitle",
+        "hdrRightSection"
+      ]
+    },
+    {
+      "id": "shellMain",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col gap-6 p-6 overflow-y-auto"
+      },
+      "children": [
+        "shellKpiCard",
+        "shellAnalyticsCard",
+        "shellTrendCard"
+      ]
+    },
+    {
+      "id": "shellKpiCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0f172a] border border-[#1e293b] rounded-xl shadow-lg p-5"
+      },
+      "children": [
+        "kpiHeaderRow",
+        "kpiMetricsContainer"
+      ]
+    },
+    {
+      "id": "shellAnalyticsCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0f172a] border border-[#1e293b] rounded-xl shadow-lg p-5 flex-1 flex flex-col min-h-0"
+      },
+      "children": []
+    },
+    {
+      "id": "shellTrendCard",
+      "component": "div",
+      "props": {
+        "className": "bg-[#0f172a] border border-[#1e293b] rounded-xl shadow-lg p-5"
+      },
+      "children": [
+        "trndHeaderRow",
+        "trndChartWrap"
+      ]
+    },
+    {
+      "id": "hdrLeftBrand",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-auto pl-5"
+      },
+      "children": [
+        "hdrBrandIcon",
+        "hdrBrandName"
+      ]
+    },
+    {
+      "id": "hdrBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandInfo/logoIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "hdrBrandName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandInfo/brandName"
+        },
+        "className": "text-lg font-bold text-white tracking-wide"
+      }
+    },
+    {
+      "id": "hdrCenterTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/pageTitle"
+        },
+        "className": "text-lg font-medium text-slate-200 absolute left-1/2 -translate-x-1/2"
+      }
+    },
+    {
+      "id": "hdrRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 ml-auto pr-5"
+      },
+      "children": [
+        "hdrActionBtn",
+        "hdrToolIcons"
+      ]
+    },
+    {
+      "id": "hdrActionBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/primaryAction/actionText"
+        },
+        "icon": {
+          "path": "/primaryAction/actionIcon"
+        },
+        "iconPlacement": "end",
+        "shape": "round",
+        "size": "medium",
+        "className": "rounded-full px-5 py-1.5 text-sm font-medium bg-[#0c1a3a] text-slate-200 border border-[#1e3a5f] hover:bg-[#112244]"
+      }
+    },
+    {
+      "id": "hdrToolIcons",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 ml-2"
+      },
+      "children": {
+        "path": "/toolIcons",
+        "componentId": "hdrToolIconItem"
+      }
+    },
+    {
+      "id": "hdrToolIconItem",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "toolIcon"
+        },
+        "title": {
+          "path": "toolName"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-8 h-8 text-slate-300 cursor-pointer hover:text-white rounded-full p-1.5 hover:bg-[#1e3a5f] transition-colors"
+      }
+    },
+    {
+      "id": "kpiHeaderRow",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center mb-5"
+      },
+      "children": [
+        "kpiTitleIcon",
+        "kpiTitleText",
+        "kpiHeaderSpacer",
+        "kpiRightTag"
+      ]
+    },
+    {
+      "id": "kpiTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "activity",
+        "color": "#1890FF",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "kpiTitleText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-white ml-2",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "kpiHeaderSpacer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "kpiRightTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "/rightTag"
+        },
+        "color": "#1e3a5f",
+        "variant": "outlined",
+        "icon": "radio",
+        "className": "text-cyan-300 border-cyan-800"
+      }
+    },
+    {
+      "id": "kpiMetricsContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-stretch gap-5"
+      },
+      "children": [
+        "kpiLeftGroup",
+        "kpiDivider",
+        "kpiRightGroup"
+      ]
+    },
+    {
+      "id": "kpiLeftGroup",
+      "component": "div",
+      "props": {
+        "className": "flex gap-4 flex-1"
+      },
+      "children": {
+        "path": "/leftMetrics",
+        "componentId": "kpiMetricBlock"
+      }
+    },
+    {
+      "id": "kpiDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px bg-[#334155] self-stretch mx-1"
+      }
+    },
+    {
+      "id": "kpiRightGroup",
+      "component": "div",
+      "props": {
+        "className": "flex gap-4"
+      },
+      "children": {
+        "path": "/rightMetrics",
+        "componentId": "kpiMetricBlock"
+      }
+    },
+    {
+      "id": "kpiMetricBlock",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 bg-[#1e293b] rounded-lg p-4 flex-1 min-w-0",
+        "title": {
+          "path": "metricId"
+        }
+      },
+      "children": [
+        "kpiMetricIcon",
+        "kpiMetricInfo"
+      ]
+    },
+    {
+      "id": "kpiMetricIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "metricIcon"
+        },
+        "color": {
+          "path": "metricValueColor"
+        },
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "kpiMetricInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1 min-w-0"
+      },
+      "children": [
+        "kpiMetricName",
+        "kpiMetricValue"
+      ]
+    },
+    {
+      "id": "kpiMetricName",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-slate-400 whitespace-nowrap",
+        "value": {
+          "path": "metricName"
+        }
+      }
+    },
+    {
+      "id": "kpiMetricValue",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-white tracking-tight",
+        "value": {
+          "path": "metricValue"
+        }
+      }
+    },
+    {
+      "id": "trndHeaderRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "trndTitleIcon",
+        "trndTitleText"
+      ]
+    },
+    {
+      "id": "trndTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "trndTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-white"
+      }
+    },
+    {
+      "id": "trndChartWrap",
+      "component": "div",
+      "props": {
+        "className": "w-full h-[360px]"
+      },
+      "children": [
+        "trndLineChart"
+      ]
+    },
+    {
+      "id": "trndLineChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/trendData"
+          },
+          "smooth": true,
+          "color": [
+            "#2070F3",
+            "#09AA71",
+            "#E02128"
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "数量(次)",
+          "dataZoom": {
+            "show": true
+          }
+        },
+        "className": "h-full w-full"
+      }
+    }
+  ]
+}

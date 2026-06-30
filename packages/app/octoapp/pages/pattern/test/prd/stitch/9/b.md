@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个左右布局的管理控制台界面。左侧边栏顶部有Security Gate标志，包含Dashboard等七个菜单项（当前选中Lead Pool），底部有Support Ticket按钮和Log Out链接。顶部工具栏左侧显示Lead Pool文本，右侧有Global search输入框和四个图标。主内容区头部显示大标题Lead Pool及其描述，右侧有Import Leads和Routing Rules两个按钮。下方平行排列三个统计卡片：Total Unassigned Leads (1,284)、New Today (42)、Average Time in Pool (4h 22m)。接着是数据表格，顶部工具条包含搜索框、Source和Status下拉框及筛选图标。表格表头包含LEAD NAME & COMPANY、SOURCE、STATUS等六列。展示Johnathan Doe等四行数据，其中列包含头像、带副标题的公司名、Website/Referral等来源图标、UNASSIGNED等状态标签、带进度条的数值评分，以及包含Claim按钮的操作列。表格带底部分页器。最下方是一个标题为Enable AI-Driven Lead Scoring的推广卡片，带有描述文本和Upgrade Plan按钮。

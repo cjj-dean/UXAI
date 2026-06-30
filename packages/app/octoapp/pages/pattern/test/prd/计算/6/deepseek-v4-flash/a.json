@@ -1,0 +1,2232 @@
+{
+  "state": {
+    "navHdSelectedKeys": [
+      "概览"
+    ],
+    "navHdMenuItems": [
+      {
+        "title": "概览",
+        "key": "概览"
+      },
+      {
+        "title": "节点管理",
+        "key": "节点管理"
+      },
+      {
+        "title": "拓扑列表",
+        "key": "拓扑列表"
+      },
+      {
+        "title": "性能监控",
+        "key": "性能监控"
+      },
+      {
+        "title": "外部接入",
+        "key": "外部接入"
+      },
+      {
+        "title": "规则配置",
+        "key": "规则配置"
+      },
+      {
+        "title": "日志分析",
+        "key": "日志分析"
+      }
+    ],
+    "pageTitle": "网络运行总览",
+    "currentTime": "2026-05-27 14:30:00",
+    "viewSwitchLabel": "视图切换",
+    "currentView": "grid",
+    "viewOptions": [
+      {
+        "label": "网格",
+        "value": "grid",
+        "icon": "grid-3x3"
+      },
+      {
+        "label": "列表",
+        "value": "list",
+        "icon": "list"
+      },
+      {
+        "label": "详情",
+        "value": "detail",
+        "icon": "panel-right"
+      }
+    ],
+    "activeViewTab": "core",
+    "viewTabsList": [
+      {
+        "label": "核心路由",
+        "value": "core"
+      },
+      {
+        "label": "边缘网关",
+        "value": "edge"
+      },
+      {
+        "label": "接入层",
+        "value": "access"
+      }
+    ],
+    "networkDuration": "近30天",
+    "deviceTitle": "设备在线数(6119) | 异常告警(766)",
+    "totalCount": "6,415",
+    "totalLabel": "总数",
+    "normalCount": 6119,
+    "errorCount": 766,
+    "trafficTitle": "区域流量排行(TOP 27)｜异常节点追踪(处理中28)"
+  },
+  "rootId": "pageRoot",
+  "elements": [
+    {
+      "id": "pageRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "headerNavContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "headerNavContainer",
+      "component": "nav",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm h-12"
+      },
+      "children": [
+        "navHdInner"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col p-page gap-section overflow-auto"
+      },
+      "children": [
+        "contentHeaderContainer",
+        "viewTabsContainer",
+        "contentBodyContainer"
+      ]
+    },
+    {
+      "id": "contentHeaderContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "cntHdLeftTitle",
+        "cntHdRightGroup"
+      ]
+    },
+    {
+      "id": "viewTabsContainer",
+      "component": "div",
+      "props": {
+        "className": "flex"
+      },
+      "children": [
+        "vTabTabs"
+      ]
+    },
+    {
+      "id": "contentBodyContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row gap-section flex-1"
+      },
+      "children": [
+        "leftMonitorPanel",
+        "rightMonitorPanel"
+      ]
+    },
+    {
+      "id": "leftMonitorPanel",
+      "component": "div",
+      "props": {
+        "className": "flex-[3] flex flex-col gap-section"
+      },
+      "children": [
+        "lMonMainCard"
+      ]
+    },
+    {
+      "id": "rightMonitorPanel",
+      "component": "div",
+      "props": {
+        "className": "flex-[1] flex flex-col gap-section"
+      },
+      "children": [
+        "rPanDeviceCard",
+        "rPanTrafficCard"
+      ]
+    },
+    {
+      "id": "navHdInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between h-full px-4"
+      },
+      "children": [
+        "navHdLeft",
+        "navHdCenterMenu",
+        "navHdRight"
+      ]
+    },
+    {
+      "id": "navHdLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "navHdLogoIcon",
+        "navHdBrandName"
+      ]
+    },
+    {
+      "id": "navHdLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "cpu",
+        "shape": "fill",
+        "color": "primary",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "navHdBrandName",
+      "component": "span",
+      "props": {
+        "value": "iMaster Pro",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "navHdCenterMenu",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "navHdMenu"
+      ]
+    },
+    {
+      "id": "navHdMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/navHdSelectedKeys"
+        },
+        "items": {
+          "path": "/navHdMenuItems"
+        },
+        "className": "border-none bg-transparent"
+      }
+    },
+    {
+      "id": "navHdRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 shrink-0"
+      },
+      "children": [
+        "navHdThemeToggle",
+        "navHdAvatar"
+      ]
+    },
+    {
+      "id": "navHdThemeToggle",
+      "component": "Icon",
+      "props": {
+        "name": "sun-moon",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+      }
+    },
+    {
+      "id": "navHdAvatar",
+      "component": "img",
+      "props": {
+        "src": "https://randomuser.me/api/portraits/men/32.jpg",
+        "className": "w-8 h-8 rounded-full object-cover cursor-pointer border-2 border-surface-container-highest"
+      }
+    },
+    {
+      "id": "cntHdLeftTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/pageTitle"
+        },
+        "className": "text-3xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "cntHdRightGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter"
+      },
+      "children": [
+        "cntHdTimeText",
+        "cntHdSettingsIcon",
+        "cntHdViewLabel",
+        "cntHdViewSegmented"
+      ]
+    },
+    {
+      "id": "cntHdTimeText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/currentTime"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "cntHdSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "cntHdViewLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/viewSwitchLabel"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "cntHdViewSegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/currentView"
+        },
+        "options": {
+          "path": "/viewOptions"
+        },
+        "block": false,
+        "orientation": "horizontal",
+        "size": "medium",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "vTabTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeViewTab"
+        },
+        "types": "line",
+        "size": "medium",
+        "className": "w-full"
+      },
+      "children": {
+        "path": "/viewTabsList",
+        "componentId": "vTabItem"
+      }
+    },
+    {
+      "id": "vTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "value"
+        },
+        "label": {
+          "path": "label"
+        },
+        "content": {
+          "componentId": "vTabContent"
+        }
+      }
+    },
+    {
+      "id": "vTabContent",
+      "component": "div",
+      "props": {
+        "className": "hidden",
+        "value": ""
+      }
+    },
+    {
+      "id": "lMonMainCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl p-inset flex flex-col gap-section shadow-card"
+      },
+      "children": [
+        "lMonCpuModule",
+        "lMonNetworkModule",
+        "lMonSmallChartsModule"
+      ]
+    },
+    {
+      "id": "lMonCpuModule",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "lMonCpuTitle",
+        "lMonCpuContent"
+      ]
+    },
+    {
+      "id": "lMonCpuTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "CPU使用率"
+      }
+    },
+    {
+      "id": "lMonCpuContent",
+      "component": "div",
+      "props": {
+        "className": "flex gap-gutter items-stretch"
+      },
+      "children": [
+        "lMonCpuGaugeWrap",
+        "lMonCpuStats"
+      ]
+    },
+    {
+      "id": "lMonCpuGaugeWrap",
+      "component": "div",
+      "props": {
+        "className": "w-[30%] flex items-center justify-center bg-surface-variant rounded-xl py-4"
+      },
+      "children": [
+        "lMonCpuGauge"
+      ]
+    },
+    {
+      "id": "lMonCpuGauge",
+      "component": "PatGauge",
+      "props": {
+        "value": 73,
+        "max": 100
+      }
+    },
+    {
+      "id": "lMonCpuStats",
+      "component": "div",
+      "props": {
+        "className": "w-[70%] flex items-center gap-gutter"
+      },
+      "children": [
+        "lMonCpuRunningCard",
+        "lMonCpuPendingCard"
+      ]
+    },
+    {
+      "id": "lMonCpuRunningCard",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-variant rounded-xl p-5 flex items-center gap-5"
+      },
+      "children": [
+        "lMonCpuRunningIcon",
+        "lMonCpuRunningInfo"
+      ]
+    },
+    {
+      "id": "lMonCpuRunningIcon",
+      "component": "Icon",
+      "props": {
+        "name": "activity",
+        "color": "success",
+        "shape": "square",
+        "className": "w-14 h-14"
+      }
+    },
+    {
+      "id": "lMonCpuRunningInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "lMonCpuRunningValue",
+        "lMonCpuRunningLabel"
+      ]
+    },
+    {
+      "id": "lMonCpuRunningValue",
+      "component": "span",
+      "props": {
+        "className": "text-4xl font-bold text-on-surface",
+        "value": "1,574"
+      }
+    },
+    {
+      "id": "lMonCpuRunningLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "运行中"
+      }
+    },
+    {
+      "id": "lMonCpuPendingCard",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-variant rounded-xl p-5 flex items-center gap-5"
+      },
+      "children": [
+        "lMonCpuPendingIcon",
+        "lMonCpuPendingInfo"
+      ]
+    },
+    {
+      "id": "lMonCpuPendingIcon",
+      "component": "Icon",
+      "props": {
+        "name": "alert-triangle",
+        "color": "critical",
+        "shape": "square",
+        "className": "w-14 h-14"
+      }
+    },
+    {
+      "id": "lMonCpuPendingInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "lMonCpuPendingValue",
+        "lMonCpuPendingLabel"
+      ]
+    },
+    {
+      "id": "lMonCpuPendingValue",
+      "component": "span",
+      "props": {
+        "className": "text-4xl font-bold text-on-surface",
+        "value": "050"
+      }
+    },
+    {
+      "id": "lMonCpuPendingLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "待检修"
+      }
+    },
+    {
+      "id": "lMonNetworkModule",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "lMonNetworkHeader",
+        "lMonNetworkChart"
+      ]
+    },
+    {
+      "id": "lMonNetworkHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "lMonNetworkTitle",
+        "lMonNetworkSelect"
+      ]
+    },
+    {
+      "id": "lMonNetworkTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "网络流量趋势"
+      }
+    },
+    {
+      "id": "lMonNetworkSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/networkDuration"
+        },
+        "options": [
+          {
+            "label": "近7天",
+            "value": "近7天"
+          },
+          {
+            "label": "近30天",
+            "value": "近30天"
+          },
+          {
+            "label": "近90天",
+            "value": "近90天"
+          }
+        ],
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "lMonNetworkChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": [
+            {
+              "日期": "04-27",
+              "流量": 320
+            },
+            {
+              "日期": "04-28",
+              "流量": 480
+            },
+            {
+              "日期": "04-29",
+              "流量": 350
+            },
+            {
+              "日期": "04-30",
+              "流量": 510
+            },
+            {
+              "日期": "05-01",
+              "流量": 620
+            },
+            {
+              "日期": "05-02",
+              "流量": 580
+            },
+            {
+              "日期": "05-03",
+              "流量": 700
+            },
+            {
+              "日期": "05-04",
+              "流量": 650
+            },
+            {
+              "日期": "05-05",
+              "流量": 810
+            },
+            {
+              "日期": "05-06",
+              "流量": 780
+            },
+            {
+              "日期": "05-07",
+              "流量": 920
+            },
+            {
+              "日期": "05-08",
+              "流量": 880
+            },
+            {
+              "日期": "05-09",
+              "流量": 950
+            },
+            {
+              "日期": "05-10",
+              "流量": 1020
+            },
+            {
+              "日期": "05-11",
+              "流量": 990
+            },
+            {
+              "日期": "05-12",
+              "流量": 1100
+            },
+            {
+              "日期": "05-13",
+              "流量": 1050
+            },
+            {
+              "日期": "05-14",
+              "流量": 1180
+            },
+            {
+              "日期": "05-15",
+              "流量": 1120
+            },
+            {
+              "日期": "05-16",
+              "流量": 1250
+            },
+            {
+              "日期": "05-17",
+              "流量": 1300
+            },
+            {
+              "日期": "05-18",
+              "流量": 1280
+            },
+            {
+              "日期": "05-19",
+              "流量": 1350
+            },
+            {
+              "日期": "05-20",
+              "流量": 1400
+            },
+            {
+              "日期": "05-21",
+              "流量": 1380
+            },
+            {
+              "日期": "05-22",
+              "流量": 1450
+            },
+            {
+              "日期": "05-23",
+              "流量": 1520
+            },
+            {
+              "日期": "05-24",
+              "流量": 1480
+            },
+            {
+              "日期": "05-25",
+              "流量": 1600
+            },
+            {
+              "日期": "05-26",
+              "流量": 1550
+            },
+            {
+              "日期": "05-27",
+              "流量": 1620
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "Mbps",
+          "smooth": true
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "lMonSmallChartsModule",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "lMonSmallChartsRow"
+      ]
+    },
+    {
+      "id": "lMonSmallChartsRow",
+      "component": "div",
+      "props": {
+        "className": "flex gap-gutter"
+      },
+      "children": [
+        "lMonSmallChart1",
+        "lMonSmallChart2",
+        "lMonSmallChart3"
+      ]
+    },
+    {
+      "id": "lMonSmallChart1",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-variant rounded-xl p-4 flex flex-col gap-3"
+      },
+      "children": [
+        "lMonSmallChart1Title",
+        "lMonSmallChart1Chart"
+      ]
+    },
+    {
+      "id": "lMonSmallChart1Title",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface",
+        "value": "计算资源池监控"
+      }
+    },
+    {
+      "id": "lMonSmallChart1Chart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": [
+            {
+              "日期": "04-08",
+              "核心集群": 84,
+              "高频区": 6,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-09",
+              "核心集群": 83,
+              "高频区": 7,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-10",
+              "核心集群": 85,
+              "高频区": 6,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-11",
+              "核心集群": 86,
+              "高频区": 5,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-12",
+              "核心集群": 84,
+              "高频区": 6,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-13",
+              "核心集群": 82,
+              "高频区": 8,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-14",
+              "核心集群": 85,
+              "高频区": 7,
+              "闲置区": 8
+            },
+            {
+              "日期": "04-15",
+              "核心集群": 87,
+              "高频区": 6,
+              "闲置区": 7
+            },
+            {
+              "日期": "04-16",
+              "核心集群": 86,
+              "高频区": 5,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-17",
+              "核心集群": 84,
+              "高频区": 6,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-18",
+              "核心集群": 83,
+              "高频区": 7,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-19",
+              "核心集群": 85,
+              "高频区": 6,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-20",
+              "核心集群": 84,
+              "高频区": 7,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-21",
+              "核心集群": 86,
+              "高频区": 5,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-22",
+              "核心集群": 85,
+              "高频区": 6,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-23",
+              "核心集群": 84,
+              "高频区": 7,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-24",
+              "核心集群": 83,
+              "高频区": 8,
+              "闲置区": 9
+            },
+            {
+              "日期": "04-25",
+              "核心集群": 86,
+              "高频区": 6,
+              "闲置区": 8
+            },
+            {
+              "日期": "04-26",
+              "核心集群": 85,
+              "高频区": 5,
+              "闲置区": 10
+            },
+            {
+              "日期": "04-27",
+              "核心集群": 84,
+              "高频区": 7,
+              "闲置区": 9
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "%",
+          "stack": true,
+          "smooth": true
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "lMonSmallChart2",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-variant rounded-xl p-4 flex flex-col gap-3"
+      },
+      "children": [
+        "lMonSmallChart2Title",
+        "lMonSmallChart2Chart"
+      ]
+    },
+    {
+      "id": "lMonSmallChart2Title",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface",
+        "value": "存储容量使用趋势"
+      }
+    },
+    {
+      "id": "lMonSmallChart2Chart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": [
+            {
+              "日期": "04-08",
+              "固态存储": 58,
+              "机械硬盘": 14,
+              "备份区": 28
+            },
+            {
+              "日期": "04-09",
+              "固态存储": 60,
+              "机械硬盘": 13,
+              "备份区": 27
+            },
+            {
+              "日期": "04-10",
+              "固态存储": 57,
+              "机械硬盘": 14,
+              "备份区": 29
+            },
+            {
+              "日期": "04-11",
+              "固态存储": 59,
+              "机械硬盘": 12,
+              "备份区": 29
+            },
+            {
+              "日期": "04-12",
+              "固态存储": 58,
+              "机械硬盘": 13,
+              "备份区": 29
+            },
+            {
+              "日期": "04-13",
+              "固态存储": 61,
+              "机械硬盘": 11,
+              "备份区": 28
+            },
+            {
+              "日期": "04-14",
+              "固态存储": 59,
+              "机械硬盘": 12,
+              "备份区": 29
+            },
+            {
+              "日期": "04-15",
+              "固态存储": 60,
+              "机械硬盘": 13,
+              "备份区": 27
+            },
+            {
+              "日期": "04-16",
+              "固态存储": 58,
+              "机械硬盘": 14,
+              "备份区": 28
+            },
+            {
+              "日期": "04-17",
+              "固态存储": 57,
+              "机械硬盘": 15,
+              "备份区": 28
+            },
+            {
+              "日期": "04-18",
+              "固态存储": 59,
+              "机械硬盘": 13,
+              "备份区": 28
+            },
+            {
+              "日期": "04-19",
+              "固态存储": 60,
+              "机械硬盘": 12,
+              "备份区": 28
+            },
+            {
+              "日期": "04-20",
+              "固态存储": 58,
+              "机械硬盘": 14,
+              "备份区": 28
+            },
+            {
+              "日期": "04-21",
+              "固态存储": 61,
+              "机械硬盘": 11,
+              "备份区": 28
+            },
+            {
+              "日期": "04-22",
+              "固态存储": 59,
+              "机械硬盘": 12,
+              "备份区": 29
+            },
+            {
+              "日期": "04-23",
+              "固态存储": 60,
+              "机械硬盘": 13,
+              "备份区": 27
+            },
+            {
+              "日期": "04-24",
+              "固态存储": 58,
+              "机械硬盘": 14,
+              "备份区": 28
+            },
+            {
+              "日期": "04-25",
+              "固态存储": 57,
+              "机械硬盘": 15,
+              "备份区": 28
+            },
+            {
+              "日期": "04-26",
+              "固态存储": 59,
+              "机械硬盘": 13,
+              "备份区": 28
+            },
+            {
+              "日期": "04-27",
+              "固态存储": 60,
+              "机械硬盘": 12,
+              "备份区": 28
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "%",
+          "stack": true,
+          "smooth": true
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "lMonSmallChart3",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-variant rounded-xl p-4 flex flex-col gap-3"
+      },
+      "children": [
+        "lMonSmallChart3Title",
+        "lMonSmallChart3Chart"
+      ]
+    },
+    {
+      "id": "lMonSmallChart3Title",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-on-surface",
+        "value": "网络IO流量监控"
+      }
+    },
+    {
+      "id": "lMonSmallChart3Chart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": [
+            {
+              "日期": "04-08",
+              "下行流量": 63,
+              "上行流量": 12,
+              "广播包": 25
+            },
+            {
+              "日期": "04-09",
+              "下行流量": 65,
+              "上行流量": 11,
+              "广播包": 24
+            },
+            {
+              "日期": "04-10",
+              "下行流量": 62,
+              "上行流量": 13,
+              "广播包": 25
+            },
+            {
+              "日期": "04-11",
+              "下行流量": 64,
+              "上行流量": 10,
+              "广播包": 26
+            },
+            {
+              "日期": "04-12",
+              "下行流量": 63,
+              "上行流量": 12,
+              "广播包": 25
+            },
+            {
+              "日期": "04-13",
+              "下行流量": 66,
+              "上行流量": 9,
+              "广播包": 25
+            },
+            {
+              "日期": "04-14",
+              "下行流量": 64,
+              "上行流量": 11,
+              "广播包": 25
+            },
+            {
+              "日期": "04-15",
+              "下行流量": 65,
+              "上行流量": 10,
+              "广播包": 25
+            },
+            {
+              "日期": "04-16",
+              "下行流量": 63,
+              "上行流量": 12,
+              "广播包": 25
+            },
+            {
+              "日期": "04-17",
+              "下行流量": 62,
+              "上行流量": 13,
+              "广播包": 25
+            },
+            {
+              "日期": "04-18",
+              "下行流量": 64,
+              "上行流量": 11,
+              "广播包": 25
+            },
+            {
+              "日期": "04-19",
+              "下行流量": 65,
+              "上行流量": 10,
+              "广播包": 25
+            },
+            {
+              "日期": "04-20",
+              "下行流量": 63,
+              "上行流量": 12,
+              "广播包": 25
+            },
+            {
+              "日期": "04-21",
+              "下行流量": 66,
+              "上行流量": 9,
+              "广播包": 25
+            },
+            {
+              "日期": "04-22",
+              "下行流量": 64,
+              "上行流量": 11,
+              "广播包": 25
+            },
+            {
+              "日期": "04-23",
+              "下行流量": 65,
+              "上行流量": 10,
+              "广播包": 25
+            },
+            {
+              "日期": "04-24",
+              "下行流量": 63,
+              "上行流量": 12,
+              "广播包": 25
+            },
+            {
+              "日期": "04-25",
+              "下行流量": 62,
+              "上行流量": 13,
+              "广播包": 25
+            },
+            {
+              "日期": "04-26",
+              "下行流量": 64,
+              "上行流量": 11,
+              "广播包": 25
+            },
+            {
+              "日期": "04-27",
+              "下行流量": 65,
+              "上行流量": 10,
+              "广播包": 25
+            }
+          ],
+          "xAxis": {
+            "data": "日期"
+          },
+          "yAxisTitle": "%",
+          "stack": true,
+          "smooth": true
+        },
+        "className": "h-44 w-full"
+      }
+    },
+    {
+      "id": "rPanDeviceCard",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-4 p-inset bg-surface-container-highest rounded-xl shadow-sm"
+      },
+      "children": [
+        "rPanDeviceCardTitle",
+        "rPanDeviceTotalContainer",
+        "rPanDeviceStackedBar"
+      ]
+    },
+    {
+      "id": "rPanDeviceCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/deviceTitle"
+        }
+      }
+    },
+    {
+      "id": "rPanDeviceTotalContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center py-2"
+      },
+      "children": [
+        "rPanDeviceTotalValue",
+        "rPanDeviceTotalLabel"
+      ]
+    },
+    {
+      "id": "rPanDeviceTotalValue",
+      "component": "span",
+      "props": {
+        "className": "text-5xl font-bold text-primary",
+        "value": {
+          "path": "/totalCount"
+        }
+      }
+    },
+    {
+      "id": "rPanDeviceTotalLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1",
+        "value": {
+          "path": "/totalLabel"
+        }
+      }
+    },
+    {
+      "id": "rPanDeviceStackedBar",
+      "component": "PatStackedBar",
+      "props": {
+        "normal": {
+          "path": "/normalCount"
+        },
+        "warning": 0,
+        "danger": 0,
+        "error": {
+          "path": "/errorCount"
+        },
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "rPanTrafficCard",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3 p-inset bg-surface-container-highest rounded-xl shadow-sm"
+      },
+      "children": [
+        "rPanTrafficCardTitle",
+        "rPanMgmtGroup",
+        "rPanMgmtDivider1",
+        "rPanFwdGroup",
+        "rPanFwdDivider",
+        "rPanDataGroup"
+      ]
+    },
+    {
+      "id": "rPanTrafficCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/trafficTitle"
+        }
+      }
+    },
+    {
+      "id": "rPanMgmtGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "rPanMgmtGroupHeader",
+        "rPanMgmtItem1",
+        "rPanMgmtItemDiv1",
+        "rPanMgmtItem2",
+        "rPanMgmtItemDiv2",
+        "rPanMgmtItem3",
+        "rPanMgmtItemDiv3",
+        "rPanMgmtItem4"
+      ]
+    },
+    {
+      "id": "rPanMgmtGroupHeader",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-2",
+        "value": "管理节点"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanMgmtItem1Left",
+        "rPanMgmtItem1Right"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem1Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanMgmtItem1Icon",
+        "rPanMgmtItem1Title"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "主控服务器"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanMgmtItem1M1",
+        "rPanMgmtItem1VDiv",
+        "rPanMgmtItem1M2"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem1M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem1M1Val",
+        "rPanMgmtItem1M1Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem1M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "296"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "当前连接"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem1M2Val",
+        "rPanMgmtItem1M2Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem1M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "9,902"
+      }
+    },
+    {
+      "id": "rPanMgmtItem1M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "总吞吐量"
+      }
+    },
+    {
+      "id": "rPanMgmtItemDiv1",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanMgmtItem2Left",
+        "rPanMgmtItem2Right"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem2Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanMgmtItem2Icon",
+        "rPanMgmtItem2Title"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "refresh-cw",
+        "color": "warning",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "备用控制节点"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanMgmtItem2M1",
+        "rPanMgmtItem2VDiv",
+        "rPanMgmtItem2M2"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem2M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem2M1Val",
+        "rPanMgmtItem2M1Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem2M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "68"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "活跃会话"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem2M2Val",
+        "rPanMgmtItem2M2Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem2M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "7,613"
+      }
+    },
+    {
+      "id": "rPanMgmtItem2M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "写入数据"
+      }
+    },
+    {
+      "id": "rPanMgmtItemDiv2",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanMgmtItem3Left",
+        "rPanMgmtItem3Right"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem3Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanMgmtItem3Icon",
+        "rPanMgmtItem3Title",
+        "rPanMgmtItem3Hint"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem3Icon",
+      "component": "Icon",
+      "props": {
+        "name": "shield",
+        "color": "critical",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "安全网关"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3Hint",
+      "component": "Icon",
+      "props": {
+        "name": "help-circle",
+        "shape": "outline",
+        "className": "w-3.5 h-3.5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanMgmtItem3M1",
+        "rPanMgmtItem3VDiv",
+        "rPanMgmtItem3M2"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem3M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem3M1Val",
+        "rPanMgmtItem3M1Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem3M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "88"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "拦截次数"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem3M2Val",
+        "rPanMgmtItem3M2Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem3M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "3,579"
+      }
+    },
+    {
+      "id": "rPanMgmtItem3M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "并发数"
+      }
+    },
+    {
+      "id": "rPanMgmtItemDiv3",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanMgmtItem4Left",
+        "rPanMgmtItem4Right"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem4Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanMgmtItem4Icon",
+        "rPanMgmtItem4Title"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem4Icon",
+      "component": "Icon",
+      "props": {
+        "name": "zap",
+        "color": "success",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "负载均衡器"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanMgmtItem4M1",
+        "rPanMgmtItem4VDiv",
+        "rPanMgmtItem4M2"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem4M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem4M1Val",
+        "rPanMgmtItem4M1Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem4M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "8"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "异常转发"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanMgmtItem4M2Val",
+        "rPanMgmtItem4M2Label"
+      ]
+    },
+    {
+      "id": "rPanMgmtItem4M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "9,498"
+      }
+    },
+    {
+      "id": "rPanMgmtItem4M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "总分配量"
+      }
+    },
+    {
+      "id": "rPanMgmtDivider1",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider my-1"
+      }
+    },
+    {
+      "id": "rPanFwdGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "rPanFwdGroupHeader",
+        "rPanFwdItem1",
+        "rPanFwdItemDiv1",
+        "rPanFwdItem2"
+      ]
+    },
+    {
+      "id": "rPanFwdGroupHeader",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-2",
+        "value": "转发节点"
+      }
+    },
+    {
+      "id": "rPanFwdItem1",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanFwdItem1Left",
+        "rPanFwdItem1Right"
+      ]
+    },
+    {
+      "id": "rPanFwdItem1Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanFwdItem1Icon",
+        "rPanFwdItem1Title"
+      ]
+    },
+    {
+      "id": "rPanFwdItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "globe",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanFwdItem1Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "专线接入集群"
+      }
+    },
+    {
+      "id": "rPanFwdItem1Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanFwdItem1M1",
+        "rPanFwdItem1VDiv",
+        "rPanFwdItem1M2"
+      ]
+    },
+    {
+      "id": "rPanFwdItem1M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanFwdItem1M1Val",
+        "rPanFwdItem1M1Label"
+      ]
+    },
+    {
+      "id": "rPanFwdItem1M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "57"
+      }
+    },
+    {
+      "id": "rPanFwdItem1M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "并发请求"
+      }
+    },
+    {
+      "id": "rPanFwdItem1VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanFwdItem1M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanFwdItem1M2Val",
+        "rPanFwdItem1M2Label"
+      ]
+    },
+    {
+      "id": "rPanFwdItem1M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "2,560"
+      }
+    },
+    {
+      "id": "rPanFwdItem1M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "数据包量"
+      }
+    },
+    {
+      "id": "rPanFwdItemDiv1",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider"
+      }
+    },
+    {
+      "id": "rPanFwdItem2",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanFwdItem2Left",
+        "rPanFwdItem2Right"
+      ]
+    },
+    {
+      "id": "rPanFwdItem2Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanFwdItem2Icon",
+        "rPanFwdItem2Title",
+        "rPanFwdItem2Hint"
+      ]
+    },
+    {
+      "id": "rPanFwdItem2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "wifi",
+        "color": "warning",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanFwdItem2Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "公网接入集群"
+      }
+    },
+    {
+      "id": "rPanFwdItem2Hint",
+      "component": "Icon",
+      "props": {
+        "name": "help-circle",
+        "shape": "outline",
+        "className": "w-3.5 h-3.5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "rPanFwdItem2Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanFwdItem2M1",
+        "rPanFwdItem2VDiv",
+        "rPanFwdItem2M2"
+      ]
+    },
+    {
+      "id": "rPanFwdItem2M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanFwdItem2M1Val",
+        "rPanFwdItem2M1Label"
+      ]
+    },
+    {
+      "id": "rPanFwdItem2M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "99"
+      }
+    },
+    {
+      "id": "rPanFwdItem2M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "当前带宽"
+      }
+    },
+    {
+      "id": "rPanFwdItem2VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanFwdItem2M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanFwdItem2M2Val",
+        "rPanFwdItem2M2Label"
+      ]
+    },
+    {
+      "id": "rPanFwdItem2M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "347"
+      }
+    },
+    {
+      "id": "rPanFwdItem2M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "丢包率"
+      }
+    },
+    {
+      "id": "rPanFwdDivider",
+      "component": "div",
+      "props": {
+        "className": "w-full h-px bg-divider my-1"
+      }
+    },
+    {
+      "id": "rPanDataGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "rPanDataGroupHeader",
+        "rPanDataItem1"
+      ]
+    },
+    {
+      "id": "rPanDataGroupHeader",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface mb-2",
+        "value": "数据节点"
+      }
+    },
+    {
+      "id": "rPanDataItem1",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center py-2"
+      },
+      "children": [
+        "rPanDataItem1Left",
+        "rPanDataItem1Right"
+      ]
+    },
+    {
+      "id": "rPanDataItem1Left",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "rPanDataItem1Icon",
+        "rPanDataItem1Title"
+      ]
+    },
+    {
+      "id": "rPanDataItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "database",
+        "color": "success",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "rPanDataItem1Title",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "主数据库"
+      }
+    },
+    {
+      "id": "rPanDataItem1Right",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "rPanDataItem1M1",
+        "rPanDataItem1VDiv",
+        "rPanDataItem1M2"
+      ]
+    },
+    {
+      "id": "rPanDataItem1M1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanDataItem1M1Val",
+        "rPanDataItem1M1Label"
+      ]
+    },
+    {
+      "id": "rPanDataItem1M1Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "3"
+      }
+    },
+    {
+      "id": "rPanDataItem1M1Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "查询延迟"
+      }
+    },
+    {
+      "id": "rPanDataItem1VDiv",
+      "component": "div",
+      "props": {
+        "className": "w-px h-8 bg-divider"
+      }
+    },
+    {
+      "id": "rPanDataItem1M2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-end"
+      },
+      "children": [
+        "rPanDataItem1M2Val",
+        "rPanDataItem1M2Label"
+      ]
+    },
+    {
+      "id": "rPanDataItem1M2Val",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": "5,877"
+      }
+    },
+    {
+      "id": "rPanDataItem1M2Label",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "IOPS"
+      }
+    }
+  ]
+}

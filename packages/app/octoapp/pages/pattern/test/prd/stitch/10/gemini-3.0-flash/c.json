@@ -1,0 +1,1343 @@
+{
+    "state": {
+        "brand": {
+            "title": "Security Gate",
+            "role": "ENTERPRISE ADMIN"
+        },
+        "menus": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "User Directory",
+                "icon": "users",
+                "isActive": true
+            },
+            {
+                "label": "Org Chart",
+                "icon": "network",
+                "isActive": false
+            },
+            {
+                "label": "Tenant Settings",
+                "icon": "settings",
+                "isActive": false
+            },
+            {
+                "label": "Billing",
+                "icon": "credit-card",
+                "isActive": false
+            },
+            {
+                "label": "Audit Logs",
+                "icon": "shield-check",
+                "isActive": false
+            },
+            {
+                "label": "Lead Pool",
+                "icon": "target",
+                "isActive": false
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "title": "客户列表"
+            },
+            {
+                "title": "客户详情"
+            }
+        ],
+        "activeTab": "overview",
+        "activities": [
+            {
+                "id": "act_01",
+                "title": "与 CTO 张伟的季度回顾会议",
+                "time": "今天 14:30",
+                "content": "讨论了 Q3 的系统稳定性表现及 Q4 的扩容计划，客户对延迟降低表示满意。",
+                "icon": "video"
+            },
+            {
+                "id": "act_02",
+                "title": "发送了报价合同 (V2.1)",
+                "time": "昨天 09:15",
+                "content": "已发送包含“自动化流水线”升级包的最新报价单，等待法务审核。",
+                "icon": "file-text"
+            }
+        ],
+        "transactions": [
+            {
+                "id": "ORD-88291",
+                "date": "2023-11-20",
+                "amount": "¥128,000.00",
+                "status": "PAID"
+            },
+            {
+                "id": "ORD-87552",
+                "date": "2023-08-15",
+                "amount": "¥95,500.00",
+                "status": "PAID"
+            }
+        ],
+        "contacts": [
+            {
+                "name": "张伟",
+                "position": "首席技术官 (CTO)",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "name": "李芳",
+                "position": "采购总监",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+            }
+        ],
+        "emails": [
+            {
+                "subject": "回复: 关于 Q4 扩容方案的确认",
+                "sender": "来自: zhang.wei@nexus.com"
+            },
+            {
+                "subject": "会议邀请: 自动化流水线技术对接",
+                "sender": "来自: li.fang@nexus.com"
+            }
+        ],
+        "nps": 85
+    },
+    "rootId": "pageLayout",
+    "elements": [
+        {
+            "id": "pageLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-card flex flex-col shrink-0 z-10"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider"
+            },
+            "children": [
+                "brandTitle",
+                "brandRole"
+            ]
+        },
+        {
+            "id": "brandTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-lg font-bold text-primary",
+                "value": {
+                    "path": "/brand/title"
+                }
+            }
+        },
+        {
+            "id": "brandRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/brand/role"
+                }
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 py-gutter flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menus",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-inset py-3 hover:bg-primary-container transition-colors cursor-pointer"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-t border-divider flex flex-col gap-2"
+            },
+            "children": [
+                "supportBtn",
+                "logoutBtn"
+            ]
+        },
+        {
+            "id": "supportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Support Ticket",
+                "icon": "life-buoy",
+                "className": "w-full",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "logoutBtn",
+            "component": "Button",
+            "props": {
+                "value": "Log Out",
+                "icon": "log-out",
+                "className": "w-full",
+                "color": "danger",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center"
+            },
+            "children": [
+                "breadcrumbNav"
+            ]
+        },
+        {
+            "id": "breadcrumbNav",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                },
+                "separator": "/"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerIconGroup"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索资源...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerIconGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "iconBell",
+                "iconHelp",
+                "iconGlobe",
+                "iconUser"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "iconGlobe",
+            "component": "Icon",
+            "props": {
+                "name": "globe",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "iconUser",
+            "component": "Icon",
+            "props": {
+                "name": "user-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "customerHeaderCard",
+                "lowerGrid"
+            ]
+        },
+        {
+            "id": "customerHeaderCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card flex justify-between items-start"
+            },
+            "children": [
+                "customerHeaderLeft",
+                "customerHeaderRight"
+            ]
+        },
+        {
+            "id": "customerHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "customerLogo",
+                "customerInfoCluster"
+            ]
+        },
+        {
+            "id": "customerLogo",
+            "component": "div",
+            "props": {
+                "className": "w-20 h-20 bg-primary-container rounded-lg flex items-center justify-center"
+            },
+            "children": [
+                "logoIcon"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "building-2",
+                "className": "w-10 h-10",
+                "color": "primary",
+                "shape": "square"
+            }
+        },
+        {
+            "id": "customerInfoCluster",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "customerNameRow",
+                "customerMetaRow",
+                "customerContactRow"
+            ]
+        },
+        {
+            "id": "customerNameRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "customerTitle",
+                "activeTag"
+            ]
+        },
+        {
+            "id": "customerTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": "Nexus Global Corp"
+            }
+        },
+        {
+            "id": "activeTag",
+            "component": "Tag",
+            "props": {
+                "value": "ACTIVE",
+                "color": "success"
+            }
+        },
+        {
+            "id": "customerMetaRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 text-sm text-on-surface-variant"
+            },
+            "children": [
+                "industryText",
+                "addressText"
+            ]
+        },
+        {
+            "id": "industryText",
+            "component": "span",
+            "props": {
+                "value": "信息技术与服务"
+            }
+        },
+        {
+            "id": "addressText",
+            "component": "span",
+            "props": {
+                "value": "上海市浦东新区陆家嘴环路 1000 号"
+            }
+        },
+        {
+            "id": "customerContactRow",
+            "component": "div",
+            "props": {
+                "className": "text-sm font-medium text-primary"
+            },
+            "children": [
+                "phoneText"
+            ]
+        },
+        {
+            "id": "phoneText",
+            "component": "span",
+            "props": {
+                "value": "+86 21 5888 8888"
+            }
+        },
+        {
+            "id": "customerHeaderRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "editBtn",
+                "noteBtn",
+                "taskBtn"
+            ]
+        },
+        {
+            "id": "editBtn",
+            "component": "Button",
+            "props": {
+                "value": "编辑",
+                "icon": "edit-3",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "noteBtn",
+            "component": "Button",
+            "props": {
+                "value": "添加笔记",
+                "icon": "file-plus",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "taskBtn",
+            "component": "Button",
+            "props": {
+                "value": "创建任务",
+                "icon": "plus-circle",
+                "color": "primary",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "lowerGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "leftColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "leftColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 flex flex-col gap-gutter"
+            },
+            "children": [
+                "mainTabs",
+                "activityPanel",
+                "transactionPanel",
+                "contactsPanel",
+                "emailsPanel"
+            ]
+        },
+        {
+            "id": "mainTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "bg-surface-container-highest p-2 rounded-lg"
+            },
+            "children": [
+                "tabOverview",
+                "tabContacts",
+                "tabHistory",
+                "tabRelated",
+                "tabEmails"
+            ]
+        },
+        {
+            "id": "tabOverview",
+            "component": "TabItem",
+            "props": {
+                "key": "overview",
+                "label": "总览"
+            }
+        },
+        {
+            "id": "tabContacts",
+            "component": "TabItem",
+            "props": {
+                "key": "contacts",
+                "label": "联络记录"
+            }
+        },
+        {
+            "id": "tabHistory",
+            "component": "TabItem",
+            "props": {
+                "key": "transactions",
+                "label": "交易历史"
+            }
+        },
+        {
+            "id": "tabRelated",
+            "component": "TabItem",
+            "props": {
+                "key": "related",
+                "label": "关联联系人"
+            }
+        },
+        {
+            "id": "tabEmails",
+            "component": "TabItem",
+            "props": {
+                "key": "emails",
+                "label": "往来邮件"
+            }
+        },
+        {
+            "id": "activityPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "activityHeader",
+                "activityList"
+            ]
+        },
+        {
+            "id": "activityHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-gutter"
+            },
+            "children": [
+                "activityTitle",
+                "viewAllLink"
+            ]
+        },
+        {
+            "id": "activityTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": "最近活动联络"
+            }
+        },
+        {
+            "id": "viewAllLink",
+            "component": "span",
+            "props": {
+                "className": "text-primary text-sm cursor-pointer",
+                "value": "查看全部"
+            }
+        },
+        {
+            "id": "activityList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": {
+                "path": "/activities",
+                "componentId": "activityItem"
+            }
+        },
+        {
+            "id": "activityItem",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "actIcon",
+                "actContent"
+            ]
+        },
+        {
+            "id": "actIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-10 h-10 shrink-0"
+            }
+        },
+        {
+            "id": "actContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "actTitleRow",
+                "actDesc"
+            ]
+        },
+        {
+            "id": "actTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "actTitle",
+                "actTime"
+            ]
+        },
+        {
+            "id": "actTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-md",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "actTime",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "time"
+                }
+            }
+        },
+        {
+            "id": "actDesc",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "content"
+                }
+            }
+        },
+        {
+            "id": "transactionPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "transTitle",
+                "transTable"
+            ]
+        },
+        {
+            "id": "transTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-gutter",
+                "value": "交易历史"
+            }
+        },
+        {
+            "id": "transTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/transactions"
+                },
+                "columns": [
+                    {
+                        "title": "订单 ID",
+                        "dataIndex": "id"
+                    },
+                    {
+                        "title": "日期",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "金额",
+                        "dataIndex": "amount"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/transactions",
+                "componentId": "transRow"
+            }
+        },
+        {
+            "id": "transRow",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellDate",
+                "cellAmount",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "cellAmount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "success",
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "contactsPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "contactTitle",
+                "contactList"
+            ]
+        },
+        {
+            "id": "contactTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-gutter",
+                "value": "关键联系人"
+            }
+        },
+        {
+            "id": "contactList",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-4"
+            },
+            "children": {
+                "path": "/contacts",
+                "componentId": "contactCard"
+            }
+        },
+        {
+            "id": "contactCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 border border-divider rounded-lg"
+            },
+            "children": [
+                "contactAvatar",
+                "contactInfo",
+                "contactMsgIcon"
+            ]
+        },
+        {
+            "id": "contactAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "contactInfo",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            },
+            "children": [
+                "contactName",
+                "contactPos"
+            ]
+        },
+        {
+            "id": "contactName",
+            "component": "div",
+            "props": {
+                "className": "font-bold text-sm",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "contactPos",
+            "component": "div",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "position"
+                }
+            }
+        },
+        {
+            "id": "contactMsgIcon",
+            "component": "Icon",
+            "props": {
+                "name": "message-square",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "emailsPanel",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "emailTitle",
+                "emailList"
+            ]
+        },
+        {
+            "id": "emailTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-lg font-bold mb-gutter",
+                "value": "往来邮件"
+            }
+        },
+        {
+            "id": "emailList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col divide-y divide-divider"
+            },
+            "children": {
+                "path": "/emails",
+                "componentId": "emailItem"
+            }
+        },
+        {
+            "id": "emailItem",
+            "component": "div",
+            "props": {
+                "className": "py-3 flex items-start gap-3"
+            },
+            "children": [
+                "mailIcon",
+                "mailContent"
+            ]
+        },
+        {
+            "id": "mailIcon",
+            "component": "Icon",
+            "props": {
+                "name": "mail",
+                "className": "w-5 h-5 text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "mailContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "mailSubject",
+                "mailSender"
+            ]
+        },
+        {
+            "id": "mailSubject",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "subject"
+                }
+            }
+        },
+        {
+            "id": "mailSender",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "sender"
+                }
+            }
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricsCard",
+                "datesCard",
+                "csmCard",
+                "npsCard",
+                "aiInsightCard"
+            ]
+        },
+        {
+            "id": "metricsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "metricTitle",
+                "metricValueRow"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-sm text-on-surface-variant mb-2",
+                "value": "全生命周期价值 (LTV)"
+            }
+        },
+        {
+            "id": "metricValueRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2"
+            },
+            "children": [
+                "metricValue",
+                "metricGrowth"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold",
+                "value": "¥2,450,000"
+            }
+        },
+        {
+            "id": "metricGrowth",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-success font-medium",
+                "value": "+12% 较去年增长"
+            }
+        },
+        {
+            "id": "datesCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "datesTitle",
+                "datesList"
+            ]
+        },
+        {
+            "id": "datesTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-md font-bold mb-gutter",
+                "value": "重要日期"
+            }
+        },
+        {
+            "id": "datesList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": [
+                "dateItem1",
+                "dateItem2",
+                "dateItem3"
+            ]
+        },
+        {
+            "id": "dateItem1",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm"
+            },
+            "children": [
+                "dateLabel1",
+                "dateVal1"
+            ]
+        },
+        {
+            "id": "dateLabel1",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": "最后跟进时间"
+            }
+        },
+        {
+            "id": "dateVal1",
+            "component": "span",
+            "props": {
+                "value": "2023-11-24"
+            }
+        },
+        {
+            "id": "dateItem2",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm"
+            },
+            "children": [
+                "dateLabel2",
+                "dateVal2"
+            ]
+        },
+        {
+            "id": "dateLabel2",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": "签约日期"
+            }
+        },
+        {
+            "id": "dateVal2",
+            "component": "span",
+            "props": {
+                "value": "2021-05-12"
+            }
+        },
+        {
+            "id": "dateItem3",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm"
+            },
+            "children": [
+                "dateLabel3",
+                "dateVal3"
+            ]
+        },
+        {
+            "id": "dateLabel3",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": "下次续费日期"
+            }
+        },
+        {
+            "id": "dateVal3",
+            "component": "span",
+            "props": {
+                "className": "text-warning font-bold",
+                "value": "2024-05-12"
+            }
+        },
+        {
+            "id": "csmCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "csmTitle",
+                "csmProfile"
+            ]
+        },
+        {
+            "id": "csmTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-md font-bold mb-gutter",
+                "value": "客户经理 (CSM)"
+            }
+        },
+        {
+            "id": "csmProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "csmAvatar",
+                "csmInfo"
+            ]
+        },
+        {
+            "id": "csmAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/women/65.jpg",
+                "className": "w-12 h-12 rounded-full"
+            }
+        },
+        {
+            "id": "csmInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "csmName",
+                "csmRole"
+            ]
+        },
+        {
+            "id": "csmName",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": "陈思思"
+            }
+        },
+        {
+            "id": "csmRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "高级大客户经理"
+            }
+        },
+        {
+            "id": "npsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "npsTitle",
+                "npsProgress",
+                "npsScoreLabel"
+            ]
+        },
+        {
+            "id": "npsTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-md font-bold mb-gutter",
+                "value": "客户满意度 (NPS)"
+            }
+        },
+        {
+            "id": "npsProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "/nps"
+                },
+                "strokeColor": "#09AA71",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "npsScoreLabel",
+            "component": "div",
+            "props": {
+                "className": "mt-2 text-right font-bold text-success",
+                "value": "8.5 / 10"
+            }
+        },
+        {
+            "id": "aiInsightCard",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container p-inset rounded-xl border border-primary/20"
+            },
+            "children": [
+                "aiHeader",
+                "aiText",
+                "aiAction"
+            ]
+        },
+        {
+            "id": "aiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-2 text-primary"
+            },
+            "children": [
+                "aiIcon",
+                "aiTitle"
+            ]
+        },
+        {
+            "id": "aiIcon",
+            "component": "Icon",
+            "props": {
+                "name": "sparkles",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "aiTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": "AI 洞察建议"
+            }
+        },
+        {
+            "id": "aiText",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-primary-container mb-gutter leading-relaxed",
+                "value": "该客户最近三个月的活跃度提升了 25%，建议在下周的会议中重点推介“自动化流水线”升级包。"
+            }
+        },
+        {
+            "id": "aiAction",
+            "component": "Button",
+            "props": {
+                "value": "生成详细建议报告",
+                "color": "primary",
+                "className": "w-full",
+                "size": "medium"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1824 @@
+{
+  "state": {
+    "logoIcon": "network",
+    "systemName": "iMaster NCE-Campus",
+    "navMenus": [
+      {
+        "menuName": "首页概览",
+        "menuIcon": "layout-dashboard",
+        "title": "首页概览",
+        "key": "dashboard",
+        "icon": "layout-dashboard"
+      },
+      {
+        "menuName": "拓扑管理",
+        "menuIcon": "share-2",
+        "title": "拓扑管理",
+        "key": "topology",
+        "icon": "share-2"
+      },
+      {
+        "menuName": "告警管理",
+        "menuIcon": "bell",
+        "title": "告警管理",
+        "key": "alerts",
+        "icon": "bell"
+      }
+    ],
+    "selectedMenuKeys": [
+      "dashboard"
+    ],
+    "tenantName": "租户管理员",
+    "toolIcons": [
+      {
+        "actionName": "帮助文档",
+        "iconName": "help-circle"
+      },
+      {
+        "actionName": "系统设置",
+        "iconName": "settings"
+      },
+      {
+        "actionName": "主题切换",
+        "iconName": "sun"
+      }
+    ],
+    "userProfile": {
+      "username": "admin",
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    "logoutIcon": "log-out",
+    "breadcrumbTitle": "客户网络 | 资源管理",
+    "actionButtons": [
+      {
+        "buttonText": "应用视图",
+        "buttonIcon": "layers"
+      },
+      {
+        "buttonText": "拓扑展示",
+        "buttonIcon": "git-branch"
+      },
+      {
+        "buttonText": "计划任务",
+        "buttonIcon": "calendar-clock"
+      },
+      {
+        "buttonText": "工单管理",
+        "buttonIcon": "file-text"
+      }
+    ],
+    "filterSelectConfig": {
+      "defaultValue": "过滤条件",
+      "prefixIcon": "filter"
+    },
+    "filterValue": "",
+    "filterOptions": [
+      {
+        "label": "源IP",
+        "value": "srcIp"
+      },
+      {
+        "label": "目的IP",
+        "value": "dstIp"
+      },
+      {
+        "label": "策略类型",
+        "value": "policyType"
+      },
+      {
+        "label": "策略描述",
+        "value": "policyDesc"
+      },
+      {
+        "label": "匹配次数",
+        "value": "matchCount"
+      },
+      {
+        "label": "丢包率",
+        "value": "packetLoss"
+      }
+    ],
+    "activeFilterTags": [
+      {
+        "tagText": "源IP包含 10.2.5.5",
+        "closable": true
+      }
+    ],
+    "searchInputPlaceholder": "请输入搜索关键字",
+    "searchKeyword": "",
+    "searchButton": {
+      "text": "查询",
+      "icon": "search"
+    },
+    "collapseActiveKey": [],
+    "activeTab": "ipsec_vpn"
+  },
+  "rootId": "rootLayout",
+  "elements": [
+    {
+      "id": "rootLayout",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-full bg-surface-container-lowest"
+      },
+      "children": [
+        "globalHeaderSlot",
+        "pageActionToolbarSlot",
+        "searchFilterBarSlot",
+        "mainContentAreaSlot"
+      ]
+    },
+    {
+      "id": "globalHeaderSlot",
+      "component": "header",
+      "props": {
+        "className": "flex items-center justify-between h-12 px-page bg-surface-container-highest shadow-sm shrink-0"
+      },
+      "children": [
+        "ghdrLeftGroup",
+        "ghdrRightGroup"
+      ]
+    },
+    {
+      "id": "pageActionToolbarSlot",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-page py-stack bg-surface-container-high border-b border-divider shrink-0"
+      },
+      "children": [
+        "ptoolTitleText",
+        "ptoolBtnGroup"
+      ]
+    },
+    {
+      "id": "searchFilterBarSlot",
+      "component": "div",
+      "props": {
+        "className": "flex items-center px-page py-inline bg-surface-container-high border-b border-divider shrink-0"
+      },
+      "children": [
+        "sfbarFilterGroup",
+        "sfbarFilterTagList",
+        "sfbarSearchInput",
+        "sfbarSearchBtn"
+      ]
+    },
+    {
+      "id": "mainContentAreaSlot",
+      "component": "main",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-page"
+      },
+      "children": [
+        "mcAreaCollapse",
+        "mcAreaCard"
+      ]
+    },
+    {
+      "id": "ghdrLeftGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 h-full"
+      },
+      "children": [
+        "ghdrHamburgerBtn",
+        "ghdrLogoGroup",
+        "ghdrDividerLine",
+        "ghdrNavMenu"
+      ]
+    },
+    {
+      "id": "ghdrHamburgerBtn",
+      "component": "Button",
+      "props": {
+        "icon": "menu",
+        "types": "link",
+        "shape": "circle",
+        "className": "w-8 h-8 flex items-center justify-center shrink-0"
+      }
+    },
+    {
+      "id": "ghdrLogoGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "ghdrLogoIcon",
+        "ghdrSystemName"
+      ]
+    },
+    {
+      "id": "ghdrLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/logoIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "ghdrSystemName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemName"
+        },
+        "className": "text-md font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "ghdrDividerLine",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider"
+      }
+    },
+    {
+      "id": "ghdrNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/navMenus"
+        },
+        "className": "border-none bg-transparent"
+      }
+    },
+    {
+      "id": "ghdrRightGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 h-full"
+      },
+      "children": [
+        "ghdrTenantName",
+        "ghdrRightDivider",
+        "ghdrToolIconsWrap",
+        "ghdrRightDivider2",
+        "ghdrUserArea",
+        "ghdrLogoutBtn"
+      ]
+    },
+    {
+      "id": "ghdrTenantName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/tenantName"
+        },
+        "className": "text-sm text-on-surface-variant whitespace-nowrap"
+      }
+    },
+    {
+      "id": "ghdrRightDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-4 bg-divider"
+      }
+    },
+    {
+      "id": "ghdrToolIconsWrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": {
+        "path": "/toolIcons",
+        "componentId": "ghdrToolIconItem"
+      }
+    },
+    {
+      "id": "ghdrToolIconItem",
+      "component": "div",
+      "props": {
+        "title": {
+          "path": "actionName"
+        },
+        "className": "flex items-center justify-center w-7 h-7 rounded-md cursor-pointer hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "ghdrToolIcon"
+      ]
+    },
+    {
+      "id": "ghdrToolIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "iconName"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "ghdrRightDivider2",
+      "component": "div",
+      "props": {
+        "className": "w-px h-4 bg-divider"
+      }
+    },
+    {
+      "id": "ghdrUserArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer rounded-md px-2 py-1 hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "ghdrUserAvatar",
+        "ghdrUserName"
+      ]
+    },
+    {
+      "id": "ghdrUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userProfile/avatarImage"
+        },
+        "alt": "用户头像",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "ghdrUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userProfile/username"
+        },
+        "className": "text-sm font-medium text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "ghdrLogoutBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "/logoutIcon"
+        },
+        "types": "link",
+        "shape": "circle",
+        "className": "w-8 h-8 flex items-center justify-center shrink-0"
+      }
+    },
+    {
+      "id": "ptoolTitleText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/breadcrumbTitle"
+        }
+      }
+    },
+    {
+      "id": "ptoolBtnGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": {
+        "path": "/actionButtons",
+        "componentId": "ptoolBtnItem"
+      }
+    },
+    {
+      "id": "ptoolBtnItem",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "buttonText"
+        },
+        "icon": {
+          "path": "buttonIcon"
+        },
+        "iconPlacement": "start",
+        "color": "default",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "sfbarFilterGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mr-2 shrink-0"
+      },
+      "children": [
+        "sfbarFilterIcon",
+        "sfbarFilterSelect"
+      ]
+    },
+    {
+      "id": "sfbarFilterIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/filterSelectConfig/prefixIcon"
+        },
+        "className": "w-4 h-4",
+        "shape": "outline",
+        "color": "default"
+      }
+    },
+    {
+      "id": "sfbarFilterSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/filterValue"
+        },
+        "placeholder": {
+          "path": "/filterSelectConfig/defaultValue"
+        },
+        "options": {
+          "path": "/filterOptions"
+        },
+        "className": "min-w-[120px]"
+      }
+    },
+    {
+      "id": "sfbarFilterTagList",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": {
+        "path": "/activeFilterTags",
+        "componentId": "sfbarFilterTag"
+      }
+    },
+    {
+      "id": "sfbarFilterTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "tagText"
+        },
+        "closable": {
+          "path": "closable"
+        },
+        "closeIcon": "x",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "sfbarSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchKeyword"
+        },
+        "placeholder": {
+          "path": "/searchInputPlaceholder"
+        },
+        "className": "flex-1 mx-3"
+      }
+    },
+    {
+      "id": "sfbarSearchBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/searchButton/text"
+        },
+        "icon": {
+          "path": "/searchButton/icon"
+        },
+        "iconPlacement": "start",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaCollapse",
+      "component": "Collapse",
+      "props": {
+        "activeKey": {
+          "path": "/collapseActiveKey"
+        },
+        "expandIcon": "chevron-down",
+        "expandIconPlacement": "start",
+        "className": "mb-section"
+      },
+      "children": [
+        "mcAreaCollapseItem"
+      ]
+    },
+    {
+      "id": "mcAreaCollapseItem",
+      "component": "CollapseItem",
+      "props": {
+        "key": "globalRoute",
+        "label": "全局路由转发策略",
+        "content": {
+          "componentId": "mcAreaCollapseContent"
+        }
+      }
+    },
+    {
+      "id": "mcAreaCollapseContent",
+      "component": "div",
+      "props": {
+        "className": "p-4 text-md text-on-surface-variant"
+      },
+      "children": [
+        "mcAreaCollapseText"
+      ]
+    },
+    {
+      "id": "mcAreaCollapseText",
+      "component": "span",
+      "props": {
+        "value": "全局路由转发策略配置面板，用于管理和查看网络路由的转发规则与策略详情。"
+      }
+    },
+    {
+      "id": "mcAreaCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card"
+      },
+      "children": [
+        "mcAreaCardHeader",
+        "mcAreaTabs"
+      ]
+    },
+    {
+      "id": "mcAreaCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center px-inset pt-inset pb-2"
+      },
+      "children": [
+        "mcAreaCardTitle",
+        "mcAreaCardActions"
+      ]
+    },
+    {
+      "id": "mcAreaCardTitle",
+      "component": "span",
+      "props": {
+        "value": "安全策略配置",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaCardActions",
+      "component": "div",
+      "props": {
+        "className": "flex gap-2"
+      },
+      "children": [
+        "mcAreaAddBtn",
+        "mcAreaExportBtn"
+      ]
+    },
+    {
+      "id": "mcAreaAddBtn",
+      "component": "Button",
+      "props": {
+        "value": "新增策略",
+        "icon": "plus",
+        "iconPlacement": "start",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "icon": "download",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "mcAreaTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "className": "px-inset"
+      },
+      "children": [
+        "mcAreaTabVlan",
+        "mcAreaTabIpsec"
+      ]
+    },
+    {
+      "id": "mcAreaTabVlan",
+      "component": "TabItem",
+      "props": {
+        "key": "vlan",
+        "label": "VLAN",
+        "content": "VLAN 策略配置内容"
+      }
+    },
+    {
+      "id": "mcAreaTabIpsec",
+      "component": "TabItem",
+      "props": {
+        "key": "ipsec_vpn",
+        "label": "IPsec VPN",
+        "content": {
+          "componentId": "mcAreaIpsecContent"
+        }
+      }
+    },
+    {
+      "id": "mcAreaIpsecContent",
+      "component": "div",
+      "props": {
+        "className": "pb-inset"
+      },
+      "children": [
+        "mcAreaMainTableWrap"
+      ]
+    },
+    {
+      "id": "mcAreaMainTableWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col mb-4"
+      },
+      "children": [
+        "mcAreaMainTableHeader",
+        "mcAreaMainRow1",
+        "mcAreaSubTableWrap",
+        "mcAreaMainRow2",
+        "mcAreaMainRow3",
+        "mcAreaMainRow4",
+        "mcAreaMainRow5",
+        "mcAreaLoadMore"
+      ]
+    },
+    {
+      "id": "mcAreaMainTableHeader",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] bg-surface-variant rounded-t-md"
+      },
+      "children": [
+        "mcAreaMhCol1",
+        "mcAreaMhCol2",
+        "mcAreaMhCol3",
+        "mcAreaMhCol4",
+        "mcAreaMhCol5",
+        "mcAreaMhCol6",
+        "mcAreaMhCol7",
+        "mcAreaMhCol8"
+      ]
+    },
+    {
+      "id": "mcAreaMhCol1",
+      "component": "span",
+      "props": {
+        "value": "策略类型",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaMhCol2",
+      "component": "span",
+      "props": {
+        "value": "源IP网段",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaMhCol3",
+      "component": "span",
+      "props": {
+        "value": "目的IP网段",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaMhCol4",
+      "component": "span",
+      "props": {
+        "value": "策略描述",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaMhCol5",
+      "component": "span",
+      "props": {
+        "value": "匹配次数",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaMhCol6",
+      "component": "span",
+      "props": {
+        "value": "丢包率",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaMhCol7",
+      "component": "span",
+      "props": {
+        "value": "上行流量(MB)",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaMhCol8",
+      "component": "span",
+      "props": {
+        "value": "操作",
+        "className": "px-3 py-2.5 text-md font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaMainRow1",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] bg-primary-container"
+      },
+      "children": [
+        "mcAreaM1Col1",
+        "mcAreaM1Col2",
+        "mcAreaM1Col3",
+        "mcAreaM1Col4",
+        "mcAreaM1Col5",
+        "mcAreaM1Col6",
+        "mcAreaM1Col7",
+        "mcAreaM1Col8"
+      ]
+    },
+    {
+      "id": "mcAreaM1Col1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-2.5"
+      },
+      "children": [
+        "mcAreaM1Icon",
+        "mcAreaM1TypeText"
+      ]
+    },
+    {
+      "id": "mcAreaM1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-up",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaM1TypeText",
+      "component": "span",
+      "props": {
+        "value": "IPv4/IPv6",
+        "className": "text-md text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "mcAreaM1Col2",
+      "component": "span",
+      "props": {
+        "value": "10.1.6.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM1Col3",
+      "component": "span",
+      "props": {
+        "value": "10.6.0.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM1Col4",
+      "component": "span",
+      "props": {
+        "value": "允许研发到新校区业务",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM1Col5",
+      "component": "span",
+      "props": {
+        "value": "2",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM1Col6",
+      "component": "span",
+      "props": {
+        "value": "0.38%",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM1Col7",
+      "component": "span",
+      "props": {
+        "value": "--",
+        "className": "px-3 py-2.5 text-md text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaM1Col8",
+      "component": "Button",
+      "props": {
+        "value": "快速配置",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubTableWrap",
+      "component": "div",
+      "props": {
+        "className": "ml-8 mr-4 border-l-2 border-primary bg-surface-container"
+      },
+      "children": [
+        "mcAreaSubTableHeader",
+        "mcAreaSubRow1",
+        "mcAreaSubRow2",
+        "mcAreaSubRow3",
+        "mcAreaSubRow4",
+        "mcAreaSubRow5",
+        "mcAreaSubFooter"
+      ]
+    },
+    {
+      "id": "mcAreaSubTableHeader",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr] bg-surface-variant"
+      },
+      "children": [
+        "mcAreaShCol1",
+        "mcAreaShCol2",
+        "mcAreaShCol3",
+        "mcAreaShCol4",
+        "mcAreaShCol5",
+        "mcAreaShCol6",
+        "mcAreaShCol7",
+        "mcAreaShCol8"
+      ]
+    },
+    {
+      "id": "mcAreaShCol1",
+      "component": "span",
+      "props": {
+        "value": "规则ID",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaShCol2",
+      "component": "span",
+      "props": {
+        "value": "源端口/掩码",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaShCol3",
+      "component": "span",
+      "props": {
+        "value": "动作/协议",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mcAreaShCol4",
+      "component": "span",
+      "props": {
+        "value": "命中字节(KB)",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaShCol5",
+      "component": "span",
+      "props": {
+        "value": "峰值速率",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaShCol6",
+      "component": "span",
+      "props": {
+        "value": "并发会话数",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaShCol7",
+      "component": "span",
+      "props": {
+        "value": "安全防护等级",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaShCol8",
+      "component": "span",
+      "props": {
+        "value": "模块状态",
+        "className": "px-3 py-2 text-sm font-medium text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaSubRow1",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr] border-b border-divider"
+      },
+      "children": [
+        "mcAreaS1C1",
+        "mcAreaS1C2",
+        "mcAreaS1C3",
+        "mcAreaS1C4",
+        "mcAreaS1C5",
+        "mcAreaS1C6",
+        "mcAreaS1C7",
+        "mcAreaS1C8"
+      ]
+    },
+    {
+      "id": "mcAreaS1C1",
+      "component": "span",
+      "props": {
+        "value": "62-12",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS1C2",
+      "component": "span",
+      "props": {
+        "value": "192.168.1.0/24",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS1C3",
+      "component": "span",
+      "props": {
+        "value": "允许/TCP",
+        "className": "px-3 py-2 text-sm text-success font-medium"
+      }
+    },
+    {
+      "id": "mcAreaS1C4",
+      "component": "span",
+      "props": {
+        "value": "1,890",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS1C5",
+      "component": "span",
+      "props": {
+        "value": "940",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS1C6",
+      "component": "span",
+      "props": {
+        "value": "83,901",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS1C7",
+      "component": "Tag",
+      "props": {
+        "value": "高",
+        "color": "error",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaS1C8",
+      "component": "Tag",
+      "props": {
+        "value": "正常运行",
+        "color": "success",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubRow2",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr] border-b border-divider"
+      },
+      "children": [
+        "mcAreaS2C1",
+        "mcAreaS2C2",
+        "mcAreaS2C3",
+        "mcAreaS2C4",
+        "mcAreaS2C5",
+        "mcAreaS2C6",
+        "mcAreaS2C7",
+        "mcAreaS2C8"
+      ]
+    },
+    {
+      "id": "mcAreaS2C1",
+      "component": "span",
+      "props": {
+        "value": "79-04",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS2C2",
+      "component": "span",
+      "props": {
+        "value": "172.16.5.0/18",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS2C3",
+      "component": "span",
+      "props": {
+        "value": "阻断/UDP",
+        "className": "px-3 py-2 text-sm text-error font-medium"
+      }
+    },
+    {
+      "id": "mcAreaS2C4",
+      "component": "span",
+      "props": {
+        "value": "348",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS2C5",
+      "component": "span",
+      "props": {
+        "value": "549",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS2C6",
+      "component": "span",
+      "props": {
+        "value": "23,147",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS2C7",
+      "component": "Tag",
+      "props": {
+        "value": "中",
+        "color": "warning",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaS2C8",
+      "component": "Tag",
+      "props": {
+        "value": "策略告警",
+        "color": "error",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubRow3",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr] border-b border-divider"
+      },
+      "children": [
+        "mcAreaS3C1",
+        "mcAreaS3C2",
+        "mcAreaS3C3",
+        "mcAreaS3C4",
+        "mcAreaS3C5",
+        "mcAreaS3C6",
+        "mcAreaS3C7",
+        "mcAreaS3C8"
+      ]
+    },
+    {
+      "id": "mcAreaS3C1",
+      "component": "span",
+      "props": {
+        "value": "56-01",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS3C2",
+      "component": "span",
+      "props": {
+        "value": "10.9.7.0/28",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS3C3",
+      "component": "span",
+      "props": {
+        "value": "限速/ICMP",
+        "className": "px-3 py-2 text-sm text-critical font-medium"
+      }
+    },
+    {
+      "id": "mcAreaS3C4",
+      "component": "span",
+      "props": {
+        "value": "540",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS3C5",
+      "component": "span",
+      "props": {
+        "value": "126",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS3C6",
+      "component": "span",
+      "props": {
+        "value": "24,391",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS3C7",
+      "component": "Tag",
+      "props": {
+        "value": "低",
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaS3C8",
+      "component": "Tag",
+      "props": {
+        "value": "流量限速",
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubRow4",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr] border-b border-divider"
+      },
+      "children": [
+        "mcAreaS4C1",
+        "mcAreaS4C2",
+        "mcAreaS4C3",
+        "mcAreaS4C4",
+        "mcAreaS4C5",
+        "mcAreaS4C6",
+        "mcAreaS4C7",
+        "mcAreaS4C8"
+      ]
+    },
+    {
+      "id": "mcAreaS4C1",
+      "component": "span",
+      "props": {
+        "value": "45-59",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS4C2",
+      "component": "span",
+      "props": {
+        "value": "10.8.5.0/24",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS4C3",
+      "component": "span",
+      "props": {
+        "value": "允许/ALL",
+        "className": "px-3 py-2 text-sm text-success font-medium"
+      }
+    },
+    {
+      "id": "mcAreaS4C4",
+      "component": "span",
+      "props": {
+        "value": "551",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS4C5",
+      "component": "span",
+      "props": {
+        "value": "215",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS4C6",
+      "component": "span",
+      "props": {
+        "value": "87,531",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS4C7",
+      "component": "Tag",
+      "props": {
+        "value": "高",
+        "color": "error",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaS4C8",
+      "component": "Tag",
+      "props": {
+        "value": "无限制",
+        "color": "success",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubRow5",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[0.8fr_1.3fr_1.2fr_1fr_0.8fr_1fr_1fr_1fr]"
+      },
+      "children": [
+        "mcAreaS5C1",
+        "mcAreaS5C2",
+        "mcAreaS5C3",
+        "mcAreaS5C4",
+        "mcAreaS5C5",
+        "mcAreaS5C6",
+        "mcAreaS5C7",
+        "mcAreaS5C8"
+      ]
+    },
+    {
+      "id": "mcAreaS5C1",
+      "component": "span",
+      "props": {
+        "value": "48-23",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS5C2",
+      "component": "span",
+      "props": {
+        "value": "10.7.4.0/24",
+        "className": "px-3 py-2 text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaS5C3",
+      "component": "span",
+      "props": {
+        "value": "监控/TCP",
+        "className": "px-3 py-2 text-sm text-info font-medium"
+      }
+    },
+    {
+      "id": "mcAreaS5C4",
+      "component": "span",
+      "props": {
+        "value": "813",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS5C5",
+      "component": "span",
+      "props": {
+        "value": "896",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS5C6",
+      "component": "span",
+      "props": {
+        "value": "91,518",
+        "className": "px-3 py-2 text-sm text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaS5C7",
+      "component": "Tag",
+      "props": {
+        "value": "中",
+        "color": "warning",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaS5C8",
+      "component": "Tag",
+      "props": {
+        "value": "监控中",
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaSubFooter",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1.5 py-2.5 text-md text-primary cursor-pointer hover:opacity-80"
+      },
+      "children": [
+        "mcAreaSubFooterText",
+        "mcAreaSubFooterIcon"
+      ]
+    },
+    {
+      "id": "mcAreaSubFooterText",
+      "component": "span",
+      "props": {
+        "value": "批量设置"
+      }
+    },
+    {
+      "id": "mcAreaSubFooterIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevrons-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaMainRow2",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] border-b border-divider hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "mcAreaM2Col1",
+        "mcAreaM2Col2",
+        "mcAreaM2Col3",
+        "mcAreaM2Col4",
+        "mcAreaM2Col5",
+        "mcAreaM2Col6",
+        "mcAreaM2Col7",
+        "mcAreaM2Col8"
+      ]
+    },
+    {
+      "id": "mcAreaM2Col1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-2.5"
+      },
+      "children": [
+        "mcAreaM2Icon",
+        "mcAreaM2Type"
+      ]
+    },
+    {
+      "id": "mcAreaM2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaM2Type",
+      "component": "span",
+      "props": {
+        "value": "IPv4",
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM2Col2",
+      "component": "span",
+      "props": {
+        "value": "10.4.0.0/16",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM2Col3",
+      "component": "span",
+      "props": {
+        "value": "10.9.1.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM2Col4",
+      "component": "span",
+      "props": {
+        "value": "数据中心核心区互访",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM2Col5",
+      "component": "span",
+      "props": {
+        "value": "3",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM2Col6",
+      "component": "span",
+      "props": {
+        "value": "0.31%",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM2Col7",
+      "component": "span",
+      "props": {
+        "value": "--",
+        "className": "px-3 py-2.5 text-md text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaM2Col8",
+      "component": "Button",
+      "props": {
+        "value": "撤销配置",
+        "types": "link",
+        "size": "small",
+        "color": "danger"
+      }
+    },
+    {
+      "id": "mcAreaMainRow3",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] border-b border-divider hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "mcAreaM3Col1",
+        "mcAreaM3Col2",
+        "mcAreaM3Col3",
+        "mcAreaM3Col4",
+        "mcAreaM3Col5",
+        "mcAreaM3Col6",
+        "mcAreaM3Col7",
+        "mcAreaM3Col8"
+      ]
+    },
+    {
+      "id": "mcAreaM3Col1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-2.5"
+      },
+      "children": [
+        "mcAreaM3Icon",
+        "mcAreaM3Type"
+      ]
+    },
+    {
+      "id": "mcAreaM3Icon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaM3Type",
+      "component": "span",
+      "props": {
+        "value": "IPv6",
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM3Col2",
+      "component": "span",
+      "props": {
+        "value": "10.2.5.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM3Col3",
+      "component": "span",
+      "props": {
+        "value": "10.2.8.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM3Col4",
+      "component": "span",
+      "props": {
+        "value": "办公区到测试网策略",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM3Col5",
+      "component": "span",
+      "props": {
+        "value": "9",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM3Col6",
+      "component": "span",
+      "props": {
+        "value": "0.07%",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM3Col7",
+      "component": "span",
+      "props": {
+        "value": "--",
+        "className": "px-3 py-2.5 text-md text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaM3Col8",
+      "component": "Button",
+      "props": {
+        "value": "查看详情",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaMainRow4",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] border-b border-divider hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "mcAreaM4Col1",
+        "mcAreaM4Col2",
+        "mcAreaM4Col3",
+        "mcAreaM4Col4",
+        "mcAreaM4Col5",
+        "mcAreaM4Col6",
+        "mcAreaM4Col7",
+        "mcAreaM4Col8"
+      ]
+    },
+    {
+      "id": "mcAreaM4Col1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-2.5"
+      },
+      "children": [
+        "mcAreaM4Icon",
+        "mcAreaM4Type"
+      ]
+    },
+    {
+      "id": "mcAreaM4Icon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaM4Type",
+      "component": "span",
+      "props": {
+        "value": "IPv4",
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM4Col2",
+      "component": "span",
+      "props": {
+        "value": "10.2.7.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM4Col3",
+      "component": "span",
+      "props": {
+        "value": "10.8.1.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM4Col4",
+      "component": "span",
+      "props": {
+        "value": "视频监控网段隔离",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM4Col5",
+      "component": "span",
+      "props": {
+        "value": "8",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM4Col6",
+      "component": "span",
+      "props": {
+        "value": "0.07%",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM4Col7",
+      "component": "span",
+      "props": {
+        "value": "--",
+        "className": "px-3 py-2.5 text-md text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaM4Col8",
+      "component": "Button",
+      "props": {
+        "value": "修改策略",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mcAreaMainRow5",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-[1.2fr_1.3fr_1.3fr_2.5fr_0.8fr_0.8fr_0.9fr_120px] hover:bg-surface-container transition-colors"
+      },
+      "children": [
+        "mcAreaM5Col1",
+        "mcAreaM5Col2",
+        "mcAreaM5Col3",
+        "mcAreaM5Col4",
+        "mcAreaM5Col5",
+        "mcAreaM5Col6",
+        "mcAreaM5Col7",
+        "mcAreaM5Col8"
+      ]
+    },
+    {
+      "id": "mcAreaM5Col1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-2.5"
+      },
+      "children": [
+        "mcAreaM5Icon",
+        "mcAreaM5Type"
+      ]
+    },
+    {
+      "id": "mcAreaM5Icon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaM5Type",
+      "component": "span",
+      "props": {
+        "value": "IPv4",
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM5Col2",
+      "component": "span",
+      "props": {
+        "value": "10.7.9.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM5Col3",
+      "component": "span",
+      "props": {
+        "value": "10.2.4.0/24",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM5Col4",
+      "component": "span",
+      "props": {
+        "value": "无线访客网络限速",
+        "className": "px-3 py-2.5 text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mcAreaM5Col5",
+      "component": "span",
+      "props": {
+        "value": "3",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM5Col6",
+      "component": "span",
+      "props": {
+        "value": "0.40%",
+        "className": "px-3 py-2.5 text-md text-on-surface text-center"
+      }
+    },
+    {
+      "id": "mcAreaM5Col7",
+      "component": "span",
+      "props": {
+        "value": "--",
+        "className": "px-3 py-2.5 text-md text-on-surface-variant text-center"
+      }
+    },
+    {
+      "id": "mcAreaM5Col8",
+      "component": "Button",
+      "props": {
+        "value": "下发策略",
+        "types": "link",
+        "size": "small",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mcAreaLoadMore",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1.5 py-3 text-md text-primary cursor-pointer hover:opacity-80 mt-2"
+      },
+      "children": [
+        "mcAreaLoadMoreText",
+        "mcAreaLoadMoreIcon"
+      ]
+    },
+    {
+      "id": "mcAreaLoadMoreText",
+      "component": "span",
+      "props": {
+        "value": "加载更多"
+      }
+    },
+    {
+      "id": "mcAreaLoadMoreIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevrons-down",
+        "className": "w-4 h-4",
+        "color": "primary"
+      }
+    }
+  ]
+}

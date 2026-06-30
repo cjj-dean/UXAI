@@ -1,0 +1,566 @@
+{
+    "state": {
+        "headerBrand": "shield Security Gate",
+        "navLinks": [
+            {
+                "label": "Solutions",
+                "url": "#"
+            },
+            {
+                "label": "Resources",
+                "url": "#"
+            }
+        ],
+        "brandTitle": "Enterprise Identity",
+        "brandDesc": "Secure access for the modern workforce. Sign in to your corporate dashboard with verified credentials.",
+        "ssoBtnLabel": "Sign in with SSO",
+        "policyHint": "Managed by your organization's IT policy",
+        "loginTitle": "Welcome back",
+        "loginSubtitle": "Please enter your credentials to continue.",
+        "usernameVal": "",
+        "passwordVal": "",
+        "rememberMe": [
+            false
+        ],
+        "rememberOptions": [
+            {
+                "label": "Remember this device for 30 days",
+                "value": true
+            }
+        ],
+        "securityStandards": [
+            {
+                "label": "SOC2 TYPE II",
+                "icon": "check-circle-2"
+            },
+            {
+                "label": "ISO 27001",
+                "icon": "shield"
+            },
+            {
+                "label": "GDPR",
+                "icon": "lock"
+            }
+        ],
+        "footerBrand": "shield Security Gate",
+        "copyright": "© 2024 Enterprise Secure Solutions. All rights reserved.",
+        "legalLinks": [
+            {
+                "label": "Security Policy",
+                "url": "/security"
+            },
+            {
+                "label": "Privacy Statement",
+                "url": "/privacy"
+            },
+            {
+                "label": "Terms of Service",
+                "url": "/terms"
+            },
+            {
+                "label": "Support",
+                "url": "/support"
+            }
+        ]
+    },
+    "rootId": "pageRoot",
+    "elements": [
+        {
+            "id": "pageRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "headerSection",
+                "mainSection",
+                "footerSection"
+            ]
+        },
+        {
+            "id": "headerSection",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-inset py-gutter bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLogo",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLogo",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-primary flex items-center gap-2",
+                "value": {
+                    "path": "/headerBrand"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerNav",
+                "headerDivider",
+                "headerIcons"
+            ]
+        },
+        {
+            "id": "headerNav",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": {
+                "path": "/navLinks",
+                "componentId": "headerNavLink"
+            }
+        },
+        {
+            "id": "headerNavLink",
+            "component": "a",
+            "props": {
+                "href": {
+                    "path": "url"
+                },
+                "className": "text-sm text-on-surface-variant hover:text-primary transition-colors",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "headerDivider",
+            "component": "div",
+            "props": {
+                "className": "w-[1px] h-4 bg-divider"
+            }
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "iconGlobe",
+                "iconHelp"
+            ]
+        },
+        {
+            "id": "iconGlobe",
+            "component": "Icon",
+            "props": {
+                "name": "globe",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "mainSection",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex items-center justify-center p-inset"
+            },
+            "children": [
+                "loginCard"
+            ]
+        },
+        {
+            "id": "loginCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col md:flex-row w-full max-w-5xl bg-surface-container-highest rounded-container shadow-card overflow-hidden min-h-[600px]"
+            },
+            "children": [
+                "leftPanel",
+                "rightPanel"
+            ]
+        },
+        {
+            "id": "leftPanel",
+            "component": "div",
+            "props": {
+                "className": "w-full md:w-1/2 p-12 bg-primary text-on-primary flex flex-col justify-between relative overflow-hidden"
+            },
+            "children": [
+                "leftContentTop",
+                "leftContentBottom"
+            ]
+        },
+        {
+            "id": "leftContentTop",
+            "component": "div",
+            "props": {
+                "className": "relative z-10"
+            },
+            "children": [
+                "brandTitle",
+                "brandDesc"
+            ]
+        },
+        {
+            "id": "brandTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-4xl font-bold mb-stack",
+                "value": {
+                    "path": "/brandTitle"
+                }
+            }
+        },
+        {
+            "id": "brandDesc",
+            "component": "p",
+            "props": {
+                "className": "text-lg opacity-90 leading-relaxed",
+                "value": {
+                    "path": "/brandDesc"
+                }
+            }
+        },
+        {
+            "id": "leftContentBottom",
+            "component": "div",
+            "props": {
+                "className": "relative z-10"
+            },
+            "children": [
+                "ssoBtn",
+                "policyHint"
+            ]
+        },
+        {
+            "id": "ssoBtn",
+            "component": "Button",
+            "props": {
+                "className": "w-full mb-stack bg-white/10 border-white/20 hover:bg-white/20 text-white",
+                "value": {
+                    "path": "/ssoBtnLabel"
+                },
+                "icon": "shield-check",
+                "iconPlacement": "start",
+                "size": "large"
+            }
+        },
+        {
+            "id": "policyHint",
+            "component": "span",
+            "props": {
+                "className": "text-xs opacity-70 block text-center",
+                "value": {
+                    "path": "/policyHint"
+                }
+            }
+        },
+        {
+            "id": "rightPanel",
+            "component": "div",
+            "props": {
+                "className": "w-full md:w-1/2 p-12 flex flex-col"
+            },
+            "children": [
+                "loginHeader",
+                "loginForm",
+                "securityStandardsSection"
+            ]
+        },
+        {
+            "id": "loginHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-section"
+            },
+            "children": [
+                "loginTitle",
+                "loginSubtitle"
+            ]
+        },
+        {
+            "id": "loginTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface mb-inline",
+                "value": {
+                    "path": "/loginTitle"
+                }
+            }
+        },
+        {
+            "id": "loginSubtitle",
+            "component": "p",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "/loginSubtitle"
+                }
+            }
+        },
+        {
+            "id": "loginForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-gutter mb-section"
+            },
+            "children": [
+                "usernameField",
+                "passwordField",
+                "rememberRow",
+                "loginBtn",
+                "formDivider"
+            ]
+        },
+        {
+            "id": "usernameField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "usernameLabel",
+                "usernameInput"
+            ]
+        },
+        {
+            "id": "usernameLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": "Username"
+            }
+        },
+        {
+            "id": "usernameInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/usernameVal"
+                },
+                "placeholder": "e.g. j.doe@company.com",
+                "prefix": "user",
+                "size": "large"
+            }
+        },
+        {
+            "id": "passwordField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "passwordHeader",
+                "passwordInput"
+            ]
+        },
+        {
+            "id": "passwordHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "passwordLabel",
+                "forgotLink"
+            ]
+        },
+        {
+            "id": "passwordLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": "Password"
+            }
+        },
+        {
+            "id": "forgotLink",
+            "component": "a",
+            "props": {
+                "href": "#",
+                "className": "text-xs text-primary font-medium hover:underline",
+                "value": "Forgot password?"
+            }
+        },
+        {
+            "id": "passwordInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/passwordVal"
+                },
+                "placeholder": "••••••••",
+                "prefix": "lock",
+                "password": true,
+                "size": "large"
+            }
+        },
+        {
+            "id": "rememberRow",
+            "component": "CheckboxGroup",
+            "props": {
+                "value": {
+                    "path": "/rememberMe"
+                },
+                "options": {
+                    "path": "/rememberOptions"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "loginBtn",
+            "component": "Button",
+            "props": {
+                "value": "Log In",
+                "color": "primary",
+                "size": "large",
+                "className": "w-full font-bold"
+            }
+        },
+        {
+            "id": "formDivider",
+            "component": "Divider",
+            "props": {
+                "className": "my-0"
+            }
+        },
+        {
+            "id": "securityStandardsSection",
+            "component": "div",
+            "props": {
+                "className": "mt-auto"
+            },
+            "children": [
+                "standardsTitle",
+                "standardsList"
+            ]
+        },
+        {
+            "id": "standardsTitle",
+            "component": "h4",
+            "props": {
+                "className": "text-[10px] font-bold text-on-surface-variant tracking-widest uppercase mb-stack",
+                "value": "TRUSTED SECURITY STANDARDS"
+            }
+        },
+        {
+            "id": "standardsList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-gutter"
+            },
+            "children": {
+                "path": "/securityStandards",
+                "componentId": "standardItem"
+            }
+        },
+        {
+            "id": "standardItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline bg-surface-variant px-stack py-inline rounded-sm"
+            },
+            "children": [
+                "standardIcon",
+                "standardLabel"
+            ]
+        },
+        {
+            "id": "standardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-success"
+            }
+        },
+        {
+            "id": "standardLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-semibold text-on-surface",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "footerSection",
+            "component": "footer",
+            "props": {
+                "className": "px-inset py-gutter bg-surface-container-highest border-t border-divider flex flex-col md:flex-row justify-between items-center gap-gutter"
+            },
+            "children": [
+                "footerLeft",
+                "footerLinks"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "footerBrandText",
+                "copyrightText"
+            ]
+        },
+        {
+            "id": "footerBrandText",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-surface",
+                "value": {
+                    "path": "/footerBrand"
+                }
+            }
+        },
+        {
+            "id": "copyrightText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/copyright"
+                }
+            }
+        },
+        {
+            "id": "footerLinks",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap justify-center gap-gutter"
+            },
+            "children": {
+                "path": "/legalLinks",
+                "componentId": "footerLinkItem"
+            }
+        },
+        {
+            "id": "footerLinkItem",
+            "component": "a",
+            "props": {
+                "href": {
+                    "path": "url"
+                },
+                "className": "text-xs text-on-surface-variant hover:text-primary transition-colors",
+                "value": {
+                    "path": "label"
+                }
+            }
+        }
+    ]
+}

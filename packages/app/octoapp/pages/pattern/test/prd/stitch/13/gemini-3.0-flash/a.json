@@ -1,0 +1,842 @@
+{
+    "state": {
+        "systemLogo": "https://picsum.photos/seed/nexus-logo/200/50",
+        "currentUser": {
+            "userName": "Alex Thompson",
+            "userAvatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "notificationsCount": 5,
+        "menuItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Leads",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Deals",
+                "icon": "briefcase",
+                "isActive": true
+            },
+            {
+                "label": "Contacts",
+                "icon": "contact",
+                "isActive": false
+            },
+            {
+                "label": "Analytics",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "quoteTitle": "Quote for Enterprise Cloud Migration - Q2",
+        "products": [
+            {
+                "id": "P001",
+                "name": "Premium Cloud Instance - Large",
+                "price": 1200,
+                "qty": 10,
+                "discount": "5%",
+                "subtotal": 11400
+            },
+            {
+                "id": "P002",
+                "name": "Managed Security Service (Annual)",
+                "price": 5500,
+                "qty": 1,
+                "discount": "0%",
+                "subtotal": 5500
+            },
+            {
+                "id": "P003",
+                "name": "Professional Services - Integration",
+                "price": 150,
+                "qty": 40,
+                "discount": "10%",
+                "subtotal": 5400
+            },
+            {
+                "id": "P004",
+                "name": "24/7 Priority Support",
+                "price": 2000,
+                "qty": 1,
+                "discount": "0%",
+                "subtotal": 2000
+            },
+            {
+                "id": "P005",
+                "name": "Data Migration Toolkit",
+                "price": 800,
+                "qty": 2,
+                "discount": "0%",
+                "subtotal": 1600
+            },
+            {
+                "id": "P006",
+                "name": "API Gateway Access",
+                "price": 300,
+                "qty": 12,
+                "discount": "5%",
+                "subtotal": 3420
+            },
+            {
+                "id": "P007",
+                "name": "SSL Certificate - Wildcard",
+                "price": 450,
+                "qty": 1,
+                "discount": "0%",
+                "subtotal": 450
+            },
+            {
+                "id": "P008",
+                "name": "User Training Session",
+                "price": 500,
+                "qty": 4,
+                "discount": "15%",
+                "subtotal": 1700
+            },
+            {
+                "id": "P009",
+                "name": "Backup Storage (1TB)",
+                "price": 100,
+                "qty": 24,
+                "discount": "0%",
+                "subtotal": 2400
+            },
+            {
+                "id": "P010",
+                "name": "Custom Dashboard Setup",
+                "price": 1200,
+                "qty": 1,
+                "discount": "0%",
+                "subtotal": 1200
+            }
+        ],
+        "internalNotes": "",
+        "customer": "Global Tech Solutions Inc.",
+        "expiryDate": "2023-12-31",
+        "currency": "USD ($)",
+        "summary": [
+            {
+                "label": "Subtotal",
+                "amount": 35070.0
+            },
+            {
+                "label": "Total Discount",
+                "amount": -1450.0
+            },
+            {
+                "label": "Tax (8%)",
+                "amount": 2689.6
+            }
+        ],
+        "grandTotal": 36309.6,
+        "status": "DRAFT"
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainLayout"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-14 flex items-center justify-between px-gutter bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "systemLogoImg",
+                "globalSearch"
+            ]
+        },
+        {
+            "id": "systemLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/systemLogo"
+                },
+                "className": "h-8 object-contain"
+            }
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search anything...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notificationIcon",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "notificationIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "userAvatarImg",
+                "userNameText"
+            ]
+        },
+        {
+            "id": "userAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/userAvatar"
+                },
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "userNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "aside",
+            "props": {
+                "className": "w-60 bg-surface-container-highest border-r border-divider flex flex-col p-4"
+            },
+            "children": [
+                "navMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "navMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "pt-4 border-t border-divider"
+            },
+            "children": [
+                "newQuoteBtn"
+            ]
+        },
+        {
+            "id": "newQuoteBtn",
+            "component": "Button",
+            "props": {
+                "value": "New Quote",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset"
+            },
+            "children": [
+                "pageHeader",
+                "pageBody"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-6"
+            },
+            "children": [
+                "headerTitleGroup",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "pageTitle",
+                "statusTag"
+            ]
+        },
+        {
+            "id": "pageTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/quoteTitle"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/status"
+                },
+                "color": "default"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "saveBtn",
+                "downloadBtn",
+                "sendBtn"
+            ]
+        },
+        {
+            "id": "saveBtn",
+            "component": "Button",
+            "props": {
+                "value": "Save Draft",
+                "icon": "save"
+            }
+        },
+        {
+            "id": "downloadBtn",
+            "component": "Button",
+            "props": {
+                "value": "Download PDF",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "sendBtn",
+            "component": "Button",
+            "props": {
+                "value": "Send Quote",
+                "icon": "send",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "pageBody",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-10 gap-gutter"
+            },
+            "children": [
+                "leftSection",
+                "rightSection"
+            ]
+        },
+        {
+            "id": "leftSection",
+            "component": "div",
+            "props": {
+                "className": "col-span-7 flex flex-col gap-gutter"
+            },
+            "children": [
+                "productCard",
+                "notesCard"
+            ]
+        },
+        {
+            "id": "productCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "productTableTitle",
+                "productTable",
+                "addProductBtn"
+            ]
+        },
+        {
+            "id": "productTableTitle",
+            "component": "h3",
+            "props": {
+                "value": "Line Items",
+                "className": "text-lg font-semibold mb-4"
+            }
+        },
+        {
+            "id": "productTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/products"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "Product Name",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "Unit Price",
+                        "dataIndex": "price",
+                        "align": "right"
+                    },
+                    {
+                        "title": "Qty",
+                        "dataIndex": "qty",
+                        "align": "right",
+                        "width": 80
+                    },
+                    {
+                        "title": "Discount",
+                        "dataIndex": "discount",
+                        "align": "right"
+                    },
+                    {
+                        "title": "Subtotal",
+                        "dataIndex": "subtotal",
+                        "align": "right"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/products",
+                "componentId": "productRow"
+            }
+        },
+        {
+            "id": "productRow",
+            "component": "TableRow",
+            "children": [
+                "colName",
+                "colPrice",
+                "colQty",
+                "colDiscount",
+                "colSubtotal"
+            ]
+        },
+        {
+            "id": "colName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "colPrice",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "price"
+                }
+            }
+        },
+        {
+            "id": "colQty",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "qty"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "colDiscount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "discount"
+                },
+                "className": "text-success"
+            }
+        },
+        {
+            "id": "colSubtotal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subtotal"
+                },
+                "className": "font-semibold"
+            }
+        },
+        {
+            "id": "addProductBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add Product",
+                "icon": "plus",
+                "className": "mt-4",
+                "size": "small"
+            }
+        },
+        {
+            "id": "notesCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "notesLabel",
+                "notesInput"
+            ]
+        },
+        {
+            "id": "notesLabel",
+            "component": "span",
+            "props": {
+                "value": "Internal Notes & Terms",
+                "className": "block text-sm font-medium mb-2"
+            }
+        },
+        {
+            "id": "notesInput",
+            "component": "TextArea",
+            "props": {
+                "value": {
+                    "path": "/internalNotes"
+                },
+                "placeholder": "Enter terms, conditions or internal notes here...",
+                "autoSize": true
+            }
+        },
+        {
+            "id": "rightSection",
+            "component": "div",
+            "props": {
+                "className": "col-span-3 flex flex-col gap-gutter"
+            },
+            "children": [
+                "configCard",
+                "summaryCard"
+            ]
+        },
+        {
+            "id": "configCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "configTitle",
+                "configForm"
+            ]
+        },
+        {
+            "id": "configTitle",
+            "component": "h3",
+            "props": {
+                "value": "Quote Settings",
+                "className": "text-lg font-semibold mb-4"
+            }
+        },
+        {
+            "id": "configForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": [
+                "customerField",
+                "expiryField",
+                "currencyField"
+            ]
+        },
+        {
+            "id": "customerField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "customerLabel",
+                "customerSelect"
+            ]
+        },
+        {
+            "id": "customerLabel",
+            "component": "span",
+            "props": {
+                "value": "Customer",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "customerSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/customer"
+                },
+                "options": [
+                    {
+                        "label": "Global Tech Solutions Inc.",
+                        "value": "Global Tech Solutions Inc."
+                    }
+                ]
+            }
+        },
+        {
+            "id": "expiryField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "expiryLabel",
+                "expiryPicker"
+            ]
+        },
+        {
+            "id": "expiryLabel",
+            "component": "span",
+            "props": {
+                "value": "Expiry Date",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "expiryPicker",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/expiryDate"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "currencyField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "currencyLabel",
+                "currencySelect"
+            ]
+        },
+        {
+            "id": "currencyLabel",
+            "component": "span",
+            "props": {
+                "value": "Currency",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "currencySelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/currency"
+                },
+                "options": [
+                    {
+                        "label": "USD ($)",
+                        "value": "USD ($)"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "summaryCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset"
+            },
+            "children": [
+                "summaryTitle",
+                "summaryList",
+                "summaryDivider",
+                "grandTotalRow"
+            ]
+        },
+        {
+            "id": "summaryTitle",
+            "component": "h3",
+            "props": {
+                "value": "Summary",
+                "className": "text-lg font-semibold mb-4"
+            }
+        },
+        {
+            "id": "summaryList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/summary",
+                "componentId": "summaryItem"
+            }
+        },
+        {
+            "id": "summaryItem",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm"
+            },
+            "children": [
+                "sumLabel",
+                "sumValue"
+            ]
+        },
+        {
+            "id": "sumLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sumValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "summaryDivider",
+            "component": "div",
+            "props": {
+                "className": "h-px bg-divider my-4"
+            }
+        },
+        {
+            "id": "grandTotalRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "totalLabel",
+                "totalValue"
+            ]
+        },
+        {
+            "id": "totalLabel",
+            "component": "span",
+            "props": {
+                "value": "Total Amount",
+                "className": "text-md font-bold"
+            }
+        },
+        {
+            "id": "totalValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/grandTotal"
+                },
+                "className": "text-2xl font-bold text-primary"
+            }
+        }
+    ]
+}

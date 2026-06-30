@@ -1,0 +1,825 @@
+{
+    "state": {
+        "ghSystemName": "数据监控管理系统",
+        "ghSelectedNav": [
+            "dashboard"
+        ],
+        "ghNavItems": [
+            {
+                "title": "监控大盘",
+                "key": "dashboard",
+                "icon": "layout-dashboard"
+            },
+            {
+                "title": "告警管理",
+                "key": "alarm",
+                "icon": "bell-ring"
+            },
+            {
+                "title": "报表分析",
+                "key": "report",
+                "icon": "bar-chart-3"
+            }
+        ],
+        "ghUserMenu": [
+            {
+                "label": "个人中心",
+                "key": "profile",
+                "icon": "user"
+            },
+            {
+                "label": "退出登录",
+                "key": "logout",
+                "icon": "log-out"
+            }
+        ],
+        "moResourceUsage": {
+            "cardTitle": "系统概览",
+            "subTitle": "核心资源使用率",
+            "infoIcon": "help-circle",
+            "cpuChartData": [
+                {
+                    "name": "Inner",
+                    "value": 20
+                },
+                {
+                    "name": "Outer",
+                    "value": 80
+                }
+            ],
+            "cpuMainValue": "35%",
+            "cpuLabel": "CPU使用率"
+        },
+        "moNetworkTraffic": {
+            "cardTitle": "网络流量趋势",
+            "trafficChart": [
+                {
+                    "时间": "10:00",
+                    "流量值": 8767
+                },
+                {
+                    "时间": "11:00",
+                    "流量值": 1505
+                },
+                {
+                    "时间": "12:00",
+                    "流量值": 1736
+                },
+                {
+                    "时间": "13:00",
+                    "流量值": 7201
+                },
+                {
+                    "时间": "14:00",
+                    "流量值": 737
+                }
+            ],
+            "yAxisUnit": "流量兆字节"
+        },
+        "aeCardTitle": "告警事件列表",
+        "aeFilter": {
+            "timeRange": "2026-05-01 至 2026-05-27",
+            "alarmLevel": "严重",
+            "eventType": "网络中断",
+            "deviceName": "核心路由器",
+            "status": "待处理"
+        },
+        "aeAlarmList": [
+            {
+                "id": "1",
+                "alarmTime": "2026-05-27 10:00:00",
+                "deviceIp": "192.168.1.1",
+                "port": "80",
+                "errorCode": "ERR_001",
+                "duration": "71秒",
+                "source": "Node_A, Node_B",
+                "status": "待办",
+                "statusType": "error"
+            },
+            {
+                "id": "2",
+                "alarmTime": "2026-05-27 11:30:00",
+                "deviceIp": "10.0.0.5",
+                "port": "443",
+                "errorCode": "ERR_002",
+                "duration": "85秒",
+                "source": "Node_C",
+                "status": "处理中",
+                "statusType": "warning"
+            },
+            {
+                "id": "3",
+                "alarmTime": "2026-05-27 12:15:00",
+                "deviceIp": "172.16.0.1",
+                "port": "22",
+                "errorCode": "ERR_003",
+                "duration": "55秒",
+                "source": "Node_D, Node_E",
+                "status": "已解决",
+                "statusType": "success"
+            },
+            {
+                "id": "4",
+                "alarmTime": "2026-05-27 14:00:00",
+                "deviceIp": "192.168.2.10",
+                "port": "3306",
+                "errorCode": "ERR_004",
+                "duration": "59秒",
+                "source": "Node_F",
+                "status": "处理中",
+                "statusType": "warning"
+            }
+        ],
+        "aeLevelOptions": [
+            {
+                "label": "严重",
+                "value": "严重"
+            },
+            {
+                "label": "警告",
+                "value": "警告"
+            },
+            {
+                "label": "提示",
+                "value": "提示"
+            }
+        ],
+        "aeStatusOptions": [
+            {
+                "label": "待处理",
+                "value": "待处理"
+            },
+            {
+                "label": "处理中",
+                "value": "处理中"
+            },
+            {
+                "label": "已解决",
+                "value": "已解决"
+            }
+        ]
+    },
+    "rootId": "shellRootContainer",
+    "elements": [
+        {
+            "id": "shellRootContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "shellHeaderZone",
+                "shellMainContent"
+            ]
+        },
+        {
+            "id": "shellHeaderZone",
+            "component": "header",
+            "props": {
+                "className": "h-12 w-full bg-surface-container-highest shadow-sm z-10 sticky top-0 flex items-center justify-between px-gutter"
+            },
+            "children": [
+                "ghLeftSection",
+                "ghMiddleSection",
+                "ghRightSection"
+            ]
+        },
+        {
+            "id": "shellMainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-page flex flex-col gap-section"
+            },
+            "children": [
+                "shellMonitorZone",
+                "shellAlarmZone"
+            ]
+        },
+        {
+            "id": "shellMonitorZone",
+            "component": "section",
+            "props": {
+                "className": "w-full bg-surface-container-highest rounded-container shadow-card overflow-hidden h-[400px]"
+            },
+            "children": [
+                "moMainFlexContainer"
+            ]
+        },
+        {
+            "id": "shellAlarmZone",
+            "component": "section",
+            "props": {
+                "className": "w-full bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "aeHeader",
+                "aeFilterForm",
+                "aeTableContainer"
+            ]
+        },
+        {
+            "id": "ghLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "ghMenuToggleIcon",
+                "ghBrandTitle"
+            ]
+        },
+        {
+            "id": "ghMenuToggleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "menu",
+                "className": "w-5 h-5 text-on-surface cursor-pointer"
+            }
+        },
+        {
+            "id": "ghBrandTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-primary ml-2",
+                "value": {
+                    "path": "/ghSystemName"
+                }
+            }
+        },
+        {
+            "id": "ghMiddleSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-start ml-10"
+            },
+            "children": [
+                "ghMainNav"
+            ]
+        },
+        {
+            "id": "ghMainNav",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/ghSelectedNav"
+                },
+                "items": {
+                    "path": "/ghNavItems"
+                },
+                "className": "border-none bg-transparent h-12 leading-[48px]"
+            }
+        },
+        {
+            "id": "ghRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "ghToolActions",
+                "ghUserDropdown"
+            ]
+        },
+        {
+            "id": "ghToolActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 mr-2"
+            },
+            "children": [
+                "ghHelpIcon",
+                "ghSettingsIcon",
+                "ghThemeIcon"
+            ]
+        },
+        {
+            "id": "ghHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "ghSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "ghThemeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "sun",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+            }
+        },
+        {
+            "id": "ghUserDropdown",
+            "component": "Dropdown",
+            "props": {
+                "placement": "bottomRight",
+                "trigger": [
+                    "hover"
+                ],
+                "menu": {
+                    "path": "/ghUserMenu"
+                }
+            },
+            "children": [
+                "ghUserInfoWrapper"
+            ]
+        },
+        {
+            "id": "ghUserInfoWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer hover:bg-surface-variant px-2 py-1 rounded-md transition-colors"
+            },
+            "children": [
+                "ghUserName",
+                "ghUserAvatar"
+            ]
+        },
+        {
+            "id": "ghUserName",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface font-medium",
+                "value": "系统管理员"
+            }
+        },
+        {
+            "id": "ghUserAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "ghUserAvatarImg"
+            ]
+        },
+        {
+            "id": "ghUserAvatarImg",
+            "component": "img",
+            "props": {
+                "src": "https://fpoimg.com/100x100?gradient=0067D1,004EA8&text_color=ffffff&text=Admin",
+                "className": "w-full h-full object-cover",
+                "alt": "User Avatar"
+            }
+        },
+        {
+            "id": "moMainFlexContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-full w-full"
+            },
+            "children": [
+                "moLeftResourceSection",
+                "moRightTrafficSection"
+            ]
+        },
+        {
+            "id": "moLeftResourceSection",
+            "component": "div",
+            "props": {
+                "className": "w-[30%] h-full p-inset flex flex-col border-r border-divider"
+            },
+            "children": [
+                "moLeftHeader",
+                "moJadeJueContainer"
+            ]
+        },
+        {
+            "id": "moLeftHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-stack"
+            },
+            "children": [
+                "moLeftTitleRow",
+                "moLeftSubTitle"
+            ]
+        },
+        {
+            "id": "moLeftTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "moLeftTitleText",
+                "moLeftInfoIcon"
+            ]
+        },
+        {
+            "id": "moLeftTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/moResourceUsage/cardTitle"
+                }
+            }
+        },
+        {
+            "id": "moLeftInfoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/moResourceUsage/infoIcon"
+                },
+                "className": "w-4 h-4",
+                "color": "on-surface-variant"
+            }
+        },
+        {
+            "id": "moLeftSubTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "/moResourceUsage/subTitle"
+                }
+            }
+        },
+        {
+            "id": "moJadeJueContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 w-full flex items-center justify-center"
+            },
+            "children": [
+                "moCpuJadeJueChart"
+            ]
+        },
+        {
+            "id": "moCpuJadeJueChart",
+            "component": "JadeJueChart",
+            "props": {
+                "className": "w-full h-full",
+                "option": {
+                    "data": {
+                        "path": "/moResourceUsage/cpuChartData"
+                    },
+                    "title": {
+                        "text": {
+                            "path": "/moResourceUsage/cpuMainValue"
+                        },
+                        "subtext": {
+                            "path": "/moResourceUsage/cpuLabel"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": "moRightTrafficSection",
+            "component": "div",
+            "props": {
+                "className": "w-[70%] h-full p-inset flex flex-col"
+            },
+            "children": [
+                "moRightHeader",
+                "moLineChartContainer"
+            ]
+        },
+        {
+            "id": "moRightHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-stack"
+            },
+            "children": [
+                "moRightTitleText"
+            ]
+        },
+        {
+            "id": "moRightTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/moNetworkTraffic/cardTitle"
+                }
+            }
+        },
+        {
+            "id": "moLineChartContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 w-full"
+            },
+            "children": [
+                "moTrafficLineChart"
+            ]
+        },
+        {
+            "id": "moTrafficLineChart",
+            "component": "LineChart",
+            "props": {
+                "className": "w-full h-full",
+                "option": {
+                    "data": {
+                        "path": "/moNetworkTraffic/trafficChart"
+                    },
+                    "xAxis": {
+                        "data": "时间"
+                    },
+                    "yAxisTitle": {
+                        "path": "/moNetworkTraffic/yAxisUnit"
+                    },
+                    "smooth": true
+                }
+            }
+        },
+        {
+            "id": "aeHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-stack"
+            },
+            "children": [
+                "aeTitle"
+            ]
+        },
+        {
+            "id": "aeTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/aeCardTitle"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "aeFilterForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap items-center gap-inline mb-gutter p-stack bg-surface-variant rounded-md"
+            },
+            "children": [
+                "aeFilterTime",
+                "aeFilterLevel",
+                "aeFilterType",
+                "aeFilterDevice",
+                "aeFilterStatus",
+                "aeSearchBtn"
+            ]
+        },
+        {
+            "id": "aeFilterTime",
+            "component": "DatePicker",
+            "props": {
+                "range": true,
+                "placeholder": [
+                    "开始时间",
+                    "结束时间"
+                ],
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "aeFilterLevel",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/aeFilter/alarmLevel"
+                },
+                "placeholder": "告警级别",
+                "options": {
+                    "path": "/aeLevelOptions"
+                },
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "aeFilterType",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/aeFilter/eventType"
+                },
+                "placeholder": "事件类型",
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "aeFilterDevice",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/aeFilter/deviceName"
+                },
+                "placeholder": "设备名称",
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "aeFilterStatus",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/aeFilter/status"
+                },
+                "placeholder": "状态",
+                "options": {
+                    "path": "/aeStatusOptions"
+                },
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "aeSearchBtn",
+            "component": "Button",
+            "props": {
+                "value": "查询",
+                "color": "primary",
+                "icon": "search",
+                "className": "ml-auto"
+            }
+        },
+        {
+            "id": "aeTableContainer",
+            "component": "div",
+            "props": {
+                "className": "w-full"
+            },
+            "children": [
+                "aeAlarmTable"
+            ]
+        },
+        {
+            "id": "aeAlarmTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/aeAlarmList"
+                },
+                "className": "mb-gutter",
+                "columns": [
+                    {
+                        "title": "告警时间",
+                        "dataIndex": "alarmTime",
+                        "minWidth": 180
+                    },
+                    {
+                        "title": "设备IP",
+                        "dataIndex": "deviceIp"
+                    },
+                    {
+                        "title": "端口",
+                        "dataIndex": "port"
+                    },
+                    {
+                        "title": "错误码",
+                        "dataIndex": "errorCode"
+                    },
+                    {
+                        "title": "持续时间",
+                        "dataIndex": "duration"
+                    },
+                    {
+                        "title": "来源节点",
+                        "dataIndex": "source",
+                        "minWidth": 150
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "fixed": "end",
+                        "width": 120
+                    }
+                ]
+            },
+            "children": {
+                "path": "/aeAlarmList",
+                "componentId": "aeAlarmRow"
+            }
+        },
+        {
+            "id": "aeAlarmRow",
+            "component": "TableRow",
+            "children": [
+                "aeCellTime",
+                "aeCellIp",
+                "aeCellPort",
+                "aeCellCode",
+                "aeCellDuration",
+                "aeCellSource",
+                "aeCellStatus",
+                "aeCellAction"
+            ]
+        },
+        {
+            "id": "aeCellTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "alarmTime"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "aeCellIp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deviceIp"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "aeCellPort",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "port"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "aeCellCode",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "errorCode"
+                },
+                "className": "font-mono text-on-surface-variant"
+            }
+        },
+        {
+            "id": "aeCellDuration",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "duration"
+                }
+            }
+        },
+        {
+            "id": "aeCellSource",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "source"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "aeCellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "aeCellAction",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "aeActionView",
+                "aeActionResolve"
+            ]
+        },
+        {
+            "id": "aeActionView",
+            "component": "Button",
+            "props": {
+                "icon": "eye",
+                "types": "link",
+                "size": "small"
+            }
+        },
+        {
+            "id": "aeActionResolve",
+            "component": "Button",
+            "props": {
+                "icon": "check-circle",
+                "types": "link",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

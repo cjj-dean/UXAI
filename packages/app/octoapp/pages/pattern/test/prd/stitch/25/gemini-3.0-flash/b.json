@@ -1,0 +1,963 @@
+{
+    "state": {
+        "activeTab": "Receivables",
+        "searchVal": "",
+        "menuItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "AR/AP Management",
+                "icon": "file-spreadsheet",
+                "isActive": true
+            },
+            {
+                "label": "General Ledger",
+                "icon": "book-open",
+                "isActive": false
+            },
+            {
+                "label": "Cash Management",
+                "icon": "wallet",
+                "isActive": false
+            },
+            {
+                "label": "Tax Reporting",
+                "icon": "percent",
+                "isActive": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "isActive": false
+            }
+        ],
+        "metrics": [
+            {
+                "title": "Total Receivables",
+                "value": "$1,284,700.00",
+                "subText": "Active Invoices",
+                "trend": "+12.5%",
+                "icon": "trending-up",
+                "status": "success"
+            },
+            {
+                "title": "Total Payables",
+                "value": "$856,420.50",
+                "subText": "Pending Payments",
+                "trend": "+4.2%",
+                "icon": "trending-up",
+                "status": "warning"
+            },
+            {
+                "title": "Overdue Amount",
+                "value": "$42,300.00",
+                "subText": "15 Items Overdue",
+                "trend": "-2.1%",
+                "icon": "trending-down",
+                "status": "error"
+            },
+            {
+                "title": "Net Cash Position",
+                "value": "$428,279.50",
+                "subText": "Projected for EOM",
+                "trend": "Stable",
+                "icon": "minus",
+                "status": "info"
+            }
+        ],
+        "tableData": [
+            {
+                "invoiceId": "INV-2024-001",
+                "partner": "Global Tech Solutions",
+                "date": "2024-05-10",
+                "total": "$12,000.00",
+                "balance": "$0.00",
+                "status": "Paid",
+                "color": "success"
+            },
+            {
+                "invoiceId": "INV-2024-002",
+                "partner": "Acme Corp",
+                "date": "2024-05-12",
+                "total": "$8,500.00",
+                "balance": "$8,500.00",
+                "status": "Overdue",
+                "color": "error"
+            },
+            {
+                "invoiceId": "INV-2024-003",
+                "partner": "Nexus Logistics",
+                "date": "2024-05-14",
+                "total": "$25,400.00",
+                "balance": "$10,000.00",
+                "status": "Partial",
+                "color": "warning"
+            },
+            {
+                "invoiceId": "INV-2024-004",
+                "partner": "Starlight Retail",
+                "date": "2024-05-15",
+                "total": "$3,200.00",
+                "balance": "$3,200.00",
+                "status": "Pending",
+                "color": "processing"
+            },
+            {
+                "invoiceId": "INV-2024-005",
+                "partner": "Horizon Manufacturing",
+                "date": "2024-05-16",
+                "total": "$45,000.00",
+                "balance": "$0.00",
+                "status": "Paid",
+                "color": "success"
+            },
+            {
+                "invoiceId": "INV-2024-006",
+                "partner": "CloudNine Systems",
+                "date": "2024-05-18",
+                "total": "$1,200.00",
+                "balance": "$1,200.00",
+                "status": "Overdue",
+                "color": "error"
+            },
+            {
+                "invoiceId": "INV-2024-007",
+                "partner": "Vertex Media",
+                "date": "2024-05-20",
+                "total": "$9,800.00",
+                "balance": "$9,800.00",
+                "status": "Pending",
+                "color": "processing"
+            },
+            {
+                "invoiceId": "INV-2024-008",
+                "partner": "Pioneer Energy",
+                "date": "2024-05-21",
+                "total": "$15,600.00",
+                "balance": "$0.00",
+                "status": "Paid",
+                "color": "success"
+            },
+            {
+                "invoiceId": "INV-2024-009",
+                "partner": "Silverline Inc",
+                "date": "2024-05-22",
+                "total": "$7,300.00",
+                "balance": "$7,300.00",
+                "status": "Pending",
+                "color": "processing"
+            },
+            {
+                "invoiceId": "INV-2024-010",
+                "partner": "BlueSky Consulting",
+                "date": "2024-05-23",
+                "total": "$2,100.00",
+                "balance": "$2,100.00",
+                "status": "Overdue",
+                "color": "error"
+            }
+        ],
+        "upcomingPayables": [
+            {
+                "vendor": "Amazon Web Services",
+                "dueDate": "In 2 days",
+                "amount": "$4,200.00",
+                "icon": "cloud"
+            },
+            {
+                "vendor": "Office Depot",
+                "dueDate": "In 4 days",
+                "amount": "$850.00",
+                "icon": "shopping-bag"
+            },
+            {
+                "vendor": "Real Estate Group",
+                "dueDate": "In 7 days",
+                "amount": "$12,500.00",
+                "icon": "home"
+            },
+            {
+                "vendor": "State Tax Bureau",
+                "dueDate": "In 10 days",
+                "amount": "$35,000.00",
+                "icon": "landmark"
+            }
+        ]
+    },
+    "rootId": "pageContainer",
+    "elements": [
+        {
+            "id": "pageContainer",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest font-sans"
+            },
+            "children": [
+                "sidebarNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "logoImg",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/erp-logo/200/200",
+                "className": "w-8 h-8 rounded-lg"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "A2 Finance",
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-3"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action mb-1 cursor-pointer transition-colors"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "headerBar",
+                "contentScroll"
+            ]
+        },
+        {
+            "id": "headerBar",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-gutter"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerTitle",
+                "headerSearch"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "span",
+            "props": {
+                "value": "AR/AP Management",
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "Search invoices, partners...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifBtn",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "notifBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": "Alexander Wright",
+                "className": "text-sm font-semibold leading-tight"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": "Senior Controller",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentScroll",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter bg-surface"
+            },
+            "children": [
+                "kpiGrid",
+                "mainTableCard",
+                "bottomGrid"
+            ]
+        },
+        {
+            "id": "kpiGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter mb-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "kpiCard"
+            }
+        },
+        {
+            "id": "kpiCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "kpiHeader",
+                "kpiValue",
+                "kpiFooter"
+            ]
+        },
+        {
+            "id": "kpiHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "kpiTitle",
+                "kpiIcon"
+            ]
+        },
+        {
+            "id": "kpiTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant font-medium"
+            }
+        },
+        {
+            "id": "kpiIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "status"
+                },
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "kpiValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "kpiFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "kpiTrend",
+                "kpiSub"
+            ]
+        },
+        {
+            "id": "kpiTrend",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "trend"
+                },
+                "className": "text-xs font-bold text-success"
+            }
+        },
+        {
+            "id": "kpiSub",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subText"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainTableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card mb-gutter overflow-hidden"
+            },
+            "children": [
+                "tableTabs"
+            ]
+        },
+        {
+            "id": "tableTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "px-inset pt-4"
+            },
+            "children": [
+                "tabAR",
+                "tabAP"
+            ]
+        },
+        {
+            "id": "tabAR",
+            "component": "TabItem",
+            "props": {
+                "key": "Receivables",
+                "label": "Receivables (AR)",
+                "content": {
+                    "componentId": "tableContentArea"
+                }
+            }
+        },
+        {
+            "id": "tabAP",
+            "component": "TabItem",
+            "props": {
+                "key": "Payables",
+                "label": "Payables (AP)",
+                "content": "Payables data is loading..."
+            }
+        },
+        {
+            "id": "tableContentArea",
+            "component": "div",
+            "props": {
+                "className": "p-inset"
+            },
+            "children": [
+                "tableActionBar",
+                "mainDataTable"
+            ]
+        },
+        {
+            "id": "tableActionBar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "actionBtns",
+                "filterBtn"
+            ]
+        },
+        {
+            "id": "actionBtns",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "matchBtn",
+                "recordBtn",
+                "reportBtn"
+            ]
+        },
+        {
+            "id": "matchBtn",
+            "component": "Button",
+            "props": {
+                "value": "Match Invoices",
+                "color": "primary",
+                "icon": "link"
+            }
+        },
+        {
+            "id": "recordBtn",
+            "component": "Button",
+            "props": {
+                "value": "Record Payment",
+                "icon": "credit-card"
+            }
+        },
+        {
+            "id": "reportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Generate Report",
+                "icon": "file-text"
+            }
+        },
+        {
+            "id": "filterBtn",
+            "component": "Button",
+            "props": {
+                "icon": "filter",
+                "value": "Filters"
+            }
+        },
+        {
+            "id": "mainDataTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "invoiceId",
+                "dataSource": {
+                    "path": "/tableData"
+                },
+                "columns": [
+                    {
+                        "title": "Invoice ID",
+                        "dataIndex": "invoiceId"
+                    },
+                    {
+                        "title": "Partner",
+                        "dataIndex": "partner"
+                    },
+                    {
+                        "title": "Date",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "Total Amount",
+                        "dataIndex": "total"
+                    },
+                    {
+                        "title": "Balance",
+                        "dataIndex": "balance"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "Action",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tableData",
+                "componentId": "tableRowTpl"
+            }
+        },
+        {
+            "id": "tableRowTpl",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellPartner",
+                "cellDate",
+                "cellTotal",
+                "cellBalance",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "invoiceId"
+                },
+                "className": "font-medium text-primary"
+            }
+        },
+        {
+            "id": "cellPartner",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "partner"
+                }
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellTotal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "total"
+                },
+                "className": "font-semibold"
+            }
+        },
+        {
+            "id": "cellBalance",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "balance"
+                },
+                "className": "text-error"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small"
+            }
+        },
+        {
+            "id": "bottomGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-10 gap-gutter"
+            },
+            "children": [
+                "liquiditySection",
+                "upcomingSection"
+            ]
+        },
+        {
+            "id": "liquiditySection",
+            "component": "div",
+            "props": {
+                "className": "col-span-6 bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "liqTitle",
+                "liqContent",
+                "liqRec",
+                "liqLinks"
+            ]
+        },
+        {
+            "id": "liqTitle",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-4"
+            },
+            "children": [
+                "liqIcon",
+                "liqTitleText"
+            ]
+        },
+        {
+            "id": "liqIcon",
+            "component": "Icon",
+            "props": {
+                "name": "activity",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "liqTitleText",
+            "component": "span",
+            "props": {
+                "value": "Liquidity Insight",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "liqContent",
+            "component": "p",
+            "props": {
+                "value": "Based on current AR aging, we expect a cash inflow of $450k within the next 15 days. However, the high volume of 'Overdue' invoices from the Manufacturing sector suggests a potential 12% liquidity gap by month-end.",
+                "className": "text-md text-on-surface leading-relaxed mb-4"
+            }
+        },
+        {
+            "id": "liqRec",
+            "component": "div",
+            "props": {
+                "className": "bg-info-container p-4 rounded-lg border-l-4 border-info mb-6"
+            },
+            "children": [
+                "liqRecText"
+            ]
+        },
+        {
+            "id": "liqRecText",
+            "component": "span",
+            "props": {
+                "value": "Recommendation: Prioritize collections for accounts over 30 days and consider a short-term credit line extension.",
+                "className": "text-sm text-on-info-container font-medium"
+            }
+        },
+        {
+            "id": "liqLinks",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": [
+                "linkAging",
+                "linkOptimize"
+            ]
+        },
+        {
+            "id": "linkAging",
+            "component": "span",
+            "props": {
+                "value": "View Aging Report →",
+                "className": "text-primary font-bold cursor-pointer hover:underline"
+            }
+        },
+        {
+            "id": "linkOptimize",
+            "component": "span",
+            "props": {
+                "value": "Optimize Cash Flow →",
+                "className": "text-primary font-bold cursor-pointer hover:underline"
+            }
+        },
+        {
+            "id": "upcomingSection",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "upTitle",
+                "upList"
+            ]
+        },
+        {
+            "id": "upTitle",
+            "component": "span",
+            "props": {
+                "value": "Upcoming Payables",
+                "className": "text-lg font-bold block mb-4"
+            }
+        },
+        {
+            "id": "upList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": {
+                "path": "/upcomingPayables",
+                "componentId": "upItemRow"
+            }
+        },
+        {
+            "id": "upItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-3 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "upItemLeft",
+                "upItemRight"
+            ]
+        },
+        {
+            "id": "upItemLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "upItemIcon",
+                "upItemInfo"
+            ]
+        },
+        {
+            "id": "upItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "shape": "circle",
+                "color": "primary",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "upItemInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "upItemVendor",
+                "upItemDate"
+            ]
+        },
+        {
+            "id": "upItemVendor",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "vendor"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "upItemDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dueDate"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "upItemRight",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "amount"
+                },
+                "className": "text-sm font-bold text-on-surface"
+            }
+        }
+    ]
+}

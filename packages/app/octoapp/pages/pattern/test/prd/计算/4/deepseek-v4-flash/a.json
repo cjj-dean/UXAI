@@ -1,0 +1,1001 @@
+{
+  "state": {
+    "selectedMenuKeys": [
+      "资源管理"
+    ],
+    "menuItems": [
+      {
+        "title": "概览",
+        "key": "概览"
+      },
+      {
+        "title": "资源管理",
+        "key": "资源管理"
+      },
+      {
+        "title": "监控",
+        "key": "监控"
+      },
+      {
+        "title": "告警",
+        "key": "告警"
+      },
+      {
+        "title": "日志",
+        "key": "日志"
+      },
+      {
+        "title": "报表",
+        "key": "报表"
+      },
+      {
+        "title": "安全",
+        "key": "安全"
+      },
+      {
+        "title": "设置",
+        "key": "设置"
+      }
+    ],
+    "activeTab": "beijing-zone",
+    "currentStep": 1,
+    "agreementChecked": false,
+    "selectedKeys": [],
+    "tableData": [
+      {
+        "id": "1",
+        "instanceName": "ecs-app-01",
+        "ipAddress": "10.0.1.12",
+        "spec": "4核8G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2026-10-15"
+      },
+      {
+        "id": "2",
+        "instanceName": "ecs-web-02",
+        "ipAddress": "10.0.1.13",
+        "spec": "8核16G",
+        "statusLabel": "已停止",
+        "statusColor": "error",
+        "expireDate": "2026-09-20"
+      },
+      {
+        "id": "3",
+        "instanceName": "ecs-db-01",
+        "ipAddress": "10.0.1.14",
+        "spec": "16核32G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2027-01-05"
+      },
+      {
+        "id": "4",
+        "instanceName": "ecs-cache-01",
+        "ipAddress": "10.0.1.15",
+        "spec": "2核4G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2026-08-12"
+      },
+      {
+        "id": "5",
+        "instanceName": "ecs-log-01",
+        "ipAddress": "10.0.1.16",
+        "spec": "4核8G",
+        "statusLabel": "已关机",
+        "statusColor": "default",
+        "expireDate": "2026-11-01"
+      },
+      {
+        "id": "6",
+        "instanceName": "ecs-monitor-01",
+        "ipAddress": "10.0.1.17",
+        "spec": "8核16G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2026-12-25"
+      },
+      {
+        "id": "7",
+        "instanceName": "ecs-build-01",
+        "ipAddress": "10.0.1.18",
+        "spec": "4核8G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2027-03-15"
+      },
+      {
+        "id": "8",
+        "instanceName": "ecs-test-01",
+        "ipAddress": "10.0.1.19",
+        "spec": "2核4G",
+        "statusLabel": "已停止",
+        "statusColor": "error",
+        "expireDate": "2026-07-30"
+      },
+      {
+        "id": "9",
+        "instanceName": "ecs-prod-01",
+        "ipAddress": "10.0.1.20",
+        "spec": "32核64G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2028-01-01"
+      },
+      {
+        "id": "10",
+        "instanceName": "ecs-dev-01",
+        "ipAddress": "10.0.1.21",
+        "spec": "8核16G",
+        "statusLabel": "运行中",
+        "statusColor": "success",
+        "expireDate": "2026-10-22"
+      }
+    ],
+    "jumpPage": 6
+  },
+  "rootId": "pageRoot",
+  "elements": [
+    {
+      "id": "pageRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-dim"
+      },
+      "children": [
+        "topNavContainer",
+        "subNavContainer",
+        "mainContentContainer",
+        "bottomActionsContainer"
+      ]
+    },
+    {
+      "id": "topNavContainer",
+      "component": "div",
+      "props": {
+        "className": "w-full bg-surface-container-highest"
+      },
+      "children": [
+        "topNInner"
+      ]
+    },
+    {
+      "id": "subNavContainer",
+      "component": "div",
+      "props": {
+        "className": "w-full bg-surface-container-highest"
+      },
+      "children": [
+        "subNInner"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-container-highest shadow-card rounded-xl mx-page my-section p-page"
+      },
+      "children": [
+        "mainContentTabs"
+      ]
+    },
+    {
+      "id": "bottomActionsContainer",
+      "component": "div",
+      "props": {
+        "className": "flex justify-end gap-gutter px-page py-stack"
+      },
+      "children": [
+        "btmCancelBtn",
+        "btmSaveDraftBtn",
+        "btmPrevStepBtn",
+        "btmNextStepBtn"
+      ]
+    },
+    {
+      "id": "topNInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between h-12"
+      },
+      "children": [
+        "topNLeftSection",
+        "topNCenterMenu",
+        "topNRightSection"
+      ]
+    },
+    {
+      "id": "topNLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-4 shrink-0"
+      },
+      "children": [
+        "topNLogoIcon",
+        "topNSystemName"
+      ]
+    },
+    {
+      "id": "topNLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "Boxes",
+        "className": "w-6 h-6 text-primary"
+      }
+    },
+    {
+      "id": "topNSystemName",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "DataMaster Pro"
+      }
+    },
+    {
+      "id": "topNCenterMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "topNRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 px-4 shrink-0"
+      },
+      "children": [
+        "topNSearchIcon",
+        "topNAvatarWrap",
+        "topNUserName",
+        "topNHelpIcon"
+      ]
+    },
+    {
+      "id": "topNSearchIcon",
+      "component": "Icon",
+      "props": {
+        "name": "Search",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNAvatarWrap",
+      "component": "img",
+      "props": {
+        "src": "https://randomuser.me/api/portraits/men/1.jpg",
+        "alt": "User avatar",
+        "className": "w-8 h-8 rounded-full"
+      }
+    },
+    {
+      "id": "topNUserName",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": "admin"
+      }
+    },
+    {
+      "id": "topNHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "HelpCircle",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "subNInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-page py-3"
+      },
+      "children": [
+        "subNBackIcon",
+        "subNPageTitle"
+      ]
+    },
+    {
+      "id": "subNBackIcon",
+      "component": "Icon",
+      "props": {
+        "name": "arrow-left",
+        "shape": "outline",
+        "color": "primary",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "subNPageTitle",
+      "component": "span",
+      "props": {
+        "value": "云服务器实例管理",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mainContentTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "types": "line",
+        "className": "w-full"
+      },
+      "children": [
+        "mainTabBeijing",
+        "mainTabEcs"
+      ]
+    },
+    {
+      "id": "mainTabBeijing",
+      "component": "TabItem",
+      "props": {
+        "key": "beijing-zone",
+        "label": "华北-北京可用区",
+        "content": {
+          "componentId": "mainBeijingContent"
+        }
+      }
+    },
+    {
+      "id": "mainTabEcs",
+      "component": "TabItem",
+      "props": {
+        "key": "ecs-list",
+        "label": "ECS 实例列表",
+        "content": {
+          "componentId": "mainEcsContent"
+        }
+      }
+    },
+    {
+      "id": "mainEcsContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section mt-section"
+      },
+      "children": [
+        "mainEcsTableOnly"
+      ]
+    },
+    {
+      "id": "mainEcsTableOnly",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "实例名称",
+            "dataIndex": "instanceName",
+            "sort": true
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress"
+          },
+          {
+            "title": "实例规格",
+            "dataIndex": "spec",
+            "sort": true
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "statusLabel",
+            "sort": true
+          },
+          {
+            "title": "到期时间",
+            "dataIndex": "expireDate"
+          }
+        ]
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "mainEcsTableRow"
+      }
+    },
+    {
+      "id": "mainEcsTableRow",
+      "component": "TableRow",
+      "children": [
+        "mainEcsNameCell",
+        "mainEcsIpCell",
+        "mainEcsSpecCell",
+        "mainEcsStatusCell",
+        "mainEcsDateCell"
+      ]
+    },
+    {
+      "id": "mainEcsNameCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "instanceName"
+        }
+      }
+    },
+    {
+      "id": "mainEcsIpCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        }
+      }
+    },
+    {
+      "id": "mainEcsSpecCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "spec"
+        }
+      }
+    },
+    {
+      "id": "mainEcsStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusLabel"
+        },
+        "color": {
+          "path": "statusColor"
+        }
+      }
+    },
+    {
+      "id": "mainEcsDateCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "expireDate"
+        }
+      }
+    },
+    {
+      "id": "mainBeijingContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section mt-section"
+      },
+      "children": [
+        "mainStepsWrapper",
+        "mainAlertBanner",
+        "mainAgreementRow",
+        "mainTimelineSection"
+      ]
+    },
+    {
+      "id": "mainStepsWrapper",
+      "component": "div",
+      "props": {
+        "className": "w-[40%]"
+      },
+      "children": [
+        "mainStepsIndicator"
+      ]
+    },
+    {
+      "id": "mainStepsIndicator",
+      "component": "Steps",
+      "props": {
+        "current": {
+          "path": "/currentStep"
+        },
+        "types": "default",
+        "orientation": "horizontal",
+        "className": "w-full"
+      },
+      "children": [
+        "mainStep1",
+        "mainStep2",
+        "mainStep3"
+      ]
+    },
+    {
+      "id": "mainStep1",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "componentId": "mainStep1Title"
+        },
+        "status": "finish"
+      }
+    },
+    {
+      "id": "mainStep1Title",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "mainStep1TitleText",
+        "mainStep1Subtitle"
+      ]
+    },
+    {
+      "id": "mainStep1TitleText",
+      "component": "span",
+      "props": {
+        "value": "选择资源",
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mainStep1Subtitle",
+      "component": "span",
+      "props": {
+        "value": "已完成",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainStep2",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "componentId": "mainStep2Title"
+        },
+        "status": "process"
+      }
+    },
+    {
+      "id": "mainStep2Title",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "mainStep2TitleText",
+        "mainStep2Subtitle"
+      ]
+    },
+    {
+      "id": "mainStep2TitleText",
+      "component": "span",
+      "props": {
+        "value": "配置网络",
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mainStep2Subtitle",
+      "component": "span",
+      "props": {
+        "value": "进行中",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainStep3",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "componentId": "mainStep3Title"
+        },
+        "status": "wait"
+      }
+    },
+    {
+      "id": "mainStep3Title",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "mainStep3TitleText",
+        "mainStep3Subtitle"
+      ]
+    },
+    {
+      "id": "mainStep3TitleText",
+      "component": "span",
+      "props": {
+        "value": "确认订单",
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mainStep3Subtitle",
+      "component": "span",
+      "props": {
+        "value": "待提交",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainAlertBanner",
+      "component": "div",
+      "props": {
+        "className": "flex items-start gap-inline p-inline bg-info-container rounded-lg"
+      },
+      "children": [
+        "mainAlertIcon",
+        "mainAlertText"
+      ]
+    },
+    {
+      "id": "mainAlertIcon",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "color": "info",
+        "shape": "outline",
+        "className": "w-5 h-5 mt-0.5 shrink-0"
+      }
+    },
+    {
+      "id": "mainAlertText",
+      "component": "span",
+      "props": {
+        "value": "系统将于本月25日凌晨进行升级维护，届时可能会有短暂网络波动，请提前做好业务安排。",
+        "className": "text-md text-on-info-container"
+      }
+    },
+    {
+      "id": "mainAgreementRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "mainAgreementCheckbox"
+      ]
+    },
+    {
+      "id": "mainAgreementCheckbox",
+      "component": "Checkbox",
+      "props": {
+        "checked": {
+          "path": "/agreementChecked"
+        },
+        "label": "我已阅读并同意《云服务器服务等级协议》"
+      }
+    },
+    {
+      "id": "mainTimelineSection",
+      "component": "Timeline",
+      "props": {
+        "orientation": "vertical",
+        "className": "w-full"
+      },
+      "children": [
+        "mainVulnerabilityItem",
+        "mainExpiringItem",
+        "mainUpgradeItem"
+      ]
+    },
+    {
+      "id": "mainVulnerabilityItem",
+      "component": "TimelineItem",
+      "props": {
+        "color": "#0067D1",
+        "title": {
+          "componentId": "mainVulnTitle"
+        },
+        "content": {
+          "componentId": "mainVulnContent"
+        }
+      }
+    },
+    {
+      "id": "mainVulnTitle",
+      "component": "span",
+      "props": {
+        "value": "97 个高危漏洞待修复",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "mainVulnContent",
+      "component": "span",
+      "props": {
+        "value": "建议您尽快开启自动修复功能以避免潜在的安全风险影响业务稳定",
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainExpiringItem",
+      "component": "TimelineItem",
+      "props": {
+        "color": "#0067D1",
+        "title": {
+          "componentId": "mainExpiringTitle"
+        },
+        "content": {
+          "componentId": "mainExpiringContent"
+        }
+      }
+    },
+    {
+      "id": "mainExpiringTitle",
+      "component": "span",
+      "props": {
+        "value": "13 台实例即将到期",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "mainExpiringContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section"
+      },
+      "children": [
+        "mainExpiringDesc",
+        "mainTableActions",
+        "mainInstanceTable"
+      ]
+    },
+    {
+      "id": "mainExpiringDesc",
+      "component": "span",
+      "props": {
+        "value": "您的部分包年包月实例即将到期，请及时续费以免资源被自动释放。",
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainTableActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-end gap-inline"
+      },
+      "children": [
+        "mainExportBtn",
+        "mainBatchDropdown"
+      ]
+    },
+    {
+      "id": "mainExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出资源报告",
+        "icon": "download",
+        "iconPlacement": "start",
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "mainBatchDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomLeft",
+        "menu": [
+          {
+            "label": "续费",
+            "key": "renew"
+          },
+          {
+            "label": "释放",
+            "key": "release"
+          },
+          {
+            "label": "续费并绑定标签",
+            "key": "renew_tag"
+          }
+        ]
+      },
+      "children": [
+        "mainBatchBtn"
+      ]
+    },
+    {
+      "id": "mainBatchBtn",
+      "component": "Button",
+      "props": {
+        "value": "批量操作",
+        "icon": "chevron-down",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "mainInstanceTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "实例名称",
+            "dataIndex": "instanceName",
+            "sort": true
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress"
+          },
+          {
+            "title": "实例规格",
+            "dataIndex": "spec",
+            "sort": true
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "statusLabel",
+            "sort": true
+          },
+          {
+            "title": "到期时间",
+            "dataIndex": "expireDate"
+          }
+        ]
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "mainTableRow"
+      }
+    },
+    {
+      "id": "mainTableRow",
+      "component": "TableRow",
+      "children": [
+        "mainNameCell",
+        "mainIpCell",
+        "mainSpecCell",
+        "mainStatusCell",
+        "mainDateCell"
+      ]
+    },
+    {
+      "id": "mainNameCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "instanceName"
+        }
+      }
+    },
+    {
+      "id": "mainIpCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        }
+      }
+    },
+    {
+      "id": "mainSpecCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "spec"
+        }
+      }
+    },
+    {
+      "id": "mainStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusLabel"
+        },
+        "color": {
+          "path": "statusColor"
+        }
+      }
+    },
+    {
+      "id": "mainDateCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "expireDate"
+        }
+      }
+    },
+    {
+      "id": "mainUpgradeItem",
+      "component": "TimelineItem",
+      "props": {
+        "color": "#0067D1",
+        "title": {
+          "componentId": "mainUpgradeTitle"
+        },
+        "content": {
+          "componentId": "mainUpgradeContent"
+        }
+      }
+    },
+    {
+      "id": "mainUpgradeTitle",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "mainUpgradeTitleText",
+        "mainUpgradeTag"
+      ]
+    },
+    {
+      "id": "mainUpgradeTitleText",
+      "component": "span",
+      "props": {
+        "value": "15 条系统升级通知",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "mainUpgradeTag",
+      "component": "Tag",
+      "props": {
+        "value": "最新",
+        "color": "processing",
+        "variant": "filled"
+      }
+    },
+    {
+      "id": "mainUpgradeContent",
+      "component": "span",
+      "props": {
+        "value": "了解最新的产品特性更新与控制台功能优化，助力您的云上业务高效发展。",
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "btmCancelBtn",
+      "component": "Button",
+      "props": {
+        "value": "取消",
+        "color": "default"
+      }
+    },
+    {
+      "id": "btmSaveDraftBtn",
+      "component": "Button",
+      "props": {
+        "value": "保存草稿",
+        "color": "default"
+      }
+    },
+    {
+      "id": "btmPrevStepBtn",
+      "component": "Button",
+      "props": {
+        "value": "上一步",
+        "color": "default"
+      }
+    },
+    {
+      "id": "btmNextStepBtn",
+      "component": "Button",
+      "props": {
+        "value": "下一步",
+        "color": "primary"
+      }
+    }
+  ]
+}

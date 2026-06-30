@@ -1,0 +1,1124 @@
+{
+  "state": {
+    "selectedMenuKeys": [
+      "tenantOverview"
+    ],
+    "openMenuKeys": [
+      "overview",
+      "management"
+    ],
+    "menuItems": [
+      {
+        "title": "概览",
+        "key": "overview",
+        "icon": "layout-dashboard",
+        "children": [
+          {
+            "title": "租户概览",
+            "key": "tenantOverview"
+          },
+          {
+            "title": "系统概览",
+            "key": "systemOverview"
+          }
+        ]
+      },
+      {
+        "title": "管理",
+        "key": "management",
+        "icon": "database",
+        "children": [
+          {
+            "title": "租户管理",
+            "key": "tenantManagement"
+          },
+          {
+            "title": "设备管理",
+            "key": "deviceManagement"
+          },
+          {
+            "title": "资源分配",
+            "key": "resourceAllocation"
+          }
+        ]
+      }
+    ],
+    "kpis": [
+      {
+        "cardTitle": "租户总数",
+        "mainValue": "1",
+        "mainUnit": "万+",
+        "exactCount": "12,847",
+        "trendIcon": "trending-up",
+        "trendValue": "+12.3%",
+        "trendDesc": "较上月",
+        "bgIcon": "building-2"
+      },
+      {
+        "cardTitle": "设备总数",
+        "mainValue": "8",
+        "mainUnit": "万+",
+        "exactCount": "84,210",
+        "trendIcon": "trending-up",
+        "trendValue": "+5.8%",
+        "trendDesc": "较上月",
+        "bgIcon": "cpu",
+        "statusDistribution": [
+          {
+            "statusName": "在线设备",
+            "count": "68,430",
+            "percent": 81.3,
+            "statusColor": "success",
+            "statusHex": "#09AA71"
+          },
+          {
+            "statusName": "离线设备",
+            "count": "13,500",
+            "percent": 16,
+            "statusColor": "warning",
+            "statusHex": "#FCC800"
+          },
+          {
+            "statusName": "异常设备",
+            "count": "2,280",
+            "percent": 2.7,
+            "statusColor": "error",
+            "statusHex": "#E02128"
+          }
+        ]
+      }
+    ],
+    "cardTitle": "设备接入与活跃趋势",
+    "selectedTimeRange": "近30天",
+    "timeRangeOptions": [
+      {
+        "label": "近7天",
+        "value": "近7天"
+      },
+      {
+        "label": "近30天",
+        "value": "近30天"
+      },
+      {
+        "label": "近半年",
+        "value": "近半年"
+      }
+    ],
+    "deviceGrowthChart": [
+      {
+        "月份": "2023-07",
+        "设备总量": 42100,
+        "活跃设备": 35600
+      },
+      {
+        "月份": "2023-08",
+        "设备总量": 44800,
+        "活跃设备": 38200
+      },
+      {
+        "月份": "2023-09",
+        "设备总量": 49500,
+        "活跃设备": 41000
+      },
+      {
+        "月份": "2023-10",
+        "设备总量": 53200,
+        "活跃设备": 43500
+      },
+      {
+        "月份": "2023-11",
+        "设备总量": 58900,
+        "活跃设备": 48200
+      },
+      {
+        "月份": "2023-12",
+        "设备总量": 61500,
+        "活跃设备": 50100
+      },
+      {
+        "月份": "2024-01",
+        "设备总量": 65800,
+        "活跃设备": 53400
+      },
+      {
+        "月份": "2024-02",
+        "设备总量": 68200,
+        "活跃设备": 55900
+      },
+      {
+        "月份": "2024-03",
+        "设备总量": 73500,
+        "活跃设备": 60200
+      },
+      {
+        "月份": "2024-04",
+        "设备总量": 78900,
+        "活跃设备": 64500
+      },
+      {
+        "月份": "2024-05",
+        "设备总量": 81000,
+        "活跃设备": 66800
+      },
+      {
+        "月份": "2024-06",
+        "设备总量": 84210,
+        "活跃设备": 68430
+      }
+    ],
+    "industryRankData": [
+      {
+        "行业": "智慧城市",
+        "设备数量": 18500
+      },
+      {
+        "行业": "工业制造",
+        "设备数量": 15200
+      },
+      {
+        "行业": "智慧农业",
+        "设备数量": 12800
+      },
+      {
+        "行业": "车联网",
+        "设备数量": 9500
+      },
+      {
+        "行业": "智慧医疗",
+        "设备数量": 7100
+      }
+    ],
+    "monthlyGrowthData": [
+      {
+        "月份": "2024-01",
+        "新增租户": 120,
+        "新增设备": 4500
+      },
+      {
+        "月份": "2024-02",
+        "新增租户": 95,
+        "新增设备": 3800
+      },
+      {
+        "月份": "2024-03",
+        "新增租户": 150,
+        "新增设备": 5200
+      },
+      {
+        "月份": "2024-04",
+        "新增租户": 180,
+        "新增设备": 6100
+      },
+      {
+        "月份": "2024-05",
+        "新增租户": 160,
+        "新增设备": 5900
+      },
+      {
+        "月份": "2024-06",
+        "新增租户": 210,
+        "新增设备": 7200
+      }
+    ]
+  },
+  "rootId": "appRoot",
+  "elements": [
+    {
+      "id": "appRoot",
+      "component": "div",
+      "props": {
+        "className": "h-screen w-full flex flex-col bg-surface overflow-hidden"
+      },
+      "children": [
+        "globalHeader",
+        "appBody"
+      ]
+    },
+    {
+      "id": "globalHeader",
+      "component": "div",
+      "props": {
+        "className": "h-16 flex-shrink-0 bg-surface-container-highest shadow-card px-page flex items-center justify-between z-10"
+      },
+      "children": []
+    },
+    {
+      "id": "appBody",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "sidebarMenu",
+        "appContent"
+      ]
+    },
+    {
+      "id": "sidebarMenu",
+      "component": "div",
+      "props": {
+        "className": "w-60 flex-shrink-0 bg-surface-container-highest shadow-card overflow-y-auto border-r border-divider"
+      },
+      "children": [
+        "sideModuleHeader",
+        "sideNavMenu"
+      ]
+    },
+    {
+      "id": "appContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-page flex flex-col gap-section"
+      },
+      "children": [
+        "kpiOverviewSection",
+        "trendAnalysisSection",
+        "comparisonAnalysisSection"
+      ]
+    },
+    {
+      "id": "kpiOverviewSection",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-section"
+      },
+      "children": [
+        "kpiTenantCard",
+        "kpiDeviceCard"
+      ]
+    },
+    {
+      "id": "trendAnalysisSection",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card p-page flex flex-col min-h-[420px]"
+      },
+      "children": [
+        "trendHeaderRow",
+        "trendChartArea"
+      ]
+    },
+    {
+      "id": "comparisonAnalysisSection",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-section"
+      },
+      "children": [
+        "compLeftCard",
+        "compRightCard"
+      ]
+    },
+    {
+      "id": "sideModuleHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-4 py-4 border-b border-divider"
+      },
+      "children": [
+        "sideModuleIcon",
+        "sideModuleTitle"
+      ]
+    },
+    {
+      "id": "sideModuleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "building-2",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sideModuleTitle",
+      "component": "span",
+      "props": {
+        "value": "运营中心",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "sideNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "openKeys": {
+          "path": "/openMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "kpiTenantCard",
+      "component": "div",
+      "props": {
+        "className": "relative bg-surface-container-highest rounded-xl shadow-sm p-gutter overflow-hidden"
+      },
+      "children": [
+        "kpiTenantBgIcon",
+        "kpiTenantContent"
+      ]
+    },
+    {
+      "id": "kpiTenantBgIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/0/bgIcon"
+        },
+        "color": "primary",
+        "className": "absolute right-4 bottom-2 w-24 h-24 opacity-5"
+      }
+    },
+    {
+      "id": "kpiTenantContent",
+      "component": "div",
+      "props": {
+        "className": "relative flex items-start gap-gutter"
+      },
+      "children": [
+        "kpiTenantIcon",
+        "kpiTenantInfo"
+      ]
+    },
+    {
+      "id": "kpiTenantIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/0/bgIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-12 h-12"
+      }
+    },
+    {
+      "id": "kpiTenantInfo",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col min-w-0"
+      },
+      "children": [
+        "kpiTenantHeader",
+        "kpiTenantMainRow",
+        "kpiTenantExactRow"
+      ]
+    },
+    {
+      "id": "kpiTenantHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "kpiTenantTitle",
+        "kpiTenantTrend"
+      ]
+    },
+    {
+      "id": "kpiTenantTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/cardTitle"
+        },
+        "className": "text-md text-on-surface-variant font-medium"
+      }
+    },
+    {
+      "id": "kpiTenantTrend",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "kpiTenantTrendIcon",
+        "kpiTenantTrendValue",
+        "kpiTenantTrendDesc"
+      ]
+    },
+    {
+      "id": "kpiTenantTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/0/trendIcon"
+        },
+        "color": "success",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "kpiTenantTrendValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/trendValue"
+        },
+        "className": "text-sm font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiTenantTrendDesc",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/trendDesc"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiTenantMainRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-baseline gap-1 mt-3"
+      },
+      "children": [
+        "kpiTenantValueNum",
+        "kpiTenantValueUnit"
+      ]
+    },
+    {
+      "id": "kpiTenantValueNum",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/mainValue"
+        },
+        "className": "text-4xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "kpiTenantValueUnit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/mainUnit"
+        },
+        "className": "text-lg text-on-surface-variant ml-1"
+      }
+    },
+    {
+      "id": "kpiTenantExactRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mt-2"
+      },
+      "children": [
+        "kpiTenantExactLabel",
+        "kpiTenantExactValue"
+      ]
+    },
+    {
+      "id": "kpiTenantExactLabel",
+      "component": "span",
+      "props": {
+        "value": "精确数量",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiTenantExactValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/0/exactCount"
+        },
+        "className": "text-sm font-medium text-on-surface ml-1"
+      }
+    },
+    {
+      "id": "kpiDeviceCard",
+      "component": "div",
+      "props": {
+        "className": "relative bg-surface-container-highest rounded-xl shadow-sm p-gutter overflow-hidden flex flex-col"
+      },
+      "children": [
+        "kpiDeviceBgIcon",
+        "kpiDeviceContent",
+        "kpiDeviceDivider",
+        "kpiDeviceStatusSection"
+      ]
+    },
+    {
+      "id": "kpiDeviceBgIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/1/bgIcon"
+        },
+        "color": "primary",
+        "className": "absolute right-4 top-4 w-24 h-24 opacity-5"
+      }
+    },
+    {
+      "id": "kpiDeviceContent",
+      "component": "div",
+      "props": {
+        "className": "relative flex items-start gap-gutter"
+      },
+      "children": [
+        "kpiDeviceIcon",
+        "kpiDeviceInfo"
+      ]
+    },
+    {
+      "id": "kpiDeviceIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/1/bgIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-12 h-12"
+      }
+    },
+    {
+      "id": "kpiDeviceInfo",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col min-w-0"
+      },
+      "children": [
+        "kpiDeviceHeader",
+        "kpiDeviceMainRow",
+        "kpiDeviceExactRow"
+      ]
+    },
+    {
+      "id": "kpiDeviceHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "kpiDeviceTitle",
+        "kpiDeviceTrend"
+      ]
+    },
+    {
+      "id": "kpiDeviceTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/cardTitle"
+        },
+        "className": "text-md text-on-surface-variant font-medium"
+      }
+    },
+    {
+      "id": "kpiDeviceTrend",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "kpiDeviceTrendIcon",
+        "kpiDeviceTrendValue",
+        "kpiDeviceTrendDesc"
+      ]
+    },
+    {
+      "id": "kpiDeviceTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/kpis/1/trendIcon"
+        },
+        "color": "success",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "kpiDeviceTrendValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/trendValue"
+        },
+        "className": "text-sm font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiDeviceTrendDesc",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/trendDesc"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiDeviceMainRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-baseline gap-1 mt-3"
+      },
+      "children": [
+        "kpiDeviceValueNum",
+        "kpiDeviceValueUnit"
+      ]
+    },
+    {
+      "id": "kpiDeviceValueNum",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/mainValue"
+        },
+        "className": "text-4xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "kpiDeviceValueUnit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/mainUnit"
+        },
+        "className": "text-lg text-on-surface-variant ml-1"
+      }
+    },
+    {
+      "id": "kpiDeviceExactRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mt-2"
+      },
+      "children": [
+        "kpiDeviceExactLabel",
+        "kpiDeviceExactValue"
+      ]
+    },
+    {
+      "id": "kpiDeviceExactLabel",
+      "component": "span",
+      "props": {
+        "value": "精确数量",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiDeviceExactValue",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/exactCount"
+        },
+        "className": "text-sm font-medium text-on-surface ml-1"
+      }
+    },
+    {
+      "id": "kpiDeviceDivider",
+      "component": "div",
+      "props": {
+        "className": "h-px bg-divider my-stack"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusSection",
+      "component": "div",
+      "props": {
+        "className": "relative flex flex-col gap-2"
+      },
+      "children": [
+        "kpiDeviceStatusOnlineRow",
+        "kpiDeviceStatusOfflineRow",
+        "kpiDeviceStatusErrorRow"
+      ]
+    },
+    {
+      "id": "kpiDeviceStatusOnlineRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "kpiDeviceStatusOnlineDot",
+        "kpiDeviceStatusOnlineName",
+        "kpiDeviceStatusOnlineProgress",
+        "kpiDeviceStatusOnlineCount"
+      ]
+    },
+    {
+      "id": "kpiDeviceStatusOnlineDot",
+      "component": "div",
+      "props": {
+        "className": "w-2 h-2 rounded-full bg-success shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOnlineName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/0/statusName"
+        },
+        "className": "text-sm text-on-surface w-16 shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOnlineProgress",
+      "component": "Progress",
+      "props": {
+        "percent": {
+          "path": "/kpis/1/statusDistribution/0/percent"
+        },
+        "strokeColor": {
+          "path": "/kpis/1/statusDistribution/0/statusHex"
+        },
+        "showInfo": false,
+        "size": "small",
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOnlineCount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/0/count"
+        },
+        "className": "text-sm font-medium text-on-surface w-16 text-right shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOfflineRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "kpiDeviceStatusOfflineDot",
+        "kpiDeviceStatusOfflineName",
+        "kpiDeviceStatusOfflineProgress",
+        "kpiDeviceStatusOfflineCount"
+      ]
+    },
+    {
+      "id": "kpiDeviceStatusOfflineDot",
+      "component": "div",
+      "props": {
+        "className": "w-2 h-2 rounded-full bg-warning shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOfflineName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/1/statusName"
+        },
+        "className": "text-sm text-on-surface w-16 shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOfflineProgress",
+      "component": "Progress",
+      "props": {
+        "percent": {
+          "path": "/kpis/1/statusDistribution/1/percent"
+        },
+        "strokeColor": {
+          "path": "/kpis/1/statusDistribution/1/statusHex"
+        },
+        "showInfo": false,
+        "size": "small",
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusOfflineCount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/1/count"
+        },
+        "className": "text-sm font-medium text-on-surface w-16 text-right shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusErrorRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "kpiDeviceStatusErrorDot",
+        "kpiDeviceStatusErrorName",
+        "kpiDeviceStatusErrorProgress",
+        "kpiDeviceStatusErrorCount"
+      ]
+    },
+    {
+      "id": "kpiDeviceStatusErrorDot",
+      "component": "div",
+      "props": {
+        "className": "w-2 h-2 rounded-full bg-error shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusErrorName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/2/statusName"
+        },
+        "className": "text-sm text-on-surface w-16 shrink-0"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusErrorProgress",
+      "component": "Progress",
+      "props": {
+        "percent": {
+          "path": "/kpis/1/statusDistribution/2/percent"
+        },
+        "strokeColor": {
+          "path": "/kpis/1/statusDistribution/2/statusHex"
+        },
+        "showInfo": false,
+        "size": "small",
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "kpiDeviceStatusErrorCount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/kpis/1/statusDistribution/2/count"
+        },
+        "className": "text-sm font-medium text-on-surface w-16 text-right shrink-0"
+      }
+    },
+    {
+      "id": "trendHeaderRow",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center"
+      },
+      "children": [
+        "trendTitleArea",
+        "trendTimeSegmented"
+      ]
+    },
+    {
+      "id": "trendTitleArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "trendChartIcon",
+        "trendCardTitle",
+        "trendGrowthTag"
+      ]
+    },
+    {
+      "id": "trendChartIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "trendCardTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "trendGrowthTag",
+      "component": "Tag",
+      "props": {
+        "value": "持续增长",
+        "color": "success",
+        "icon": "arrow-up-right",
+        "size": "small"
+      }
+    },
+    {
+      "id": "trendTimeSegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/selectedTimeRange"
+        },
+        "options": {
+          "path": "/timeRangeOptions"
+        },
+        "block": false,
+        "orientation": "horizontal",
+        "size": "small",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "trendChartArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 mt-4 min-h-0"
+      },
+      "children": [
+        "trendLineChart"
+      ]
+    },
+    {
+      "id": "trendLineChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/deviceGrowthChart"
+          },
+          "xAxis": {
+            "data": "月份",
+            "name": "时间"
+          },
+          "yAxisTitle": "设备数量（台）",
+          "smooth": true,
+          "dataZoom": {
+            "show": true
+          }
+        },
+        "className": "w-full h-full"
+      }
+    },
+    {
+      "id": "compLeftCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-inset flex flex-col"
+      },
+      "children": [
+        "compLeftHeader",
+        "compLeftBarChart"
+      ]
+    },
+    {
+      "id": "compLeftHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-gutter"
+      },
+      "children": [
+        "compLeftTitle",
+        "compLeftIcon"
+      ]
+    },
+    {
+      "id": "compLeftTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "行业接入设备 Top 5"
+      }
+    },
+    {
+      "id": "compLeftIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bar-chart-3",
+        "size": 20,
+        "shape": "outline",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "compLeftBarChart",
+      "component": "BarChart",
+      "props": {
+        "className": "w-full h-80",
+        "option": {
+          "data": {
+            "path": "/industryRankData"
+          },
+          "xAxis": {
+            "data": "行业"
+          },
+          "yAxisTitle": "设备数量（台）",
+          "direction": "horizontal"
+        }
+      }
+    },
+    {
+      "id": "compRightCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-sm rounded-xl p-inset flex flex-col"
+      },
+      "children": [
+        "compRightHeader",
+        "compRightLineChart"
+      ]
+    },
+    {
+      "id": "compRightHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-gutter"
+      },
+      "children": [
+        "compRightTitle",
+        "compRightIcon"
+      ]
+    },
+    {
+      "id": "compRightTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "月度增长趋势"
+      }
+    },
+    {
+      "id": "compRightIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "size": 20,
+        "shape": "outline",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "compRightLineChart",
+      "component": "LineChart",
+      "props": {
+        "className": "w-full h-80",
+        "option": {
+          "data": {
+            "path": "/monthlyGrowthData"
+          },
+          "xAxis": {
+            "data": "月份"
+          },
+          "yAxisTitle": "数量",
+          "smooth": true
+        }
+      }
+    }
+  ]
+}

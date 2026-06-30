@@ -1,0 +1,805 @@
+{
+    "state": {
+        "brandTitle": "Security Gate ENTERPRISE ADMIN",
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "User Directory",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Roles & Permissions",
+                "icon": "shield-check",
+                "isActive": true
+            },
+            {
+                "label": "Security Audit",
+                "icon": "file-search",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "userName": "Admin User",
+            "userEmail": "admin@securitygate.com",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "pageTitle": "Roles & Permissions",
+        "searchPlaceholder": "Global search...",
+        "roles": [
+            {
+                "id": "r1",
+                "roleName": "Super Admin",
+                "description": "Full system access and master controls",
+                "isSelected": true
+            },
+            {
+                "id": "r2",
+                "roleName": "Security Lead",
+                "description": "Advanced threat monitoring and overrides",
+                "isSelected": false
+            },
+            {
+                "id": "r3",
+                "roleName": "IT Operator",
+                "description": "Standard maintenance and user provisioning",
+                "isSelected": false
+            },
+            {
+                "id": "r4",
+                "roleName": "Compliance Officer",
+                "description": "Audit log access and policy reviews",
+                "isSelected": false
+            },
+            {
+                "id": "r5",
+                "roleName": "Analyst",
+                "description": "Read-only access to logs and reports",
+                "isSelected": false
+            }
+        ],
+        "activeRole": {
+            "name": "Super Admin",
+            "tag": "SYSTEM DEFAULT",
+            "description": "Provides unrestricted access to all aspects of the Security Gate platform, including configuration, user management, and sensitive security audit data."
+        },
+        "activeTab": "menu",
+        "configTabs": [
+            {
+                "label": "Menu Access",
+                "key": "menu"
+            },
+            {
+                "label": "Actions & Buttons",
+                "key": "action"
+            },
+            {
+                "label": "Data Scope",
+                "key": "scope"
+            }
+        ],
+        "permissionTree": [
+            {
+                "id": "m1",
+                "label": "Dashboard",
+                "isExpanded": true,
+                "isEnabled": true,
+                "children": [
+                    "m1-1",
+                    "m1-2"
+                ]
+            },
+            {
+                "id": "m1-1",
+                "label": "Global Overview",
+                "isChecked": true
+            },
+            {
+                "id": "m1-2",
+                "label": "Threat Map",
+                "isChecked": true
+            },
+            {
+                "id": "m2",
+                "label": "Users",
+                "isExpanded": false,
+                "isEnabled": true
+            },
+            {
+                "id": "m3",
+                "label": "Threat Logs",
+                "isExpanded": false,
+                "isEnabled": true
+            },
+            {
+                "id": "m4",
+                "label": "System Settings",
+                "isExpanded": false,
+                "isEnabled": true
+            }
+        ]
+    },
+    "rootId": "mainLayout",
+    "elements": [
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "mainArea"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarNav",
+                "sidebarUser"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-2"
+            },
+            "children": [
+                "brandIcon",
+                "brandText"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandText",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold text-on-surface leading-tight",
+                "value": {
+                    "path": "/brandTitle"
+                }
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-inline py-stack flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-action hover:bg-surface-variant transition-colors cursor-pointer"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarUser",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "userProfile"
+            ]
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-10 h-10 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "userAvatarImg"
+            ]
+        },
+        {
+            "id": "userAvatarImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "userName",
+                "userEmail"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface truncate",
+                "value": {
+                    "path": "/currentUser/userName"
+                }
+            }
+        },
+        {
+            "id": "userEmail",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "/currentUser/userEmail"
+                }
+            }
+        },
+        {
+            "id": "mainArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "mainHeader",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "mainHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-inset flex items-center justify-between"
+            },
+            "children": [
+                "headerTitle",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/pageTitle"
+                }
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerSearch",
+                "headerIcons"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "iconBell",
+                "iconSettings",
+                "iconHelp"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconSettings",
+            "component": "Button",
+            "props": {
+                "icon": "settings",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "roleSelector",
+                "roleDetail"
+            ]
+        },
+        {
+            "id": "roleSelector",
+            "component": "div",
+            "props": {
+                "className": "w-80 border-r border-divider bg-surface flex flex-col"
+            },
+            "children": [
+                "roleSelectorHeader",
+                "roleList"
+            ]
+        },
+        {
+            "id": "roleSelectorHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex flex-col gap-3"
+            },
+            "children": [
+                "addRoleBtn",
+                "roleFilter"
+            ]
+        },
+        {
+            "id": "addRoleBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add New Role",
+                "icon": "plus",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "roleFilter",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search roles...",
+                "prefix": "filter",
+                "size": "small"
+            }
+        },
+        {
+            "id": "roleList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-4 flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/roles",
+                "componentId": "roleCard"
+            }
+        },
+        {
+            "id": "roleCard",
+            "component": "div",
+            "props": {
+                "className": "p-4 rounded-container bg-surface-container-highest shadow-sm border border-divider cursor-pointer hover:border-primary transition-all"
+            },
+            "children": [
+                "roleCardTitle",
+                "roleCardDesc"
+            ]
+        },
+        {
+            "id": "roleCardTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-surface block mb-1",
+                "value": {
+                    "path": "roleName"
+                }
+            }
+        },
+        {
+            "id": "roleCardDesc",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant line-clamp-1",
+                "value": {
+                    "path": "description"
+                }
+            }
+        },
+        {
+            "id": "roleDetail",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col bg-surface-container-lowest overflow-y-auto"
+            },
+            "children": [
+                "roleDetailHeader",
+                "roleDetailBody",
+                "roleDetailFooter"
+            ]
+        },
+        {
+            "id": "roleDetailHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider flex items-center justify-between"
+            },
+            "children": [
+                "roleDetailTitleGroup",
+                "roleDetailActionGroup"
+            ]
+        },
+        {
+            "id": "roleDetailTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "activeRoleName",
+                "activeRoleTag"
+            ]
+        },
+        {
+            "id": "activeRoleName",
+            "component": "h2",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "/activeRole/name"
+                }
+            }
+        },
+        {
+            "id": "activeRoleTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/activeRole/tag"
+                },
+                "color": "primary",
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "roleDetailActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "editBtn",
+                "copyBtn"
+            ]
+        },
+        {
+            "id": "editBtn",
+            "component": "Button",
+            "props": {
+                "icon": "edit-3",
+                "value": "Edit",
+                "size": "small"
+            }
+        },
+        {
+            "id": "copyBtn",
+            "component": "Button",
+            "props": {
+                "icon": "copy",
+                "value": "Duplicate",
+                "size": "small"
+            }
+        },
+        {
+            "id": "roleDetailBody",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex flex-col gap-6"
+            },
+            "children": [
+                "roleDescriptionBlock",
+                "permissionConfigTabs",
+                "inheritanceAlert"
+            ]
+        },
+        {
+            "id": "roleDescriptionBlock",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-surface-variant rounded-container"
+            },
+            "children": [
+                "roleDescLabel",
+                "roleDescText"
+            ]
+        },
+        {
+            "id": "roleDescLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-2",
+                "value": "Role Description"
+            }
+        },
+        {
+            "id": "roleDescText",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-surface leading-relaxed",
+                "value": {
+                    "path": "/activeRole/description"
+                }
+            }
+        },
+        {
+            "id": "permissionConfigTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "w-full"
+            },
+            "children": {
+                "path": "/configTabs",
+                "componentId": "configTabItem"
+            }
+        },
+        {
+            "id": "configTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                },
+                "content": {
+                    "componentId": "permissionTreeContainer"
+                }
+            }
+        },
+        {
+            "id": "permissionTreeContainer",
+            "component": "div",
+            "props": {
+                "className": "py-4 flex flex-col gap-4"
+            },
+            "children": [
+                "treeTitle",
+                "treeList"
+            ]
+        },
+        {
+            "id": "treeTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold text-on-surface",
+                "value": "Configure Access Rights"
+            }
+        },
+        {
+            "id": "treeList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col border border-divider rounded-container divide-y divide-divider"
+            },
+            "children": {
+                "path": "/permissionTree",
+                "componentId": "treeNode"
+            }
+        },
+        {
+            "id": "treeNode",
+            "component": "div",
+            "props": {
+                "className": "p-4 flex items-center justify-between hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "nodeLeft",
+                "nodeRight"
+            ]
+        },
+        {
+            "id": "nodeLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "nodeIcon",
+                "nodeLabel"
+            ]
+        },
+        {
+            "id": "nodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": "folder",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "nodeLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "nodeRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "nodeSwitch"
+            ]
+        },
+        {
+            "id": "nodeSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "isEnabled"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "inheritanceAlert",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-info-container rounded-container flex gap-3 border border-info"
+            },
+            "children": [
+                "alertIcon",
+                "alertContent"
+            ]
+        },
+        {
+            "id": "alertIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "color": "info",
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "alertContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "alertTitle",
+                "alertText"
+            ]
+        },
+        {
+            "id": "alertTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-info-container",
+                "value": "Inheritance Note"
+            }
+        },
+        {
+            "id": "alertText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-info-container opacity-90",
+                "value": "The Super Admin role inherently possesses all menu access points. Disabling items here will only affect the primary UI rendering for this role."
+            }
+        },
+        {
+            "id": "roleDetailFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-auto p-inset border-t border-divider bg-surface-container-highest flex justify-end gap-3"
+            },
+            "children": [
+                "resetBtn",
+                "saveBtn"
+            ]
+        },
+        {
+            "id": "resetBtn",
+            "component": "Button",
+            "props": {
+                "value": "Reset to Defaults",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "saveBtn",
+            "component": "Button",
+            "props": {
+                "value": "Save Changes",
+                "color": "primary"
+            }
+        }
+    ]
+}

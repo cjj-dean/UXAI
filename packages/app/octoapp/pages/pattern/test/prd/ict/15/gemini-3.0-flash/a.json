@@ -1,0 +1,916 @@
+{
+    "state": {
+        "brand": {
+            "name": "iMaster NCE",
+            "icon": "network"
+        },
+        "mainMenus": [
+            {
+                "label": "首页",
+                "isActive": false
+            },
+            {
+                "label": "网络监控",
+                "isActive": false
+            },
+            {
+                "label": "网络配置",
+                "isActive": true
+            },
+            {
+                "label": "策略管理",
+                "isActive": false
+            },
+            {
+                "label": "系统维护",
+                "isActive": false
+            }
+        ],
+        "user": {
+            "name": "Admin_Zhang",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "alarms": 12
+        },
+        "sidebar": [
+            {
+                "label": "站点配置",
+                "icon": "map-pin",
+                "active": false
+            },
+            {
+                "label": "全局配置",
+                "icon": "globe",
+                "active": true,
+                "children": [
+                    {
+                        "label": "模板管理",
+                        "active": true
+                    },
+                    {
+                        "label": "参数同步",
+                        "active": false
+                    }
+                ]
+            },
+            {
+                "label": "设备开局",
+                "icon": "cpu",
+                "active": false
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "title": "网络配置"
+            },
+            {
+                "title": "全局配置"
+            },
+            {
+                "title": "模板管理"
+            }
+        ],
+        "activeTab": "pon-global",
+        "tabs": [
+            {
+                "id": "pon-global",
+                "label": "PON全局模板"
+            },
+            {
+                "id": "wifi6",
+                "label": "Wi-Fi 6策略"
+            },
+            {
+                "id": "vlan",
+                "label": "VLAN映射表"
+            }
+        ],
+        "treeData": [
+            {
+                "id": "sh-01",
+                "label": "华东区-上海分部",
+                "icon": "building"
+            },
+            {
+                "id": "olt-01",
+                "label": "浦东_OLT_01",
+                "icon": "server"
+            },
+            {
+                "id": "olt-02",
+                "label": "浦西_OLT_02",
+                "icon": "server"
+            },
+            {
+                "id": "bj-01",
+                "label": "华北区-北京分部",
+                "icon": "building"
+            }
+        ],
+        "templateList": [
+            {
+                "id": "T-001",
+                "name": "标准办公场景模板",
+                "img": "https://picsum.photos/seed/tpl1/40/40",
+                "type": "通用型",
+                "rf24": "20/40",
+                "rf5": "80",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-24 14:20:01"
+            },
+            {
+                "id": "T-002",
+                "name": "高密会议室模板",
+                "img": "https://picsum.photos/seed/tpl2/40/40",
+                "type": "高密型",
+                "rf24": "20",
+                "rf5": "160",
+                "status": "草稿",
+                "statusType": "processing",
+                "time": "2023-10-25 09:15:32"
+            },
+            {
+                "id": "T-003",
+                "name": "访客隔离模板",
+                "img": "https://picsum.photos/seed/tpl3/40/40",
+                "type": "安全型",
+                "rf24": "20",
+                "rf5": "40",
+                "status": "异常",
+                "statusType": "error",
+                "time": "2023-10-25 11:00:45"
+            },
+            {
+                "id": "T-004",
+                "name": "仓储覆盖模板",
+                "img": "https://picsum.photos/seed/tpl4/40/40",
+                "type": "覆盖型",
+                "rf24": "40",
+                "rf5": "80",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-26 16:40:12"
+            },
+            {
+                "id": "T-005",
+                "name": "实验室测试模板",
+                "img": "https://picsum.photos/seed/tpl5/40/40",
+                "type": "自定义",
+                "rf24": "20/40/80",
+                "rf5": "160",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-27 10:20:00"
+            },
+            {
+                "id": "T-006",
+                "name": "宿舍区夜间模板",
+                "img": "https://picsum.photos/seed/tpl6/40/40",
+                "type": "节能型",
+                "rf24": "20",
+                "rf5": "20",
+                "status": "待审核",
+                "statusType": "warning",
+                "time": "2023-10-27 14:55:21"
+            },
+            {
+                "id": "T-007",
+                "name": "VIP专线模板",
+                "img": "https://picsum.photos/seed/tpl7/40/40",
+                "type": "保障型",
+                "rf24": "40",
+                "rf5": "160",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-28 08:30:11"
+            },
+            {
+                "id": "T-008",
+                "name": "公共走廊模板",
+                "img": "https://picsum.photos/seed/tpl8/40/40",
+                "type": "低功耗",
+                "rf24": "20",
+                "rf5": "40",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-28 11:12:44"
+            },
+            {
+                "id": "T-009",
+                "name": "多媒体教室模板",
+                "img": "https://picsum.photos/seed/tpl9/40/40",
+                "type": "多业务",
+                "rf24": "40",
+                "rf5": "80",
+                "status": "已下发",
+                "statusType": "success",
+                "time": "2023-10-29 09:05:00"
+            },
+            {
+                "id": "T-010",
+                "name": "临时展会模板",
+                "img": "https://picsum.photos/seed/tpl10/40/40",
+                "type": "高密型",
+                "rf24": "20",
+                "rf5": "160",
+                "status": "已过期",
+                "statusType": "error",
+                "time": "2023-10-29 18:22:33"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "header",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "header",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between h-14 px-gutter bg-inverse-surface text-white shadow-md z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "brandLogo",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/icon"
+                },
+                "className": "w-6 h-6 text-primary"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold tracking-tight",
+                "value": {
+                    "path": "/brand/name"
+                }
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": {
+                "path": "/mainMenus",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "px-2 py-1 cursor-pointer transition-colors hover:text-primary"
+            },
+            "children": [
+                "navLabel"
+            ]
+        },
+        {
+            "id": "navLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerSearch",
+                "headerAlarm",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索命令/资源...",
+                "prefix": "search",
+                "size": "small",
+                "className": "w-48 bg-white/10 border-none text-white"
+            }
+        },
+        {
+            "id": "headerAlarm",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "alarmIcon",
+                "alarmBadge"
+            ]
+        },
+        {
+            "id": "alarmIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "alarmBadge",
+            "component": "span",
+            "props": {
+                "className": "absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 bg-error text-[8px] rounded-full",
+                "value": {
+                    "path": "/user/alarms"
+                }
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/user/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-white/20"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "/user/name"
+                }
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "aside",
+            "props": {
+                "className": "w-60 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarTitle",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarTitle",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider"
+            },
+            "children": [
+                "sidebarTitleText"
+            ]
+        },
+        {
+            "id": "sidebarTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant uppercase tracking-wider",
+                "value": "网络配置"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 py-2"
+            },
+            "children": {
+                "path": "/sidebar",
+                "componentId": "sidebarItem"
+            }
+        },
+        {
+            "id": "sidebarItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sidebarItemMain"
+            ]
+        },
+        {
+            "id": "sidebarItemMain",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarIcon",
+                "sidebarLabel"
+            ]
+        },
+        {
+            "id": "sidebarIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "sidebarLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col p-gutter overflow-y-auto gap-stack"
+            },
+            "children": [
+                "breadcrumb",
+                "pageTabs",
+                "mainCard"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "pageTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "types": "editable-card",
+                "size": "small"
+            },
+            "children": {
+                "path": "/tabs",
+                "componentId": "pageTabItem"
+            }
+        },
+        {
+            "id": "pageTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "id"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "mainCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "resourceTreeArea",
+                "tableArea"
+            ]
+        },
+        {
+            "id": "resourceTreeArea",
+            "component": "div",
+            "props": {
+                "className": "w-72 border-r border-divider flex flex-col"
+            },
+            "children": [
+                "treeHeader",
+                "treeSearch",
+                "treeList"
+            ]
+        },
+        {
+            "id": "treeHeader",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider"
+            },
+            "children": [
+                "treeTitle"
+            ]
+        },
+        {
+            "id": "treeTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": "网络资源架构"
+            }
+        },
+        {
+            "id": "treeSearch",
+            "component": "div",
+            "props": {
+                "className": "p-3"
+            },
+            "children": [
+                "treeSearchInput"
+            ]
+        },
+        {
+            "id": "treeSearchInput",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索站点/OLT...",
+                "prefix": "search",
+                "size": "small"
+            }
+        },
+        {
+            "id": "treeList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-2"
+            },
+            "children": {
+                "path": "/treeData",
+                "componentId": "treeNode"
+            }
+        },
+        {
+            "id": "treeNode",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 px-2 py-1.5 rounded-md hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "nodeIcon",
+                "nodeLabel"
+            ]
+        },
+        {
+            "id": "nodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "nodeLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "tableArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col p-4 gap-4"
+            },
+            "children": [
+                "toolbar",
+                "templateTable"
+            ]
+        },
+        {
+            "id": "toolbar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "btnAdd",
+                "btnDelete",
+                "btnImport",
+                "btnExport"
+            ]
+        },
+        {
+            "id": "btnAdd",
+            "component": "Button",
+            "props": {
+                "value": "新增模板",
+                "icon": "plus",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnDelete",
+            "component": "Button",
+            "props": {
+                "value": "批量删除",
+                "icon": "trash-2",
+                "color": "danger",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnImport",
+            "component": "Button",
+            "props": {
+                "value": "导入",
+                "icon": "upload",
+                "size": "small"
+            }
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download",
+                "size": "small"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "输入模板名称查询...",
+                "prefix": "search",
+                "size": "small",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "templateTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/templateList"
+                },
+                "columns": [
+                    {
+                        "title": "模板名称",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "模板类型",
+                        "dataIndex": "type",
+                        "width": 100
+                    },
+                    {
+                        "title": "2.4G射频(MHz)",
+                        "dataIndex": "rf24",
+                        "width": 120
+                    },
+                    {
+                        "title": "5G射频(MHz)",
+                        "dataIndex": "rf5",
+                        "width": 120
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "更新时间",
+                        "dataIndex": "time",
+                        "width": 160
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 120
+                    }
+                ]
+            },
+            "children": {
+                "path": "/templateList",
+                "componentId": "templateRow"
+            }
+        },
+        {
+            "id": "templateRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellType",
+                "cellRf24",
+                "cellRf5",
+                "cellStatus",
+                "cellTime",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "tplImg",
+                "tplName"
+            ]
+        },
+        {
+            "id": "tplImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "img"
+                },
+                "className": "w-10 h-10 rounded-md object-cover"
+            }
+        },
+        {
+            "id": "tplName",
+            "component": "span",
+            "props": {
+                "className": "font-medium text-primary",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "cellType",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "cellRf24",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "rf24"
+                }
+            }
+        },
+        {
+            "id": "cellRf5",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "rf5"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "time"
+                }
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "btnEdit",
+                "btnMore"
+            ]
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "value": "编辑",
+                "size": "small",
+                "className": "p-0"
+            }
+        },
+        {
+            "id": "btnMore",
+            "component": "Dropdown",
+            "props": {
+                "menu": [
+                    {
+                        "label": "复制",
+                        "key": "copy"
+                    },
+                    {
+                        "label": "下发",
+                        "key": "deploy"
+                    },
+                    {
+                        "label": "删除",
+                        "key": "del"
+                    }
+                ]
+            },
+            "children": [
+                "moreIcon"
+            ]
+        },
+        {
+            "id": "moreIcon",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        }
+    ]
+}

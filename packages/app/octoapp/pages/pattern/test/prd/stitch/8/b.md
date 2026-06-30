@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个带右侧详情抽屉的日志管理界面。左侧边栏顶部有Security Gate标志，包含Dashboard等五个菜单项（当前选中Security Audit），底部有用户信息块。顶部工具栏左侧是Search audit logs输入框，右侧有铃铛、问号图标及EN下拉。主内容区包含Audit Logs (操作审计日志)双语标题及描述文本。下方有一排筛选器，包含Date Range、User (操作人)等。下方是数据表格，包含Timestamp、User、Action列，展示John Doe等4条数据记录及底部的分页文本。页面右侧叠加了一个Log Details面板，包含关闭图标。该面板内部依次纵向排列：ACTION SUMMARY（包含Event ID、长串的User Agent和Location值）、RAW JSON PAYLOAD（包含action和actor等详细结构的代码展示区）、TIMELINE（包含两个垂直时间戳节点），底部固定一个Copy Event URL按钮。

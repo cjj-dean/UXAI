@@ -1,0 +1,930 @@
+{
+  "state": {
+    "selectedMenuKeys": [
+      "nodeConfig"
+    ],
+    "menuItems": [
+      {
+        "title": "首页",
+        "key": "home"
+      },
+      {
+        "title": "数据面板",
+        "key": "dataPanel"
+      },
+      {
+        "title": "权限控制",
+        "key": "accessControl"
+      },
+      {
+        "title": "模块管理",
+        "key": "moduleManager"
+      },
+      {
+        "title": "节点配置",
+        "key": "nodeConfig"
+      },
+      {
+        "title": "扩展中心",
+        "key": "extensionCenter"
+      }
+    ],
+    "subNavStepsCurrent": 2,
+    "subNavStepsItems": [
+      {
+        "title": "基础配置",
+        "status": "finish",
+        "icon": "check"
+      },
+      {
+        "title": "数据筛选",
+        "status": "finish",
+        "icon": "check"
+      },
+      {
+        "title": "规则设置",
+        "status": "process",
+        "icon": "settings"
+      },
+      {
+        "title": "预览",
+        "status": "wait",
+        "icon": "eye"
+      },
+      {
+        "title": "确认发布",
+        "status": "wait",
+        "icon": "circle-check"
+      }
+    ],
+    "nodeCategory": "直连节点",
+    "environment": "生产环境-集群A",
+    "routeType": "条件拦截",
+    "cascadeToggle": true,
+    "selectedLeftRowKeys": [],
+    "leftTableData": [
+      {
+        "id": "row-1",
+        "sourceIP": "192.168.1.101",
+        "mappedIP": "10.0.0.5",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-407307A2",
+        "firmwareVersion": "v1.0-648"
+      },
+      {
+        "id": "row-2",
+        "sourceIP": "192.168.1.102",
+        "mappedIP": "10.0.0.6",
+        "statusLabel": "维护中",
+        "statusColor": "warning",
+        "deviceId": "NODE-248824B5",
+        "firmwareVersion": "v1.0-529"
+      },
+      {
+        "id": "row-3",
+        "sourceIP": "192.168.1.103",
+        "mappedIP": "10.0.0.7",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-593C01F3",
+        "firmwareVersion": "v1.1-201"
+      },
+      {
+        "id": "row-4",
+        "sourceIP": "192.168.1.104",
+        "mappedIP": "10.0.0.8",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-712ED4C1",
+        "firmwareVersion": "v1.0-832"
+      },
+      {
+        "id": "row-5",
+        "sourceIP": "192.168.1.105",
+        "mappedIP": "10.0.0.9",
+        "statusLabel": "维护中",
+        "statusColor": "warning",
+        "deviceId": "NODE-18AB62D9",
+        "firmwareVersion": "v1.2-047"
+      },
+      {
+        "id": "row-6",
+        "sourceIP": "192.168.1.106",
+        "mappedIP": "10.0.0.10",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-34FE7B5E",
+        "firmwareVersion": "v1.0-654"
+      },
+      {
+        "id": "row-7",
+        "sourceIP": "192.168.1.107",
+        "mappedIP": "10.0.0.11",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-0A9C21DD",
+        "firmwareVersion": "v1.1-473"
+      },
+      {
+        "id": "row-8",
+        "sourceIP": "192.168.1.108",
+        "mappedIP": "10.0.0.12",
+        "statusLabel": "维护中",
+        "statusColor": "warning",
+        "deviceId": "NODE-5D8E9983",
+        "firmwareVersion": "v1.0-388"
+      },
+      {
+        "id": "row-9",
+        "sourceIP": "192.168.1.109",
+        "mappedIP": "10.0.0.13",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-89CC2F48",
+        "firmwareVersion": "v1.2-190"
+      },
+      {
+        "id": "row-10",
+        "sourceIP": "192.168.1.110",
+        "mappedIP": "10.0.0.14",
+        "statusLabel": "正常在线",
+        "statusColor": "processing",
+        "deviceId": "NODE-C1A3307F",
+        "firmwareVersion": "v1.0-702"
+      }
+    ],
+    "rightTableData": [],
+    "connectionText": "系统连接正常",
+    "pendingLabel": "待同步任务",
+    "pendingCount": 7
+  },
+  "rootId": "pageRoot",
+  "elements": [
+    {
+      "id": "pageRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavigationBar",
+        "subNavSection",
+        "mainContentArea",
+        "bottomActionBar"
+      ]
+    },
+    {
+      "id": "topNavigationBar",
+      "component": "div",
+      "props": {
+        "className": "h-12 bg-surface-container-highest flex items-center px-page"
+      },
+      "children": [
+        "topNavLeftSection",
+        "topNavMenuWrap",
+        "topNavSearchBtn"
+      ]
+    },
+    {
+      "id": "subNavSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center px-page py-stack"
+      },
+      "children": [
+        "subNavBackBtn",
+        "subNavSpacer",
+        "subNavSteps"
+      ]
+    },
+    {
+      "id": "mainContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto px-page py-section space-y-section"
+      },
+      "children": [
+        "mainContentConfigCard",
+        "mainContentShuttleCard"
+      ]
+    },
+    {
+      "id": "bottomActionBar",
+      "component": "div",
+      "props": {
+        "className": "h-14 bg-surface-container-highest flex items-center justify-between px-page"
+      },
+      "children": [
+        "bottomActionLeftSection",
+        "bottomActionRightSection"
+      ]
+    },
+    {
+      "id": "topNavLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "topNavLogoIcon",
+        "topNavLogoText"
+      ]
+    },
+    {
+      "id": "topNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "database",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "topNavLogoText",
+      "component": "span",
+      "props": {
+        "value": "DataConfig Pro",
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "topNavMenuWrap",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "topNavMenu"
+      ]
+    },
+    {
+      "id": "topNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "min-w-0"
+      }
+    },
+    {
+      "id": "topNavSearchBtn",
+      "component": "Button",
+      "props": {
+        "icon": "search",
+        "shape": "circle",
+        "className": "ml-auto shrink-0"
+      }
+    },
+    {
+      "id": "subNavBackBtn",
+      "component": "Button",
+      "props": {
+        "value": "返回节点列表",
+        "icon": "arrow-left",
+        "iconPlacement": "start",
+        "types": "link",
+        "color": "primary",
+        "className": "shrink-0"
+      }
+    },
+    {
+      "id": "subNavSpacer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "subNavSteps",
+      "component": "Steps",
+      "props": {
+        "current": {
+          "path": "/subNavStepsCurrent"
+        },
+        "types": "default",
+        "orientation": "horizontal",
+        "className": "shrink-0"
+      },
+      "children": {
+        "path": "/subNavStepsItems",
+        "componentId": "subNavStepsItem"
+      }
+    },
+    {
+      "id": "subNavStepsItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "title"
+        },
+        "status": {
+          "path": "status"
+        },
+        "icon": {
+          "path": "icon"
+        }
+      }
+    },
+    {
+      "id": "mainContentConfigCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card rounded-xl p-inset flex flex-col gap-stack"
+      },
+      "children": [
+        "mainContentConfigTitle",
+        "mainContentCategoryField",
+        "mainContentEnvironmentField",
+        "mainContentRouteField"
+      ]
+    },
+    {
+      "id": "mainContentConfigTitle",
+      "component": "h3",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "基础配置"
+      }
+    },
+    {
+      "id": "mainContentCategoryField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-inline"
+      },
+      "children": [
+        "mainContentCategoryLabel",
+        "mainContentCategorySegmented"
+      ]
+    },
+    {
+      "id": "mainContentCategoryLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "节点类别（必填）"
+      }
+    },
+    {
+      "id": "mainContentCategorySegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/nodeCategory"
+        },
+        "options": [
+          {
+            "label": "系统内置",
+            "value": "系统内置"
+          },
+          {
+            "label": "自定义",
+            "value": "自定义"
+          },
+          {
+            "label": "直连节点",
+            "value": "直连节点"
+          }
+        ],
+        "block": false,
+        "orientation": "horizontal",
+        "size": "medium",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "mainContentEnvironmentField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-inline"
+      },
+      "children": [
+        "mainContentEnvironmentLabel",
+        "mainContentEnvironmentSelect"
+      ]
+    },
+    {
+      "id": "mainContentEnvironmentLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "关联环境（必填）"
+      }
+    },
+    {
+      "id": "mainContentEnvironmentSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/environment"
+        },
+        "options": [
+          {
+            "label": "生产环境-集群A",
+            "value": "生产环境-集群A"
+          },
+          {
+            "label": "生产环境-集群B",
+            "value": "生产环境-集群B"
+          },
+          {
+            "label": "测试环境-集群C",
+            "value": "测试环境-集群C"
+          }
+        ],
+        "placeholder": "请选择关联环境",
+        "size": "medium",
+        "className": "w-80"
+      }
+    },
+    {
+      "id": "mainContentRouteField",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-inline"
+      },
+      "children": [
+        "mainContentRouteLabel",
+        "mainContentRouteRadio"
+      ]
+    },
+    {
+      "id": "mainContentRouteLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface",
+        "value": "路由类型（必填）"
+      }
+    },
+    {
+      "id": "mainContentRouteRadio",
+      "component": "RadioGroup",
+      "props": {
+        "value": {
+          "path": "/routeType"
+        },
+        "options": [
+          {
+            "label": "前置转发",
+            "value": "前置转发"
+          },
+          {
+            "label": "条件拦截",
+            "value": "条件拦截"
+          }
+        ],
+        "orientation": "horizontal",
+        "className": "flex"
+      }
+    },
+    {
+      "id": "mainContentShuttleCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card rounded-xl p-inset flex flex-col gap-gutter"
+      },
+      "children": [
+        "mainContentShuttleTitle",
+        "mainContentShuttleLayout"
+      ]
+    },
+    {
+      "id": "mainContentShuttleTitle",
+      "component": "h3",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "数据源绑定"
+      }
+    },
+    {
+      "id": "mainContentShuttleLayout",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row gap-gutter items-start"
+      },
+      "children": [
+        "mainContentLeftPanel",
+        "mainContentCenterPanel",
+        "mainContentRightPanel"
+      ]
+    },
+    {
+      "id": "mainContentLeftPanel",
+      "component": "div",
+      "props": {
+        "className": "flex-[2] flex flex-col gap-stack bg-surface-variant rounded-xl p-gutter"
+      },
+      "children": [
+        "mainContentLeftHeader",
+        "mainContentLeftDesc",
+        "mainContentLeftTable"
+      ]
+    },
+    {
+      "id": "mainContentLeftHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "mainContentLeftTitle",
+        "mainContentLeftClearBtn"
+      ]
+    },
+    {
+      "id": "mainContentLeftTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "可用数据源(102)"
+      }
+    },
+    {
+      "id": "mainContentLeftClearBtn",
+      "component": "Button",
+      "props": {
+        "value": "清空",
+        "types": "link",
+        "size": "small",
+        "className": "text-primary"
+      }
+    },
+    {
+      "id": "mainContentLeftDesc",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "请勾选需要绑定的目标节点，点击右箭头将其添加至右侧列表。"
+      }
+    },
+    {
+      "id": "mainContentLeftTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/leftTableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedLeftRowKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "源IP地址",
+            "dataIndex": "sourceIP",
+            "minWidth": 130
+          },
+          {
+            "title": "映射IP",
+            "dataIndex": "mappedIP",
+            "minWidth": 110
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "statusLabel",
+            "minWidth": 100
+          },
+          {
+            "title": "设备标识",
+            "dataIndex": "deviceId",
+            "minWidth": 150
+          },
+          {
+            "title": "固件版本",
+            "dataIndex": "firmwareVersion",
+            "minWidth": 100
+          }
+        ],
+        "pagination": false,
+        "className": "w-full"
+      },
+      "children": {
+        "path": "/leftTableData",
+        "componentId": "mainContentLeftRow"
+      }
+    },
+    {
+      "id": "mainContentLeftRow",
+      "component": "TableRow",
+      "children": [
+        "mainContentLeftCellSourceIP",
+        "mainContentLeftCellMappedIP",
+        "mainContentLeftCellStatus",
+        "mainContentLeftCellDeviceId",
+        "mainContentLeftCellFirmware"
+      ]
+    },
+    {
+      "id": "mainContentLeftCellSourceIP",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "sourceIP"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mainContentLeftCellMappedIP",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "mappedIP"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mainContentLeftCellStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusLabel"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainContentLeftCellDeviceId",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceId"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mainContentLeftCellFirmware",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "firmwareVersion"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainContentCenterPanel",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center gap-3 pt-16"
+      },
+      "children": [
+        "mainContentMoveRightBtn",
+        "mainContentMoveLeftBtn"
+      ]
+    },
+    {
+      "id": "mainContentMoveRightBtn",
+      "component": "Button",
+      "props": {
+        "value": "右移",
+        "icon": "chevron-right",
+        "iconPlacement": "end",
+        "color": "primary",
+        "size": "medium",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "mainContentMoveLeftBtn",
+      "component": "Button",
+      "props": {
+        "value": "左移",
+        "icon": "chevron-left",
+        "iconPlacement": "start",
+        "size": "medium",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "mainContentRightPanel",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-stack bg-surface-variant rounded-xl p-gutter"
+      },
+      "children": [
+        "mainContentRightHeader",
+        "mainContentRightDesc",
+        "mainContentRightEmptyState"
+      ]
+    },
+    {
+      "id": "mainContentRightHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between flex-wrap gap-2"
+      },
+      "children": [
+        "mainContentRightTitle",
+        "mainContentRightActions"
+      ]
+    },
+    {
+      "id": "mainContentRightTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "已选节点(0)"
+      }
+    },
+    {
+      "id": "mainContentRightActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "mainContentRightToggleArea",
+        "mainContentRightClearBtn"
+      ]
+    },
+    {
+      "id": "mainContentRightToggleArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "mainContentRightToggle",
+        "mainContentRightToggleInfo"
+      ]
+    },
+    {
+      "id": "mainContentRightToggle",
+      "component": "Switch",
+      "props": {
+        "value": {
+          "path": "/cascadeToggle"
+        },
+        "checkedChildren": "开启",
+        "unCheckedChildren": "关闭",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainContentRightToggleInfo",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "shape": "circle",
+        "color": "primary",
+        "className": "w-4 h-4 cursor-help"
+      }
+    },
+    {
+      "id": "mainContentRightClearBtn",
+      "component": "Button",
+      "props": {
+        "value": "清空",
+        "types": "link",
+        "size": "small",
+        "className": "text-primary"
+      }
+    },
+    {
+      "id": "mainContentRightDesc",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "当前暂未向目标池中分配任何可用节点。"
+      }
+    },
+    {
+      "id": "mainContentRightEmptyState",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center py-16 gap-3"
+      },
+      "children": [
+        "mainContentRightEmptyIcon",
+        "mainContentRightEmptyText"
+      ]
+    },
+    {
+      "id": "mainContentRightEmptyIcon",
+      "component": "Icon",
+      "props": {
+        "name": "inbox",
+        "shape": "outline",
+        "color": "default",
+        "className": "w-12 h-12 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainContentRightEmptyText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": "暂无数据"
+      }
+    },
+    {
+      "id": "bottomActionLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "bottomActionStatusIcon",
+        "bottomActionStatusText",
+        "bottomActionDivider",
+        "bottomActionPendingIcon",
+        "bottomActionPendingText"
+      ]
+    },
+    {
+      "id": "bottomActionStatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": "circle-check",
+        "color": "success",
+        "shape": "fill",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "bottomActionStatusText",
+      "component": "span",
+      "props": {
+        "value": "系统连接正常",
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "bottomActionDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-4 bg-divider"
+      }
+    },
+    {
+      "id": "bottomActionPendingIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "warning",
+        "shape": "fill",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "bottomActionPendingText",
+      "component": "span",
+      "props": {
+        "value": "待同步任务: 7",
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "bottomActionRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "bottomActionCancelBtn",
+        "bottomActionSaveBtn",
+        "bottomActionSubmitBtn"
+      ]
+    },
+    {
+      "id": "bottomActionCancelBtn",
+      "component": "Button",
+      "props": {
+        "value": "取消",
+        "color": "default"
+      }
+    },
+    {
+      "id": "bottomActionSaveBtn",
+      "component": "Button",
+      "props": {
+        "value": "保存草稿",
+        "color": "default"
+      }
+    },
+    {
+      "id": "bottomActionSubmitBtn",
+      "component": "Button",
+      "props": {
+        "value": "提交配置",
+        "color": "primary"
+      }
+    }
+  ]
+}

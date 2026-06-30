@@ -1,0 +1,986 @@
+{
+  "state": {
+    "logoInfo": {
+      "iconName": "hexagon",
+      "text": "Mastor CCAE"
+    },
+    "mainMenus": [
+      {
+        "menuId": "home",
+        "menuName": "首页",
+        "iconName": "home",
+        "active": false
+      },
+      {
+        "menuId": "resource",
+        "menuName": "资源中心",
+        "iconName": "cloud",
+        "active": true
+      },
+      {
+        "menuId": "app",
+        "menuName": "应用管理",
+        "iconName": "app-window",
+        "active": false
+      },
+      {
+        "menuId": "monitor",
+        "menuName": "运维监控",
+        "iconName": "activity",
+        "active": false
+      },
+      {
+        "menuId": "network",
+        "menuName": "网络服务",
+        "iconName": "network",
+        "active": false
+      },
+      {
+        "menuId": "storage",
+        "menuName": "存储管理",
+        "iconName": "hard-drive",
+        "active": false
+      },
+      {
+        "menuId": "system",
+        "menuName": "系统设置",
+        "iconName": "settings",
+        "active": false
+      }
+    ],
+    "userInfo": {
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userName": "admin",
+      "helpIcon": "help-circle"
+    },
+    "menuHeader": {
+      "title": "资源管理",
+      "iconName": "layers"
+    },
+    "activeSidebarKeys": [
+      "compute",
+      "container"
+    ],
+    "menuGroups": [
+      {
+        "groupId": "compute",
+        "groupName": "计算资源",
+        "menuItems": [
+          {
+            "itemId": "comp-01",
+            "itemName": "弹性云主机",
+            "iconName": "server",
+            "isActive": false
+          },
+          {
+            "itemId": "comp-02",
+            "itemName": "裸金属服务器",
+            "iconName": "cpu",
+            "isActive": false
+          },
+          {
+            "itemId": "comp-03",
+            "itemName": "GPU加速集群",
+            "iconName": "circuit-board",
+            "isActive": false
+          },
+          {
+            "itemId": "comp-04",
+            "itemName": "自动伸缩组",
+            "iconName": "move-horizontal",
+            "isActive": false
+          },
+          {
+            "itemId": "comp-05",
+            "itemName": "镜像服务",
+            "iconName": "disc",
+            "isActive": false
+          }
+        ]
+      },
+      {
+        "groupId": "container",
+        "groupName": "容器应用部署",
+        "menuItems": [
+          {
+            "itemId": "cont-01",
+            "itemName": "容器实例",
+            "iconName": "box",
+            "isActive": true
+          },
+          {
+            "itemId": "cont-02",
+            "itemName": "无状态工作负载",
+            "iconName": "boxes",
+            "isActive": false
+          },
+          {
+            "itemId": "cont-03",
+            "itemName": "任务/定时任务",
+            "iconName": "clock",
+            "isActive": false
+          },
+          {
+            "itemId": "cont-04",
+            "itemName": "容器网络",
+            "iconName": "wifi",
+            "isActive": false
+          },
+          {
+            "itemId": "cont-05",
+            "itemName": "持久存储卷",
+            "iconName": "database",
+            "isActive": false
+          },
+          {
+            "itemId": "cont-06",
+            "itemName": "配置项与密钥",
+            "iconName": "key-round",
+            "isActive": false
+          },
+          {
+            "itemId": "cont-07",
+            "itemName": "应用网关",
+            "iconName": "route",
+            "isActive": false
+          }
+        ]
+      }
+    ],
+    "activeTab": "tab-01",
+    "quickStart": {
+      "cardTitle": "极速创建您的首个容器应用",
+      "introText": "容器实例提供了轻量级、秒级启动的隔离运行环境。请遵循以下五个标准步骤，快速完成业务应用的容器化打包与云端分发部署。",
+      "stepsData": [
+        {
+          "stepNo": 1,
+          "stepTitle": "配置应用",
+          "stepDesc": "设定基础名称与分组",
+          "stepIcon": "settings-2"
+        },
+        {
+          "stepNo": 2,
+          "stepTitle": "选择镜像",
+          "stepDesc": "官方或私有镜像库",
+          "stepIcon": "package"
+        },
+        {
+          "stepNo": 3,
+          "stepTitle": "网络配置",
+          "stepDesc": "分配端口与访问策略",
+          "stepIcon": "network"
+        },
+        {
+          "stepNo": 4,
+          "stepTitle": "资源限制",
+          "stepDesc": "分配CPU与内存配额",
+          "stepIcon": "gauge"
+        },
+        {
+          "stepNo": 5,
+          "stepTitle": "发布部署",
+          "stepDesc": "确认并启动运行实例",
+          "stepIcon": "rocket"
+        }
+      ],
+      "serverImage": "https://picsum.photos/seed/3d-server-glow/800/600"
+    },
+    "toolBarActions": [
+      {
+        "actionId": "act-del",
+        "actionName": "批量删除",
+        "actionIcon": "trash-2",
+        "type": "danger"
+      },
+      {
+        "actionId": "act-add",
+        "actionName": "新建实例",
+        "actionIcon": "plus-circle",
+        "type": "primary"
+      },
+      {
+        "actionId": "act-refresh",
+        "actionName": "刷新数据",
+        "actionIcon": "refresh-cw",
+        "type": "default"
+      }
+    ],
+    "tableData": [
+      {
+        "instanceId": "ins-9f8a2c",
+        "instanceName": "nginx-prod-01",
+        "description": "核心网关负载均衡节点",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "12%",
+        "createTime": "2023-10-25 14:30:00"
+      },
+      {
+        "instanceId": "ins-4b7d1e",
+        "instanceName": "redis-cache-master",
+        "description": "主Redis高可用缓存实例",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "45%",
+        "createTime": "2023-10-25 10:15:20"
+      },
+      {
+        "instanceId": "ins-2e5c8a",
+        "instanceName": "mysql-slave-02",
+        "description": "从库02 - 跨区域同步读取",
+        "status": {
+          "text": "异常",
+          "state": "error"
+        },
+        "cpuUsage": "0%",
+        "createTime": "2023-10-24 22:05:15"
+      },
+      {
+        "instanceId": "ins-1a9f3d",
+        "instanceName": "user-center-api",
+        "description": "用户服务最新金丝雀发布",
+        "status": {
+          "text": "创建中",
+          "state": "warning"
+        },
+        "cpuUsage": "-",
+        "createTime": "2023-10-26 09:00:00"
+      },
+      {
+        "instanceId": "ins-6c2e9b",
+        "instanceName": "order-service-v2",
+        "description": "订单处理服务v2版本",
+        "status": {
+          "text": "已停止",
+          "state": "default"
+        },
+        "cpuUsage": "0%",
+        "createTime": "2023-10-23 08:20:00"
+      },
+      {
+        "instanceId": "ins-8d4a1c",
+        "instanceName": "pay-gateway",
+        "description": "支付通道转发网关",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "33%",
+        "createTime": "2023-10-22 16:40:30"
+      },
+      {
+        "instanceId": "ins-3f7b5e",
+        "instanceName": "log-collector",
+        "description": "日志采集与清洗节点",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "18%",
+        "createTime": "2023-10-21 11:10:10"
+      },
+      {
+        "instanceId": "ins-9a1d4f",
+        "instanceName": "ai-inference-gpu",
+        "description": "GPU加速推理计算任务",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "95%",
+        "createTime": "2023-10-20 04:05:00"
+      },
+      {
+        "instanceId": "ins-5e8c2a",
+        "instanceName": "jenkins-agent",
+        "description": "CI/CD构建打包工作节点",
+        "status": {
+          "text": "创建中",
+          "state": "warning"
+        },
+        "cpuUsage": "-",
+        "createTime": "2023-10-26 09:15:00"
+      },
+      {
+        "instanceId": "ins-7b3f6d",
+        "instanceName": "kafka-broker-01",
+        "description": "消息队列Broker主节点",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "21%",
+        "createTime": "2023-10-19 13:50:45"
+      },
+      {
+        "instanceId": "ins-2a9e1b",
+        "instanceName": "zk-nodes-ensemble",
+        "description": "分布式协调器集群节点",
+        "status": {
+          "text": "已停止",
+          "state": "default"
+        },
+        "cpuUsage": "0%",
+        "createTime": "2023-10-18 09:30:00"
+      },
+      {
+        "instanceId": "ins-4d5c8f",
+        "instanceName": "admin-portal-fe",
+        "description": "前端管理台静态资源服务",
+        "status": {
+          "text": "运行中",
+          "state": "success"
+        },
+        "cpuUsage": "5%",
+        "createTime": "2023-10-17 17:20:00"
+      }
+    ],
+    "selectedRowKeys": []
+  },
+  "rootId": "rootLayout",
+  "elements": [
+    {
+      "id": "rootLayout",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNav",
+        "bodyContainer"
+      ]
+    },
+    {
+      "id": "topNav",
+      "component": "div",
+      "props": {
+        "className": "flex items-center h-14 bg-surface-container-highest shadow-sm px-gutter shrink-0"
+      },
+      "children": [
+        "topNavLogo",
+        "topNavMenuContainer",
+        "topNavUserArea"
+      ]
+    },
+    {
+      "id": "topNavLogo",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-6 shrink-0"
+      },
+      "children": [
+        "topNavLogoIcon",
+        "topNavLogoText"
+      ]
+    },
+    {
+      "id": "topNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/logoInfo/iconName"
+        },
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "topNavLogoText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/logoInfo/text"
+        },
+        "className": "text-lg font-bold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "topNavMenuContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": {
+        "path": "/mainMenus",
+        "componentId": "topNavMenuItem"
+      }
+    },
+    {
+      "id": "topNavMenuItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-action cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "topNavMenuItemIcon",
+        "topNavMenuItemText"
+      ]
+    },
+    {
+      "id": "topNavMenuItemIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "iconName"
+        },
+        "className": "w-4 h-4",
+        "color": "default"
+      }
+    },
+    {
+      "id": "topNavMenuItemText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "menuName"
+        },
+        "className": "text-sm text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "topNavUserArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 ml-auto shrink-0"
+      },
+      "children": [
+        "topNavAvatar",
+        "topNavUserName",
+        "topNavHelpBtn"
+      ]
+    },
+    {
+      "id": "topNavAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/avatarImage"
+        },
+        "alt": "avatar",
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "topNavUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/userName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "topNavHelpBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "/userInfo/helpIcon"
+        },
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "bodyContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "sidebarContainer",
+        "contentContainer"
+      ]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "div",
+      "props": {
+        "className": "w-56 bg-surface-container-highest flex flex-col overflow-y-auto border-r border-divider shrink-0"
+      },
+      "children": [
+        "sidebarHeader",
+        "sidebarCollapse"
+      ]
+    },
+    {
+      "id": "sidebarHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-gutter py-stack border-b border-divider"
+      },
+      "children": [
+        "sidebarHeaderIcon",
+        "sidebarHeaderText"
+      ]
+    },
+    {
+      "id": "sidebarHeaderIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/menuHeader/iconName"
+        },
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarHeaderText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/menuHeader/title"
+        },
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "sidebarCollapse",
+      "component": "Collapse",
+      "props": {
+        "activeKey": {
+          "path": "/activeSidebarKeys"
+        },
+        "expandIconPlacement": "end",
+        "className": "px-inline"
+      },
+      "children": {
+        "path": "/menuGroups",
+        "componentId": "sidebarGroupItem"
+      }
+    },
+    {
+      "id": "sidebarGroupItem",
+      "component": "CollapseItem",
+      "props": {
+        "key": {
+          "path": "groupId"
+        },
+        "label": {
+          "path": "groupName"
+        },
+        "content": {
+          "componentId": "sidebarGroupContent"
+        }
+      }
+    },
+    {
+      "id": "sidebarGroupContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col py-1"
+      },
+      "children": {
+        "path": "menuItems",
+        "componentId": "sidebarMenuItem"
+      }
+    },
+    {
+      "id": "sidebarMenuItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-inline py-1.5 rounded-action cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "sidebarMenuItemIcon",
+        "sidebarMenuItemText"
+      ]
+    },
+    {
+      "id": "sidebarMenuItemIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "iconName"
+        },
+        "className": "w-4 h-4",
+        "color": "default"
+      }
+    },
+    {
+      "id": "sidebarMenuItemText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "itemName"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "contentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-y-auto bg-surface-container-lowest"
+      },
+      "children": [
+        "contentTabs"
+      ]
+    },
+    {
+      "id": "contentTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "className": "px-gutter pt-inline"
+      },
+      "children": [
+        "tabContainer",
+        "tabVirtual"
+      ]
+    },
+    {
+      "id": "tabContainer",
+      "component": "TabItem",
+      "props": {
+        "key": "tab-01",
+        "label": "容器应用",
+        "content": {
+          "componentId": "tabContainerContent"
+        }
+      }
+    },
+    {
+      "id": "tabContainerContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-gutter pb-gutter"
+      },
+      "children": [
+        "quickStartCard",
+        "dataCard"
+      ]
+    },
+    {
+      "id": "tabVirtual",
+      "component": "TabItem",
+      "props": {
+        "key": "tab-02",
+        "label": "虚拟化集群",
+        "content": "虚拟化集群管理功能即将上线，敬请期待..."
+      }
+    },
+    {
+      "id": "quickStartCard",
+      "component": "div",
+      "props": {
+        "className": "flex bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+      },
+      "children": [
+        "quickStartLeft",
+        "quickStartRight"
+      ]
+    },
+    {
+      "id": "quickStartLeft",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col justify-center p-gutter"
+      },
+      "children": [
+        "quickStartTitle",
+        "quickStartDesc",
+        "quickStartSteps"
+      ]
+    },
+    {
+      "id": "quickStartTitle",
+      "component": "h3",
+      "props": {
+        "value": {
+          "path": "/quickStart/cardTitle"
+        },
+        "className": "text-xl font-bold text-on-surface mb-2"
+      }
+    },
+    {
+      "id": "quickStartDesc",
+      "component": "p",
+      "props": {
+        "value": {
+          "path": "/quickStart/introText"
+        },
+        "className": "text-sm text-on-surface-variant mb-6 leading-relaxed"
+      }
+    },
+    {
+      "id": "quickStartSteps",
+      "component": "Steps",
+      "props": {
+        "current": 0,
+        "orientation": "horizontal",
+        "className": "mt-2"
+      },
+      "children": {
+        "path": "/quickStart/stepsData",
+        "componentId": "quickStartStepItem"
+      }
+    },
+    {
+      "id": "quickStartStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "stepTitle"
+        },
+        "content": {
+          "path": "stepDesc"
+        },
+        "icon": {
+          "path": "stepIcon"
+        }
+      }
+    },
+    {
+      "id": "quickStartRight",
+      "component": "div",
+      "props": {
+        "className": "w-2/5 flex items-center justify-center p-gutter"
+      },
+      "children": [
+        "quickStartImage"
+      ]
+    },
+    {
+      "id": "quickStartImage",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/quickStart/serverImage"
+        },
+        "alt": "3D Server Illustration",
+        "className": "max-h-64 object-contain rounded-lg"
+      }
+    },
+    {
+      "id": "dataCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card"
+      },
+      "children": [
+        "dataCardHeader",
+        "dataTable"
+      ]
+    },
+    {
+      "id": "dataCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-gutter py-stack border-b border-divider"
+      },
+      "children": [
+        "dataCardTitle",
+        "dataToolBar"
+      ]
+    },
+    {
+      "id": "dataCardTitle",
+      "component": "h3",
+      "props": {
+        "value": "容器实例列表",
+        "className": "text-base font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "dataToolBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": {
+        "path": "/toolBarActions",
+        "componentId": "dataToolBtn"
+      }
+    },
+    {
+      "id": "dataToolBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "actionName"
+        },
+        "icon": {
+          "path": "actionIcon"
+        },
+        "iconPlacement": "start",
+        "color": {
+          "path": "type"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "dataTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "instanceId",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedRowKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "实例ID",
+            "dataIndex": "instanceId",
+            "width": "100px"
+          },
+          {
+            "title": "名称",
+            "dataIndex": "instanceName",
+            "sort": true,
+            "width": "180px"
+          },
+          {
+            "title": "描述",
+            "dataIndex": "description",
+            "sort": true,
+            "minWidth": "200px"
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "status",
+            "width": "120px"
+          },
+          {
+            "title": "CPU用量",
+            "dataIndex": "cpuUsage",
+            "width": "120px"
+          },
+          {
+            "title": "创建时间",
+            "dataIndex": "createTime",
+            "width": "180px"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": "120px"
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "dataTableRow"
+      }
+    },
+    {
+      "id": "dataTableRow",
+      "component": "TableRow",
+      "children": [
+        "cellInstanceId",
+        "cellInstanceName",
+        "cellDescription",
+        "cellStatus",
+        "cellCpuUsage",
+        "cellCreateTime",
+        "cellActions"
+      ]
+    },
+    {
+      "id": "cellInstanceId",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "instanceId"
+        },
+        "className": "text-sm text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "cellInstanceName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "instanceName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "cellDescription",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "description"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "cellStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status/text"
+        },
+        "color": {
+          "path": "status/state"
+        }
+      }
+    },
+    {
+      "id": "cellCpuUsage",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cpuUsage"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "cellCreateTime",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "createTime"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "cellActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "cellActionAdd",
+        "cellActionDel"
+      ]
+    },
+    {
+      "id": "cellActionAdd",
+      "component": "Icon",
+      "props": {
+        "name": "plus-circle",
+        "className": "w-4 h-4 cursor-pointer",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "cellActionDel",
+      "component": "Icon",
+      "props": {
+        "name": "trash-2",
+        "className": "w-4 h-4 cursor-pointer",
+        "color": "error"
+      }
+    }
+  ]
+}

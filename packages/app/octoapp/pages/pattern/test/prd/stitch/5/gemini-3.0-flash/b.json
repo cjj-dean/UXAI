@@ -1,0 +1,968 @@
+{
+    "state": {
+        "brandName": "Admin Console",
+        "menuItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Organization",
+                "icon": "network",
+                "isActive": true
+            },
+            {
+                "label": "Talent Pool",
+                "icon": "users",
+                "isActive": false
+            },
+            {
+                "label": "Payroll",
+                "icon": "wallet",
+                "isActive": false
+            },
+            {
+                "label": "Reports",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "securityStatus": "Security Gate",
+        "searchVal": "",
+        "orgTitle": "组织架构图",
+        "version": "正式版本 V2.4",
+        "rootNode": {
+            "department": "董事会",
+            "manager": "张大卫",
+            "title": "首席执行官",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "count": "12/15",
+            "children": [
+                {
+                    "department": "研发中心",
+                    "manager": "李敏",
+                    "title": "技术总监",
+                    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                    "tag": "缺口:3",
+                    "tagColor": "warning",
+                    "meta": "预算 85%"
+                },
+                {
+                    "department": "市场营销部",
+                    "manager": "王建国",
+                    "title": "市场副总裁",
+                    "avatar": "https://randomuser.me/api/portraits/men/85.jpg",
+                    "tag": "全员",
+                    "tagColor": "success",
+                    "meta": "100%达成"
+                }
+            ]
+        },
+        "statsTitle": "人员统计快报",
+        "totalCount": 1284,
+        "openPositions": 42,
+        "zoomLevel": 85
+    },
+    "rootId": "pageLayout",
+    "elements": [
+        {
+            "id": "pageLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen w-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest shadow-sm z-20"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "brandIcon",
+                "brandText"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "command",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 space-y-2"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider space-y-3"
+            },
+            "children": [
+                "addDeptBtn",
+                "settingsLink"
+            ]
+        },
+        {
+            "id": "addDeptBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add Department",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "settingsLink",
+            "component": "Button",
+            "props": {
+                "value": "Settings",
+                "icon": "settings",
+                "className": "w-full text-on-surface-variant",
+                "size": "small"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col relative"
+            },
+            "children": [
+                "topHeader",
+                "canvasToolbar",
+                "orgCanvasArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6 z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerSearch",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "securityIcon",
+                "securityText"
+            ]
+        },
+        {
+            "id": "securityIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "securityText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/securityStatus"
+                },
+                "className": "text-sm font-semibold text-success"
+            }
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索架构、部门或成员...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifyIcon",
+                "helpIcon",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "notifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "helpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "Icon",
+            "props": {
+                "name": "user-circle",
+                "className": "w-8 h-8 text-primary cursor-pointer"
+            }
+        },
+        {
+            "id": "canvasToolbar",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-low px-6 py-4 flex items-center justify-between shadow-sm"
+            },
+            "children": [
+                "toolbarTitleGroup",
+                "toolbarActions"
+            ]
+        },
+        {
+            "id": "toolbarTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "canvasTitle",
+                "versionTag"
+            ]
+        },
+        {
+            "id": "canvasTitle",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/orgTitle"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "versionTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/version"
+                },
+                "color": "processing"
+            }
+        },
+        {
+            "id": "toolbarActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "importBtn",
+                "exportBtn",
+                "addRootBtn"
+            ]
+        },
+        {
+            "id": "importBtn",
+            "component": "Button",
+            "props": {
+                "value": "导入数据",
+                "icon": "upload",
+                "size": "small"
+            }
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出图表",
+                "icon": "download",
+                "size": "small"
+            }
+        },
+        {
+            "id": "addRootBtn",
+            "component": "Button",
+            "props": {
+                "value": "添加根部门",
+                "icon": "plus",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "orgCanvasArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative bg-surface overflow-hidden flex flex-col items-center pt-12"
+            },
+            "children": [
+                "rootNodeCard",
+                "canvasLines",
+                "childrenNodesRow",
+                "statsFloatingCard",
+                "zoomControls",
+                "miniMapContainer"
+            ]
+        },
+        {
+            "id": "rootNodeCard",
+            "component": "div",
+            "props": {
+                "className": "w-72 bg-surface-container-highest rounded-xl shadow-md p-4 border-2 border-primary relative z-10"
+            },
+            "children": [
+                "nodeHeader",
+                "nodeBody",
+                "nodeFooter"
+            ]
+        },
+        {
+            "id": "nodeHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start mb-3"
+            },
+            "children": [
+                "nodeDeptName",
+                "nodeMoreIcon"
+            ]
+        },
+        {
+            "id": "nodeDeptName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/rootNode/department"
+                },
+                "className": "font-bold text-primary"
+            }
+        },
+        {
+            "id": "nodeMoreIcon",
+            "component": "Icon",
+            "props": {
+                "name": "more-horizontal",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "nodeBody",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "nodeAvatar",
+                "nodeInfo"
+            ]
+        },
+        {
+            "id": "nodeAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/rootNode/avatar"
+                },
+                "className": "w-12 h-12 rounded-full border-2 border-primary-container"
+            }
+        },
+        {
+            "id": "nodeInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "nodeManager",
+                "nodeTitle"
+            ]
+        },
+        {
+            "id": "nodeManager",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/rootNode/manager"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "nodeTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/rootNode/title"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "nodeFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-3 pt-3 border-t border-divider flex justify-between items-center"
+            },
+            "children": [
+                "nodeCount",
+                "nodeExpand"
+            ]
+        },
+        {
+            "id": "nodeCount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/rootNode/count"
+                },
+                "className": "text-xs font-medium bg-surface-variant px-2 py-1 rounded"
+            }
+        },
+        {
+            "id": "nodeExpand",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "canvasLines",
+            "component": "div",
+            "props": {
+                "className": "h-12 w-px bg-divider relative"
+            }
+        },
+        {
+            "id": "childrenNodesRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-16 relative"
+            },
+            "children": {
+                "path": "/rootNode/children",
+                "componentId": "childNodeCard"
+            }
+        },
+        {
+            "id": "childNodeCard",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest rounded-xl shadow-card p-4 border border-divider"
+            },
+            "children": [
+                "childHeader",
+                "childBody",
+                "childFooter"
+            ]
+        },
+        {
+            "id": "childHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-2"
+            },
+            "children": [
+                "childDept",
+                "childTag"
+            ]
+        },
+        {
+            "id": "childDept",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "department"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "childTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "tag"
+                },
+                "color": {
+                    "path": "tagColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "childBody",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "childAvatar",
+                "childInfo"
+            ]
+        },
+        {
+            "id": "childAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "childInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "childManager",
+                "childMeta"
+            ]
+        },
+        {
+            "id": "childManager",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "manager"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "childMeta",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "meta"
+                },
+                "className": "text-[10px] text-primary font-medium"
+            }
+        },
+        {
+            "id": "childFooter",
+            "component": "div",
+            "props": {
+                "className": "mt-2 flex justify-center"
+            },
+            "children": [
+                "childExpand"
+            ]
+        },
+        {
+            "id": "childExpand",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statsFloatingCard",
+            "component": "div",
+            "props": {
+                "className": "absolute right-6 top-6 w-72 bg-surface-container-highest rounded-2xl shadow-xl p-5 z-30"
+            },
+            "children": [
+                "statsHeader",
+                "statsMetrics",
+                "statsDivider",
+                "statsDistribution",
+                "statsFooter"
+            ]
+        },
+        {
+            "id": "statsHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-4"
+            },
+            "children": [
+                "statsTitleText"
+            ]
+        },
+        {
+            "id": "statsTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/statsTitle"
+                },
+                "className": "text-base font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statsMetrics",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-4 mb-6"
+            },
+            "children": [
+                "metricTotal",
+                "metricOpen"
+            ]
+        },
+        {
+            "id": "metricTotal",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "totalVal",
+                "totalLabel"
+            ]
+        },
+        {
+            "id": "totalVal",
+            "component": "span",
+            "props": {
+                "value": "1,284",
+                "className": "text-2xl font-black text-primary"
+            }
+        },
+        {
+            "id": "totalLabel",
+            "component": "span",
+            "props": {
+                "value": "总计人数",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricOpen",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "openVal",
+                "openLabel"
+            ]
+        },
+        {
+            "id": "openVal",
+            "component": "span",
+            "props": {
+                "value": "42",
+                "className": "text-2xl font-black text-warning"
+            }
+        },
+        {
+            "id": "openLabel",
+            "component": "span",
+            "props": {
+                "value": "开放职位",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statsDivider",
+            "component": "div",
+            "props": {
+                "className": "h-px bg-divider mb-4"
+            }
+        },
+        {
+            "id": "statsDistribution",
+            "component": "div",
+            "props": {
+                "className": "space-y-4 mb-6"
+            },
+            "children": [
+                "distItemRD",
+                "distItemMkt"
+            ]
+        },
+        {
+            "id": "distItemRD",
+            "component": "div",
+            "props": {
+                "className": "space-y-1"
+            },
+            "children": [
+                "rdLabel",
+                "rdProgress"
+            ]
+        },
+        {
+            "id": "rdLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "rdName",
+                "rdPercent"
+            ]
+        },
+        {
+            "id": "rdName",
+            "component": "span",
+            "props": {
+                "value": "研发中心"
+            }
+        },
+        {
+            "id": "rdPercent",
+            "component": "span",
+            "props": {
+                "value": "65%"
+            }
+        },
+        {
+            "id": "rdProgress",
+            "component": "Progress",
+            "props": {
+                "percent": 65,
+                "strokeColor": "#0067D1",
+                "size": "small",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "distItemMkt",
+            "component": "div",
+            "props": {
+                "className": "space-y-1"
+            },
+            "children": [
+                "mktLabel",
+                "mktProgress"
+            ]
+        },
+        {
+            "id": "mktLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "mktName",
+                "mktPercent"
+            ]
+        },
+        {
+            "id": "mktName",
+            "component": "span",
+            "props": {
+                "value": "市场部"
+            }
+        },
+        {
+            "id": "mktPercent",
+            "component": "span",
+            "props": {
+                "value": "35%"
+            }
+        },
+        {
+            "id": "mktProgress",
+            "component": "Progress",
+            "props": {
+                "percent": 35,
+                "strokeColor": "#09AA71",
+                "size": "small",
+                "showInfo": false
+            }
+        },
+        {
+            "id": "statsFooter",
+            "component": "Button",
+            "props": {
+                "value": "查看变更记录",
+                "icon": "history",
+                "className": "w-full",
+                "size": "small"
+            }
+        },
+        {
+            "id": "zoomControls",
+            "component": "div",
+            "props": {
+                "className": "absolute left-6 bottom-6 bg-surface-container-highest rounded-full shadow-lg px-4 py-2 flex items-center gap-3 z-30"
+            },
+            "children": [
+                "zoomOut",
+                "zoomSlider",
+                "zoomIn",
+                "zoomValue"
+            ]
+        },
+        {
+            "id": "zoomOut",
+            "component": "Icon",
+            "props": {
+                "name": "minus",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "zoomSlider",
+            "component": "Slider",
+            "props": {
+                "value": {
+                    "path": "/zoomLevel"
+                },
+                "min": 10,
+                "max": 200,
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "zoomIn",
+            "component": "Icon",
+            "props": {
+                "name": "plus",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "zoomValue",
+            "component": "span",
+            "props": {
+                "value": "85%",
+                "className": "text-xs font-bold w-8"
+            }
+        },
+        {
+            "id": "miniMapContainer",
+            "component": "div",
+            "props": {
+                "className": "absolute right-6 bottom-6 flex flex-col items-end gap-4 z-30"
+            },
+            "children": [
+                "miniMapBox",
+                "floatingEditBtn"
+            ]
+        },
+        {
+            "id": "miniMapBox",
+            "component": "div",
+            "props": {
+                "className": "w-40 h-24 bg-surface-container-highest rounded-lg shadow-lg border-2 border-white overflow-hidden relative"
+            },
+            "children": [
+                "miniMapImg",
+                "miniMapViewport"
+            ]
+        },
+        {
+            "id": "miniMapImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/org-map/200/120",
+                "className": "w-full h-full object-cover opacity-50"
+            }
+        },
+        {
+            "id": "miniMapViewport",
+            "component": "div",
+            "props": {
+                "className": "absolute top-4 left-8 w-16 h-10 border-2 border-primary bg-primary/10"
+            }
+        },
+        {
+            "id": "floatingEditBtn",
+            "component": "Button",
+            "props": {
+                "icon": "edit-3",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-14 h-14 shadow-xl text-xl"
+            }
+        }
+    ]
+}

@@ -1,0 +1,862 @@
+{
+  "state": {
+    "navItems": [
+      {
+        "title": "首页",
+        "key": "home",
+        "icon": "home"
+      },
+      {
+        "title": "业务可视",
+        "key": "business",
+        "icon": "bar-chart-3"
+      },
+      {
+        "title": "流量分析",
+        "key": "traffic",
+        "icon": "network"
+      },
+      {
+        "title": "风险预警",
+        "key": "risk",
+        "icon": "alert-triangle"
+      },
+      {
+        "title": "资产管理",
+        "key": "asset",
+        "icon": "database"
+      },
+      {
+        "title": "监控大盘",
+        "key": "monitor",
+        "icon": "monitor"
+      },
+      {
+        "title": "系统设置",
+        "key": "settings",
+        "icon": "settings"
+      }
+    ],
+    "selectedKeys": [],
+    "userInfo": {
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "username": "admin"
+    },
+    "pageTitle": "防火墙策略列表",
+    "tableData": [
+      {
+        "id": "row1",
+        "checked": false,
+        "policyName": "核心网段隔离规则",
+        "sourceDomain": "内部网",
+        "destDomain": "研发测试区",
+        "assocUser": "生产核心网",
+        "hitCount": "02",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2023-01-25 15:16:48",
+        "updateTime": "2023-02-12 08:55:01",
+        "description": "—"
+      },
+      {
+        "id": "row2",
+        "checked": false,
+        "policyName": "办公区访问外网策略",
+        "sourceDomain": "办公网络",
+        "destDomain": "互联网出口",
+        "assocUser": "全体员工",
+        "hitCount": "47",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2023-03-10 09:00:00",
+        "updateTime": "2023-11-05 14:22:33",
+        "description": "允许办公区访问外网"
+      },
+      {
+        "id": "row3",
+        "checked": false,
+        "policyName": "数据库运维临时放通",
+        "sourceDomain": "DBA管理网",
+        "destDomain": "数据库区",
+        "assocUser": "dba@company.com",
+        "hitCount": "15",
+        "status": "已禁用",
+        "statusColor": "error",
+        "createTime": "2023-04-18 10:30:00",
+        "updateTime": "2024-01-20 18:45:00",
+        "description": "临时运维窗口已关闭"
+      },
+      {
+        "id": "row4",
+        "checked": true,
+        "policyName": "DMZ区对外服务策略",
+        "sourceDomain": "互联网",
+        "destDomain": "DMZ区",
+        "assocUser": "外部用户",
+        "hitCount": "88",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2022-11-01 08:00:00",
+        "updateTime": "2023-12-15 09:10:00",
+        "description": "Web服务80/443端口"
+      },
+      {
+        "id": "row5",
+        "checked": false,
+        "policyName": "开发测试环境隔离",
+        "sourceDomain": "开发网",
+        "destDomain": "测试网",
+        "assocUser": "开发组",
+        "hitCount": "31",
+        "status": "已禁用",
+        "statusColor": "warning",
+        "createTime": "2023-05-20 11:20:00",
+        "updateTime": "2024-02-28 16:30:00",
+        "description": "临时策略下线"
+      },
+      {
+        "id": "row6",
+        "checked": false,
+        "policyName": "跨机房备份同步策略",
+        "sourceDomain": "主数据中心",
+        "destDomain": "灾备中心",
+        "assocUser": "备份系统账号",
+        "hitCount": "12",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2023-07-01 00:00:00",
+        "updateTime": "2023-07-01 00:00:00",
+        "description": "TCP 873端口"
+      },
+      {
+        "id": "row7",
+        "checked": false,
+        "policyName": "VIP网段访问白名单",
+        "sourceDomain": "VIP管理网",
+        "destDomain": "所有区域",
+        "assocUser": "VIP用户",
+        "hitCount": "5",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2023-08-15 14:00:00",
+        "updateTime": "2024-03-01 10:00:00",
+        "description": "高权限访问控制"
+      },
+      {
+        "id": "row8",
+        "checked": false,
+        "policyName": "员工远程接入策略",
+        "sourceDomain": "VPN池",
+        "destDomain": "内网资源",
+        "assocUser": "远程员工",
+        "hitCount": "62",
+        "status": "已启用",
+        "statusColor": "success",
+        "createTime": "2023-09-10 09:30:00",
+        "updateTime": "2024-04-10 17:20:00",
+        "description": "SSL VPN接入"
+      },
+      {
+        "id": "row9",
+        "checked": false,
+        "policyName": "审计系统日志收集",
+        "sourceDomain": "所有服务器",
+        "destDomain": "审计中心",
+        "assocUser": "审计管理员",
+        "hitCount": "99",
+        "status": "已禁用",
+        "statusColor": "error",
+        "createTime": "2023-06-01 12:00:00",
+        "updateTime": "2024-05-12 08:45:00",
+        "description": "策略冲突暂挂"
+      }
+    ]
+  },
+  "rootId": "appShell",
+  "elements": [
+    {
+      "id": "appShell",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavShell",
+        "mainArea"
+      ]
+    },
+    {
+      "id": "topNavShell",
+      "component": "div",
+      "props": {
+        "className": "h-12 bg-surface-container-highest flex items-center px-page shadow-sm"
+      },
+      "children": [
+        "hdrLeftSection",
+        "hdrNavMenu",
+        "hdrRightSection"
+      ]
+    },
+    {
+      "id": "mainArea",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1"
+      },
+      "children": [
+        "leftSidebarShell",
+        "rightContentShell"
+      ]
+    },
+    {
+      "id": "leftSidebarShell",
+      "component": "aside",
+      "props": {
+        "className": "w-[15.5rem] bg-surface-container-highest flex-shrink-0 border-r border-divider"
+      },
+      "children": [
+        "snavInnerWrapper"
+      ]
+    },
+    {
+      "id": "rightContentShell",
+      "component": "main",
+      "props": {
+        "className": "flex-1 p-page bg-surface-container-lowest"
+      },
+      "children": [
+        "mainHeaderSection",
+        "mainTableWrapper"
+      ]
+    },
+    {
+      "id": "hdrLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "hdrLogoIcon",
+        "hdrSystemName"
+      ]
+    },
+    {
+      "id": "hdrLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "hdrSystemName",
+      "component": "span",
+      "props": {
+        "value": "iMaster Admin",
+        "className": "text-lg font-semibold text-on-surface mr-6"
+      }
+    },
+    {
+      "id": "hdrNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedKeys"
+        },
+        "items": {
+          "path": "/navItems"
+        },
+        "className": "flex-1 border-0 bg-transparent min-w-0"
+      }
+    },
+    {
+      "id": "hdrRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 shrink-0 ml-4"
+      },
+      "children": [
+        "hdrAvatarImg",
+        "hdrUsername",
+        "hdrHelpIcon"
+      ]
+    },
+    {
+      "id": "hdrAvatarImg",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/avatarImage"
+        },
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "hdrUsername",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/username"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "hdrHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "help-circle",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+      }
+    },
+    {
+      "id": "snavInnerWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-full"
+      },
+      "children": [
+        "snavMainMenuList",
+        "snavCollapseBtn"
+      ]
+    },
+    {
+      "id": "snavMainMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex-1 py-2"
+      },
+      "children": [
+        "snavMenuItemDevice",
+        "snavMenuItemTraffic",
+        "snavMenuItemSystem"
+      ]
+    },
+    {
+      "id": "snavMenuItemDevice",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "snavMenuItemDeviceIcon",
+        "snavMenuItemDeviceLabel"
+      ]
+    },
+    {
+      "id": "snavMenuItemDeviceIcon",
+      "component": "Icon",
+      "props": {
+        "name": "list",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "snavMenuItemDeviceLabel",
+      "component": "span",
+      "props": {
+        "value": "设备监控管理",
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "snavMenuItemTraffic",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "snavMenuItemTrafficIcon",
+        "snavMenuItemTrafficLabel"
+      ]
+    },
+    {
+      "id": "snavMenuItemTrafficIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shuffle",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "snavMenuItemTrafficLabel",
+      "component": "span",
+      "props": {
+        "value": "流量调度策略",
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "snavMenuItemSystem",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "snavMenuItemSystemMain",
+        "snavSubMenuList"
+      ]
+    },
+    {
+      "id": "snavMenuItemSystemMain",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "snavMenuItemSystemIcon",
+        "snavMenuItemSystemLabel",
+        "snavMenuItemSystemArrow"
+      ]
+    },
+    {
+      "id": "snavMenuItemSystemIcon",
+      "component": "Icon",
+      "props": {
+        "name": "puzzle",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "snavMenuItemSystemLabel",
+      "component": "span",
+      "props": {
+        "value": "系统高级配置",
+        "className": "text-sm text-on-surface flex-1"
+      }
+    },
+    {
+      "id": "snavMenuItemSystemArrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-up",
+        "shape": "outline",
+        "className": "w-4 h-4 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "snavSubMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "snavSubMenuItemDict",
+        "snavSubMenuItemFirewall"
+      ]
+    },
+    {
+      "id": "snavSubMenuItemDict",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 pl-11 pr-4 py-2.5 cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "snavSubMenuItemDictLabel"
+      ]
+    },
+    {
+      "id": "snavSubMenuItemDictLabel",
+      "component": "span",
+      "props": {
+        "value": "基础数据字典",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "snavSubMenuItemFirewall",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 pl-11 pr-4 py-2.5 bg-primary-container cursor-pointer"
+      },
+      "children": [
+        "snavSubMenuItemFirewallLabel"
+      ]
+    },
+    {
+      "id": "snavSubMenuItemFirewallLabel",
+      "component": "span",
+      "props": {
+        "value": "防火墙控制策略",
+        "className": "text-sm text-on-primary-container font-medium"
+      }
+    },
+    {
+      "id": "snavCollapseBtn",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center py-4 border-t border-divider cursor-pointer hover:bg-surface-variant transition-colors"
+      },
+      "children": [
+        "snavCollapseIcon"
+      ]
+    },
+    {
+      "id": "snavCollapseIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-left",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainHeaderSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "mainPageTitle",
+        "mainActionGroup"
+      ]
+    },
+    {
+      "id": "mainPageTitle",
+      "component": "h1",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "/pageTitle"
+        }
+      }
+    },
+    {
+      "id": "mainActionGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "mainExportBtn",
+        "mainCreateBtn",
+        "mainRefreshBtn"
+      ]
+    },
+    {
+      "id": "mainExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出数据",
+        "className": "border border-base text-on-surface-variant",
+        "color": "default",
+        "icon": "file-down",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "mainCreateBtn",
+      "component": "Button",
+      "props": {
+        "value": "新建策略",
+        "color": "primary",
+        "icon": "plus",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "mainRefreshBtn",
+      "component": "Button",
+      "props": {
+        "icon": "refresh-cw"
+      }
+    },
+    {
+      "id": "mainTableWrapper",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card"
+      },
+      "children": [
+        "mainFirewallTable"
+      ]
+    },
+    {
+      "id": "mainFirewallTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "策略名称",
+            "dataIndex": "policyName",
+            "sort": true
+          },
+          {
+            "title": "源安全域",
+            "dataIndex": "sourceDomain",
+            "sort": true
+          },
+          {
+            "title": "目的安全域",
+            "dataIndex": "destDomain",
+            "sort": true
+          },
+          {
+            "title": "关联用户",
+            "dataIndex": "assocUser",
+            "sort": true
+          },
+          {
+            "title": "命中次数",
+            "dataIndex": "hitCount",
+            "sort": true
+          },
+          {
+            "title": "状态",
+            "dataIndex": "status",
+            "sort": true
+          },
+          {
+            "title": "创建时间",
+            "dataIndex": "createTime",
+            "sort": true
+          },
+          {
+            "title": "更新时间",
+            "dataIndex": "updateTime",
+            "sort": true
+          },
+          {
+            "title": "描述说明",
+            "dataIndex": "description",
+            "sort": true,
+            "minWidth": 140
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions"
+          }
+        ]
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "mainTableRow"
+      }
+    },
+    {
+      "id": "mainTableRow",
+      "component": "TableRow",
+      "children": [
+        "mainPolicyCell",
+        "mainSourceCell",
+        "mainDestCell",
+        "mainUserCell",
+        "mainHitCell",
+        "mainStatusCell",
+        "mainCreateCell",
+        "mainUpdateCell",
+        "mainDescCell",
+        "mainActionCell"
+      ]
+    },
+    {
+      "id": "mainPolicyCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mainPolicyName",
+        "mainPolicyTag"
+      ]
+    },
+    {
+      "id": "mainPolicyName",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-medium",
+        "value": {
+          "path": "policyName"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "sourceDomain"
+        },
+        "variant": "outlined",
+        "color": "processing",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainSourceCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "sourceDomain"
+        },
+        "variant": "outlined",
+        "color": "default"
+      }
+    },
+    {
+      "id": "mainDestCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "destDomain"
+        },
+        "variant": "outlined",
+        "color": "default"
+      }
+    },
+    {
+      "id": "mainUserCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "assocUser"
+        },
+        "variant": "outlined",
+        "color": "default"
+      }
+    },
+    {
+      "id": "mainHitCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "hitCount"
+        }
+      }
+    },
+    {
+      "id": "mainStatusCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "mainStatusDot",
+        "mainStatusText"
+      ]
+    },
+    {
+      "id": "mainStatusDot",
+      "component": "Icon",
+      "props": {
+        "name": "circle",
+        "shape": "fill",
+        "color": {
+          "path": "statusColor"
+        },
+        "className": "w-2.5 h-2.5"
+      }
+    },
+    {
+      "id": "mainStatusText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "status"
+        }
+      }
+    },
+    {
+      "id": "mainCreateCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "createTime"
+        }
+      }
+    },
+    {
+      "id": "mainUpdateCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "updateTime"
+        }
+      }
+    },
+    {
+      "id": "mainDescCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "description"
+        }
+      }
+    },
+    {
+      "id": "mainActionCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-0.5"
+      },
+      "children": [
+        "mainEditBtn",
+        "mainAddBtn",
+        "mainDeleteBtn",
+        "mainApplyBtn"
+      ]
+    },
+    {
+      "id": "mainEditBtn",
+      "component": "Button",
+      "props": {
+        "icon": "pencil",
+        "types": "link",
+        "size": "small",
+        "className": "text-on-surface-variant hover:text-primary"
+      }
+    },
+    {
+      "id": "mainAddBtn",
+      "component": "Button",
+      "props": {
+        "icon": "plus",
+        "types": "link",
+        "size": "small",
+        "className": "text-on-surface-variant hover:text-primary"
+      }
+    },
+    {
+      "id": "mainDeleteBtn",
+      "component": "Button",
+      "props": {
+        "icon": "trash-2",
+        "types": "link",
+        "size": "small",
+        "className": "text-on-surface-variant hover:text-error"
+      }
+    },
+    {
+      "id": "mainApplyBtn",
+      "component": "Button",
+      "props": {
+        "icon": "play",
+        "types": "link",
+        "size": "small",
+        "className": "text-on-surface-variant hover:text-primary"
+      }
+    }
+  ]
+}

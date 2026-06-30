@@ -1,0 +1,1521 @@
+{
+    "state": {
+      "globalSearch": "",
+      "systemName": "Security Gate",
+      "globalSearchPlaceholder": "全局搜索线索、客户、工单...",
+      "userName": "张建国",
+      "roleName": "销售主管",
+      "userAvatar": "https://randomuser.me/api/portraits/men/32.jpg",
+      "notifMessage": "您有5条新线索需要认领",
+      "notifTime": "2分钟前",
+      "notifReadStatus": false,
+      "notifCount": 5,
+      "menuItems": [
+        {
+          "menuName": "工作台",
+          "menuIcon": "layout-dashboard",
+          "isActive": false,
+          "route": "/dashboard"
+        },
+        {
+          "menuName": "线索池",
+          "menuIcon": "users",
+          "isActive": true,
+          "route": "/leads"
+        },
+        {
+          "menuName": "客户管理",
+          "menuIcon": "address-book",
+          "isActive": false,
+          "route": "/customers"
+        },
+        {
+          "menuName": "数据报表",
+          "menuIcon": "bar-chart-2",
+          "isActive": false,
+          "route": "/reports"
+        }
+      ],
+      "bottomActions": [
+        {
+          "actionName": "提交工单",
+          "actionIcon": "ticket",
+          "type": "button"
+        },
+        {
+          "actionName": "退出登录",
+          "actionIcon": "log-out",
+          "type": "link"
+        }
+      ],
+      "pageTitle": "Lead Pool 管理",
+      "pageDescription": "集中管理和分配全渠道潜在客户线索，优化销售跟进效率。",
+      "kpiSectionTitle": "核心数据概览",
+      "metricsData": [
+        {
+          "cardTitle": "总线索数",
+          "metricValue": "15,862",
+          "trendIcon": "trending-up",
+          "changePercentage": "+5.2%",
+          "comparisonDesc": "较上月同期",
+          "metricIcon": "database"
+        },
+        {
+          "cardTitle": "今日新增",
+          "metricValue": "342",
+          "trendIcon": "trending-up",
+          "changePercentage": "+12.4%",
+          "comparisonDesc": "较昨日",
+          "metricIcon": "user-plus"
+        },
+        {
+          "cardTitle": "平均池中时间",
+          "metricValue": "4.5 小时",
+          "trendIcon": "trending-down",
+          "changePercentage": "-8.1%",
+          "comparisonDesc": "较上周",
+          "metricIcon": "clock"
+        },
+        {
+          "cardTitle": "待认领线索",
+          "metricValue": "1,205",
+          "trendIcon": "alert-circle",
+          "changePercentage": "需处理",
+          "comparisonDesc": "高意向优先",
+          "metricIcon": "hourglass"
+        }
+      ],
+      "tableSectionTitle": "线索明细数据",
+      "tableSearch": "",
+      "sourceFilter": "",
+      "statusFilter": "",
+      "sourceOptions": [
+        {
+          "label": "全部",
+          "value": "all"
+        },
+        {
+          "label": "官网表单",
+          "value": "web"
+        },
+        {
+          "label": "广告投放",
+          "value": "ad"
+        },
+        {
+          "label": "展会获取",
+          "value": "event"
+        },
+        {
+          "label": "API对接",
+          "value": "api"
+        },
+        {
+          "label": "员工录入",
+          "value": "manual"
+        }
+      ],
+      "statusOptions": [
+        {
+          "label": "全部",
+          "value": "all"
+        },
+        {
+          "label": "待认领",
+          "value": "pending"
+        },
+        {
+          "label": "跟进中",
+          "value": "following"
+        },
+        {
+          "label": "无意向",
+          "value": "no_interest"
+        },
+        {
+          "label": "已转化",
+          "value": "converted"
+        }
+      ],
+      "tableData": [
+        {
+          "leadId": "LD-10221",
+          "contactName": "李想",
+          "avatarImage": "https://randomuser.me/api/portraits/men/11.jpg",
+          "companyName": "智谱AI科技",
+          "jobTitle": "采购总监",
+          "sourceName": "官网表单",
+          "sourceIcon": "globe",
+          "leadStatus": "待认领",
+          "statusTagColor": "processing",
+          "createTime": "2023-10-25 09:14",
+          "leadScore": 85,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10220",
+          "contactName": "王芳",
+          "avatarImage": "https://randomuser.me/api/portraits/women/21.jpg",
+          "companyName": "阿里云计算",
+          "jobTitle": "技术经理",
+          "sourceName": "展会获取",
+          "sourceIcon": "calendar",
+          "leadStatus": "待认领",
+          "statusTagColor": "processing",
+          "createTime": "2023-10-25 08:45",
+          "leadScore": 92,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10219",
+          "contactName": "张伟",
+          "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+          "companyName": "腾讯科技",
+          "jobTitle": "CTO",
+          "sourceName": "API对接",
+          "sourceIcon": "code",
+          "leadStatus": "跟进中",
+          "statusTagColor": "warning",
+          "createTime": "2023-10-24 18:30",
+          "leadScore": 78,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10218",
+          "contactName": "刘娜",
+          "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+          "companyName": "字节跳动",
+          "jobTitle": "HR主管",
+          "sourceName": "广告投放",
+          "sourceIcon": "megaphone",
+          "leadStatus": "已转化",
+          "statusTagColor": "success",
+          "createTime": "2023-10-24 15:20",
+          "leadScore": 98,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10217",
+          "contactName": "陈强",
+          "avatarImage": "https://randomuser.me/api/portraits/men/55.jpg",
+          "companyName": "百度网络",
+          "jobTitle": "产品总监",
+          "sourceName": "员工录入",
+          "sourceIcon": "user-check",
+          "leadStatus": "无意向",
+          "statusTagColor": "error",
+          "createTime": "2023-10-24 14:10",
+          "leadScore": 15,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10216",
+          "contactName": "赵丽",
+          "avatarImage": "https://randomuser.me/api/portraits/women/68.jpg",
+          "companyName": "美团优选",
+          "jobTitle": "运营经理",
+          "sourceName": "官网表单",
+          "sourceIcon": "globe",
+          "leadStatus": "待认领",
+          "statusTagColor": "processing",
+          "createTime": "2023-10-24 11:05",
+          "leadScore": 62,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10215",
+          "contactName": "孙鹏",
+          "avatarImage": "https://randomuser.me/api/portraits/men/77.jpg",
+          "companyName": "京东物流",
+          "jobTitle": "供应链负责人",
+          "sourceName": "展会获取",
+          "sourceIcon": "calendar",
+          "leadStatus": "跟进中",
+          "statusTagColor": "warning",
+          "createTime": "2023-10-24 10:30",
+          "leadScore": 71,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10214",
+          "contactName": "周婷",
+          "avatarImage": "https://randomuser.me/api/portraits/women/85.jpg",
+          "companyName": "网易游戏",
+          "jobTitle": "主策",
+          "sourceName": "API对接",
+          "sourceIcon": "code",
+          "leadStatus": "待认领",
+          "statusTagColor": "processing",
+          "createTime": "2023-10-23 17:45",
+          "leadScore": 55,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10213",
+          "contactName": "吴明",
+          "avatarImage": "https://randomuser.me/api/portraits/men/90.jpg",
+          "companyName": "小米科技",
+          "jobTitle": "硬件工程师",
+          "sourceName": "广告投放",
+          "sourceIcon": "megaphone",
+          "leadStatus": "无意向",
+          "statusTagColor": "error",
+          "createTime": "2023-10-23 16:20",
+          "leadScore": 22,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10212",
+          "contactName": "郑洁",
+          "avatarImage": "https://randomuser.me/api/portraits/women/28.jpg",
+          "companyName": "比亚迪汽车",
+          "jobTitle": "公关经理",
+          "sourceName": "官网表单",
+          "sourceIcon": "globe",
+          "leadStatus": "待认领",
+          "statusTagColor": "processing",
+          "createTime": "2023-10-23 15:15",
+          "leadScore": 89,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        },
+        {
+          "leadId": "LD-10211",
+          "contactName": "冯磊",
+          "avatarImage": "https://randomuser.me/api/portraits/men/15.jpg",
+          "companyName": "大疆创新",
+          "jobTitle": "飞控算法",
+          "sourceName": "员工录入",
+          "sourceIcon": "user-check",
+          "leadStatus": "已转化",
+          "statusTagColor": "success",
+          "createTime": "2023-10-23 14:00",
+          "leadScore": 96,
+          "actions": [
+            "Claim",
+            "View"
+          ]
+        }
+      ],
+      "pagination": {
+        "currentPage": 1,
+        "pageSize": 10,
+        "totalPages": 158,
+        "totalItems": 1586
+      },
+      "bannerTitle": "解锁 AI 智能线索打分",
+      "bannerDescription": "利用机器学习模型分析历史转化数据，自动为线索分配转化概率评分，帮助您的团队优先跟进高价值潜在客户，提升整体转化率。",
+      "upgradeButtonLabel": "升级专业版",
+      "bannerBackgroundImage": "https://picsum.photos/seed/ai-score-banner/1200/200"
+    },
+    "rootId": "rootAppShell",
+    "elements": [
+      {
+        "id": "rootAppShell",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col h-screen bg-surface-container-lowest"
+        },
+        "children": [
+          "headerGlobalBar",
+          "shellBodyWrapper"
+        ]
+      },
+      {
+        "id": "headerGlobalBar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center h-14 px-gutter bg-surface-container-highest shadow-sm border-b border-divider shrink-0"
+        },
+        "children": [
+          "headerLeftSection",
+          "headerCenterSection",
+          "headerRightSection"
+        ]
+      },
+      {
+        "id": "headerLeftSection",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 w-60 shrink-0"
+        },
+        "children": [
+          "headerLogoIcon",
+          "headerLogoText"
+        ]
+      },
+      {
+        "id": "headerLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield",
+          "color": "primary",
+          "shape": "outline",
+          "className": "w-6 h-6"
+        }
+      },
+      {
+        "id": "headerLogoText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/systemName"
+          },
+          "className": "text-lg font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "headerCenterSection",
+        "component": "div",
+        "props": {
+          "className": "flex-1 flex justify-center px-gutter"
+        },
+        "children": [
+          "headerGlobalSearch"
+        ]
+      },
+      {
+        "id": "headerGlobalSearch",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/globalSearch"
+          },
+          "placeholder": {
+            "path": "/globalSearchPlaceholder"
+          },
+          "prefix": "search",
+          "className": "max-w-md"
+        }
+      },
+      {
+        "id": "headerRightSection",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-gutter"
+        },
+        "children": [
+          "headerNotifDropdown",
+          "headerUserDropdown"
+        ]
+      },
+      {
+        "id": "headerNotifDropdown",
+        "component": "Dropdown",
+        "props": {
+          "trigger": [
+            "click"
+          ],
+          "menu": [
+            {
+              "label": "您有5条新线索需要认领",
+              "key": "n1",
+              "icon": "bell"
+            },
+            {
+              "label": "2分钟前",
+              "key": "n1-time",
+              "icon": "clock"
+            },
+            {
+              "label": "查看全部通知",
+              "key": "view-all",
+              "icon": "list"
+            }
+          ],
+          "placement": "bottomRight"
+        },
+        "children": [
+          "headerNotifTrigger"
+        ]
+      },
+      {
+        "id": "headerNotifTrigger",
+        "component": "div",
+        "props": {
+          "className": "relative cursor-pointer p-2 rounded-action hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "headerNotifIcon",
+          "headerNotifBadge"
+        ]
+      },
+      {
+        "id": "headerNotifIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bell",
+          "className": "w-5 h-5",
+          "color": "default"
+        }
+      },
+      {
+        "id": "headerNotifBadge",
+        "component": "div",
+        "props": {
+          "className": "absolute top-1 right-1 w-4 h-4 bg-error text-on-error text-xs rounded-full flex items-center justify-center leading-none",
+          "value": "5"
+        }
+      },
+      {
+        "id": "headerUserDropdown",
+        "component": "Dropdown",
+        "props": {
+          "trigger": [
+            "click"
+          ],
+          "menu": [
+            {
+              "label": "个人资料",
+              "key": "profile",
+              "icon": "user"
+            },
+            {
+              "label": "账号设置",
+              "key": "settings",
+              "icon": "settings"
+            },
+            {
+              "label": "退出登录",
+              "key": "logout",
+              "icon": "log-out"
+            }
+          ],
+          "placement": "bottomRight"
+        },
+        "children": [
+          "headerUserTrigger"
+        ]
+      },
+      {
+        "id": "headerUserTrigger",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 cursor-pointer p-1.5 rounded-action hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "headerUserAvatar",
+          "headerUserInfo",
+          "headerChevronIcon"
+        ]
+      },
+      {
+        "id": "headerUserAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/userAvatar"
+          },
+          "className": "w-8 h-8 rounded-full object-cover"
+        }
+      },
+      {
+        "id": "headerUserInfo",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col"
+        },
+        "children": [
+          "headerUserName",
+          "headerUserRole"
+        ]
+      },
+      {
+        "id": "headerUserName",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/userName"
+          },
+          "className": "text-sm font-medium text-on-surface"
+        }
+      },
+      {
+        "id": "headerUserRole",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/roleName"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "headerChevronIcon",
+        "component": "Icon",
+        "props": {
+          "name": "chevron-down",
+          "className": "w-4 h-4",
+          "color": "default"
+        }
+      },
+      {
+        "id": "shellBodyWrapper",
+        "component": "div",
+        "props": {
+          "className": "flex flex-1 overflow-hidden"
+        },
+        "children": [
+          "sidebarNav",
+          "mainContentArea"
+        ]
+      },
+      {
+        "id": "sidebarNav",
+        "component": "div",
+        "props": {
+          "className": "w-60 bg-surface-container-highest border-r border-divider flex flex-col shrink-0"
+        },
+        "children": [
+          "sidebarLogoArea",
+          "sidebarMenuSection",
+          "sidebarBottomArea"
+        ]
+      },
+      {
+        "id": "sidebarLogoArea",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 px-gutter py-stack border-b border-divider"
+        },
+        "children": [
+          "sidebarLogoIcon",
+          "sidebarLogoText"
+        ]
+      },
+      {
+        "id": "sidebarLogoIcon",
+        "component": "Icon",
+        "props": {
+          "name": "shield",
+          "color": "primary",
+          "shape": "fill",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "sidebarLogoText",
+        "component": "span",
+        "props": {
+          "className": "text-sm font-semibold text-on-surface tracking-wide",
+          "value": "SecurityGate"
+        }
+      },
+      {
+        "id": "sidebarMenuSection",
+        "component": "div",
+        "props": {
+          "className": "flex-1 py-stack px-gutter flex flex-col gap-1 overflow-y-auto"
+        },
+        "children": [
+          "sidebarMenuDashboard",
+          "sidebarMenuLeads",
+          "sidebarMenuCustomers",
+          "sidebarMenuReports"
+        ]
+      },
+      {
+        "id": "sidebarMenuDashboard",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "sidebarDashboardIcon",
+          "sidebarDashboardLabel"
+        ]
+      },
+      {
+        "id": "sidebarDashboardIcon",
+        "component": "Icon",
+        "props": {
+          "name": "layout-dashboard",
+          "className": "w-5 h-5",
+          "color": "default",
+          "shape": "outline"
+        }
+      },
+      {
+        "id": "sidebarDashboardLabel",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/0/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuLeads",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-action cursor-pointer bg-primary-container text-primary font-medium"
+        },
+        "children": [
+          "sidebarLeadsIcon",
+          "sidebarLeadsLabel"
+        ]
+      },
+      {
+        "id": "sidebarLeadsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "users",
+          "className": "w-5 h-5",
+          "color": "primary",
+          "shape": "fill"
+        }
+      },
+      {
+        "id": "sidebarLeadsLabel",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/1/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuCustomers",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "sidebarCustomersIcon",
+          "sidebarCustomersLabel"
+        ]
+      },
+      {
+        "id": "sidebarCustomersIcon",
+        "component": "Icon",
+        "props": {
+          "name": "address-book",
+          "className": "w-5 h-5",
+          "color": "default",
+          "shape": "outline"
+        }
+      },
+      {
+        "id": "sidebarCustomersLabel",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/2/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarMenuReports",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 px-3 py-2 rounded-action cursor-pointer text-on-surface-variant hover:bg-surface-variant transition-colors"
+        },
+        "children": [
+          "sidebarReportsIcon",
+          "sidebarReportsLabel"
+        ]
+      },
+      {
+        "id": "sidebarReportsIcon",
+        "component": "Icon",
+        "props": {
+          "name": "bar-chart-2",
+          "className": "w-5 h-5",
+          "color": "default",
+          "shape": "outline"
+        }
+      },
+      {
+        "id": "sidebarReportsLabel",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/menuItems/3/menuName"
+          },
+          "className": "text-sm"
+        }
+      },
+      {
+        "id": "sidebarBottomArea",
+        "component": "div",
+        "props": {
+          "className": "border-t border-divider px-gutter py-stack flex flex-col gap-1"
+        },
+        "children": [
+          "sidebarTicketBtn",
+          "sidebarLogoutBtn"
+        ]
+      },
+      {
+        "id": "sidebarTicketBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/bottomActions/0/actionName"
+          },
+          "icon": {
+            "path": "/bottomActions/0/actionIcon"
+          },
+          "iconPlacement": "start",
+          "color": "default",
+          "className": "w-full justify-start"
+        }
+      },
+      {
+        "id": "sidebarLogoutBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/bottomActions/1/actionName"
+          },
+          "icon": {
+            "path": "/bottomActions/1/actionIcon"
+          },
+          "iconPlacement": "start",
+          "color": "default",
+          "className": "w-full justify-start"
+        }
+      },
+      {
+        "id": "mainContentArea",
+        "component": "div",
+        "props": {
+          "className": "flex-1 overflow-y-auto p-inset"
+        },
+        "children": [
+          "contentPageHeader",
+          "contentKpiSection",
+          "contentTableSection",
+          "contentAiBanner"
+        ]
+      },
+      {
+        "id": "contentPageHeader",
+        "component": "div",
+        "props": {
+          "className": "flex items-start justify-between mb-stack"
+        },
+        "children": [
+          "contentHeaderLeft",
+          "contentHeaderRight"
+        ]
+      },
+      {
+        "id": "contentHeaderLeft",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-1"
+        },
+        "children": [
+          "contentPageTitle",
+          "contentPageDesc"
+        ]
+      },
+      {
+        "id": "contentPageTitle",
+        "component": "h1",
+        "props": {
+          "value": {
+            "path": "/pageTitle"
+          },
+          "className": "text-2xl font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "contentPageDesc",
+        "component": "p",
+        "props": {
+          "value": {
+            "path": "/pageDescription"
+          },
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "contentHeaderRight",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3"
+        },
+        "children": [
+          "contentRouteBtn",
+          "contentImportBtn"
+        ]
+      },
+      {
+        "id": "contentRouteBtn",
+        "component": "Button",
+        "props": {
+          "value": "路由规则",
+          "icon": "settings-2",
+          "iconPlacement": "start",
+          "color": "default"
+        }
+      },
+      {
+        "id": "contentImportBtn",
+        "component": "Button",
+        "props": {
+          "value": "导入线索",
+          "icon": "upload",
+          "iconPlacement": "start",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "contentKpiSection",
+        "component": "div",
+        "props": {
+          "className": "mb-section"
+        },
+        "children": [
+          "contentKpiTitleRow",
+          "contentKpiGrid"
+        ]
+      },
+      {
+        "id": "contentKpiTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mb-stack"
+        },
+        "children": [
+          "contentKpiTitleText"
+        ]
+      },
+      {
+        "id": "contentKpiTitleText",
+        "component": "h2",
+        "props": {
+          "value": {
+            "path": "/kpiSectionTitle"
+          },
+          "className": "text-lg font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "contentKpiGrid",
+        "component": "div",
+        "props": {
+          "className": "grid grid-cols-4 gap-gutter"
+        },
+        "children": {
+          "path": "/metricsData",
+          "componentId": "contentKpiCard"
+        }
+      },
+      {
+        "id": "contentKpiCard",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card p-gutter flex flex-col gap-2"
+        },
+        "children": [
+          "contentKpiCardTop",
+          "contentKpiCardValue",
+          "contentKpiCardFooter"
+        ]
+      },
+      {
+        "id": "contentKpiCardTop",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "contentKpiCardIcon",
+          "contentKpiCardTitleText"
+        ]
+      },
+      {
+        "id": "contentKpiCardIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "metricIcon"
+          },
+          "shape": "square",
+          "color": "primary",
+          "className": "w-5 h-5"
+        }
+      },
+      {
+        "id": "contentKpiCardTitleText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "cardTitle"
+          },
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "contentKpiCardValue",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "metricValue"
+          },
+          "className": "text-3xl font-bold text-on-surface"
+        }
+      },
+      {
+        "id": "contentKpiCardFooter",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "contentKpiTrendIcon",
+          "contentKpiChangeText",
+          "contentKpiCompText"
+        ]
+      },
+      {
+        "id": "contentKpiTrendIcon",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "trendIcon"
+          },
+          "shape": "outline",
+          "color": "success",
+          "className": "w-4 h-4"
+        }
+      },
+      {
+        "id": "contentKpiChangeText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "changePercentage"
+          },
+          "className": "text-xs font-medium text-success"
+        }
+      },
+      {
+        "id": "contentKpiCompText",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "comparisonDesc"
+          },
+          "className": "text-xs text-on-surface-variant"
+        }
+      },
+      {
+        "id": "contentTableSection",
+        "component": "div",
+        "props": {
+          "className": "mb-section"
+        },
+        "children": [
+          "contentTableTitleRow",
+          "contentTableToolbar",
+          "contentTableWrapper"
+        ]
+      },
+      {
+        "id": "contentTableTitleRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2 mb-stack"
+        },
+        "children": [
+          "contentTableTitleText"
+        ]
+      },
+      {
+        "id": "contentTableTitleText",
+        "component": "h2",
+        "props": {
+          "value": {
+            "path": "/tableSectionTitle"
+          },
+          "className": "text-lg font-semibold text-on-surface"
+        }
+      },
+      {
+        "id": "contentTableToolbar",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 mb-stack flex-wrap"
+        },
+        "children": [
+          "contentTableSearchInput",
+          "contentTableSourceSelect",
+          "contentTableStatusSelect"
+        ]
+      },
+      {
+        "id": "contentTableSearchInput",
+        "component": "Input",
+        "props": {
+          "value": {
+            "path": "/tableSearch"
+          },
+          "placeholder": "搜索线索姓名、公司...",
+          "prefix": "search",
+          "className": "w-64"
+        }
+      },
+      {
+        "id": "contentTableSourceSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/sourceFilter"
+          },
+          "placeholder": "来源筛选",
+          "options": {
+            "path": "/sourceOptions"
+          },
+          "className": "w-36"
+        }
+      },
+      {
+        "id": "contentTableStatusSelect",
+        "component": "Select",
+        "props": {
+          "value": {
+            "path": "/statusFilter"
+          },
+          "placeholder": "状态筛选",
+          "options": {
+            "path": "/statusOptions"
+          },
+          "className": "w-36"
+        }
+      },
+      {
+        "id": "contentTableWrapper",
+        "component": "div",
+        "props": {
+          "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+        },
+        "children": [
+          "contentLeadsTable"
+        ]
+      },
+      {
+        "id": "contentLeadsTable",
+        "component": "Table",
+        "props": {
+          "rowKey": "leadId",
+          "dataSource": {
+            "path": "/tableData"
+          },
+          "columns": [
+            {
+              "title": "联系人信息",
+              "dataIndex": "contactName"
+            },
+            {
+              "title": "来源",
+              "dataIndex": "sourceName"
+            },
+            {
+              "title": "状态",
+              "dataIndex": "leadStatus",
+              "width": 100
+            },
+            {
+              "title": "入库时间",
+              "dataIndex": "createTime",
+              "width": 160
+            },
+            {
+              "title": "评分",
+              "dataIndex": "leadScore",
+              "width": 180
+            },
+            {
+              "title": "操作",
+              "dataIndex": "actions",
+              "width": 160
+            }
+          ],
+          "pagination": true
+        },
+        "children": {
+          "path": "/tableData",
+          "componentId": "tableRowTemplate"
+        }
+      },
+      {
+        "id": "tableRowTemplate",
+        "component": "TableRow",
+        "children": [
+          "contactCell",
+          "sourceCell",
+          "statusCell",
+          "timeCell",
+          "scoreCell",
+          "actionCell"
+        ]
+      },
+      {
+        "id": "contactCell",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-3 py-1"
+        },
+        "children": [
+          "contactAvatar",
+          "contactInfoWrap"
+        ]
+      },
+      {
+        "id": "contactAvatar",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "avatarImage"
+          },
+          "className": "w-9 h-9 rounded-full object-cover shrink-0"
+        }
+      },
+      {
+        "id": "contactInfoWrap",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-0.5 min-w-0"
+        },
+        "children": [
+          "contactNameRow",
+          "contactLeadIdSpan",
+          "contactMetaDiv"
+        ]
+      },
+      {
+        "id": "contactNameRow",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "contactNameSpan",
+          "contactLeadIdBadge"
+        ]
+      },
+      {
+        "id": "contactNameSpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "contactName"
+          },
+          "className": "text-sm font-medium text-on-surface truncate"
+        }
+      },
+      {
+        "id": "contactLeadIdBadge",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "leadId"
+          },
+          "className": "text-xs text-on-surface-variant bg-surface-variant px-1.5 py-0.5 rounded-badge shrink-0"
+        }
+      },
+      {
+        "id": "contactMetaDiv",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-1 text-xs text-on-surface-variant"
+        },
+        "children": [
+          "contactCompanySpan",
+          "contactDotSpan",
+          "contactTitleSpan"
+        ]
+      },
+      {
+        "id": "contactCompanySpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "companyName"
+          },
+          "className": "truncate"
+        }
+      },
+      {
+        "id": "contactDotSpan",
+        "component": "span",
+        "props": {
+          "value": "·",
+          "className": "shrink-0"
+        }
+      },
+      {
+        "id": "contactTitleSpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "jobTitle"
+          },
+          "className": "truncate"
+        }
+      },
+      {
+        "id": "sourceCell",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "sourceIconEl",
+          "sourceNameEl"
+        ]
+      },
+      {
+        "id": "sourceIconEl",
+        "component": "Icon",
+        "props": {
+          "name": {
+            "path": "sourceIcon"
+          },
+          "shape": "outline",
+          "color": "default",
+          "className": "w-4 h-4 shrink-0"
+        }
+      },
+      {
+        "id": "sourceNameEl",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "sourceName"
+          },
+          "className": "text-sm text-on-surface"
+        }
+      },
+      {
+        "id": "statusCell",
+        "component": "Tag",
+        "props": {
+          "value": {
+            "path": "leadStatus"
+          },
+          "color": {
+            "path": "statusTagColor"
+          },
+          "variant": "filled",
+          "size": "small"
+        }
+      },
+      {
+        "id": "timeCell",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "createTime"
+          },
+          "className": "text-sm text-on-surface-variant"
+        }
+      },
+      {
+        "id": "scoreCell",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "scoreProgressEl",
+          "scoreValueSpan"
+        ]
+      },
+      {
+        "id": "scoreProgressEl",
+        "component": "Progress",
+        "props": {
+          "percent": {
+            "path": "leadScore"
+          },
+          "size": "small",
+          "showInfo": false,
+          "strokeColor": "#0067D1",
+          "className": "flex-1"
+        }
+      },
+      {
+        "id": "scoreValueSpan",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "leadScore"
+          },
+          "className": "text-sm font-medium text-on-surface w-8 text-right"
+        }
+      },
+      {
+        "id": "actionCell",
+        "component": "div",
+        "props": {
+          "className": "flex items-center gap-2"
+        },
+        "children": [
+          "actionClaimBtn",
+          "actionViewBtn"
+        ]
+      },
+      {
+        "id": "actionClaimBtn",
+        "component": "Button",
+        "props": {
+          "value": "Claim",
+          "size": "small",
+          "color": "primary"
+        }
+      },
+      {
+        "id": "actionViewBtn",
+        "component": "Button",
+        "props": {
+          "icon": "eye",
+          "size": "small",
+          "shape": "circle",
+          "color": "default"
+        }
+      },
+      {
+        "id": "contentAiBanner",
+        "component": "div",
+        "props": {
+          "className": "relative overflow-hidden rounded-container min-h-[160px]"
+        },
+        "children": [
+          "bannerBgImage",
+          "bannerOverlay",
+          "bannerContent"
+        ]
+      },
+      {
+        "id": "bannerBgImage",
+        "component": "img",
+        "props": {
+          "src": {
+            "path": "/bannerBackgroundImage"
+          },
+          "className": "absolute inset-0 w-full h-full object-cover"
+        }
+      },
+      {
+        "id": "bannerOverlay",
+        "component": "div",
+        "props": {
+          "className": "absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60"
+        }
+      },
+      {
+        "id": "bannerContent",
+        "component": "div",
+        "props": {
+          "className": "relative z-10 flex items-center justify-between p-inset"
+        },
+        "children": [
+          "bannerLeftSection",
+          "bannerUpgradeBtn"
+        ]
+      },
+      {
+        "id": "bannerLeftSection",
+        "component": "div",
+        "props": {
+          "className": "flex items-start gap-gutter flex-1 pr-gutter"
+        },
+        "children": [
+          "bannerIconEl",
+          "bannerTextArea"
+        ]
+      },
+      {
+        "id": "bannerIconEl",
+        "component": "Icon",
+        "props": {
+          "name": "sparkles",
+          "shape": "fill",
+          "color": "inverse",
+          "className": "w-10 h-10 shrink-0 mt-1"
+        }
+      },
+      {
+        "id": "bannerTextArea",
+        "component": "div",
+        "props": {
+          "className": "flex flex-col gap-2"
+        },
+        "children": [
+          "bannerTitleEl",
+          "bannerDescEl"
+        ]
+      },
+      {
+        "id": "bannerTitleEl",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/bannerTitle"
+          },
+          "className": "text-xl font-bold text-on-primary"
+        }
+      },
+      {
+        "id": "bannerDescEl",
+        "component": "span",
+        "props": {
+          "value": {
+            "path": "/bannerDescription"
+          },
+          "className": "text-sm text-on-primary/80 leading-relaxed"
+        }
+      },
+      {
+        "id": "bannerUpgradeBtn",
+        "component": "Button",
+        "props": {
+          "value": {
+            "path": "/upgradeButtonLabel"
+          },
+          "icon": "sparkles",
+          "iconPlacement": "start",
+          "color": "default",
+          "shape": "round",
+          "className": "bg-white text-primary hover:bg-white/90 shrink-0"
+        }
+      }
+    ]
+  },

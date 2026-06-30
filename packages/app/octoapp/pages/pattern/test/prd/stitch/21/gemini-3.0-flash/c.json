@@ -1,0 +1,931 @@
+{
+    "state": {
+        "navItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Product Catalog",
+                "icon": "package",
+                "isActive": true
+            },
+            {
+                "label": "Inventory",
+                "icon": "boxes",
+                "isActive": false
+            },
+            {
+                "label": "Orders",
+                "icon": "shopping-cart",
+                "isActive": false
+            },
+            {
+                "label": "Financial Reports",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "bottomActions": [
+            {
+                "label": "Settings",
+                "icon": "settings"
+            },
+            {
+                "label": "Support",
+                "icon": "life-buoy"
+            }
+        ],
+        "breadcrumbItems": [
+            {
+                "title": "控制面板"
+            },
+            {
+                "title": "产品目录"
+            }
+        ],
+        "currentUser": {
+            "name": "李明德",
+            "role": "财务主管",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "stats": [
+            {
+                "title": "总计 SKU",
+                "value": "12,840",
+                "icon": "database",
+                "badgeText": "+12%",
+                "badgeStatus": "success",
+                "iconColor": "primary"
+            },
+            {
+                "title": "活跃产品",
+                "value": "8,520",
+                "icon": "check-circle-2",
+                "badgeText": "稳定",
+                "badgeStatus": "processing",
+                "iconColor": "success"
+            },
+            {
+                "title": "库存预警",
+                "value": "142",
+                "icon": "alert-triangle",
+                "badgeText": "紧急",
+                "badgeStatus": "error",
+                "iconColor": "error"
+            },
+            {
+                "title": "待审核 SKU",
+                "value": "28",
+                "icon": "clock",
+                "badgeText": "5 待处理",
+                "badgeStatus": "warning",
+                "iconColor": "warning"
+            }
+        ],
+        "categories": [
+            {
+                "label": "所有分类",
+                "value": "all"
+            },
+            {
+                "label": "电子产品",
+                "value": "elec"
+            },
+            {
+                "label": "办公家具",
+                "value": "fur"
+            },
+            {
+                "label": "原材料",
+                "value": "raw"
+            },
+            {
+                "label": "成品库存",
+                "value": "stock"
+            }
+        ],
+        "filterState": {
+            "search": "",
+            "category": "all",
+            "onlyActive": true
+        },
+        "productList": [
+            {
+                "id": "SKU-90210",
+                "productName": "MacBook Pro M3 14\"",
+                "category": "电子产品",
+                "specs": "16GB / 512GB / Space Gray",
+                "price": "¥14,999",
+                "margin": "18.5%",
+                "stockLevel": 85,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            },
+            {
+                "id": "SKU-44212",
+                "productName": "人体工学办公椅 X1",
+                "category": "办公家具",
+                "specs": "网面 / 黑色 / 可调节扶手",
+                "price": "¥1,280",
+                "margin": "32.4%",
+                "stockLevel": 12,
+                "stockStatus": "exception",
+                "status": "审核中",
+                "statusType": "warning"
+            },
+            {
+                "id": "SKU-11023",
+                "productName": "4K 显示器 27寸",
+                "category": "电子产品",
+                "specs": "IPS / 144Hz / HDR400",
+                "price": "¥2,499",
+                "margin": "22.1%",
+                "stockLevel": 5,
+                "stockStatus": "exception",
+                "status": "已下架",
+                "statusType": "default"
+            },
+            {
+                "id": "SKU-88291",
+                "productName": "无线机械键盘",
+                "category": "电子产品",
+                "specs": "红轴 / RGB / 蓝牙5.0",
+                "price": "¥499",
+                "margin": "45.0%",
+                "stockLevel": 100,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            },
+            {
+                "id": "SKU-33210",
+                "productName": "升降桌 L型",
+                "category": "办公家具",
+                "specs": "胡桃木色 / 双电机",
+                "price": "¥3,200",
+                "margin": "15.8%",
+                "stockLevel": 2,
+                "stockStatus": "exception",
+                "status": "已停止",
+                "statusType": "error"
+            },
+            {
+                "id": "SKU-55671",
+                "productName": "Type-C 扩展坞",
+                "category": "电子产品",
+                "specs": "8合1 / 100W PD",
+                "price": "¥299",
+                "margin": "55.2%",
+                "stockLevel": 95,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            },
+            {
+                "id": "SKU-22109",
+                "productName": "静音加湿器",
+                "category": "生活电器",
+                "specs": "4L / 智能恒湿",
+                "price": "¥199",
+                "margin": "28.0%",
+                "stockLevel": 0,
+                "stockStatus": "exception",
+                "status": "已下架",
+                "statusType": "default"
+            },
+            {
+                "id": "SKU-77821",
+                "productName": "激光打印机 Pro",
+                "category": "办公设备",
+                "specs": "黑白 / 自动双面",
+                "price": "¥1,850",
+                "margin": "12.5%",
+                "stockLevel": 18,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            },
+            {
+                "id": "SKU-99001",
+                "productName": "降噪耳机 Gen2",
+                "category": "电子产品",
+                "specs": "主动降噪 / 40h续航",
+                "price": "¥1,999",
+                "margin": "24.6%",
+                "stockLevel": 65,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            },
+            {
+                "id": "SKU-12345",
+                "productName": "智能插座",
+                "category": "电子产品",
+                "specs": "WiFi版 / 功率统计",
+                "price": "¥59",
+                "margin": "60.0%",
+                "stockLevel": 100,
+                "stockStatus": "normal",
+                "status": "已上架",
+                "statusType": "success"
+            }
+        ]
+    },
+    "rootId": "nexusAppContainer",
+    "elements": [
+        {
+            "id": "nexusAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContentContainer"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-inverse-surface flex flex-col p-4 shrink-0"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarNav",
+                "sidebarBottom"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-8 px-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "nexus",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Nexus ERP",
+                "className": "text-white font-bold text-lg"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors hover:bg-white/10"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-white/70"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-white/80 text-sm"
+            }
+        },
+        {
+            "id": "sidebarBottom",
+            "component": "div",
+            "props": {
+                "className": "mt-auto flex flex-col gap-4"
+            },
+            "children": [
+                "quickEntryCard",
+                "bottomNav"
+            ]
+        },
+        {
+            "id": "quickEntryCard",
+            "component": "div",
+            "props": {
+                "className": "bg-white/5 p-3 rounded-xl border border-white/10"
+            },
+            "children": [
+                "quickEntryHeader",
+                "quickEntryDesc"
+            ]
+        },
+        {
+            "id": "quickEntryHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between mb-1"
+            },
+            "children": [
+                "quickEntryTitle",
+                "quickEntryIcon"
+            ]
+        },
+        {
+            "id": "quickEntryTitle",
+            "component": "span",
+            "props": {
+                "value": "New Entry",
+                "className": "text-white text-xs font-medium"
+            }
+        },
+        {
+            "id": "quickEntryIcon",
+            "component": "Icon",
+            "props": {
+                "name": "plus-circle",
+                "className": "w-4 h-4 text-primary"
+            }
+        },
+        {
+            "id": "quickEntryDesc",
+            "component": "span",
+            "props": {
+                "value": "快速创建新记录",
+                "className": "text-white/40 text-xs"
+            }
+        },
+        {
+            "id": "bottomNav",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/bottomActions",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "mainContentContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "scrollableContent"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest flex items-center justify-between px-6 border-b border-divider shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "breadcrumbComp"
+            ]
+        },
+        {
+            "id": "breadcrumbComp",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbItems"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerSearch",
+                "headerActions",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "全局搜索...",
+                "prefix": "search",
+                "className": "w-48",
+                "size": "small"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "exportBtn",
+                "addSkuBtn"
+            ]
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出报表",
+                "icon": "download",
+                "size": "small"
+            }
+        },
+        {
+            "id": "addSkuBtn",
+            "component": "Button",
+            "props": {
+                "value": "新增产品 SKU",
+                "color": "primary",
+                "icon": "plus",
+                "size": "small"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userNameRole",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "userNameRole",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "scrollableContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "statsGrid",
+                "filterBar",
+                "tableSection"
+            ]
+        },
+        {
+            "id": "statsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/stats",
+                "componentId": "statCard"
+            }
+        },
+        {
+            "id": "statCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-xl shadow-card flex flex-col gap-3"
+            },
+            "children": [
+                "statHeader",
+                "statBody"
+            ]
+        },
+        {
+            "id": "statHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "statIcon",
+                "statBadge"
+            ]
+        },
+        {
+            "id": "statIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "iconColor"
+                },
+                "shape": "square",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "statBadge",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "badgeText"
+                },
+                "color": {
+                    "path": "badgeStatus"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "statBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "statValue",
+                "statTitle"
+            ]
+        },
+        {
+            "id": "statValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-xl shadow-card flex items-center justify-between"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "searchFilter",
+                "categoryFilter",
+                "activeSwitch"
+            ]
+        },
+        {
+            "id": "searchFilter",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/filterState/search"
+                },
+                "placeholder": "搜索产品名称或 SKU...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "categoryFilter",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterState/category"
+                },
+                "options": {
+                    "path": "/categories"
+                },
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "activeSwitch",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "switchLabel",
+                "switchComp"
+            ]
+        },
+        {
+            "id": "switchLabel",
+            "component": "span",
+            "props": {
+                "value": "仅显示活跃",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "switchComp",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "/filterState/onlyActive"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "Button",
+            "props": {
+                "icon": "filter",
+                "value": "更多筛选"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "catalogTable"
+            ]
+        },
+        {
+            "id": "catalogTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/productList"
+                },
+                "columns": [
+                    {
+                        "title": "产品信息/SKU",
+                        "dataIndex": "productName"
+                    },
+                    {
+                        "title": "分类",
+                        "dataIndex": "category",
+                        "width": 100
+                    },
+                    {
+                        "title": "单价/利润率",
+                        "dataIndex": "price",
+                        "width": 150
+                    },
+                    {
+                        "title": "库存水位",
+                        "dataIndex": "stockLevel",
+                        "width": 180
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80,
+                        "fixed": "end"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/productList",
+                "componentId": "catalogRow"
+            }
+        },
+        {
+            "id": "catalogRow",
+            "component": "TableRow",
+            "children": [
+                "productCell",
+                "categoryCell",
+                "financialCell",
+                "stockCell",
+                "statusCell",
+                "actionCell"
+            ]
+        },
+        {
+            "id": "productCell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "prodName",
+                "prodSku"
+            ]
+        },
+        {
+            "id": "prodName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "productName"
+                },
+                "className": "font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "prodSku",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "categoryCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "category"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "financialCell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "prodPrice",
+                "prodMargin"
+            ]
+        },
+        {
+            "id": "prodPrice",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "price"
+                },
+                "className": "font-semibold"
+            }
+        },
+        {
+            "id": "prodMargin",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "margin"
+                },
+                "className": "text-xs text-success font-medium"
+            }
+        },
+        {
+            "id": "stockCell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 pr-4"
+            },
+            "children": [
+                "stockProgress",
+                "stockLabel"
+            ]
+        },
+        {
+            "id": "stockProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "stockLevel"
+                },
+                "size": "small",
+                "showInfo": false,
+                "status": {
+                    "path": "stockStatus"
+                }
+            }
+        },
+        {
+            "id": "stockLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "stockLevel"
+                },
+                "className": "text-[10px] text-on-surface-variant text-right"
+            }
+        },
+        {
+            "id": "statusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "actionCell",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small"
+            }
+        }
+    ]
+}

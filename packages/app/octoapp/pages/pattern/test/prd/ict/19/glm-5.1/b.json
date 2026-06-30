@@ -1,0 +1,1266 @@
+{
+  "state": {
+    "systemTitle": "iMaster NCE",
+    "navMenuItems": [
+      {
+        "key": "概览",
+        "label": "概览"
+      },
+      {
+        "key": "网络监控",
+        "label": "网络监控"
+      },
+      {
+        "key": "故障管理",
+        "label": "故障管理"
+      },
+      {
+        "key": "报表中心",
+        "label": "报表中心"
+      },
+      {
+        "key": "系统设置",
+        "label": "系统设置"
+      }
+    ],
+    "currentActiveMenu": "概览",
+    "navSearchValue": "",
+    "navSearchPlaceholder": "搜索账号、IP或策略...",
+    "adminAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "adminName": "Admin",
+    "ceiCardTitle": "CEI 平均分",
+    "ceiCurrentScore": 85.4,
+    "ceiTargetScore": 90,
+    "ceiChangePercentage": "+2.5%",
+    "ceiCompareDesc": "较上周",
+    "trendCardTitle": "CEI 趋势分析",
+    "trendData": [
+      {
+        "date": "03-01",
+        "score": 82.1
+      },
+      {
+        "date": "03-02",
+        "score": 84.5
+      },
+      {
+        "date": "03-03",
+        "score": 81.2
+      },
+      {
+        "date": "03-04",
+        "score": 79.8
+      },
+      {
+        "date": "03-05",
+        "score": 83.9
+      },
+      {
+        "date": "03-06",
+        "score": 86.2
+      },
+      {
+        "date": "03-07",
+        "score": 87.1
+      },
+      {
+        "date": "03-08",
+        "score": 85.5
+      },
+      {
+        "date": "03-09",
+        "score": 88.3
+      },
+      {
+        "date": "03-10",
+        "score": 84.2
+      },
+      {
+        "date": "03-11",
+        "score": 82.7
+      },
+      {
+        "date": "03-12",
+        "score": 85.9
+      },
+      {
+        "date": "03-13",
+        "score": 86.4
+      },
+      {
+        "date": "03-14",
+        "score": 87.8
+      },
+      {
+        "date": "03-15",
+        "score": 89.1
+      }
+    ],
+    "penaltyCardTitle": "扣分分布",
+    "penaltyData": [
+      {
+        "name": "高延迟",
+        "value": 35
+      },
+      {
+        "name": "丢包率",
+        "value": 25
+      },
+      {
+        "name": "带宽不足",
+        "value": 20
+      },
+      {
+        "name": "路由跳数",
+        "value": 15
+      },
+      {
+        "name": "DNS解析",
+        "value": 5
+      }
+    ],
+    "penaltyColors": [
+      "#FF6384",
+      "#36A2EB",
+      "#FFCE56",
+      "#4BC0C0",
+      "#9966FF"
+    ],
+    "userDistTitle": "用户 CEI 分布",
+    "userDistData": [
+      {
+        "range": "0-20",
+        "userCount": 12
+      },
+      {
+        "range": "21-40",
+        "userCount": 45
+      },
+      {
+        "range": "41-60",
+        "userCount": 120
+      },
+      {
+        "range": "61-80",
+        "userCount": 350
+      },
+      {
+        "range": "81-100",
+        "userCount": 856
+      }
+    ],
+    "topReasonsTitle": "Top 5 扣分原因",
+    "topReasonsData": [
+      {
+        "reasonName": "光衰过大",
+        "penaltyScore": 18.5
+      },
+      {
+        "reasonName": "高峰期拥塞",
+        "penaltyScore": 15.2
+      },
+      {
+        "reasonName": "OLT负载高",
+        "penaltyScore": 12.8
+      },
+      {
+        "reasonName": "跨域访问",
+        "penaltyScore": 8.4
+      },
+      {
+        "reasonName": "终端老旧",
+        "penaltyScore": 5.6
+      }
+    ],
+    "activeDataTab": "远程优化",
+    "searchAccountValue": "",
+    "selectedPolicy": "",
+    "policyOptions": [
+      {
+        "label": "优化策略 A",
+        "value": "strategy-a"
+      },
+      {
+        "label": "优化策略 B",
+        "value": "strategy-b"
+      },
+      {
+        "label": "优化策略 C",
+        "value": "strategy-c"
+      }
+    ],
+    "tableItems": [
+      {
+        "id": "1",
+        "accountId": "pppoe_8839201",
+        "emailLink": "zhangwei@isp.com",
+        "ceiScore": 92,
+        "bandwidth": "1000M",
+        "statusTag": "已优化",
+        "statusColor": "success",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "2",
+        "accountId": "pppoe_6645123",
+        "emailLink": "lisi@corp.com",
+        "ceiScore": 45,
+        "bandwidth": "100M",
+        "statusTag": "待优化",
+        "statusColor": "error",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "3",
+        "accountId": "pppoe_1124567",
+        "emailLink": "wangwu@net.com",
+        "ceiScore": 78,
+        "bandwidth": "500M",
+        "statusTag": "优化中",
+        "statusColor": "warning",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "4",
+        "accountId": "pppoe_9982345",
+        "emailLink": "zhaoming@isp.com",
+        "ceiScore": 85,
+        "bandwidth": "200M",
+        "statusTag": "已优化",
+        "statusColor": "success",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "5",
+        "accountId": "pppoe_4325678",
+        "emailLink": "sunlei@isp.com",
+        "ceiScore": 60,
+        "bandwidth": "50M",
+        "statusTag": "待优化",
+        "statusColor": "error",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "6",
+        "accountId": "pppoe_8765432",
+        "emailLink": "zhouyan@corp.com",
+        "ceiScore": 88,
+        "bandwidth": "1000M",
+        "statusTag": "已优化",
+        "statusColor": "success",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "7",
+        "accountId": "pppoe_5567890",
+        "emailLink": "wuqiang@net.com",
+        "ceiScore": 55,
+        "bandwidth": "100M",
+        "statusTag": "优化中",
+        "statusColor": "warning",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "8",
+        "accountId": "pppoe_2234567",
+        "emailLink": "chenjie@isp.com",
+        "ceiScore": 95,
+        "bandwidth": "1000M",
+        "statusTag": "已优化",
+        "statusColor": "success",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "9",
+        "accountId": "pppoe_8899012",
+        "emailLink": "yanghao@isp.com",
+        "ceiScore": 42,
+        "bandwidth": "50M",
+        "statusTag": "待优化",
+        "statusColor": "error",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "10",
+        "accountId": "pppoe_3456789",
+        "emailLink": "huangxin@corp.com",
+        "ceiScore": 73,
+        "bandwidth": "200M",
+        "statusTag": "优化中",
+        "statusColor": "warning",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      },
+      {
+        "id": "11",
+        "accountId": "pppoe_9012345",
+        "emailLink": "xurui@net.com",
+        "ceiScore": 82,
+        "bandwidth": "500M",
+        "statusTag": "已优化",
+        "statusColor": "success",
+        "viewDetailIcon": "eye",
+        "editIcon": "pencil"
+      }
+    ]
+  },
+  "rootId": "rootContainer",
+  "elements": [
+    {
+      "id": "rootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "navBar",
+        "mainContent"
+      ]
+    },
+    {
+      "id": "navBar",
+      "component": "div",
+      "props": {
+        "className": "sticky top-0 z-50 bg-surface-container-highest shadow-sm flex items-center justify-between px-inset h-16"
+      },
+      "children": [
+        "navLeft",
+        "navCenter",
+        "navRight"
+      ]
+    },
+    {
+      "id": "navLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "navLogoIcon",
+        "navTitle"
+      ]
+    },
+    {
+      "id": "navLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "network",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "navTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/systemTitle"
+        }
+      }
+    },
+    {
+      "id": "navCenter",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "navMenuContainer"
+      ]
+    },
+    {
+      "id": "navMenuContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": {
+        "path": "/navMenuItems",
+        "componentId": "navMenuItem"
+      }
+    },
+    {
+      "id": "navMenuItem",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant hover:text-primary cursor-pointer px-4 py-2 rounded-md transition-colors",
+        "value": {
+          "path": "label"
+        }
+      }
+    },
+    {
+      "id": "navRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 shrink-0"
+      },
+      "children": [
+        "navSearchInput",
+        "navDivider1",
+        "navBellIcon",
+        "navSettingsIcon",
+        "navDivider2",
+        "navAdminBlock"
+      ]
+    },
+    {
+      "id": "navSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/navSearchValue"
+        },
+        "placeholder": {
+          "path": "/navSearchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-64"
+      }
+    },
+    {
+      "id": "navDivider1",
+      "component": "div",
+      "props": {
+        "className": "h-6 w-px bg-surface-variant"
+      }
+    },
+    {
+      "id": "navBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+      }
+    },
+    {
+      "id": "navSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "settings",
+        "shape": "outline",
+        "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+      }
+    },
+    {
+      "id": "navDivider2",
+      "component": "div",
+      "props": {
+        "className": "h-6 w-px bg-surface-variant"
+      }
+    },
+    {
+      "id": "navAdminBlock",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "navAdminAvatar",
+        "navAdminName"
+      ]
+    },
+    {
+      "id": "navAdminAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/adminAvatarImage"
+        },
+        "className": "w-8 h-8 rounded-full object-cover",
+        "alt": "Admin Avatar"
+      }
+    },
+    {
+      "id": "navAdminName",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-medium text-on-surface",
+        "value": {
+          "path": "/adminName"
+        }
+      }
+    },
+    {
+      "id": "mainContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-inset flex flex-col gap-gutter"
+      },
+      "children": [
+        "layer1Container",
+        "layer2Container",
+        "layer3Container"
+      ]
+    },
+    {
+      "id": "layer1Container",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-3 gap-gutter"
+      },
+      "children": [
+        "ceiGaugeCard",
+        "ceiTrendCard",
+        "penaltyPieCard"
+      ]
+    },
+    {
+      "id": "ceiGaugeCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-inset flex flex-col"
+      },
+      "children": [
+        "ceiGaugeHeader",
+        "ceiGaugeChart",
+        "ceiGaugeMetrics"
+      ]
+    },
+    {
+      "id": "ceiGaugeHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "ceiGaugeTitle"
+      ]
+    },
+    {
+      "id": "ceiGaugeTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": {
+          "path": "/ceiCardTitle"
+        }
+      }
+    },
+    {
+      "id": "ceiGaugeChart",
+      "component": "GaugeChart",
+      "props": {
+        "option": {
+          "min": 0,
+          "max": 100,
+          "data": [
+            {
+              "value": 85.4,
+              "name": "CEI"
+            }
+          ],
+          "splitColor": [
+            [
+              0.3,
+              "#E02128"
+            ],
+            [
+              0.6,
+              "#F4840C"
+            ],
+            [
+              0.8,
+              "#0067D1"
+            ],
+            [
+              1,
+              "#09AA71"
+            ]
+          ]
+        },
+        "className": "h-52 w-full"
+      }
+    },
+    {
+      "id": "ceiGaugeMetrics",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mt-2 pt-3 border-t border-divider"
+      },
+      "children": [
+        "ceiGaugeTargetBlock",
+        "ceiGaugeTrendBlock"
+      ]
+    },
+    {
+      "id": "ceiGaugeTargetBlock",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "ceiGaugeTargetLabel",
+        "ceiGaugeTargetValue"
+      ]
+    },
+    {
+      "id": "ceiGaugeTargetLabel",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": "目标分数"
+      }
+    },
+    {
+      "id": "ceiGaugeTargetValue",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": {
+          "path": "/ceiTargetScore"
+        }
+      }
+    },
+    {
+      "id": "ceiGaugeTrendBlock",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "ceiGaugeTrendIcon",
+        "ceiGaugeTrendValue",
+        "ceiGaugeTrendDesc"
+      ]
+    },
+    {
+      "id": "ceiGaugeTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "color": "success",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "ceiGaugeTrendValue",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-success",
+        "value": {
+          "path": "/ceiChangePercentage"
+        }
+      }
+    },
+    {
+      "id": "ceiGaugeTrendDesc",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": {
+          "path": "/ceiCompareDesc"
+        }
+      }
+    },
+    {
+      "id": "ceiTrendCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-inset flex flex-col"
+      },
+      "children": [
+        "ceiTrendHeader",
+        "ceiTrendChart"
+      ]
+    },
+    {
+      "id": "ceiTrendHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "ceiTrendIcon",
+        "ceiTrendTitle"
+      ]
+    },
+    {
+      "id": "ceiTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": "activity",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "ceiTrendTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": {
+          "path": "/trendCardTitle"
+        }
+      }
+    },
+    {
+      "id": "ceiTrendChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/trendData"
+          },
+          "xAxis": {
+            "data": "date"
+          },
+          "yAxisTitle": "CEI 分数",
+          "area": true,
+          "smooth": true,
+          "color": [
+            "#2070F3"
+          ]
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "penaltyPieCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-inset flex flex-col"
+      },
+      "children": [
+        "penaltyPieHeader",
+        "penaltyPieChart"
+      ]
+    },
+    {
+      "id": "penaltyPieHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "penaltyPieIcon",
+        "penaltyPieTitle"
+      ]
+    },
+    {
+      "id": "penaltyPieIcon",
+      "component": "Icon",
+      "props": {
+        "name": "pie-chart",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "penaltyPieTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": {
+          "path": "/penaltyCardTitle"
+        }
+      }
+    },
+    {
+      "id": "penaltyPieChart",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "type": "circle",
+          "data": {
+            "path": "/penaltyData"
+          },
+          "color": {
+            "path": "/penaltyColors"
+          }
+        },
+        "className": "h-64 w-full"
+      }
+    },
+    {
+      "id": "layer2Container",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-gutter"
+      },
+      "children": [
+        "userDistCard",
+        "topReasonsCard"
+      ]
+    },
+    {
+      "id": "userDistCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-inset flex flex-col"
+      },
+      "children": [
+        "userDistHeader",
+        "userDistChart"
+      ]
+    },
+    {
+      "id": "userDistHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "userDistIcon",
+        "userDistTitle"
+      ]
+    },
+    {
+      "id": "userDistIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bar-chart-3",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "userDistTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": {
+          "path": "/userDistTitle"
+        }
+      }
+    },
+    {
+      "id": "userDistChart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/userDistData"
+          },
+          "xAxis": {
+            "data": "range"
+          },
+          "yAxisTitle": "用户数",
+          "color": [
+            "#2070F3"
+          ]
+        },
+        "className": "h-72 w-full"
+      }
+    },
+    {
+      "id": "topReasonsCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-inset flex flex-col"
+      },
+      "children": [
+        "topReasonsHeader",
+        "topReasonsChart"
+      ]
+    },
+    {
+      "id": "topReasonsHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mb-4"
+      },
+      "children": [
+        "topReasonsIcon",
+        "topReasonsTitle"
+      ]
+    },
+    {
+      "id": "topReasonsIcon",
+      "component": "Icon",
+      "props": {
+        "name": "alert-circle",
+        "color": "warning",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "topReasonsTitle",
+      "component": "span",
+      "props": {
+        "className": "text-md font-semibold text-on-surface",
+        "value": {
+          "path": "/topReasonsTitle"
+        }
+      }
+    },
+    {
+      "id": "topReasonsChart",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/topReasonsData"
+          },
+          "xAxis": {
+            "data": "reasonName"
+          },
+          "yAxisTitle": "扣分分值",
+          "direction": "horizontal",
+          "color": [
+            "#715AFB"
+          ]
+        },
+        "className": "h-72 w-full"
+      }
+    },
+    {
+      "id": "layer3Container",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "dataMgmtCard"
+      ]
+    },
+    {
+      "id": "dataMgmtCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm overflow-hidden"
+      },
+      "children": [
+        "dataMgmtHeader",
+        "pppoeTable"
+      ]
+    },
+    {
+      "id": "dataMgmtHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-inset py-3 border-b border-divider"
+      },
+      "children": [
+        "dataMgmtTabGroup",
+        "dataMgmtToolbar"
+      ]
+    },
+    {
+      "id": "dataMgmtTabGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "tabBtnLocal",
+        "tabBtnRemote",
+        "tabBtnHistory",
+        "tabBtnBlacklist"
+      ]
+    },
+    {
+      "id": "tabBtnLocal",
+      "component": "Button",
+      "props": {
+        "value": "本地优化",
+        "size": "small"
+      }
+    },
+    {
+      "id": "tabBtnRemote",
+      "component": "Button",
+      "props": {
+        "value": "远程优化",
+        "color": "primary",
+        "size": "small"
+      }
+    },
+    {
+      "id": "tabBtnHistory",
+      "component": "Button",
+      "props": {
+        "value": "历史记录",
+        "size": "small"
+      }
+    },
+    {
+      "id": "tabBtnBlacklist",
+      "component": "Button",
+      "props": {
+        "value": "黑名单",
+        "size": "small"
+      }
+    },
+    {
+      "id": "dataMgmtToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "toolbarSearch",
+        "toolbarPolicy",
+        "toolbarExportBtn",
+        "toolbarBatchBtn"
+      ]
+    },
+    {
+      "id": "toolbarSearch",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/searchAccountValue"
+        },
+        "placeholder": "搜索 PPPoE 账号...",
+        "showSearch": true,
+        "options": [
+          {
+            "label": "pppoe_8839201",
+            "value": "pppoe_8839201"
+          },
+          {
+            "label": "pppoe_6645123",
+            "value": "pppoe_6645123"
+          },
+          {
+            "label": "pppoe_1124567",
+            "value": "pppoe_1124567"
+          },
+          {
+            "label": "pppoe_9982345",
+            "value": "pppoe_9982345"
+          },
+          {
+            "label": "pppoe_4325678",
+            "value": "pppoe_4325678"
+          },
+          {
+            "label": "pppoe_8765432",
+            "value": "pppoe_8765432"
+          },
+          {
+            "label": "pppoe_5567890",
+            "value": "pppoe_5567890"
+          },
+          {
+            "label": "pppoe_2234567",
+            "value": "pppoe_2234567"
+          },
+          {
+            "label": "pppoe_8899012",
+            "value": "pppoe_8899012"
+          },
+          {
+            "label": "pppoe_3456789",
+            "value": "pppoe_3456789"
+          },
+          {
+            "label": "pppoe_9012345",
+            "value": "pppoe_9012345"
+          }
+        ],
+        "className": "w-48"
+      }
+    },
+    {
+      "id": "toolbarPolicy",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedPolicy"
+        },
+        "placeholder": "策略配置",
+        "options": {
+          "path": "/policyOptions"
+        },
+        "className": "w-40"
+      }
+    },
+    {
+      "id": "toolbarExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "icon": "download",
+        "iconPlacement": "start",
+        "size": "small"
+      }
+    },
+    {
+      "id": "toolbarBatchBtn",
+      "component": "Button",
+      "props": {
+        "value": "批量优化",
+        "icon": "cpu",
+        "iconPlacement": "start",
+        "color": "primary",
+        "size": "small"
+      }
+    },
+    {
+      "id": "pppoeTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableItems"
+        },
+        "columns": [
+          {
+            "title": "PPPoE 账号",
+            "dataIndex": "accountId"
+          },
+          {
+            "title": "关联邮箱",
+            "dataIndex": "emailLink"
+          },
+          {
+            "title": "CEI 分数",
+            "dataIndex": "ceiScore",
+            "sort": true,
+            "filters": [
+              {
+                "text": "优秀 (≥80)",
+                "value": "excellent"
+              },
+              {
+                "text": "良好 (60-79)",
+                "value": "good"
+              },
+              {
+                "text": "较差 (<60)",
+                "value": "poor"
+              }
+            ]
+          },
+          {
+            "title": "下行带宽",
+            "dataIndex": "bandwidth"
+          },
+          {
+            "title": "优化状态",
+            "dataIndex": "statusTag"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 120
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/tableItems",
+        "componentId": "pppoeRow"
+      }
+    },
+    {
+      "id": "pppoeRow",
+      "component": "TableRow",
+      "children": [
+        "accountIdCell",
+        "emailCell",
+        "scoreCell",
+        "bandwidthCell",
+        "statusCell",
+        "actionsCell"
+      ]
+    },
+    {
+      "id": "accountIdCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accountId"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "emailCell",
+      "component": "a",
+      "props": {
+        "href": {
+          "path": "emailLink"
+        },
+        "value": {
+          "path": "emailLink"
+        },
+        "className": "text-sm text-primary hover:underline cursor-pointer"
+      }
+    },
+    {
+      "id": "scoreCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ceiScore"
+        },
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "bandwidthCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "bandwidth"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "statusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusTag"
+        },
+        "color": {
+          "path": "statusColor"
+        }
+      }
+    },
+    {
+      "id": "actionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "viewDetailBtn",
+        "editBtn"
+      ]
+    },
+    {
+      "id": "viewDetailBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "viewDetailIcon"
+        },
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "editBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "editIcon"
+        },
+        "size": "small",
+        "shape": "circle"
+      }
+    }
+  ]
+}

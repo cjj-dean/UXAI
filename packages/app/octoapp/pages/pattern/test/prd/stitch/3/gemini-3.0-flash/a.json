@@ -1,0 +1,751 @@
+{
+    "state": {
+        "activeMenuKey": "users",
+        "navItems": [
+            {
+                "key": "dashboard",
+                "label": "Dashboard",
+                "icon": "layout-dashboard"
+            },
+            {
+                "key": "users",
+                "label": "Users",
+                "icon": "users"
+            },
+            {
+                "key": "roles",
+                "label": "Roles & Permissions",
+                "icon": "shield-check"
+            },
+            {
+                "key": "logs",
+                "label": "Audit Logs",
+                "icon": "file-text"
+            },
+            {
+                "key": "settings",
+                "label": "Settings",
+                "icon": "settings"
+            }
+        ],
+        "currentUser": {
+            "userName": "Admin Manager",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "pageTitle": "User Directory",
+        "searchVal": "",
+        "roleFilter": "All Roles",
+        "deptFilter": "All Departments",
+        "statusFilter": "All Status",
+        "userList": [
+            {
+                "userId": "U001",
+                "userName": "Alexander Wright",
+                "userEmail": "a.wright@securitygate.io",
+                "roleName": "Super Admin",
+                "department": "Security Operations",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-24 09:15:22"
+            },
+            {
+                "userId": "U002",
+                "userName": "Sarah Jenkins",
+                "userEmail": "s.jenkins@securitygate.io",
+                "roleName": "Security Analyst",
+                "department": "Engineering",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-23 14:45:10"
+            },
+            {
+                "userId": "U003",
+                "userName": "Michael Chen",
+                "userEmail": "m.chen@securitygate.io",
+                "roleName": "Standard User",
+                "department": "Finance",
+                "status": "INACTIVE",
+                "statusColor": "error",
+                "lastLoginTime": "2023-09-12 11:20:05"
+            },
+            {
+                "userId": "U004",
+                "userName": "Emily Rodriguez",
+                "userEmail": "e.rodriguez@securitygate.io",
+                "roleName": "Guest",
+                "department": "Human Resources",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-24 10:02:45"
+            },
+            {
+                "userId": "U005",
+                "userName": "David Smith",
+                "userEmail": "d.smith@securitygate.io",
+                "roleName": "Standard User",
+                "department": "Engineering",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-22 16:30:00"
+            },
+            {
+                "userId": "U006",
+                "userName": "Linda Wu",
+                "userEmail": "l.wu@securitygate.io",
+                "roleName": "Security Analyst",
+                "department": "Security Operations",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-24 08:00:12"
+            },
+            {
+                "userId": "U007",
+                "userName": "James Wilson",
+                "userEmail": "j.wilson@securitygate.io",
+                "roleName": "Standard User",
+                "department": "Finance",
+                "status": "PENDING",
+                "statusColor": "warning",
+                "lastLoginTime": "N/A"
+            },
+            {
+                "userId": "U008",
+                "userName": "Sophia Brown",
+                "userEmail": "s.brown@securitygate.io",
+                "roleName": "Standard User",
+                "department": "Engineering",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-21 13:12:44"
+            },
+            {
+                "userId": "U009",
+                "userName": "Robert Taylor",
+                "userEmail": "r.taylor@securitygate.io",
+                "roleName": "Security Analyst",
+                "department": "Security Operations",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-24 10:45:33"
+            },
+            {
+                "userId": "U010",
+                "userName": "Olivia Garcia",
+                "userEmail": "o.garcia@securitygate.io",
+                "roleName": "Standard User",
+                "department": "Human Resources",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLoginTime": "2023-10-20 09:55:21"
+            }
+        ],
+        "copyright": "© 2023 Security Gate Inc. All rights reserved.",
+        "policyLinks": [
+            {
+                "label": "Privacy Policy",
+                "url": "/privacy"
+            },
+            {
+                "label": "Terms of Service",
+                "url": "/terms"
+            },
+            {
+                "label": "Cookie Settings",
+                "url": "/cookies"
+            },
+            {
+                "label": "Support",
+                "url": "/support"
+            }
+        ]
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen bg-surface-container-lowest flex flex-col"
+            },
+            "children": [
+                "globalHeader",
+                "mainContent",
+                "systemFooter"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-gutter sticky top-0 z-50"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": [
+                "brandLogo",
+                "navMenu"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-half",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Security Gate",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerSearch",
+                "notificationBtn",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search...",
+                "prefix": "search",
+                "className": "w-64",
+                "size": "small"
+            }
+        },
+        {
+            "id": "notificationBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userAvatar",
+                "userNameDisplay"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userNameDisplay",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-gutter max-w-7xl mx-auto w-full flex flex-col gap-gutter"
+            },
+            "children": [
+                "pageHeader",
+                "filterConsole",
+                "tableContainer"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "pageTitleBox",
+                "addNewUserBtn"
+            ]
+        },
+        {
+            "id": "pageTitleBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "pageTitleText",
+                "pageBreadcrumb"
+            ]
+        },
+        {
+            "id": "pageTitleText",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pageBreadcrumb",
+            "component": "span",
+            "props": {
+                "value": "Management / Users",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "addNewUserBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add New User",
+                "color": "primary",
+                "icon": "plus",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "filterConsole",
+            "component": "div",
+            "props": {
+                "className": "p-inset bg-surface-container-highest rounded-container shadow-sm flex flex-wrap items-center gap-4"
+            },
+            "children": [
+                "searchFilter",
+                "roleSelect",
+                "deptSelect",
+                "statusSelect",
+                "clearFiltersBtn"
+            ]
+        },
+        {
+            "id": "searchFilter",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "Search by name or email...",
+                "prefix": "search",
+                "className": "w-72"
+            }
+        },
+        {
+            "id": "roleSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/roleFilter"
+                },
+                "options": [
+                    {
+                        "label": "All Roles",
+                        "value": "All Roles"
+                    },
+                    {
+                        "label": "Super Admin",
+                        "value": "Super Admin"
+                    },
+                    {
+                        "label": "Security Analyst",
+                        "value": "Security Analyst"
+                    },
+                    {
+                        "label": "Standard User",
+                        "value": "Standard User"
+                    },
+                    {
+                        "label": "Guest",
+                        "value": "Guest"
+                    }
+                ],
+                "className": "w-44"
+            }
+        },
+        {
+            "id": "deptSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/deptFilter"
+                },
+                "options": [
+                    {
+                        "label": "All Departments",
+                        "value": "All Departments"
+                    },
+                    {
+                        "label": "Engineering",
+                        "value": "Engineering"
+                    },
+                    {
+                        "label": "Security Operations",
+                        "value": "Security Operations"
+                    },
+                    {
+                        "label": "Human Resources",
+                        "value": "Human Resources"
+                    },
+                    {
+                        "label": "Finance",
+                        "value": "Finance"
+                    }
+                ],
+                "className": "w-44"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/statusFilter"
+                },
+                "options": [
+                    {
+                        "label": "All Status",
+                        "value": "All Status"
+                    },
+                    {
+                        "label": "ACTIVE",
+                        "value": "ACTIVE"
+                    },
+                    {
+                        "label": "INACTIVE",
+                        "value": "INACTIVE"
+                    },
+                    {
+                        "label": "PENDING",
+                        "value": "PENDING"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "clearFiltersBtn",
+            "component": "Button",
+            "props": {
+                "value": "Clear Filters",
+                "icon": "rotate-ccw",
+                "iconPlacement": "start",
+                "className": "ml-auto"
+            }
+        },
+        {
+            "id": "tableContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-sm overflow-hidden p-4"
+            },
+            "children": [
+                "userTable"
+            ]
+        },
+        {
+            "id": "userTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "userId",
+                "dataSource": {
+                    "path": "/userList"
+                },
+                "columns": [
+                    {
+                        "title": "Name",
+                        "dataIndex": "userName"
+                    },
+                    {
+                        "title": "Role",
+                        "dataIndex": "roleName"
+                    },
+                    {
+                        "title": "Department",
+                        "dataIndex": "department"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Last Login",
+                        "dataIndex": "lastLoginTime"
+                    },
+                    {
+                        "title": "Actions",
+                        "dataIndex": "actions",
+                        "width": 100,
+                        "align": "right"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/userList",
+                "componentId": "userTableRow"
+            }
+        },
+        {
+            "id": "userTableRow",
+            "component": "TableRow",
+            "children": [
+                "tableNameCell",
+                "tableRoleCell",
+                "tableDeptCell",
+                "tableStatusCell",
+                "tableLoginCell",
+                "tableActionCell"
+            ]
+        },
+        {
+            "id": "tableNameCell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userNameText",
+                "userEmailText"
+            ]
+        },
+        {
+            "id": "userNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "userName"
+                },
+                "className": "text-md font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userEmailText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "userEmail"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tableRoleCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "roleName"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "tableDeptCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "department"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "tableStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "tableLoginCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "lastLoginTime"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tableActionCell",
+            "component": "Dropdown",
+            "props": {
+                "menu": [
+                    {
+                        "label": "Edit",
+                        "key": "edit",
+                        "icon": "pencil"
+                    },
+                    {
+                        "label": "Permissions",
+                        "key": "perm",
+                        "icon": "lock"
+                    },
+                    {
+                        "label": "Delete",
+                        "key": "del",
+                        "icon": "trash-2"
+                    }
+                ]
+            },
+            "children": [
+                "actionTrigger"
+            ]
+        },
+        {
+            "id": "actionTrigger",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small"
+            }
+        },
+        {
+            "id": "systemFooter",
+            "component": "footer",
+            "props": {
+                "className": "py-inset px-gutter bg-surface-container-lowest border-t border-divider mt-auto"
+            },
+            "children": [
+                "footerContent"
+            ]
+        },
+        {
+            "id": "footerContent",
+            "component": "div",
+            "props": {
+                "className": "max-w-7xl mx-auto flex justify-between items-center"
+            },
+            "children": [
+                "copyrightText",
+                "footerLinks"
+            ]
+        },
+        {
+            "id": "copyrightText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/copyright"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "footerLinks",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": {
+                "path": "/policyLinks",
+                "componentId": "footerLinkItem"
+            }
+        },
+        {
+            "id": "footerLinkItem",
+            "component": "a",
+            "props": {
+                "href": {
+                    "path": "url"
+                },
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant hover:text-primary transition-colors"
+            }
+        }
+    ]
+}

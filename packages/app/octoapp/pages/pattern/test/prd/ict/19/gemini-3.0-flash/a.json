@@ -1,0 +1,1013 @@
+{
+    "state": {
+        "brand": {
+            "name": "iMaster NCE",
+            "icon": "network"
+        },
+        "navItems": [
+            {
+                "id": "res",
+                "label": "资源管理",
+                "isActive": false
+            },
+            {
+                "id": "mon",
+                "label": "网络监控",
+                "isActive": true
+            },
+            {
+                "id": "diag",
+                "label": "故障诊断",
+                "isActive": false
+            },
+            {
+                "id": "pol",
+                "label": "策略配置",
+                "isActive": false
+            },
+            {
+                "id": "rep",
+                "label": "系统报表",
+                "isActive": false
+            }
+        ],
+        "user": {
+            "name": "Admin_Zhang",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "role": "高级运维专家"
+        },
+        "macroMetrics": [
+            {
+                "title": "全网CEI平均分",
+                "score": 88.5,
+                "trend": "+2.1%",
+                "icon": "trending-up",
+                "desc": "基于全网活跃用户的实时加权计算"
+            },
+            {
+                "title": "CEI 24小时趋势",
+                "type": "chart"
+            },
+            {
+                "title": "扣分维度分布",
+                "type": "pie"
+            }
+        ],
+        "trendData": [
+            {
+                "time": "00:00",
+                "score": 85
+            },
+            {
+                "time": "04:00",
+                "score": 82
+            },
+            {
+                "time": "08:00",
+                "score": 78
+            },
+            {
+                "time": "12:00",
+                "score": 89
+            },
+            {
+                "time": "16:00",
+                "score": 91
+            },
+            {
+                "time": "20:00",
+                "score": 87
+            },
+            {
+                "time": "23:59",
+                "score": 88
+            }
+        ],
+        "distData": [
+            {
+                "name": "时延抖动",
+                "value": 45
+            },
+            {
+                "name": "丢包率",
+                "value": 30
+            },
+            {
+                "name": "认证超时",
+                "value": 15
+            },
+            {
+                "name": "带宽受限",
+                "value": 10
+            }
+        ],
+        "userDist": [
+            {
+                "range": "90-100 (优)",
+                "count": 12400
+            },
+            {
+                "range": "80-90 (良)",
+                "count": 8500
+            },
+            {
+                "range": "60-80 (中)",
+                "count": 2100
+            },
+            {
+                "range": "0-60 (差)",
+                "count": 450
+            }
+        ],
+        "rootCauses": [
+            {
+                "reason": "Wi-Fi干扰严重",
+                "count": 1280
+            },
+            {
+                "reason": "光衰减过大",
+                "count": 850
+            },
+            {
+                "reason": "DNS解析延迟",
+                "count": 540
+            },
+            {
+                "reason": "终端协议版本过低",
+                "count": 420
+            },
+            {
+                "reason": "上行带宽打满",
+                "count": 240
+            }
+        ],
+        "activeTab": "remote_opt",
+        "tabConfig": [
+            {
+                "key": "remote_opt",
+                "label": "远程优化列表(450)"
+            },
+            {
+                "key": "all_users",
+                "label": "全量用户明细(23450)"
+            },
+            {
+                "key": "high_risk",
+                "label": "高风险预警(89)"
+            }
+        ],
+        "tableData": [
+            {
+                "id": "1",
+                "pppoe": "HN_USER_001",
+                "score": 58,
+                "level": "差",
+                "speed": "12Mbps",
+                "latency": 120,
+                "loss": "5.2%",
+                "olt": "OLT-GZ-01",
+                "duration": "12h 30m",
+                "status": "error"
+            },
+            {
+                "id": "2",
+                "pppoe": "HN_USER_002",
+                "score": 92,
+                "level": "优",
+                "speed": "980Mbps",
+                "latency": 12,
+                "loss": "0.01%",
+                "olt": "OLT-GZ-04",
+                "duration": "45h 12m",
+                "status": "success"
+            },
+            {
+                "id": "3",
+                "pppoe": "HN_USER_003",
+                "score": 75,
+                "level": "中",
+                "speed": "150Mbps",
+                "latency": 45,
+                "loss": "1.2%",
+                "olt": "OLT-SZ-02",
+                "duration": "08h 45m",
+                "status": "warning"
+            },
+            {
+                "id": "4",
+                "pppoe": "HN_USER_004",
+                "score": 42,
+                "level": "差",
+                "speed": "5Mbps",
+                "latency": 250,
+                "loss": "12.5%",
+                "olt": "OLT-GZ-01",
+                "duration": "02h 15m",
+                "status": "error"
+            },
+            {
+                "id": "5",
+                "pppoe": "HN_USER_005",
+                "score": 88,
+                "level": "良",
+                "speed": "450Mbps",
+                "latency": 22,
+                "loss": "0.15%",
+                "olt": "OLT-FS-09",
+                "duration": "120h 05m",
+                "status": "success"
+            },
+            {
+                "id": "6",
+                "pppoe": "HN_USER_006",
+                "score": 61,
+                "level": "中",
+                "speed": "80Mbps",
+                "latency": 65,
+                "loss": "2.1%",
+                "olt": "OLT-SZ-03",
+                "duration": "15h 22m",
+                "status": "warning"
+            },
+            {
+                "id": "7",
+                "pppoe": "HN_USER_007",
+                "score": 95,
+                "level": "优",
+                "speed": "1024Mbps",
+                "latency": 8,
+                "loss": "0.00%",
+                "olt": "OLT-GZ-02",
+                "duration": "72h 40m",
+                "status": "success"
+            },
+            {
+                "id": "8",
+                "pppoe": "HN_USER_008",
+                "score": 35,
+                "level": "差",
+                "speed": "2Mbps",
+                "latency": 480,
+                "loss": "18.2%",
+                "olt": "OLT-DG-05",
+                "duration": "01h 10m",
+                "status": "error"
+            },
+            {
+                "id": "9",
+                "pppoe": "HN_USER_009",
+                "score": 82,
+                "level": "良",
+                "speed": "320Mbps",
+                "latency": 28,
+                "loss": "0.4%",
+                "olt": "OLT-ZS-01",
+                "duration": "33h 55m",
+                "status": "success"
+            },
+            {
+                "id": "10",
+                "pppoe": "HN_USER_010",
+                "score": 79,
+                "level": "中",
+                "speed": "210Mbps",
+                "latency": 35,
+                "loss": "0.8%",
+                "olt": "OLT-GZ-01",
+                "duration": "19h 18m",
+                "status": "warning"
+            }
+        ],
+        "searchVal": ""
+    },
+    "rootId": "pageContainer",
+    "elements": [
+        {
+            "id": "pageContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainContent"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm sticky top-0 z-50"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "brandIcon",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/icon"
+                },
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/brand/name"
+                }
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "span",
+            "props": {
+                "className": "text-md cursor-pointer hover:text-primary transition-colors",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerNotify",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索...",
+                "prefix": "search",
+                "size": "small",
+                "className": "w-48"
+            }
+        },
+        {
+            "id": "headerNotify",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/user/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "/user/name"
+                }
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "macroLayer",
+                "distLayer",
+                "tableLayer"
+            ]
+        },
+        {
+            "id": "macroLayer",
+            "component": "section",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "scoreCard",
+                "trendCard",
+                "pieCard"
+            ]
+        },
+        {
+            "id": "scoreCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col justify-between h-48"
+            },
+            "children": [
+                "scoreHeader",
+                "scoreValue",
+                "scoreFooter"
+            ]
+        },
+        {
+            "id": "scoreHeader",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant text-sm",
+                "value": "全网CEI平均分"
+            }
+        },
+        {
+            "id": "scoreValue",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-inline"
+            },
+            "children": [
+                "scoreNum",
+                "scoreTrend"
+            ]
+        },
+        {
+            "id": "scoreNum",
+            "component": "span",
+            "props": {
+                "className": "text-5xl font-bold text-primary",
+                "value": "88.5"
+            }
+        },
+        {
+            "id": "scoreTrend",
+            "component": "div",
+            "props": {
+                "className": "flex items-center text-success text-sm"
+            },
+            "children": [
+                "trendIcon",
+                "trendText"
+            ]
+        },
+        {
+            "id": "trendIcon",
+            "component": "Icon",
+            "props": {
+                "name": "trending-up",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "trendText",
+            "component": "span",
+            "props": {
+                "value": "+2.1%"
+            }
+        },
+        {
+            "id": "scoreFooter",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "基于全网活跃用户的实时加权计算"
+            }
+        },
+        {
+            "id": "trendCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card h-48"
+            },
+            "children": [
+                "trendTitle",
+                "trendChart"
+            ]
+        },
+        {
+            "id": "trendTitle",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant text-sm mb-2 block",
+                "value": "CEI 24小时趋势"
+            }
+        },
+        {
+            "id": "trendChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "area": true,
+                    "smooth": true,
+                    "data": {
+                        "path": "/trendData"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "Score",
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-28 w-full"
+            }
+        },
+        {
+            "id": "pieCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card h-48"
+            },
+            "children": [
+                "pieTitle",
+                "pieChartComp"
+            ]
+        },
+        {
+            "id": "pieTitle",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant text-sm mb-2 block",
+                "value": "扣分维度分布"
+            }
+        },
+        {
+            "id": "pieChartComp",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "data": {
+                        "path": "/distData"
+                    },
+                    "title": {
+                        "text": "100%",
+                        "subtext": "扣分权重"
+                    }
+                },
+                "className": "h-28 w-full"
+            }
+        },
+        {
+            "id": "distLayer",
+            "component": "section",
+            "props": {
+                "className": "grid grid-cols-10 gap-gutter"
+            },
+            "children": [
+                "userDistCard",
+                "rootCauseCard"
+            ]
+        },
+        {
+            "id": "userDistCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 bg-surface-container-highest p-inset rounded-container shadow-card h-64"
+            },
+            "children": [
+                "userDistTitle",
+                "userDistChart"
+            ]
+        },
+        {
+            "id": "userDistTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold mb-4 block",
+                "value": "用户CEI区间分布"
+            }
+        },
+        {
+            "id": "userDistChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/userDist"
+                    },
+                    "xAxis": {
+                        "data": "range"
+                    },
+                    "yAxisTitle": "用户数",
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-44 w-full"
+            }
+        },
+        {
+            "id": "rootCauseCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-6 bg-surface-container-highest p-inset rounded-container shadow-card h-64"
+            },
+            "children": [
+                "causeTitle",
+                "causeChart"
+            ]
+        },
+        {
+            "id": "causeTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-bold mb-4 block",
+                "value": "Top 5 扣分原因分析"
+            }
+        },
+        {
+            "id": "causeChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "direction": "horizontal",
+                    "data": {
+                        "path": "/rootCauses"
+                    },
+                    "xAxis": {
+                        "data": "reason"
+                    },
+                    "yAxisTitle": "影响数",
+                    "color": [
+                        "#F4840C"
+                    ]
+                },
+                "className": "h-44 w-full"
+            }
+        },
+        {
+            "id": "tableLayer",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-gutter"
+            },
+            "children": [
+                "tableTabs",
+                "tableToolbar",
+                "mainTable"
+            ]
+        },
+        {
+            "id": "tableTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "size": "large"
+            },
+            "children": {
+                "path": "/tabConfig",
+                "componentId": "tableTabItem"
+            }
+        },
+        {
+            "id": "tableTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "tableToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between my-stack"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "tableSearch",
+                "filterExp",
+                "filterArea",
+                "filterType"
+            ]
+        },
+        {
+            "id": "tableSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索 PPPoe账号 / 序列号...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "filterExp",
+            "component": "Select",
+            "props": {
+                "value": "全部",
+                "options": [
+                    {
+                        "label": "体验等级",
+                        "value": "all"
+                    },
+                    {
+                        "label": "优",
+                        "value": "1"
+                    },
+                    {
+                        "label": "良",
+                        "value": "2"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "filterArea",
+            "component": "Select",
+            "props": {
+                "value": "全网",
+                "options": [
+                    {
+                        "label": "所属区域",
+                        "value": "all"
+                    },
+                    {
+                        "label": "广州",
+                        "value": "gz"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "filterType",
+            "component": "Select",
+            "props": {
+                "value": "全部",
+                "options": [
+                    {
+                        "label": "接入类型",
+                        "value": "all"
+                    },
+                    {
+                        "label": "FTTH",
+                        "value": "ftth"
+                    }
+                ],
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "btnOpt",
+                "btnExport",
+                "btnConfig"
+            ]
+        },
+        {
+            "id": "btnOpt",
+            "component": "Button",
+            "props": {
+                "value": "批量优化",
+                "color": "primary",
+                "icon": "zap"
+            }
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出报表",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "btnConfig",
+            "component": "Button",
+            "props": {
+                "value": "下发配置",
+                "icon": "settings"
+            }
+        },
+        {
+            "id": "mainTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tableData"
+                },
+                "rowSelection": {
+                    "type": "checkbox"
+                },
+                "columns": [
+                    {
+                        "title": "PPPoe账号",
+                        "dataIndex": "pppoe"
+                    },
+                    {
+                        "title": "CEI分数",
+                        "dataIndex": "score",
+                        "sort": true
+                    },
+                    {
+                        "title": "体验等级",
+                        "dataIndex": "level"
+                    },
+                    {
+                        "title": "当前速率",
+                        "dataIndex": "speed"
+                    },
+                    {
+                        "title": "时延(ms)",
+                        "dataIndex": "latency"
+                    },
+                    {
+                        "title": "丢包率",
+                        "dataIndex": "loss"
+                    },
+                    {
+                        "title": "所属OLT",
+                        "dataIndex": "olt"
+                    },
+                    {
+                        "title": "在线时长",
+                        "dataIndex": "duration"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tableData",
+                "componentId": "tableRowTemplate"
+            }
+        },
+        {
+            "id": "tableRowTemplate",
+            "component": "TableRow",
+            "children": [
+                "cellPppoe",
+                "cellScore",
+                "cellLevel",
+                "cellSpeed",
+                "cellLatency",
+                "cellLoss",
+                "cellOlt",
+                "cellDuration",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellPppoe",
+            "component": "span",
+            "props": {
+                "className": "font-medium text-primary",
+                "value": {
+                    "path": "pppoe"
+                }
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": {
+                    "path": "score"
+                }
+            }
+        },
+        {
+            "id": "cellLevel",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "level"
+                },
+                "color": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "cellSpeed",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "speed"
+                }
+            }
+        },
+        {
+            "id": "cellLatency",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "latency"
+                }
+            }
+        },
+        {
+            "id": "cellLoss",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "loss"
+                }
+            }
+        },
+        {
+            "id": "cellOlt",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "olt"
+                }
+            }
+        },
+        {
+            "id": "cellDuration",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "duration"
+                }
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "Button",
+            "props": {
+                "value": "优化",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

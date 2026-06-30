@@ -1,0 +1,1161 @@
+{
+    "state": {
+        "activeKey": "tasks",
+        "menuItems": [
+            {
+                "key": "dashboard",
+                "label": "仪表盘",
+                "icon": "layout-dashboard"
+            },
+            {
+                "key": "customers",
+                "label": "客户管理",
+                "icon": "users"
+            },
+            {
+                "key": "tasks",
+                "label": "任务管理",
+                "icon": "check-square"
+            },
+            {
+                "key": "deals",
+                "label": "商机追踪",
+                "icon": "briefcase"
+            },
+            {
+                "key": "reports",
+                "label": "统计报表",
+                "icon": "bar-chart-3"
+            }
+        ],
+        "searchVal": "",
+        "searchPlaceholder": "搜索任务、文档或联系人...",
+        "navLinks": [
+            {
+                "label": "最近访问",
+                "link": "#"
+            },
+            {
+                "label": "我的收藏",
+                "link": "#"
+            },
+            {
+                "label": "帮助文档",
+                "link": "#"
+            }
+        ],
+        "currentUser": {
+            "name": "Alex Wang",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "breadcrumbs": [
+            {
+                "title": "项目管理"
+            },
+            {
+                "title": "Q4 市场推广"
+            },
+            {
+                "title": "任务详情"
+            }
+        ],
+        "taskTitle": {
+            "cn": "社交媒体营销方案设计",
+            "en": "Social Media Marketing Strategy Design"
+        },
+        "description": "本任务旨在为Nexus CRM 2.0版本制定全面的社交媒体推广计划。需要覆盖LinkedIn, Twitter及Facebook三大平台，重点突出新上线的AI自动化工作流功能。",
+        "keyPoints": [
+            "分析竞品在Q3季度的投放策略",
+            "设计5套不同风格的视觉海报模版",
+            "确定首月发布频率及KOL合作名单"
+        ],
+        "subtasks": [
+            {
+                "id": 1,
+                "title": "收集竞品素材库",
+                "isCompleted": true,
+                "deleted": true
+            },
+            {
+                "id": 2,
+                "title": "初步文案草拟",
+                "isCompleted": true,
+                "deleted": true
+            },
+            {
+                "id": 3,
+                "title": "视觉设计初稿交付",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 4,
+                "title": "多语言版本翻译校对",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 5,
+                "title": "投放渠道预算分配表",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 6,
+                "title": "KOL合同签署",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 7,
+                "title": "发布前最后压力测试",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 8,
+                "title": "制定应急公关预案",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 9,
+                "title": "内部宣讲PPT制作",
+                "isCompleted": false,
+                "deleted": false
+            },
+            {
+                "id": 10,
+                "title": "上线仪式流程确认",
+                "isCompleted": false,
+                "deleted": false
+            }
+        ],
+        "assignment": {
+            "title": "项目团队",
+            "owner": {
+                "name": "Sarah Chen",
+                "role": "负责人",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            "participants": [
+                {
+                    "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+                },
+                {
+                    "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+                },
+                {
+                    "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+                },
+                {
+                    "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+                }
+            ]
+        },
+        "schedule": {
+            "title": "进度与工时",
+            "progress": 68,
+            "startDate": "2023-11-01",
+            "endDate": "2023-11-30",
+            "metrics": [
+                {
+                    "label": "预估工时",
+                    "value": "120h",
+                    "icon": "clock"
+                },
+                {
+                    "label": "实际工时",
+                    "value": "82h",
+                    "icon": "timer"
+                }
+            ]
+        },
+        "discussions": [
+            {
+                "user": "Sarah Chen",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                "content": "视觉初稿已经上传到附件，请大家查阅。",
+                "time": "10分钟前"
+            },
+            {
+                "user": "Mike",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "content": "收到，LinkedIn部分的色调建议再亮一点。",
+                "time": "5分钟前"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarMenu"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-inline"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "nexus",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Nexus CRM",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-inline py-stack"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItemRow"
+            }
+        },
+        {
+            "id": "menuItemRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-stack rounded-action mb-1 cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-inset"
+            },
+            "children": [
+                "headerSearch",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerLinks",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerLinks",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": {
+                "path": "/navLinks",
+                "componentId": "headerNavLink"
+            }
+        },
+        {
+            "id": "headerNavLink",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant hover:text-primary cursor-pointer"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-inset overflow-y-auto"
+            },
+            "children": [
+                "taskHeader",
+                "taskBodyGrid"
+            ]
+        },
+        {
+            "id": "taskHeader",
+            "component": "div",
+            "props": {
+                "className": "mb-inset flex justify-between items-end"
+            },
+            "children": [
+                "taskHeaderLeft",
+                "taskHeaderActions"
+            ]
+        },
+        {
+            "id": "taskHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "taskBreadcrumb",
+                "taskTitleGroup"
+            ]
+        },
+        {
+            "id": "taskBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "taskTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "taskTitleCn",
+                "taskTitleEn"
+            ]
+        },
+        {
+            "id": "taskTitleCn",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/taskTitle/cn"
+                },
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "taskTitleEn",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskTitle/en"
+                },
+                "className": "text-lg text-on-surface-variant"
+            }
+        },
+        {
+            "id": "taskHeaderActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "btnEdit",
+                "btnComplete"
+            ]
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "value": "编辑任务",
+                "icon": "edit-3",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "btnComplete",
+            "component": "Button",
+            "props": {
+                "value": "标记完成",
+                "icon": "check-circle-2",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "taskBodyGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-gutter"
+            },
+            "children": [
+                "taskMainCol",
+                "taskSideCol"
+            ]
+        },
+        {
+            "id": "taskMainCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 flex flex-col gap-gutter"
+            },
+            "children": [
+                "taskDescCard",
+                "subtaskCard"
+            ]
+        },
+        {
+            "id": "taskDescCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "descTitle",
+                "descText",
+                "keyPointsList"
+            ]
+        },
+        {
+            "id": "descTitle",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-stack"
+            },
+            "children": [
+                "descIcon",
+                "descTitleText"
+            ]
+        },
+        {
+            "id": "descIcon",
+            "component": "Icon",
+            "props": {
+                "name": "file-text",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "descTitleText",
+            "component": "span",
+            "props": {
+                "value": "任务描述",
+                "className": "font-bold text-lg"
+            }
+        },
+        {
+            "id": "descText",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/description"
+                },
+                "className": "text-on-surface mb-inset leading-relaxed"
+            }
+        },
+        {
+            "id": "keyPointsList",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-inset rounded-container"
+            },
+            "children": [
+                "keyPointsTitle",
+                "keyPointsItems"
+            ]
+        },
+        {
+            "id": "keyPointsTitle",
+            "component": "span",
+            "props": {
+                "value": "核心要点",
+                "className": "text-sm font-bold text-on-surface-variant uppercase mb-stack block"
+            }
+        },
+        {
+            "id": "keyPointsItems",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": {
+                "path": "/keyPoints",
+                "componentId": "keyPointRow"
+            }
+        },
+        {
+            "id": "keyPointRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-inline"
+            },
+            "children": [
+                "keyPointIcon",
+                "keyPointLabel"
+            ]
+        },
+        {
+            "id": "keyPointIcon",
+            "component": "Icon",
+            "props": {
+                "name": "check",
+                "color": "success",
+                "className": "w-4 h-4 mt-1"
+            }
+        },
+        {
+            "id": "keyPointLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": ""
+                },
+                "className": "text-on-surface"
+            }
+        },
+        {
+            "id": "subtaskCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "subtaskHeader",
+                "subtaskList",
+                "subtaskAddBtn"
+            ]
+        },
+        {
+            "id": "subtaskHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-inset"
+            },
+            "children": [
+                "subtaskTitle",
+                "subtaskCount"
+            ]
+        },
+        {
+            "id": "subtaskTitle",
+            "component": "span",
+            "props": {
+                "value": "子任务清单",
+                "className": "font-bold text-lg"
+            }
+        },
+        {
+            "id": "subtaskCount",
+            "component": "Tag",
+            "props": {
+                "value": "2/10 已完成",
+                "color": "processing"
+            }
+        },
+        {
+            "id": "subtaskList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col border border-divider rounded-container overflow-hidden mb-inset"
+            },
+            "children": {
+                "path": "/subtasks",
+                "componentId": "subtaskItem"
+            }
+        },
+        {
+            "id": "subtaskItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-stack border-b border-divider last:border-b-0 hover:bg-surface-container-low transition-colors"
+            },
+            "children": [
+                "subtaskCheck",
+                "subtaskLabel"
+            ]
+        },
+        {
+            "id": "subtaskCheck",
+            "component": "Icon",
+            "props": {
+                "name": "square",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "subtaskLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-md flex-1"
+            }
+        },
+        {
+            "id": "subtaskAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "添加子任务",
+                "icon": "plus",
+                "className": "w-full border-dashed"
+            }
+        },
+        {
+            "id": "taskSideCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 flex flex-col gap-gutter"
+            },
+            "children": [
+                "teamCard",
+                "scheduleCard",
+                "discussionCard"
+            ]
+        },
+        {
+            "id": "teamCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "teamTitle",
+                "ownerSection",
+                "dividerTeam",
+                "participantsSection"
+            ]
+        },
+        {
+            "id": "teamTitle",
+            "component": "span",
+            "props": {
+                "value": "项目团队",
+                "className": "font-bold block mb-inset"
+            }
+        },
+        {
+            "id": "ownerSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline mb-inset"
+            },
+            "children": [
+                "ownerAvatar",
+                "ownerInfo"
+            ]
+        },
+        {
+            "id": "ownerAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/assignment/owner/avatar"
+                },
+                "className": "w-12 h-12 rounded-full"
+            }
+        },
+        {
+            "id": "ownerInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "ownerName",
+                "ownerRole"
+            ]
+        },
+        {
+            "id": "ownerName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/assignment/owner/name"
+                },
+                "className": "font-bold"
+            }
+        },
+        {
+            "id": "ownerRole",
+            "component": "Tag",
+            "props": {
+                "value": "负责人",
+                "color": "primary",
+                "size": "small",
+                "className": "w-fit mt-1"
+            }
+        },
+        {
+            "id": "dividerTeam",
+            "component": "Divider",
+            "props": {
+                "className": "my-stack"
+            }
+        },
+        {
+            "id": "participantsSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-stack"
+            },
+            "children": [
+                "participantsLabel",
+                "participantsAvatars"
+            ]
+        },
+        {
+            "id": "participantsLabel",
+            "component": "span",
+            "props": {
+                "value": "参与者",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "participantsAvatars",
+            "component": "div",
+            "props": {
+                "className": "flex -space-x-2"
+            },
+            "children": {
+                "path": "/assignment/participants",
+                "componentId": "participantImg"
+            }
+        },
+        {
+            "id": "participantImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-8 h-8 rounded-full border-2 border-surface-container-highest"
+            }
+        },
+        {
+            "id": "scheduleCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "scheduleTitle",
+                "progressSection",
+                "timeRange",
+                "metricsGrid"
+            ]
+        },
+        {
+            "id": "scheduleTitle",
+            "component": "span",
+            "props": {
+                "value": "进度与工时",
+                "className": "font-bold block mb-inset"
+            }
+        },
+        {
+            "id": "progressSection",
+            "component": "div",
+            "props": {
+                "className": "mb-inset"
+            },
+            "children": [
+                "progressLabel",
+                "progressBar"
+            ]
+        },
+        {
+            "id": "progressLabel",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm mb-1"
+            },
+            "children": [
+                "progText",
+                "progVal"
+            ]
+        },
+        {
+            "id": "progText",
+            "component": "span",
+            "props": {
+                "value": "总体进度"
+            }
+        },
+        {
+            "id": "progVal",
+            "component": "span",
+            "props": {
+                "value": "68%",
+                "className": "font-bold text-primary"
+            }
+        },
+        {
+            "id": "progressBar",
+            "component": "Progress",
+            "props": {
+                "percent": 68,
+                "showInfo": false,
+                "strokeColor": "#0067D1"
+            }
+        },
+        {
+            "id": "timeRange",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-stack rounded-md flex justify-between items-center mb-inset"
+            },
+            "children": [
+                "startNode",
+                "arrowIcon",
+                "endNode"
+            ]
+        },
+        {
+            "id": "startNode",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sLabel",
+                "sDate"
+            ]
+        },
+        {
+            "id": "sLabel",
+            "component": "span",
+            "props": {
+                "value": "开始日期",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/schedule/startDate"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "arrowIcon",
+            "component": "Icon",
+            "props": {
+                "name": "arrow-right",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "endNode",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "eLabel",
+                "eDate"
+            ]
+        },
+        {
+            "id": "eLabel",
+            "component": "span",
+            "props": {
+                "value": "截止日期",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "eDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/schedule/endDate"
+                },
+                "className": "text-sm font-medium text-error"
+            }
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-stack"
+            },
+            "children": {
+                "path": "/schedule/metrics",
+                "componentId": "metricItem"
+            }
+        },
+        {
+            "id": "metricItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col p-stack bg-surface-container-low rounded-md"
+            },
+            "children": [
+                "mHeader",
+                "mValue"
+            ]
+        },
+        {
+            "id": "mHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 mb-1"
+            },
+            "children": [
+                "mIcon",
+                "mLabel"
+            ]
+        },
+        {
+            "id": "mIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-3 h-3 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "discussionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "discussionTitle",
+                "commentList",
+                "commentInput"
+            ]
+        },
+        {
+            "id": "discussionTitle",
+            "component": "span",
+            "props": {
+                "value": "内部讨论",
+                "className": "font-bold block mb-inset"
+            }
+        },
+        {
+            "id": "commentList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inset mb-inset"
+            },
+            "children": {
+                "path": "/discussions",
+                "componentId": "commentItem"
+            }
+        },
+        {
+            "id": "commentItem",
+            "component": "div",
+            "props": {
+                "className": "flex gap-stack"
+            },
+            "children": [
+                "cAvatar",
+                "cBody"
+            ]
+        },
+        {
+            "id": "cAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-8 h-8 rounded-full shrink-0"
+            }
+        },
+        {
+            "id": "cBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 bg-surface-variant p-stack rounded-md"
+            },
+            "children": [
+                "cHeader",
+                "cText"
+            ]
+        },
+        {
+            "id": "cHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-1"
+            },
+            "children": [
+                "cUser",
+                "cTime"
+            ]
+        },
+        {
+            "id": "cUser",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "user"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "cTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "time"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cText",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "content"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "commentInput",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "输入消息...",
+                "suffix": "send",
+                "className": "w-full"
+            }
+        }
+    ]
+}

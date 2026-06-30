@@ -1,0 +1,892 @@
+{
+  "state": {
+    "searchValue": "",
+    "selectedRole": "All",
+    "selectedDepartment": "All",
+    "selectedStatus": "All",
+    "userList": [
+      {
+        "id": "usr_001",
+        "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "fullName": "Marcus Thorne",
+        "email": "m.thorne@enterprise.com",
+        "role": "Security Lead",
+        "department": "IT Operations",
+        "statusLabel": "ACTIVE",
+        "statusColor": "success",
+        "lastLogin": "2 hours ago",
+        "actionIcon1": "edit",
+        "actionIcon2": "power",
+        "actionIcon3": "trash-2"
+      },
+      {
+        "id": "usr_002",
+        "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+        "fullName": "Sarah Chen",
+        "email": "s.chen@enterprise.com",
+        "role": "Compliance Officer",
+        "department": "Legal & Risk",
+        "statusLabel": "ACTIVE",
+        "statusColor": "success",
+        "lastLogin": "Yesterday, 4:30 PM",
+        "actionIcon1": "edit",
+        "actionIcon2": "power",
+        "actionIcon3": "trash-2"
+      },
+      {
+        "id": "usr_003",
+        "avatarImage": "https://randomuser.me/api/portraits/men/65.jpg",
+        "fullName": "David Miller",
+        "email": "d.miller@enterprise.com",
+        "role": "Analyst",
+        "department": "Core Platform",
+        "statusLabel": "INACTIVE",
+        "statusColor": "error",
+        "lastLogin": "Oct 12, 2023",
+        "actionIcon1": "edit",
+        "actionIcon2": "check-circle",
+        "actionIcon3": "trash-2"
+      },
+      {
+        "id": "usr_004",
+        "avatarImage": "https://randomuser.me/api/portraits/women/21.jpg",
+        "fullName": "Elena Rodriguez",
+        "email": "e.rodriguez@enterprise.com",
+        "role": "System Admin",
+        "department": "IT Operations",
+        "statusLabel": "ACTIVE",
+        "statusColor": "success",
+        "lastLogin": "15 mins ago",
+        "actionIcon1": "edit",
+        "actionIcon2": "power",
+        "actionIcon3": "trash-2"
+      }
+    ]
+  },
+  "rootId": "pageRoot",
+  "elements": [
+    {
+      "id": "pageRoot",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "navSection",
+        "mainContent",
+        "footerSection"
+      ]
+    },
+    {
+      "id": "navSection",
+      "component": "div",
+      "props": {
+        "className": "bg-inverse-surface shadow-md"
+      },
+      "children": [
+        "navInner"
+      ]
+    },
+    {
+      "id": "navInner",
+      "component": "div",
+      "props": {
+        "className": "max-w-7xl mx-auto w-full px-6 h-14 flex items-center justify-between"
+      },
+      "children": [
+        "navLeft",
+        "navRight"
+      ]
+    },
+    {
+      "id": "navLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-8"
+      },
+      "children": [
+        "navLogoIcon",
+        "navBrandText",
+        "navMenuItems"
+      ]
+    },
+    {
+      "id": "navLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "navBrandText",
+      "component": "span",
+      "props": {
+        "value": "Security Gate",
+        "className": "text-lg font-bold text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navMenuItems",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 ml-6"
+      },
+      "children": [
+        "navDashboardLink",
+        "navUsersLink",
+        "navLogsLink",
+        "navSettingsLink"
+      ]
+    },
+    {
+      "id": "navDashboardLink",
+      "component": "a",
+      "props": {
+        "href": "/dashboard",
+        "value": "Dashboard",
+        "className": "px-4 py-2 text-sm rounded-lg text-inverse-on-surface-variant hover:text-inverse-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "navUsersLink",
+      "component": "a",
+      "props": {
+        "href": "/users",
+        "value": "Users",
+        "className": "px-4 py-2 text-sm rounded-lg text-primary font-semibold bg-primary-container"
+      }
+    },
+    {
+      "id": "navLogsLink",
+      "component": "a",
+      "props": {
+        "href": "/logs",
+        "value": "Logs",
+        "className": "px-4 py-2 text-sm rounded-lg text-inverse-on-surface-variant hover:text-inverse-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "navSettingsLink",
+      "component": "a",
+      "props": {
+        "href": "/settings",
+        "value": "Settings",
+        "className": "px-4 py-2 text-sm rounded-lg text-inverse-on-surface-variant hover:text-inverse-on-surface transition-colors"
+      }
+    },
+    {
+      "id": "navRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "navBellIcon",
+        "navHelpIcon",
+        "navProfileIcon"
+      ]
+    },
+    {
+      "id": "navBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "color": "default",
+        "className": "w-5 h-5 cursor-pointer text-inverse-on-surface-variant hover:text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "life-buoy",
+        "color": "default",
+        "className": "w-5 h-5 cursor-pointer text-inverse-on-surface-variant hover:text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "navProfileIcon",
+      "component": "Icon",
+      "props": {
+        "name": "user-circle",
+        "color": "default",
+        "className": "w-5 h-5 cursor-pointer text-inverse-on-surface-variant hover:text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "mainContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 w-full"
+      },
+      "children": [
+        "contentInner"
+      ]
+    },
+    {
+      "id": "contentInner",
+      "component": "div",
+      "props": {
+        "className": "max-w-7xl mx-auto w-full px-6 py-6 flex flex-col gap-6"
+      },
+      "children": [
+        "headerSection",
+        "filterSection",
+        "tableWrapper"
+      ]
+    },
+    {
+      "id": "headerSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-end justify-between gap-4"
+      },
+      "children": [
+        "headerLeft",
+        "headerAddBtn"
+      ]
+    },
+    {
+      "id": "headerLeft",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "headerTitle",
+        "headerDesc"
+      ]
+    },
+    {
+      "id": "headerTitle",
+      "component": "h1",
+      "props": {
+        "value": "User Directory",
+        "className": "text-4xl font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "headerDesc",
+      "component": "span",
+      "props": {
+        "value": "Manage access levels, monitor activity, and configure enterprise security roles.",
+        "className": "text-sm text-on-surface-variant max-w-xl"
+      }
+    },
+    {
+      "id": "headerAddBtn",
+      "component": "Button",
+      "props": {
+        "value": "Add New User",
+        "icon": "plus-circle",
+        "iconPlacement": "start",
+        "color": "primary",
+        "size": "large"
+      }
+    },
+    {
+      "id": "filterSection",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card rounded-xl p-4"
+      },
+      "children": [
+        "filterInner"
+      ]
+    },
+    {
+      "id": "filterInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 flex-wrap"
+      },
+      "children": [
+        "filterSearchInput",
+        "filterRoleSelect",
+        "filterDeptSelect",
+        "filterStatusSelect",
+        "filterSpacer",
+        "filterClearBtn"
+      ]
+    },
+    {
+      "id": "filterSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "Search by name or email...",
+        "prefix": "search",
+        "className": "w-72"
+      }
+    },
+    {
+      "id": "filterRoleSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedRole"
+        },
+        "options": [
+          {
+            "label": "Role: All",
+            "value": "All"
+          },
+          {
+            "label": "Security Lead",
+            "value": "Security Lead"
+          },
+          {
+            "label": "Compliance Officer",
+            "value": "Compliance Officer"
+          },
+          {
+            "label": "Analyst",
+            "value": "Analyst"
+          },
+          {
+            "label": "System Admin",
+            "value": "System Admin"
+          }
+        ],
+        "className": "w-44"
+      }
+    },
+    {
+      "id": "filterDeptSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedDepartment"
+        },
+        "options": [
+          {
+            "label": "Dept: All",
+            "value": "All"
+          },
+          {
+            "label": "IT Operations",
+            "value": "IT Operations"
+          },
+          {
+            "label": "Legal & Risk",
+            "value": "Legal & Risk"
+          },
+          {
+            "label": "Core Platform",
+            "value": "Core Platform"
+          },
+          {
+            "label": "HR",
+            "value": "HR"
+          }
+        ],
+        "className": "w-44"
+      }
+    },
+    {
+      "id": "filterStatusSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedStatus"
+        },
+        "options": [
+          {
+            "label": "Status: All",
+            "value": "All"
+          },
+          {
+            "label": "ACTIVE",
+            "value": "ACTIVE"
+          },
+          {
+            "label": "INACTIVE",
+            "value": "INACTIVE"
+          },
+          {
+            "label": "PENDING",
+            "value": "PENDING"
+          }
+        ],
+        "className": "w-40"
+      }
+    },
+    {
+      "id": "filterSpacer",
+      "component": "div",
+      "props": {
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "filterClearBtn",
+      "component": "Button",
+      "props": {
+        "value": "Clear Filters",
+        "icon": "filter-x",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "tableWrapper",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest shadow-card rounded-xl overflow-hidden"
+      },
+      "children": [
+        "userTable",
+        "paginationArea"
+      ]
+    },
+    {
+      "id": "userTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/userList"
+        },
+        "pagination": false,
+        "columns": [
+          {
+            "title": "Name",
+            "dataIndex": "fullName",
+            "minWidth": 240
+          },
+          {
+            "title": "Role",
+            "dataIndex": "role"
+          },
+          {
+            "title": "Department",
+            "dataIndex": "department"
+          },
+          {
+            "title": "Status",
+            "dataIndex": "statusLabel",
+            "width": 120,
+            "align": "center"
+          },
+          {
+            "title": "Last Login",
+            "dataIndex": "lastLogin",
+            "width": 160
+          },
+          {
+            "title": "Actions",
+            "dataIndex": "actions",
+            "width": 140,
+            "align": "center"
+          }
+        ],
+        "className": "mb-0"
+      },
+      "children": {
+        "path": "/userList",
+        "componentId": "tableRow"
+      }
+    },
+    {
+      "id": "tableRow",
+      "component": "TableRow",
+      "children": [
+        "nameCell",
+        "roleCell",
+        "deptCell",
+        "statusCell",
+        "lastLoginCell",
+        "actionsCell"
+      ]
+    },
+    {
+      "id": "nameCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 py-1"
+      },
+      "children": [
+        "nameCellAvatar",
+        "nameCellInfo"
+      ]
+    },
+    {
+      "id": "nameCellAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "avatarImage"
+        },
+        "alt": "avatar",
+        "className": "w-9 h-9 rounded-full object-cover flex-shrink-0"
+      }
+    },
+    {
+      "id": "nameCellInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "nameCellName",
+        "nameCellEmail"
+      ]
+    },
+    {
+      "id": "nameCellName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "fullName"
+        },
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "nameCellEmail",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "email"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "roleCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "role"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "deptCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "department"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "statusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusLabel"
+        },
+        "color": {
+          "path": "statusColor"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "lastLoginCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "lastLogin"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "actionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1"
+      },
+      "children": [
+        "actionBtn1",
+        "actionBtn2",
+        "actionBtn3"
+      ]
+    },
+    {
+      "id": "actionBtn1",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "actionIcon1"
+        },
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "actionBtn2",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "actionIcon2"
+        },
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "actionBtn3",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "actionIcon3"
+        },
+        "size": "small",
+        "shape": "circle",
+        "color": "danger"
+      }
+    },
+    {
+      "id": "paginationArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-6 py-4 border-t border-divider"
+      },
+      "children": [
+        "paginationInfo",
+        "paginationButtons"
+      ]
+    },
+    {
+      "id": "paginationInfo",
+      "component": "span",
+      "props": {
+        "value": "Showing 1 to 4 of 42 entries",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "paginationButtons",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "pagePrevBtn",
+        "page1Btn",
+        "page2Btn",
+        "page3Btn",
+        "pageEllipsis",
+        "page11Btn",
+        "pageNextBtn"
+      ]
+    },
+    {
+      "id": "pagePrevBtn",
+      "component": "Button",
+      "props": {
+        "value": "<",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "page1Btn",
+      "component": "Button",
+      "props": {
+        "value": "1",
+        "size": "small",
+        "color": "primary",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "page2Btn",
+      "component": "Button",
+      "props": {
+        "value": "2",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "page3Btn",
+      "component": "Button",
+      "props": {
+        "value": "3",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "pageEllipsis",
+      "component": "span",
+      "props": {
+        "value": "...",
+        "className": "px-2 text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "page11Btn",
+      "component": "Button",
+      "props": {
+        "value": "11",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "pageNextBtn",
+      "component": "Button",
+      "props": {
+        "value": ">",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "footerSection",
+      "component": "div",
+      "props": {
+        "className": "bg-inverse-surface mt-auto"
+      },
+      "children": [
+        "footerInner"
+      ]
+    },
+    {
+      "id": "footerInner",
+      "component": "div",
+      "props": {
+        "className": "max-w-7xl mx-auto w-full px-6 py-5 flex items-center justify-between"
+      },
+      "children": [
+        "footerLeft",
+        "footerRight"
+      ]
+    },
+    {
+      "id": "footerLeft",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "footerBrandRow",
+        "footerCopyright"
+      ]
+    },
+    {
+      "id": "footerBrandRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "footerBrandIcon",
+        "footerBrandText"
+      ]
+    },
+    {
+      "id": "footerBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "footerBrandText",
+      "component": "span",
+      "props": {
+        "value": "Security Gate",
+        "className": "text-sm font-semibold text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "footerCopyright",
+      "component": "span",
+      "props": {
+        "value": "© 2024 Enterprise Secure Solutions. All rights reserved.",
+        "className": "text-xs text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "footerRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-5"
+      },
+      "children": [
+        "footerLink1",
+        "footerDot1",
+        "footerLink2",
+        "footerDot2",
+        "footerLink3",
+        "footerDot3",
+        "footerLink4"
+      ]
+    },
+    {
+      "id": "footerLink1",
+      "component": "a",
+      "props": {
+        "href": "/policy/security",
+        "value": "Security Policy",
+        "className": "text-xs text-inverse-on-surface-variant hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "footerDot1",
+      "component": "span",
+      "props": {
+        "value": "·",
+        "className": "text-xs text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "footerLink2",
+      "component": "a",
+      "props": {
+        "href": "/policy/privacy",
+        "value": "Privacy Statement",
+        "className": "text-xs text-inverse-on-surface-variant hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "footerDot2",
+      "component": "span",
+      "props": {
+        "value": "·",
+        "className": "text-xs text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "footerLink3",
+      "component": "a",
+      "props": {
+        "href": "/policy/terms",
+        "value": "Terms of Service",
+        "className": "text-xs text-inverse-on-surface-variant hover:text-primary transition-colors"
+      }
+    },
+    {
+      "id": "footerDot3",
+      "component": "span",
+      "props": {
+        "value": "·",
+        "className": "text-xs text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "footerLink4",
+      "component": "a",
+      "props": {
+        "href": "/support",
+        "value": "Support",
+        "className": "text-xs text-inverse-on-surface-variant hover:text-primary transition-colors"
+      }
+    }
+  ]
+}

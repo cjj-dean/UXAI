@@ -1,0 +1,878 @@
+{
+  "state": {
+    "headerSystemName": "数据监控管理系统",
+    "headerSelectedKeys": [
+      "dashboard"
+    ],
+    "headerMenuItems": [
+      {
+        "title": "监控大盘",
+        "key": "dashboard",
+        "icon": "layout-dashboard"
+      },
+      {
+        "title": "告警管理",
+        "key": "alerts",
+        "icon": "bell"
+      },
+      {
+        "title": "报表分析",
+        "key": "reports",
+        "icon": "chart-column"
+      }
+    ],
+    "headerUserName": "系统管理员",
+    "headerAvatarSrc": "https://randomuser.me/api/portraits/men/32.jpg",
+    "cpuUsage": 35,
+    "gaugeMax": 100,
+    "chartSeries": [
+      {
+        "time": "10:00",
+        "流量": 8767
+      },
+      {
+        "time": "11:00",
+        "流量": 1505
+      },
+      {
+        "time": "12:00",
+        "流量": 1736
+      },
+      {
+        "time": "13:00",
+        "流量": 7201
+      },
+      {
+        "time": "14:00",
+        "流量": 737
+      }
+    ],
+    "chartYAxisTitle": "流量兆字节",
+    "alertTableData": [
+      {
+        "id": "1",
+        "alertTime": "2026-05-27 10:00:00",
+        "deviceIp": "192.168.1.1",
+        "port": 80,
+        "errorCode": "ERR_001",
+        "duration": "71秒",
+        "alertSource": "Node_A, Node_B",
+        "status": {
+          "text": "待办",
+          "color": "warning"
+        }
+      },
+      {
+        "id": "2",
+        "alertTime": "2026-05-27 11:30:00",
+        "deviceIp": "10.0.0.5",
+        "port": 443,
+        "errorCode": "ERR_002",
+        "duration": "85秒",
+        "alertSource": "Node_C",
+        "status": {
+          "text": "处理中",
+          "color": "processing"
+        }
+      },
+      {
+        "id": "3",
+        "alertTime": "2026-05-27 12:15:00",
+        "deviceIp": "172.16.0.1",
+        "port": 22,
+        "errorCode": "ERR_003",
+        "duration": "55秒",
+        "alertSource": "Node_D, Node_E",
+        "status": {
+          "text": "已解决",
+          "color": "success"
+        }
+      },
+      {
+        "id": "4",
+        "alertTime": "2026-05-27 14:00:00",
+        "deviceIp": "192.168.2.10",
+        "port": 3306,
+        "errorCode": "ERR_004",
+        "duration": "59秒",
+        "alertSource": "Node_F",
+        "status": {
+          "text": "处理中",
+          "color": "processing"
+        }
+      }
+    ],
+    "searchTimeRange": [],
+    "searchAlertLevel": "",
+    "searchEventType": "",
+    "searchDeviceName": "",
+    "searchStatus": "",
+    "pageSizeValue": "10条/页",
+    "jumpPageValue": ""
+  },
+  "rootId": "rootContainer",
+  "elements": [
+    {
+      "id": "rootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "headerNavigationContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "headerNavigationContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center h-12 px-page bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "headerLeftSection",
+        "headerNavMenuWrapper",
+        "headerRightSection"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-page flex flex-col gap-section"
+      },
+      "children": [
+        "overviewChartsContainer",
+        "alertListContainer"
+      ]
+    },
+    {
+      "id": "overviewChartsContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+      },
+      "children": [
+        "overviewChartInner"
+      ]
+    },
+    {
+      "id": "alertListContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+      },
+      "children": [
+        "alertTitle",
+        "alertSearchForm",
+        "alertTable",
+        "alertPagination"
+      ]
+    },
+    {
+      "id": "headerLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "headerMenuIconBtn",
+        "headerSystemName"
+      ]
+    },
+    {
+      "id": "headerMenuIconBtn",
+      "component": "Button",
+      "props": {
+        "icon": "menu",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "headerSystemName",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap",
+        "value": {
+          "path": "/headerSystemName"
+        }
+      }
+    },
+    {
+      "id": "headerNavMenuWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex justify-center"
+      },
+      "children": [
+        "headerNavMenu"
+      ]
+    },
+    {
+      "id": "headerNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/headerSelectedKeys"
+        },
+        "items": {
+          "path": "/headerMenuItems"
+        }
+      }
+    },
+    {
+      "id": "headerRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 ml-auto shrink-0"
+      },
+      "children": [
+        "headerUserText",
+        "headerHelpBtn",
+        "headerSettingsBtn",
+        "headerThemeBtn",
+        "headerAvatarContainer"
+      ]
+    },
+    {
+      "id": "headerUserText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface mr-1 whitespace-nowrap",
+        "value": {
+          "path": "/headerUserName"
+        }
+      }
+    },
+    {
+      "id": "headerHelpBtn",
+      "component": "Button",
+      "props": {
+        "icon": "circle-help",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "headerSettingsBtn",
+      "component": "Button",
+      "props": {
+        "icon": "settings",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "headerThemeBtn",
+      "component": "Button",
+      "props": {
+        "icon": "sun",
+        "shape": "circle",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "headerAvatarContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 ml-2"
+      },
+      "children": [
+        "headerAvatarImg",
+        "headerAvatarText"
+      ]
+    },
+    {
+      "id": "headerAvatarImg",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/headerAvatarSrc"
+        },
+        "className": "w-7 h-7 rounded-full object-cover border border-base"
+      }
+    },
+    {
+      "id": "headerAvatarText",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant font-medium",
+        "value": "Admin"
+      }
+    },
+    {
+      "id": "overviewChartInner",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row"
+      },
+      "children": [
+        "overviewLeftSection",
+        "overviewRightSection"
+      ]
+    },
+    {
+      "id": "overviewLeftSection",
+      "component": "div",
+      "props": {
+        "className": "w-[30%] border-r border-divider p-inset flex flex-col"
+      },
+      "children": [
+        "overviewLeftTitleRow",
+        "overviewLeftSubRow",
+        "overviewLeftGaugeArea"
+      ]
+    },
+    {
+      "id": "overviewLeftTitleRow",
+      "component": "div",
+      "props": {
+        "className": "mb-2"
+      },
+      "children": [
+        "overviewLeftTitle"
+      ]
+    },
+    {
+      "id": "overviewLeftTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "系统概览"
+      }
+    },
+    {
+      "id": "overviewLeftSubRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mb-6"
+      },
+      "children": [
+        "overviewLeftSubtitle",
+        "overviewLeftHelpIcon"
+      ]
+    },
+    {
+      "id": "overviewLeftSubtitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "核心资源使用率"
+      }
+    },
+    {
+      "id": "overviewLeftHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "circle-help",
+        "color": "on-surface-variant",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "overviewLeftGaugeArea",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center flex-1"
+      },
+      "children": [
+        "overviewLeftGauge",
+        "overviewLeftGaugeCenter",
+        "overviewLeftGaugeLabel"
+      ]
+    },
+    {
+      "id": "overviewLeftGauge",
+      "component": "PatGauge",
+      "props": {
+        "value": {
+          "path": "/cpuUsage"
+        },
+        "max": {
+          "path": "/gaugeMax"
+        },
+        "className": "h-48 w-full"
+      }
+    },
+    {
+      "id": "overviewLeftGaugeCenter",
+      "component": "span",
+      "props": {
+        "className": "text-3xl font-bold text-primary mt-2",
+        "value": "35%"
+      }
+    },
+    {
+      "id": "overviewLeftGaugeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1",
+        "value": "CPU使用率"
+      }
+    },
+    {
+      "id": "overviewRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex-1 p-inset flex flex-col"
+      },
+      "children": [
+        "overviewRightTitleRow",
+        "overviewRightChart"
+      ]
+    },
+    {
+      "id": "overviewRightTitleRow",
+      "component": "div",
+      "props": {
+        "className": "mb-4"
+      },
+      "children": [
+        "overviewRightTitle"
+      ]
+    },
+    {
+      "id": "overviewRightTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "网络流量趋势"
+      }
+    },
+    {
+      "id": "overviewRightChart",
+      "component": "LineChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/chartSeries"
+          },
+          "xAxis": {
+            "data": "time"
+          },
+          "yAxisTitle": {
+            "path": "/chartYAxisTitle"
+          }
+        },
+        "className": "h-72 w-full"
+      }
+    },
+    {
+      "id": "alertTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface px-gutter pt-gutter block",
+        "value": "告警事件列表"
+      }
+    },
+    {
+      "id": "alertSearchForm",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-gutter py-stack flex-nowrap overflow-x-auto"
+      },
+      "children": [
+        "alertTimeLabel",
+        "alertTimeRange",
+        "alertLevelLabel",
+        "alertLevelInput",
+        "alertTypeLabel",
+        "alertTypeInput",
+        "alertDeviceLabel",
+        "alertDeviceInput",
+        "alertStatusLabel",
+        "alertStatusInput",
+        "alertSearchBtn"
+      ]
+    },
+    {
+      "id": "alertTimeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant whitespace-nowrap shrink-0",
+        "value": "发生时间"
+      }
+    },
+    {
+      "id": "alertTimeRange",
+      "component": "DatePicker",
+      "props": {
+        "value": {
+          "path": "/searchTimeRange"
+        },
+        "placeholder": [
+          "2026-05-01",
+          "2026-05-27"
+        ],
+        "range": true,
+        "size": "small",
+        "className": "w-52"
+      }
+    },
+    {
+      "id": "alertLevelLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant whitespace-nowrap shrink-0",
+        "value": "告警级别"
+      }
+    },
+    {
+      "id": "alertLevelInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchAlertLevel"
+        },
+        "placeholder": "严重",
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "alertTypeLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant whitespace-nowrap shrink-0",
+        "value": "事件类型"
+      }
+    },
+    {
+      "id": "alertTypeInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchEventType"
+        },
+        "placeholder": "网络中断",
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "alertDeviceLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant whitespace-nowrap shrink-0",
+        "value": "设备名称"
+      }
+    },
+    {
+      "id": "alertDeviceInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchDeviceName"
+        },
+        "placeholder": "核心路由器",
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "alertStatusLabel",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant whitespace-nowrap shrink-0",
+        "value": "处理状态"
+      }
+    },
+    {
+      "id": "alertStatusInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchStatus"
+        },
+        "placeholder": "待处理",
+        "size": "small",
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "alertSearchBtn",
+      "component": "Button",
+      "props": {
+        "value": "查询",
+        "color": "primary",
+        "className": "ml-auto shrink-0"
+      }
+    },
+    {
+      "id": "alertTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/alertTableData"
+        },
+        "pagination": false,
+        "columns": [
+          {
+            "title": "告警时间",
+            "dataIndex": "alertTime",
+            "minWidth": 160
+          },
+          {
+            "title": "设备IP",
+            "dataIndex": "deviceIp",
+            "minWidth": 120
+          },
+          {
+            "title": "端口号",
+            "dataIndex": "port"
+          },
+          {
+            "title": "错误码",
+            "dataIndex": "errorCode"
+          },
+          {
+            "title": "持续时间",
+            "dataIndex": "duration"
+          },
+          {
+            "title": "告警源",
+            "dataIndex": "alertSource",
+            "minWidth": 140
+          },
+          {
+            "title": "状态",
+            "dataIndex": "status"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions"
+          }
+        ]
+      },
+      "children": {
+        "path": "/alertTableData",
+        "componentId": "alertTableRow"
+      }
+    },
+    {
+      "id": "alertTableRow",
+      "component": "TableRow",
+      "children": [
+        "alertTimeCell",
+        "alertIpCell",
+        "alertPortCell",
+        "alertErrorCodeCell",
+        "alertDurationCell",
+        "alertSourceCell",
+        "alertStatusCell",
+        "alertActionsCell"
+      ]
+    },
+    {
+      "id": "alertTimeCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "alertTime"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertIpCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceIp"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertPortCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "port"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertErrorCodeCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "errorCode"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertDurationCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "duration"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertSourceCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "alertSource"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "alertStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status/text"
+        },
+        "color": {
+          "path": "status/color"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "alertActionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "alertActionViewBtn",
+        "alertActionEditBtn"
+      ]
+    },
+    {
+      "id": "alertActionViewBtn",
+      "component": "Button",
+      "props": {
+        "icon": "eye",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "alertActionEditBtn",
+      "component": "Button",
+      "props": {
+        "icon": "pencil",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "alertPagination",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-gutter py-stack border-t border-divider"
+      },
+      "children": [
+        "alertTotalText",
+        "alertPaginationRight"
+      ]
+    },
+    {
+      "id": "alertTotalText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": "总计：40条"
+      }
+    },
+    {
+      "id": "alertPaginationRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "alertPageSizeSelect",
+        "alertPrevBtn",
+        "alertCurrentPage",
+        "alertNextBtn",
+        "alertJumpInput",
+        "alertJumpBtn"
+      ]
+    },
+    {
+      "id": "alertPageSizeSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/pageSizeValue"
+        },
+        "size": "small",
+        "options": [
+          {
+            "label": "10条/页",
+            "value": "10条/页"
+          },
+          {
+            "label": "20条/页",
+            "value": "20条/页"
+          },
+          {
+            "label": "50条/页",
+            "value": "50条/页"
+          }
+        ],
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "alertPrevBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "alertCurrentPage",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-medium",
+        "value": "2"
+      }
+    },
+    {
+      "id": "alertNextBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-right",
+        "size": "small",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "alertJumpInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/jumpPageValue"
+        },
+        "placeholder": "0",
+        "size": "small",
+        "className": "w-14"
+      }
+    },
+    {
+      "id": "alertJumpBtn",
+      "component": "Button",
+      "props": {
+        "value": "跳转",
+        "size": "small"
+      }
+    }
+  ]
+}

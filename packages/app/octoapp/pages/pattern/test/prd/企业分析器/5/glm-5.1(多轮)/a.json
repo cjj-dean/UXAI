@@ -1,0 +1,1577 @@
+{
+  "state": {
+    "selectedMenuKeys": [
+      "status"
+    ],
+    "brandInfo": {
+      "logoIcon": "network",
+      "titleText": "iMaster NCE",
+      "subtitleText": "网络监控平台"
+    },
+    "navMenus": [
+      {
+        "menuIcon": "activity",
+        "menuText": "运行状态",
+        "title": "运行状态",
+        "key": "status",
+        "icon": "activity"
+      },
+      {
+        "menuIcon": "alert-triangle",
+        "menuText": "告警管理",
+        "title": "告警管理",
+        "key": "alarm",
+        "icon": "alert-triangle"
+      },
+      {
+        "menuIcon": "trending-up",
+        "menuText": "性能监控",
+        "title": "性能监控",
+        "key": "performance",
+        "icon": "trending-up"
+      }
+    ],
+    "userProfile": {
+      "userName": "admin",
+      "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    "globalActionIcons": [
+      "search",
+      "bell",
+      "settings",
+      "circle-help"
+    ],
+    "userDropdownMenu": [
+      {
+        "label": "个人中心",
+        "key": "profile",
+        "icon": "user"
+      },
+      {
+        "label": "系统设置",
+        "key": "system-settings",
+        "icon": "settings"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "pathList": [
+      {
+        "title": "首页"
+      },
+      {
+        "title": "网络拓扑"
+      },
+      {
+        "title": "核心交换机配置"
+      }
+    ],
+    "alertMessage": "当前系统存在2个未处理的严重告警，请及时查看处理。",
+    "activeTab": "realtime",
+    "tabItems": [
+      {
+        "key": "realtime",
+        "label": "实时监控"
+      },
+      {
+        "key": "history",
+        "label": "历史趋势"
+      },
+      {
+        "key": "traffic",
+        "label": "流量分析"
+      }
+    ],
+    "selectedNode": "all",
+    "nodeOptions": [
+      {
+        "label": "全部节点",
+        "value": "all"
+      },
+      {
+        "label": "核心节点",
+        "value": "core"
+      },
+      {
+        "label": "接入节点",
+        "value": "access"
+      },
+      {
+        "label": "边界节点",
+        "value": "border"
+      }
+    ],
+    "searchPlaceholder": "请输入IP或设备名称搜索",
+    "searchValue": "",
+    "actionButtons": [
+      {
+        "btnLabel": "重置",
+        "btnType": "default"
+      },
+      {
+        "btnLabel": "查询",
+        "btnType": "primary"
+      }
+    ],
+    "selectedKeys": [],
+    "devices": [
+      {
+        "deviceId": "dev-001",
+        "expandIcon": "chevron-down",
+        "deviceName": "Core-Switch-01",
+        "deviceType": "核心交换机",
+        "ipPort": "192.168.1.1/24->10.0.0.5/8:8080",
+        "business": "核心骨干网",
+        "protocol": "TCP",
+        "macAddress": "00:1A:2B:3C:4D:5E",
+        "forwardStatusText": "正常",
+        "forwardStatusDotColor": "success",
+        "principalText": "张工程师",
+        "principalDotColor": "primary",
+        "healthStatusText": "运行正常",
+        "healthStatusDotColor": "success"
+      },
+      {
+        "deviceId": "dev-002",
+        "expandIcon": "chevron-right",
+        "deviceName": "Access-Switch-02",
+        "deviceType": "接入交换机",
+        "ipPort": "10.1.2.3/24->172.16.0.5/16:22",
+        "business": "办公区网络",
+        "protocol": "UDP",
+        "macAddress": "--",
+        "forwardStatusText": "告警",
+        "forwardStatusDotColor": "error",
+        "principalText": "李管理员",
+        "principalDotColor": "primary",
+        "healthStatusText": "丢包率高",
+        "healthStatusDotColor": "error"
+      },
+      {
+        "deviceId": "dev-003",
+        "expandIcon": "chevron-right",
+        "deviceName": "Gateway-Router-01",
+        "deviceType": "边界路由器",
+        "ipPort": "10.0.5.6/32->192.168.2.5/24:53",
+        "business": "外部互联",
+        "protocol": "ICMP",
+        "macAddress": "--",
+        "forwardStatusText": "正常",
+        "forwardStatusDotColor": "success",
+        "principalText": "王架构师",
+        "principalDotColor": "primary",
+        "healthStatusText": "运行稳定",
+        "healthStatusDotColor": "success"
+      },
+      {
+        "deviceId": "dev-004",
+        "expandIcon": "chevron-right",
+        "deviceName": "Firewall-Active",
+        "deviceType": "核心防火墙",
+        "ipPort": "172.16.8.9/16->10.10.3.5/24:443",
+        "business": "安全防护区",
+        "protocol": "IPsec",
+        "macAddress": "--",
+        "forwardStatusText": "阻断",
+        "forwardStatusDotColor": "warning",
+        "principalText": "赵安全员",
+        "principalDotColor": "primary",
+        "healthStatusText": "拦截生效",
+        "healthStatusDotColor": "success"
+      },
+      {
+        "deviceId": "dev-005",
+        "expandIcon": "chevron-right",
+        "deviceName": "LoadBalancer-01",
+        "deviceType": "负载均衡器",
+        "ipPort": "192.168.2.2/24->10.20.6.3/16:80",
+        "business": "业务应用集群",
+        "protocol": "HTTP",
+        "macAddress": "--",
+        "forwardStatusText": "正常",
+        "forwardStatusDotColor": "success",
+        "principalText": "孙运维",
+        "principalDotColor": "primary",
+        "healthStatusText": "分发正常",
+        "healthStatusDotColor": "success"
+      }
+    ],
+    "inboundTrafficData": [
+      {
+        "接口": "eth1/1",
+        "流量": 850
+      },
+      {
+        "接口": "eth1/2",
+        "流量": 620
+      },
+      {
+        "接口": "eth1/3",
+        "流量": 950
+      },
+      {
+        "接口": "eth1/4",
+        "流量": 730
+      },
+      {
+        "接口": "eth1/5",
+        "流量": 410
+      },
+      {
+        "接口": "eth1/6",
+        "流量": 880
+      },
+      {
+        "接口": "eth1/7",
+        "流量": 290
+      },
+      {
+        "接口": "eth1/8",
+        "流量": 540
+      },
+      {
+        "接口": "eth1/9",
+        "流量": 780
+      },
+      {
+        "接口": "eth1/10",
+        "流量": 670
+      }
+    ],
+    "outboundTrafficData": [
+      {
+        "接口": "eth2/1",
+        "流量": 680
+      },
+      {
+        "接口": "eth2/2",
+        "流量": 720
+      },
+      {
+        "接口": "eth2/3",
+        "流量": 450
+      },
+      {
+        "接口": "eth2/4",
+        "流量": 990
+      },
+      {
+        "接口": "eth2/5",
+        "流量": 820
+      },
+      {
+        "接口": "eth2/6",
+        "流量": 310
+      },
+      {
+        "接口": "eth2/7",
+        "流量": 560
+      },
+      {
+        "接口": "eth2/8",
+        "流量": 470
+      },
+      {
+        "接口": "eth2/9",
+        "流量": 840
+      },
+      {
+        "接口": "eth2/10",
+        "流量": 530
+      }
+    ],
+    "topSourceIpData": [
+      {
+        "name": "192.168.10.25",
+        "value": 6632
+      },
+      {
+        "name": "10.0.0.101",
+        "value": 5210
+      },
+      {
+        "name": "172.16.5.12",
+        "value": 4890
+      },
+      {
+        "name": "192.168.2.84",
+        "value": 3091
+      },
+      {
+        "name": "10.1.3.55",
+        "value": 2150
+      }
+    ],
+    "topDestIpData": [
+      {
+        "name": "10.10.1.5",
+        "value": 6762
+      },
+      {
+        "name": "192.168.100.8",
+        "value": 5430
+      },
+      {
+        "name": "172.16.88.12",
+        "value": 4120
+      },
+      {
+        "name": "10.0.0.5",
+        "value": 3414
+      },
+      {
+        "name": "192.168.1.100",
+        "value": 2820
+      }
+    ],
+    "highFreqSessionData": [
+      {
+        "name": "TCP 192.168.1.15:8080→10.0.0.5:80",
+        "value": 1740
+      },
+      {
+        "name": "UDP 10.1.2.8:53→172.16.0.1:1024",
+        "value": 1228
+      },
+      {
+        "name": "TCP 192.168.2.20:443→10.10.3.5:443",
+        "value": 890
+      },
+      {
+        "name": "TCP 172.16.5.12:3306→192.168.100.8:3306",
+        "value": 460
+      },
+      {
+        "name": "ICMP 10.0.0.1→10.0.0.5",
+        "value": 150
+      }
+    ],
+    "nodeThroughputData": [
+      {
+        "name": "Core-Switch-01 (eth1/1)",
+        "value": 322000
+      },
+      {
+        "name": "Gateway-Router-01 (eth0/0)",
+        "value": 150000
+      },
+      {
+        "name": "Firewall-Active (port1)",
+        "value": 85000
+      },
+      {
+        "name": "Access-Switch-02 (gi0/1)",
+        "value": 1200
+      },
+      {
+        "name": "LoadBalancer-01 (eth0)",
+        "value": 614
+      }
+    ],
+    "paginationData": {
+      "totalRecords": 90,
+      "totalPages": 5,
+      "pageSize": 20,
+      "currentPage": 4,
+      "jumpToPageNumber": 5
+    }
+  },
+  "rootId": "root",
+  "elements": [
+    {
+      "id": "root",
+      "component": "div",
+      "props": {
+        "className": "h-screen w-full flex flex-col bg-surface-container-lowest overflow-hidden"
+      },
+      "children": [
+        "headerSlot",
+        "filterSlot",
+        "tableSlot",
+        "paginationSlot"
+      ]
+    },
+    {
+      "id": "headerSlot",
+      "component": "header",
+      "props": {
+        "className": "flex-shrink-0 h-12 bg-surface-container-highest shadow-sm z-10"
+      },
+      "children": [
+        "gHeadLeftSection",
+        "gHeadRightSection"
+      ]
+    },
+    {
+      "id": "filterSlot",
+      "component": "section",
+      "props": {
+        "className": "flex-shrink-0 px-page pt-section pb-section"
+      },
+      "children": [
+        "pFilterBreadcrumb",
+        "pFilterAlertContainer",
+        "pFilterToolbar"
+      ]
+    },
+    {
+      "id": "tableSlot",
+      "component": "main",
+      "props": {
+        "className": "flex-1 min-h-0 overflow-y-auto px-page pb-page"
+      },
+      "children": [
+        "mTableContainer"
+      ]
+    },
+    {
+      "id": "paginationSlot",
+      "component": "footer",
+      "props": {
+        "className": "flex-shrink-0 h-16 bg-surface-container-highest shadow-sm border-t border-divider px-page flex items-center justify-between"
+      },
+      "children": [
+        "fPaginStatsGroup",
+        "fPaginControlsGroup"
+      ]
+    },
+    {
+      "id": "gHeadLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 flex-1 h-full pl-4"
+      },
+      "children": [
+        "gHeadLogoIcon",
+        "gHeadBrandTitle",
+        "gHeadBrandSubtitle",
+        "gHeadNavDivider",
+        "gHeadNavMenu"
+      ]
+    },
+    {
+      "id": "gHeadLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandInfo/logoIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadBrandTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandInfo/titleText"
+        },
+        "className": "text-lg font-bold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "gHeadBrandSubtitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandInfo/subtitleText"
+        },
+        "className": "text-md text-on-surface-variant whitespace-nowrap"
+      }
+    },
+    {
+      "id": "gHeadNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider mx-1"
+      }
+    },
+    {
+      "id": "gHeadNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/navMenus"
+        },
+        "className": "border-none h-full leading-[3rem]"
+      }
+    },
+    {
+      "id": "gHeadRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 h-full pr-4"
+      },
+      "children": [
+        "gHeadActionIconsWrap",
+        "gHeadUserDivider",
+        "gHeadUserDropdown"
+      ]
+    },
+    {
+      "id": "gHeadActionIconsWrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "gHeadSearchIcon",
+        "gHeadBellIcon",
+        "gHeadSettingsIcon",
+        "gHeadQuestionIcon"
+      ]
+    },
+    {
+      "id": "gHeadSearchIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/globalActionIcons/0"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/globalActionIcons/1"
+        },
+        "color": "error",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/globalActionIcons/2"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadQuestionIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/globalActionIcons/3"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "gHeadUserDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider"
+      }
+    },
+    {
+      "id": "gHeadUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "placement": "bottomRight",
+        "trigger": [
+          "click"
+        ],
+        "menu": {
+          "path": "/userDropdownMenu"
+        }
+      },
+      "children": [
+        "gHeadUserTrigger"
+      ]
+    },
+    {
+      "id": "gHeadUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "gHeadUserAvatar",
+        "gHeadUserName",
+        "gHeadUserChevron"
+      ]
+    },
+    {
+      "id": "gHeadUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userProfile/avatarImage"
+        },
+        "alt": "avatar",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "gHeadUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userProfile/userName"
+        },
+        "className": "text-md text-on-surface font-medium"
+      }
+    },
+    {
+      "id": "gHeadUserChevron",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "shape": "outline",
+        "className": "w-4 h-4",
+        "color": "default"
+      }
+    },
+    {
+      "id": "pFilterBreadcrumb",
+      "component": "Breadcrumb",
+      "props": {
+        "items": {
+          "path": "/pathList"
+        }
+      }
+    },
+    {
+      "id": "pFilterAlertContainer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 bg-error-container rounded-lg px-4 py-2.5 mt-section"
+      },
+      "children": [
+        "pFilterAlertIcon",
+        "pFilterAlertText",
+        "pFilterAlertClose"
+      ]
+    },
+    {
+      "id": "pFilterAlertIcon",
+      "component": "Icon",
+      "props": {
+        "name": "alert-circle",
+        "color": "error",
+        "shape": "outline",
+        "className": "w-5 h-5 shrink-0"
+      }
+    },
+    {
+      "id": "pFilterAlertText",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-error-container flex-1",
+        "value": {
+          "path": "/alertMessage"
+        }
+      }
+    },
+    {
+      "id": "pFilterAlertClose",
+      "component": "Icon",
+      "props": {
+        "name": "x",
+        "color": "error",
+        "shape": "outline",
+        "className": "w-4 h-4 shrink-0 cursor-pointer"
+      }
+    },
+    {
+      "id": "pFilterToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mt-section"
+      },
+      "children": [
+        "pFilterTabs",
+        "pFilterControls"
+      ]
+    },
+    {
+      "id": "pFilterTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        }
+      },
+      "children": {
+        "path": "/tabItems",
+        "componentId": "pFilterTabItem"
+      }
+    },
+    {
+      "id": "pFilterTabItem",
+      "component": "TabItem",
+      "props": {
+        "key": {
+          "path": "key"
+        },
+        "label": {
+          "path": "label"
+        }
+      }
+    },
+    {
+      "id": "pFilterControls",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "pFilterNodeSelect",
+        "pFilterSearchInput",
+        "pFilterBtnGroup"
+      ]
+    },
+    {
+      "id": "pFilterNodeSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedNode"
+        },
+        "options": {
+          "path": "/nodeOptions"
+        },
+        "className": "w-36"
+      }
+    },
+    {
+      "id": "pFilterSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": {
+          "path": "/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-64"
+      }
+    },
+    {
+      "id": "pFilterBtnGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": {
+        "path": "/actionButtons",
+        "componentId": "pFilterActionBtn"
+      }
+    },
+    {
+      "id": "pFilterActionBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "btnLabel"
+        },
+        "color": {
+          "path": "btnType"
+        }
+      }
+    },
+    {
+      "id": "mTableContainer",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden flex flex-col"
+      },
+      "children": [
+        "mTableDevice",
+        "mTableExpandedPanel"
+      ]
+    },
+    {
+      "id": "mTableDevice",
+      "component": "Table",
+      "props": {
+        "rowKey": "deviceId",
+        "dataSource": {
+          "path": "/devices"
+        },
+        "pagination": false,
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "",
+            "dataIndex": "expandAction",
+            "width": 48,
+            "align": "center"
+          },
+          {
+            "title": "设备名称",
+            "dataIndex": "deviceName",
+            "width": 150
+          },
+          {
+            "title": "设备类型",
+            "dataIndex": "deviceType",
+            "width": 110
+          },
+          {
+            "title": "源目IP及端口",
+            "dataIndex": "ipPort",
+            "width": 260
+          },
+          {
+            "title": "所属业务",
+            "dataIndex": "business",
+            "width": 120
+          },
+          {
+            "title": "协议类型",
+            "dataIndex": "protocol",
+            "width": 90,
+            "align": "center"
+          },
+          {
+            "title": "MAC地址标识",
+            "dataIndex": "macAddress",
+            "width": 150
+          },
+          {
+            "title": "转发状态",
+            "dataIndex": "forwardStatus",
+            "width": 100,
+            "align": "center"
+          },
+          {
+            "title": "责任人",
+            "dataIndex": "principal",
+            "width": 110
+          },
+          {
+            "title": "健康状态",
+            "dataIndex": "healthStatus",
+            "width": 110,
+            "align": "center"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 150,
+            "align": "center",
+            "fixed": "end"
+          }
+        ],
+        "className": "mb-0"
+      },
+      "children": {
+        "path": "/devices",
+        "componentId": "mTableRow"
+      }
+    },
+    {
+      "id": "mTableRow",
+      "component": "TableRow",
+      "children": [
+        "mTableCellExpand",
+        "mTableCellDeviceName",
+        "mTableCellDeviceType",
+        "mTableCellIpPort",
+        "mTableCellBusiness",
+        "mTableCellProtocol",
+        "mTableCellMacAddress",
+        "mTableCellForwardStatus",
+        "mTableCellPrincipal",
+        "mTableCellHealthStatus",
+        "mTableCellActions"
+      ]
+    },
+    {
+      "id": "mTableCellExpand",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "expandIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "mTableCellDeviceName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceName"
+        },
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "mTableCellDeviceType",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceType"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mTableCellIpPort",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipPort"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "mTableCellBusiness",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "business"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mTableCellProtocol",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "protocol"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mTableCellMacAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "macAddress"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "mTableCellForwardStatus",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "mTableForwardDot",
+        "mTableForwardText"
+      ]
+    },
+    {
+      "id": "mTableForwardDot",
+      "component": "Icon",
+      "props": {
+        "name": "circle",
+        "shape": "fill",
+        "color": {
+          "path": "forwardStatusDotColor"
+        },
+        "className": "w-2 h-2"
+      }
+    },
+    {
+      "id": "mTableForwardText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "forwardStatusText"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mTableCellPrincipal",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "mTablePrincipalDot",
+        "mTablePrincipalText"
+      ]
+    },
+    {
+      "id": "mTablePrincipalDot",
+      "component": "Icon",
+      "props": {
+        "name": "circle",
+        "shape": "fill",
+        "color": {
+          "path": "principalDotColor"
+        },
+        "className": "w-2 h-2"
+      }
+    },
+    {
+      "id": "mTablePrincipalText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "principalText"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mTableCellHealthStatus",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "mTableHealthDot",
+        "mTableHealthText"
+      ]
+    },
+    {
+      "id": "mTableHealthDot",
+      "component": "Icon",
+      "props": {
+        "name": "circle",
+        "shape": "fill",
+        "color": {
+          "path": "healthStatusDotColor"
+        },
+        "className": "w-2 h-2"
+      }
+    },
+    {
+      "id": "mTableHealthText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "healthStatusText"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "mTableCellActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1"
+      },
+      "children": [
+        "mTableActionDoc",
+        "mTableActionEdit",
+        "mTableActionDel",
+        "mTableActionSettings"
+      ]
+    },
+    {
+      "id": "mTableActionDoc",
+      "component": "Button",
+      "props": {
+        "icon": "file-text",
+        "size": "small",
+        "types": "link",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "mTableActionEdit",
+      "component": "Button",
+      "props": {
+        "icon": "pencil",
+        "size": "small",
+        "types": "link",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "mTableActionDel",
+      "component": "Button",
+      "props": {
+        "icon": "trash-2",
+        "size": "small",
+        "types": "link",
+        "color": "danger",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "mTableActionSettings",
+      "component": "Button",
+      "props": {
+        "icon": "settings",
+        "size": "small",
+        "types": "link",
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "mTableExpandedPanel",
+      "component": "div",
+      "props": {
+        "className": "border-t border-divider bg-surface-variant px-inset py-inset"
+      },
+      "children": [
+        "mTablePanelHeader",
+        "mTablePanelGrid"
+      ]
+    },
+    {
+      "id": "mTablePanelHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "mTablePanelTitle",
+        "mTablePanelActionBtn"
+      ]
+    },
+    {
+      "id": "mTablePanelTitle",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mTablePanelTitleIcon",
+        "mTablePanelTitleText"
+      ]
+    },
+    {
+      "id": "mTablePanelTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layout-grid",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "mTablePanelTitleText",
+      "component": "span",
+      "props": {
+        "value": "Core-Switch-01 设备详情分析面板",
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "mTablePanelActionBtn",
+      "component": "Button",
+      "props": {
+        "value": "设备流量及性能指标实时分析",
+        "icon": "external-link",
+        "iconPlacement": "end",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mTablePanelGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-3 gap-section"
+      },
+      "children": [
+        "mTableChartCard1",
+        "mTableChartCard2",
+        "mTableChartCard3",
+        "mTableChartCard4",
+        "mTableChartCard5",
+        "mTableChartCard6"
+      ]
+    },
+    {
+      "id": "mTableChartCard1",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle1",
+        "mTableChart1"
+      ]
+    },
+    {
+      "id": "mTableChartTitle1",
+      "component": "span",
+      "props": {
+        "value": "入方向流量统计",
+        "className": "text-md font-medium text-on-surface mb-3"
+      }
+    },
+    {
+      "id": "mTableChart1",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/inboundTrafficData"
+          },
+          "xAxis": {
+            "data": "接口"
+          },
+          "yAxisTitle": "流量 (Mbps)",
+          "dataZoom": {
+            "show": true
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "mTableChartCard2",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle2",
+        "mTableChart2"
+      ]
+    },
+    {
+      "id": "mTableChartTitle2",
+      "component": "span",
+      "props": {
+        "value": "出方向流量统计",
+        "className": "text-md font-medium text-on-surface mb-3"
+      }
+    },
+    {
+      "id": "mTableChart2",
+      "component": "BarChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/outboundTrafficData"
+          },
+          "xAxis": {
+            "data": "接口"
+          },
+          "yAxisTitle": "流量 (Mbps)",
+          "dataZoom": {
+            "show": true
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "mTableChartCard3",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle3",
+        "mTableChart3"
+      ]
+    },
+    {
+      "id": "mTableChartTitle3",
+      "component": "span",
+      "props": {
+        "value": "Top 5 访问源 IP 排名",
+        "className": "text-md font-medium text-on-surface mb-3"
+      }
+    },
+    {
+      "id": "mTableChart3",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/topSourceIpData"
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "mTableChartCard4",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle4",
+        "mTableChart4"
+      ]
+    },
+    {
+      "id": "mTableChartTitle4",
+      "component": "span",
+      "props": {
+        "value": "Top 5 目的 IP 排名",
+        "className": "text-md font-medium text-on-surface mb-3"
+      }
+    },
+    {
+      "id": "mTableChart4",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/topDestIpData"
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "mTableChartCard5",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle5Wrap",
+        "mTableChart5"
+      ]
+    },
+    {
+      "id": "mTableChartTitle5Wrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 mb-3"
+      },
+      "children": [
+        "mTableChartTitle5",
+        "mTableChartTitle5Info"
+      ]
+    },
+    {
+      "id": "mTableChartTitle5",
+      "component": "span",
+      "props": {
+        "value": "高频访问会话连接",
+        "className": "text-md font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "mTableChartTitle5Info",
+      "component": "Icon",
+      "props": {
+        "name": "info",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "mTableChart5",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/highFreqSessionData"
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "mTableChartCard6",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-lg shadow-sm p-4 flex flex-col"
+      },
+      "children": [
+        "mTableChartTitle6",
+        "mTableChart6"
+      ]
+    },
+    {
+      "id": "mTableChartTitle6",
+      "component": "span",
+      "props": {
+        "value": "各节点实时吞吐量",
+        "className": "text-md font-medium text-on-surface mb-3"
+      }
+    },
+    {
+      "id": "mTableChart6",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/nodeThroughputData"
+          }
+        },
+        "className": "h-56 w-full"
+      }
+    },
+    {
+      "id": "fPaginStatsGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-6"
+      },
+      "children": [
+        "fPaginTotalRecords",
+        "fPaginTotalPages"
+      ]
+    },
+    {
+      "id": "fPaginTotalRecords",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "总记录: 90"
+      }
+    },
+    {
+      "id": "fPaginTotalPages",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "总页数: 5"
+      }
+    },
+    {
+      "id": "fPaginControlsGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "fPaginPageSizeSelect",
+        "fPaginPageNavGroup",
+        "fPaginJumpGroup"
+      ]
+    },
+    {
+      "id": "fPaginPageSizeSelect",
+      "component": "Select",
+      "props": {
+        "value": 20,
+        "options": [
+          {
+            "label": "10 条/页",
+            "value": 10
+          },
+          {
+            "label": "20 条/页",
+            "value": 20
+          },
+          {
+            "label": "50 条/页",
+            "value": 50
+          },
+          {
+            "label": "100 条/页",
+            "value": 100
+          }
+        ],
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "fPaginPageNavGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "fPaginPrevBtn",
+        "fPaginCurrentPage",
+        "fPaginNextBtn"
+      ]
+    },
+    {
+      "id": "fPaginPrevBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left",
+        "shape": "circle",
+        "className": "w-8 h-8 flex items-center justify-center"
+      }
+    },
+    {
+      "id": "fPaginCurrentPage",
+      "component": "span",
+      "props": {
+        "className": "text-sm font-semibold text-primary min-w-[32px] text-center",
+        "value": "4"
+      }
+    },
+    {
+      "id": "fPaginNextBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-right",
+        "shape": "circle",
+        "className": "w-8 h-8 flex items-center justify-center"
+      }
+    },
+    {
+      "id": "fPaginJumpGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 ml-2"
+      },
+      "children": [
+        "fPaginJumpLabel",
+        "fPaginJumpInput",
+        "fPaginJumpBtn"
+      ]
+    },
+    {
+      "id": "fPaginJumpLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "跳转至"
+      }
+    },
+    {
+      "id": "fPaginJumpInput",
+      "component": "InputNumber",
+      "props": {
+        "value": {
+          "path": "/paginationData/jumpToPageNumber"
+        },
+        "min": 1,
+        "max": 5,
+        "className": "w-16"
+      }
+    },
+    {
+      "id": "fPaginJumpBtn",
+      "component": "Button",
+      "props": {
+        "value": "跳转",
+        "color": "primary",
+        "className": "ml-1"
+      }
+    }
+  ]
+}

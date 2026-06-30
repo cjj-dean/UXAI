@@ -1,0 +1,2333 @@
+{
+  "state": {
+    "searchValue": "",
+    "systemInfo": {
+      "logoIcon": "landmark",
+      "systemName": "CFO-Cloud 财务云中台"
+    },
+    "notifications": [
+      {
+        "alertIcon": "bell",
+        "unreadCount": 5
+      },
+      {
+        "alertIcon": "message-square",
+        "unreadCount": 2
+      }
+    ],
+    "userProfile": {
+      "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "userName": "张嘉豪",
+      "userRole": "首席财务官"
+    },
+    "navMenuItems": [
+      {
+        "menuId": "home",
+        "menuLabel": "工作台",
+        "menuIcon": "layout-dashboard",
+        "isActive": false
+      },
+      {
+        "menuId": "gl",
+        "menuLabel": "总账管理",
+        "menuIcon": "book-open",
+        "isActive": true,
+        "children": [
+          {
+            "childId": "gl-1",
+            "childLabel": "凭证中心",
+            "isChildActive": true
+          },
+          {
+            "childId": "gl-2",
+            "childLabel": "期末结转",
+            "isChildActive": false
+          },
+          {
+            "childId": "gl-3",
+            "childLabel": "科目余额表",
+            "isChildActive": false
+          }
+        ]
+      },
+      {
+        "menuId": "ap_ar",
+        "menuLabel": "应收应付",
+        "menuIcon": "scale",
+        "isActive": false,
+        "children": [
+          {
+            "childId": "ap-1",
+            "childLabel": "采购发票",
+            "isChildActive": false
+          },
+          {
+            "childId": "ar-1",
+            "childLabel": "销售发票",
+            "isChildActive": false
+          }
+        ]
+      },
+      {
+        "menuId": "assets",
+        "menuLabel": "资产管理",
+        "menuIcon": "building-2",
+        "isActive": false
+      },
+      {
+        "menuId": "reports",
+        "menuLabel": "财务报表",
+        "menuIcon": "bar-chart-3",
+        "isActive": false
+      },
+      {
+        "menuId": "settings",
+        "menuLabel": "系统设置",
+        "menuIcon": "settings",
+        "isActive": false
+      }
+    ],
+    "financialKpis": [
+      {
+        "cardTitle": "总资产",
+        "metricValue": "¥ 12,450,800.00",
+        "trendIcon": "trending-up",
+        "changePercentage": "4.8%",
+        "changeDirection": "up",
+        "comparisonPeriod": "较上月同期",
+        "decoratorIcon": "wallet-cards"
+      },
+      {
+        "cardTitle": "总负债",
+        "metricValue": "¥ 4,230,500.00",
+        "trendIcon": "trending-down",
+        "changePercentage": "-1.2%",
+        "changeDirection": "down",
+        "comparisonPeriod": "较上月同期",
+        "decoratorIcon": "file-down"
+      },
+      {
+        "cardTitle": "所有者权益",
+        "metricValue": "¥ 8,220,300.00",
+        "trendIcon": "trending-up",
+        "changePercentage": "8.5%",
+        "changeDirection": "up",
+        "comparisonPeriod": "较上月同期",
+        "decoratorIcon": "piggy-bank"
+      },
+      {
+        "cardTitle": "试算平衡状态",
+        "metricValue": "借贷平衡",
+        "statusIcon": "shield-check",
+        "statusColor": "success",
+        "balanceDiff": "差异额：¥ 0.00",
+        "comparisonPeriod": "当前会计期间：2023-10",
+        "decoratorIcon": "scale"
+      }
+    ],
+    "selectedPeriod": "2023-10",
+    "selectedStatus": "all",
+    "filterOptions": {
+      "accountingPeriods": [
+        {
+          "label": "2023年10期 (本期)",
+          "value": "2023-10"
+        },
+        {
+          "label": "2023年09期",
+          "value": "2023-09"
+        }
+      ],
+      "voucherStatuses": [
+        {
+          "label": "全部状态",
+          "value": "all"
+        },
+        {
+          "label": "已审核",
+          "value": "approved"
+        },
+        {
+          "label": "待审核",
+          "value": "pending"
+        },
+        {
+          "label": "已驳回",
+          "value": "rejected"
+        },
+        {
+          "label": "草稿",
+          "value": "draft"
+        }
+      ]
+    },
+    "actionButtons": [
+      {
+        "btnLabel": "新增凭证",
+        "btnIcon": "plus-circle",
+        "btnType": "primary"
+      },
+      {
+        "btnLabel": "导出",
+        "btnIcon": "download",
+        "btnType": "default"
+      },
+      {
+        "btnLabel": "批量审核",
+        "btnIcon": "check-circle",
+        "btnType": "default"
+      }
+    ],
+    "voucherItems": [
+      {
+        "voucherId": "v001",
+        "voucherNumber": "PZ-2023-1001",
+        "voucherDate": "2023-10-02",
+        "period": "2023-10",
+        "summary": "支付10月份办公用房租金",
+        "accountName": "管理费用-租赁费",
+        "debitAmount": "25,000.00",
+        "creditAmount": "-",
+        "preparerName": "王建飞",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v002",
+        "voucherNumber": "PZ-2023-1002",
+        "voucherDate": "2023-10-05",
+        "period": "2023-10",
+        "summary": "收到A公司前欠货款",
+        "accountName": "银行存款-工行",
+        "debitAmount": "150,000.00",
+        "creditAmount": "-",
+        "preparerName": "李娜",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v003",
+        "voucherNumber": "PZ-2023-1003",
+        "voucherDate": "2023-10-05",
+        "period": "2023-10",
+        "summary": "收到A公司前欠货款",
+        "accountName": "应收账款-A公司",
+        "debitAmount": "-",
+        "creditAmount": "150,000.00",
+        "preparerName": "李娜",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v004",
+        "voucherNumber": "PZ-2023-1004",
+        "voucherDate": "2023-10-08",
+        "period": "2023-10",
+        "summary": "采购部报销差旅费",
+        "accountName": "管理费用-差旅费",
+        "debitAmount": "4,500.50",
+        "creditAmount": "-",
+        "preparerName": "王建飞",
+        "status": "待审核",
+        "statusTagColor": "warning",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v005",
+        "voucherNumber": "PZ-2023-1005",
+        "voucherDate": "2023-10-08",
+        "period": "2023-10",
+        "summary": "采购部报销差旅费",
+        "accountName": "库存现金",
+        "debitAmount": "-",
+        "creditAmount": "4,500.50",
+        "preparerName": "王建飞",
+        "status": "待审核",
+        "statusTagColor": "warning",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v006",
+        "voucherNumber": "PZ-2023-1006",
+        "voucherDate": "2023-10-10",
+        "period": "2023-10",
+        "summary": "缴纳上月增值税及附加",
+        "accountName": "应交税费-未交增值税",
+        "debitAmount": "32,000.00",
+        "creditAmount": "-",
+        "preparerName": "赵燕",
+        "status": "已驳回",
+        "statusTagColor": "error",
+        "rejectReason": "缺少完税凭证附件"
+      },
+      {
+        "voucherId": "v007",
+        "voucherNumber": "PZ-2023-1007",
+        "voucherDate": "2023-10-12",
+        "period": "2023-10",
+        "summary": "购买办公电脑5台",
+        "accountName": "固定资产-电子设备",
+        "debitAmount": "27,500.00",
+        "creditAmount": "-",
+        "preparerName": "李娜",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v008",
+        "voucherNumber": "PZ-2023-1008",
+        "voucherDate": "2023-10-12",
+        "period": "2023-10",
+        "summary": "购买办公电脑5台",
+        "accountName": "银行存款-招行",
+        "debitAmount": "-",
+        "creditAmount": "27,500.00",
+        "preparerName": "李娜",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v009",
+        "voucherNumber": "PZ-2023-1009",
+        "voucherDate": "2023-10-15",
+        "period": "2023-10",
+        "summary": "研发部门领用耗材",
+        "accountName": "研发支出-材料费",
+        "debitAmount": "1,250.00",
+        "creditAmount": "-",
+        "preparerName": "王建飞",
+        "status": "草稿",
+        "statusTagColor": "default",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v010",
+        "voucherNumber": "PZ-2023-1010",
+        "voucherDate": "2023-10-18",
+        "period": "2023-10",
+        "summary": "销售B产品100件",
+        "accountName": "主营业务收入-B产品",
+        "debitAmount": "-",
+        "creditAmount": "85,000.00",
+        "preparerName": "李娜",
+        "status": "待审核",
+        "statusTagColor": "warning",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v011",
+        "voucherNumber": "PZ-2023-1011",
+        "voucherDate": "2023-10-18",
+        "period": "2023-10",
+        "summary": "销售B产品100件",
+        "accountName": "应收账款-C公司",
+        "debitAmount": "85,000.00",
+        "creditAmount": "-",
+        "preparerName": "李娜",
+        "status": "待审核",
+        "statusTagColor": "warning",
+        "rejectReason": ""
+      },
+      {
+        "voucherId": "v012",
+        "voucherNumber": "PZ-2023-1012",
+        "voucherDate": "2023-10-25",
+        "period": "2023-10",
+        "summary": "摊销本月无形资产使用权",
+        "accountName": "累计摊销",
+        "debitAmount": "-",
+        "creditAmount": "5,600.00",
+        "preparerName": "王建飞",
+        "status": "已审核",
+        "statusTagColor": "success",
+        "rejectReason": ""
+      }
+    ],
+    "pagination": {
+      "currentPage": 1,
+      "pageSize": 20,
+      "totalCount": 156,
+      "totalPages": 8
+    },
+    "drawerData": {
+      "drawerTitle": "凭证详情",
+      "baseInfo": {
+        "voucherNumber": "PZ-2023-1001",
+        "voucherDate": "2023-10-02",
+        "businessType": "日常报销",
+        "preparerName": "王建飞",
+        "prepareAvatarImage": "https://randomuser.me/api/portraits/men/75.jpg"
+      },
+      "entryDetails": [
+        {
+          "accountCode": "6602",
+          "accountName": "管理费用-租赁费",
+          "debitAmount": "25,000.00",
+          "creditAmount": "-",
+          "summary": "支付10月份办公用房租金"
+        },
+        {
+          "accountCode": "1002",
+          "accountName": "银行存款-工商银行中关村支行",
+          "debitAmount": "-",
+          "creditAmount": "25,000.00",
+          "summary": "支付10月份办公用房租金"
+        }
+      ],
+      "attachmentFiles": [
+        {
+          "fileName": "租金发票.pdf",
+          "fileSize": "1.2MB",
+          "previewImage": "https://picsum.photos/seed/invoice-rent/200/200",
+          "uploadTime": "2023-10-02 10:15:00"
+        },
+        {
+          "fileName": "银行回单.png",
+          "fileSize": "350KB",
+          "previewImage": "https://picsum.photos/seed/bank-receipt/200/200",
+          "uploadTime": "2023-10-02 10:18:30"
+        },
+        {
+          "fileName": "租赁合同截取.jpg",
+          "fileSize": "800KB",
+          "previewImage": "https://picsum.photos/seed/lease-contract/200/200",
+          "uploadTime": "2023-10-02 10:20:00"
+        }
+      ],
+      "approvalLogs": [
+        {
+          "approverName": "王建飞",
+          "approverAvatarImage": "https://randomuser.me/api/portraits/men/75.jpg",
+          "action": "提交凭证",
+          "timestamp": "2023-10-02 10:25:00",
+          "comment": ""
+        },
+        {
+          "approverName": "张嘉豪",
+          "approverAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+          "action": "审核通过",
+          "timestamp": "2023-10-02 11:10:45",
+          "comment": "同意付款。"
+        },
+        {
+          "approverName": "系统出纳",
+          "approverAvatarImage": "",
+          "action": "自动过账",
+          "timestamp": "2023-10-02 11:10:46",
+          "comment": "生成总账分录成功。"
+        }
+      ]
+    }
+  },
+  "rootId": "rootContainer",
+  "elements": [
+    {
+      "id": "rootContainer",
+      "component": "div",
+      "props": {
+        "className": "h-screen flex overflow-hidden bg-surface-container-lowest"
+      },
+      "children": [
+        "sidebarContainer",
+        "rightAreaContainer"
+      ]
+    },
+    {
+      "id": "sidebarContainer",
+      "component": "div",
+      "props": {
+        "className": "w-56 h-screen flex flex-col bg-surface-container-highest shadow-sm shrink-0"
+      },
+      "children": [
+        "sidebarHeader",
+        "sidebarMenu"
+      ]
+    },
+    {
+      "id": "sidebarHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-5 h-14 border-b border-divider shrink-0"
+      },
+      "children": [
+        "sidebarLogoIcon",
+        "sidebarLogoText"
+      ]
+    },
+    {
+      "id": "sidebarLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/systemInfo/logoIcon"
+        },
+        "color": "primary",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "sidebarLogoText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemInfo/systemName"
+        },
+        "className": "text-sm font-bold text-primary"
+      }
+    },
+    {
+      "id": "sidebarMenu",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto py-3 px-3 flex flex-col gap-1"
+      },
+      "children": [
+        "sidebarMenuHome",
+        "sidebarMenuGLGroup",
+        "sidebarMenuAPAR",
+        "sidebarMenuAssets",
+        "sidebarMenuReports",
+        "sidebarMenuSettings"
+      ]
+    },
+    {
+      "id": "sidebarMenuHome",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuHomeIcon",
+        "sidebarMenuHomeText"
+      ]
+    },
+    {
+      "id": "sidebarMenuHomeIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/0/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuHomeText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/0/menuLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuGLGroup",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "sidebarMenuGLHeader",
+        "sidebarMenuGLChildren"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container"
+      },
+      "children": [
+        "sidebarMenuGLIcon",
+        "sidebarMenuGLText",
+        "sidebarMenuGLArrow"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/1/menuIcon"
+        },
+        "color": "primary",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuGLText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/1/menuLabel"
+        },
+        "className": "text-sm font-medium"
+      }
+    },
+    {
+      "id": "sidebarMenuGLArrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "primary",
+        "className": "w-4 h-4 ml-auto"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChildren",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col pl-4 mt-1 gap-0.5"
+      },
+      "children": [
+        "sidebarMenuGLChild1",
+        "sidebarMenuGLChild2",
+        "sidebarMenuGLChild3"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLChild1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-3 py-2 rounded-lg bg-primary text-on-primary"
+      },
+      "children": [
+        "sidebarMenuGLChild1Dot",
+        "sidebarMenuGLChild1Text"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLChild1Dot",
+      "component": "div",
+      "props": {
+        "className": "w-1.5 h-1.5 rounded-full bg-on-primary"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChild1Text",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/1/children/0/childLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChild2",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuGLChild2Dot",
+        "sidebarMenuGLChild2Text"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLChild2Dot",
+      "component": "div",
+      "props": {
+        "className": "w-1.5 h-1.5 rounded-full bg-on-surface-variant"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChild2Text",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/1/children/1/childLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChild3",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuGLChild3Dot",
+        "sidebarMenuGLChild3Text"
+      ]
+    },
+    {
+      "id": "sidebarMenuGLChild3Dot",
+      "component": "div",
+      "props": {
+        "className": "w-1.5 h-1.5 rounded-full bg-on-surface-variant"
+      }
+    },
+    {
+      "id": "sidebarMenuGLChild3Text",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/1/children/2/childLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuAPAR",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuAPARIcon",
+        "sidebarMenuAPARText",
+        "sidebarMenuAPARArrow"
+      ]
+    },
+    {
+      "id": "sidebarMenuAPARIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/2/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuAPARText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/2/menuLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuAPARArrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-right",
+        "className": "w-4 h-4 ml-auto"
+      }
+    },
+    {
+      "id": "sidebarMenuAssets",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuAssetsIcon",
+        "sidebarMenuAssetsText"
+      ]
+    },
+    {
+      "id": "sidebarMenuAssetsIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/3/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuAssetsText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/3/menuLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuReports",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuReportsIcon",
+        "sidebarMenuReportsText"
+      ]
+    },
+    {
+      "id": "sidebarMenuReportsIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/4/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuReportsText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/4/menuLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarMenuSettings",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-on-surface-variant"
+      },
+      "children": [
+        "sidebarMenuSettingsIcon",
+        "sidebarMenuSettingsText"
+      ]
+    },
+    {
+      "id": "sidebarMenuSettingsIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/navMenuItems/5/menuIcon"
+        },
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarMenuSettingsText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/navMenuItems/5/menuLabel"
+        },
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "rightAreaContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col overflow-hidden"
+      },
+      "children": [
+        "topNavContainer",
+        "mainContentArea"
+      ]
+    },
+    {
+      "id": "topNavContainer",
+      "component": "div",
+      "props": {
+        "className": "h-14 flex items-center justify-between px-6 bg-surface-container-highest shadow-sm shrink-0 z-10"
+      },
+      "children": [
+        "topNavLeft",
+        "topNavCenter",
+        "topNavRight"
+      ]
+    },
+    {
+      "id": "topNavLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "topNavPageIcon",
+        "topNavPageTitle"
+      ]
+    },
+    {
+      "id": "topNavPageIcon",
+      "component": "Icon",
+      "props": {
+        "name": "book-open",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "topNavPageTitle",
+      "component": "span",
+      "props": {
+        "value": "总账与凭证中心",
+        "className": "text-base font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "topNavCenter",
+      "component": "div",
+      "props": {
+        "className": "flex-1 max-w-xl mx-8"
+      },
+      "children": [
+        "topNavSearchInput"
+      ]
+    },
+    {
+      "id": "topNavSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "搜索凭证号、科目、供应商...",
+        "prefix": "search",
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "topNavRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "topNavBellWrap",
+        "topNavMsgWrap",
+        "topNavDivider",
+        "topNavUserDropdown"
+      ]
+    },
+    {
+      "id": "topNavBellWrap",
+      "component": "div",
+      "props": {
+        "className": "relative cursor-pointer"
+      },
+      "children": [
+        "topNavBellIcon",
+        "topNavBellBadge"
+      ]
+    },
+    {
+      "id": "topNavBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/notifications/0/alertIcon"
+        },
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavBellBadge",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/notifications/0/unreadCount"
+        },
+        "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-[10px] rounded-full min-w-4 h-4 flex items-center justify-center leading-none"
+      }
+    },
+    {
+      "id": "topNavMsgWrap",
+      "component": "div",
+      "props": {
+        "className": "relative cursor-pointer"
+      },
+      "children": [
+        "topNavMsgIcon",
+        "topNavMsgBadge"
+      ]
+    },
+    {
+      "id": "topNavMsgIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/notifications/1/alertIcon"
+        },
+        "className": "w-5 h-5 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavMsgBadge",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/notifications/1/unreadCount"
+        },
+        "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-[10px] rounded-full min-w-4 h-4 flex items-center justify-center leading-none"
+      }
+    },
+    {
+      "id": "topNavDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-6 bg-border-base"
+      }
+    },
+    {
+      "id": "topNavUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": [
+          {
+            "label": "个人设置",
+            "key": "profile",
+            "icon": "user"
+          },
+          {
+            "label": "退出登录",
+            "key": "logout",
+            "icon": "log-out"
+          }
+        ]
+      },
+      "children": [
+        "topNavUserTrigger"
+      ]
+    },
+    {
+      "id": "topNavUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2.5 cursor-pointer"
+      },
+      "children": [
+        "topNavUserAvatar",
+        "topNavUserInfo"
+      ]
+    },
+    {
+      "id": "topNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userProfile/userAvatarImage"
+        },
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "topNavUserInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "topNavUserName",
+        "topNavUserRole"
+      ]
+    },
+    {
+      "id": "topNavUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userProfile/userName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "topNavUserRole",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userProfile/userRole"
+        },
+        "className": "text-[10px] text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mainContentArea",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-6"
+      },
+      "children": [
+        "kpiCardsContainer",
+        "actionBarContainer",
+        "contentAreaContainer"
+      ]
+    },
+    {
+      "id": "kpiCardsContainer",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-4 gap-4 mb-6"
+      },
+      "children": [
+        "kpiCard1",
+        "kpiCard2",
+        "kpiCard3",
+        "kpiCard4"
+      ]
+    },
+    {
+      "id": "kpiCard1",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex justify-between items-start"
+      },
+      "children": [
+        "kpiCard1Body",
+        "kpiCard1Decorator"
+      ]
+    },
+    {
+      "id": "kpiCard1Body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1"
+      },
+      "children": [
+        "kpiCard1Title",
+        "kpiCard1Value",
+        "kpiCard1Footer"
+      ]
+    },
+    {
+      "id": "kpiCard1Title",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/0/cardTitle"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard1Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/0/metricValue"
+        },
+        "className": "text-2xl font-bold text-on-surface mt-2"
+      }
+    },
+    {
+      "id": "kpiCard1Footer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 mt-3"
+      },
+      "children": [
+        "kpiCard1TrendIcon",
+        "kpiCard1Change",
+        "kpiCard1Period"
+      ]
+    },
+    {
+      "id": "kpiCard1TrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/0/trendIcon"
+        },
+        "color": "success",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "kpiCard1Change",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/0/changePercentage"
+        },
+        "className": "text-xs font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiCard1Period",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/0/comparisonPeriod"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard1Decorator",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/0/decoratorIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "kpiCard2",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex justify-between items-start"
+      },
+      "children": [
+        "kpiCard2Body",
+        "kpiCard2Decorator"
+      ]
+    },
+    {
+      "id": "kpiCard2Body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1"
+      },
+      "children": [
+        "kpiCard2Title",
+        "kpiCard2Value",
+        "kpiCard2Footer"
+      ]
+    },
+    {
+      "id": "kpiCard2Title",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/1/cardTitle"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard2Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/1/metricValue"
+        },
+        "className": "text-2xl font-bold text-on-surface mt-2"
+      }
+    },
+    {
+      "id": "kpiCard2Footer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 mt-3"
+      },
+      "children": [
+        "kpiCard2TrendIcon",
+        "kpiCard2Change",
+        "kpiCard2Period"
+      ]
+    },
+    {
+      "id": "kpiCard2TrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/1/trendIcon"
+        },
+        "color": "success",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "kpiCard2Change",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/1/changePercentage"
+        },
+        "className": "text-xs font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiCard2Period",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/1/comparisonPeriod"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard2Decorator",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/1/decoratorIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "kpiCard3",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex justify-between items-start"
+      },
+      "children": [
+        "kpiCard3Body",
+        "kpiCard3Decorator"
+      ]
+    },
+    {
+      "id": "kpiCard3Body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1"
+      },
+      "children": [
+        "kpiCard3Title",
+        "kpiCard3Value",
+        "kpiCard3Footer"
+      ]
+    },
+    {
+      "id": "kpiCard3Title",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/2/cardTitle"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard3Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/2/metricValue"
+        },
+        "className": "text-2xl font-bold text-on-surface mt-2"
+      }
+    },
+    {
+      "id": "kpiCard3Footer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 mt-3"
+      },
+      "children": [
+        "kpiCard3TrendIcon",
+        "kpiCard3Change",
+        "kpiCard3Period"
+      ]
+    },
+    {
+      "id": "kpiCard3TrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/2/trendIcon"
+        },
+        "color": "success",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "kpiCard3Change",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/2/changePercentage"
+        },
+        "className": "text-xs font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiCard3Period",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/2/comparisonPeriod"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard3Decorator",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/2/decoratorIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "kpiCard4",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-5 flex justify-between items-start"
+      },
+      "children": [
+        "kpiCard4Body",
+        "kpiCard4Decorator"
+      ]
+    },
+    {
+      "id": "kpiCard4Body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1"
+      },
+      "children": [
+        "kpiCard4Title",
+        "kpiCard4Value",
+        "kpiCard4Footer"
+      ]
+    },
+    {
+      "id": "kpiCard4Title",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/3/cardTitle"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard4Value",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mt-2"
+      },
+      "children": [
+        "kpiCard4StatusIcon",
+        "kpiCard4ValueText"
+      ]
+    },
+    {
+      "id": "kpiCard4StatusIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/3/statusIcon"
+        },
+        "color": "success",
+        "shape": "circle",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "kpiCard4ValueText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/3/metricValue"
+        },
+        "className": "text-xl font-bold text-success"
+      }
+    },
+    {
+      "id": "kpiCard4Footer",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mt-3"
+      },
+      "children": [
+        "kpiCard4BalanceDiff",
+        "kpiCard4Period"
+      ]
+    },
+    {
+      "id": "kpiCard4BalanceDiff",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/3/balanceDiff"
+        },
+        "className": "text-xs font-medium text-success"
+      }
+    },
+    {
+      "id": "kpiCard4Period",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/financialKpis/3/comparisonPeriod"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "kpiCard4Decorator",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/financialKpis/3/decoratorIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "actionBarContainer",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center mb-4"
+      },
+      "children": [
+        "actionBarLeft",
+        "actionBarRight"
+      ]
+    },
+    {
+      "id": "actionBarLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "actionBarPeriodSelect",
+        "actionBarStatusSelect"
+      ]
+    },
+    {
+      "id": "actionBarPeriodSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedPeriod"
+        },
+        "options": {
+          "path": "/filterOptions/accountingPeriods"
+        },
+        "className": "w-52"
+      }
+    },
+    {
+      "id": "actionBarStatusSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/selectedStatus"
+        },
+        "options": {
+          "path": "/filterOptions/voucherStatuses"
+        },
+        "className": "w-36"
+      }
+    },
+    {
+      "id": "actionBarRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "actionBarBtn1",
+        "actionBarBtn2",
+        "actionBarBtn3"
+      ]
+    },
+    {
+      "id": "actionBarBtn1",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/actionButtons/0/btnLabel"
+        },
+        "icon": {
+          "path": "/actionButtons/0/btnIcon"
+        },
+        "color": "primary",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "actionBarBtn2",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/actionButtons/1/btnLabel"
+        },
+        "icon": {
+          "path": "/actionButtons/1/btnIcon"
+        },
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "actionBarBtn3",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/actionButtons/2/btnLabel"
+        },
+        "icon": {
+          "path": "/actionButtons/2/btnIcon"
+        },
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "contentAreaContainer",
+      "component": "div",
+      "props": {
+        "className": "flex gap-4 min-h-0"
+      },
+      "children": [
+        "tableWrapper",
+        "drawerContainer"
+      ]
+    },
+    {
+      "id": "tableWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex-1 bg-surface-container-highest rounded-xl shadow-sm overflow-hidden min-w-0"
+      },
+      "children": [
+        "voucherTable"
+      ]
+    },
+    {
+      "id": "voucherTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "voucherId",
+        "dataSource": {
+          "path": "/voucherItems"
+        },
+        "columns": [
+          {
+            "title": "凭证字号",
+            "dataIndex": "voucherNumber",
+            "width": 140
+          },
+          {
+            "title": "日期",
+            "dataIndex": "voucherDate",
+            "width": 110
+          },
+          {
+            "title": "期间",
+            "dataIndex": "period",
+            "width": 100
+          },
+          {
+            "title": "摘要",
+            "dataIndex": "summary"
+          },
+          {
+            "title": "科目",
+            "dataIndex": "accountName"
+          },
+          {
+            "title": "借方金额",
+            "dataIndex": "debitAmount",
+            "align": "right",
+            "width": 120
+          },
+          {
+            "title": "贷方金额",
+            "dataIndex": "creditAmount",
+            "align": "right",
+            "width": 120
+          },
+          {
+            "title": "制单人",
+            "dataIndex": "preparerName",
+            "width": 80
+          },
+          {
+            "title": "状态",
+            "dataIndex": "status",
+            "width": 150
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 60,
+            "align": "center"
+          }
+        ],
+        "pagination": true,
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/voucherItems",
+        "componentId": "voucherTableRow"
+      }
+    },
+    {
+      "id": "voucherTableRow",
+      "component": "TableRow",
+      "children": [
+        "tableColNum",
+        "tableColDate",
+        "tableColPeriod",
+        "tableColSummary",
+        "tableColAccount",
+        "tableColDebit",
+        "tableColCredit",
+        "tableColPreparer",
+        "tableColStatus",
+        "tableColAction"
+      ]
+    },
+    {
+      "id": "tableColNum",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "voucherNumber"
+        },
+        "className": "text-sm font-medium text-primary"
+      }
+    },
+    {
+      "id": "tableColDate",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "voucherDate"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "tableColPeriod",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "period"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "tableColSummary",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "summary"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "tableColAccount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accountName"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "tableColDebit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "debitAmount"
+        },
+        "className": "text-sm font-medium text-error"
+      }
+    },
+    {
+      "id": "tableColCredit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "creditAmount"
+        },
+        "className": "text-sm font-medium text-primary"
+      }
+    },
+    {
+      "id": "tableColPreparer",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "preparerName"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "tableColStatus",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "tableColStatusTag",
+        "tableColRejectReason"
+      ]
+    },
+    {
+      "id": "tableColStatusTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status"
+        },
+        "color": {
+          "path": "statusTagColor"
+        }
+      }
+    },
+    {
+      "id": "tableColRejectReason",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "rejectReason"
+        },
+        "className": "text-[10px] text-error"
+      }
+    },
+    {
+      "id": "tableColAction",
+      "component": "Button",
+      "props": {
+        "icon": "ellipsis-vertical",
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "drawerContainer",
+      "component": "div",
+      "props": {
+        "className": "w-[420px] shrink-0 bg-surface-container-highest rounded-xl shadow-sm overflow-y-auto flex flex-col"
+      },
+      "children": [
+        "drawerHeader",
+        "drawerBody"
+      ]
+    },
+    {
+      "id": "drawerHeader",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center px-5 h-14 border-b border-divider shrink-0"
+      },
+      "children": [
+        "drawerTitle",
+        "drawerCloseBtn"
+      ]
+    },
+    {
+      "id": "drawerTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/drawerData/drawerTitle"
+        },
+        "className": "text-base font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "drawerCloseBtn",
+      "component": "Button",
+      "props": {
+        "icon": "x",
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "drawerBody",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-5 flex flex-col gap-5"
+      },
+      "children": [
+        "drawerBaseInfoSection",
+        "drawerEntrySection",
+        "drawerAttachmentSection",
+        "drawerApprovalSection"
+      ]
+    },
+    {
+      "id": "drawerBaseInfoSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "drawerBaseInfoTitle",
+        "drawerBaseInfoGrid"
+      ]
+    },
+    {
+      "id": "drawerBaseInfoTitle",
+      "component": "span",
+      "props": {
+        "value": "基本信息",
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "drawerBaseInfoGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-3 bg-surface-variant rounded-lg p-4"
+      },
+      "children": [
+        "drawerBaseField1",
+        "drawerBaseField2",
+        "drawerBaseField3",
+        "drawerBaseField4"
+      ]
+    },
+    {
+      "id": "drawerBaseField1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "drawerBaseField1Label",
+        "drawerBaseField1Value"
+      ]
+    },
+    {
+      "id": "drawerBaseField1Label",
+      "component": "span",
+      "props": {
+        "value": "凭证字号",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerBaseField1Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/drawerData/baseInfo/voucherNumber"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "drawerBaseField2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "drawerBaseField2Label",
+        "drawerBaseField2Value"
+      ]
+    },
+    {
+      "id": "drawerBaseField2Label",
+      "component": "span",
+      "props": {
+        "value": "凭证日期",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerBaseField2Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/drawerData/baseInfo/voucherDate"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "drawerBaseField3",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "drawerBaseField3Label",
+        "drawerBaseField3Value"
+      ]
+    },
+    {
+      "id": "drawerBaseField3Label",
+      "component": "span",
+      "props": {
+        "value": "业务类型",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerBaseField3Value",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/drawerData/baseInfo/businessType"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "drawerBaseField4",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-1"
+      },
+      "children": [
+        "drawerBaseField4Label",
+        "drawerBaseField4Value"
+      ]
+    },
+    {
+      "id": "drawerBaseField4Label",
+      "component": "span",
+      "props": {
+        "value": "制单人",
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerBaseField4Value",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "drawerBaseField4Avatar",
+        "drawerBaseField4Name"
+      ]
+    },
+    {
+      "id": "drawerBaseField4Avatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/drawerData/baseInfo/prepareAvatarImage"
+        },
+        "className": "w-5 h-5 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "drawerBaseField4Name",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/drawerData/baseInfo/preparerName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "drawerEntrySection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "drawerEntryTitle",
+        "drawerEntryTable"
+      ]
+    },
+    {
+      "id": "drawerEntryTitle",
+      "component": "span",
+      "props": {
+        "value": "分录明细",
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "drawerEntryTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "accountCode",
+        "dataSource": {
+          "path": "/drawerData/entryDetails"
+        },
+        "columns": [
+          {
+            "title": "科目编码",
+            "dataIndex": "accountCode",
+            "width": 80
+          },
+          {
+            "title": "科目名称",
+            "dataIndex": "accountName"
+          },
+          {
+            "title": "借方",
+            "dataIndex": "debitAmount",
+            "align": "right",
+            "width": 100
+          },
+          {
+            "title": "贷方",
+            "dataIndex": "creditAmount",
+            "align": "right",
+            "width": 100
+          },
+          {
+            "title": "摘要",
+            "dataIndex": "summary"
+          }
+        ],
+        "pagination": false
+      },
+      "children": {
+        "path": "/drawerData/entryDetails",
+        "componentId": "drawerEntryRow"
+      }
+    },
+    {
+      "id": "drawerEntryRow",
+      "component": "TableRow",
+      "children": [
+        "drawerEntryCode",
+        "drawerEntryName",
+        "drawerEntryDebit",
+        "drawerEntryCredit",
+        "drawerEntrySummary"
+      ]
+    },
+    {
+      "id": "drawerEntryCode",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accountCode"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerEntryName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accountName"
+        },
+        "className": "text-xs text-on-surface"
+      }
+    },
+    {
+      "id": "drawerEntryDebit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "debitAmount"
+        },
+        "className": "text-xs font-medium text-error"
+      }
+    },
+    {
+      "id": "drawerEntryCredit",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "creditAmount"
+        },
+        "className": "text-xs font-medium text-primary"
+      }
+    },
+    {
+      "id": "drawerEntrySummary",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "summary"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerAttachmentSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "drawerAttachmentTitle",
+        "drawerAttachmentGrid"
+      ]
+    },
+    {
+      "id": "drawerAttachmentTitle",
+      "component": "span",
+      "props": {
+        "value": "附件",
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "drawerAttachmentGrid",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-3 gap-3"
+      },
+      "children": {
+        "path": "/drawerData/attachmentFiles",
+        "componentId": "drawerAttachmentCard"
+      }
+    },
+    {
+      "id": "drawerAttachmentCard",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-2 bg-surface-variant rounded-lg overflow-hidden"
+      },
+      "children": [
+        "drawerAttachmentImg",
+        "drawerAttachmentInfo"
+      ]
+    },
+    {
+      "id": "drawerAttachmentImg",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "previewImage"
+        },
+        "className": "w-full h-20 object-cover"
+      }
+    },
+    {
+      "id": "drawerAttachmentInfo",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5 px-2 pb-2"
+      },
+      "children": [
+        "drawerAttachmentName",
+        "drawerAttachmentMeta"
+      ]
+    },
+    {
+      "id": "drawerAttachmentName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "fileName"
+        },
+        "className": "text-[10px] font-medium text-on-surface truncate"
+      }
+    },
+    {
+      "id": "drawerAttachmentMeta",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "drawerAttachmentFileSize",
+        "drawerAttachmentUploadTime"
+      ]
+    },
+    {
+      "id": "drawerAttachmentFileSize",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "fileSize"
+        },
+        "className": "text-[10px] text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerAttachmentUploadTime",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "uploadTime"
+        },
+        "className": "text-[10px] text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerApprovalSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "drawerApprovalTitle",
+        "drawerTimeline"
+      ]
+    },
+    {
+      "id": "drawerApprovalTitle",
+      "component": "span",
+      "props": {
+        "value": "审批日志",
+        "className": "text-sm font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "drawerTimeline",
+      "component": "Timeline",
+      "props": {
+        "orientation": "vertical"
+      },
+      "children": {
+        "path": "/drawerData/approvalLogs",
+        "componentId": "drawerTimelineItem"
+      }
+    },
+    {
+      "id": "drawerTimelineItem",
+      "component": "TimelineItem",
+      "props": {
+        "title": {
+          "path": "timestamp"
+        },
+        "content": {
+          "componentId": "drawerTimelineContent"
+        }
+      }
+    },
+    {
+      "id": "drawerTimelineContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5"
+      },
+      "children": [
+        "drawerTimelineAction",
+        "drawerTimelineApprover",
+        "drawerTimelineComment"
+      ]
+    },
+    {
+      "id": "drawerTimelineAction",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "action"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "drawerTimelineApprover",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "approverName"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    },
+    {
+      "id": "drawerTimelineComment",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "comment"
+        },
+        "className": "text-xs text-on-surface-variant"
+      }
+    }
+  ]
+}

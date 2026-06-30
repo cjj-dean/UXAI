@@ -1,0 +1,983 @@
+{
+    "state": {
+        "systemName": "Nexus HRMS",
+        "navItems": [
+            {
+                "label": "Talent Management",
+                "isActive": true
+            },
+            {
+                "label": "Payroll & Tax",
+                "isActive": false
+            },
+            {
+                "label": "Org Analytics",
+                "isActive": false
+            }
+        ],
+        "searchPlaceholder": "Search employees, documents or reports...",
+        "currentUser": {
+            "name": "Admin User",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "menuItems": [
+            {
+                "label": "Overview",
+                "icon": "layout-dashboard",
+                "selected": true
+            },
+            {
+                "label": "Career Path",
+                "icon": "git-merge",
+                "selected": false
+            },
+            {
+                "label": "Compensation",
+                "icon": "wallet",
+                "selected": false
+            },
+            {
+                "label": "Performance",
+                "icon": "trending-up",
+                "selected": false
+            },
+            {
+                "label": "Settings",
+                "icon": "settings",
+                "selected": false
+            }
+        ],
+        "employee": {
+            "name": "Zhang Wei",
+            "id": "EMP-2021-0892",
+            "jobTitle": "Senior Product Manager",
+            "status": "Active",
+            "statusColor": "success",
+            "profileImage": "https://randomuser.me/api/portraits/men/44.jpg",
+            "department": "Product Strategy Dept"
+        },
+        "milestones": [
+            {
+                "date": "2024-03-15",
+                "event": "Promoted to Senior Product Manager",
+                "description": "Led the successful launch of the AI module.",
+                "icon": "arrow-up-circle"
+            },
+            {
+                "date": "2023-01-10",
+                "event": "Product Manager L2",
+                "description": "Transferred to Core Platform team.",
+                "icon": "user-check"
+            },
+            {
+                "date": "2022-06-20",
+                "event": "Annual Excellence Award",
+                "description": "Recognized for outstanding contribution to UX.",
+                "icon": "award"
+            },
+            {
+                "date": "2021-05-04",
+                "event": "Joined as Associate PM",
+                "description": "Onboarded via Global Talent Program.",
+                "icon": "log-in"
+            }
+        ],
+        "compensation": {
+            "baseSalary": "142,500",
+            "currency": "USD",
+            "history": [
+                {
+                    "year": "2021",
+                    "salary": 95000
+                },
+                {
+                    "year": "2022",
+                    "salary": 110000
+                },
+                {
+                    "year": "2023",
+                    "salary": 128000
+                },
+                {
+                    "year": "2024",
+                    "salary": 142500
+                }
+            ],
+            "benefits": [
+                {
+                    "name": "Health & Dental Insurance",
+                    "status": "Premium Plan",
+                    "icon": "heart-pulse"
+                },
+                {
+                    "name": "401(k) Matching",
+                    "status": "6% Contributed",
+                    "icon": "pie-chart"
+                }
+            ],
+            "nextReview": "2024-12-01",
+            "daysLeft": 45
+        },
+        "documents": [
+            {
+                "fileName": "Employment_Contract_2021.pdf",
+                "type": "Legal Contract",
+                "signDate": "2021-05-01",
+                "status": "Signed"
+            },
+            {
+                "fileName": "NDA_Agreement.pdf",
+                "type": "Compliance",
+                "signDate": "2021-05-01",
+                "status": "Signed"
+            },
+            {
+                "fileName": "Promotion_Letter_2024.pdf",
+                "type": "Career",
+                "signDate": "2024-03-20",
+                "status": "Signed"
+            },
+            {
+                "fileName": "Stock_Option_Grant.pdf",
+                "type": "Compensation",
+                "signDate": "2022-01-15",
+                "status": "Signed"
+            },
+            {
+                "fileName": "Annual_Review_2023.pdf",
+                "type": "Performance",
+                "signDate": "2023-12-15",
+                "status": "Archived"
+            },
+            {
+                "fileName": "Health_Insurance_Policy.pdf",
+                "type": "Benefit",
+                "signDate": "2021-06-10",
+                "status": "Active"
+            },
+            {
+                "fileName": "Relocation_Agreement.pdf",
+                "type": "Legal",
+                "signDate": "2021-04-15",
+                "status": "Signed"
+            },
+            {
+                "fileName": "Visa_Sponsorship_Doc.pdf",
+                "type": "Immigration",
+                "signDate": "2021-04-20",
+                "status": "Expired"
+            },
+            {
+                "fileName": "Training_Certificate_AI.pdf",
+                "type": "Education",
+                "signDate": "2023-11-05",
+                "status": "Verified"
+            },
+            {
+                "fileName": "Remote_Work_Addendum.pdf",
+                "type": "Policy",
+                "signDate": "2022-03-01",
+                "status": "Signed"
+            }
+        ]
+    },
+    "rootId": "hrSystemRoot",
+    "elements": [
+        {
+            "id": "hrSystemRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "topNav",
+                "mainLayout"
+            ]
+        },
+        {
+            "id": "topNav",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter py-inline bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "logoContainer",
+                "topMenu",
+                "topRightActions"
+            ]
+        },
+        {
+            "id": "logoContainer",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layers",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/systemName"
+                }
+            }
+        },
+        {
+            "id": "topMenu",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "topNavItem"
+            }
+        },
+        {
+            "id": "topNavItem",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium cursor-pointer hover:text-primary transition-colors",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "topRightActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "globalSearch",
+                "adminAvatar"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-64"
+            },
+            "value": ""
+        },
+        {
+            "id": "adminAvatar",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full overflow-hidden border border-divider"
+            },
+            "children": [
+                "adminImg"
+            ]
+        },
+        {
+            "id": "adminImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-inline gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sideNavItem"
+            }
+        },
+        {
+            "id": "sideNavItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-3 rounded-container cursor-pointer hover:bg-primary-container group transition-all"
+            },
+            "children": [
+                "sideNavIcon",
+                "sideNavLabel"
+            ]
+        },
+        {
+            "id": "sideNavIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 group-hover:text-primary"
+            }
+        },
+        {
+            "id": "sideNavLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium text-on-surface-variant group-hover:text-primary",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter bg-surface"
+            },
+            "children": [
+                "profileHeader",
+                "middleGrid",
+                "bottomTableContainer"
+            ]
+        },
+        {
+            "id": "profileHeader",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card mb-gutter flex items-center justify-between"
+            },
+            "children": [
+                "profileInfoLeft",
+                "profileStatusRight"
+            ]
+        },
+        {
+            "id": "profileInfoLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inset"
+            },
+            "children": [
+                "empAvatarLarge",
+                "empTextDetails"
+            ]
+        },
+        {
+            "id": "empAvatarLarge",
+            "component": "div",
+            "props": {
+                "className": "w-20 h-20 rounded-xl overflow-hidden shadow-md"
+            },
+            "children": [
+                "empImg"
+            ]
+        },
+        {
+            "id": "empImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/employee/profileImage"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "empTextDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "empName",
+                "empTitle",
+                "empIdDept"
+            ]
+        },
+        {
+            "id": "empName",
+            "component": "span",
+            "props": {
+                "className": "text-3xl font-bold text-on-surface",
+                "value": {
+                    "path": "/employee/name"
+                }
+            }
+        },
+        {
+            "id": "empTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg text-primary font-medium",
+                "value": {
+                    "path": "/employee/jobTitle"
+                }
+            }
+        },
+        {
+            "id": "empIdDept",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant mt-1",
+                "value": "EMP-2021-0892 • Product Strategy Dept"
+            }
+        },
+        {
+            "id": "profileStatusRight",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end gap-2"
+            },
+            "children": [
+                "statusTag",
+                "editProfileBtn"
+            ]
+        },
+        {
+            "id": "statusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/employee/status"
+                },
+                "color": "success",
+                "variant": "filled",
+                "className": "px-4 py-1"
+            }
+        },
+        {
+            "id": "editProfileBtn",
+            "component": "Button",
+            "props": {
+                "value": "Edit Profile",
+                "icon": "pencil",
+                "size": "small"
+            }
+        },
+        {
+            "id": "middleGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-gutter mb-gutter"
+            },
+            "children": [
+                "careerPathCol",
+                "compensationCol"
+            ]
+        },
+        {
+            "id": "careerPathCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "careerTitle",
+                "careerTimeline"
+            ]
+        },
+        {
+            "id": "careerTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-xl font-bold mb-inset flex items-center gap-2",
+                "value": "Career Path"
+            }
+        },
+        {
+            "id": "careerTimeline",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical"
+            },
+            "children": {
+                "path": "/milestones",
+                "componentId": "milestoneItem"
+            }
+        },
+        {
+            "id": "milestoneItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "date"
+                },
+                "icon": {
+                    "path": "icon"
+                },
+                "content": {
+                    "componentId": "milestoneContent"
+                }
+            }
+        },
+        {
+            "id": "milestoneContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "milestoneEvent",
+                "milestoneDesc"
+            ]
+        },
+        {
+            "id": "milestoneEvent",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-md text-on-surface",
+                "value": {
+                    "path": "event"
+                }
+            }
+        },
+        {
+            "id": "milestoneDesc",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "description"
+                }
+            }
+        },
+        {
+            "id": "compensationCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "compHeader",
+                "compStatsGrid",
+                "compChart",
+                "compFooter"
+            ]
+        },
+        {
+            "id": "compHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-inset"
+            },
+            "children": [
+                "compTitle",
+                "compCurrency"
+            ]
+        },
+        {
+            "id": "compTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-xl font-bold",
+                "value": "Compensation Overview"
+            }
+        },
+        {
+            "id": "compCurrency",
+            "component": "Tag",
+            "props": {
+                "value": "USD / Annual",
+                "color": "primary",
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "compStatsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter mb-inset"
+            },
+            "children": [
+                "baseSalaryCard",
+                "bonusCard",
+                "equityCard"
+            ]
+        },
+        {
+            "id": "baseSalaryCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "baseSalLabel",
+                "baseSalVal"
+            ]
+        },
+        {
+            "id": "baseSalLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant uppercase tracking-wider",
+                "value": "Base Salary"
+            }
+        },
+        {
+            "id": "baseSalVal",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold block text-primary",
+                "value": "$142,500"
+            }
+        },
+        {
+            "id": "bonusCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "bonusLabel",
+                "bonusVal"
+            ]
+        },
+        {
+            "id": "bonusLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant uppercase tracking-wider",
+                "value": "Target Bonus"
+            }
+        },
+        {
+            "id": "bonusVal",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold block",
+                "value": "15%"
+            }
+        },
+        {
+            "id": "equityCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-4 rounded-lg"
+            },
+            "children": [
+                "equityLabel",
+                "equityVal"
+            ]
+        },
+        {
+            "id": "equityLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant uppercase tracking-wider",
+                "value": "Stock Options"
+            }
+        },
+        {
+            "id": "equityVal",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold block",
+                "value": "2,500 Units"
+            }
+        },
+        {
+            "id": "compChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/compensation/history"
+                    },
+                    "xAxis": {
+                        "data": "year"
+                    },
+                    "yAxisTitle": "Salary (USD)",
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-48 w-full mb-inset"
+            }
+        },
+        {
+            "id": "compFooter",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "benefitsList",
+                "reviewAlert"
+            ]
+        },
+        {
+            "id": "benefitsList",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/compensation/benefits",
+                "componentId": "benefitItem"
+            }
+        },
+        {
+            "id": "benefitItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 border border-divider rounded-lg"
+            },
+            "children": [
+                "benefitIcon",
+                "benefitText"
+            ]
+        },
+        {
+            "id": "benefitIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": "success",
+                "shape": "circle",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "benefitText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "benefitName",
+                "benefitStatus"
+            ]
+        },
+        {
+            "id": "benefitName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "benefitStatus",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "reviewAlert",
+            "component": "div",
+            "props": {
+                "className": "flex-1 bg-info-container p-4 rounded-lg flex items-start gap-3"
+            },
+            "children": [
+                "reviewIcon",
+                "reviewContent"
+            ]
+        },
+        {
+            "id": "reviewIcon",
+            "component": "Icon",
+            "props": {
+                "name": "calendar-clock",
+                "color": "info",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "reviewContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "reviewTitle",
+                "reviewDate"
+            ]
+        },
+        {
+            "id": "reviewTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-on-info-container",
+                "value": "Next Performance Review"
+            }
+        },
+        {
+            "id": "reviewDate",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-info-container opacity-80",
+                "value": "Scheduled for Dec 01, 2024 (45 days left)"
+            }
+        },
+        {
+            "id": "bottomTableContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card"
+            },
+            "children": [
+                "tableTitle",
+                "docsTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-xl font-bold mb-inset",
+                "value": "Employee Documents"
+            }
+        },
+        {
+            "id": "docsTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "fileName",
+                "dataSource": {
+                    "path": "/documents"
+                },
+                "columns": [
+                    {
+                        "title": "File Name",
+                        "dataIndex": "fileName"
+                    },
+                    {
+                        "title": "Category",
+                        "dataIndex": "type"
+                    },
+                    {
+                        "title": "Signed Date",
+                        "dataIndex": "signDate"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Action",
+                        "dataIndex": "action",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/documents",
+                "componentId": "docRow"
+            }
+        },
+        {
+            "id": "docRow",
+            "component": "TableRow",
+            "children": [
+                "docNameCell",
+                "docTypeCell",
+                "docDateCell",
+                "docStatusCell",
+                "docActionCell"
+            ]
+        },
+        {
+            "id": "docNameCell",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "fileIcon",
+                "fileNameText"
+            ]
+        },
+        {
+            "id": "fileIcon",
+            "component": "Icon",
+            "props": {
+                "name": "file-text",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "fileNameText",
+            "component": "span",
+            "props": {
+                "className": "font-medium",
+                "value": {
+                    "path": "fileName"
+                }
+            }
+        },
+        {
+            "id": "docTypeCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "docDateCell",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "signDate"
+                }
+            }
+        },
+        {
+            "id": "docStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "success",
+                "size": "small"
+            }
+        },
+        {
+            "id": "docActionCell",
+            "component": "Button",
+            "props": {
+                "icon": "download",
+                "size": "small",
+                "shape": "circle"
+            }
+        }
+    ]
+}

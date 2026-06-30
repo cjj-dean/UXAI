@@ -1,0 +1,920 @@
+{
+    "state": {
+        "sidebarBrandTitle": "审批中心",
+        "sidebarBrandSubtitle": "统一管理平台",
+        "navMenu": [
+            {
+                "label": "全部申请",
+                "icon": "layout-grid",
+                "active": false
+            },
+            {
+                "label": "待我审批",
+                "icon": "clock",
+                "active": true
+            },
+            {
+                "label": "我已处理",
+                "icon": "check-circle",
+                "active": false
+            },
+            {
+                "label": "抄送我的",
+                "icon": "send",
+                "active": false
+            }
+        ],
+        "headerSearch": "",
+        "currentUser": {
+            "name": "张经理",
+            "role": "高级行政主管",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "filterType": "全部类型",
+        "filterUrgency": "high",
+        "filterDate": [
+            "2023-10-01",
+            "2023-10-31"
+        ],
+        "taskList": [
+            {
+                "id": "1",
+                "name": "李佳麟",
+                "dept": "市场部",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "category": "财务/预算",
+                "title": "Q4 市场营销预算增补申请",
+                "summary": "涉及品牌推广及社交媒体投放费用...",
+                "date": "2023-10-24",
+                "status": "待审批",
+                "statusType": "warning"
+            },
+            {
+                "id": "2",
+                "name": "张宏伟",
+                "dept": "人力资源",
+                "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+                "category": "HR/入职",
+                "title": "新员工入职：高级分析师 (A-221)",
+                "summary": "已通过终轮技术面试，申请薪资核定...",
+                "date": "2023-10-23",
+                "status": "处理中",
+                "statusType": "processing"
+            },
+            {
+                "id": "3",
+                "name": "王雨萌",
+                "dept": "法务部",
+                "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+                "category": "商务/合同",
+                "title": "年度云服务采购合同续约",
+                "summary": "续约期3年，包含5%的年度价格优惠...",
+                "date": "2023-10-23",
+                "status": "待审批",
+                "statusType": "warning"
+            }
+        ],
+        "stats": [
+            {
+                "label": "财务审批",
+                "count": 5,
+                "percent": 75,
+                "status": "exception"
+            },
+            {
+                "label": "人力资源",
+                "count": 4,
+                "percent": 60,
+                "status": "normal"
+            },
+            {
+                "label": "商务合同",
+                "count": 3,
+                "percent": 45,
+                "status": "normal"
+            }
+        ]
+    },
+    "rootId": "appLayout",
+    "elements": [
+        {
+            "id": "appLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "appSidebar",
+                "appMain"
+            ]
+        },
+        {
+            "id": "appSidebar",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-sm flex flex-col p-inset"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarNav",
+                "sidebarAction"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "mb-section"
+            },
+            "children": [
+                "brandTitle",
+                "brandSubtitle"
+            ]
+        },
+        {
+            "id": "brandTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/sidebarBrandTitle"
+                },
+                "className": "text-xl font-bold text-primary"
+            }
+        },
+        {
+            "id": "brandSubtitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/sidebarBrandSubtitle"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-inline"
+            },
+            "children": {
+                "path": "/navMenu",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-stack rounded-md cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "navIcon",
+                "navLabel"
+            ]
+        },
+        {
+            "id": "navIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "navLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md"
+            }
+        },
+        {
+            "id": "sidebarAction",
+            "component": "Button",
+            "props": {
+                "value": "发起申请",
+                "icon": "plus",
+                "color": "primary",
+                "className": "w-full mt-auto"
+            }
+        },
+        {
+            "id": "appMain",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col"
+            },
+            "children": [
+                "appHeader",
+                "appContent"
+            ]
+        },
+        {
+            "id": "appHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-gutter"
+            },
+            "children": [
+                "headerLeft",
+                "headerSearchBox",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "span",
+            "props": {
+                "value": "统一审批中心",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "headerSearchBox",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/headerSearch"
+                },
+                "placeholder": "搜索申请单、发起人...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerIcons",
+                "headerUser"
+            ]
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex gap-stack"
+            },
+            "children": [
+                "iconBell",
+                "iconSettings",
+                "iconHelp"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "iconSettings",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerUser",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "userInfo",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "appContent",
+            "component": "div",
+            "props": {
+                "className": "p-gutter grid grid-cols-12 gap-gutter"
+            },
+            "children": [
+                "contentLeft",
+                "contentRight"
+            ]
+        },
+        {
+            "id": "contentLeft",
+            "component": "div",
+            "props": {
+                "className": "col-span-9 flex flex-col gap-gutter"
+            },
+            "children": [
+                "pageHeader",
+                "filterArea",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "pageHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "headerText",
+                "headerBtn"
+            ]
+        },
+        {
+            "id": "headerText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerTitle",
+                "headerSummary"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "h2",
+            "props": {
+                "value": "审批中心",
+                "className": "text-2xl font-bold"
+            }
+        },
+        {
+            "id": "headerSummary",
+            "component": "span",
+            "props": {
+                "value": "您当前有 12 项待审批任务，涉及 3 个主要类别",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerBtn",
+            "component": "Button",
+            "props": {
+                "value": "发起申请",
+                "icon": "plus-square",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "filterArea",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container flex flex-wrap items-center gap-gutter shadow-sm"
+            },
+            "children": [
+                "filterType",
+                "filterUrgency",
+                "filterDate",
+                "filterMore"
+            ]
+        },
+        {
+            "id": "filterType",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterType"
+                },
+                "options": [
+                    {
+                        "label": "全部类型",
+                        "value": "全部类型"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterUrgency",
+            "component": "RadioGroup",
+            "props": {
+                "value": {
+                    "path": "/filterUrgency"
+                },
+                "optionType": "button",
+                "options": [
+                    {
+                        "label": "高",
+                        "value": "high"
+                    },
+                    {
+                        "label": "中",
+                        "value": "medium"
+                    },
+                    {
+                        "label": "低",
+                        "value": "low"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "filterDate",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/filterDate"
+                },
+                "range": true,
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "filterMore",
+            "component": "Button",
+            "props": {
+                "value": "高级筛选",
+                "icon": "filter"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-sm p-gutter"
+            },
+            "children": [
+                "taskTable",
+                "pagination"
+            ]
+        },
+        {
+            "id": "taskTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/taskList"
+                },
+                "columns": [
+                    {
+                        "title": "发起人",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "申请类型",
+                        "dataIndex": "category"
+                    },
+                    {
+                        "title": "标题/摘要",
+                        "dataIndex": "title"
+                    },
+                    {
+                        "title": "提交日期",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/taskList",
+                "componentId": "taskRow"
+            }
+        },
+        {
+            "id": "taskRow",
+            "component": "TableRow",
+            "children": [
+                "cellInitiator",
+                "cellCategory",
+                "cellContent",
+                "cellDate",
+                "cellStatus"
+            ]
+        },
+        {
+            "id": "cellInitiator",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "cellAvatar",
+                "cellNameInfo"
+            ]
+        },
+        {
+            "id": "cellAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-6 h-6 rounded-full"
+            }
+        },
+        {
+            "id": "cellNameInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "cellName",
+                "cellDept"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "cellDept",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dept"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellCategory",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "category"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col max-w-xs"
+            },
+            "children": [
+                "cellTitle",
+                "cellSummary"
+            ]
+        },
+        {
+            "id": "cellTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-sm font-bold truncate"
+            }
+        },
+        {
+            "id": "cellSummary",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "summary"
+                },
+                "className": "text-xs text-on-surface-variant truncate"
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "pagination",
+            "component": "div",
+            "props": {
+                "className": "mt-gutter flex justify-between items-center"
+            },
+            "children": [
+                "pageTotal",
+                "pageNumbers"
+            ]
+        },
+        {
+            "id": "pageTotal",
+            "component": "span",
+            "props": {
+                "value": "显示 1-10 项，共 42 项",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "pageNumbers",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "page1",
+                "page2",
+                "page3"
+            ]
+        },
+        {
+            "id": "page1",
+            "component": "Button",
+            "props": {
+                "value": "1",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "page2",
+            "component": "Button",
+            "props": {
+                "value": "2",
+                "size": "small"
+            }
+        },
+        {
+            "id": "page3",
+            "component": "Button",
+            "props": {
+                "value": "3",
+                "size": "small"
+            }
+        },
+        {
+            "id": "contentRight",
+            "component": "div",
+            "props": {
+                "className": "col-span-3 flex flex-col gap-gutter"
+            },
+            "children": [
+                "statsCard",
+                "reportCard"
+            ]
+        },
+        {
+            "id": "statsCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-sm p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "statsHeader",
+                "statsList",
+                "statsAlert"
+            ]
+        },
+        {
+            "id": "statsHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "statsIcon",
+                "statsTitle"
+            ]
+        },
+        {
+            "id": "statsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-3",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "statsTitle",
+            "component": "span",
+            "props": {
+                "value": "待处理统计",
+                "className": "text-md font-bold"
+            }
+        },
+        {
+            "id": "statsList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-gutter"
+            },
+            "children": {
+                "path": "/stats",
+                "componentId": "statsItem"
+            }
+        },
+        {
+            "id": "statsItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-inline"
+            },
+            "children": [
+                "statsLabelRow",
+                "statsProgress"
+            ]
+        },
+        {
+            "id": "statsLabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "statsLabel",
+                "statsCount"
+            ]
+        },
+        {
+            "id": "statsLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "statsCount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "count"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "statsProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "percent"
+                },
+                "status": {
+                    "path": "status"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "statsAlert",
+            "component": "div",
+            "props": {
+                "className": "bg-warning-container p-stack rounded-md flex items-start gap-inline"
+            },
+            "children": [
+                "alertIcon",
+                "alertContent"
+            ]
+        },
+        {
+            "id": "alertIcon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-triangle",
+                "color": "warning",
+                "className": "w-4 h-4 mt-1"
+            }
+        },
+        {
+            "id": "alertContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "alertTitle",
+                "alertDesc"
+            ]
+        },
+        {
+            "id": "alertTitle",
+            "component": "span",
+            "props": {
+                "value": "紧急提醒",
+                "className": "text-xs font-bold text-on-warning-container"
+            }
+        },
+        {
+            "id": "alertDesc",
+            "component": "span",
+            "props": {
+                "value": "有 2 项财务审批即将超过 SLA 处理时限（24小时）。",
+                "className": "text-xs text-on-warning-container"
+            }
+        },
+        {
+            "id": "reportCard",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container rounded-container shadow-sm p-gutter flex flex-col gap-stack"
+            },
+            "children": [
+                "reportTitle",
+                "reportDesc",
+                "reportLink"
+            ]
+        },
+        {
+            "id": "reportTitle",
+            "component": "span",
+            "props": {
+                "value": "年度效率报告",
+                "className": "text-md font-bold text-on-primary-container"
+            }
+        },
+        {
+            "id": "reportDesc",
+            "component": "span",
+            "props": {
+                "value": "查看部门审批效率 analysis，优化组织流程管理",
+                "className": "text-sm text-on-primary-container opacity-80"
+            }
+        },
+        {
+            "id": "reportLink",
+            "component": "span",
+            "props": {
+                "value": "立即查看 ->",
+                "className": "text-sm font-bold text-primary cursor-pointer mt-inline"
+            }
+        }
+    ]
+}

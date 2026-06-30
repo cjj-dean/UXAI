@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个左右布局的数据对比控制台界面。左侧边栏顶部有IntelEngine标志，包含Market Overview等四个菜单（当前选中Benchmarking），底部是Add Competitor按钮和Alex Chen的个人信息。顶部工具栏左侧显示Strategic Intel，中间有搜索框，右侧有铃铛等三个图标。主内容区头部是面包屑和Product Capability Benchmarking大标题及副标题，右侧有Compare To的下拉框和All Metrics按钮。主体中部左侧是Capability Distribution雷达图（包含PERFORMANCE等6个轴和两个图例）；右侧纵向排列Core Advantages列表（两条带副标题的优势说明）和Strategic Gap Analysis图表卡片（含柱状图和+14.2%数据）。主体底部是Feature-by-Feature Matrix表格模块，右侧有导出和分享按钮；表格包含FEATURE SET及四个产品的列头，数据分为CORE INTELLIGENCE和INTEGRATION & SECURITY两组，渲染出各项功能的勾选、打叉或横线不支持状态。

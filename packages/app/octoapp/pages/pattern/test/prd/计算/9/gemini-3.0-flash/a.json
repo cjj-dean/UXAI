@@ -1,0 +1,886 @@
+{
+    "state": {
+        "selectedMenuKeys": [
+            "fault"
+        ],
+        "menuItems": [
+            {
+                "title": "仪表盘",
+                "key": "dashboard"
+            },
+            {
+                "title": "拓扑图",
+                "key": "topology"
+            },
+            {
+                "title": "资源管理",
+                "key": "resource"
+            },
+            {
+                "title": "故障监控",
+                "key": "fault"
+            },
+            {
+                "title": "性能分析",
+                "key": "performance"
+            },
+            {
+                "title": "安全管理",
+                "key": "security"
+            },
+            {
+                "title": "系统设置",
+                "key": "settings"
+            }
+        ],
+        "sidebarTitle": "资源管理中心",
+        "cardTitle": "全网设备健康度实时监控",
+        "cardDescription": "全局展示当前各区域网络设备的运行状态与告警信息，通过AI智能分析实现故障的预测与快速定位，提升运维团队的故障处理效率，保障核心业务的高可用性与连续性。",
+        "stepsSubtitle": "自动化故障处理流水线",
+        "currentStep": 1,
+        "stepsList": [
+            {
+                "title": "待处理告警",
+                "status": "process"
+            },
+            {
+                "title": "智能分析中",
+                "status": "wait"
+            },
+            {
+                "title": "已自动修复",
+                "status": "wait"
+            }
+        ],
+        "imageUrl": "https://fpoimg.com/400x300?gradient=0067D1,004EA8&text_color=ffffff&text=NETWORK+SECURITY",
+        "segmentedValue": "active",
+        "tableData": [
+            {
+                "id": "1",
+                "deviceName": "SW-CORE-01",
+                "cpuMemoryUsage": "45/60%",
+                "deviceType": "核心交换机",
+                "firmwareVersion": "v1.2.4",
+                "uptime": "90天12小时",
+                "ipAddress": "192.168.1.10",
+                "macAddress": "00:1A:2B:3C:4D:5E",
+                "statusLabel": "严重",
+                "statusColor": "error"
+            },
+            {
+                "id": "2",
+                "deviceName": "SW-CORE-02",
+                "cpuMemoryUsage": "32/50%",
+                "deviceType": "核心交换机",
+                "firmwareVersion": "v1.2.3",
+                "uptime": "120天8小时",
+                "ipAddress": "192.168.1.11",
+                "macAddress": "00:1A:2B:3C:4D:5F",
+                "statusLabel": "警告",
+                "statusColor": "warning"
+            },
+            {
+                "id": "3",
+                "deviceName": "SW-ACCESS-01",
+                "cpuMemoryUsage": "78/85%",
+                "deviceType": "接入交换机",
+                "firmwareVersion": "v2.0.1",
+                "uptime": "45天6小时",
+                "ipAddress": "192.168.2.10",
+                "macAddress": "00:1A:2B:3C:4D:60",
+                "statusLabel": "严重",
+                "statusColor": "error"
+            },
+            {
+                "id": "4",
+                "deviceName": "RT-EDGE-01",
+                "cpuMemoryUsage": "20/40%",
+                "deviceType": "边缘路由器",
+                "firmwareVersion": "v3.1.0",
+                "uptime": "200天3小时",
+                "ipAddress": "10.0.0.1",
+                "macAddress": "00:1A:2B:3C:4D:61",
+                "statusLabel": "正常",
+                "statusColor": "success"
+            },
+            {
+                "id": "5",
+                "deviceName": "FW-01",
+                "cpuMemoryUsage": "55/70%",
+                "deviceType": "防火墙",
+                "firmwareVersion": "v4.5.2",
+                "uptime": "60天18小时",
+                "ipAddress": "192.168.1.1",
+                "macAddress": "00:1A:2B:3C:4D:62",
+                "statusLabel": "警告",
+                "statusColor": "warning"
+            },
+            {
+                "id": "6",
+                "deviceName": "SW-DIST-01",
+                "cpuMemoryUsage": "40/55%",
+                "deviceType": "汇聚交换机",
+                "firmwareVersion": "v2.1.3",
+                "uptime": "80天9小时",
+                "ipAddress": "192.168.3.1",
+                "macAddress": "00:1A:2B:3C:4D:63",
+                "statusLabel": "正常",
+                "statusColor": "success"
+            },
+            {
+                "id": "7",
+                "deviceName": "AP-01",
+                "cpuMemoryUsage": "60/75%",
+                "deviceType": "无线接入点",
+                "firmwareVersion": "v1.0.5",
+                "uptime": "30天22小时",
+                "ipAddress": "192.168.4.10",
+                "macAddress": "00:1A:2B:3C:4D:64",
+                "statusLabel": "严重",
+                "statusColor": "error"
+            },
+            {
+                "id": "8",
+                "deviceName": "SW-CORE-03",
+                "cpuMemoryUsage": "25/35%",
+                "deviceType": "核心交换机",
+                "firmwareVersion": "v1.2.4",
+                "uptime": "150天14小时",
+                "ipAddress": "192.168.1.12",
+                "macAddress": "00:1A:2B:3C:4D:65",
+                "statusLabel": "正常",
+                "statusColor": "success"
+            },
+            {
+                "id": "9",
+                "deviceName": "RT-CORE-01",
+                "cpuMemoryUsage": "90/95%",
+                "deviceType": "核心路由器",
+                "firmwareVersion": "v3.2.0",
+                "uptime": "300天6小时",
+                "ipAddress": "10.0.0.2",
+                "macAddress": "00:1A:2B:3C:4D:66",
+                "statusLabel": "严重",
+                "statusColor": "error"
+            },
+            {
+                "id": "10",
+                "deviceName": "SW-ACCESS-02",
+                "cpuMemoryUsage": "15/25%",
+                "deviceType": "接入交换机",
+                "firmwareVersion": "v2.0.0",
+                "uptime": "10天2小时",
+                "ipAddress": "192.168.2.11",
+                "macAddress": "00:1A:2B:3C:4D:67",
+                "statusLabel": "正常",
+                "statusColor": "success"
+            }
+        ]
+    },
+    "rootId": "rootLayout",
+    "elements": [
+        {
+            "id": "rootLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "topNavContainer",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "topNavContainer",
+            "component": "header",
+            "props": {
+                "className": "h-12 bg-surface-container-highest shadow-sm flex items-center px-4"
+            },
+            "children": [
+                "topNavLogo",
+                "topNavMenu",
+                "topNavRightSection"
+            ]
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainContent"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "aside",
+            "props": {
+                "className": "w-[15.5rem] bg-surface-container-highest shadow-sm shrink-0 overflow-y-auto"
+            },
+            "children": [
+                "sidebarTitle",
+                "sidebarMenuWrapper"
+            ]
+        },
+        {
+            "id": "mainContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 overflow-auto bg-surface-container-lowest gap-4 text-sm font-normal p-6 rounded-none"
+            },
+            "children": [
+                "infoCardContainer",
+                "dataTableContainer"
+            ]
+        },
+        {
+            "id": "infoCardContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm"
+            },
+            "children": [
+                "infoCardWrapper"
+            ]
+        },
+        {
+            "id": "dataTableContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-sm"
+            },
+            "children": [
+                "dataTableTopBar",
+                "dataTableBody"
+            ]
+        },
+        {
+            "id": "topNavLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 shrink-0"
+            },
+            "children": [
+                "topNavLogoIcon",
+                "topNavLogoText"
+            ]
+        },
+        {
+            "id": "topNavLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "topNavLogoText",
+            "component": "span",
+            "props": {
+                "value": "iMaster NCE",
+                "className": "text-md font-semibold text-on-surface whitespace-nowrap"
+            }
+        },
+        {
+            "id": "topNavMenu",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/selectedMenuKeys"
+                },
+                "items": {
+                    "path": "/menuItems"
+                },
+                "className": "flex-1 flex justify-center border-0 bg-transparent"
+            }
+        },
+        {
+            "id": "topNavRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 ml-auto shrink-0"
+            },
+            "children": [
+                "topNavNotificationIcon",
+                "topNavUserText",
+                "topNavHelpIcon"
+            ]
+        },
+        {
+            "id": "topNavNotificationIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "shape": "outline",
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "topNavUserText",
+            "component": "span",
+            "props": {
+                "value": "Admin",
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "topNavHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "shape": "outline",
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-xl font-bold text-on-surface px-4 pt-5 pb-3",
+                "value": {
+                    "path": "/sidebarTitle"
+                }
+            }
+        },
+        {
+            "id": "sidebarMenuWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-0.5 px-3 pt-3 border-t border-divider"
+            },
+            "children": [
+                "sidebarDeviceStatusItem",
+                "sidebarNetworkConfigItem"
+            ]
+        },
+        {
+            "id": "sidebarDeviceStatusItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container cursor-pointer"
+            },
+            "children": [
+                "sidebarDeviceStatusIcon",
+                "sidebarDeviceStatusText"
+            ]
+        },
+        {
+            "id": "sidebarDeviceStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": "monitor",
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarDeviceStatusText",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": "设备状态大屏"
+            }
+        },
+        {
+            "id": "sidebarNetworkConfigItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sidebarNetworkConfigHeader",
+                "sidebarNetworkConfigSubItems"
+            ]
+        },
+        {
+            "id": "sidebarNetworkConfigHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer hover:bg-surface-variant text-on-surface"
+            },
+            "children": [
+                "sidebarNetworkConfigIcon",
+                "sidebarNetworkConfigText",
+                "sidebarNetworkConfigArrow"
+            ]
+        },
+        {
+            "id": "sidebarNetworkConfigIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "shape": "outline",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarNetworkConfigText",
+            "component": "span",
+            "props": {
+                "className": "text-md flex-1",
+                "value": "网络配置下发"
+            }
+        },
+        {
+            "id": "sidebarNetworkConfigArrow",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "shape": "outline",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarNetworkConfigSubItems",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-0.5 ml-8 mt-1 mb-1"
+            },
+            "children": [
+                "sidebarSubConfigTemplate",
+                "sidebarSubDeviceList",
+                "sidebarSubDispatchRecord"
+            ]
+        },
+        {
+            "id": "sidebarSubConfigTemplate",
+            "component": "div",
+            "props": {
+                "className": "flex items-center px-3 py-2 rounded-lg text-md text-on-surface-variant cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarSubConfigTemplateText"
+            ]
+        },
+        {
+            "id": "sidebarSubConfigTemplateText",
+            "component": "span",
+            "props": {
+                "value": "配置模板"
+            }
+        },
+        {
+            "id": "sidebarSubDeviceList",
+            "component": "div",
+            "props": {
+                "className": "flex items-center px-3 py-2 rounded-lg text-md text-on-surface-variant cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarSubDeviceListText"
+            ]
+        },
+        {
+            "id": "sidebarSubDeviceListText",
+            "component": "span",
+            "props": {
+                "value": "设备列表"
+            }
+        },
+        {
+            "id": "sidebarSubDispatchRecord",
+            "component": "div",
+            "props": {
+                "className": "flex items-center px-3 py-2 rounded-lg text-md text-on-surface-variant cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarSubDispatchRecordText"
+            ]
+        },
+        {
+            "id": "sidebarSubDispatchRecordText",
+            "component": "span",
+            "props": {
+                "value": "下发记录"
+            }
+        },
+        {
+            "id": "infoCardWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row gap-gutter p-inset"
+            },
+            "children": [
+                "infoCardLeft",
+                "infoCardRight"
+            ]
+        },
+        {
+            "id": "infoCardLeft",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-stack"
+            },
+            "children": [
+                "infoCardTitle",
+                "infoCardDesc",
+                "infoCardStepSubtitle",
+                "infoCardSteps"
+            ]
+        },
+        {
+            "id": "infoCardTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-[32px] font-extrabold rounded-none",
+                "value": "全网设备健康度实时监控"
+            }
+        },
+        {
+            "id": "infoCardDesc",
+            "component": "p",
+            "props": {
+                "className": "text-md text-on-surface-variant leading-relaxed",
+                "value": {
+                    "path": "/cardDescription"
+                }
+            }
+        },
+        {
+            "id": "infoCardStepSubtitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium mt-8 rounded-none text-[#c9c9c9]",
+                "value": "自动化故障处理流水线"
+            }
+        },
+        {
+            "id": "infoCardSteps",
+            "component": "Steps",
+            "props": {
+                "current": "1",
+                "types": "default",
+                "className": "w-full -ml-[170px] "
+            },
+            "children": {
+                "path": "/stepsList",
+                "componentId": "infoCardStepItem"
+            }
+        },
+        {
+            "id": "infoCardStepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "infoCardRight",
+            "component": "div",
+            "props": {
+                "className": "flex-shrink-0 flex items-center justify-center"
+            },
+            "children": [
+                "infoCardImage"
+            ]
+        },
+        {
+            "id": "infoCardImage",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/imageUrl"
+                },
+                "className": "w-80 h-60 object-contain",
+                "alt": "网络安全插图"
+            }
+        },
+        {
+            "id": "dataTableTopBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-gutter py-stack border-b border-divider"
+            },
+            "children": [
+                "dataTableSegmented",
+                "dataTableRightActions"
+            ]
+        },
+        {
+            "id": "dataTableSegmented",
+            "component": "Segmented",
+            "props": {
+                "value": {
+                    "path": "/segmentedValue"
+                },
+                "options": [
+                    {
+                        "label": "活跃告警",
+                        "value": "active"
+                    },
+                    {
+                        "label": "历史告警",
+                        "value": "history"
+                    }
+                ],
+                "size": "small",
+                "className": "w-fit"
+            }
+        },
+        {
+            "id": "dataTableRightActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "dataTableExportBtn",
+                "dataTableCreateBtn",
+                "dataTableRefreshIcon"
+            ]
+        },
+        {
+            "id": "dataTableExportBtn",
+            "component": "Button",
+            "props": {
+                "value": "数据导出",
+                "color": "default",
+                "className": "text-md"
+            }
+        },
+        {
+            "id": "dataTableCreateBtn",
+            "component": "Button",
+            "props": {
+                "value": "创建工单",
+                "color": "primary",
+                "className": "text-md"
+            }
+        },
+        {
+            "id": "dataTableRefreshIcon",
+            "component": "Icon",
+            "props": {
+                "name": "refresh-cw",
+                "shape": "outline",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "dataTableBody",
+            "component": "div",
+            "props": {
+                "className": "w-full"
+            },
+            "children": [
+                "dataTableAlertTable"
+            ]
+        },
+        {
+            "id": "dataTableAlertTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tableData"
+                },
+                "rowSelection": {
+                    "type": "checkbox",
+                    "selectedRowKeys": []
+                },
+                "columns": [
+                    {
+                        "title": "设备名称",
+                        "dataIndex": "deviceName",
+                        "sort": true
+                    },
+                    {
+                        "title": "CPU/内存使用率",
+                        "dataIndex": "cpuMemoryUsage",
+                        "sort": true
+                    },
+                    {
+                        "title": "设备类型",
+                        "dataIndex": "deviceType",
+                        "sort": true
+                    },
+                    {
+                        "title": "固件版本",
+                        "dataIndex": "firmwareVersion",
+                        "sort": true
+                    },
+                    {
+                        "title": "运行时长",
+                        "dataIndex": "uptime",
+                        "sort": true
+                    },
+                    {
+                        "title": "IP地址",
+                        "dataIndex": "ipAddress",
+                        "sort": true
+                    },
+                    {
+                        "title": "MAC地址",
+                        "dataIndex": "macAddress",
+                        "sort": true
+                    },
+                    {
+                        "title": "运行状态",
+                        "dataIndex": "status",
+                        "sort": true
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "sort": false
+                    }
+                ],
+                "className": "mb-section"
+            },
+            "children": {
+                "path": "/tableData",
+                "componentId": "dataTableAlertRow"
+            }
+        },
+        {
+            "id": "dataTableAlertRow",
+            "component": "TableRow",
+            "children": [
+                "dataTableDeviceNameCell",
+                "dataTableCpuCell",
+                "dataTableDeviceTypeCell",
+                "dataTableFirmwareCell",
+                "dataTableUptimeCell",
+                "dataTableIpCell",
+                "dataTableMacCell",
+                "dataTableStatusCell",
+                "dataTableActionsCell"
+            ],
+            "props": {}
+        },
+        {
+            "id": "dataTableDeviceNameCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deviceName"
+                },
+                "className": "text-md text-on-surface font-medium"
+            }
+        },
+        {
+            "id": "dataTableCpuCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cpuMemoryUsage"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableDeviceTypeCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deviceType"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableFirmwareCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "firmwareVersion"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableUptimeCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "uptime"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableIpCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "ipAddress"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableMacCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "macAddress"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "dataTableStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "statusLabel"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "dataTableActionsCell",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dataTableActionView",
+                "dataTableActionEdit",
+                "dataTableActionDelete"
+            ]
+        },
+        {
+            "id": "dataTableActionView",
+            "component": "Icon",
+            "props": {
+                "name": "eye",
+                "shape": "outline",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "dataTableActionEdit",
+            "component": "Icon",
+            "props": {
+                "name": "edit",
+                "shape": "outline",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer hover:text-primary"
+            }
+        },
+        {
+            "id": "dataTableActionDelete",
+            "component": "Icon",
+            "props": {
+                "name": "trash-2",
+                "shape": "outline",
+                "className": "w-4 h-4 text-on-surface-variant cursor-pointer hover:text-error"
+            }
+        }
+    ]
+}

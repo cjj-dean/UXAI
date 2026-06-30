@@ -1,0 +1,1282 @@
+{
+  "state": {
+    "systemLogoIcon": "Menu",
+    "systemName": "数据监控管理系统",
+    "navMenuItems": [
+      {
+        "title": "监控大盘",
+        "key": "dashboard",
+        "icon": "activity"
+      },
+      {
+        "title": "告警管理",
+        "key": "alertCenter",
+        "icon": "bell"
+      },
+      {
+        "title": "报表分析",
+        "key": "reportAnalysis",
+        "icon": "chart-column"
+      }
+    ],
+    "selectedMenuKeys": [
+      "dashboard"
+    ],
+    "currentRole": "系统管理员",
+    "headerActionIcons": [
+      {
+        "name": "HelpCircle"
+      },
+      {
+        "name": "Settings"
+      },
+      {
+        "name": "Sun"
+      }
+    ],
+    "adminAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "adminName": "Admin",
+    "versionText": "当前版本号 V1.2.0",
+    "cardTitle1": "系统概览",
+    "subTitle": "核心资源使用率",
+    "tipIcon": "help-circle",
+    "centerPercentage": "35%",
+    "centerTextLabel": "CPU使用率",
+    "resourceUsageChart": [
+      {
+        "name": "已用资源",
+        "value": 740,
+        "color": "#1890ff"
+      },
+      {
+        "name": "剩余资源",
+        "value": 18,
+        "color": "#f0f0f0"
+      }
+    ],
+    "resourceColors": [
+      "#0067D1",
+      "#E6F2FD"
+    ],
+    "cardTitle2": "网络流量趋势",
+    "yAxisConfig": {
+      "unitLabel": "流量兆字节",
+      "ticks": [
+        "8,767",
+        "1,505",
+        "1,736",
+        "7,201",
+        "737",
+        "0"
+      ]
+    },
+    "trafficData": [
+      {
+        "时间": "10点整",
+        "流量(MB)": 867
+      },
+      {
+        "时间": "11点整",
+        "流量(MB)": 1505
+      },
+      {
+        "时间": "12点整",
+        "流量(MB)": 1736
+      },
+      {
+        "时间": "13点整",
+        "流量(MB)": 7201
+      },
+      {
+        "时间": "14点整",
+        "流量(MB)": 737
+      }
+    ],
+    "trendTimeRange": "今日 10:00 - 14:00",
+    "cpuValue": "35%",
+    "cpuLabel": "CPU",
+    "memValue": "62%",
+    "memLabel": "内存",
+    "diskValue": "48%",
+    "diskLabel": "磁盘",
+    "trendFooterText": "数据更新于 5 分钟前",
+    "tableTitle": "告警事件列表",
+    "filterFormData": {
+      "occurTimeRange": [
+        "2026-05-01",
+        "2026-05-27"
+      ],
+      "alertLevel": "严重",
+      "eventType": "网络中断",
+      "deviceName": "核心路由器",
+      "processStatus": "待处理"
+    },
+    "alertTableData": [
+      {
+        "id": "1",
+        "alertTime": "2026-05-27 10:00:00",
+        "deviceIp": "192.168.1.1",
+        "portNumber": 80,
+        "errorCode": "ERR_001",
+        "duration": "71秒",
+        "alertSource": "Node_A, Node_B",
+        "statusTag": "待办",
+        "statusColor": "error",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "2",
+        "alertTime": "2026-05-27 11:30:00",
+        "deviceIp": "10.0.0.5",
+        "portNumber": 443,
+        "errorCode": "ERR_002",
+        "duration": "85秒",
+        "alertSource": "Node_C",
+        "statusTag": "处理中",
+        "statusColor": "processing",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "3",
+        "alertTime": "2026-05-27 12:15:00",
+        "deviceIp": "172.16.0.1",
+        "portNumber": 22,
+        "errorCode": "ERR_003",
+        "duration": "55秒",
+        "alertSource": "Node_D, Node_E",
+        "statusTag": "已解决",
+        "statusColor": "success",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "4",
+        "alertTime": "2026-05-27 14:00:00",
+        "deviceIp": "192.168.2.10",
+        "portNumber": 3306,
+        "errorCode": "ERR_004",
+        "duration": "59秒",
+        "alertSource": "Node_F",
+        "statusTag": "处理中",
+        "statusColor": "processing",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "5",
+        "alertTime": "2026-05-27 15:20:00",
+        "deviceIp": "10.0.0.12",
+        "portNumber": 8080,
+        "errorCode": "ERR_005",
+        "duration": "120秒",
+        "alertSource": "Node_G",
+        "statusTag": "待办",
+        "statusColor": "error",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "6",
+        "alertTime": "2026-05-27 16:45:00",
+        "deviceIp": "192.168.3.55",
+        "portNumber": 21,
+        "errorCode": "ERR_006",
+        "duration": "15秒",
+        "alertSource": "Node_H, Node_I",
+        "statusTag": "已解决",
+        "statusColor": "success",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "7",
+        "alertTime": "2026-05-27 17:10:00",
+        "deviceIp": "172.16.5.3",
+        "portNumber": 22,
+        "errorCode": "ERR_007",
+        "duration": "300秒",
+        "alertSource": "Node_J",
+        "statusTag": "待办",
+        "statusColor": "error",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "8",
+        "alertTime": "2026-05-27 18:05:00",
+        "deviceIp": "10.0.0.99",
+        "portNumber": 6379,
+        "errorCode": "ERR_008",
+        "duration": "45秒",
+        "alertSource": "Node_K",
+        "statusTag": "处理中",
+        "statusColor": "processing",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "9",
+        "alertTime": "2026-05-27 19:30:00",
+        "deviceIp": "192.168.1.100",
+        "portNumber": 5000,
+        "errorCode": "ERR_009",
+        "duration": "15秒",
+        "alertSource": "Node_L, Node_M",
+        "statusTag": "已解决",
+        "statusColor": "success",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      },
+      {
+        "id": "10",
+        "alertTime": "2026-05-27 20:15:00",
+        "deviceIp": "172.16.0.50",
+        "portNumber": 5672,
+        "errorCode": "ERR_010",
+        "duration": "180秒",
+        "alertSource": "Node_N",
+        "statusTag": "处理中",
+        "statusColor": "processing",
+        "actions": [
+          "Eye",
+          "Tool"
+        ]
+      }
+    ],
+    "paginationData": {
+      "totalText": "总计: 40条",
+      "pageSize": "10",
+      "currentPage": 2,
+      "totalPages": 4,
+      "pageIndicator": "2 / 4",
+      "jumpValue": 0,
+      "jumpButtonText": "跳转"
+    },
+    "pageSizeOptions": [
+      {
+        "label": "10 条/页",
+        "value": "10"
+      },
+      {
+        "label": "20 条/页",
+        "value": "20"
+      },
+      {
+        "label": "50 条/页",
+        "value": "50"
+      }
+    ]
+  },
+  "rootId": "shellRootContainer",
+  "elements": [
+    {
+      "id": "shellRootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen w-full bg-surface-container-lowest"
+      },
+      "children": [
+        "headerGlobalContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "headerGlobalContainer",
+      "component": "header",
+      "props": {
+        "className": "flex items-center h-12 px-page bg-surface-container-highest shadow-sm z-10"
+      },
+      "children": [
+        "hdrGlbLeftSection",
+        "hdrGlbCenterMenu",
+        "hdrGlbRightSection"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col gap-section p-page"
+      },
+      "children": [
+        "mainVersionContainer",
+        "mainChartsContainer",
+        "mainAlertContainer"
+      ]
+    },
+    {
+      "id": "mainVersionContainer",
+      "component": "div",
+      "props": {
+        "className": "flex justify-end"
+      },
+      "children": [
+        "verInfoBadge"
+      ]
+    },
+    {
+      "id": "mainChartsContainer",
+      "component": "div",
+      "props": {
+        "className": "grid grid-cols-2 gap-section"
+      },
+      "children": [
+        "monChrtOverviewCard",
+        "monChrtTrendCard"
+      ]
+    },
+    {
+      "id": "mainAlertContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col flex-1 min-h-0"
+      },
+      "children": [
+        "altTblCard"
+      ]
+    },
+    {
+      "id": "hdrGlbLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 shrink-0"
+      },
+      "children": [
+        "hdrGlbMenuIcon",
+        "hdrGlbSystemName"
+      ]
+    },
+    {
+      "id": "hdrGlbMenuIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/systemLogoIcon"
+        },
+        "className": "w-5 h-5 text-on-surface-variant",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "hdrGlbSystemName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemName"
+        },
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "hdrGlbCenterMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/navMenuItems"
+        },
+        "className": "flex-1 ml-8"
+      }
+    },
+    {
+      "id": "hdrGlbRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 shrink-0"
+      },
+      "children": [
+        "hdrGlbRoleTag",
+        "hdrGlbIconList",
+        "hdrGlbDivider",
+        "hdrGlbUserAvatar",
+        "hdrGlbUserName"
+      ]
+    },
+    {
+      "id": "hdrGlbRoleTag",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/currentRole"
+        },
+        "className": "text-sm text-on-surface-variant whitespace-nowrap"
+      }
+    },
+    {
+      "id": "hdrGlbIconList",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": {
+        "path": "/headerActionIcons",
+        "componentId": "hdrGlbActionIcon"
+      }
+    },
+    {
+      "id": "hdrGlbActionIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "name"
+        },
+        "className": "w-5 h-5 text-on-surface-variant",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "hdrGlbDivider",
+      "component": "div",
+      "props": {
+        "className": "w-px h-5 bg-divider"
+      }
+    },
+    {
+      "id": "hdrGlbUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/adminAvatarImage"
+        },
+        "alt": "Admin Avatar",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "hdrGlbUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/adminName"
+        },
+        "className": "text-sm font-medium text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "verInfoBadge",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1 rounded-badge bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "verInfoIcon",
+        "verInfoLabel"
+      ]
+    },
+    {
+      "id": "verInfoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "tag",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "verInfoLabel",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "/versionText"
+        }
+      }
+    },
+    {
+      "id": "monChrtOverviewCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-gutter flex flex-col"
+      },
+      "children": [
+        "monChrtOverviewHeader",
+        "monChrtOverviewChart",
+        "monChrtMetricsRow"
+      ]
+    },
+    {
+      "id": "monChrtOverviewHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "monChrtOverviewTitleWrap",
+        "monChrtTipIcon"
+      ]
+    },
+    {
+      "id": "monChrtOverviewTitleWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-0.5"
+      },
+      "children": [
+        "monChrtOverviewTitle",
+        "monChrtOverviewSubTitle"
+      ]
+    },
+    {
+      "id": "monChrtOverviewTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle1"
+        }
+      }
+    },
+    {
+      "id": "monChrtOverviewSubTitle",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "/subTitle"
+        }
+      }
+    },
+    {
+      "id": "monChrtTipIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/tipIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "monChrtOverviewChart",
+      "component": "PieChart",
+      "props": {
+        "className": "w-full h-64",
+        "option": {
+          "data": {
+            "path": "/resourceUsageChart"
+          },
+          "color": {
+            "path": "/resourceColors"
+          },
+          "title": {
+            "text": {
+              "path": "/centerPercentage"
+            },
+            "subtext": {
+              "path": "/centerTextLabel"
+            }
+          },
+          "label": {
+            "show": false
+          }
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricsRow",
+      "component": "div",
+      "props": {
+        "className": "flex justify-around mt-4 pt-4 border-t border-divider"
+      },
+      "children": [
+        "monChrtMetricCpuWrap",
+        "monChrtMetricMemWrap",
+        "monChrtMetricDiskWrap"
+      ]
+    },
+    {
+      "id": "monChrtMetricCpuWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center"
+      },
+      "children": [
+        "monChrtMetricCpuValue",
+        "monChrtMetricCpuLabel"
+      ]
+    },
+    {
+      "id": "monChrtMetricCpuValue",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-primary",
+        "value": {
+          "path": "/cpuValue"
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricCpuLabel",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1",
+        "value": {
+          "path": "/cpuLabel"
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricMemWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center"
+      },
+      "children": [
+        "monChrtMetricMemValue",
+        "monChrtMetricMemLabel"
+      ]
+    },
+    {
+      "id": "monChrtMetricMemValue",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-critical",
+        "value": {
+          "path": "/memValue"
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricMemLabel",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1",
+        "value": {
+          "path": "/memLabel"
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricDiskWrap",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center"
+      },
+      "children": [
+        "monChrtMetricDiskValue",
+        "monChrtMetricDiskLabel"
+      ]
+    },
+    {
+      "id": "monChrtMetricDiskValue",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-success",
+        "value": {
+          "path": "/diskValue"
+        }
+      }
+    },
+    {
+      "id": "monChrtMetricDiskLabel",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1",
+        "value": {
+          "path": "/diskLabel"
+        }
+      }
+    },
+    {
+      "id": "monChrtTrendCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-sm p-gutter flex flex-col"
+      },
+      "children": [
+        "monChrtTrendHeader",
+        "monChrtTrendChart",
+        "monChrtTrendFooter"
+      ]
+    },
+    {
+      "id": "monChrtTrendHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-4"
+      },
+      "children": [
+        "monChrtTrendTitleWrap",
+        "monChrtTrendTimeRange"
+      ]
+    },
+    {
+      "id": "monChrtTrendTitleWrap",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "monChrtTrendTitle",
+        "monChrtTrendIcon"
+      ]
+    },
+    {
+      "id": "monChrtTrendTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle2"
+        }
+      }
+    },
+    {
+      "id": "monChrtTrendIcon",
+      "component": "Icon",
+      "props": {
+        "name": "trending-up",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "monChrtTrendTimeRange",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": {
+          "path": "/trendTimeRange"
+        }
+      }
+    },
+    {
+      "id": "monChrtTrendChart",
+      "component": "LineChart",
+      "props": {
+        "className": "w-full h-64",
+        "option": {
+          "data": {
+            "path": "/trafficData"
+          },
+          "xAxis": {
+            "data": "时间",
+            "name": "时间"
+          },
+          "yAxisTitle": {
+            "path": "/yAxisConfig/unitLabel"
+          },
+          "smooth": true
+        }
+      }
+    },
+    {
+      "id": "monChrtTrendFooter",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 mt-auto pt-3"
+      },
+      "children": [
+        "monChrtTrendFooterIcon",
+        "monChrtTrendFooterText"
+      ]
+    },
+    {
+      "id": "monChrtTrendFooterIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-3.5 h-3.5"
+      }
+    },
+    {
+      "id": "monChrtTrendFooterText",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant",
+        "value": {
+          "path": "/trendFooterText"
+        }
+      }
+    },
+    {
+      "id": "altTblCard",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section bg-surface-container-highest shadow-card rounded-container p-inset"
+      },
+      "children": [
+        "altTblHeaderRow",
+        "altTblFilterRow",
+        "altTblTable",
+        "altTblPaginationRow"
+      ]
+    },
+    {
+      "id": "altTblHeaderRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "altTblTitleLeft",
+        "altTblHeaderRight"
+      ]
+    },
+    {
+      "id": "altTblTitleLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "altTblTitleIcon",
+        "altTblTitleText"
+      ]
+    },
+    {
+      "id": "altTblTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell-ring",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "altTblTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/tableTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "altTblHeaderRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "altTblExportBtn"
+      ]
+    },
+    {
+      "id": "altTblExportBtn",
+      "component": "Button",
+      "props": {
+        "value": "导出",
+        "icon": "download",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "altTblFilterRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 flex-wrap"
+      },
+      "children": [
+        "altTblFilterDatePicker",
+        "altTblFilterLevelInput",
+        "altTblFilterTypeInput",
+        "altTblFilterDeviceInput",
+        "altTblFilterStatusInput",
+        "altTblFilterSearchBtn",
+        "altTblFilterResetBtn"
+      ]
+    },
+    {
+      "id": "altTblFilterDatePicker",
+      "component": "DatePicker",
+      "props": {
+        "value": {
+          "path": "/filterFormData/occurTimeRange"
+        },
+        "range": true,
+        "placeholder": [
+          "开始日期",
+          "结束日期"
+        ],
+        "className": "w-56"
+      }
+    },
+    {
+      "id": "altTblFilterLevelInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/filterFormData/alertLevel"
+        },
+        "placeholder": "告警级别",
+        "prefix": "alert-triangle",
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "altTblFilterTypeInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/filterFormData/eventType"
+        },
+        "placeholder": "事件类型",
+        "prefix": "zap",
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "altTblFilterDeviceInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/filterFormData/deviceName"
+        },
+        "placeholder": "设备名称",
+        "prefix": "monitor",
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "altTblFilterStatusInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/filterFormData/processStatus"
+        },
+        "placeholder": "处理状态",
+        "prefix": "clock",
+        "className": "w-32"
+      }
+    },
+    {
+      "id": "altTblFilterSearchBtn",
+      "component": "Button",
+      "props": {
+        "value": "查询",
+        "icon": "search",
+        "iconPlacement": "start",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "altTblFilterResetBtn",
+      "component": "Button",
+      "props": {
+        "value": "重置",
+        "icon": "rotate-ccw",
+        "iconPlacement": "start"
+      }
+    },
+    {
+      "id": "altTblTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/alertTableData"
+        },
+        "pagination": false,
+        "columns": [
+          {
+            "title": "告警时间",
+            "dataIndex": "alertTime",
+            "width": 180
+          },
+          {
+            "title": "设备IP",
+            "dataIndex": "deviceIp",
+            "width": 140
+          },
+          {
+            "title": "端口号",
+            "dataIndex": "portNumber",
+            "width": 100,
+            "align": "center"
+          },
+          {
+            "title": "错误码",
+            "dataIndex": "errorCode",
+            "width": 120
+          },
+          {
+            "title": "持续时间",
+            "dataIndex": "duration",
+            "width": 100,
+            "align": "center"
+          },
+          {
+            "title": "告警来源",
+            "dataIndex": "alertSource",
+            "width": 160
+          },
+          {
+            "title": "状态",
+            "dataIndex": "statusTag",
+            "width": 100,
+            "align": "center"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 120,
+            "align": "center"
+          }
+        ]
+      },
+      "children": {
+        "path": "/alertTableData",
+        "componentId": "altTblRow"
+      }
+    },
+    {
+      "id": "altTblRow",
+      "component": "TableRow",
+      "children": [
+        "altTblCellTime",
+        "altTblCellIp",
+        "altTblCellPort",
+        "altTblCellCode",
+        "altTblCellDuration",
+        "altTblCellSource",
+        "altTblCellStatus",
+        "altTblCellActions"
+      ]
+    },
+    {
+      "id": "altTblCellTime",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "alertTime"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellIp",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceIp"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellPort",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "portNumber"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellCode",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "errorCode"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellDuration",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "duration"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellSource",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "alertSource"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "altTblCellStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusTag"
+        },
+        "color": {
+          "path": "statusColor"
+        }
+      }
+    },
+    {
+      "id": "altTblCellActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1"
+      },
+      "children": [
+        "altTblActionEye",
+        "altTblActionTool"
+      ]
+    },
+    {
+      "id": "altTblActionEye",
+      "component": "Button",
+      "props": {
+        "icon": "eye",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "altTblActionTool",
+      "component": "Button",
+      "props": {
+        "icon": "wrench",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "altTblPaginationRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "altTblPaginationLeft",
+        "altTblPaginationRight"
+      ]
+    },
+    {
+      "id": "altTblPaginationLeft",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/paginationData/totalText"
+        },
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "altTblPaginationRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "altTblPageSelect",
+        "altTblPrevBtn",
+        "altTblPageIndicator",
+        "altTblNextBtn",
+        "altTblJumpToLabel",
+        "altTblJumpInput",
+        "altTblJumpPageLabel",
+        "altTblJumpBtn"
+      ]
+    },
+    {
+      "id": "altTblPageSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/paginationData/pageSize"
+        },
+        "options": {
+          "path": "/pageSizeOptions"
+        },
+        "className": "w-28"
+      }
+    },
+    {
+      "id": "altTblPrevBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-left"
+      }
+    },
+    {
+      "id": "altTblPageIndicator",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/paginationData/pageIndicator"
+        },
+        "className": "text-sm text-on-surface-variant min-w-[40px] text-center"
+      }
+    },
+    {
+      "id": "altTblNextBtn",
+      "component": "Button",
+      "props": {
+        "icon": "chevron-right"
+      }
+    },
+    {
+      "id": "altTblJumpToLabel",
+      "component": "span",
+      "props": {
+        "value": "跳至",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "altTblJumpInput",
+      "component": "InputNumber",
+      "props": {
+        "value": {
+          "path": "/paginationData/jumpValue"
+        },
+        "min": 1,
+        "max": 4,
+        "className": "w-16"
+      }
+    },
+    {
+      "id": "altTblJumpPageLabel",
+      "component": "span",
+      "props": {
+        "value": "页",
+        "className": "text-sm text-on-surface-variant"
+      }
+    },
+    {
+      "id": "altTblJumpBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/paginationData/jumpButtonText"
+        }
+      }
+    }
+  ]
+}

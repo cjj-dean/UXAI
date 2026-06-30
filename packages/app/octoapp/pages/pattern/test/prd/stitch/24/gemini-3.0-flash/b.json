@@ -1,0 +1,1078 @@
+{
+    "state": {
+        "searchPlaceholder": "搜索供应商名称、统一社会信用代码...",
+        "notificationCount": 12,
+        "currentUser": {
+            "userName": "SCM_ADMIN",
+            "roleName": "高级供应链管理员",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "mainMenus": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Directory",
+                "icon": "book-open",
+                "isActive": true
+            },
+            {
+                "label": "Qualifications",
+                "icon": "shield-check",
+                "isActive": false
+            },
+            {
+                "label": "Performance",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "bottomMenus": [
+            {
+                "label": "Settings",
+                "icon": "settings"
+            },
+            {
+                "label": "Support",
+                "icon": "life-buoy"
+            }
+        ],
+        "supplierList": [
+            {
+                "id": "S001",
+                "companyName": "华为技术有限公司",
+                "category": "电子元器件",
+                "status": "有效",
+                "statusType": "success",
+                "score": 98,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S002",
+                "companyName": "震坤行工业超市",
+                "category": "MRO耗材",
+                "status": "已过期",
+                "statusType": "error",
+                "score": 58,
+                "scoreColor": "error"
+            },
+            {
+                "id": "S003",
+                "companyName": "顺丰速运",
+                "category": "物流服务",
+                "status": "审核中",
+                "statusType": "warning",
+                "score": 85,
+                "scoreColor": "primary"
+            },
+            {
+                "id": "S004",
+                "companyName": "英特尔(中国)",
+                "category": "半导体",
+                "status": "有效",
+                "statusType": "success",
+                "score": 92,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S005",
+                "companyName": "上海电气集团",
+                "category": "重型机械",
+                "status": "待更新",
+                "statusType": "warning",
+                "score": 74,
+                "scoreColor": "warning"
+            },
+            {
+                "id": "S006",
+                "companyName": "宁德时代",
+                "category": "动力电池",
+                "status": "有效",
+                "statusType": "success",
+                "score": 95,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S007",
+                "companyName": "富士康科技",
+                "category": "代工制造",
+                "status": "有效",
+                "statusType": "success",
+                "score": 88,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S008",
+                "companyName": "德州仪器",
+                "category": "模拟电路",
+                "status": "有效",
+                "statusType": "success",
+                "score": 91,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S009",
+                "companyName": "中芯国际",
+                "category": "晶圆制造",
+                "status": "有效",
+                "statusType": "success",
+                "score": 89,
+                "scoreColor": "success"
+            },
+            {
+                "id": "S010",
+                "companyName": "美团配送",
+                "category": "即时物流",
+                "status": "有效",
+                "statusType": "success",
+                "score": 82,
+                "scoreColor": "primary"
+            }
+        ],
+        "detail": {
+            "companyName": "震坤行工业超市",
+            "creditCode": "91310115MA1K3U5X8L",
+            "starRating": 4.8,
+            "contact": {
+                "name": "张伟",
+                "position": "大客户经理",
+                "phone": "138-1234-5678",
+                "email": "zhangwei@zkh.com",
+                "avatar": "https://randomuser.me/api/portraits/men/44.jpg"
+            },
+            "documents": [
+                {
+                    "name": "营业执照副本.pdf",
+                    "date": "2025-12-31",
+                    "status": "valid",
+                    "icon": "file-text"
+                },
+                {
+                    "name": "质量管理体系认证(ISO9001).doc",
+                    "date": "2023-10-15",
+                    "status": "expired",
+                    "icon": "file-check"
+                },
+                {
+                    "name": "危化品经营许可证.pdf",
+                    "date": "2024-06-20",
+                    "status": "valid",
+                    "icon": "file-warning"
+                }
+            ],
+            "performance": [
+                {
+                    "year": "2021",
+                    "quality": 85,
+                    "delivery": 88,
+                    "price": 90
+                },
+                {
+                    "year": "2022",
+                    "quality": 82,
+                    "delivery": 84,
+                    "price": 85
+                },
+                {
+                    "year": "2023",
+                    "quality": 78,
+                    "delivery": 80,
+                    "price": 82
+                }
+            ],
+            "summary": {
+                "rate": "15.4%",
+                "progress": 72
+            }
+        }
+    },
+    "rootId": "erpSupplierLayout",
+    "elements": [
+        {
+            "id": "erpSupplierLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-14 bg-surface-container-highest flex items-center justify-between px-gutter shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 w-1/3"
+            },
+            "children": [
+                "appLogo",
+                "globalSearch"
+            ]
+        },
+        {
+            "id": "appLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "factory",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "A2 ERP",
+                "className": "font-bold text-lg text-primary"
+            }
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-full max-w-md"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "actionIcons",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "actionIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "helpBtn",
+                "notifyBtn"
+            ]
+        },
+        {
+            "id": "helpBtn",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "className": "border-none shadow-none"
+            }
+        },
+        {
+            "id": "notifyBtn",
+            "component": "div",
+            "props": {
+                "className": "relative"
+            },
+            "children": [
+                "notifyIcon",
+                "notifyBadge"
+            ]
+        },
+        {
+            "id": "notifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "notifyBadge",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/notificationCount"
+                },
+                "className": "absolute -top-2 -right-2 bg-error text-white text-[8px] px-1 rounded-full"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-medium leading-none"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/roleName"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-4"
+            },
+            "children": [
+                "mainMenu",
+                "bottomMenu"
+            ]
+        },
+        {
+            "id": "mainMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/mainMenus",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors"
+            },
+            "children": [
+                "menuIcon",
+                "menuLabel"
+            ]
+        },
+        {
+            "id": "menuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "bottomMenu",
+            "component": "div",
+            "props": {
+                "className": "border-t border-divider pt-4 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/bottomMenus",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex gap-gutter p-gutter overflow-auto"
+            },
+            "children": [
+                "supplierListSection",
+                "supplierDetailSection"
+            ]
+        },
+        {
+            "id": "supplierListSection",
+            "component": "section",
+            "props": {
+                "className": "w-[70%] flex flex-col gap-gutter"
+            },
+            "children": [
+                "listHeaderCard",
+                "listTableCard"
+            ]
+        },
+        {
+            "id": "listHeaderCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex justify-between items-center"
+            },
+            "children": [
+                "listTitleBox",
+                "listActions"
+            ]
+        },
+        {
+            "id": "listTitleBox",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-2"
+            },
+            "children": [
+                "listTitle",
+                "listCount"
+            ]
+        },
+        {
+            "id": "listTitle",
+            "component": "h2",
+            "props": {
+                "value": "供应商库",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "listCount",
+            "component": "span",
+            "props": {
+                "value": "(共 1,256 家)",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "listActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "addBtn",
+                "filterBtn"
+            ]
+        },
+        {
+            "id": "addBtn",
+            "component": "Button",
+            "props": {
+                "value": "新增供应商",
+                "color": "primary",
+                "icon": "plus"
+            }
+        },
+        {
+            "id": "filterBtn",
+            "component": "Button",
+            "props": {
+                "icon": "filter"
+            }
+        },
+        {
+            "id": "listTableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "supplierTable"
+            ]
+        },
+        {
+            "id": "supplierTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/supplierList"
+                },
+                "columns": [
+                    {
+                        "title": "公司名称",
+                        "dataIndex": "companyName"
+                    },
+                    {
+                        "title": "类别",
+                        "dataIndex": "category"
+                    },
+                    {
+                        "title": "资质状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "综合评分",
+                        "dataIndex": "score",
+                        "width": 120
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/supplierList",
+                "componentId": "supplierRow"
+            }
+        },
+        {
+            "id": "supplierRow",
+            "component": "TableRow",
+            "children": [
+                "colCompany",
+                "colCategory",
+                "colStatus",
+                "colScore",
+                "colAction"
+            ]
+        },
+        {
+            "id": "colCompany",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "companyName"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "colCategory",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "category"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "colStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                }
+            }
+        },
+        {
+            "id": "colScore",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "scoreVal",
+                "scoreBar"
+            ]
+        },
+        {
+            "id": "scoreVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "text-xs font-bold"
+            }
+        },
+        {
+            "id": "scoreBar",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "score"
+                },
+                "showInfo": false,
+                "size": "small",
+                "strokeColor": {
+                    "path": "scoreColor"
+                }
+            }
+        },
+        {
+            "id": "colAction",
+            "component": "Button",
+            "props": {
+                "icon": "more-horizontal",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "supplierDetailSection",
+            "component": "section",
+            "props": {
+                "className": "w-[30%] flex flex-col gap-gutter"
+            },
+            "children": [
+                "basicInfoCard",
+                "qualificationCard",
+                "performanceCard"
+            ]
+        },
+        {
+            "id": "basicInfoCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "basicHeader",
+                "basicFields",
+                "contactBox"
+            ]
+        },
+        {
+            "id": "basicHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "detailTitle",
+                "detailCompany"
+            ]
+        },
+        {
+            "id": "detailTitle",
+            "component": "span",
+            "props": {
+                "value": "基础信息",
+                "className": "text-xs font-bold text-primary tracking-wider uppercase"
+            }
+        },
+        {
+            "id": "detailCompany",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/detail/companyName"
+                },
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "basicFields",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "fieldCode",
+                "fieldRate"
+            ]
+        },
+        {
+            "id": "fieldCode",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "codeLabel",
+                "codeValue"
+            ]
+        },
+        {
+            "id": "codeLabel",
+            "component": "span",
+            "props": {
+                "value": "信用代码",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "codeValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/creditCode"
+                },
+                "className": "text-sm font-mono"
+            }
+        },
+        {
+            "id": "fieldRate",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "rateLabel",
+                "rateValue"
+            ]
+        },
+        {
+            "id": "rateLabel",
+            "component": "span",
+            "props": {
+                "value": "信用评级",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "rateValue",
+            "component": "Rate",
+            "props": {
+                "value": {
+                    "path": "/detail/starRating"
+                },
+                "count": 5,
+                "disabled": true,
+                "size": "small"
+            }
+        },
+        {
+            "id": "contactBox",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-3 rounded-lg flex items-center gap-3"
+            },
+            "children": [
+                "contactAvatar",
+                "contactInfo"
+            ]
+        },
+        {
+            "id": "contactAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/detail/contact/avatar"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "contactInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "contactName",
+                "contactPos"
+            ]
+        },
+        {
+            "id": "contactName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/contact/name"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "contactPos",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/contact/position"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "qualificationCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-3"
+            },
+            "children": [
+                "qualTitle",
+                "qualList"
+            ]
+        },
+        {
+            "id": "qualTitle",
+            "component": "span",
+            "props": {
+                "value": "资质文件",
+                "className": "text-xs font-bold text-primary tracking-wider uppercase"
+            }
+        },
+        {
+            "id": "qualList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/detail/documents",
+                "componentId": "qualItem"
+            }
+        },
+        {
+            "id": "qualItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-2 border border-divider rounded-md hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "qualIcon",
+                "qualContent",
+                "qualStatus"
+            ]
+        },
+        {
+            "id": "qualIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5 text-primary"
+            }
+        },
+        {
+            "id": "qualContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-w-0"
+            },
+            "children": [
+                "qualName",
+                "qualDate"
+            ]
+        },
+        {
+            "id": "qualName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-xs font-medium truncate"
+            }
+        },
+        {
+            "id": "qualDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                },
+                "className": "text-[10px] text-on-surface-variant"
+            }
+        },
+        {
+            "id": "qualStatus",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "performanceCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "perfTitle",
+                "perfGrid",
+                "perfSummary"
+            ]
+        },
+        {
+            "id": "perfTitle",
+            "component": "span",
+            "props": {
+                "value": "年度绩效",
+                "className": "text-xs font-bold text-primary tracking-wider uppercase"
+            }
+        },
+        {
+            "id": "perfGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-2"
+            },
+            "children": {
+                "path": "/detail/performance",
+                "componentId": "perfYearBlock"
+            }
+        },
+        {
+            "id": "perfYearBlock",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center p-2 bg-surface-variant rounded"
+            },
+            "children": [
+                "perfYear",
+                "perfQuality"
+            ]
+        },
+        {
+            "id": "perfYear",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "year"
+                },
+                "className": "text-[10px] font-bold"
+            }
+        },
+        {
+            "id": "perfQuality",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "quality"
+                },
+                "className": "text-sm text-primary font-bold"
+            }
+        },
+        {
+            "id": "perfSummary",
+            "component": "div",
+            "props": {
+                "className": "pt-2 border-t border-divider flex flex-col gap-2"
+            },
+            "children": [
+                "perfSummaryTop",
+                "perfProgressBar"
+            ]
+        },
+        {
+            "id": "perfSummaryTop",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "perfRateBox",
+                "perfTrend"
+            ]
+        },
+        {
+            "id": "perfRateBox",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "perfRateVal",
+                "perfRateLabel"
+            ]
+        },
+        {
+            "id": "perfRateVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/detail/summary/rate"
+                },
+                "className": "text-lg font-bold text-success"
+            }
+        },
+        {
+            "id": "perfRateLabel",
+            "component": "span",
+            "props": {
+                "value": "提升率",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "perfTrend",
+            "component": "Icon",
+            "props": {
+                "name": "trending-up",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "perfProgressBar",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "/detail/summary/progress"
+                },
+                "status": "active",
+                "strokeColor": "#09AA71"
+            }
+        }
+    ]
+}

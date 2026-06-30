@@ -1,0 +1,3 @@
+
+结构清晰型：
+请生成一个左右布局的CRM任务详情界面。左侧栏顶部是Nexus CRM标识，中间包含Home、Tasks（当前选中态）等五个菜单，底部有+ New Quote按钮和注销链接。顶部导航包含占位符为Search tasks, docs...的搜索框、中间四个链接和右侧图标。右侧主内容区头部是Projects > APAC Expansion面包屑，下方是双语标题“Setup APAC Cloud Region / 亚太区云区域部署”及进行中、高优先级两个状态标签，右侧有Mark Complete和Edit操作按钮。主体下方左宽右窄：左列包含“Task Description / 任务详情”区块（内部有段落描述和三个无序列表项）和“Subtasks / 子任务拆解”区块（列出三个子任务，前两个已完成带删除线，底部有添加按钮）；右列包含“ASSIGNMENT / 责任人分配”卡片（主负责人Chen Wei及参与者头像组）、日期与进度卡片（展示起止日期、68%进度条、预估45h/实际32.5h工时）和“Internal Discussion / 讨论”卡片（带12 Messages徽标，内部展示Sarah Jenkins等人的聊天记录）。

@@ -1,0 +1,1421 @@
+{
+    "state": {
+        "searchValue": "",
+        "selectedCompetitor": "nexgen",
+        "competitorOptions": [
+            {
+                "label": "NexGen Analytics",
+                "value": "nexgen"
+            },
+            {
+                "label": "MarketForce AI",
+                "value": "marketforce"
+            },
+            {
+                "label": "QuantEdge Pro",
+                "value": "quantedge"
+            }
+        ],
+        "advantageItems": [
+            {
+                "advantageTitle": "Data Latency (99.8th Percentile)",
+                "advantageDescription": "42ms response time vs competitor average of 115ms.",
+                "advantageIcon": "zap"
+            },
+            {
+                "advantageTitle": "ISO 27001 Native Compliance",
+                "advantageDescription": "Built-in governance exceeds baseline industry requirements.",
+                "advantageIcon": "shield-check"
+            }
+        ]
+    },
+    "rootId": "rootContainer",
+    "elements": [
+        {
+            "id": "rootContainer",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "rightArea"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-60 flex flex-col bg-surface-container-highest shadow-sm shrink-0"
+            },
+            "children": [
+                "sidebarBrandSection",
+                "sidebarNavSection",
+                "sidebarFooterSection"
+            ]
+        },
+        {
+            "id": "sidebarBrandSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-6 pt-6 pb-4"
+            },
+            "children": [
+                "sidebarLogoIcon",
+                "sidebarBrandText"
+            ]
+        },
+        {
+            "id": "sidebarLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "brain",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "sidebarBrandText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "sidebarSystemName",
+                "sidebarTierTag"
+            ]
+        },
+        {
+            "id": "sidebarSystemName",
+            "component": "span",
+            "props": {
+                "value": "IntelEngine",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarTierTag",
+            "component": "Tag",
+            "props": {
+                "value": "Enterprise Tier",
+                "color": "processing",
+                "size": "small"
+            }
+        },
+        {
+            "id": "sidebarNavSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-3 mt-2 flex flex-col gap-1"
+            },
+            "children": [
+                "sidebarNavItem1",
+                "sidebarNavItem2",
+                "sidebarNavItem3",
+                "sidebarNavItem4"
+            ]
+        },
+        {
+            "id": "sidebarNavItem1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "sidebarNavIcon1",
+                "sidebarNavLabel1"
+            ]
+        },
+        {
+            "id": "sidebarNavIcon1",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-3",
+                "color": "default",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavLabel1",
+            "component": "span",
+            "props": {
+                "value": "Market Overview",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarNavItem2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container cursor-pointer"
+            },
+            "children": [
+                "sidebarNavIcon2",
+                "sidebarNavLabel2"
+            ]
+        },
+        {
+            "id": "sidebarNavIcon2",
+            "component": "Icon",
+            "props": {
+                "name": "git-compare",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavLabel2",
+            "component": "span",
+            "props": {
+                "value": "Benchmarking",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "sidebarNavItem3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "sidebarNavIcon3",
+                "sidebarNavLabel3"
+            ]
+        },
+        {
+            "id": "sidebarNavIcon3",
+            "component": "Icon",
+            "props": {
+                "name": "shield",
+                "color": "default",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavLabel3",
+            "component": "span",
+            "props": {
+                "value": "Battlecards",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarNavItem4",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "sidebarNavIcon4",
+                "sidebarNavLabel4"
+            ]
+        },
+        {
+            "id": "sidebarNavIcon4",
+            "component": "Icon",
+            "props": {
+                "name": "trending-down",
+                "color": "default",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarNavLabel4",
+            "component": "span",
+            "props": {
+                "value": "Loss Analysis",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sidebarFooterSection",
+            "component": "div",
+            "props": {
+                "className": "px-4 pb-4 pt-2 flex flex-col gap-3"
+            },
+            "children": [
+                "sidebarAddBtn",
+                "sidebarUserBlock"
+            ]
+        },
+        {
+            "id": "sidebarAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "+ Add Competitor",
+                "icon": "plus-circle",
+                "iconPlacement": "start",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "sidebarUserBlock",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-2 py-2 rounded-lg bg-surface-variant"
+            },
+            "children": [
+                "sidebarUserAvatar",
+                "sidebarUserInfo"
+            ]
+        },
+        {
+            "id": "sidebarUserAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "alt": "Alex Chen avatar",
+                "className": "w-8 h-8 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "sidebarUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sidebarUserName",
+                "sidebarUserRole"
+            ]
+        },
+        {
+            "id": "sidebarUserName",
+            "component": "span",
+            "props": {
+                "value": "Alex Chen",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarUserRole",
+            "component": "span",
+            "props": {
+                "value": "SR. ANALYST",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "rightArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-h-screen overflow-hidden"
+            },
+            "children": [
+                "topBar",
+                "mainContent"
+            ]
+        },
+        {
+            "id": "topBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center h-14 px-6 bg-surface-container-highest shadow-sm shrink-0"
+            },
+            "children": [
+                "topBarModule",
+                "topBarSearch",
+                "topBarIcons"
+            ]
+        },
+        {
+            "id": "topBarModule",
+            "component": "span",
+            "props": {
+                "value": "Strategic Intel",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "topBarSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": "Search markets or competitors...",
+                "prefix": "search",
+                "className": "flex-1 mx-8"
+            }
+        },
+        {
+            "id": "topBarIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "topBarBellIcon",
+                "topBarSettingsIcon",
+                "topBarHelpIcon"
+            ]
+        },
+        {
+            "id": "topBarBellIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "color": "default",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "topBarSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "color": "default",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "topBarHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "color": "default",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6"
+            },
+            "children": [
+                "pageHeaderSection",
+                "dashboardGrid",
+                "matrixSection"
+            ]
+        },
+        {
+            "id": "pageHeaderSection",
+            "component": "div",
+            "props": {
+                "className": "mb-6"
+            },
+            "children": [
+                "pageBreadcrumb",
+                "pageHeaderRow"
+            ]
+        },
+        {
+            "id": "pageBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "ANALYSIS"
+                    },
+                    {
+                        "title": "BENCHMARKING"
+                    }
+                ],
+                "separator": ">",
+                "className": "mb-3"
+            }
+        },
+        {
+            "id": "pageHeaderRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-end justify-between gap-6"
+            },
+            "children": [
+                "pageHeaderLeft",
+                "pageHeaderRight"
+            ]
+        },
+        {
+            "id": "pageHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "pageTitle",
+                "pageDesc"
+            ]
+        },
+        {
+            "id": "pageTitle",
+            "component": "h1",
+            "props": {
+                "value": "Product Capability Benchmarking",
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "pageDesc",
+            "component": "span",
+            "props": {
+                "value": "Comparing Strategic Intel v4.0 against top tier market competitors.",
+                "className": "text-sm text-on-surface-variant mt-1"
+            }
+        },
+        {
+            "id": "pageHeaderRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 shrink-0"
+            },
+            "children": [
+                "pageCompareLabel",
+                "pageCompareSelect",
+                "pageMetricBtn"
+            ]
+        },
+        {
+            "id": "pageCompareLabel",
+            "component": "span",
+            "props": {
+                "value": "Compare To:",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "pageCompareSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/selectedCompetitor"
+                },
+                "options": {
+                    "path": "/competitorOptions"
+                },
+                "className": "w-48"
+            }
+        },
+        {
+            "id": "pageMetricBtn",
+            "component": "Button",
+            "props": {
+                "value": "All Metrics",
+                "icon": "filter",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "dashboardGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-2 gap-6 mb-6"
+            },
+            "children": [
+                "dashboardLeft",
+                "dashboardRight"
+            ]
+        },
+        {
+            "id": "dashboardLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "radarCard"
+            ]
+        },
+        {
+            "id": "radarCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "radarCardHeader",
+                "radarChartSubtitle",
+                "radarChart",
+                "radarLegends"
+            ]
+        },
+        {
+            "id": "radarCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-1"
+            },
+            "children": [
+                "radarCardTitle"
+            ]
+        },
+        {
+            "id": "radarCardTitle",
+            "component": "h2",
+            "props": {
+                "value": "Capability Distribution",
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "radarChartSubtitle",
+            "component": "span",
+            "props": {
+                "value": "Relative scoring across 6 key dimensions (0-100 scale)",
+                "className": "text-xs text-on-surface-variant mb-4"
+            }
+        },
+        {
+            "id": "radarChart",
+            "component": "RadarChart",
+            "props": {
+                "option": {
+                    "radarMax": 100,
+                    "data": {
+                        "Strategic Intel": {
+                            "PERFORMANCE": 92,
+                            "INTEGRATION": 85,
+                            "PRICE": 78,
+                            "RELIABILITY": 95,
+                            "SECURITY": 88,
+                            "UX DESIGN": 82
+                        },
+                        "NexGen Analytics": {
+                            "PERFORMANCE": 80,
+                            "INTEGRATION": 75,
+                            "PRICE": 90,
+                            "RELIABILITY": 85,
+                            "SECURITY": 70,
+                            "UX DESIGN": 65
+                        }
+                    },
+                    "color": [
+                        "#4f46e5",
+                        "#94a3b8"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "radarLegends",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6 mt-4"
+            },
+            "children": [
+                "radarLegend1Item",
+                "radarLegend2Item"
+            ]
+        },
+        {
+            "id": "radarLegend1Item",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "radarLegend1Dot",
+                "radarLegend1Label"
+            ]
+        },
+        {
+            "id": "radarLegend1Dot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#4f46e5]"
+            }
+        },
+        {
+            "id": "radarLegend1Label",
+            "component": "span",
+            "props": {
+                "value": "Strategic Intel",
+                "className": "text-xs text-on-surface"
+            }
+        },
+        {
+            "id": "radarLegend2Item",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "radarLegend2Dot",
+                "radarLegend2Label"
+            ]
+        },
+        {
+            "id": "radarLegend2Dot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#94a3b8]"
+            }
+        },
+        {
+            "id": "radarLegend2Label",
+            "component": "span",
+            "props": {
+                "value": "NexGen Analytics",
+                "className": "text-xs text-on-surface"
+            }
+        },
+        {
+            "id": "dashboardRight",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-6"
+            },
+            "children": [
+                "advantageCard",
+                "gapCard"
+            ]
+        },
+        {
+            "id": "advantageCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "advantageCardTitle",
+                "advantageList"
+            ]
+        },
+        {
+            "id": "advantageCardTitle",
+            "component": "h2",
+            "props": {
+                "value": "Core Advantages",
+                "className": "text-lg font-semibold text-on-surface mb-4"
+            }
+        },
+        {
+            "id": "advantageList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": {
+                "path": "/advantageItems",
+                "componentId": "advantageItemTemplate"
+            }
+        },
+        {
+            "id": "advantageItemTemplate",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "advantageItemIcon",
+                "advantageItemContent"
+            ]
+        },
+        {
+            "id": "advantageItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "advantageIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5 shrink-0 mt-0.5"
+            }
+        },
+        {
+            "id": "advantageItemContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "advantageItemTitle",
+                "advantageItemDesc"
+            ]
+        },
+        {
+            "id": "advantageItemTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "advantageTitle"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "advantageItemDesc",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "advantageDescription"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "gapCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-6 flex flex-col"
+            },
+            "children": [
+                "gapCardHeader",
+                "gapBarChart",
+                "gapWinRateSection"
+            ]
+        },
+        {
+            "id": "gapCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col mb-1"
+            },
+            "children": [
+                "gapCardTitle",
+                "gapChartSubtitle"
+            ]
+        },
+        {
+            "id": "gapCardTitle",
+            "component": "h2",
+            "props": {
+                "value": "Strategic Gap Analysis",
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "gapChartSubtitle",
+            "component": "span",
+            "props": {
+                "value": "Pricing vs Capability Spectrum",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "gapBarChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": [
+                        {
+                            "Category": "Price per Seat",
+                            "Strategic Intel": 85,
+                            "NexGen Analytics": 70
+                        },
+                        {
+                            "Category": "Feature Breadth",
+                            "Strategic Intel": 92,
+                            "NexGen Analytics": 65
+                        },
+                        {
+                            "Category": "Support SLA",
+                            "Strategic Intel": 95,
+                            "NexGen Analytics": 80
+                        }
+                    ],
+                    "xAxis": {
+                        "data": "Category"
+                    },
+                    "yAxisTitle": "Score",
+                    "color": [
+                        "#4f46e5",
+                        "#94a3b8"
+                    ]
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "gapWinRateSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mt-4 pt-4 border-t border-divider"
+            },
+            "children": [
+                "gapWinRateIcon",
+                "gapWinRateLabel",
+                "gapWinRateValue"
+            ]
+        },
+        {
+            "id": "gapWinRateIcon",
+            "component": "Icon",
+            "props": {
+                "name": "trending-up",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "gapWinRateLabel",
+            "component": "span",
+            "props": {
+                "value": "Win Rate Increase",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "gapWinRateValue",
+            "component": "span",
+            "props": {
+                "value": "+14.2%",
+                "className": "text-lg font-bold text-success"
+            }
+        },
+        {
+            "id": "matrixSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "matrixHeaderRow",
+                "matrixTableWrap"
+            ]
+        },
+        {
+            "id": "matrixHeaderRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-6 py-4"
+            },
+            "children": [
+                "matrixTitle",
+                "matrixActions"
+            ]
+        },
+        {
+            "id": "matrixTitle",
+            "component": "h2",
+            "props": {
+                "value": "Feature-by-Feature Matrix",
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "matrixActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "matrixExportBtn",
+                "matrixShareBtn"
+            ]
+        },
+        {
+            "id": "matrixExportBtn",
+            "component": "Button",
+            "props": {
+                "value": "EXPORT PDF",
+                "icon": "file-down",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "matrixShareBtn",
+            "component": "Button",
+            "props": {
+                "value": "SHARE INTEL",
+                "icon": "share-2",
+                "iconPlacement": "start",
+                "color": "primary",
+                "size": "small"
+            }
+        },
+        {
+            "id": "matrixTableWrap",
+            "component": "div",
+            "props": {
+                "className": "px-4 pb-4"
+            },
+            "children": [
+                "matrixTableHeader",
+                "matrixGroup1Header",
+                "matrixRow1",
+                "matrixRow2",
+                "matrixGroup2Header",
+                "matrixRow3",
+                "matrixRow4"
+            ]
+        },
+        {
+            "id": "matrixTableHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center bg-surface-variant rounded-t-lg"
+            },
+            "children": [
+                "matrixThFeature",
+                "matrixThStrategic",
+                "matrixThNexgen",
+                "matrixThMarketforce",
+                "matrixThQuantedge"
+            ]
+        },
+        {
+            "id": "matrixThFeature",
+            "component": "span",
+            "props": {
+                "value": "FEATURE SET",
+                "className": "flex-[2] px-4 py-3 text-xs font-semibold text-on-surface-variant uppercase tracking-wider"
+            }
+        },
+        {
+            "id": "matrixThStrategic",
+            "component": "span",
+            "props": {
+                "value": "STRATEGIC INTEL (OUR)",
+                "className": "flex-1 px-2 py-3 text-xs font-semibold text-on-surface-variant uppercase tracking-wider text-center"
+            }
+        },
+        {
+            "id": "matrixThNexgen",
+            "component": "span",
+            "props": {
+                "value": "NEXGEN ANALYTICS",
+                "className": "flex-1 px-2 py-3 text-xs font-semibold text-on-surface-variant uppercase tracking-wider text-center"
+            }
+        },
+        {
+            "id": "matrixThMarketforce",
+            "component": "span",
+            "props": {
+                "value": "MARKETFORCE AI",
+                "className": "flex-1 px-2 py-3 text-xs font-semibold text-on-surface-variant uppercase tracking-wider text-center"
+            }
+        },
+        {
+            "id": "matrixThQuantedge",
+            "component": "span",
+            "props": {
+                "value": "QUANTEDGE PRO",
+                "className": "flex-1 px-2 py-3 text-xs font-semibold text-on-surface-variant uppercase tracking-wider text-center"
+            }
+        },
+        {
+            "id": "matrixGroup1Header",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container px-4 py-2"
+            },
+            "children": [
+                "matrixGroup1Label"
+            ]
+        },
+        {
+            "id": "matrixGroup1Label",
+            "component": "span",
+            "props": {
+                "value": "CORE INTELLIGENCE",
+                "className": "text-xs font-semibold text-on-primary-container uppercase tracking-wider"
+            }
+        },
+        {
+            "id": "matrixRow1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center border-b border-divider"
+            },
+            "children": [
+                "matrixRow1Feature",
+                "matrixRow1S1Cell",
+                "matrixRow1S2Cell",
+                "matrixRow1S3Cell",
+                "matrixRow1S4Cell"
+            ]
+        },
+        {
+            "id": "matrixRow1Feature",
+            "component": "span",
+            "props": {
+                "value": "Predictive Market Modeling",
+                "className": "flex-[2] px-4 py-3 text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "matrixRow1S1Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow1S1Icon"
+            ]
+        },
+        {
+            "id": "matrixRow1S1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow1S2Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow1S2Icon"
+            ]
+        },
+        {
+            "id": "matrixRow1S2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow1S3Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow1S3Icon"
+            ]
+        },
+        {
+            "id": "matrixRow1S3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-x",
+                "color": "error",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow1S4Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow1S4Icon"
+            ]
+        },
+        {
+            "id": "matrixRow1S4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "minus",
+                "color": "default",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center border-b border-divider"
+            },
+            "children": [
+                "matrixRow2Feature",
+                "matrixRow2S1Cell",
+                "matrixRow2S2Cell",
+                "matrixRow2S3Cell",
+                "matrixRow2S4Cell"
+            ]
+        },
+        {
+            "id": "matrixRow2Feature",
+            "component": "span",
+            "props": {
+                "value": "Real-time Competitor Pinging",
+                "className": "flex-[2] px-4 py-3 text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "matrixRow2S1Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow2S1Icon"
+            ]
+        },
+        {
+            "id": "matrixRow2S1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow2S2Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow2S2Icon"
+            ]
+        },
+        {
+            "id": "matrixRow2S2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-x",
+                "color": "error",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow2S3Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow2S3Icon"
+            ]
+        },
+        {
+            "id": "matrixRow2S3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow2S4Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow2S4Icon"
+            ]
+        },
+        {
+            "id": "matrixRow2S4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixGroup2Header",
+            "component": "div",
+            "props": {
+                "className": "bg-primary-container px-4 py-2"
+            },
+            "children": [
+                "matrixGroup2Label"
+            ]
+        },
+        {
+            "id": "matrixGroup2Label",
+            "component": "span",
+            "props": {
+                "value": "INTEGRATION & SECURITY",
+                "className": "text-xs font-semibold text-on-primary-container uppercase tracking-wider"
+            }
+        },
+        {
+            "id": "matrixRow3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center border-b border-divider"
+            },
+            "children": [
+                "matrixRow3Feature",
+                "matrixRow3S1Cell",
+                "matrixRow3S2Cell",
+                "matrixRow3S3Cell",
+                "matrixRow3S4Cell"
+            ]
+        },
+        {
+            "id": "matrixRow3Feature",
+            "component": "span",
+            "props": {
+                "value": "Salesforce Native Sync",
+                "className": "flex-[2] px-4 py-3 text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "matrixRow3S1Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow3S1Icon"
+            ]
+        },
+        {
+            "id": "matrixRow3S1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow3S2Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow3S2Icon"
+            ]
+        },
+        {
+            "id": "matrixRow3S2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow3S3Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow3S3Icon"
+            ]
+        },
+        {
+            "id": "matrixRow3S3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow3S4Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow3S4Icon"
+            ]
+        },
+        {
+            "id": "matrixRow3S4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow4",
+            "component": "div",
+            "props": {
+                "className": "flex items-center rounded-b-lg"
+            },
+            "children": [
+                "matrixRow4Feature",
+                "matrixRow4S1Cell",
+                "matrixRow4S2Cell",
+                "matrixRow4S3Cell",
+                "matrixRow4S4Cell"
+            ]
+        },
+        {
+            "id": "matrixRow4Feature",
+            "component": "span",
+            "props": {
+                "value": "Encrypted Stakeholder Portals",
+                "className": "flex-[2] px-4 py-3 text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "matrixRow4S1Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow4S1Icon"
+            ]
+        },
+        {
+            "id": "matrixRow4S1Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow4S2Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow4S2Icon"
+            ]
+        },
+        {
+            "id": "matrixRow4S2Icon",
+            "component": "Icon",
+            "props": {
+                "name": "minus",
+                "color": "default",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow4S3Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow4S3Icon"
+            ]
+        },
+        {
+            "id": "matrixRow4S3Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-x",
+                "color": "error",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "matrixRow4S4Cell",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center py-3"
+            },
+            "children": [
+                "matrixRow4S4Icon"
+            ]
+        },
+        {
+            "id": "matrixRow4S4Icon",
+            "component": "Icon",
+            "props": {
+                "name": "circle-check",
+                "color": "success",
+                "className": "w-5 h-5"
+            }
+        }
+    ]
+}

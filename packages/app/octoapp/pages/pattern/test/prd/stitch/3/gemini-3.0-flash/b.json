@@ -1,0 +1,760 @@
+{
+    "state": {
+        "navLinks": [
+            {
+                "label": "Dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Users",
+                "isActive": true
+            },
+            {
+                "label": "Logs",
+                "isActive": false
+            },
+            {
+                "label": "Settings",
+                "isActive": false
+            }
+        ],
+        "filters": {
+            "search": "",
+            "role": "All",
+            "dept": "All",
+            "status": "All"
+        },
+        "userList": [
+            {
+                "id": "USR-001",
+                "name": "Alex Thompson",
+                "email": "alex.t@securitygate.io",
+                "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+                "role": "System Admin",
+                "dept": "Engineering",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLogin": "2 mins ago",
+                "isActive": true
+            },
+            {
+                "id": "USR-002",
+                "name": "Sarah Jenkins",
+                "email": "s.jenkins@securitygate.io",
+                "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+                "role": "Product Designer",
+                "dept": "Design",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLogin": "1 hour ago",
+                "isActive": true
+            },
+            {
+                "id": "USR-003",
+                "name": "Michael Chen",
+                "email": "m.chen@securitygate.io",
+                "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+                "role": "Marketing Lead",
+                "dept": "Marketing",
+                "status": "INACTIVE",
+                "statusColor": "default",
+                "lastLogin": "3 days ago",
+                "isActive": false
+            },
+            {
+                "id": "USR-004",
+                "name": "Emily Davis",
+                "email": "emily.d@securitygate.io",
+                "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+                "role": "HR Manager",
+                "dept": "Human Resources",
+                "status": "ACTIVE",
+                "statusColor": "success",
+                "lastLogin": "Just now",
+                "isActive": true
+            }
+        ]
+    },
+    "rootId": "pageContainer",
+    "elements": [
+        {
+            "id": "pageContainer",
+            "component": "div",
+            "props": {
+                "className": "min-h-screen bg-surface-container-lowest flex flex-col"
+            },
+            "children": [
+                "globalHeader",
+                "mainContent",
+                "globalFooter"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest shadow-sm flex items-center justify-between px-gutter sticky top-0 z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-8"
+            },
+            "children": [
+                "brandLogo",
+                "navMenu"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": "Security Gate",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navMenu",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/navLinks",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "a",
+            "props": {
+                "className": "text-md font-medium transition-colors hover:text-primary",
+                "value": {
+                    "path": "label"
+                },
+                "href": "#"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "headerIconBell",
+                "headerIconSearch",
+                "headerIconUser"
+            ]
+        },
+        {
+            "id": "headerIconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "headerIconSearch",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "headerIconUser",
+            "component": "Icon",
+            "props": {
+                "name": "circle-user",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-gutter max-w-7xl mx-auto w-full flex flex-col gap-6"
+            },
+            "children": [
+                "directoryHeader",
+                "filterToolbar",
+                "tableContainer"
+            ]
+        },
+        {
+            "id": "directoryHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "headerTextGroup",
+                "addUserBtn"
+            ]
+        },
+        {
+            "id": "headerTextGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "directoryTitle",
+                "directoryDesc"
+            ]
+        },
+        {
+            "id": "directoryTitle",
+            "component": "h1",
+            "props": {
+                "value": "User Directory",
+                "className": "text-3xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "directoryDesc",
+            "component": "p",
+            "props": {
+                "value": "Manage your organization's user accounts, assign roles, and monitor access permissions across all departments.",
+                "className": "text-md text-on-surface-variant max-w-2xl"
+            }
+        },
+        {
+            "id": "addUserBtn",
+            "component": "Button",
+            "props": {
+                "value": "Add New User",
+                "color": "primary",
+                "icon": "user-plus",
+                "iconPlacement": "start",
+                "size": "large"
+            }
+        },
+        {
+            "id": "filterToolbar",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-4 rounded-container shadow-sm flex flex-wrap items-center gap-4"
+            },
+            "children": [
+                "searchInput",
+                "roleSelect",
+                "deptSelect",
+                "statusSelect",
+                "clearBtn"
+            ]
+        },
+        {
+            "id": "searchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/filters/search"
+                },
+                "placeholder": "Search by name or email...",
+                "prefix": "search",
+                "className": "w-72"
+            }
+        },
+        {
+            "id": "roleSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filters/role"
+                },
+                "options": [
+                    {
+                        "label": "Role: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "Admin",
+                        "value": "Admin"
+                    },
+                    {
+                        "label": "Editor",
+                        "value": "Editor"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "deptSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filters/dept"
+                },
+                "options": [
+                    {
+                        "label": "Department: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "Engineering",
+                        "value": "Engineering"
+                    },
+                    {
+                        "label": "Design",
+                        "value": "Design"
+                    }
+                ],
+                "className": "w-44"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filters/status"
+                },
+                "options": [
+                    {
+                        "label": "Status: All",
+                        "value": "All"
+                    },
+                    {
+                        "label": "Active",
+                        "value": "Active"
+                    },
+                    {
+                        "label": "Inactive",
+                        "value": "Inactive"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "clearBtn",
+            "component": "Button",
+            "props": {
+                "value": "Clear Filters",
+                "icon": "x-circle",
+                "className": "ml-auto"
+            }
+        },
+        {
+            "id": "tableContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-sm overflow-hidden"
+            },
+            "children": [
+                "userTable",
+                "tableFooter"
+            ]
+        },
+        {
+            "id": "userTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/userList"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "Name",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "Role",
+                        "dataIndex": "role"
+                    },
+                    {
+                        "title": "Department",
+                        "dataIndex": "dept"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "Last Login",
+                        "dataIndex": "lastLogin"
+                    },
+                    {
+                        "title": "Actions",
+                        "dataIndex": "actions",
+                        "width": 150,
+                        "align": "right"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/userList",
+                "componentId": "userTableRow"
+            }
+        },
+        {
+            "id": "userTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellRole",
+                "cellDept",
+                "cellStatus",
+                "cellLogin",
+                "cellActions"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userNameGroup"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "userNameGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userNameText",
+                "userEmailText"
+            ]
+        },
+        {
+            "id": "userNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "userEmailText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "email"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "role"
+                },
+                "className": "text-on-surface"
+            }
+        },
+        {
+            "id": "cellDept",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "dept"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellLogin",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "lastLogin"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-end gap-2"
+            },
+            "children": [
+                "actionEdit",
+                "actionToggle",
+                "actionDelete"
+            ]
+        },
+        {
+            "id": "actionEdit",
+            "component": "Button",
+            "props": {
+                "icon": "edit-2",
+                "size": "small",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "actionToggle",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "isActive"
+                },
+                "size": "small",
+                "shape": "circle",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "actionDelete",
+            "component": "Button",
+            "props": {
+                "icon": "trash-2",
+                "size": "small",
+                "shape": "circle",
+                "color": "danger"
+            }
+        },
+        {
+            "id": "tableFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex items-center justify-between"
+            },
+            "children": [
+                "paginationSummary",
+                "paginationMock"
+            ]
+        },
+        {
+            "id": "paginationSummary",
+            "component": "span",
+            "props": {
+                "value": "Showing 1 to 4 of 42 entries",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "paginationMock",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "pagePrev",
+                "page1",
+                "page2",
+                "page3",
+                "page4",
+                "page5",
+                "pageDots",
+                "page11",
+                "pageNext"
+            ]
+        },
+        {
+            "id": "pagePrev",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-left",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "page1",
+            "component": "Button",
+            "props": {
+                "value": "1",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "page2",
+            "component": "Button",
+            "props": {
+                "value": "2",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "page3",
+            "component": "Button",
+            "props": {
+                "value": "3",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "page4",
+            "component": "Button",
+            "props": {
+                "value": "4",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "page5",
+            "component": "Button",
+            "props": {
+                "value": "5",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "pageDots",
+            "component": "span",
+            "props": {
+                "value": "...",
+                "className": "px-2 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "page11",
+            "component": "Button",
+            "props": {
+                "value": "11",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "pageNext",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-right",
+                "size": "small",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "globalFooter",
+            "component": "footer",
+            "props": {
+                "className": "p-gutter border-t border-divider flex justify-between items-center bg-surface-container-highest"
+            },
+            "children": [
+                "footerCopyright",
+                "footerLinksGroup"
+            ]
+        },
+        {
+            "id": "footerCopyright",
+            "component": "span",
+            "props": {
+                "value": "© 2024 Security Gate Management System. All rights reserved.",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "footerLinksGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6"
+            },
+            "children": [
+                "linkTerms",
+                "linkPrivacy",
+                "linkCookie",
+                "linkSupport"
+            ]
+        },
+        {
+            "id": "linkTerms",
+            "component": "a",
+            "props": {
+                "value": "Terms of Service",
+                "className": "text-sm text-on-surface-variant hover:text-primary",
+                "href": "#"
+            }
+        },
+        {
+            "id": "linkPrivacy",
+            "component": "a",
+            "props": {
+                "value": "Privacy Policy",
+                "className": "text-sm text-on-surface-variant hover:text-primary",
+                "href": "#"
+            }
+        },
+        {
+            "id": "linkCookie",
+            "component": "a",
+            "props": {
+                "value": "Cookie Settings",
+                "className": "text-sm text-on-surface-variant hover:text-primary",
+                "href": "#"
+            }
+        },
+        {
+            "id": "linkSupport",
+            "component": "a",
+            "props": {
+                "value": "Support Center",
+                "className": "text-sm text-on-surface-variant hover:text-primary",
+                "href": "#"
+            }
+        }
+    ]
+}

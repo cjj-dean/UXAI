@@ -1,0 +1,835 @@
+{
+    "state": {
+        "systemLogo": "https://picsum.photos/seed/project-intel-logo/40/40",
+        "navMenus": [
+            {
+                "label": "工作台",
+                "isActive": false
+            },
+            {
+                "label": "项目空间",
+                "isActive": true
+            },
+            {
+                "label": "资源调度",
+                "isActive": false
+            },
+            {
+                "label": "报表中心",
+                "isActive": false
+            }
+        ],
+        "projectViews": [
+            {
+                "label": "看板视图",
+                "icon": "layout",
+                "isSelected": false
+            },
+            {
+                "label": "列表视图",
+                "icon": "list",
+                "isSelected": false
+            },
+            {
+                "label": "甘特图视图",
+                "icon": "gantt-chart",
+                "isSelected": true
+            },
+            {
+                "label": "日历视图",
+                "icon": "calendar",
+                "isSelected": false
+            },
+            {
+                "label": "文档库",
+                "icon": "file-text",
+                "isSelected": false
+            }
+        ],
+        "viewOptions": [
+            "天",
+            "周",
+            "月"
+        ],
+        "currentView": "周",
+        "tasks": [
+            {
+                "id": "T-101",
+                "taskName": "架构方案评审",
+                "owner": "张晓明",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "status": "已完成",
+                "statusType": "success",
+                "duration": "10-01 ~ 10-05"
+            },
+            {
+                "id": "T-102",
+                "taskName": "核心模块开发",
+                "owner": "李思思",
+                "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+                "status": "进行中",
+                "statusType": "processing",
+                "duration": "10-06 ~ 10-20"
+            },
+            {
+                "id": "T-103",
+                "taskName": "UI/UX 设计交付",
+                "owner": "王大锤",
+                "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+                "status": "进行中",
+                "statusType": "processing",
+                "duration": "10-05 ~ 10-12"
+            },
+            {
+                "id": "T-104",
+                "taskName": "接口文档撰写",
+                "owner": "赵敏",
+                "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+                "status": "延期风险",
+                "statusType": "error",
+                "duration": "10-08 ~ 10-15"
+            },
+            {
+                "id": "T-105",
+                "taskName": "集成测试准备",
+                "owner": "孙悟空",
+                "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+                "status": "未开始",
+                "statusType": "default",
+                "duration": "10-21 ~ 10-25"
+            }
+        ],
+        "metrics": [
+            {
+                "label": "正在运行任务",
+                "value": 12,
+                "icon": "play-circle",
+                "color": "primary"
+            },
+            {
+                "label": "风险预警数",
+                "value": 3,
+                "icon": "alert-triangle",
+                "color": "error"
+            },
+            {
+                "label": "最后同步时间",
+                "value": "14:30:25",
+                "icon": "refresh-cw",
+                "color": "default"
+            }
+        ]
+    },
+    "rootId": "pageContainer",
+    "elements": [
+        {
+            "id": "pageContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "headerSection",
+                "mainBodySection",
+                "footerSection"
+            ]
+        },
+        {
+            "id": "headerSection",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-inset h-16 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "headerLogo",
+                "headerTitle"
+            ]
+        },
+        {
+            "id": "headerLogo",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/systemLogo"
+                },
+                "className": "w-8 h-8 rounded-md"
+            }
+        },
+        {
+            "id": "headerTitle",
+            "component": "span",
+            "props": {
+                "value": "ProjectIntelligence",
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": {
+                "path": "/navMenus",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "cursor-pointer text-md font-medium hover:text-primary"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerSearch",
+                "headerPublishBtn"
+            ]
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "搜索任务...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "headerPublishBtn",
+            "component": "Button",
+            "props": {
+                "value": "发布计划",
+                "color": "primary",
+                "icon": "send"
+            }
+        },
+        {
+            "id": "mainBodySection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebarSection",
+                "contentSection"
+            ]
+        },
+        {
+            "id": "sidebarSection",
+            "component": "aside",
+            "props": {
+                "className": "w-64 bg-surface-container-highest border-r border-divider flex flex-col p-inline"
+            },
+            "children": [
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/projectViews",
+                "componentId": "sidebarItem"
+            }
+        },
+        {
+            "id": "sidebarItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-3 rounded-lg cursor-pointer transition-colors hover:bg-primary-container"
+            },
+            "children": [
+                "sidebarIcon",
+                "sidebarLabel"
+            ]
+        },
+        {
+            "id": "sidebarIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "pt-inline border-t border-divider"
+            },
+            "children": [
+                "newMilestoneBtn"
+            ]
+        },
+        {
+            "id": "newMilestoneBtn",
+            "component": "Button",
+            "props": {
+                "value": "新建里程碑",
+                "icon": "flag",
+                "className": "w-full",
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "contentSection",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "ganttToolbar",
+                "ganttMainArea"
+            ]
+        },
+        {
+            "id": "ganttToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-gutter bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "toolbarLeft",
+                "toolbarRight"
+            ]
+        },
+        {
+            "id": "toolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex bg-surface-variant p-1 rounded-md"
+            },
+            "children": [
+                "viewDay",
+                "viewWeek",
+                "viewMonth"
+            ]
+        },
+        {
+            "id": "viewDay",
+            "component": "Button",
+            "props": {
+                "value": "天",
+                "size": "small",
+                "className": "border-none shadow-none"
+            }
+        },
+        {
+            "id": "viewWeek",
+            "component": "Button",
+            "props": {
+                "value": "周",
+                "size": "small",
+                "color": "primary",
+                "className": "shadow-sm"
+            }
+        },
+        {
+            "id": "viewMonth",
+            "component": "Button",
+            "props": {
+                "value": "月",
+                "size": "small",
+                "className": "border-none shadow-none"
+            }
+        },
+        {
+            "id": "toolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "legend1",
+                "legend2",
+                "legend3"
+            ]
+        },
+        {
+            "id": "legend1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "l1Dot",
+                "l1Text"
+            ]
+        },
+        {
+            "id": "l1Dot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 bg-black rounded-sm"
+            }
+        },
+        {
+            "id": "l1Text",
+            "component": "span",
+            "props": {
+                "value": "关键路径",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "legend2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "l2Dot",
+                "l2Text"
+            ]
+        },
+        {
+            "id": "l2Dot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 bg-primary rounded-sm"
+            }
+        },
+        {
+            "id": "l2Text",
+            "component": "span",
+            "props": {
+                "value": "普通任务",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "legend3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "l3Dot",
+                "l3Text"
+            ]
+        },
+        {
+            "id": "l3Dot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 bg-error rounded-sm"
+            }
+        },
+        {
+            "id": "l3Text",
+            "component": "span",
+            "props": {
+                "value": "风险任务",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ganttMainArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex overflow-hidden"
+            },
+            "children": [
+                "taskListPanel",
+                "ganttCanvasPanel"
+            ]
+        },
+        {
+            "id": "taskListPanel",
+            "component": "div",
+            "props": {
+                "className": "w-[450px] border-r border-divider bg-surface-container-highest"
+            },
+            "children": [
+                "taskTable"
+            ]
+        },
+        {
+            "id": "taskTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tasks"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "任务名称",
+                        "dataIndex": "taskName",
+                        "width": 180
+                    },
+                    {
+                        "title": "负责人",
+                        "dataIndex": "owner",
+                        "width": 100
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 90
+                    },
+                    {
+                        "title": "时间",
+                        "dataIndex": "duration"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tasks",
+                "componentId": "taskTableRow"
+            }
+        },
+        {
+            "id": "taskTableRow",
+            "component": "TableRow",
+            "children": [
+                "colName",
+                "colOwner",
+                "colStatus",
+                "colDuration"
+            ]
+        },
+        {
+            "id": "colName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskName"
+                },
+                "className": "font-medium"
+            }
+        },
+        {
+            "id": "colOwner",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1"
+            },
+            "children": [
+                "ownerImg",
+                "ownerName"
+            ]
+        },
+        {
+            "id": "ownerImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-5 h-5 rounded-full"
+            }
+        },
+        {
+            "id": "ownerName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "owner"
+                },
+                "className": "text-xs"
+            }
+        },
+        {
+            "id": "colStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "colDuration",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "duration"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ganttCanvasPanel",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative bg-surface-container-low overflow-x-auto"
+            },
+            "children": [
+                "ganttTimelineHeader",
+                "ganttGrid",
+                "ganttBar1",
+                "ganttBar2",
+                "ganttBar3",
+                "dependencyLine",
+                "todayLine"
+            ]
+        },
+        {
+            "id": "ganttTimelineHeader",
+            "component": "div",
+            "props": {
+                "className": "flex h-10 border-b border-divider bg-surface-container-high"
+            },
+            "children": [
+                "week40",
+                "week41",
+                "week42",
+                "week43"
+            ]
+        },
+        {
+            "id": "week40",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider flex items-center justify-center text-xs",
+                "value": "Week 40"
+            }
+        },
+        {
+            "id": "week41",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider flex items-center justify-center text-xs",
+                "value": "Week 41"
+            }
+        },
+        {
+            "id": "week42",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider flex items-center justify-center text-xs",
+                "value": "Week 42"
+            }
+        },
+        {
+            "id": "week43",
+            "component": "div",
+            "props": {
+                "className": "flex-1 border-r border-divider flex items-center justify-center text-xs",
+                "value": "Week 43"
+            }
+        },
+        {
+            "id": "ganttGrid",
+            "component": "div",
+            "props": {
+                "className": "absolute inset-0 pointer-events-none opacity-10"
+            },
+            "children": [
+                "gridLines"
+            ]
+        },
+        {
+            "id": "gridLines",
+            "component": "div",
+            "props": {
+                "className": "h-full w-full bg-[linear-gradient(to_right,#888_1px,transparent_1px)] bg-[size:100px_100%]"
+            }
+        },
+        {
+            "id": "ganttBar1",
+            "component": "div",
+            "props": {
+                "className": "absolute top-[52px] left-[20px] w-[120px] h-6 bg-black rounded-md shadow-sm flex items-center px-2"
+            },
+            "children": [
+                "bar1Progress"
+            ]
+        },
+        {
+            "id": "bar1Progress",
+            "component": "div",
+            "props": {
+                "className": "w-full h-1 bg-white/30 rounded-full"
+            }
+        },
+        {
+            "id": "ganttBar2",
+            "component": "div",
+            "props": {
+                "className": "absolute top-[106px] left-[150px] w-[200px] h-6 bg-error rounded-md shadow-sm"
+            }
+        },
+        {
+            "id": "ganttBar3",
+            "component": "div",
+            "props": {
+                "className": "absolute top-[160px] left-[130px] w-[150px] h-6 bg-primary rounded-md shadow-sm"
+            }
+        },
+        {
+            "id": "dependencyLine",
+            "component": "div",
+            "props": {
+                "className": "absolute top-[76px] left-[140px] w-[10px] h-[30px] border-l-2 border-b-2 border-dashed border-error"
+            }
+        },
+        {
+            "id": "todayLine",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-[180px] w-0.5 bg-primary z-20"
+            },
+            "children": [
+                "todayLabel"
+            ]
+        },
+        {
+            "id": "todayLabel",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-2 -left-4 bg-primary text-white text-[8px] px-1 rounded",
+                "value": "TODAY"
+            }
+        },
+        {
+            "id": "footerSection",
+            "component": "footer",
+            "props": {
+                "className": "h-10 bg-surface-container-highest border-t border-divider flex items-center px-inset justify-between"
+            },
+            "children": [
+                "footerStats",
+                "footerSync"
+            ]
+        },
+        {
+            "id": "footerStats",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter"
+            },
+            "children": [
+                "statRunning",
+                "statRisk"
+            ]
+        },
+        {
+            "id": "statRunning",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-xs"
+            },
+            "children": [
+                "runIcon",
+                "runText"
+            ]
+        },
+        {
+            "id": "runIcon",
+            "component": "Icon",
+            "props": {
+                "name": "play-circle",
+                "color": "primary",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "runText",
+            "component": "span",
+            "props": {
+                "value": "正在运行: 12",
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statRisk",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-xs"
+            },
+            "children": [
+                "riskIcon",
+                "riskText"
+            ]
+        },
+        {
+            "id": "riskIcon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-triangle",
+                "color": "error",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "riskText",
+            "component": "span",
+            "props": {
+                "value": "风险预警: 3",
+                "className": "text-error font-medium"
+            }
+        },
+        {
+            "id": "footerSync",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-xs text-on-surface-variant"
+            },
+            "children": [
+                "syncIcon",
+                "syncText"
+            ]
+        },
+        {
+            "id": "syncIcon",
+            "component": "Icon",
+            "props": {
+                "name": "refresh-cw",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "syncText",
+            "component": "span",
+            "props": {
+                "value": "最后同步: 2023-10-10 14:30:25"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1003 @@
+{
+  "state": {
+    "systemName": "iMaster NCE",
+    "navItems": [
+      {
+        "name": "首页概览",
+        "icon": "layout-dashboard"
+      },
+      {
+        "name": "拓扑管理",
+        "icon": "git-branch"
+      },
+      {
+        "name": "告警管理",
+        "icon": "alert-triangle"
+      }
+    ],
+    "userInfo": {
+      "roleName": "系统操作员",
+      "username": "operator",
+      "avatarImage": "https://randomuser.me/api/portraits/men/44.jpg"
+    },
+    "activeMainTab": "resource",
+    "filterValues": [
+      "ip_contains_8.2.5.5"
+    ],
+    "filterOptions": [
+      {
+        "label": "IP地址 包含 8.2.5.5",
+        "value": "ip_contains_8.2.5.5"
+      },
+      {
+        "label": "IP地址 包含 10.0.0.0/8",
+        "value": "ip_contains_10"
+      },
+      {
+        "label": "目标端口 等于 443",
+        "value": "port_443"
+      },
+      {
+        "label": "协议类型 TCP",
+        "value": "protocol_tcp"
+      },
+      {
+        "label": "策略状态 已启用",
+        "value": "status_enabled"
+      }
+    ],
+    "collapseActiveKey": [
+      "outerRoute"
+    ],
+    "activeSubTab": "ip",
+    "expandedRowKeys": [
+      "row-1"
+    ],
+    "mainTableData": [
+      {
+        "id": "row-1",
+        "policyType": "IPv4/IPv6",
+        "sourceIp": "10.1.6.0/24",
+        "destIp": "10.6.0.0/24",
+        "description": "允许研发到新校区业务",
+        "matchCount": 2,
+        "packetLossRate": "0.38%",
+        "uplinkTraffic": "--",
+        "operationText": "快速配置",
+        "subTableData": [
+          {
+            "id": "sub-1",
+            "ruleId": "62-12",
+            "sourcePortMask": "192.168.1.0/24",
+            "actionProtocol": "允许 / TCP",
+            "hitBytes": 1890,
+            "peakRate": 940,
+            "concurrentSessions": 83901,
+            "securityLevel": "高",
+            "moduleStatus": "正常运行"
+          },
+          {
+            "id": "sub-2",
+            "ruleId": "79-04",
+            "sourcePortMask": "172.16.5.0/18",
+            "actionProtocol": "阻断 / UDP",
+            "hitBytes": 348,
+            "peakRate": 549,
+            "concurrentSessions": 23147,
+            "securityLevel": "中",
+            "moduleStatus": "策略告警"
+          },
+          {
+            "id": "sub-3",
+            "ruleId": "56-01",
+            "sourcePortMask": "10.9.7.0/28",
+            "actionProtocol": "限速 / ICMP",
+            "hitBytes": 540,
+            "peakRate": 126,
+            "concurrentSessions": 24391,
+            "securityLevel": "低",
+            "moduleStatus": "流量限速"
+          },
+          {
+            "id": "sub-4",
+            "ruleId": "45-59",
+            "sourcePortMask": "10.8.5.0/24",
+            "actionProtocol": "允许 / ALL",
+            "hitBytes": 551,
+            "peakRate": 215,
+            "concurrentSessions": 87531,
+            "securityLevel": "高",
+            "moduleStatus": "无限制"
+          },
+          {
+            "id": "sub-5",
+            "ruleId": "48-23",
+            "sourcePortMask": "10.7.4.0/24",
+            "actionProtocol": "监控 / TCP",
+            "hitBytes": 813,
+            "peakRate": 896,
+            "concurrentSessions": 91518,
+            "securityLevel": "中",
+            "moduleStatus": "监控中"
+          }
+        ]
+      },
+      {
+        "id": "row-2",
+        "policyType": "IPv4",
+        "sourceIp": "10.4.0.0/16",
+        "destIp": "10.9.1.0/24",
+        "description": "数据中心核心区互访",
+        "matchCount": 3,
+        "packetLossRate": "0.31%",
+        "uplinkTraffic": "--",
+        "operationText": "撤销配置"
+      },
+      {
+        "id": "row-3",
+        "policyType": "IPv6",
+        "sourceIp": "10.2.5.0/24",
+        "destIp": "10.2.8.0/24",
+        "description": "办公区到测试网策略",
+        "matchCount": 9,
+        "packetLossRate": "0.07%",
+        "uplinkTraffic": "--",
+        "operationText": "查看详情"
+      },
+      {
+        "id": "row-4",
+        "policyType": "IPv4",
+        "sourceIp": "10.2.7.0/24",
+        "destIp": "10.8.1.0/24",
+        "description": "视频监控网段隔离",
+        "matchCount": 8,
+        "packetLossRate": "0.07%",
+        "uplinkTraffic": "--",
+        "operationText": "修改策略"
+      },
+      {
+        "id": "row-5",
+        "policyType": "IPv4",
+        "sourceIp": "10.7.9.0/24",
+        "destIp": "10.2.4.0/24",
+        "description": "无线访客网络限速",
+        "matchCount": 3,
+        "packetLossRate": "0.40%",
+        "uplinkTraffic": "--",
+        "operationText": "下发策略"
+      }
+    ]
+  },
+  "rootId": "rootContainer",
+  "elements": [
+    {
+      "id": "rootContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "topNavContainer",
+      "component": "header",
+      "props": {
+        "className": "h-12 bg-surface-container-highest flex items-center px-page shadow-sm"
+      },
+      "children": [
+        "topNavLeftGroup",
+        "topNavRightGroup"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "main",
+      "props": {
+        "className": "flex-1 bg-surface-container-lowest p-page overflow-auto"
+      },
+      "children": [
+        "mainContentTabsActionsRow"
+      ]
+    },
+    {
+      "id": "topNavLeftGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "topNavHamburgerIcon",
+        "topNavLogoIcon",
+        "topNavSystemName",
+        "topNavNavMenuList"
+      ]
+    },
+    {
+      "id": "topNavHamburgerIcon",
+      "component": "Icon",
+      "props": {
+        "name": "menu",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface"
+      }
+    },
+    {
+      "id": "topNavLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": "network",
+        "shape": "fill",
+        "color": "primary",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "topNavSystemName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemName"
+        },
+        "className": "text-md font-semibold text-on-surface mr-2"
+      }
+    },
+    {
+      "id": "topNavNavMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1"
+      },
+      "children": [
+        "topNavNavMenuItem1",
+        "topNavNavMenuItem2",
+        "topNavNavMenuItem3"
+      ]
+    },
+    {
+      "id": "topNavNavMenuItem1",
+      "component": "Button",
+      "props": {
+        "icon": "layout-dashboard",
+        "value": "首页概览",
+        "types": "link",
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "topNavNavMenuItem2",
+      "component": "Button",
+      "props": {
+        "icon": "git-branch",
+        "value": "拓扑管理",
+        "types": "link",
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "topNavNavMenuItem3",
+      "component": "Button",
+      "props": {
+        "icon": "alert-triangle",
+        "value": "告警管理",
+        "types": "link",
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "topNavRightGroup",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 ml-auto"
+      },
+      "children": [
+        "topNavRoleText",
+        "topNavHelpIcon",
+        "topNavBellIcon",
+        "topNavSunIcon",
+        "topNavUserAvatarWrap",
+        "topNavUsername"
+      ]
+    },
+    {
+      "id": "topNavRoleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/roleName"
+        },
+        "className": "text-sm text-on-surface-variant mr-1"
+      }
+    },
+    {
+      "id": "topNavHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": "help-circle",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavBellIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavSunIcon",
+      "component": "Icon",
+      "props": {
+        "name": "sun",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+      }
+    },
+    {
+      "id": "topNavUserAvatarWrap",
+      "component": "div",
+      "props": {
+        "className": "w-8 h-8 rounded-full overflow-hidden"
+      },
+      "children": [
+        "topNavUserAvatar"
+      ]
+    },
+    {
+      "id": "topNavUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userInfo/avatarImage"
+        },
+        "className": "w-full h-full object-cover",
+        "alt": "用户头像"
+      }
+    },
+    {
+      "id": "topNavUsername",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userInfo/username"
+        },
+        "className": "text-sm text-on-surface"
+      }
+    },
+    {
+      "id": "mainContentTabsActionsRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between mb-section"
+      },
+      "children": [
+        "mainContentMainTabs",
+        "mainContentQuickActions"
+      ]
+    },
+    {
+      "id": "mainContentMainTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeMainTab"
+        },
+        "types": "line",
+        "size": "medium"
+      },
+      "children": [
+        "mainContentTabTenant",
+        "mainContentTabResource"
+      ]
+    },
+    {
+      "id": "mainContentTabTenant",
+      "component": "TabItem",
+      "props": {
+        "key": "tenant",
+        "label": "租户管理",
+        "content": {
+          "componentId": "mainContentTenantPanel"
+        }
+      }
+    },
+    {
+      "id": "mainContentTabResource",
+      "component": "TabItem",
+      "props": {
+        "key": "resource",
+        "label": "资源管理",
+        "content": {
+          "componentId": "mainContentResourcePanel"
+        }
+      }
+    },
+    {
+      "id": "mainContentTenantPanel",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center h-40 text-on-surface-variant text-md",
+        "value": "租户管理功能面板"
+      }
+    },
+    {
+      "id": "mainContentQuickActions",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-inline"
+      },
+      "children": [
+        "mainContentActionAppView",
+        "mainContentActionRefresh",
+        "mainContentActionSchedule",
+        "mainContentActionConfig"
+      ]
+    },
+    {
+      "id": "mainContentActionAppView",
+      "component": "Button",
+      "props": {
+        "value": "应用视图",
+        "icon": "app-window",
+        "iconPlacement": "start",
+        "types": "default",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainContentActionRefresh",
+      "component": "Button",
+      "props": {
+        "value": "刷新视图",
+        "icon": "refresh-cw",
+        "iconPlacement": "start",
+        "types": "default",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainContentActionSchedule",
+      "component": "Button",
+      "props": {
+        "value": "定时任务",
+        "icon": "clock",
+        "iconPlacement": "start",
+        "types": "default",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainContentActionConfig",
+      "component": "Button",
+      "props": {
+        "value": "高级配置",
+        "icon": "settings",
+        "iconPlacement": "start",
+        "types": "default",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainContentResourcePanel",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section"
+      },
+      "children": [
+        "mainContentSearchArea",
+        "mainContentCollapsePanel"
+      ]
+    },
+    {
+      "id": "mainContentSearchArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-gutter"
+      },
+      "children": [
+        "mainContentFilterSelect",
+        "mainContentSearchBtn"
+      ]
+    },
+    {
+      "id": "mainContentFilterSelect",
+      "component": "Select",
+      "props": {
+        "value": {
+          "path": "/filterValues"
+        },
+        "placeholder": "筛选条件",
+        "mode": "multiple",
+        "showSearch": true,
+        "options": {
+          "path": "/filterOptions"
+        },
+        "className": "w-80"
+      }
+    },
+    {
+      "id": "mainContentSearchBtn",
+      "component": "Button",
+      "props": {
+        "value": "查询",
+        "color": "primary",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainContentCollapsePanel",
+      "component": "Collapse",
+      "props": {
+        "activeKey": {
+          "path": "/collapseActiveKey"
+        },
+        "expandIcon": "chevron-down",
+        "expandIconPlacement": "start",
+        "size": "medium"
+      },
+      "children": [
+        "mainContentCollapseItem"
+      ]
+    },
+    {
+      "id": "mainContentCollapseItem",
+      "component": "CollapseItem",
+      "props": {
+        "key": "outerRoute",
+        "label": "外网路由与业务策略",
+        "content": {
+          "componentId": "mainContentCollapseBody"
+        }
+      }
+    },
+    {
+      "id": "mainContentCollapseBody",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack p-inset"
+      },
+      "children": [
+        "mainContentSectionTitle",
+        "mainContentSubTabs",
+        "mainContentSubTabContent"
+      ]
+    },
+    {
+      "id": "mainContentSectionTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-bold text-on-surface",
+        "value": "专线策略管理"
+      }
+    },
+    {
+      "id": "mainContentSubTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeSubTab"
+        },
+        "types": "line",
+        "size": "small"
+      },
+      "children": [
+        "mainContentSubTabVgg",
+        "mainContentSubTabIp"
+      ]
+    },
+    {
+      "id": "mainContentSubTabVgg",
+      "component": "TabItem",
+      "props": {
+        "key": "vgg",
+        "label": "VGG业务组",
+        "content": {
+          "componentId": "mainContentVggPanel"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubTabIp",
+      "component": "TabItem",
+      "props": {
+        "key": "ip",
+        "label": "IP策略组",
+        "content": {
+          "componentId": "mainContentIpPanel"
+        }
+      }
+    },
+    {
+      "id": "mainContentVggPanel",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center h-20 text-on-surface-variant text-md",
+        "value": "VGG业务组策略列表"
+      }
+    },
+    {
+      "id": "mainContentIpPanel",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack"
+      },
+      "children": [
+        "mainContentMainTable",
+        "mainContentLoadMoreBtn"
+      ]
+    },
+    {
+      "id": "mainContentSubTabContent",
+      "component": "div",
+      "props": {
+        "className": "hidden"
+      }
+    },
+    {
+      "id": "mainContentMainTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/mainTableData"
+        },
+        "columns": [
+          {
+            "title": "策略类型",
+            "dataIndex": "policyType",
+            "minWidth": 110
+          },
+          {
+            "title": "源 IP 网段",
+            "dataIndex": "sourceIp",
+            "minWidth": 140
+          },
+          {
+            "title": "目的 IP 网段",
+            "dataIndex": "destIp",
+            "minWidth": 140
+          },
+          {
+            "title": "策略描述",
+            "dataIndex": "description",
+            "minWidth": 180
+          },
+          {
+            "title": "匹配次数",
+            "dataIndex": "matchCount"
+          },
+          {
+            "title": "丢包率",
+            "dataIndex": "packetLossRate"
+          },
+          {
+            "title": "上行流量 (MB)",
+            "dataIndex": "uplinkTraffic"
+          },
+          {
+            "title": "操作",
+            "dataIndex": "operation",
+            "width": 120,
+            "fixed": "end"
+          }
+        ],
+        "expandable": {
+          "expandedRowKeys": {
+            "path": "/expandedRowKeys"
+          }
+        },
+        "pagination": false,
+        "className": "mb-0"
+      },
+      "children": {
+        "path": "/mainTableData",
+        "componentId": "mainContentTableRow"
+      }
+    },
+    {
+      "id": "mainContentTableRow",
+      "component": "TableRow",
+      "props": {
+        "expandedRowRender": {
+          "componentId": "mainContentExpandedWrapper"
+        }
+      },
+      "children": [
+        "mainContentPolicyTypeCell",
+        "mainContentSourceIpCell",
+        "mainContentDestIpCell",
+        "mainContentDescCell",
+        "mainContentMatchCountCell",
+        "mainContentLossRateCell",
+        "mainContentTrafficCell",
+        "mainContentOpCell"
+      ]
+    },
+    {
+      "id": "mainContentPolicyTypeCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "policyType"
+        }
+      }
+    },
+    {
+      "id": "mainContentSourceIpCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-mono",
+        "value": {
+          "path": "sourceIp"
+        }
+      }
+    },
+    {
+      "id": "mainContentDestIpCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-mono",
+        "value": {
+          "path": "destIp"
+        }
+      }
+    },
+    {
+      "id": "mainContentDescCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "description"
+        }
+      }
+    },
+    {
+      "id": "mainContentMatchCountCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "matchCount"
+        }
+      }
+    },
+    {
+      "id": "mainContentLossRateCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "packetLossRate"
+        }
+      }
+    },
+    {
+      "id": "mainContentTrafficCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface-variant",
+        "value": {
+          "path": "uplinkTraffic"
+        }
+      }
+    },
+    {
+      "id": "mainContentOpCell",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "operationText"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainContentExpandedWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-stack p-4 bg-surface-variant rounded-lg"
+      },
+      "children": [
+        "mainContentSubTable",
+        "mainContentBatchRow"
+      ]
+    },
+    {
+      "id": "mainContentSubTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "subTableData"
+        },
+        "columns": [
+          {
+            "title": "规则 ID",
+            "dataIndex": "ruleId",
+            "minWidth": 80
+          },
+          {
+            "title": "源端口 / 掩码",
+            "dataIndex": "sourcePortMask",
+            "minWidth": 150
+          },
+          {
+            "title": "动作 / 协议",
+            "dataIndex": "actionProtocol",
+            "minWidth": 120
+          },
+          {
+            "title": "命中字节 (KB)",
+            "dataIndex": "hitBytes"
+          },
+          {
+            "title": "峰值速率 (Kbps)",
+            "dataIndex": "peakRate"
+          },
+          {
+            "title": "并发会话数",
+            "dataIndex": "concurrentSessions"
+          },
+          {
+            "title": "安全防护等级",
+            "dataIndex": "securityLevel"
+          },
+          {
+            "title": "模块状态",
+            "dataIndex": "moduleStatus",
+            "minWidth": 100
+          }
+        ],
+        "pagination": false
+      },
+      "children": {
+        "path": "subTableData",
+        "componentId": "mainContentSubTableRow"
+      }
+    },
+    {
+      "id": "mainContentSubTableRow",
+      "component": "TableRow",
+      "children": [
+        "mainContentSubRuleIdCell",
+        "mainContentSubPortMaskCell",
+        "mainContentSubActionCell",
+        "mainContentSubHitBytesCell",
+        "mainContentSubPeakRateCell",
+        "mainContentSubSessionCell",
+        "mainContentSubSecurityCell",
+        "mainContentSubStatusCell"
+      ]
+    },
+    {
+      "id": "mainContentSubRuleIdCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-mono",
+        "value": {
+          "path": "ruleId"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubPortMaskCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface font-mono",
+        "value": {
+          "path": "sourcePortMask"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubActionCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "actionProtocol"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubHitBytesCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "hitBytes"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubPeakRateCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "peakRate"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubSessionCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "concurrentSessions"
+        }
+      }
+    },
+    {
+      "id": "mainContentSubSecurityCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "securityLevel"
+        },
+        "className": "text-md"
+      }
+    },
+    {
+      "id": "mainContentSubStatusCell",
+      "component": "span",
+      "props": {
+        "className": "text-md text-on-surface",
+        "value": {
+          "path": "moduleStatus"
+        }
+      }
+    },
+    {
+      "id": "mainContentBatchRow",
+      "component": "div",
+      "props": {
+        "className": "flex justify-center pt-2"
+      },
+      "children": [
+        "mainContentBatchBtn"
+      ]
+    },
+    {
+      "id": "mainContentBatchBtn",
+      "component": "Button",
+      "props": {
+        "value": "批量设置",
+        "types": "link",
+        "icon": "chevron-down",
+        "iconPlacement": "end",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainContentLoadMoreBtn",
+      "component": "div",
+      "props": {
+        "className": "flex justify-center pt-2 pb-4"
+      },
+      "children": [
+        "mainContentLoadMoreButton"
+      ]
+    },
+    {
+      "id": "mainContentLoadMoreButton",
+      "component": "Button",
+      "props": {
+        "value": "加载更多",
+        "types": "link",
+        "icon": "chevron-down",
+        "iconPlacement": "end",
+        "size": "small"
+      }
+    }
+  ]
+}

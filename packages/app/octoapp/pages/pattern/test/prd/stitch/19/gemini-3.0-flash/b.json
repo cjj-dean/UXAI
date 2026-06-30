@@ -1,0 +1,968 @@
+{
+    "state": {
+        "brandName": "统一审批中心",
+        "menuItems": [
+            {
+                "id": "m1",
+                "label": "待我审批",
+                "icon": "clock",
+                "isActive": true,
+                "badge": 12
+            },
+            {
+                "id": "m2",
+                "label": "经我审批",
+                "icon": "file-check",
+                "isActive": false,
+                "badge": null
+            },
+            {
+                "id": "m3",
+                "label": "我发起的",
+                "icon": "send",
+                "isActive": false,
+                "badge": null
+            },
+            {
+                "id": "m4",
+                "label": "抄送我的",
+                "icon": "mail",
+                "isActive": false,
+                "badge": 5
+            }
+        ],
+        "pageTitle": "统一审批中心",
+        "searchVal": "",
+        "currentUser": {
+            "userName": "张经理",
+            "userRole": "高级行政主管",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "taskSummary": "您当前共有 12 项待审批任务需要处理",
+        "filterType": "全部类型",
+        "filterPriority": "medium",
+        "filterDate": "",
+        "approvalTable": [
+            {
+                "id": "APP-001",
+                "applicant": "李佳麟",
+                "department": "市场部",
+                "subject": "Q4预算申请",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "高",
+                "priorityColor": "error",
+                "submitTime": "2023-10-25 10:30"
+            },
+            {
+                "id": "APP-002",
+                "applicant": "张宏伟",
+                "department": "人力资源",
+                "subject": "新员工入职审批",
+                "status": "处理中",
+                "statusType": "processing",
+                "priority": "中",
+                "priorityColor": "warning",
+                "submitTime": "2023-10-25 09:15"
+            },
+            {
+                "id": "APP-003",
+                "applicant": "王雨萌",
+                "department": "法务部",
+                "subject": "合同续约申请",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "低",
+                "priorityColor": "primary",
+                "submitTime": "2023-10-24 16:45"
+            },
+            {
+                "id": "APP-004",
+                "applicant": "陈思源",
+                "department": "财务部",
+                "subject": "差旅费报销",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "中",
+                "priorityColor": "warning",
+                "submitTime": "2023-10-24 14:20"
+            },
+            {
+                "id": "APP-005",
+                "applicant": "刘洋",
+                "department": "技术部",
+                "subject": "服务器采购申请",
+                "status": "处理中",
+                "statusType": "processing",
+                "priority": "高",
+                "priorityColor": "error",
+                "submitTime": "2023-10-24 11:00"
+            },
+            {
+                "id": "APP-006",
+                "applicant": "赵敏",
+                "department": "行政部",
+                "subject": "办公用品领用",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "低",
+                "priorityColor": "primary",
+                "submitTime": "2023-10-24 09:30"
+            },
+            {
+                "id": "APP-007",
+                "applicant": "孙志远",
+                "department": "销售部",
+                "subject": "客户招待费申请",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "中",
+                "priorityColor": "warning",
+                "submitTime": "2023-10-23 17:10"
+            },
+            {
+                "id": "APP-008",
+                "applicant": "周晓琳",
+                "department": "研发部",
+                "subject": "专利申请费用",
+                "status": "处理中",
+                "statusType": "processing",
+                "priority": "高",
+                "priorityColor": "error",
+                "submitTime": "2023-10-23 15:40"
+            },
+            {
+                "id": "APP-009",
+                "applicant": "吴建国",
+                "department": "后勤部",
+                "subject": "车辆维修申请",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "低",
+                "priorityColor": "primary",
+                "submitTime": "2023-10-23 13:20"
+            },
+            {
+                "id": "APP-010",
+                "applicant": "郑洁",
+                "department": "市场部",
+                "subject": "展会物料制作",
+                "status": "待审批",
+                "statusType": "warning",
+                "priority": "中",
+                "priorityColor": "warning",
+                "submitTime": "2023-10-23 10:00"
+            }
+        ],
+        "deptStats": [
+            {
+                "deptName": "财务审批",
+                "count": 5,
+                "percent": 75,
+                "color": "#0067D1"
+            },
+            {
+                "deptName": "人力资源",
+                "count": 4,
+                "percent": 60,
+                "color": "#09AA71"
+            },
+            {
+                "deptName": "商务合同",
+                "count": 3,
+                "percent": 45,
+                "color": "#F4840C"
+            }
+        ]
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sideNav",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "sideLogo",
+                "sideMenu",
+                "sideAction"
+            ]
+        },
+        {
+            "id": "sideLogo",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "logoIcon",
+                "logoText"
+            ]
+        },
+        {
+            "id": "logoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "shield-check",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "logoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sideMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-3 rounded-lg cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "menuItemLeft",
+                "menuItemBadge"
+            ]
+        },
+        {
+            "id": "menuItemLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-md font-medium"
+            }
+        },
+        {
+            "id": "menuItemBadge",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "badge"
+                },
+                "color": "error",
+                "size": "small",
+                "className": "rounded-full"
+            }
+        },
+        {
+            "id": "sideAction",
+            "component": "div",
+            "props": {
+                "className": "p-6 border-t border-divider"
+            },
+            "children": [
+                "sideApplyBtn"
+            ]
+        },
+        {
+            "id": "sideApplyBtn",
+            "component": "Button",
+            "props": {
+                "value": "发起申请",
+                "icon": "plus",
+                "color": "primary",
+                "className": "w-full py-6"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 px-8 flex items-center justify-between bg-surface-container-highest border-b border-divider"
+            },
+            "children": [
+                "headerTitle",
+                "headerSearch",
+                "headerUserArea"
+            ]
+        },
+        {
+            "id": "headerTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索申请人、部门或审批编号...",
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "headerUserArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerIcons",
+                "headerDivider",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerIcons",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "iconBell",
+                "iconHelp",
+                "iconSettings"
+            ]
+        },
+        {
+            "id": "iconBell",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconHelp",
+            "component": "Icon",
+            "props": {
+                "name": "help-circle",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "iconSettings",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerDivider",
+            "component": "div",
+            "props": {
+                "className": "w-px h-6 bg-divider"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "userText",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "userText",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userRole"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-8"
+            },
+            "children": [
+                "mainGrid"
+            ]
+        },
+        {
+            "id": "mainGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-8"
+            },
+            "children": [
+                "leftColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "leftColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-9 flex flex-col gap-6"
+            },
+            "children": [
+                "taskAlert",
+                "filterBar",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "taskAlert",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between p-4 bg-primary-container rounded-xl"
+            },
+            "children": [
+                "alertLeft",
+                "alertRight"
+            ]
+        },
+        {
+            "id": "alertLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "alertIcon",
+                "alertText"
+            ]
+        },
+        {
+            "id": "alertIcon",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "alertText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskSummary"
+                },
+                "className": "text-on-primary-container font-medium"
+            }
+        },
+        {
+            "id": "alertRight",
+            "component": "Button",
+            "props": {
+                "value": "发起申请",
+                "icon": "plus",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "filterBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 p-4 bg-surface-container-highest rounded-xl shadow-sm"
+            },
+            "children": [
+                "typeSelect",
+                "prioritySelect",
+                "datePicker"
+            ]
+        },
+        {
+            "id": "typeSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterType"
+                },
+                "options": [
+                    {
+                        "label": "全部类型",
+                        "value": "全部类型"
+                    },
+                    {
+                        "label": "财务报销",
+                        "value": "财务报销"
+                    },
+                    {
+                        "label": "人力资源",
+                        "value": "人力资源"
+                    },
+                    {
+                        "label": "法务合同",
+                        "value": "法务合同"
+                    }
+                ],
+                "className": "w-48"
+            }
+        },
+        {
+            "id": "prioritySelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterPriority"
+                },
+                "options": [
+                    {
+                        "label": "高紧急",
+                        "value": "high"
+                    },
+                    {
+                        "label": "中紧急",
+                        "value": "medium"
+                    },
+                    {
+                        "label": "低紧急",
+                        "value": "low"
+                    }
+                ],
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "datePicker",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/filterDate"
+                },
+                "placeholder": "选择提交日期",
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "approvalTableComp"
+            ]
+        },
+        {
+            "id": "approvalTableComp",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/approvalTable"
+                },
+                "columns": [
+                    {
+                        "title": "申请人",
+                        "dataIndex": "applicant"
+                    },
+                    {
+                        "title": "部门",
+                        "dataIndex": "department"
+                    },
+                    {
+                        "title": "审批主题",
+                        "dataIndex": "subject"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "紧急程度",
+                        "dataIndex": "priority",
+                        "width": 100
+                    },
+                    {
+                        "title": "提交时间",
+                        "dataIndex": "submitTime"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/approvalTable",
+                "componentId": "tableRow"
+            }
+        },
+        {
+            "id": "tableRow",
+            "component": "TableRow",
+            "children": [
+                "cellApplicant",
+                "cellDept",
+                "cellSubject",
+                "cellStatus",
+                "cellPriority",
+                "cellTime"
+            ]
+        },
+        {
+            "id": "cellApplicant",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "applicant"
+                },
+                "className": "font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "cellDept",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "department"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellSubject",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subject"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusType"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellPriority",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "priority"
+                },
+                "color": {
+                    "path": "priorityColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "submitTime"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "col-span-3 flex flex-col gap-6"
+            },
+            "children": [
+                "statsCard",
+                "reportCard"
+            ]
+        },
+        {
+            "id": "statsCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card flex flex-col gap-6"
+            },
+            "children": [
+                "statsTitle",
+                "statsList",
+                "slaWarning"
+            ]
+        },
+        {
+            "id": "statsTitle",
+            "component": "span",
+            "props": {
+                "value": "待处理统计面板",
+                "className": "text-md font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statsList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": {
+                "path": "/deptStats",
+                "componentId": "statsItem"
+            }
+        },
+        {
+            "id": "statsItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "statsItemHeader",
+                "statsItemProgress"
+            ]
+        },
+        {
+            "id": "statsItemHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "statsItemName",
+                "statsItemCount"
+            ]
+        },
+        {
+            "id": "statsItemName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deptName"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statsItemCount",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "count"
+                },
+                "className": "text-sm font-bold"
+            }
+        },
+        {
+            "id": "statsItemProgress",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "percent"
+                },
+                "strokeColor": {
+                    "path": "color"
+                },
+                "showInfo": false,
+                "size": "small"
+            }
+        },
+        {
+            "id": "slaWarning",
+            "component": "div",
+            "props": {
+                "className": "p-4 bg-error-container rounded-lg flex flex-col gap-2"
+            },
+            "children": [
+                "slaHeader",
+                "slaContent"
+            ]
+        },
+        {
+            "id": "slaHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 text-on-error-container font-bold"
+            },
+            "children": [
+                "slaIcon",
+                "slaTitleText"
+            ]
+        },
+        {
+            "id": "slaIcon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-triangle",
+                "color": "error",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "slaTitleText",
+            "component": "span",
+            "props": {
+                "value": "SLA 超时提醒"
+            }
+        },
+        {
+            "id": "slaContent",
+            "component": "span",
+            "props": {
+                "value": "当前有 2 项任务已超过 48 小时未处理，请尽快关注。",
+                "className": "text-xs text-on-error-container opacity-80"
+            }
+        },
+        {
+            "id": "reportCard",
+            "component": "div",
+            "props": {
+                "className": "p-6 bg-surface-container-highest rounded-xl shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "reportTitle",
+                "reportImg",
+                "reportDesc",
+                "reportLink"
+            ]
+        },
+        {
+            "id": "reportTitle",
+            "component": "span",
+            "props": {
+                "value": "年度效率报告",
+                "className": "text-md font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "reportImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/report-chart/400/200",
+                "className": "w-full h-32 object-cover rounded-lg"
+            }
+        },
+        {
+            "id": "reportDesc",
+            "component": "span",
+            "props": {
+                "value": "基于您过去一年的审批数据，我们为您生成了专属的效率分析报告，点击查看您的职场成就。",
+                "className": "text-xs text-on-surface-variant leading-relaxed"
+            }
+        },
+        {
+            "id": "reportLink",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-primary font-bold cursor-pointer hover:underline text-sm"
+            },
+            "children": [
+                "linkText",
+                "linkIcon"
+            ]
+        },
+        {
+            "id": "linkText",
+            "component": "span",
+            "props": {
+                "value": "立即查看"
+            }
+        },
+        {
+            "id": "linkIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "className": "w-4 h-4"
+            }
+        }
+    ]
+}

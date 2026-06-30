@@ -1,0 +1,980 @@
+{
+    "state": {
+        "activeTab": "workbench",
+        "sidebarTitle": "运营中心",
+        "breadcrumbPaths": [
+            {
+                "title": "运营中心"
+            },
+            {
+                "title": "概览"
+            },
+            {
+                "title": "设备容器概览"
+            }
+        ],
+        "topCharts": [
+            {
+                "cardTitle": "网络设备端口使用TOP10租户",
+                "unit": "个",
+                "chartData": [
+                    {
+                        "tenant": "IKEA",
+                        "value": 950
+                    },
+                    {
+                        "tenant": "Starbucks",
+                        "value": 820
+                    },
+                    {
+                        "tenant": "H&M",
+                        "value": 780
+                    },
+                    {
+                        "tenant": "ZARA",
+                        "value": 710
+                    },
+                    {
+                        "tenant": "Vodafone",
+                        "value": 650
+                    },
+                    {
+                        "tenant": "Nike",
+                        "value": 600
+                    },
+                    {
+                        "tenant": "Apple",
+                        "value": 580
+                    },
+                    {
+                        "tenant": "Amazon",
+                        "value": 520
+                    },
+                    {
+                        "tenant": "Tesla",
+                        "value": 490
+                    },
+                    {
+                        "tenant": "Google",
+                        "value": 450
+                    }
+                ]
+            },
+            {
+                "cardTitle": "网络设备宽带利用TOP10租户",
+                "unit": "Gbps",
+                "chartData": [
+                    {
+                        "tenant": "Vodafone",
+                        "value": 88
+                    },
+                    {
+                        "tenant": "IKEA",
+                        "value": 82
+                    },
+                    {
+                        "tenant": "ZARA",
+                        "value": 75
+                    },
+                    {
+                        "tenant": "Starbucks",
+                        "value": 70
+                    },
+                    {
+                        "tenant": "H&M",
+                        "value": 68
+                    },
+                    {
+                        "tenant": "Netflix",
+                        "value": 65
+                    },
+                    {
+                        "tenant": "Meta",
+                        "value": 60
+                    },
+                    {
+                        "tenant": "Disney",
+                        "value": 55
+                    },
+                    {
+                        "tenant": "Sony",
+                        "value": 50
+                    },
+                    {
+                        "tenant": "Uber",
+                        "value": 48
+                    }
+                ]
+            },
+            {
+                "cardTitle": "磁盘空间使用TOP10租户",
+                "unit": "TB",
+                "chartData": [
+                    {
+                        "tenant": "Amazon",
+                        "value": 1200
+                    },
+                    {
+                        "tenant": "Google",
+                        "value": 1100
+                    },
+                    {
+                        "tenant": "IKEA",
+                        "value": 980
+                    },
+                    {
+                        "tenant": "H&M",
+                        "value": 850
+                    },
+                    {
+                        "tenant": "Starbucks",
+                        "value": 800
+                    },
+                    {
+                        "tenant": "ZARA",
+                        "value": 760
+                    },
+                    {
+                        "tenant": "Microsoft",
+                        "value": 720
+                    },
+                    {
+                        "tenant": "Oracle",
+                        "value": 680
+                    },
+                    {
+                        "tenant": "IBM",
+                        "value": 600
+                    },
+                    {
+                        "tenant": "Intel",
+                        "value": 550
+                    }
+                ]
+            }
+        ],
+        "tenantList": [
+            {
+                "id": 1,
+                "name": "IKEA",
+                "p1": 34,
+                "p2": 78,
+                "bw": 67,
+                "d1": 78,
+                "d2": 78
+            },
+            {
+                "id": 2,
+                "name": "Starbucks",
+                "p1": 45,
+                "p2": 62,
+                "bw": 88,
+                "d1": 55,
+                "d2": 92
+            },
+            {
+                "id": 3,
+                "name": "H&M",
+                "p1": 12,
+                "p2": 85,
+                "bw": 72,
+                "d1": 66,
+                "d2": 45
+            },
+            {
+                "id": 4,
+                "name": "ZARA",
+                "p1": 56,
+                "p2": 71,
+                "bw": 94,
+                "d1": 82,
+                "d2": 88
+            },
+            {
+                "id": 5,
+                "name": "Vodafone Egypt",
+                "p1": 89,
+                "p2": 44,
+                "bw": 61,
+                "d1": 73,
+                "d2": 67
+            },
+            {
+                "id": 6,
+                "name": "Nike Global",
+                "p1": 22,
+                "p2": 77,
+                "bw": 83,
+                "d1": 61,
+                "d2": 15
+            },
+            {
+                "id": 7,
+                "name": "Apple Store",
+                "p1": 67,
+                "p2": 59,
+                "bw": 45,
+                "d1": 79,
+                "d2": 81
+            },
+            {
+                "id": 8,
+                "name": "Amazon Web",
+                "p1": 91,
+                "p2": 82,
+                "bw": 99,
+                "d1": 88,
+                "d2": 95
+            },
+            {
+                "id": 9,
+                "name": "Tesla Motors",
+                "p1": 33,
+                "p2": 65,
+                "bw": 76,
+                "d1": 64,
+                "d2": 32
+            },
+            {
+                "id": 10,
+                "name": "Google Cloud",
+                "p1": 48,
+                "p2": 91,
+                "bw": 85,
+                "d1": 77,
+                "d2": 89
+            }
+        ]
+    },
+    "rootId": "appRoot",
+    "elements": [
+        {
+            "id": "appRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainLayout"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "headerLogo",
+                "headerBrandName"
+            ]
+        },
+        {
+            "id": "headerLogo",
+            "component": "Icon",
+            "props": {
+                "name": "cloud-lightning",
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "headerBrandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": "iMasterCloud"
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "h-full"
+            },
+            "children": [
+                "tabWorkbench",
+                "tabMonitor",
+                "tabResource"
+            ]
+        },
+        {
+            "id": "tabWorkbench",
+            "component": "TabItem",
+            "props": {
+                "key": "workbench",
+                "label": "工作台",
+                "icon": "layout-dashboard"
+            }
+        },
+        {
+            "id": "tabMonitor",
+            "component": "TabItem",
+            "props": {
+                "key": "monitor",
+                "label": "监控中心",
+                "icon": "activity"
+            }
+        },
+        {
+            "id": "tabResource",
+            "component": "TabItem",
+            "props": {
+                "key": "resource",
+                "label": "资源池",
+                "icon": "database"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "navOpsCenter",
+                "navSystem",
+                "headerActions"
+            ]
+        },
+        {
+            "id": "navOpsCenter",
+            "component": "span",
+            "props": {
+                "className": "text-primary font-medium cursor-pointer",
+                "value": "运营中心"
+            }
+        },
+        {
+            "id": "navSystem",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface-variant cursor-pointer",
+                "value": "系统"
+            }
+        },
+        {
+            "id": "headerActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "btnHelp",
+                "btnTheme",
+                "userAvatar"
+            ]
+        },
+        {
+            "id": "btnHelp",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "shape": "circle",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "btnTheme",
+            "component": "Button",
+            "props": {
+                "icon": "palette",
+                "shape": "circle",
+                "className": "border-none"
+            }
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "mainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sideNav",
+                "contentArea"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "aside",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest border-r border-divider"
+            },
+            "children": [
+                "sideNavHeader",
+                "sideNavMenu",
+                "sideNavFooter"
+            ]
+        },
+        {
+            "id": "sideNavHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset pb-2"
+            },
+            "children": [
+                "sideNavTitle"
+            ]
+        },
+        {
+            "id": "sideNavTitle",
+            "component": "h3",
+            "props": {
+                "className": "text-sm font-bold text-on-surface-variant uppercase tracking-wider",
+                "value": {
+                    "path": "/sidebarTitle"
+                }
+            }
+        },
+        {
+            "id": "sideNavMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inline flex flex-col gap-stack"
+            },
+            "children": [
+                "menuGroupOverview",
+                "menuGroupManage"
+            ]
+        },
+        {
+            "id": "menuGroupOverview",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "groupTitleOverview",
+                "menuItemCust",
+                "menuItemLife",
+                "menuItemCap",
+                "menuItemLic"
+            ]
+        },
+        {
+            "id": "groupTitleOverview",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-3 py-2 text-xs text-on-surface-variant font-medium"
+            },
+            "children": [
+                "groupLabelOverview",
+                "groupIconOverview"
+            ]
+        },
+        {
+            "id": "groupLabelOverview",
+            "component": "span",
+            "props": {
+                "value": "概览"
+            }
+        },
+        {
+            "id": "groupIconOverview",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "menuItemCust",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconCust",
+                "labelCust"
+            ]
+        },
+        {
+            "id": "iconCust",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelCust",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "客户概览"
+            }
+        },
+        {
+            "id": "menuItemLife",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconLife",
+                "labelLife"
+            ]
+        },
+        {
+            "id": "iconLife",
+            "component": "Icon",
+            "props": {
+                "name": "refresh-cw",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelLife",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "生命周期概览"
+            }
+        },
+        {
+            "id": "menuItemCap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action bg-primary-container text-primary cursor-pointer"
+            },
+            "children": [
+                "iconCap",
+                "labelCap"
+            ]
+        },
+        {
+            "id": "iconCap",
+            "component": "Icon",
+            "props": {
+                "name": "hard-drive",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelCap",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold",
+                "value": "设备容量概览"
+            }
+        },
+        {
+            "id": "menuItemLic",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconLic",
+                "labelLic"
+            ]
+        },
+        {
+            "id": "iconLic",
+            "component": "Icon",
+            "props": {
+                "name": "key",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelLic",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "特征库License管理"
+            }
+        },
+        {
+            "id": "menuGroupManage",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 mt-4"
+            },
+            "children": [
+                "groupTitleManage",
+                "menuItemClue",
+                "menuItemTask",
+                "menuItemRep"
+            ]
+        },
+        {
+            "id": "groupTitleManage",
+            "component": "div",
+            "props": {
+                "className": "px-3 py-2 text-xs text-on-surface-variant font-medium",
+                "value": "管理"
+            }
+        },
+        {
+            "id": "menuItemClue",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconClue",
+                "labelClue"
+            ]
+        },
+        {
+            "id": "iconClue",
+            "component": "Icon",
+            "props": {
+                "name": "target",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelClue",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "线索管理"
+            }
+        },
+        {
+            "id": "menuItemTask",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconTask",
+                "labelTask"
+            ]
+        },
+        {
+            "id": "iconTask",
+            "component": "Icon",
+            "props": {
+                "name": "clipboard-list",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelTask",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "任务管理"
+            }
+        },
+        {
+            "id": "menuItemRep",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "iconRep",
+                "labelRep"
+            ]
+        },
+        {
+            "id": "iconRep",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-3",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "labelRep",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "运营报告"
+            }
+        },
+        {
+            "id": "sideNavFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "btnCollapse"
+            ]
+        },
+        {
+            "id": "btnCollapse",
+            "component": "Button",
+            "props": {
+                "icon": "menu",
+                "className": "border-none",
+                "value": "折叠菜单"
+            }
+        },
+        {
+            "id": "contentArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "breadcrumbHeader",
+                "chartSection",
+                "tableSection"
+            ]
+        },
+        {
+            "id": "breadcrumbHeader",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbPaths"
+                },
+                "separator": "/"
+            }
+        },
+        {
+            "id": "chartSection",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": {
+                "path": "/topCharts",
+                "componentId": "chartCard"
+            }
+        },
+        {
+            "id": "chartCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-xl shadow-card flex flex-col gap-4"
+            },
+            "children": [
+                "chartCardHeader",
+                "chartCardBody"
+            ]
+        },
+        {
+            "id": "chartCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "chartCardTitle",
+                "chartCardUnit"
+            ]
+        },
+        {
+            "id": "chartCardTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-md",
+                "value": {
+                    "path": "cardTitle"
+                }
+            }
+        },
+        {
+            "id": "chartCardUnit",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "unit"
+                }
+            }
+        },
+        {
+            "id": "chartCardBody",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "chartData"
+                    },
+                    "xAxis": {
+                        "data": "tenant"
+                    },
+                    "yAxisTitle": "数值",
+                    "direction": "vertical"
+                },
+                "className": "h-48 w-full"
+            }
+        },
+        {
+            "id": "tableSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+            },
+            "children": [
+                "tableHeader",
+                "tenantTable"
+            ]
+        },
+        {
+            "id": "tableHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center p-inset border-b border-divider"
+            },
+            "children": [
+                "tableTitle",
+                "tableActions"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h2",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": "租户列表"
+            }
+        },
+        {
+            "id": "tableActions",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download",
+                "iconPlacement": "start",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "tenantTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tenantList"
+                },
+                "className": "p-2",
+                "columns": [
+                    {
+                        "title": "租户名称",
+                        "dataIndex": "name",
+                        "sort": true,
+                        "filters": []
+                    },
+                    {
+                        "title": "网络端口使用率 (60%-80%)",
+                        "dataIndex": "p1"
+                    },
+                    {
+                        "title": "网络端口使用率 (60%-80%)",
+                        "dataIndex": "p2"
+                    },
+                    {
+                        "title": "带宽利用率 (70%-100%)",
+                        "dataIndex": "bw"
+                    },
+                    {
+                        "title": "磁盘空间 (60%-80%)",
+                        "dataIndex": "d1"
+                    },
+                    {
+                        "title": "磁盘空间 (80%-100%)",
+                        "dataIndex": "d2"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tenantList",
+                "componentId": "tenantRow"
+            }
+        },
+        {
+            "id": "tenantRow",
+            "component": "TableRow",
+            "children": [
+                "cellName",
+                "cellP1",
+                "cellP2",
+                "cellBw",
+                "cellD1",
+                "cellD2"
+            ]
+        },
+        {
+            "id": "cellName",
+            "component": "span",
+            "props": {
+                "className": "font-medium",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "cellP1",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "p1"
+                }
+            }
+        },
+        {
+            "id": "cellP2",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "p2"
+                }
+            }
+        },
+        {
+            "id": "cellBw",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "bw"
+                },
+                "color": "warning",
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "cellD1",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "d1"
+                }
+            }
+        },
+        {
+            "id": "cellD2",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "d2"
+                },
+                "color": "error",
+                "variant": "outlined"
+            }
+        }
+    ]
+}

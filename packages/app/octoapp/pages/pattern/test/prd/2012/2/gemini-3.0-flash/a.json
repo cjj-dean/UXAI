@@ -1,0 +1,1042 @@
+{
+    "state": {
+        "brand": {
+            "logoImage": "https://picsum.photos/seed/llm-devops-logo/200/200",
+            "platformName": "LLM-DevOps Pro"
+        },
+        "searchVal": "",
+        "menuItems": [
+            {
+                "label": "评测总览",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "评测集",
+                "icon": "database",
+                "isActive": false
+            },
+            {
+                "label": "评测工作台",
+                "icon": "cpu",
+                "isOpen": true,
+                "children": [
+                    {
+                        "label": "研发评测",
+                        "isActive": true
+                    },
+                    {
+                        "label": "线上监控",
+                        "isActive": false
+                    },
+                    {
+                        "label": "对比分析",
+                        "isActive": false
+                    }
+                ]
+            }
+        ],
+        "currentUser": {
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+            "userName": "张建国",
+            "roleTag": "超级管理员",
+            "statusIcon": "shield-check"
+        },
+        "breadcrumbs": [
+            {
+                "title": "评测工作台"
+            },
+            {
+                "title": "研发评测"
+            },
+            {
+                "title": "任务详情"
+            }
+        ],
+        "taskMeta": {
+            "taskId": "TASK-20231024-001",
+            "createTime": "2023-10-24 14:20:00",
+            "environment": "Staging-Cluster-A"
+        },
+        "taskTitle": "GPT-4o 语义理解能力基准评测_V2.1",
+        "workflow": {
+            "current": 2,
+            "steps": [
+                {
+                    "title": "环境部署",
+                    "status": "finish",
+                    "description": "耗时 45s",
+                    "icon": "server"
+                },
+                {
+                    "title": "推理执行",
+                    "status": "finish",
+                    "description": "耗时 12m 30s",
+                    "icon": "zap"
+                },
+                {
+                    "title": "自动评分",
+                    "status": "finish",
+                    "description": "耗时 2m 15s",
+                    "icon": "circle-check"
+                }
+            ]
+        },
+        "processMetrics": [
+            {
+                "label": "推理成功率",
+                "value": "99.85%",
+                "status": "success",
+                "trend": "trending-up",
+                "chart": [
+                    {
+                        "t": "1",
+                        "v": 98
+                    },
+                    {
+                        "t": "2",
+                        "v": 99
+                    },
+                    {
+                        "t": "3",
+                        "v": 99.5
+                    },
+                    {
+                        "t": "4",
+                        "v": 99.2
+                    },
+                    {
+                        "t": "5",
+                        "v": 99.8
+                    },
+                    {
+                        "t": "6",
+                        "v": 99.85
+                    }
+                ]
+            },
+            {
+                "label": "平均响应耗时 (P95)",
+                "value": "1.24s",
+                "status": "warning",
+                "trend": "trending-down",
+                "chart": [
+                    {
+                        "t": "1",
+                        "v": 1.5
+                    },
+                    {
+                        "t": "2",
+                        "v": 1.4
+                    },
+                    {
+                        "t": "3",
+                        "v": 1.35
+                    },
+                    {
+                        "t": "4",
+                        "v": 1.28
+                    },
+                    {
+                        "t": "5",
+                        "v": 1.25
+                    },
+                    {
+                        "t": "6",
+                        "v": 1.24
+                    }
+                ]
+            },
+            {
+                "label": "Token 消耗总量",
+                "value": "1,240,582",
+                "status": "default",
+                "trend": "minus",
+                "chart": [
+                    {
+                        "t": "1",
+                        "v": 200000
+                    },
+                    {
+                        "t": "2",
+                        "v": 450000
+                    },
+                    {
+                        "t": "3",
+                        "v": 700000
+                    },
+                    {
+                        "t": "4",
+                        "v": 950000
+                    },
+                    {
+                        "t": "5",
+                        "v": 1100000
+                    },
+                    {
+                        "t": "6",
+                        "v": 1240582
+                    }
+                ]
+            }
+        ],
+        "radarData": {
+            "GPT-4o-Latest": {
+                "准确性": 92,
+                "流畅度": 88,
+                "安全性": 95,
+                "逻辑性": 84,
+                "合规性": 90
+            }
+        },
+        "modelConfig": [
+            {
+                "k": "模型名称",
+                "v": "GPT-4o-Latest"
+            },
+            {
+                "k": "Temperature",
+                "v": "0.7"
+            },
+            {
+                "k": "Max Tokens",
+                "v": "2048"
+            },
+            {
+                "k": "Top P",
+                "v": "0.95"
+            },
+            {
+                "k": "停止序列",
+                "v": "['\\n', 'END']"
+            }
+        ],
+        "scoringDetails": [
+            {
+                "id": "CASE-001",
+                "input": "如何评价量子纠缠？",
+                "output": "量子纠缠是量子力学中...",
+                "score": 95,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-002",
+                "input": "写一段Python冒泡排序",
+                "output": "def bubble_sort(arr):...",
+                "score": 100,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-003",
+                "input": "翻译：The quick brown fox",
+                "output": "那只敏捷的棕色狐狸...",
+                "score": 88,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-004",
+                "input": "解释相对论",
+                "output": "相对论由爱因斯坦提出...",
+                "score": 45,
+                "status": "Fail",
+                "color": "error"
+            },
+            {
+                "id": "CASE-005",
+                "input": "生成一个营销文案",
+                "output": "限时优惠，不容错过...",
+                "score": 72,
+                "status": "Warning",
+                "color": "warning"
+            },
+            {
+                "id": "CASE-006",
+                "input": "SQL注入测试",
+                "output": "对不起，我不能协助...",
+                "score": 100,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-007",
+                "input": "总结这篇文章",
+                "output": "文章主要讲述了...",
+                "score": 82,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-008",
+                "input": "计算 123*456",
+                "output": "结果是 56088",
+                "score": 100,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-009",
+                "input": "代码重构建议",
+                "output": "建议使用解构赋值...",
+                "score": 91,
+                "status": "Pass",
+                "color": "success"
+            },
+            {
+                "id": "CASE-010",
+                "input": "情感分析：今天天气不错",
+                "output": "正面情绪",
+                "score": 98,
+                "status": "Pass",
+                "color": "success"
+            }
+        ]
+    },
+    "rootId": "appContainer",
+    "elements": [
+        {
+            "id": "appContainer",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest border-r border-divider"
+            },
+            "children": [
+                "sidebarLogoSection",
+                "sidebarSearchSection",
+                "sidebarMenuSection",
+                "sidebarUserSection"
+            ]
+        },
+        {
+            "id": "sidebarLogoSection",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-inline"
+            },
+            "children": [
+                "sidebarLogoImg",
+                "sidebarPlatformName"
+            ]
+        },
+        {
+            "id": "sidebarLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/brand/logoImage"
+                },
+                "className": "w-8 h-8 rounded-md"
+            }
+        },
+        {
+            "id": "sidebarPlatformName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/platformName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarSearchSection",
+            "component": "div",
+            "props": {
+                "className": "px-gutter mb-stack"
+            },
+            "children": [
+                "sidebarSearchInput"
+            ]
+        },
+        {
+            "id": "sidebarSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索功能...",
+                "prefix": "search",
+                "size": "small"
+            }
+        },
+        {
+            "id": "sidebarMenuSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto px-inline"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col mb-1"
+            },
+            "children": [
+                "sidebarMenuLabelRow",
+                "sidebarSubMenuContainer"
+            ]
+        },
+        {
+            "id": "sidebarMenuLabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline p-2 rounded-md hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4",
+                "color": "on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarSubMenuContainer",
+            "component": "div",
+            "props": {
+                "className": "ml-8 mt-1 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "children",
+                "componentId": "sidebarSubMenuItem"
+            }
+        },
+        {
+            "id": "sidebarSubMenuItem",
+            "component": "div",
+            "props": {
+                "className": "p-2 rounded-md text-xs cursor-pointer hover:text-primary"
+            },
+            "children": [
+                "sidebarSubMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarSubMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarUserSection",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-t border-divider flex items-center gap-inline"
+            },
+            "children": [
+                "sidebarUserAvatar",
+                "sidebarUserInfo",
+                "sidebarUserBadge"
+            ]
+        },
+        {
+            "id": "sidebarUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-10 h-10 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "sidebarUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "sidebarUserName",
+                "sidebarUserRole"
+            ]
+        },
+        {
+            "id": "sidebarUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/userName"
+                },
+                "className": "text-sm font-bold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "sidebarUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/roleTag"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sidebarUserBadge",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/currentUser/statusIcon"
+                },
+                "color": "success",
+                "className": "w-4 h-4 ml-auto"
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-y-auto"
+            },
+            "children": [
+                "mainHeader",
+                "mainBody"
+            ]
+        },
+        {
+            "id": "mainHeader",
+            "component": "div",
+            "props": {
+                "className": "px-inset py-gutter bg-surface-container-highest border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "headerBreadcrumb",
+                "headerMeta"
+            ]
+        },
+        {
+            "id": "headerBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "headerMeta",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "headerTaskId",
+                "headerEnvTag"
+            ]
+        },
+        {
+            "id": "headerTaskId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskMeta/taskId"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerEnvTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/taskMeta/environment"
+                },
+                "color": "processing",
+                "size": "small"
+            }
+        },
+        {
+            "id": "mainBody",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "actionBar",
+                "workflowSection",
+                "metricsGrid",
+                "scoringOverview",
+                "detailTableCard"
+            ]
+        },
+        {
+            "id": "actionBar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "actionTitle",
+                "actionButtons"
+            ]
+        },
+        {
+            "id": "actionTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/taskTitle"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "actionButtons",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "btnRetry",
+                "btnExport",
+                "btnPublish"
+            ]
+        },
+        {
+            "id": "btnRetry",
+            "component": "Button",
+            "props": {
+                "value": "重新运行",
+                "icon": "refresh-cw",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出报告",
+                "icon": "download",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "btnPublish",
+            "component": "Button",
+            "props": {
+                "value": "发布模型",
+                "color": "primary",
+                "icon": "send",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "workflowSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container shadow-card"
+            },
+            "children": [
+                "workflowSteps"
+            ]
+        },
+        {
+            "id": "workflowSteps",
+            "component": "Steps",
+            "props": {
+                "current": {
+                    "path": "/workflow/current"
+                },
+                "size": "small"
+            },
+            "children": {
+                "path": "/workflow/steps",
+                "componentId": "workflowStepItem"
+            }
+        },
+        {
+            "id": "workflowStepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "content": {
+                    "path": "description"
+                },
+                "status": {
+                    "path": "status"
+                },
+                "icon": {
+                    "path": "icon"
+                }
+            }
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": {
+                "path": "/processMetrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "metricHeader",
+                "metricValueRow",
+                "metricChart"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "metricLabel",
+                "metricTrend"
+            ]
+        },
+        {
+            "id": "metricLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "metricTrend",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "trend"
+                },
+                "className": "w-4 h-4",
+                "color": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "metricValueRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-inline"
+            },
+            "children": [
+                "metricValueText"
+            ]
+        },
+        {
+            "id": "metricValueText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "metricChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "chart"
+                    },
+                    "xAxis": {
+                        "data": "t"
+                    },
+                    "yAxisTitle": "",
+                    "area": true,
+                    "smooth": true
+                },
+                "className": "h-16 w-full"
+            }
+        },
+        {
+            "id": "scoringOverview",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "radarCard",
+                "configCard"
+            ]
+        },
+        {
+            "id": "radarCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 bg-surface-container-highest p-gutter rounded-container shadow-card"
+            },
+            "children": [
+                "radarTitle",
+                "radarChartMain"
+            ]
+        },
+        {
+            "id": "radarTitle",
+            "component": "h3",
+            "props": {
+                "value": "评分结果概览",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "radarChartMain",
+            "component": "RadarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/radarData"
+                    },
+                    "radarMax": 100
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "configCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container shadow-card"
+            },
+            "children": [
+                "configTitle",
+                "configList"
+            ]
+        },
+        {
+            "id": "configTitle",
+            "component": "h3",
+            "props": {
+                "value": "模型参数配置",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "configList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/modelConfig",
+                "componentId": "configItem"
+            }
+        },
+        {
+            "id": "configItem",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-sm py-1 border-b border-divider border-dashed"
+            },
+            "children": [
+                "configKey",
+                "configVal"
+            ]
+        },
+        {
+            "id": "configKey",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "k"
+                },
+                "className": "text-on-surface-variant"
+            }
+        },
+        {
+            "id": "configVal",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "v"
+                },
+                "className": "font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "detailTableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container shadow-card"
+            },
+            "children": [
+                "tableTitle",
+                "scoringTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "h3",
+            "props": {
+                "value": "评分结果汇总明细",
+                "className": "text-md font-bold mb-stack"
+            }
+        },
+        {
+            "id": "scoringTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/scoringDetails"
+                },
+                "columns": [
+                    {
+                        "title": "用例ID",
+                        "dataIndex": "id",
+                        "width": 100
+                    },
+                    {
+                        "title": "输入提示词",
+                        "dataIndex": "input"
+                    },
+                    {
+                        "title": "模型输出",
+                        "dataIndex": "output"
+                    },
+                    {
+                        "title": "综合得分",
+                        "dataIndex": "score",
+                        "width": 100,
+                        "align": "center"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 100
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80
+                    }
+                ]
+            },
+            "children": {
+                "path": "/scoringDetails",
+                "componentId": "scoringTableRow"
+            }
+        },
+        {
+            "id": "scoringTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellId",
+                "cellInput",
+                "cellOutput",
+                "cellScore",
+                "cellStatus",
+                "cellAction"
+            ]
+        },
+        {
+            "id": "cellId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "id"
+                },
+                "className": "text-xs font-mono"
+            }
+        },
+        {
+            "id": "cellInput",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "input"
+                },
+                "className": "truncate max-w-xs block"
+            }
+        },
+        {
+            "id": "cellOutput",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "output"
+                },
+                "className": "truncate max-w-xs block text-on-surface-variant"
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "font-bold text-primary"
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "cellAction",
+            "component": "Button",
+            "props": {
+                "icon": "eye",
+                "size": "small"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1398 @@
+{
+    "state": {
+        "systemName": "Nexus CRM",
+        "searchValue": "",
+        "searchPlaceholder": "搜索客户、报价、联系人...",
+        "notificationCount": 3,
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "userName": "Alex Chen",
+        "pageTitle": "新建报价单",
+        "actions": [
+            {
+                "buttonLabel": "下载 PDF",
+                "buttonIcon": "file-down",
+                "buttonType": "outline"
+            },
+            {
+                "buttonLabel": "保存草稿",
+                "buttonIcon": "save",
+                "buttonType": "secondary"
+            },
+            {
+                "buttonLabel": "发送报价",
+                "buttonIcon": "send",
+                "buttonType": "primary"
+            }
+        ],
+        "productCardTitle": "产品与服务明细",
+        "productItems": [
+            {
+                "id": "SKU-1024",
+                "productImage": "https://picsum.photos/seed/product-server/40/40",
+                "productName": "企业级云服务器 (Enterprise Cloud Server)",
+                "productId": "SKU-1024",
+                "unitPrice": 12500,
+                "unitPriceDisplay": "$12,500.00",
+                "quantity": 1,
+                "discount": 0,
+                "discountDisplay": "0%",
+                "subtotal": 12500,
+                "subtotalDisplay": "$12,500.00",
+                "deleteActionIcon": "trash-2"
+            },
+            {
+                "id": "SKU-2048",
+                "productImage": "https://picsum.photos/seed/product-support/40/40",
+                "productName": "24/7 高级技术支持服务 (Premium Support)",
+                "productId": "SKU-2048",
+                "unitPrice": 5000,
+                "unitPriceDisplay": "$5,000.00",
+                "quantity": 1,
+                "discount": 10,
+                "discountDisplay": "10%",
+                "subtotal": 4500,
+                "subtotalDisplay": "$4,500.00",
+                "deleteActionIcon": "trash-2"
+            },
+            {
+                "id": "SKU-3072",
+                "productImage": "https://picsum.photos/seed/product-storage/40/40",
+                "productName": "1TB 增量存储包 (Extra Storage Pack)",
+                "productId": "SKU-3072",
+                "unitPrice": 500,
+                "unitPriceDisplay": "$500.00",
+                "quantity": 4,
+                "discount": 0,
+                "discountDisplay": "0%",
+                "subtotal": 2000,
+                "subtotalDisplay": "$2,000.00",
+                "deleteActionIcon": "trash-2"
+            }
+        ],
+        "notesContent": "感谢您选择我们的服务。本次报价有效期为30天。服务器将在合同签署后48小时内完成配置并交付使用。",
+        "notesPlaceholder": "输入客户可见的备注信息，如交付周期、特殊承诺等...",
+        "notesCardTitle": "备注与条款",
+        "customerValue": "CUS-8821",
+        "customerOptions": [
+            {
+                "label": "Acme Corporation (美国)",
+                "value": "CUS-8821"
+            },
+            {
+                "label": "TechSolutions LLC (德国)",
+                "value": "CUS-9934"
+            }
+        ],
+        "issueDate": "2023-10-24",
+        "expiryDate": "2023-11-23",
+        "currencyValue": "USD",
+        "currencyOptions": [
+            {
+                "label": "美元 (USD)",
+                "value": "USD"
+            },
+            {
+                "label": "欧元 (EUR)",
+                "value": "EUR"
+            },
+            {
+                "label": "人民币 (CNY)",
+                "value": "CNY"
+            }
+        ],
+        "configCardTitle": "报价设置",
+        "summaryCardTitle": "报价摘要",
+        "summarySubtotal": "$19,000.00",
+        "summaryDiscount": "- $500.00",
+        "summaryTax": "$1,572.50",
+        "summaryGrandTotal": "$20,072.50",
+        "statusText": "DRAFT (草稿)",
+        "lastSaved": "上次保存: 刚刚"
+    },
+    "rootId": "rootAppContainer",
+    "elements": [
+        {
+            "id": "rootAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "navBar",
+                "bodyContainer"
+            ]
+        },
+        {
+            "id": "navBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between h-14 px-6 bg-surface-container-highest shadow-sm shrink-0 z-10"
+            },
+            "children": [
+                "navBarLeft",
+                "navBarRight"
+            ]
+        },
+        {
+            "id": "navBarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2.5"
+            },
+            "children": [
+                "navLogoIcon",
+                "navLogoText"
+            ]
+        },
+        {
+            "id": "navLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": "hexagon",
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-7 h-7"
+            }
+        },
+        {
+            "id": "navLogoText",
+            "component": "span",
+            "props": {
+                "value": "Nexus CRM",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navBarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-5"
+            },
+            "children": [
+                "navSearchInput",
+                "navNotifDropdown",
+                "navUserDropdown"
+            ]
+        },
+        {
+            "id": "navSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-72"
+            }
+        },
+        {
+            "id": "navNotifDropdown",
+            "component": "Dropdown",
+            "props": {
+                "trigger": [
+                    "click"
+                ],
+                "placement": "bottomRight",
+                "menu": [
+                    {
+                        "label": "新报价 #QT-0087 已创建",
+                        "key": "notif1",
+                        "icon": "file-text"
+                    },
+                    {
+                        "label": "Acme Corp 回复了邮件",
+                        "key": "notif2",
+                        "icon": "mail"
+                    },
+                    {
+                        "label": "报价 #QT-0085 即将过期",
+                        "key": "notif3",
+                        "icon": "clock"
+                    }
+                ]
+            },
+            "children": [
+                "navNotifTrigger"
+            ]
+        },
+        {
+            "id": "navNotifTrigger",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer flex items-center justify-center w-9 h-9 rounded-lg hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "navNotifIcon",
+                "navNotifBadge"
+            ]
+        },
+        {
+            "id": "navNotifIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "navNotifBadge",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/notificationCount"
+                },
+                "className": "absolute -top-0.5 -right-0.5 bg-error text-on-error text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center leading-none px-1"
+            }
+        },
+        {
+            "id": "navUserDropdown",
+            "component": "Dropdown",
+            "props": {
+                "trigger": [
+                    "click"
+                ],
+                "placement": "bottomRight",
+                "menu": [
+                    {
+                        "label": "个人设置",
+                        "key": "profile",
+                        "icon": "user"
+                    },
+                    {
+                        "label": "账户管理",
+                        "key": "account",
+                        "icon": "settings"
+                    },
+                    {
+                        "label": "退出登录",
+                        "key": "logout",
+                        "icon": "log-out"
+                    }
+                ]
+            },
+            "children": [
+                "navUserTrigger"
+            ]
+        },
+        {
+            "id": "navUserTrigger",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "navUserAvatar",
+                "navUserName"
+            ]
+        },
+        {
+            "id": "navUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userAvatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-8 h-8 rounded-full object-cover ring-2 ring-surface-variant"
+            }
+        },
+        {
+            "id": "navUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/userName"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "bodyContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sidebar",
+                "mainContent"
+            ]
+        },
+        {
+            "id": "sidebar",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-56 bg-surface-container-highest border-r border-divider shrink-0"
+            },
+            "children": [
+                "sidebarMenu",
+                "sidebarBottom"
+            ]
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3 pt-5 flex-1"
+            },
+            "children": [
+                "sidebarMenuDash",
+                "sidebarMenuContacts",
+                "sidebarMenuCompanies",
+                "sidebarMenuDeals",
+                "sidebarMenuQuotes",
+                "sidebarMenuTasks"
+            ]
+        },
+        {
+            "id": "sidebarMenuDash",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant text-sm cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuIconDash",
+                "sidebarMenuTextDash"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconDash",
+            "component": "Icon",
+            "props": {
+                "name": "layout-dashboard",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextDash",
+            "component": "span",
+            "props": {
+                "value": "Dashboard"
+            }
+        },
+        {
+            "id": "sidebarMenuContacts",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant text-sm cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuIconContacts",
+                "sidebarMenuTextContacts"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconContacts",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextContacts",
+            "component": "span",
+            "props": {
+                "value": "Contacts"
+            }
+        },
+        {
+            "id": "sidebarMenuCompanies",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant text-sm cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuIconCompanies",
+                "sidebarMenuTextCompanies"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconCompanies",
+            "component": "Icon",
+            "props": {
+                "name": "building-2",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextCompanies",
+            "component": "span",
+            "props": {
+                "value": "Companies"
+            }
+        },
+        {
+            "id": "sidebarMenuDeals",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-primary text-sm font-medium cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIconDeals",
+                "sidebarMenuTextDeals"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconDeals",
+            "component": "Icon",
+            "props": {
+                "name": "briefcase",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextDeals",
+            "component": "span",
+            "props": {
+                "value": "Deals"
+            }
+        },
+        {
+            "id": "sidebarMenuQuotes",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant text-sm cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuIconQuotes",
+                "sidebarMenuTextQuotes"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconQuotes",
+            "component": "Icon",
+            "props": {
+                "name": "file-text",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextQuotes",
+            "component": "span",
+            "props": {
+                "value": "Quotes"
+            }
+        },
+        {
+            "id": "sidebarMenuTasks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant text-sm cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "sidebarMenuIconTasks",
+                "sidebarMenuTextTasks"
+            ]
+        },
+        {
+            "id": "sidebarMenuIconTasks",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sidebarMenuTextTasks",
+            "component": "span",
+            "props": {
+                "value": "Tasks"
+            }
+        },
+        {
+            "id": "sidebarBottom",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "newQuoteBtn"
+            ]
+        },
+        {
+            "id": "newQuoteBtn",
+            "component": "Button",
+            "props": {
+                "value": "New Quote",
+                "icon": "plus",
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "mainContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 overflow-auto"
+            },
+            "children": [
+                "editorHeader",
+                "contentBody"
+            ]
+        },
+        {
+            "id": "editorHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-8 py-5 bg-surface-container-highest border-b border-divider shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "headerBreadcrumb",
+                "headerTitle"
+            ]
+        },
+        {
+            "id": "headerBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "separator": "/",
+                "items": [
+                    {
+                        "title": "Deals"
+                    },
+                    {
+                        "title": "Acme Corp Deal"
+                    },
+                    {
+                        "title": "Quote Generator"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "btnDownloadPDF",
+                "btnSaveDraft",
+                "btnSendQuote"
+            ]
+        },
+        {
+            "id": "btnDownloadPDF",
+            "component": "Button",
+            "props": {
+                "value": "下载 PDF",
+                "icon": "file-down",
+                "iconPlacement": "start",
+                "className": "shadow-none"
+            }
+        },
+        {
+            "id": "btnSaveDraft",
+            "component": "Button",
+            "props": {
+                "value": "保存草稿",
+                "icon": "save",
+                "iconPlacement": "start",
+                "className": "shadow-none"
+            }
+        },
+        {
+            "id": "btnSendQuote",
+            "component": "Button",
+            "props": {
+                "value": "发送报价",
+                "icon": "send",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "contentBody",
+            "component": "div",
+            "props": {
+                "className": "flex gap-6 p-8 flex-1"
+            },
+            "children": [
+                "leftColumn",
+                "rightColumn"
+            ]
+        },
+        {
+            "id": "leftColumn",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-6 flex-1 min-w-0"
+            },
+            "children": [
+                "productCard",
+                "notesCard"
+            ]
+        },
+        {
+            "id": "productCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "productCardHeader",
+                "productTable",
+                "addProductRow"
+            ]
+        },
+        {
+            "id": "productCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 px-6 pt-5 pb-3"
+            },
+            "children": [
+                "productCardIcon",
+                "productCardTitle"
+            ]
+        },
+        {
+            "id": "productCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "package",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "productCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/productCardTitle"
+                },
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "productTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/productItems"
+                },
+                "pagination": false,
+                "columns": [
+                    {
+                        "title": "产品名称",
+                        "dataIndex": "productName"
+                    },
+                    {
+                        "title": "单价",
+                        "dataIndex": "unitPrice",
+                        "align": "right"
+                    },
+                    {
+                        "title": "数量",
+                        "dataIndex": "quantity",
+                        "align": "center"
+                    },
+                    {
+                        "title": "折扣 (%)",
+                        "dataIndex": "discount",
+                        "align": "center"
+                    },
+                    {
+                        "title": "小计",
+                        "dataIndex": "subtotal",
+                        "align": "right"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "action",
+                        "width": 80,
+                        "align": "center"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/productItems",
+                "componentId": "productRow"
+            }
+        },
+        {
+            "id": "productRow",
+            "component": "TableRow",
+            "children": [
+                "tableProductName",
+                "tableUnitPrice",
+                "tableQuantity",
+                "tableDiscount",
+                "tableSubtotal",
+                "tableAction"
+            ]
+        },
+        {
+            "id": "tableProductName",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "tableProductImg",
+                "tableProductInfo"
+            ]
+        },
+        {
+            "id": "tableProductImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "productImage"
+                },
+                "alt": "Product",
+                "className": "w-9 h-9 rounded object-cover shrink-0"
+            }
+        },
+        {
+            "id": "tableProductInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "tableProductNameText",
+                "tableProductIdText"
+            ]
+        },
+        {
+            "id": "tableProductNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "productName"
+                },
+                "className": "text-sm font-medium text-on-surface truncate"
+            }
+        },
+        {
+            "id": "tableProductIdText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "productId"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tableUnitPrice",
+            "component": "div",
+            "props": {
+                "className": "text-right"
+            },
+            "children": [
+                "tableUnitPriceText"
+            ]
+        },
+        {
+            "id": "tableUnitPriceText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unitPriceDisplay"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "tableQuantity",
+            "component": "div",
+            "props": {
+                "className": "text-center"
+            },
+            "children": [
+                "tableQuantityText"
+            ]
+        },
+        {
+            "id": "tableQuantityText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "quantity"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "tableDiscount",
+            "component": "div",
+            "props": {
+                "className": "text-center"
+            },
+            "children": [
+                "tableDiscountText"
+            ]
+        },
+        {
+            "id": "tableDiscountText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "discountDisplay"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "tableSubtotal",
+            "component": "div",
+            "props": {
+                "className": "text-right"
+            },
+            "children": [
+                "tableSubtotalText"
+            ]
+        },
+        {
+            "id": "tableSubtotalText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "subtotalDisplay"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tableAction",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "deleteActionIcon"
+                },
+                "size": "small",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "addProductRow",
+            "component": "div",
+            "props": {
+                "className": "px-6 py-4 border-t border-divider"
+            },
+            "children": [
+                "addProductBtn"
+            ]
+        },
+        {
+            "id": "addProductBtn",
+            "component": "Button",
+            "props": {
+                "value": "添加产品",
+                "icon": "plus-circle",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "notesCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-6"
+            },
+            "children": [
+                "notesCardHeader",
+                "notesTextarea"
+            ]
+        },
+        {
+            "id": "notesCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-4"
+            },
+            "children": [
+                "notesCardIcon",
+                "notesCardTitle"
+            ]
+        },
+        {
+            "id": "notesCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "message-square",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "notesCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/notesCardTitle"
+                },
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "notesTextarea",
+            "component": "TextArea",
+            "props": {
+                "value": {
+                    "path": "/notesContent"
+                },
+                "placeholder": {
+                    "path": "/notesPlaceholder"
+                },
+                "autoSize": true,
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "rightColumn",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-6 w-[380px] shrink-0"
+            },
+            "children": [
+                "configCard",
+                "summaryCard",
+                "statusSection"
+            ]
+        },
+        {
+            "id": "configCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-6"
+            },
+            "children": [
+                "configCardHeader",
+                "configFormBody"
+            ]
+        },
+        {
+            "id": "configCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-5"
+            },
+            "children": [
+                "configCardIcon",
+                "configCardTitle"
+            ]
+        },
+        {
+            "id": "configCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "configCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/configCardTitle"
+                },
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "configFormBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-5"
+            },
+            "children": [
+                "configCustomerField",
+                "configIssueDateField",
+                "configExpiryDateField",
+                "configCurrencyField"
+            ]
+        },
+        {
+            "id": "configCustomerField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configCustomerLabel",
+                "configCustomerSelect"
+            ]
+        },
+        {
+            "id": "configCustomerLabel",
+            "component": "span",
+            "props": {
+                "value": "客户名称",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "configCustomerSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/customerValue"
+                },
+                "options": {
+                    "path": "/customerOptions"
+                },
+                "showSearch": true,
+                "placeholder": "选择客户",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configIssueDateField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configIssueDateLabel",
+                "configIssueDatePicker"
+            ]
+        },
+        {
+            "id": "configIssueDateLabel",
+            "component": "span",
+            "props": {
+                "value": "报价日期",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "configIssueDatePicker",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/issueDate"
+                },
+                "format": "YYYY-MM-DD",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configExpiryDateField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configExpiryDateLabel",
+                "configExpiryDatePicker"
+            ]
+        },
+        {
+            "id": "configExpiryDateLabel",
+            "component": "span",
+            "props": {
+                "value": "到期日期",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "configExpiryDatePicker",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/expiryDate"
+                },
+                "format": "YYYY-MM-DD",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configCurrencyField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configCurrencyLabel",
+                "configCurrencySelect"
+            ]
+        },
+        {
+            "id": "configCurrencyLabel",
+            "component": "span",
+            "props": {
+                "value": "币种",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "configCurrencySelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/currencyValue"
+                },
+                "options": {
+                    "path": "/currencyOptions"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "summaryCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-6"
+            },
+            "children": [
+                "summaryCardHeader",
+                "summaryBody"
+            ]
+        },
+        {
+            "id": "summaryCardHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-5"
+            },
+            "children": [
+                "summaryCardIcon",
+                "summaryCardTitle"
+            ]
+        },
+        {
+            "id": "summaryCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "calculator",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "summaryCardTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/summaryCardTitle"
+                },
+                "className": "text-base font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "summaryBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": [
+                "summarySubtotalRow",
+                "summaryDiscountRow",
+                "summaryDivider",
+                "summaryTaxRow",
+                "summaryGrandTotalRow"
+            ]
+        },
+        {
+            "id": "summarySubtotalRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "summarySubtotalLabel",
+                "summarySubtotalValue"
+            ]
+        },
+        {
+            "id": "summarySubtotalLabel",
+            "component": "span",
+            "props": {
+                "value": "小计 (Subtotal)",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "summarySubtotalValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/summarySubtotal"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "summaryDiscountRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "summaryDiscountLabel",
+                "summaryDiscountValue"
+            ]
+        },
+        {
+            "id": "summaryDiscountLabel",
+            "component": "span",
+            "props": {
+                "value": "折扣",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "summaryDiscountValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/summaryDiscount"
+                },
+                "className": "text-sm font-medium text-warning"
+            }
+        },
+        {
+            "id": "summaryDivider",
+            "component": "Divider",
+            "props": {
+                "className": "my-1"
+            }
+        },
+        {
+            "id": "summaryTaxRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between"
+            },
+            "children": [
+                "summaryTaxLabel",
+                "summaryTaxValue"
+            ]
+        },
+        {
+            "id": "summaryTaxLabel",
+            "component": "span",
+            "props": {
+                "value": "税费 (8.5%)",
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "summaryTaxValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/summaryTax"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "summaryGrandTotalRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between bg-primary-container rounded-lg px-4 py-3 -mx-1"
+            },
+            "children": [
+                "summaryGrandTotalLabel",
+                "summaryGrandTotalValue"
+            ]
+        },
+        {
+            "id": "summaryGrandTotalLabel",
+            "component": "span",
+            "props": {
+                "value": "最终总计",
+                "className": "text-sm font-bold text-primary"
+            }
+        },
+        {
+            "id": "summaryGrandTotalValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/summaryGrandTotal"
+                },
+                "className": "text-lg font-bold text-primary"
+            }
+        },
+        {
+            "id": "statusSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-6"
+            },
+            "children": [
+                "statusHeaderRow",
+                "statusTag",
+                "statusLastSaved"
+            ]
+        },
+        {
+            "id": "statusHeaderRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 mb-3"
+            },
+            "children": [
+                "statusLabel"
+            ]
+        },
+        {
+            "id": "statusLabel",
+            "component": "span",
+            "props": {
+                "value": "当前状态",
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "statusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/statusText"
+                },
+                "color": "default",
+                "icon": "file-pen",
+                "variant": "solid"
+            }
+        },
+        {
+            "id": "statusLastSaved",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/lastSaved"
+                },
+                "className": "text-xs text-on-surface-variant mt-2"
+            }
+        }
+    ]
+}

@@ -1,0 +1,816 @@
+{
+    "state": {
+        "brandName": "Matrix 评测系统",
+        "brandLogo": "https://picsum.photos/seed/enterprise-logo/200/200",
+        "menuItems": [
+            {
+                "title": "控制台概览",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "title": "评测工作台",
+                "icon": "cpu",
+                "active": true,
+                "open": true
+            },
+            {
+                "title": "系统设置",
+                "icon": "settings",
+                "active": false
+            }
+        ],
+        "subMenus": [
+            {
+                "title": "部署任务",
+                "active": true
+            },
+            {
+                "title": "模型管理",
+                "active": false
+            },
+            {
+                "title": "数据集配置",
+                "active": false
+            }
+        ],
+        "breadcrumb": [
+            {
+                "title": "评测工作台"
+            },
+            {
+                "title": "部署任务"
+            }
+        ],
+        "user": {
+            "name": "张建国",
+            "role": "高级运维工程师",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "notifications": 12
+        },
+        "metrics": [
+            {
+                "label": "总任务数",
+                "value": 128,
+                "unit": "个",
+                "icon": "list-todo",
+                "color": "default"
+            },
+            {
+                "label": "运行中",
+                "value": 45,
+                "unit": "个",
+                "icon": "play-circle",
+                "color": "primary"
+            },
+            {
+                "label": "部署失败",
+                "value": 3,
+                "unit": "个",
+                "icon": "alert-triangle",
+                "color": "error"
+            },
+            {
+                "label": "资源占用率",
+                "value": 78.5,
+                "unit": "%",
+                "icon": "activity",
+                "color": "warning"
+            }
+        ],
+        "searchQuery": "",
+        "statusFilter": "全部状态",
+        "statusOptions": [
+            {
+                "label": "全部状态",
+                "value": "全部状态"
+            },
+            {
+                "label": "排队中",
+                "value": "Pending"
+            },
+            {
+                "label": "部署中",
+                "value": "Running"
+            },
+            {
+                "label": "已完成",
+                "value": "Success"
+            },
+            {
+                "label": "已停止",
+                "value": "Stopped"
+            }
+        ],
+        "taskList": [
+            {
+                "taskId": "T-001",
+                "taskName": "LLM-推理集群-北京A区",
+                "status": "Running",
+                "statusLabel": "运行中",
+                "statusColor": "processing",
+                "operator": "李明",
+                "createdAt": "2023-10-24 10:00:00",
+                "logPath": "/var/logs/deploy/t001.log"
+            },
+            {
+                "taskId": "T-002",
+                "taskName": "Stable-Diffusion-测试节点",
+                "status": "Failed",
+                "statusLabel": "部署失败",
+                "statusColor": "error",
+                "operator": "王芳",
+                "createdAt": "2023-10-24 11:30:00",
+                "logPath": "/var/logs/deploy/t002.log"
+            },
+            {
+                "taskId": "T-003",
+                "taskName": "数据清洗预处理-任务03",
+                "status": "Pending",
+                "statusLabel": "排队中",
+                "statusColor": "default",
+                "operator": "陈小春",
+                "createdAt": "2023-10-24 12:00:00",
+                "logPath": "/var/logs/deploy/t003.log"
+            },
+            {
+                "taskId": "T-004",
+                "taskName": "模型量化压缩-V2",
+                "status": "Success",
+                "statusLabel": "已完成",
+                "statusColor": "success",
+                "operator": "李明",
+                "createdAt": "2023-10-23 09:00:00",
+                "logPath": "/var/logs/deploy/t004.log"
+            },
+            {
+                "taskId": "T-005",
+                "taskName": "语音识别接口-灰度发布",
+                "status": "Running",
+                "statusLabel": "运行中",
+                "statusColor": "processing",
+                "operator": "赵敏",
+                "createdAt": "2023-10-24 14:15:00",
+                "logPath": "/var/logs/deploy/t005.log"
+            },
+            {
+                "taskId": "T-006",
+                "taskName": "向量数据库索引构建",
+                "status": "Running",
+                "statusLabel": "运行中",
+                "statusColor": "processing",
+                "operator": "张建国",
+                "createdAt": "2023-10-24 15:00:00",
+                "logPath": "/var/logs/deploy/t006.log"
+            },
+            {
+                "taskId": "T-007",
+                "taskName": "知识图谱更新-全量",
+                "status": "Stopped",
+                "statusLabel": "已停止",
+                "statusColor": "warning",
+                "operator": "李明",
+                "createdAt": "2023-10-22 18:00:00",
+                "logPath": "/var/logs/deploy/t007.log"
+            },
+            {
+                "taskId": "T-008",
+                "taskName": "多模态对齐训练-Batch1",
+                "status": "Running",
+                "statusLabel": "运行中",
+                "statusColor": "processing",
+                "operator": "王芳",
+                "createdAt": "2023-10-24 16:20:00",
+                "logPath": "/var/logs/deploy/t008.log"
+            },
+            {
+                "taskId": "T-009",
+                "taskName": "前端资源CDN分发",
+                "status": "Success",
+                "statusLabel": "已完成",
+                "statusColor": "success",
+                "operator": "刘德华",
+                "createdAt": "2023-10-24 16:45:00",
+                "logPath": "/var/logs/deploy/t009.log"
+            },
+            {
+                "taskId": "T-010",
+                "taskName": "安全审计日志扫描",
+                "status": "Failed",
+                "statusLabel": "部署失败",
+                "statusColor": "error",
+                "operator": "张建国",
+                "createdAt": "2023-10-24 17:00:00",
+                "logPath": "/var/logs/deploy/t010.log"
+            }
+        ]
+    },
+    "rootId": "adminLayout",
+    "elements": [
+        {
+            "id": "adminLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-sm flex flex-col shrink-0 z-10"
+            },
+            "children": [
+                "sidebarLogoArea",
+                "sidebarMenuArea"
+            ]
+        },
+        {
+            "id": "sidebarLogoArea",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3 border-b border-divider"
+            },
+            "children": [
+                "sidebarLogoImg",
+                "sidebarLogoText"
+            ]
+        },
+        {
+            "id": "sidebarLogoImg",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/brandLogo"
+                },
+                "className": "w-8 h-8 rounded-lg"
+            }
+        },
+        {
+            "id": "sidebarLogoText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarMenuArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 py-4 overflow-y-auto"
+            },
+            "children": [
+                "sidebarMenuLoop"
+            ]
+        },
+        {
+            "id": "sidebarMenuLoop",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-3"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sidebarMenuMain",
+                "sidebarSubMenuContainer"
+            ]
+        },
+        {
+            "id": "sidebarMenuMain",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2.5 rounded-action cursor-pointer transition-colors hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                },
+                "className": "text-md font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "sidebarSubMenuContainer",
+            "component": "div",
+            "props": {
+                "className": "mt-1 ml-8 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/subMenus",
+                "componentId": "sidebarSubMenuItem"
+            }
+        },
+        {
+            "id": "sidebarSubMenuItem",
+            "component": "div",
+            "props": {
+                "className": "px-3 py-2 rounded-action cursor-pointer text-sm text-on-surface-variant hover:text-primary transition-colors"
+            },
+            "children": [
+                "sidebarSubMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarSubMenuLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "main",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topHeader",
+                "contentScrollArea"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "header",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-6 flex items-center justify-between shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "breadcrumbComp"
+            ]
+        },
+        {
+            "id": "breadcrumbComp",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumb"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": [
+                "headerNotifyBadge",
+                "headerUserArea"
+            ]
+        },
+        {
+            "id": "headerNotifyBadge",
+            "component": "Badge",
+            "props": {
+                "count": {
+                    "path": "/user/notifications"
+                },
+                "overflowCount": 99
+            },
+            "children": [
+                "headerNotifyIcon"
+            ]
+        },
+        {
+            "id": "headerNotifyIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bell",
+                "className": "w-5 h-5 cursor-pointer text-on-surface-variant"
+            }
+        },
+        {
+            "id": "headerUserArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "headerUserAvatar",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/user/avatar"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerUserName",
+                "headerUserRole"
+            ]
+        },
+        {
+            "id": "headerUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/user/name"
+                },
+                "className": "text-sm font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerUserRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/user/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "contentScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "statsGrid",
+                "mainContentCard"
+            ]
+        },
+        {
+            "id": "statsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "statCardItem"
+            }
+        },
+        {
+            "id": "statCardItem",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-5 rounded-xl shadow-card flex items-center gap-4"
+            },
+            "children": [
+                "statCardIcon",
+                "statCardContent"
+            ]
+        },
+        {
+            "id": "statCardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "square",
+                "className": "w-10 h-10"
+            }
+        },
+        {
+            "id": "statCardContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "statCardLabel",
+                "statCardValueArea"
+            ]
+        },
+        {
+            "id": "statCardLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "statCardValueArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "statCardValue",
+                "statCardUnit"
+            ]
+        },
+        {
+            "id": "statCardValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "statCardUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mainContentCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card flex flex-col"
+            },
+            "children": [
+                "tableFilterBar",
+                "taskTableComp"
+            ]
+        },
+        {
+            "id": "tableFilterBar",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-b border-divider flex items-center justify-between"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "searchInput",
+                "statusSelect"
+            ]
+        },
+        {
+            "id": "searchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchQuery"
+                },
+                "placeholder": "搜索任务名称、ID或调用人...",
+                "prefix": "search",
+                "className": "w-80"
+            }
+        },
+        {
+            "id": "statusSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/statusFilter"
+                },
+                "options": {
+                    "path": "/statusOptions"
+                },
+                "className": "w-40"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "createTaskBtn"
+            ]
+        },
+        {
+            "id": "createTaskBtn",
+            "component": "Button",
+            "props": {
+                "value": "新建部署任务",
+                "icon": "plus",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "taskTableComp",
+            "component": "Table",
+            "props": {
+                "rowKey": "taskId",
+                "dataSource": {
+                    "path": "/taskList"
+                },
+                "className": "p-2",
+                "columns": [
+                    {
+                        "title": "任务名称",
+                        "dataIndex": "taskName"
+                    },
+                    {
+                        "title": "部署状态",
+                        "dataIndex": "status",
+                        "width": 120
+                    },
+                    {
+                        "title": "调用人",
+                        "dataIndex": "operator",
+                        "width": 100
+                    },
+                    {
+                        "title": "创建时间",
+                        "dataIndex": "createdAt",
+                        "width": 180
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "width": 220,
+                        "align": "right"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/taskList",
+                "componentId": "taskTableRow"
+            }
+        },
+        {
+            "id": "taskTableRow",
+            "component": "TableRow",
+            "children": [
+                "colTaskName",
+                "colStatus",
+                "colOperator",
+                "colTime",
+                "colActions"
+            ]
+        },
+        {
+            "id": "colTaskName",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "taskNameText",
+                "taskIdText"
+            ]
+        },
+        {
+            "id": "taskNameText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskName"
+                },
+                "className": "font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "taskIdText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "taskId"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "colStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "statusLabel"
+                },
+                "color": {
+                    "path": "statusColor"
+                }
+            }
+        },
+        {
+            "id": "colOperator",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "operator"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "colTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "createdAt"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "colActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-end gap-1"
+            },
+            "children": [
+                "btnClone",
+                "btnEdit",
+                "btnLog"
+            ]
+        },
+        {
+            "id": "btnClone",
+            "component": "Button",
+            "props": {
+                "value": "克隆",
+                "size": "small",
+                "icon": "copy",
+                "className": "text-primary"
+            }
+        },
+        {
+            "id": "btnEdit",
+            "component": "Button",
+            "props": {
+                "value": "编辑",
+                "size": "small",
+                "icon": "edit-3"
+            }
+        },
+        {
+            "id": "btnLog",
+            "component": "Button",
+            "props": {
+                "value": "日志",
+                "size": "small",
+                "icon": "file-text",
+                "className": "text-info"
+            }
+        }
+    ]
+}

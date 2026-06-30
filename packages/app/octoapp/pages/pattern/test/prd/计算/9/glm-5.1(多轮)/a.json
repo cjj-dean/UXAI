@@ -1,0 +1,1119 @@
+{
+  "state": {
+    "logoIcon": "shield-check",
+    "systemName": "iMaster NCE",
+    "selectedMenuKeys": [
+      "fault"
+    ],
+    "mainMenus": [
+      {
+        "title": "仪表盘",
+        "key": "dashboard"
+      },
+      {
+        "title": "拓扑图",
+        "key": "topology"
+      },
+      {
+        "title": "资源管理",
+        "key": "resources"
+      },
+      {
+        "title": "故障监控",
+        "key": "fault"
+      },
+      {
+        "title": "性能分析",
+        "key": "performance"
+      },
+      {
+        "title": "安全管理",
+        "key": "security"
+      },
+      {
+        "title": "系统设置",
+        "key": "settings"
+      }
+    ],
+    "notificationIcon": "bell",
+    "notificationCount": 5,
+    "helpIcon": "help-circle",
+    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "userName": "Admin",
+    "userMenuItems": [
+      {
+        "label": "个人中心",
+        "key": "profile",
+        "icon": "user"
+      },
+      {
+        "label": "账户设置",
+        "key": "account",
+        "icon": "settings"
+      },
+      {
+        "label": "退出登录",
+        "key": "logout",
+        "icon": "log-out"
+      }
+    ],
+    "moduleTitle": "资源管理中心",
+    "openMenuKeys": [
+      "network-config"
+    ],
+    "menuItems": [
+      {
+        "title": "设备状态大屏",
+        "key": "device-status",
+        "icon": "monitor"
+      },
+      {
+        "title": "网络配置下发",
+        "key": "network-config",
+        "icon": "network",
+        "children": [
+          {
+            "title": "批量配置",
+            "key": "batch-config"
+          },
+          {
+            "title": "配置模板",
+            "key": "config-template"
+          }
+        ]
+      }
+    ],
+    "cardTitle": "全网设备健康度实时监控",
+    "cardDescription": "全局展示当前各区域网络设备的运行状态与告警信息，通过AI智能分析实现故障的预测与快速定位，提升运维团队的故障处理效率，保障核心业务的高可用性与连续性。",
+    "pipelineTitle": "自动化故障处理流水线",
+    "pipelineSteps": [
+      {
+        "stepTitle": "待处理告警",
+        "stepCount": 8,
+        "status": "process",
+        "icon": "bell-ring"
+      },
+      {
+        "stepTitle": "智能分析中",
+        "stepCount": 5,
+        "status": "process",
+        "icon": "brain"
+      },
+      {
+        "stepTitle": "已自动修复",
+        "stepCount": 3,
+        "status": "finish",
+        "icon": "wrench"
+      }
+    ],
+    "securityIllustrationImage": "https://fpoimg.com/800x600?gradient=0067D1,004EA8&text_color=ffffff&text=Security+Shield",
+    "currentView": "active",
+    "viewTabs": [
+      {
+        "label": "活跃告警",
+        "value": "active"
+      },
+      {
+        "label": "历史告警",
+        "value": "history"
+      }
+    ],
+    "selectedKeys": [],
+    "tableData": [
+      {
+        "id": 1,
+        "deviceName": "SW-CORE-01",
+        "cpuMemoryUsage": "45/60%",
+        "deviceType": "核心交换机",
+        "firmwareVersion": "v1.2.4",
+        "uptime": "90天12小时",
+        "ipAddress": "192.168.1.10",
+        "macAddress": "00:1A:2B:3C:4D:5E",
+        "status": "严重",
+        "statusTagColor": "error",
+        "statusIcon": "circle-alert"
+      },
+      {
+        "id": 2,
+        "deviceName": "RT-EDGE-02",
+        "cpuMemoryUsage": "35/80%",
+        "deviceType": "边缘路由器",
+        "firmwareVersion": "v2.0.1",
+        "uptime": "15天08小时",
+        "ipAddress": "10.0.0.5",
+        "macAddress": "00:1A:2B:3C:4D:5F",
+        "status": "警告",
+        "statusTagColor": "warning",
+        "statusIcon": "triangle-alert"
+      },
+      {
+        "id": 3,
+        "deviceName": "FW-MAIN-01",
+        "cpuMemoryUsage": "20/45%",
+        "deviceType": "核心防火墙",
+        "firmwareVersion": "v3.1.0",
+        "uptime": "120天00小时",
+        "ipAddress": "172.16.0.1",
+        "macAddress": "00:1B:2C:3D:4E:5F",
+        "status": "正常",
+        "statusTagColor": "success",
+        "statusIcon": "circle-check"
+      },
+      {
+        "id": 4,
+        "deviceName": "AP-WIFI-05",
+        "cpuMemoryUsage": "15/30%",
+        "deviceType": "无线接入点",
+        "firmwareVersion": "v1.1.2",
+        "uptime": "5天14小时",
+        "ipAddress": "192.168.2.55",
+        "macAddress": "00:1C:2D:3E:4F:5G",
+        "status": "离线",
+        "statusTagColor": "default",
+        "statusIcon": "circle-minus"
+      },
+      {
+        "id": 5,
+        "deviceName": "SRV-DB-01",
+        "cpuMemoryUsage": "80/90%",
+        "deviceType": "数据库服务器",
+        "firmwareVersion": "v4.5.1",
+        "uptime": "300天10小时",
+        "ipAddress": "10.1.1.100",
+        "macAddress": "00:1D:2E:3F:4G:5H",
+        "status": "严重",
+        "statusTagColor": "error",
+        "statusIcon": "circle-alert"
+      },
+      {
+        "id": 6,
+        "deviceName": "SRV-WEB-02",
+        "cpuMemoryUsage": "40/55%",
+        "deviceType": "Web服务器",
+        "firmwareVersion": "v4.5.2",
+        "uptime": "45天02小时",
+        "ipAddress": "10.1.2.200",
+        "macAddress": "00:1E:2F:3G:4H:5I",
+        "status": "正常",
+        "statusTagColor": "success",
+        "statusIcon": "circle-check"
+      },
+      {
+        "id": 7,
+        "deviceName": "SW-ACC-12",
+        "cpuMemoryUsage": "25/40%",
+        "deviceType": "接入交换机",
+        "firmwareVersion": "v1.2.5",
+        "uptime": "60天09小时",
+        "ipAddress": "192.168.3.12",
+        "macAddress": "00:1F:2G:3H:4I:5J",
+        "status": "正常",
+        "statusTagColor": "success",
+        "statusIcon": "circle-check"
+      },
+      {
+        "id": 8,
+        "deviceName": "SAN-STG-01",
+        "cpuMemoryUsage": "60/75%",
+        "deviceType": "存储阵列",
+        "firmwareVersion": "v2.2.0",
+        "uptime": "150天11小时",
+        "ipAddress": "10.2.2.50",
+        "macAddress": "00:1G:2H:3I:4J:5K",
+        "status": "警告",
+        "statusTagColor": "warning",
+        "statusIcon": "triangle-alert"
+      },
+      {
+        "id": 9,
+        "deviceName": "LB-F5-01",
+        "cpuMemoryUsage": "30/45%",
+        "deviceType": "负载均衡器",
+        "firmwareVersion": "v11.6.0",
+        "uptime": "80天05小时",
+        "ipAddress": "172.16.1.10",
+        "macAddress": "00:1H:2I:3J:4K:5L",
+        "status": "正常",
+        "statusTagColor": "success",
+        "statusIcon": "circle-check"
+      },
+      {
+        "id": 10,
+        "deviceName": "AP-WIFI-08",
+        "cpuMemoryUsage": "10/25%",
+        "deviceType": "无线接入点",
+        "firmwareVersion": "v1.1.2",
+        "uptime": "2天07小时",
+        "ipAddress": "192.168.2.58",
+        "macAddress": "00:1I:2J:3K:4L:5M",
+        "status": "正常",
+        "statusTagColor": "success",
+        "statusIcon": "circle-check"
+      }
+    ],
+    "pagination": {
+      "totalText": "总计: 924条",
+      "pageSize": 20,
+      "currentPage": 1,
+      "totalPages": 47
+    }
+  },
+  "rootId": "rootConsoleContainer",
+  "elements": [
+    {
+      "id": "rootConsoleContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen w-full bg-surface-container-lowest overflow-hidden"
+      },
+      "children": [
+        "headerNavLayout",
+        "appBodyLayout"
+      ]
+    },
+    {
+      "id": "headerNavLayout",
+      "component": "header",
+      "props": {
+        "className": "h-12 flex-shrink-0 bg-surface-container-highest shadow-sm flex items-center px-page z-10"
+      },
+      "children": [
+        "hdrLeftSection",
+        "hdrMainMenu",
+        "hdrRightSection"
+      ]
+    },
+    {
+      "id": "appBodyLayout",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "sideNavLayout",
+        "mainContentLayout"
+      ]
+    },
+    {
+      "id": "sideNavLayout",
+      "component": "aside",
+      "props": {
+        "className": "w-60 flex-shrink-0 bg-surface-container-highest shadow-sm z-10 overflow-y-auto"
+      },
+      "children": [
+        "sNavModuleHeader",
+        "sNavMenuContainer"
+      ]
+    },
+    {
+      "id": "mainContentLayout",
+      "component": "main",
+      "props": {
+        "className": "flex-1 flex flex-col p-page gap-section overflow-y-auto"
+      },
+      "children": [
+        "mainHealthSlot",
+        "mainAlertSlot"
+      ]
+    },
+    {
+      "id": "mainHealthSlot",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card flex-shrink-0"
+      },
+      "children": [
+        "mHltContentRow"
+      ]
+    },
+    {
+      "id": "mainAlertSlot",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-container shadow-card flex-1 min-h-0 flex flex-col"
+      },
+      "children": [
+        "mAltHeaderBar",
+        "mAltTableWrap"
+      ]
+    },
+    {
+      "id": "hdrLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-6 shrink-0"
+      },
+      "children": [
+        "hdrLogoIcon",
+        "hdrSystemName"
+      ]
+    },
+    {
+      "id": "hdrLogoIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/logoIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "hdrSystemName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/systemName"
+        },
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "hdrMainMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/mainMenus"
+        },
+        "className": "flex-1 min-w-0"
+      }
+    },
+    {
+      "id": "hdrRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 shrink-0 ml-6"
+      },
+      "children": [
+        "hdrNotificationBadge",
+        "hdrHelpIcon",
+        "hdrUserDropdown"
+      ]
+    },
+    {
+      "id": "hdrNotificationBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/notificationCount"
+        },
+        "overflowCount": 99,
+        "className": "cursor-pointer"
+      },
+      "children": [
+        "hdrNotificationIcon"
+      ]
+    },
+    {
+      "id": "hdrNotificationIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/notificationIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "hdrHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/helpIcon"
+        },
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "hdrUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": {
+          "path": "/userMenuItems"
+        }
+      },
+      "children": [
+        "hdrUserSection"
+      ]
+    },
+    {
+      "id": "hdrUserSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "hdrUserAvatar",
+        "hdrUserName"
+      ]
+    },
+    {
+      "id": "hdrUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userAvatarImage"
+        },
+        "alt": "User Avatar",
+        "className": "w-7 h-7 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "hdrUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-sm font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "sNavModuleHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-5 py-5 border-b border-divider"
+      },
+      "children": [
+        "sNavModuleIcon",
+        "sNavModuleTitle"
+      ]
+    },
+    {
+      "id": "sNavModuleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "layers",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-8 h-8"
+      }
+    },
+    {
+      "id": "sNavModuleTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/moduleTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "sNavMenuContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 py-2"
+      },
+      "children": [
+        "sNavMenu"
+      ]
+    },
+    {
+      "id": "sNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": false,
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "openKeys": {
+          "path": "/openMenuKeys"
+        },
+        "items": {
+          "path": "/menuItems"
+        },
+        "className": "w-full"
+      }
+    },
+    {
+      "id": "mHltContentRow",
+      "component": "div",
+      "props": {
+        "className": "flex gap-page p-page"
+      },
+      "children": [
+        "mHltLeftCol",
+        "mHltRightCol"
+      ]
+    },
+    {
+      "id": "mHltLeftCol",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex flex-col gap-stack min-w-0"
+      },
+      "children": [
+        "mHltHeaderSection",
+        "mHltDividerLine",
+        "mHltPipelineSection"
+      ]
+    },
+    {
+      "id": "mHltHeaderSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "mHltTitleRow",
+        "mHltDescText",
+        "mHltTagRow"
+      ]
+    },
+    {
+      "id": "mHltTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mHltTitleIcon",
+        "mHltTitleText"
+      ]
+    },
+    {
+      "id": "mHltTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "shield-check",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-6 h-6"
+      }
+    },
+    {
+      "id": "mHltTitleText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "mHltDescText",
+      "component": "p",
+      "props": {
+        "className": "text-md text-on-surface-variant leading-relaxed",
+        "value": {
+          "path": "/cardDescription"
+        }
+      }
+    },
+    {
+      "id": "mHltTagRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mt-1"
+      },
+      "children": [
+        "mHltTagAi",
+        "mHltTagMonitor"
+      ]
+    },
+    {
+      "id": "mHltTagAi",
+      "component": "Tag",
+      "props": {
+        "value": "AI 智能分析",
+        "icon": "brain",
+        "color": "processing"
+      }
+    },
+    {
+      "id": "mHltTagMonitor",
+      "component": "Tag",
+      "props": {
+        "value": "实时监控中",
+        "icon": "activity",
+        "color": "success"
+      }
+    },
+    {
+      "id": "mHltDividerLine",
+      "component": "Divider",
+      "props": {
+        "className": "my-1"
+      }
+    },
+    {
+      "id": "mHltPipelineSection",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-3"
+      },
+      "children": [
+        "mHltPipelineTitleRow",
+        "mHltPipelineSteps"
+      ]
+    },
+    {
+      "id": "mHltPipelineTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mHltPipelineIcon",
+        "mHltPipelineText"
+      ]
+    },
+    {
+      "id": "mHltPipelineIcon",
+      "component": "Icon",
+      "props": {
+        "name": "workflow",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "mHltPipelineText",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/pipelineTitle"
+        }
+      }
+    },
+    {
+      "id": "mHltPipelineSteps",
+      "component": "Steps",
+      "props": {
+        "current": 1,
+        "types": "default",
+        "size": "medium",
+        "className": "mt-2"
+      },
+      "children": {
+        "path": "/pipelineSteps",
+        "componentId": "mHltStepItem"
+      }
+    },
+    {
+      "id": "mHltStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "stepTitle"
+        },
+        "status": {
+          "path": "status"
+        },
+        "icon": {
+          "path": "icon"
+        },
+        "content": {
+          "componentId": "mHltStepContent"
+        }
+      }
+    },
+    {
+      "id": "mHltStepContent",
+      "component": "div",
+      "props": {
+        "className": "flex items-baseline gap-1"
+      },
+      "children": [
+        "mHltStepCountValue",
+        "mHltStepCountSuffix"
+      ]
+    },
+    {
+      "id": "mHltStepCountValue",
+      "component": "span",
+      "props": {
+        "className": "text-xl font-bold text-primary",
+        "value": {
+          "path": "stepCount"
+        }
+      }
+    },
+    {
+      "id": "mHltStepCountSuffix",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant",
+        "value": "条"
+      }
+    },
+    {
+      "id": "mHltRightCol",
+      "component": "div",
+      "props": {
+        "className": "w-80 flex-shrink-0 flex items-center justify-center"
+      },
+      "children": [
+        "mHltImageWrap"
+      ]
+    },
+    {
+      "id": "mHltImageWrap",
+      "component": "div",
+      "props": {
+        "className": "w-full rounded-container overflow-hidden shadow-sm"
+      },
+      "children": [
+        "mHltImage"
+      ]
+    },
+    {
+      "id": "mHltImage",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/securityIllustrationImage"
+        },
+        "alt": "Security Shield Illustration",
+        "className": "w-full h-auto object-cover"
+      }
+    },
+    {
+      "id": "mAltHeaderBar",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center px-inset py-4 border-b border-divider"
+      },
+      "children": [
+        "mAltHeaderLeft",
+        "mAltHeaderRight"
+      ]
+    },
+    {
+      "id": "mAltHeaderLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4"
+      },
+      "children": [
+        "mAltTitle",
+        "mAltSegmented"
+      ]
+    },
+    {
+      "id": "mAltTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": "告警与设备列表"
+      }
+    },
+    {
+      "id": "mAltSegmented",
+      "component": "Segmented",
+      "props": {
+        "value": {
+          "path": "/currentView"
+        },
+        "options": {
+          "path": "/viewTabs"
+        },
+        "size": "medium",
+        "className": "w-fit"
+      }
+    },
+    {
+      "id": "mAltHeaderRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "mAltBtnExport",
+        "mAltBtnCreate",
+        "mAltRefreshIcon"
+      ]
+    },
+    {
+      "id": "mAltBtnExport",
+      "component": "Button",
+      "props": {
+        "value": "数据导出",
+        "icon": "download",
+        "iconPlacement": "start",
+        "color": "default"
+      }
+    },
+    {
+      "id": "mAltBtnCreate",
+      "component": "Button",
+      "props": {
+        "value": "创建工单",
+        "icon": "file-plus",
+        "iconPlacement": "start",
+        "color": "primary"
+      }
+    },
+    {
+      "id": "mAltRefreshIcon",
+      "component": "Icon",
+      "props": {
+        "name": "refresh-cw",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "mAltTableWrap",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-h-0 px-inset py-section"
+      },
+      "children": [
+        "mAltTable"
+      ]
+    },
+    {
+      "id": "mAltTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableData"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedKeys"
+          }
+        },
+        "pagination": true,
+        "className": "flex-1",
+        "columns": [
+          {
+            "title": "设备名称",
+            "dataIndex": "deviceName",
+            "sort": true
+          },
+          {
+            "title": "CPU/内存使用率",
+            "dataIndex": "cpuMemoryUsage",
+            "width": 140
+          },
+          {
+            "title": "设备类型",
+            "dataIndex": "deviceType"
+          },
+          {
+            "title": "固件版本",
+            "dataIndex": "firmwareVersion",
+            "width": 100
+          },
+          {
+            "title": "运行时长",
+            "dataIndex": "uptime",
+            "sort": true
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress",
+            "width": 130
+          },
+          {
+            "title": "MAC地址",
+            "dataIndex": "macAddress",
+            "width": 150
+          },
+          {
+            "title": "运行状态",
+            "dataIndex": "status",
+            "sort": true,
+            "width": 100
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actions",
+            "width": 120,
+            "align": "center"
+          }
+        ]
+      },
+      "children": {
+        "path": "/tableData",
+        "componentId": "mAltRow"
+      }
+    },
+    {
+      "id": "mAltRow",
+      "component": "TableRow",
+      "children": [
+        "mAltDeviceCell",
+        "mAltCpuCell",
+        "mAltTypeCell",
+        "mAltFirmwareCell",
+        "mAltUptimeCell",
+        "mAltIpCell",
+        "mAltMacCell",
+        "mAltStatusCell",
+        "mAltActionsCell"
+      ]
+    },
+    {
+      "id": "mAltDeviceCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "mAltDeviceIcon",
+        "mAltDeviceText"
+      ]
+    },
+    {
+      "id": "mAltDeviceIcon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "mAltDeviceText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "deviceName"
+        },
+        "className": "font-medium text-on-surface text-md"
+      }
+    },
+    {
+      "id": "mAltCpuCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cpuMemoryUsage"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mAltTypeCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "deviceType"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mAltFirmwareCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "firmwareVersion"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "mAltUptimeCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "uptime"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "mAltIpCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "mAltMacCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "macAddress"
+        },
+        "className": "text-md text-on-surface-variant font-mono"
+      }
+    },
+    {
+      "id": "mAltStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "status"
+        },
+        "color": {
+          "path": "statusTagColor"
+        },
+        "icon": {
+          "path": "statusIcon"
+        },
+        "size": "small"
+      }
+    },
+    {
+      "id": "mAltActionsCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-1"
+      },
+      "children": [
+        "mAltActionEye",
+        "mAltActionTerminal",
+        "mAltActionSettings"
+      ]
+    },
+    {
+      "id": "mAltActionEye",
+      "component": "Button",
+      "props": {
+        "icon": "eye",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mAltActionTerminal",
+      "component": "Button",
+      "props": {
+        "icon": "terminal",
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mAltActionSettings",
+      "component": "Button",
+      "props": {
+        "icon": "settings",
+        "types": "link",
+        "size": "small"
+      }
+    }
+  ]
+}

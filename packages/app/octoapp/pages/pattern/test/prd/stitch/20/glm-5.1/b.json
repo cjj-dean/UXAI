@@ -1,0 +1,1979 @@
+{
+    "state": {
+        "brandLogoIcon": "shield",
+        "navItems": [
+            {
+                "navId": "nav_01",
+                "navLabel": "Dashboard",
+                "iconName": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "navId": "nav_02",
+                "navLabel": "Workflow",
+                "iconName": "git-branch",
+                "isActive": true
+            },
+            {
+                "navId": "nav_03",
+                "navLabel": "Audience",
+                "iconName": "users",
+                "isActive": false
+            },
+            {
+                "navId": "nav_04",
+                "navLabel": "Analytics",
+                "iconName": "bar-chart-2",
+                "isActive": false
+            }
+        ],
+        "settingsNav": {
+            "navId": "nav_settings",
+            "navLabel": "Settings",
+            "iconName": "settings",
+            "isActive": false
+        },
+        "pageTitle": "Security Gate / Automation Workflow",
+        "currentPageName": "Lead Nurturing Flow V2",
+        "headerRightActions": {
+            "searchIcon": "search",
+            "notificationsIcon": "bell",
+            "helpIcon": "life-buoy",
+            "userProfile": {
+                "avatarImage": "https://randomuser.me/api/portraits/men/75.jpg",
+                "userName": "Alex Chen",
+                "roleName": "System Admin"
+            }
+        },
+        "panelTitle": "Node Library",
+        "searchPlaceholder": "Search nodes...",
+        "searchValue": "",
+        "categories": [
+            {
+                "catId": "cat_triggers",
+                "catName": "TRIGGERS",
+                "catIcon": "zap",
+                "nodes": [
+                    {
+                        "nodeId": "trig_01",
+                        "nodeName": "New Sales Lead",
+                        "nodeDesc": "Triggers when a lead is created.",
+                        "nodeType": "Trigger",
+                        "nodeIcon": "user-plus"
+                    },
+                    {
+                        "nodeId": "trig_02",
+                        "nodeName": "User Login",
+                        "nodeDesc": "Triggers on user auth success.",
+                        "nodeType": "Trigger",
+                        "nodeIcon": "log-in"
+                    },
+                    {
+                        "nodeId": "trig_03",
+                        "nodeName": "Webhook Received",
+                        "nodeDesc": "Triggers via custom HTTP POST.",
+                        "nodeType": "Trigger",
+                        "nodeIcon": "globe"
+                    }
+                ]
+            },
+            {
+                "catId": "cat_conditions",
+                "catName": "CONDITIONS",
+                "catIcon": "split",
+                "nodes": [
+                    {
+                        "nodeId": "cond_01",
+                        "nodeName": "Score Filter",
+                        "nodeDesc": "Branch based on lead score.",
+                        "nodeType": "Condition",
+                        "nodeIcon": "bar-chart-3"
+                    },
+                    {
+                        "nodeId": "cond_02",
+                        "nodeName": "Department Match",
+                        "nodeDesc": "Branch based on user dept.",
+                        "nodeType": "Condition",
+                        "nodeIcon": "building"
+                    }
+                ]
+            },
+            {
+                "catId": "cat_actions",
+                "catName": "ACTIONS",
+                "catIcon": "play-circle",
+                "nodes": [
+                    {
+                        "nodeId": "act_01",
+                        "nodeName": "Send Notification",
+                        "nodeDesc": "Send email or in-app msg.",
+                        "nodeType": "Action",
+                        "nodeIcon": "bell-ring"
+                    },
+                    {
+                        "nodeId": "act_02",
+                        "nodeName": "Update CRM Record",
+                        "nodeDesc": "Update fields in Salesforce.",
+                        "nodeType": "Action",
+                        "nodeIcon": "refresh-cw"
+                    },
+                    {
+                        "nodeId": "act_03",
+                        "nodeName": "Wait / Delay",
+                        "nodeDesc": "Pause workflow execution.",
+                        "nodeType": "Action",
+                        "nodeIcon": "timer"
+                    }
+                ]
+            }
+        ],
+        "activeCategoryKeys": [
+            "cat_triggers",
+            "cat_conditions",
+            "cat_actions"
+        ],
+        "canvasNodes": [
+            {
+                "id": "node_trig_01",
+                "type": "TRIGGER",
+                "title": "New Sales Lead",
+                "subTitle": "Source: Website Form",
+                "isSelected": false,
+                "statusIcon": "zap",
+                "position": {
+                    "x": 450,
+                    "y": 50
+                }
+            },
+            {
+                "id": "node_cond_01",
+                "type": "CONDITION",
+                "title": "Lead Score > 80",
+                "subTitle": "Condition: High Intent",
+                "isSelected": false,
+                "statusIcon": "git-branch",
+                "position": {
+                    "x": 450,
+                    "y": 200
+                }
+            },
+            {
+                "id": "node_act_01",
+                "type": "ACTION",
+                "title": "Notify Sales Manager",
+                "subTitle": "Action: Email & Slack",
+                "isSelected": true,
+                "statusIcon": "bell-ring",
+                "position": {
+                    "x": 250,
+                    "y": 380
+                }
+            },
+            {
+                "id": "node_act_02",
+                "type": "ACTION",
+                "title": "Update Lead Pool",
+                "subTitle": "Action: Move to Nurture",
+                "isSelected": false,
+                "statusIcon": "refresh-cw",
+                "position": {
+                    "x": 650,
+                    "y": 380
+                }
+            }
+        ],
+        "canvasEdges": [
+            {
+                "id": "e1-2",
+                "source": "node_trig_01",
+                "target": "node_cond_01",
+                "sourcePort": "bottom",
+                "targetPort": "top"
+            },
+            {
+                "id": "e2-3",
+                "source": "node_cond_01",
+                "target": "node_act_01",
+                "sourcePort": "left",
+                "targetPort": "top",
+                "label": "YES",
+                "status": "success"
+            },
+            {
+                "id": "e2-4",
+                "source": "node_cond_01",
+                "target": "node_act_02",
+                "sourcePort": "right",
+                "targetPort": "top",
+                "label": "NO",
+                "status": "warning"
+            }
+        ],
+        "toolbarControls": {
+            "zoomLevel": "100%",
+            "zoomOutIcon": "zoom-out",
+            "zoomInIcon": "zoom-in",
+            "fitScreenIcon": "maximize"
+        },
+        "workflowStatus": {
+            "label": "Status",
+            "statusText": "已激活",
+            "isActive": true
+        },
+        "toolbarActions": [
+            {
+                "btnId": "test_run",
+                "btnLabel": "测试运行",
+                "btnIcon": "play",
+                "btnType": "default"
+            },
+            {
+                "btnId": "save_publish",
+                "btnLabel": "保存发布",
+                "btnIcon": "upload-cloud",
+                "btnType": "primary"
+            }
+        ],
+        "configPanelHeader": {
+            "title": "Node Config",
+            "subTitle": "ACTION: Send Notification",
+            "statusBadge": "已选中",
+            "closeIcon": "x"
+        },
+        "formFields": {
+            "notificationTitle": {
+                "label": "通知标题",
+                "value": "Urgent: New High-Value Lead {{lead_name}}",
+                "placeholder": "Input title, use {{}} for variables",
+                "required": true,
+                "variableIcon": "braces"
+            },
+            "templateSelect": {
+                "label": "通知模板",
+                "placeholder": "Select a template",
+                "selectedValue": "tpl_02",
+                "options": [
+                    {
+                        "value": "tpl_01",
+                        "label": "Standard Alert"
+                    },
+                    {
+                        "value": "tpl_02",
+                        "label": "High Priority HTML"
+                    },
+                    {
+                        "value": "tpl_03",
+                        "label": "Simple Text Message"
+                    }
+                ]
+            },
+            "receiversTags": {
+                "label": "接收者",
+                "tags": [
+                    {
+                        "id": "tag_1",
+                        "text": "Sales Manager",
+                        "icon": "user"
+                    },
+                    {
+                        "id": "tag_2",
+                        "text": "East Region Manager",
+                        "icon": "map-pin"
+                    }
+                ],
+                "addTagButtonText": "+ 添加角色或人员"
+            },
+            "delaySetting": {
+                "label": "发送延迟",
+                "value": 15,
+                "unit": "minutes",
+                "maxValue": 120,
+                "helpText": "Delay execution after trigger event."
+            }
+        },
+        "panelFooter": {
+            "resetButton": {
+                "label": "重置",
+                "icon": "rotate-ccw",
+                "type": "default"
+            },
+            "applyButton": {
+                "label": "应用变更",
+                "icon": "check",
+                "type": "primary"
+            }
+        },
+        "logsPanelTitle": "Execution Logs",
+        "isCollapsed": false,
+        "logsData": [
+            {
+                "logId": "log_1",
+                "timestamp": "2023-11-20 14:30:02",
+                "nodeId": "node_trig_01",
+                "statusIcon": "circle-check",
+                "statusColor": "success",
+                "message": "Trigger successfully executed. Lead ID: L-8834."
+            },
+            {
+                "logId": "log_2",
+                "timestamp": "2023-11-20 14:30:02",
+                "nodeId": "node_cond_01",
+                "statusIcon": "circle-check",
+                "statusColor": "success",
+                "message": "Condition evaluated: Lead Score (95) > 80. Route: YES."
+            },
+            {
+                "logId": "log_3",
+                "timestamp": "2023-11-20 14:30:17",
+                "nodeId": "node_act_01",
+                "statusIcon": "loader",
+                "statusColor": "primary",
+                "message": "Executing Action: Notify Sales Manager. Waiting for delay (15 mins)..."
+            },
+            {
+                "logId": "log_4",
+                "timestamp": "2023-11-20 14:30:18",
+                "nodeId": "node_act_02",
+                "statusIcon": "circle-minus",
+                "statusColor": "default",
+                "message": "Skipped: Route NO path ignored."
+            }
+        ]
+    },
+    "rootId": "rootContainer",
+    "elements": [
+        {
+            "id": "rootContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row h-screen w-screen overflow-hidden bg-surface-container-lowest"
+            },
+            "children": [
+                "leftNavContainer",
+                "mainWrapperContainer"
+            ]
+        },
+        {
+            "id": "leftNavContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center w-14 bg-inverse-surface py-4 gap-2 shrink-0"
+            },
+            "children": [
+                "leftNavLogo",
+                "leftNavSpacer1",
+                "leftNavDashboardWrap",
+                "leftNavWorkflowWrap",
+                "leftNavAudienceWrap",
+                "leftNavAnalyticsWrap",
+                "leftNavSpacer2",
+                "leftNavDividerLine",
+                "leftNavSettingsWrap"
+            ]
+        },
+        {
+            "id": "leftNavLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brandLogoIcon"
+                },
+                "color": "inverse",
+                "shape": "fill",
+                "className": "w-8 h-8 mb-2"
+            }
+        },
+        {
+            "id": "leftNavSpacer1",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "leftNavDashboardWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-10 h-10 rounded-action cursor-pointer opacity-60 hover:opacity-100 transition-opacity",
+                "title": "Dashboard"
+            },
+            "children": [
+                "leftNavDashboardIcon"
+            ]
+        },
+        {
+            "id": "leftNavDashboardIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/navItems/0/iconName"
+                },
+                "color": "inverse",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "leftNavWorkflowWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-10 h-10 rounded-action bg-primary/20 cursor-pointer",
+                "title": "Workflow"
+            },
+            "children": [
+                "leftNavWorkflowIcon"
+            ]
+        },
+        {
+            "id": "leftNavWorkflowIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/navItems/1/iconName"
+                },
+                "color": "primary",
+                "shape": "fill",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "leftNavAudienceWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-10 h-10 rounded-action cursor-pointer opacity-60 hover:opacity-100 transition-opacity",
+                "title": "Audience"
+            },
+            "children": [
+                "leftNavAudienceIcon"
+            ]
+        },
+        {
+            "id": "leftNavAudienceIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/navItems/2/iconName"
+                },
+                "color": "inverse",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "leftNavAnalyticsWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-10 h-10 rounded-action cursor-pointer opacity-60 hover:opacity-100 transition-opacity",
+                "title": "Analytics"
+            },
+            "children": [
+                "leftNavAnalyticsIcon"
+            ]
+        },
+        {
+            "id": "leftNavAnalyticsIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/navItems/3/iconName"
+                },
+                "color": "inverse",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "leftNavSpacer2",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "leftNavDividerLine",
+            "component": "div",
+            "props": {
+                "className": "w-6 h-px bg-inverse-on-surface-variant/30 my-1"
+            }
+        },
+        {
+            "id": "leftNavSettingsWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-10 h-10 rounded-action cursor-pointer opacity-60 hover:opacity-100 transition-opacity",
+                "title": "Settings"
+            },
+            "children": [
+                "leftNavSettingsIcon"
+            ]
+        },
+        {
+            "id": "leftNavSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/settingsNav/iconName"
+                },
+                "color": "inverse",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "mainWrapperContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 min-w-0 overflow-hidden"
+            },
+            "children": [
+                "topHeaderBar",
+                "contentAreaRow"
+            ]
+        },
+        {
+            "id": "topHeaderBar",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between h-14 px-6 bg-surface-container-highest shadow-sm shrink-0 border-b border-divider"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-3"
+            },
+            "children": [
+                "headerTitleText",
+                "headerChevronIcon",
+                "headerPageName"
+            ]
+        },
+        {
+            "id": "headerTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-md text-on-surface-variant",
+                "value": {
+                    "path": "/pageTitle"
+                }
+            }
+        },
+        {
+            "id": "headerChevronIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "color": "default",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "headerPageName",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold text-on-surface",
+                "value": {
+                    "path": "/currentPageName"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-3"
+            },
+            "children": [
+                "headerSearchIcon",
+                "headerBellIcon",
+                "headerHelpIcon",
+                "headerUserDivider",
+                "headerUserSection"
+            ]
+        },
+        {
+            "id": "headerSearchIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/headerRightActions/searchIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerBellIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/headerRightActions/notificationsIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerHelpIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/headerRightActions/helpIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-5 h-5 cursor-pointer"
+            }
+        },
+        {
+            "id": "headerUserDivider",
+            "component": "div",
+            "props": {
+                "className": "w-px h-6 bg-divider"
+            }
+        },
+        {
+            "id": "headerUserSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2 cursor-pointer"
+            },
+            "children": [
+                "headerAvatar",
+                "headerUserInfo"
+            ]
+        },
+        {
+            "id": "headerAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/headerRightActions/userProfile/avatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-8 h-8 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "headerUserInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "headerUserName",
+                "headerUserRole"
+            ]
+        },
+        {
+            "id": "headerUserName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface leading-tight",
+                "value": {
+                    "path": "/headerRightActions/userProfile/userName"
+                }
+            }
+        },
+        {
+            "id": "headerUserRole",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant leading-tight",
+                "value": {
+                    "path": "/headerRightActions/userProfile/roleName"
+                }
+            }
+        },
+        {
+            "id": "contentAreaRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row flex-1 min-h-0 overflow-hidden"
+            },
+            "children": [
+                "nodeLibPanel",
+                "canvasArea",
+                "configPanel"
+            ]
+        },
+        {
+            "id": "nodeLibPanel",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-64 shrink-0 bg-surface-container-highest border-r border-divider overflow-hidden"
+            },
+            "children": [
+                "nodeLibHeader",
+                "nodeLibSearchWrap",
+                "nodeLibCollapseWrap"
+            ]
+        },
+        {
+            "id": "nodeLibHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2 px-4 pt-4 pb-2"
+            },
+            "children": [
+                "nodeLibTitleIcon",
+                "nodeLibTitleText"
+            ]
+        },
+        {
+            "id": "nodeLibTitleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "boxes",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "nodeLibTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-semibold text-on-surface",
+                "value": {
+                    "path": "/panelTitle"
+                }
+            }
+        },
+        {
+            "id": "nodeLibSearchWrap",
+            "component": "div",
+            "props": {
+                "className": "px-4 pb-3"
+            },
+            "children": [
+                "nodeLibSearchInput"
+            ]
+        },
+        {
+            "id": "nodeLibSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "size": "small",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "nodeLibCollapseWrap",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-auto px-2 pb-4"
+            },
+            "children": [
+                "nodeLibCollapse"
+            ]
+        },
+        {
+            "id": "nodeLibCollapse",
+            "component": "Collapse",
+            "props": {
+                "activeKey": {
+                    "path": "/activeCategoryKeys"
+                },
+                "accordion": false,
+                "expandIcon": "chevron-down",
+                "expandIconPlacement": "end",
+                "size": "small"
+            },
+            "children": {
+                "path": "/categories",
+                "componentId": "libCategoryItem"
+            }
+        },
+        {
+            "id": "libCategoryItem",
+            "component": "CollapseItem",
+            "props": {
+                "key": {
+                    "path": "catId"
+                },
+                "label": {
+                    "path": "catName"
+                },
+                "extra": {
+                    "componentId": "libCatIcon"
+                },
+                "content": {
+                    "componentId": "libCatContent"
+                }
+            }
+        },
+        {
+            "id": "libCatIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "catIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "libCatContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2 pt-1 pb-2"
+            },
+            "children": {
+                "path": "nodes",
+                "componentId": "libNodeCard"
+            }
+        },
+        {
+            "id": "libNodeCard",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-start gap-2.5 p-2.5 rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors"
+            },
+            "children": [
+                "libNodeIconWrap",
+                "libNodeInfo"
+            ]
+        },
+        {
+            "id": "libNodeIconWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-center w-8 h-8 rounded-md bg-primary-container shrink-0"
+            },
+            "children": [
+                "libNodeIcon"
+            ]
+        },
+        {
+            "id": "libNodeIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "nodeIcon"
+                },
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "libNodeInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-0.5 min-w-0"
+            },
+            "children": [
+                "libNodeName",
+                "libNodeDesc"
+            ]
+        },
+        {
+            "id": "libNodeName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface truncate",
+                "value": {
+                    "path": "nodeName"
+                }
+            }
+        },
+        {
+            "id": "libNodeDesc",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "nodeDesc"
+                }
+            }
+        },
+        {
+            "id": "canvasArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 min-w-0 relative bg-surface-container-lowest"
+            },
+            "children": [
+                "canvasToolbarWrap",
+                "canvasContent",
+                "logsPanelContainer"
+            ]
+        },
+        {
+            "id": "canvasToolbarWrap",
+            "component": "div",
+            "props": {
+                "className": "flex justify-center pt-3 px-4 shrink-0 z-10"
+            },
+            "children": [
+                "canvasToolbar"
+            ]
+        },
+        {
+            "id": "canvasToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2 bg-surface-container-highest rounded-full shadow-md px-4 py-2"
+            },
+            "children": [
+                "toolbarZoomOutIcon",
+                "toolbarZoomText",
+                "toolbarZoomInIcon",
+                "toolbarDivider1",
+                "toolbarFitIcon",
+                "toolbarDivider2",
+                "toolbarTestBtn",
+                "toolbarDivider3",
+                "toolbarStatusGroup",
+                "toolbarDivider4",
+                "toolbarSaveBtn"
+            ]
+        },
+        {
+            "id": "toolbarZoomOutIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/toolbarControls/zoomOutIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "toolbarZoomText",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface min-w-[36px] text-center",
+                "value": {
+                    "path": "/toolbarControls/zoomLevel"
+                }
+            }
+        },
+        {
+            "id": "toolbarZoomInIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/toolbarControls/zoomInIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "toolbarDivider1",
+            "component": "div",
+            "props": {
+                "className": "w-px h-5 bg-divider mx-1"
+            }
+        },
+        {
+            "id": "toolbarFitIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/toolbarControls/fitScreenIcon"
+                },
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "toolbarDivider2",
+            "component": "div",
+            "props": {
+                "className": "w-px h-5 bg-divider mx-1"
+            }
+        },
+        {
+            "id": "toolbarTestBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/toolbarActions/0/btnLabel"
+                },
+                "icon": {
+                    "path": "/toolbarActions/0/btnIcon"
+                },
+                "iconPlacement": "start",
+                "size": "small",
+                "color": "default"
+            }
+        },
+        {
+            "id": "toolbarDivider3",
+            "component": "div",
+            "props": {
+                "className": "w-px h-5 bg-divider mx-1"
+            }
+        },
+        {
+            "id": "toolbarStatusGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2"
+            },
+            "children": [
+                "toolbarStatusLabel",
+                "toolbarStatusSwitch",
+                "toolbarStatusText"
+            ]
+        },
+        {
+            "id": "toolbarStatusLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/workflowStatus/label"
+                }
+            }
+        },
+        {
+            "id": "toolbarStatusSwitch",
+            "component": "Switch",
+            "props": {
+                "value": {
+                    "path": "/workflowStatus/isActive"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "toolbarStatusText",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-medium text-success",
+                "value": {
+                    "path": "/workflowStatus/statusText"
+                }
+            }
+        },
+        {
+            "id": "toolbarDivider4",
+            "component": "div",
+            "props": {
+                "className": "w-px h-5 bg-divider mx-1"
+            }
+        },
+        {
+            "id": "toolbarSaveBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/toolbarActions/1/btnLabel"
+                },
+                "icon": {
+                    "path": "/toolbarActions/1/btnIcon"
+                },
+                "iconPlacement": "start",
+                "size": "small",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "canvasContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex items-center justify-center overflow-auto p-8",
+                "style": {
+                    "backgroundImage": "radial-gradient(circle, #d4d4d4 1px, transparent 1px)",
+                    "backgroundSize": "20px 20px"
+                }
+            },
+            "children": [
+                "canvasFlowTree"
+            ]
+        },
+        {
+            "id": "canvasFlowTree",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center gap-0"
+            },
+            "children": [
+                "flowTriggerNode",
+                "flowConnectorDown1",
+                "flowConditionNode",
+                "flowConnectorSplit",
+                "flowBranchRow"
+            ]
+        },
+        {
+            "id": "flowTriggerNode",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5 p-4 rounded-xl bg-surface-container-highest shadow-card min-w-[220px] border-l-4 border-primary"
+            },
+            "children": [
+                "flowTriggerHeader",
+                "flowTriggerTitle",
+                "flowTriggerSubtitle"
+            ]
+        },
+        {
+            "id": "flowTriggerHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between"
+            },
+            "children": [
+                "flowTriggerBadge",
+                "flowTriggerStatusIcon"
+            ]
+        },
+        {
+            "id": "flowTriggerBadge",
+            "component": "Tag",
+            "props": {
+                "value": "TRIGGER",
+                "color": "processing",
+                "size": "small",
+                "icon": "zap"
+            }
+        },
+        {
+            "id": "flowTriggerStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/canvasNodes/0/statusIcon"
+                },
+                "color": "primary",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "flowTriggerTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface",
+                "value": {
+                    "path": "/canvasNodes/0/title"
+                }
+            }
+        },
+        {
+            "id": "flowTriggerSubtitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/canvasNodes/0/subTitle"
+                }
+            }
+        },
+        {
+            "id": "flowConnectorDown1",
+            "component": "div",
+            "props": {
+                "className": "w-0.5 h-8 bg-border-base"
+            }
+        },
+        {
+            "id": "flowConditionNode",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5 p-4 rounded-xl bg-surface-container-highest shadow-card min-w-[220px] border-l-4 border-warning"
+            },
+            "children": [
+                "flowConditionHeader",
+                "flowConditionTitle",
+                "flowConditionSubtitle"
+            ]
+        },
+        {
+            "id": "flowConditionHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between"
+            },
+            "children": [
+                "flowConditionBadge",
+                "flowConditionStatusIcon"
+            ]
+        },
+        {
+            "id": "flowConditionBadge",
+            "component": "Tag",
+            "props": {
+                "value": "CONDITION",
+                "color": "warning",
+                "size": "small",
+                "icon": "git-merge"
+            }
+        },
+        {
+            "id": "flowConditionStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/canvasNodes/1/statusIcon"
+                },
+                "color": "warning",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "flowConditionTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface",
+                "value": {
+                    "path": "/canvasNodes/1/title"
+                }
+            }
+        },
+        {
+            "id": "flowConditionSubtitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/canvasNodes/1/subTitle"
+                }
+            }
+        },
+        {
+            "id": "flowConnectorSplit",
+            "component": "div",
+            "props": {
+                "className": "w-0.5 h-6 bg-border-base"
+            }
+        },
+        {
+            "id": "flowBranchRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-start gap-20"
+            },
+            "children": [
+                "flowLeftBranch",
+                "flowRightBranch"
+            ]
+        },
+        {
+            "id": "flowLeftBranch",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center gap-0"
+            },
+            "children": [
+                "flowYesTag",
+                "flowLeftConnector",
+                "flowAction1Node"
+            ]
+        },
+        {
+            "id": "flowYesTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/canvasEdges/1/label"
+                },
+                "color": "success",
+                "size": "small",
+                "icon": "check"
+            }
+        },
+        {
+            "id": "flowLeftConnector",
+            "component": "div",
+            "props": {
+                "className": "w-0.5 h-6 bg-success"
+            }
+        },
+        {
+            "id": "flowAction1Node",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5 p-4 rounded-xl bg-surface-container-highest shadow-md min-w-[220px] border-l-4 border-success ring-2 ring-primary ring-offset-2"
+            },
+            "children": [
+                "flowAction1Header",
+                "flowAction1Title",
+                "flowAction1Subtitle"
+            ]
+        },
+        {
+            "id": "flowAction1Header",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between"
+            },
+            "children": [
+                "flowAction1Badge",
+                "flowAction1StatusIcon"
+            ]
+        },
+        {
+            "id": "flowAction1Badge",
+            "component": "Tag",
+            "props": {
+                "value": "ACTION",
+                "color": "success",
+                "size": "small",
+                "icon": "bell-ring"
+            }
+        },
+        {
+            "id": "flowAction1StatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/canvasNodes/2/statusIcon"
+                },
+                "color": "success",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "flowAction1Title",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface",
+                "value": {
+                    "path": "/canvasNodes/2/title"
+                }
+            }
+        },
+        {
+            "id": "flowAction1Subtitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/canvasNodes/2/subTitle"
+                }
+            }
+        },
+        {
+            "id": "flowRightBranch",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center gap-0"
+            },
+            "children": [
+                "flowNoTag",
+                "flowRightConnector",
+                "flowAction2Node"
+            ]
+        },
+        {
+            "id": "flowNoTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/canvasEdges/2/label"
+                },
+                "color": "warning",
+                "size": "small",
+                "icon": "x"
+            }
+        },
+        {
+            "id": "flowRightConnector",
+            "component": "div",
+            "props": {
+                "className": "w-0.5 h-6 bg-warning"
+            }
+        },
+        {
+            "id": "flowAction2Node",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5 p-4 rounded-xl bg-surface-container-highest shadow-card min-w-[220px] border-l-4 border-success"
+            },
+            "children": [
+                "flowAction2Header",
+                "flowAction2Title",
+                "flowAction2Subtitle"
+            ]
+        },
+        {
+            "id": "flowAction2Header",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between"
+            },
+            "children": [
+                "flowAction2Badge",
+                "flowAction2StatusIcon"
+            ]
+        },
+        {
+            "id": "flowAction2Badge",
+            "component": "Tag",
+            "props": {
+                "value": "ACTION",
+                "color": "success",
+                "size": "small",
+                "icon": "refresh-cw"
+            }
+        },
+        {
+            "id": "flowAction2StatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/canvasNodes/3/statusIcon"
+                },
+                "color": "success",
+                "shape": "outline",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "flowAction2Title",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface",
+                "value": {
+                    "path": "/canvasNodes/3/title"
+                }
+            }
+        },
+        {
+            "id": "flowAction2Subtitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/canvasNodes/3/subTitle"
+                }
+            }
+        },
+        {
+            "id": "logsPanelContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col border-t border-divider bg-surface-container-highest shrink-0",
+                "style": {
+                    "height": "200px"
+                }
+            },
+            "children": [
+                "logsPanelHeader",
+                "logsTimelineWrap"
+            ]
+        },
+        {
+            "id": "logsPanelHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-between px-4 py-2 shrink-0"
+            },
+            "children": [
+                "logsPanelTitle",
+                "logsPanelToggleIcon"
+            ]
+        },
+        {
+            "id": "logsPanelTitle",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface",
+                "value": {
+                    "path": "/logsPanelTitle"
+                }
+            }
+        },
+        {
+            "id": "logsPanelToggleIcon",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-down",
+                "color": "default",
+                "shape": "outline",
+                "className": "w-4 h-4 cursor-pointer"
+            }
+        },
+        {
+            "id": "logsTimelineWrap",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-auto px-6 pb-3"
+            },
+            "children": [
+                "logsTimeline"
+            ]
+        },
+        {
+            "id": "logsTimeline",
+            "component": "Timeline",
+            "props": {
+                "orientation": "vertical",
+                "variant": "filled"
+            },
+            "children": {
+                "path": "/logsData",
+                "componentId": "logItem"
+            }
+        },
+        {
+            "id": "logItem",
+            "component": "TimelineItem",
+            "props": {
+                "title": {
+                    "path": "timestamp"
+                },
+                "icon": {
+                    "path": "statusIcon"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "content": {
+                    "componentId": "logContent"
+                }
+            }
+        },
+        {
+            "id": "logContent",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-0.5"
+            },
+            "children": [
+                "logNodeIdText",
+                "logMessageText"
+            ]
+        },
+        {
+            "id": "logNodeIdText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant font-mono",
+                "value": {
+                    "path": "nodeId"
+                }
+            }
+        },
+        {
+            "id": "logMessageText",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface",
+                "value": {
+                    "path": "message"
+                }
+            }
+        },
+        {
+            "id": "configPanel",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col w-80 shrink-0 bg-surface-container-highest border-l border-divider overflow-hidden"
+            },
+            "children": [
+                "configHeader",
+                "configDivider",
+                "configForm",
+                "configFooterDivider",
+                "configFooter"
+            ]
+        },
+        {
+            "id": "configHeader",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-start justify-between px-4 pt-4 pb-3"
+            },
+            "children": [
+                "configHeaderLeft",
+                "configCloseBtn"
+            ]
+        },
+        {
+            "id": "configHeaderLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configTitleRow",
+                "configSubtitleText"
+            ]
+        },
+        {
+            "id": "configTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2"
+            },
+            "children": [
+                "configTitleText",
+                "configStatusTag"
+            ]
+        },
+        {
+            "id": "configTitleText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/configPanelHeader/title"
+                }
+            }
+        },
+        {
+            "id": "configStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/configPanelHeader/statusBadge"
+                },
+                "color": "processing",
+                "size": "small",
+                "icon": "crosshair"
+            }
+        },
+        {
+            "id": "configSubtitleText",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "/configPanelHeader/subTitle"
+                }
+            }
+        },
+        {
+            "id": "configCloseBtn",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "/configPanelHeader/closeIcon"
+                },
+                "shape": "circle",
+                "size": "small"
+            }
+        },
+        {
+            "id": "configDivider",
+            "component": "Divider",
+            "props": {
+                "className": "mx-4"
+            }
+        },
+        {
+            "id": "configForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-5 px-4 py-4 flex-1 overflow-auto"
+            },
+            "children": [
+                "configTitleField",
+                "configTemplateField",
+                "configReceiverField",
+                "configDelayField"
+            ]
+        },
+        {
+            "id": "configTitleField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configTitleLabelRow",
+                "configTitleInput"
+            ]
+        },
+        {
+            "id": "configTitleLabelRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-1"
+            },
+            "children": [
+                "configTitleLabel",
+                "configTitleRequired"
+            ]
+        },
+        {
+            "id": "configTitleLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "/formFields/notificationTitle/label"
+                }
+            }
+        },
+        {
+            "id": "configTitleRequired",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-error",
+                "value": "*"
+            }
+        },
+        {
+            "id": "configTitleInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/formFields/notificationTitle/value"
+                },
+                "placeholder": {
+                    "path": "/formFields/notificationTitle/placeholder"
+                },
+                "suffix": {
+                    "path": "/formFields/notificationTitle/variableIcon"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configTemplateField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configTemplateLabel",
+                "configTemplateSelect"
+            ]
+        },
+        {
+            "id": "configTemplateLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "/formFields/templateSelect/label"
+                }
+            }
+        },
+        {
+            "id": "configTemplateSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/formFields/templateSelect/selectedValue"
+                },
+                "options": {
+                    "path": "/formFields/templateSelect/options"
+                },
+                "placeholder": {
+                    "path": "/formFields/templateSelect/placeholder"
+                },
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "configReceiverField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configReceiverLabel",
+                "configReceiverTagsRow",
+                "configAddTagBtn"
+            ]
+        },
+        {
+            "id": "configReceiverLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "/formFields/receiversTags/label"
+                }
+            }
+        },
+        {
+            "id": "configReceiverTagsRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row flex-wrap gap-2"
+            },
+            "children": [
+                "configTag1",
+                "configTag2"
+            ]
+        },
+        {
+            "id": "configTag1",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/formFields/receiversTags/tags/0/text"
+                },
+                "icon": {
+                    "path": "/formFields/receiversTags/tags/0/icon"
+                },
+                "closable": true,
+                "closeIcon": "circle-x",
+                "color": "default"
+            }
+        },
+        {
+            "id": "configTag2",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/formFields/receiversTags/tags/1/text"
+                },
+                "icon": {
+                    "path": "/formFields/receiversTags/tags/1/icon"
+                },
+                "closable": true,
+                "closeIcon": "circle-x",
+                "color": "default"
+            }
+        },
+        {
+            "id": "configAddTagBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/formFields/receiversTags/addTagButtonText"
+                },
+                "icon": "plus",
+                "iconPlacement": "start",
+                "size": "small"
+            }
+        },
+        {
+            "id": "configDelayField",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1.5"
+            },
+            "children": [
+                "configDelayLabel",
+                "configDelayRow",
+                "configDelayHelp"
+            ]
+        },
+        {
+            "id": "configDelayLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium text-on-surface",
+                "value": {
+                    "path": "/formFields/delaySetting/label"
+                }
+            }
+        },
+        {
+            "id": "configDelayRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center gap-2"
+            },
+            "children": [
+                "configDelayInput",
+                "configDelayUnit"
+            ]
+        },
+        {
+            "id": "configDelayInput",
+            "component": "InputNumber",
+            "props": {
+                "value": {
+                    "path": "/formFields/delaySetting/value"
+                },
+                "min": 0,
+                "max": {
+                    "path": "/formFields/delaySetting/maxValue"
+                },
+                "controls": true,
+                "className": "w-32"
+            }
+        },
+        {
+            "id": "configDelayUnit",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface-variant",
+                "value": {
+                    "path": "/formFields/delaySetting/unit"
+                }
+            }
+        },
+        {
+            "id": "configDelayHelp",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/formFields/delaySetting/helpText"
+                }
+            }
+        },
+        {
+            "id": "configFooterDivider",
+            "component": "Divider",
+            "props": {
+                "className": "mx-4"
+            }
+        },
+        {
+            "id": "configFooter",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-center justify-end gap-3 px-4 py-3 shrink-0"
+            },
+            "children": [
+                "configResetBtn",
+                "configApplyBtn"
+            ]
+        },
+        {
+            "id": "configResetBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/panelFooter/resetButton/label"
+                },
+                "icon": {
+                    "path": "/panelFooter/resetButton/icon"
+                },
+                "iconPlacement": "start",
+                "color": "default"
+            }
+        },
+        {
+            "id": "configApplyBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/panelFooter/applyButton/label"
+                },
+                "icon": {
+                    "path": "/panelFooter/applyButton/icon"
+                },
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        }
+    ]
+}

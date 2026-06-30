@@ -1,0 +1,1181 @@
+{
+  "state": {
+    "searchValue": "",
+    "brandInfo": {
+      "logoIcon": "hexagon",
+      "brandName": "Mastor CCAE"
+    },
+    "mainNavMenus": [
+      {
+        "menuId": "nav_1",
+        "menuName": "总览",
+        "menuIcon": "layout-dashboard",
+        "isActive": false
+      },
+      {
+        "menuId": "nav_2",
+        "menuName": "应用市场",
+        "menuIcon": "store",
+        "isActive": false
+      },
+      {
+        "menuId": "nav_3",
+        "menuName": "资源管理",
+        "menuIcon": "server",
+        "isActive": true
+      },
+      {
+        "menuId": "nav_4",
+        "menuName": "运维管理",
+        "menuIcon": "settings",
+        "isActive": false
+      },
+      {
+        "menuId": "nav_5",
+        "menuName": "日志监控",
+        "menuIcon": "activity",
+        "isActive": false
+      },
+      {
+        "menuId": "nav_6",
+        "menuName": "费用中心",
+        "menuIcon": "credit-card",
+        "isActive": false
+      },
+      {
+        "menuId": "nav_7",
+        "menuName": "权限配置",
+        "menuIcon": "shield",
+        "isActive": false
+      }
+    ],
+    "adminUserInfo": {
+      "userName": "Admin",
+      "userRole": "超级管理员",
+      "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "notificationCount": 5
+    },
+    "menuCategoryTitle": "资源管理",
+    "activeTab": "tab_1",
+    "guideCardTitle": "容器应用部署指引",
+    "guideCoverImage": "https://picsum.photos/seed/3d-glow-tech/800/400",
+    "currentStep": 2,
+    "guideSteps": [
+      {
+        "stepId": 1,
+        "stepTitle": "创建集群",
+        "stepDescription": "配置底层计算节点规格与网络模式",
+        "stepStatus": "finish"
+      },
+      {
+        "stepId": 2,
+        "stepTitle": "构建镜像",
+        "stepDescription": "将应用程序及依赖打包为Docker镜像",
+        "stepStatus": "finish"
+      },
+      {
+        "stepId": 3,
+        "stepTitle": "配置网络",
+        "stepDescription": "设置Service服务发现与Ingress路由规则",
+        "stepStatus": "process"
+      },
+      {
+        "stepId": 4,
+        "stepTitle": "部署应用",
+        "stepDescription": "设置副本数及环境变量，调度Pod运行",
+        "stepStatus": "wait"
+      },
+      {
+        "stepId": 5,
+        "stepTitle": "监控运维",
+        "stepDescription": "配置日志采集、探针与健康检查",
+        "stepStatus": "wait"
+      }
+    ],
+    "tableCardTitle": "工作负载列表",
+    "selectedRowKeys": [],
+    "applicationList": [
+      {
+        "appId": "app-001",
+        "applicationName": "web-frontend-prod",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "4/4",
+        "cpuUsage": "12%",
+        "memoryUsage": "256Mi",
+        "creationTime": "2023-10-24 10:00:00"
+      },
+      {
+        "appId": "app-002",
+        "applicationName": "user-center-svc",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "3/3",
+        "cpuUsage": "45%",
+        "memoryUsage": "512Mi",
+        "creationTime": "2023-10-24 10:15:20"
+      },
+      {
+        "appId": "app-003",
+        "applicationName": "order-processing",
+        "statusTag": "异常",
+        "statusTagColor": "error",
+        "instancePods": "1/3",
+        "cpuUsage": "0%",
+        "memoryUsage": "0Mi",
+        "creationTime": "2023-10-23 18:30:00"
+      },
+      {
+        "appId": "app-004",
+        "applicationName": "payment-gateway",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "2/2",
+        "cpuUsage": "15%",
+        "memoryUsage": "128Mi",
+        "creationTime": "2023-10-22 09:00:00"
+      },
+      {
+        "appId": "app-005",
+        "applicationName": "data-etl-job",
+        "statusTag": "已完成",
+        "statusTagColor": "processing",
+        "instancePods": "0/1",
+        "cpuUsage": "0%",
+        "memoryUsage": "0Mi",
+        "creationTime": "2023-10-21 02:00:00"
+      },
+      {
+        "appId": "app-006",
+        "applicationName": "notification-worker",
+        "statusTag": "部署中",
+        "statusTagColor": "warning",
+        "instancePods": "1/1",
+        "cpuUsage": "5%",
+        "memoryUsage": "64Mi",
+        "creationTime": "2023-10-24 11:00:00"
+      },
+      {
+        "appId": "app-007",
+        "applicationName": "analytics-service",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "5/5",
+        "cpuUsage": "78%",
+        "memoryUsage": "2048Mi",
+        "creationTime": "2023-10-20 14:00:00"
+      },
+      {
+        "appId": "app-008",
+        "applicationName": "search-engine",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "3/3",
+        "cpuUsage": "60%",
+        "memoryUsage": "4096Mi",
+        "creationTime": "2023-10-19 16:30:00"
+      },
+      {
+        "appId": "app-009",
+        "applicationName": "crm-backend",
+        "statusTag": "已停止",
+        "statusTagColor": "default",
+        "instancePods": "0/2",
+        "cpuUsage": "0%",
+        "memoryUsage": "0Mi",
+        "creationTime": "2023-10-18 09:45:00"
+      },
+      {
+        "appId": "app-010",
+        "applicationName": "log-collector",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "6/6",
+        "cpuUsage": "10%",
+        "memoryUsage": "128Mi",
+        "creationTime": "2023-10-17 11:20:00"
+      },
+      {
+        "appId": "app-011",
+        "applicationName": "message-queue-broker",
+        "statusTag": "运行中",
+        "statusTagColor": "success",
+        "instancePods": "2/2",
+        "cpuUsage": "33%",
+        "memoryUsage": "1024Mi",
+        "creationTime": "2023-10-16 08:10:00"
+      }
+    ]
+  },
+  "rootId": "rootAppContainer",
+  "elements": [
+    {
+      "id": "rootAppContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavBar",
+        "bodyContainer"
+      ]
+    },
+    {
+      "id": "topNavBar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center h-14 bg-inverse-surface px-6 shadow-md"
+      },
+      "children": [
+        "headerBrandArea",
+        "headerNavMenu",
+        "headerRightArea"
+      ]
+    },
+    {
+      "id": "headerBrandArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 mr-8"
+      },
+      "children": [
+        "headerBrandIcon",
+        "headerBrandText"
+      ]
+    },
+    {
+      "id": "headerBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandInfo/logoIcon"
+        },
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-7 h-7"
+      }
+    },
+    {
+      "id": "headerBrandText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandInfo/brandName"
+        },
+        "className": "text-lg font-bold text-inverse-on-surface tracking-wide"
+      }
+    },
+    {
+      "id": "headerNavMenu",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 flex-1"
+      },
+      "children": {
+        "path": "/mainNavMenus",
+        "componentId": "headerNavItem"
+      }
+    },
+    {
+      "id": "headerNavItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5 px-3 py-1.5 rounded-md hover:bg-white/10 transition-colors cursor-pointer"
+      },
+      "children": [
+        "headerNavIcon",
+        "headerNavLabel"
+      ]
+    },
+    {
+      "id": "headerNavIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "menuIcon"
+        },
+        "color": "inverse",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "headerNavLabel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "menuName"
+        },
+        "className": "text-sm text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "headerRightArea",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-4 ml-auto"
+      },
+      "children": [
+        "headerSearchInput",
+        "headerNotifWrap",
+        "headerUserDropdown"
+      ]
+    },
+    {
+      "id": "headerSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "搜索资源...",
+        "prefix": "search",
+        "size": "small",
+        "className": "w-52"
+      }
+    },
+    {
+      "id": "headerNotifWrap",
+      "component": "div",
+      "props": {
+        "className": "relative"
+      },
+      "children": [
+        "headerNotifBtn",
+        "headerNotifCount"
+      ]
+    },
+    {
+      "id": "headerNotifBtn",
+      "component": "Button",
+      "props": {
+        "icon": "bell",
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "headerNotifCount",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/adminUserInfo/notificationCount"
+        },
+        "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error rounded-full w-4 h-4 flex items-center justify-center text-xs font-bold"
+      }
+    },
+    {
+      "id": "headerUserDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": [
+          {
+            "label": "个人设置",
+            "key": "settings",
+            "icon": "settings"
+          },
+          {
+            "label": "退出登录",
+            "key": "logout",
+            "icon": "log-out"
+          }
+        ]
+      },
+      "children": [
+        "headerUserTrigger"
+      ]
+    },
+    {
+      "id": "headerUserTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 cursor-pointer"
+      },
+      "children": [
+        "headerUserAvatar",
+        "headerUserInfoText",
+        "headerDropdownIcon"
+      ]
+    },
+    {
+      "id": "headerUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/adminUserInfo/userAvatarImage"
+        },
+        "alt": "用户头像",
+        "className": "w-8 h-8 rounded-full object-cover"
+      }
+    },
+    {
+      "id": "headerUserInfoText",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "headerUserNameSpan",
+        "headerUserRoleSpan"
+      ]
+    },
+    {
+      "id": "headerUserNameSpan",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/adminUserInfo/userName"
+        },
+        "className": "text-sm font-medium text-inverse-on-surface"
+      }
+    },
+    {
+      "id": "headerUserRoleSpan",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/adminUserInfo/userRole"
+        },
+        "className": "text-xs text-inverse-on-surface-variant"
+      }
+    },
+    {
+      "id": "headerDropdownIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "inverse",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "bodyContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-1 overflow-hidden"
+      },
+      "children": [
+        "leftSidebar",
+        "mainContent"
+      ]
+    },
+    {
+      "id": "leftSidebar",
+      "component": "div",
+      "props": {
+        "className": "w-56 bg-surface-container-highest shadow-card flex flex-col shrink-0"
+      },
+      "children": [
+        "sidebarHeader",
+        "sidebarMenuList"
+      ]
+    },
+    {
+      "id": "sidebarHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-4 py-4 border-b border-divider"
+      },
+      "children": [
+        "sidebarTitle",
+        "sidebarCollapseIcon"
+      ]
+    },
+    {
+      "id": "sidebarTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/menuCategoryTitle"
+        },
+        "className": "text-md font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "sidebarCollapseIcon",
+      "component": "Icon",
+      "props": {
+        "name": "panel-left-close",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-5 h-5 cursor-pointer"
+      }
+    },
+    {
+      "id": "sidebarMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col py-2"
+      },
+      "children": [
+        "sidebarItem1",
+        "sidebarItem2",
+        "sidebarItem3",
+        "sidebarItem4"
+      ]
+    },
+    {
+      "id": "sidebarItem1",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 cursor-pointer transition-colors"
+      },
+      "children": [
+        "sidebarItem1Icon",
+        "sidebarItem1Label"
+      ]
+    },
+    {
+      "id": "sidebarItem1Icon",
+      "component": "Icon",
+      "props": {
+        "name": "server",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "sidebarItem1Label",
+      "component": "span",
+      "props": {
+        "value": "云服务器 ECS",
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarItem2",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 cursor-pointer transition-colors"
+      },
+      "children": [
+        "sidebarItem2Icon",
+        "sidebarItem2Label"
+      ]
+    },
+    {
+      "id": "sidebarItem2Icon",
+      "component": "Icon",
+      "props": {
+        "name": "scale",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "sidebarItem2Label",
+      "component": "span",
+      "props": {
+        "value": "负载均衡 SLB",
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarItem3",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 cursor-pointer transition-colors"
+      },
+      "children": [
+        "sidebarItem3Icon",
+        "sidebarItem3Label"
+      ]
+    },
+    {
+      "id": "sidebarItem3Icon",
+      "component": "Icon",
+      "props": {
+        "name": "hard-drive",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "sidebarItem3Label",
+      "component": "span",
+      "props": {
+        "value": "块存储 EBS",
+        "className": "text-sm"
+      }
+    },
+    {
+      "id": "sidebarItem4",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col"
+      },
+      "children": [
+        "sidebarItem4Header",
+        "sidebarSubMenuList"
+      ]
+    },
+    {
+      "id": "sidebarItem4Header",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg bg-primary-container text-on-primary-container cursor-pointer"
+      },
+      "children": [
+        "sidebarItem4Icon",
+        "sidebarItem4Label",
+        "sidebarItem4Arrow"
+      ]
+    },
+    {
+      "id": "sidebarItem4Icon",
+      "component": "Icon",
+      "props": {
+        "name": "box",
+        "color": "primary",
+        "shape": "fill",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "sidebarItem4Label",
+      "component": "span",
+      "props": {
+        "value": "容器应用 CCE",
+        "className": "text-sm font-medium"
+      }
+    },
+    {
+      "id": "sidebarItem4Arrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "primary",
+        "className": "w-4 h-4 ml-auto"
+      }
+    },
+    {
+      "id": "sidebarSubMenuList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col py-1"
+      },
+      "children": [
+        "sidebarSubItem1",
+        "sidebarSubItem2",
+        "sidebarSubItem3"
+      ]
+    },
+    {
+      "id": "sidebarSubItem1",
+      "component": "div",
+      "props": {
+        "className": "pl-10 pr-4 py-2 text-sm text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors"
+      },
+      "children": [
+        "sidebarSubItem1Label"
+      ]
+    },
+    {
+      "id": "sidebarSubItem1Label",
+      "component": "span",
+      "props": {
+        "value": "集群管理"
+      }
+    },
+    {
+      "id": "sidebarSubItem2",
+      "component": "div",
+      "props": {
+        "className": "pl-10 pr-4 py-2 text-sm text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors"
+      },
+      "children": [
+        "sidebarSubItem2Label"
+      ]
+    },
+    {
+      "id": "sidebarSubItem2Label",
+      "component": "span",
+      "props": {
+        "value": "节点管理"
+      }
+    },
+    {
+      "id": "sidebarSubItem3",
+      "component": "div",
+      "props": {
+        "className": "pl-10 pr-4 py-2 text-sm text-primary font-semibold cursor-pointer"
+      },
+      "children": [
+        "sidebarSubItem3Label"
+      ]
+    },
+    {
+      "id": "sidebarSubItem3Label",
+      "component": "span",
+      "props": {
+        "value": "工作负载"
+      }
+    },
+    {
+      "id": "mainContent",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-auto"
+      },
+      "children": [
+        "workspaceTabs"
+      ]
+    },
+    {
+      "id": "workspaceTabs",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        }
+      },
+      "children": [
+        "mainTab1Item",
+        "mainTab2Item",
+        "mainTab3Item",
+        "mainTab4Item",
+        "mainTab5Item"
+      ]
+    },
+    {
+      "id": "mainTab1Item",
+      "component": "TabItem",
+      "props": {
+        "key": "tab_1",
+        "label": "容器应用",
+        "content": {
+          "componentId": "mainContainerTabContent"
+        }
+      }
+    },
+    {
+      "id": "mainContainerTabContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-6 p-6"
+      },
+      "children": [
+        "guideCard",
+        "tableCard"
+      ]
+    },
+    {
+      "id": "guideCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card overflow-hidden"
+      },
+      "children": [
+        "guideCardInner"
+      ]
+    },
+    {
+      "id": "guideCardInner",
+      "component": "div",
+      "props": {
+        "className": "flex min-h-[220px]"
+      },
+      "children": [
+        "guideCardLeft",
+        "guideCardRight"
+      ]
+    },
+    {
+      "id": "guideCardLeft",
+      "component": "div",
+      "props": {
+        "className": "w-2/5 relative overflow-hidden bg-gradient-to-br from-primary/20 to-info-container"
+      },
+      "children": [
+        "guideCardImage"
+      ]
+    },
+    {
+      "id": "guideCardImage",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/guideCoverImage"
+        },
+        "alt": "容器应用部署指引插图",
+        "className": "w-full h-full object-cover"
+      }
+    },
+    {
+      "id": "guideCardRight",
+      "component": "div",
+      "props": {
+        "className": "w-3/5 p-6 flex flex-col justify-center"
+      },
+      "children": [
+        "guideCardTitle",
+        "guideSteps"
+      ]
+    },
+    {
+      "id": "guideCardTitle",
+      "component": "h3",
+      "props": {
+        "value": {
+          "path": "/guideCardTitle"
+        },
+        "className": "text-xl font-bold text-on-surface mb-4"
+      }
+    },
+    {
+      "id": "guideSteps",
+      "component": "Steps",
+      "props": {
+        "current": {
+          "path": "/currentStep"
+        },
+        "orientation": "horizontal",
+        "variant": "filled",
+        "className": "mt-2"
+      },
+      "children": {
+        "path": "/guideSteps",
+        "componentId": "guideStepItem"
+      }
+    },
+    {
+      "id": "guideStepItem",
+      "component": "StepItem",
+      "props": {
+        "title": {
+          "path": "stepTitle"
+        },
+        "content": {
+          "componentId": "guideStepContent"
+        },
+        "status": {
+          "path": "stepStatus"
+        }
+      }
+    },
+    {
+      "id": "guideStepContent",
+      "component": "div",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1",
+        "value": {
+          "path": "stepDescription"
+        }
+      }
+    },
+    {
+      "id": "tableCard",
+      "component": "div",
+      "props": {
+        "className": "bg-surface-container-highest rounded-xl shadow-card"
+      },
+      "children": [
+        "tableToolbar",
+        "mainTable"
+      ]
+    },
+    {
+      "id": "tableToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between px-6 py-4 border-b border-divider"
+      },
+      "children": [
+        "tableToolbarLeft",
+        "tableToolbarRight"
+      ]
+    },
+    {
+      "id": "tableToolbarLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "tableCardTitle"
+      ]
+    },
+    {
+      "id": "tableCardTitle",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/tableCardTitle"
+        },
+        "className": "text-lg font-bold text-on-surface"
+      }
+    },
+    {
+      "id": "tableToolbarRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "btnCreateImage",
+        "btnCreateYaml",
+        "btnBatchDelete",
+        "btnRefresh"
+      ]
+    },
+    {
+      "id": "btnCreateImage",
+      "component": "Button",
+      "props": {
+        "value": "使用镜像创建",
+        "icon": "plus-circle",
+        "iconPlacement": "start",
+        "color": "primary",
+        "size": "small"
+      }
+    },
+    {
+      "id": "btnCreateYaml",
+      "component": "Button",
+      "props": {
+        "value": "使用YAML创建",
+        "icon": "file-code",
+        "iconPlacement": "start",
+        "size": "small"
+      }
+    },
+    {
+      "id": "btnBatchDelete",
+      "component": "Button",
+      "props": {
+        "value": "批量删除",
+        "icon": "trash-2",
+        "iconPlacement": "start",
+        "color": "danger",
+        "size": "small"
+      }
+    },
+    {
+      "id": "btnRefresh",
+      "component": "Button",
+      "props": {
+        "icon": "refresh-cw",
+        "shape": "circle",
+        "size": "small"
+      }
+    },
+    {
+      "id": "mainTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "appId",
+        "dataSource": {
+          "path": "/applicationList"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedRowKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "应用名称",
+            "dataIndex": "applicationName"
+          },
+          {
+            "title": "状态",
+            "dataIndex": "statusTag",
+            "width": 100
+          },
+          {
+            "title": "实例(Pod)",
+            "dataIndex": "instancePods",
+            "width": 100
+          },
+          {
+            "title": "CPU使用率",
+            "dataIndex": "cpuUsage",
+            "width": 100
+          },
+          {
+            "title": "内存使用",
+            "dataIndex": "memoryUsage",
+            "width": 100
+          },
+          {
+            "title": "创建时间",
+            "dataIndex": "creationTime",
+            "width": 160
+          },
+          {
+            "title": "操作",
+            "dataIndex": "actionIcons",
+            "width": 120,
+            "align": "center"
+          }
+        ],
+        "className": "mb-4"
+      },
+      "children": {
+        "path": "/applicationList",
+        "componentId": "tableRow"
+      }
+    },
+    {
+      "id": "tableRow",
+      "component": "TableRow",
+      "children": [
+        "tableNameCell",
+        "tableStatusCell",
+        "tablePodsCell",
+        "tableCpuCell",
+        "tableMemoryCell",
+        "tableCreateTimeCell",
+        "tableActionCell"
+      ]
+    },
+    {
+      "id": "tableNameCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "applicationName"
+        },
+        "className": "font-medium text-on-surface"
+      }
+    },
+    {
+      "id": "tableStatusCell",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "statusTag"
+        },
+        "color": {
+          "path": "statusTagColor"
+        }
+      }
+    },
+    {
+      "id": "tablePodsCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "instancePods"
+        },
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "tableCpuCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "cpuUsage"
+        },
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "tableMemoryCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "memoryUsage"
+        },
+        "className": "text-on-surface"
+      }
+    },
+    {
+      "id": "tableCreateTimeCell",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "creationTime"
+        },
+        "className": "text-on-surface-variant text-sm"
+      }
+    },
+    {
+      "id": "tableActionCell",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-center gap-3"
+      },
+      "children": [
+        "tableActionPlus",
+        "tableActionDelete",
+        "tableActionMore"
+      ]
+    },
+    {
+      "id": "tableActionPlus",
+      "component": "Icon",
+      "props": {
+        "name": "plus",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4 cursor-pointer"
+      }
+    },
+    {
+      "id": "tableActionDelete",
+      "component": "Icon",
+      "props": {
+        "name": "trash-2",
+        "color": "error",
+        "shape": "outline",
+        "className": "w-4 h-4 cursor-pointer"
+      }
+    },
+    {
+      "id": "tableActionMore",
+      "component": "Icon",
+      "props": {
+        "name": "more-vertical",
+        "color": "default",
+        "shape": "outline",
+        "className": "w-4 h-4 cursor-pointer"
+      }
+    },
+    {
+      "id": "mainTab2Item",
+      "component": "TabItem",
+      "props": {
+        "key": "tab_2",
+        "label": "有状态副本集",
+        "content": "有状态副本集（StatefulSet）管理功能即将上线，敬请期待。"
+      }
+    },
+    {
+      "id": "mainTab3Item",
+      "component": "TabItem",
+      "props": {
+        "key": "tab_3",
+        "label": "守护进程集",
+        "content": "守护进程集（DaemonSet）管理功能即将上线，敬请期待。"
+      }
+    },
+    {
+      "id": "mainTab4Item",
+      "component": "TabItem",
+      "props": {
+        "key": "tab_4",
+        "label": "任务",
+        "content": "任务（Job）管理功能即将上线，敬请期待。"
+      }
+    },
+    {
+      "id": "mainTab5Item",
+      "component": "TabItem",
+      "props": {
+        "key": "tab_5",
+        "label": "定时任务",
+        "content": "定时任务（CronJob）管理功能即将上线，敬请期待。"
+      }
+    }
+  ]
+}

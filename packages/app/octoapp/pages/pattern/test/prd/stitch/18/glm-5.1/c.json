@@ -1,0 +1,1523 @@
+{
+    "state": {
+        "logoText": "ProjectIntelligence",
+        "activeNavTab": "schedules",
+        "navItems": [
+            {
+                "key": "dashboard",
+                "label": "Dashboard"
+            },
+            {
+                "key": "schedules",
+                "label": "Schedules"
+            },
+            {
+                "key": "resources",
+                "label": "Resources"
+            },
+            {
+                "key": "analytics",
+                "label": "Analytics"
+            }
+        ],
+        "searchPlaceholder": "Search project nodes...",
+        "searchValue": "",
+        "actionIcons": [
+            {
+                "iconName": "bell",
+                "hasNotification": true
+            },
+            {
+                "iconName": "message-square",
+                "hasNotification": false
+            },
+            {
+                "iconName": "settings",
+                "hasNotification": false
+            }
+        ],
+        "primaryAction": {
+            "label": "Publish Plan",
+            "iconName": "send"
+        },
+        "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+        "projectInfo": {
+            "avatarImage": "https://picsum.photos/seed/proj-alpha/200/200",
+            "projectName": "Project Alpha",
+            "projectCategory": "Enterprise Infrastructure"
+        },
+        "sideMenu": [
+            {
+                "label": "Overview",
+                "iconName": "layout-dashboard",
+                "iconColor": "default"
+            },
+            {
+                "label": "Gantt View",
+                "iconName": "gantt-chart",
+                "iconColor": "primary"
+            },
+            {
+                "label": "Team Load",
+                "iconName": "users",
+                "iconColor": "default"
+            },
+            {
+                "label": "Risk Registry",
+                "iconName": "shield-alert",
+                "iconColor": "default"
+            },
+            {
+                "label": "Settings",
+                "iconName": "settings-2",
+                "iconColor": "default"
+            }
+        ],
+        "quickAction": {
+            "label": "New Milestone",
+            "iconName": "plus-circle"
+        },
+        "footerLink": {
+            "label": "Help Center",
+            "iconName": "life-buoy"
+        },
+        "activeViewMode": "week",
+        "timeControls": {
+            "todayButtonLabel": "Today",
+            "viewModes": [
+                {
+                    "key": "day",
+                    "label": "Day"
+                },
+                {
+                    "key": "week",
+                    "label": "Week"
+                },
+                {
+                    "key": "month",
+                    "label": "Month"
+                },
+                {
+                    "key": "quarter",
+                    "label": "Quarter"
+                }
+            ]
+        },
+        "legends": [
+            {
+                "label": "Critical Path",
+                "color": "#E02128"
+            },
+            {
+                "label": "Conflict",
+                "color": "#F4840C"
+            },
+            {
+                "label": "Milestone",
+                "iconName": "diamond"
+            }
+        ],
+        "ganttHeader": {
+            "monthTitle": "OCTOBER 2023",
+            "weekColumns": [
+                {
+                    "label": "WEEK 41"
+                },
+                {
+                    "label": "WEEK 42"
+                },
+                {
+                    "label": "WEEK 43"
+                },
+                {
+                    "label": "WEEK 44"
+                },
+                {
+                    "label": "WEEK 45"
+                },
+                {
+                    "label": "WEEK 46"
+                }
+            ]
+        },
+        "taskTableRows": [
+            {
+                "taskId": "task-1",
+                "rowType": "task",
+                "hasChildren": true,
+                "isExpanded": true,
+                "expanderIconName": "chevron-down",
+                "taskIcon": "chevron-down",
+                "taskName": "Core Infra Aud...",
+                "assigneeAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+                "statusTag": "IN PROGRESS",
+                "statusTagColor": "processing",
+                "datesText": "Oct 12 - Oct 28",
+                "ganttBar": {
+                    "startWeek": "WEEK 41",
+                    "endWeek": "WEEK 43",
+                    "barColor": "black",
+                    "progress": 85,
+                    "barLabel": "Core Infra Audit (85%)"
+                }
+            },
+            {
+                "taskId": "task-2",
+                "rowType": "task",
+                "hasChildren": true,
+                "isExpanded": false,
+                "expanderIconName": "chevron-right",
+                "taskIcon": "chevron-right",
+                "taskName": "Network Harde...",
+                "assigneeAvatarImage": "https://randomuser.me/api/portraits/men/45.jpg",
+                "statusTag": "DELAYED",
+                "statusTagColor": "error",
+                "datesText": "Oct 15 - Nov 05",
+                "ganttBar": {
+                    "startWeek": "WEEK 42",
+                    "endWeek": "WEEK 45",
+                    "barColor": "red",
+                    "barLabel": "Network Hardening",
+                    "barIconName": "alert-triangle"
+                },
+                "dependencies": [
+                    {
+                        "fromTaskId": "task-1",
+                        "toTaskId": "task-2",
+                        "lineType": "dashed",
+                        "lineColor": "red"
+                    }
+                ],
+                "hasDependency": true
+            },
+            {
+                "taskId": "task-3",
+                "rowType": "task",
+                "hasChildren": false,
+                "expanderIconName": null,
+                "taskIcon": "minus",
+                "taskName": "Server Provisioning",
+                "assigneeAvatarImage": "https://randomuser.me/api/portraits/women/46.jpg",
+                "statusTag": "PLANNED",
+                "statusTagColor": "default",
+                "datesText": "Nov 01 - Nov 12",
+                "ganttBar": {
+                    "startWeek": "WEEK 44",
+                    "endWeek": "WEEK 46",
+                    "barColor": "gray",
+                    "barLabel": "Server Provisioning"
+                }
+            },
+            {
+                "taskId": "task-4",
+                "rowType": "sub-task",
+                "hasChildren": false,
+                "expanderIconName": null,
+                "taskIcon": "minus",
+                "taskName": "Firewall Configurations",
+                "assigneeAvatarImage": "https://randomuser.me/api/portraits/men/47.jpg",
+                "statusTag": "IN PROGRESS",
+                "statusTagColor": "processing",
+                "datesText": "Oct 20 - Oct 30",
+                "ganttBar": {
+                    "startWeek": "WEEK 42",
+                    "endWeek": "WEEK 44",
+                    "barColor": "black",
+                    "progress": 30,
+                    "barLabel": "Firewall Configurations (30%)"
+                }
+            },
+            {
+                "taskId": "task-5",
+                "rowType": "sub-task",
+                "hasChildren": false,
+                "expanderIconName": null,
+                "taskIcon": "minus",
+                "taskName": "Legacy System Migration",
+                "assigneeAvatarImage": "https://randomuser.me/api/portraits/women/48.jpg",
+                "statusTag": "BLOCKED",
+                "statusTagColor": "warning",
+                "datesText": "Oct 18 - Nov 02",
+                "ganttBar": {
+                    "startWeek": "WEEK 42",
+                    "endWeek": "WEEK 44",
+                    "barColor": "orange",
+                    "barLabel": "Legacy System Migration",
+                    "barIconName": "pause-circle"
+                }
+            },
+            {
+                "taskId": "task-6",
+                "rowType": "milestone",
+                "hasChildren": false,
+                "expanderIconName": null,
+                "taskIcon": "diamond",
+                "milestoneIconName": "diamond",
+                "taskName": "Phase 1 Compl...",
+                "assigneeAvatarImage": "https://picsum.photos/seed/default-user/200/200",
+                "statusTag": "MILESTONE",
+                "statusTagColor": "#715AFB",
+                "datesText": "Nov 15",
+                "ganttBar": {
+                    "positionWeek": "WEEK 46",
+                    "barColor": "purple",
+                    "barLabel": "Phase 1 Compl..."
+                }
+            }
+        ],
+        "leftStats": [
+            {
+                "label": "Active Tasks",
+                "value": 24,
+                "iconName": "circle-check",
+                "iconColor": "primary"
+            },
+            {
+                "label": "Critical Path Risks",
+                "value": 3,
+                "iconName": "alert-triangle",
+                "iconColor": "error"
+            },
+            {
+                "label": "Resource Conflicts",
+                "value": 1,
+                "iconName": "users",
+                "iconColor": "warning"
+            }
+        ],
+        "rightSync": {
+            "lastUpdated": "Today, 09:42 AM",
+            "syncStatus": "Live Sync Active",
+            "syncIndicatorColor": "green"
+        }
+    },
+    "rootId": "rootContainer",
+    "elements": [
+        {
+            "id": "rootContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "topNavBar",
+                "middleRow",
+                "footerStatusBar"
+            ]
+        },
+        {
+            "id": "topNavBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center h-14 px-4 bg-surface-container-highest shadow-sm border-b border-divider gap-4 shrink-0"
+            },
+            "children": [
+                "topNavLeft",
+                "topNavCenter",
+                "topNavRight"
+            ]
+        },
+        {
+            "id": "topNavLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4 shrink-0"
+            },
+            "children": [
+                "topNavLogoText",
+                "topNavTabs"
+            ]
+        },
+        {
+            "id": "topNavLogoText",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-primary whitespace-nowrap",
+                "value": {
+                    "path": "/logoText"
+                }
+            }
+        },
+        {
+            "id": "topNavTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeNavTab"
+                },
+                "size": "medium"
+            },
+            "children": {
+                "path": "/navItems",
+                "componentId": "topNavItem"
+            }
+        },
+        {
+            "id": "topNavItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "topNavCenter",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center px-4"
+            },
+            "children": [
+                "topNavSearchInput"
+            ]
+        },
+        {
+            "id": "topNavSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-full max-w-md"
+            }
+        },
+        {
+            "id": "topNavRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 shrink-0"
+            },
+            "children": [
+                "topNavBellWrap",
+                "topNavMsgIcon",
+                "topNavSettingsIcon",
+                "topNavPublishBtn",
+                "topNavAvatarWrap"
+            ]
+        },
+        {
+            "id": "topNavBellWrap",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "topNavBellIcon",
+                "topNavBellDot"
+            ]
+        },
+        {
+            "id": "topNavBellIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/actionIcons/0/iconName"
+                },
+                "shape": "outline",
+                "className": "w-5 h-5 text-on-surface"
+            }
+        },
+        {
+            "id": "topNavBellDot",
+            "component": "div",
+            "props": {
+                "className": "absolute -top-1 -right-1 w-2 h-2 rounded-full bg-error"
+            }
+        },
+        {
+            "id": "topNavMsgIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/actionIcons/1/iconName"
+                },
+                "shape": "outline",
+                "className": "w-5 h-5 text-on-surface cursor-pointer"
+            }
+        },
+        {
+            "id": "topNavSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/actionIcons/2/iconName"
+                },
+                "shape": "outline",
+                "className": "w-5 h-5 text-on-surface cursor-pointer"
+            }
+        },
+        {
+            "id": "topNavPublishBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/primaryAction/label"
+                },
+                "icon": {
+                    "path": "/primaryAction/iconName"
+                },
+                "iconPlacement": "start",
+                "color": "primary",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "topNavAvatarWrap",
+            "component": "div",
+            "props": {
+                "className": "w-8 h-8 rounded-full overflow-hidden ml-1"
+            },
+            "children": [
+                "topNavAvatar"
+            ]
+        },
+        {
+            "id": "topNavAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userAvatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "middleRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "leftSidebar",
+                "mainContentArea"
+            ]
+        },
+        {
+            "id": "leftSidebar",
+            "component": "div",
+            "props": {
+                "className": "w-56 flex flex-col bg-surface-container-highest border-r border-divider py-4 shrink-0"
+            },
+            "children": [
+                "sidebarProjectCard",
+                "sidebarDivider",
+                "sidebarMenuList",
+                "sidebarQuickBtn",
+                "sidebarSpacer",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarProjectCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 mb-4"
+            },
+            "children": [
+                "sidebarProjectAvatarWrap",
+                "sidebarProjectInfo"
+            ]
+        },
+        {
+            "id": "sidebarProjectAvatarWrap",
+            "component": "div",
+            "props": {
+                "className": "w-10 h-10 rounded-lg overflow-hidden shrink-0"
+            },
+            "children": [
+                "sidebarProjectAvatar"
+            ]
+        },
+        {
+            "id": "sidebarProjectAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/projectInfo/avatarImage"
+                },
+                "alt": "Project",
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "sidebarProjectInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-w-0"
+            },
+            "children": [
+                "sidebarProjectName",
+                "sidebarProjectCategory"
+            ]
+        },
+        {
+            "id": "sidebarProjectName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold text-on-surface truncate",
+                "value": {
+                    "path": "/projectInfo/projectName"
+                }
+            }
+        },
+        {
+            "id": "sidebarProjectCategory",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant truncate",
+                "value": {
+                    "path": "/projectInfo/projectCategory"
+                }
+            }
+        },
+        {
+            "id": "sidebarDivider",
+            "component": "div",
+            "props": {
+                "className": "h-px bg-border-divider mx-4 mb-3"
+            }
+        },
+        {
+            "id": "sidebarMenuList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 px-2"
+            },
+            "children": {
+                "path": "/sideMenu",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-action cursor-pointer hover:bg-surface-variant"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "iconName"
+                },
+                "color": {
+                    "path": "iconColor"
+                },
+                "className": "w-4 h-4 shrink-0"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface truncate",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarQuickBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/quickAction/label"
+                },
+                "icon": {
+                    "path": "/quickAction/iconName"
+                },
+                "iconPlacement": "start",
+                "color": "primary",
+                "className": "mx-4 mt-4"
+            }
+        },
+        {
+            "id": "sidebarSpacer",
+            "component": "div",
+            "props": {
+                "className": "flex-1"
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 px-4 py-3 cursor-pointer"
+            },
+            "children": [
+                "sidebarFooterIcon",
+                "sidebarFooterLabel"
+            ]
+        },
+        {
+            "id": "sidebarFooterIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/footerLink/iconName"
+                },
+                "className": "w-4 h-4",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarFooterLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/footerLink/label"
+                }
+            }
+        },
+        {
+            "id": "mainContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col flex-1 overflow-hidden"
+            },
+            "children": [
+                "ganttToolbar",
+                "ganttWorkspace"
+            ]
+        },
+        {
+            "id": "ganttToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-4 py-2 bg-surface-container-highest border-b border-divider shrink-0"
+            },
+            "children": [
+                "ganttToolbarLeft",
+                "ganttToolbarRight"
+            ]
+        },
+        {
+            "id": "ganttToolbarLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "ganttToolbarTodayBtn",
+                "ganttToolbarViewTabs"
+            ]
+        },
+        {
+            "id": "ganttToolbarTodayBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/timeControls/todayButtonLabel"
+                },
+                "size": "medium"
+            }
+        },
+        {
+            "id": "ganttToolbarViewTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeViewMode"
+                },
+                "size": "small"
+            },
+            "children": {
+                "path": "/timeControls/viewModes",
+                "componentId": "ganttViewModeItem"
+            }
+        },
+        {
+            "id": "ganttViewModeItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "ganttToolbarRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-5"
+            },
+            "children": [
+                "ganttLegendCritical",
+                "ganttLegendConflict",
+                "ganttLegendMilestone"
+            ]
+        },
+        {
+            "id": "ganttLegendCritical",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "ganttLegendCriticalDot",
+                "ganttLegendCriticalLabel"
+            ]
+        },
+        {
+            "id": "ganttLegendCriticalDot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-sm bg-error"
+            }
+        },
+        {
+            "id": "ganttLegendCriticalLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/legends/0/label"
+                }
+            }
+        },
+        {
+            "id": "ganttLegendConflict",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "ganttLegendConflictDot",
+                "ganttLegendConflictLabel"
+            ]
+        },
+        {
+            "id": "ganttLegendConflictDot",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-sm bg-warning"
+            }
+        },
+        {
+            "id": "ganttLegendConflictLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/legends/1/label"
+                }
+            }
+        },
+        {
+            "id": "ganttLegendMilestone",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "ganttLegendMilestoneIcon",
+                "ganttLegendMilestoneLabel"
+            ]
+        },
+        {
+            "id": "ganttLegendMilestoneIcon",
+            "component": "Icon",
+            "props": {
+                "name": "diamond",
+                "color": "primary",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "ganttLegendMilestoneLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/legends/2/label"
+                }
+            }
+        },
+        {
+            "id": "ganttWorkspace",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "ganttLeftPanel",
+                "ganttRightPanel"
+            ]
+        },
+        {
+            "id": "ganttLeftPanel",
+            "component": "div",
+            "props": {
+                "className": "w-[380px] shrink-0 border-r border-divider bg-surface-container-highest overflow-y-auto"
+            },
+            "children": [
+                "ganttTaskTable"
+            ]
+        },
+        {
+            "id": "ganttTaskTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "taskId",
+                "dataSource": {
+                    "path": "/taskTableRows"
+                },
+                "columns": [
+                    {
+                        "title": "Task Name",
+                        "dataIndex": "taskName",
+                        "minWidth": 140
+                    },
+                    {
+                        "title": "Assignee",
+                        "dataIndex": "assigneeAvatarImage",
+                        "width": 60,
+                        "align": "center"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "statusTag",
+                        "width": 110
+                    },
+                    {
+                        "title": "Dates",
+                        "dataIndex": "datesText",
+                        "width": 110
+                    }
+                ],
+                "pagination": false,
+                "className": "mb-4"
+            },
+            "children": {
+                "path": "/taskTableRows",
+                "componentId": "ganttTaskRow"
+            }
+        },
+        {
+            "id": "ganttTaskRow",
+            "component": "TableRow",
+            "children": [
+                "ganttTaskNameCell",
+                "ganttTaskAssigneeCell",
+                "ganttTaskStatusCell",
+                "ganttTaskDatesCell"
+            ]
+        },
+        {
+            "id": "ganttTaskNameCell",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "ganttTaskIcon",
+                "ganttTaskNameText"
+            ]
+        },
+        {
+            "id": "ganttTaskIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "taskIcon"
+                },
+                "className": "w-4 h-4 shrink-0",
+                "color": "default"
+            }
+        },
+        {
+            "id": "ganttTaskNameText",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface truncate",
+                "value": {
+                    "path": "taskName"
+                }
+            }
+        },
+        {
+            "id": "ganttTaskAssigneeCell",
+            "component": "div",
+            "props": {
+                "className": "flex justify-center"
+            },
+            "children": [
+                "ganttTaskAvatarWrap"
+            ]
+        },
+        {
+            "id": "ganttTaskAvatarWrap",
+            "component": "div",
+            "props": {
+                "className": "w-6 h-6 rounded-full overflow-hidden"
+            },
+            "children": [
+                "ganttTaskAvatar"
+            ]
+        },
+        {
+            "id": "ganttTaskAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "assigneeAvatarImage"
+                },
+                "alt": "Assignee",
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "ganttTaskStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "statusTag"
+                },
+                "color": {
+                    "path": "statusTagColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "ganttTaskDatesCell",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "datesText"
+                }
+            }
+        },
+        {
+            "id": "ganttRightPanel",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden bg-surface-container-highest"
+            },
+            "children": [
+                "ganttChartHeader",
+                "ganttChartBody"
+            ]
+        },
+        {
+            "id": "ganttChartHeader",
+            "component": "div",
+            "props": {
+                "className": "border-b border-divider shrink-0"
+            },
+            "children": [
+                "ganttMonthHeader",
+                "ganttWeekHeader"
+            ]
+        },
+        {
+            "id": "ganttMonthHeader",
+            "component": "div",
+            "props": {
+                "className": "px-4 py-2 border-b border-divider"
+            },
+            "children": [
+                "ganttMonthTitle"
+            ]
+        },
+        {
+            "id": "ganttMonthTitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-semibold text-on-surface-variant uppercase tracking-wider",
+                "value": {
+                    "path": "/ganttHeader/monthTitle"
+                }
+            }
+        },
+        {
+            "id": "ganttWeekHeader",
+            "component": "div",
+            "props": {
+                "className": "flex"
+            },
+            "children": {
+                "path": "/ganttHeader/weekColumns",
+                "componentId": "ganttWeekCol"
+            }
+        },
+        {
+            "id": "ganttWeekCol",
+            "component": "div",
+            "props": {
+                "className": "flex-1 text-center py-1.5 border-r border-divider last:border-r-0"
+            },
+            "children": [
+                "ganttWeekLabel"
+            ]
+        },
+        {
+            "id": "ganttWeekLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "ganttChartBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 relative overflow-y-auto"
+            },
+            "children": [
+                "ganttCurrentTimeLine",
+                "ganttGridLine1",
+                "ganttGridLine2",
+                "ganttGridLine3",
+                "ganttGridLine4",
+                "ganttGridLine5",
+                "ganttRowList",
+                "ganttDepLineV",
+                "ganttDepLineH"
+            ]
+        },
+        {
+            "id": "ganttCurrentTimeLine",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-1/4 z-10 flex flex-col items-center"
+            },
+            "children": [
+                "ganttCurrentTimeTag",
+                "ganttCurrentTimeStick"
+            ]
+        },
+        {
+            "id": "ganttCurrentTimeTag",
+            "component": "div",
+            "props": {
+                "className": "bg-primary text-on-primary text-[10px] px-1.5 py-0.5 rounded-badge whitespace-nowrap mb-0.5"
+            },
+            "children": [
+                "ganttCurrentTimeTagText"
+            ]
+        },
+        {
+            "id": "ganttCurrentTimeTagText",
+            "component": "span",
+            "props": {
+                "value": "Today"
+            }
+        },
+        {
+            "id": "ganttCurrentTimeStick",
+            "component": "div",
+            "props": {
+                "className": "w-0.5 flex-1 bg-primary opacity-60"
+            }
+        },
+        {
+            "id": "ganttGridLine1",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-[16.67%] w-px bg-border-divider z-0"
+            }
+        },
+        {
+            "id": "ganttGridLine2",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-[33.33%] w-px bg-border-divider z-0"
+            }
+        },
+        {
+            "id": "ganttGridLine3",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-1/2 w-px bg-border-divider z-0"
+            }
+        },
+        {
+            "id": "ganttGridLine4",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-[66.67%] w-px bg-border-divider z-0"
+            }
+        },
+        {
+            "id": "ganttGridLine5",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 bottom-0 left-[83.33%] w-px bg-border-divider z-0"
+            }
+        },
+        {
+            "id": "ganttRowList",
+            "component": "div",
+            "props": {
+                "className": "relative z-[1]"
+            },
+            "children": [
+                "ganttRow1",
+                "ganttRow2",
+                "ganttRow3",
+                "ganttRow4",
+                "ganttRow5",
+                "ganttRow6"
+            ]
+        },
+        {
+            "id": "ganttRow1",
+            "component": "div",
+            "props": {
+                "className": "relative h-12 border-b border-divider"
+            },
+            "children": [
+                "ganttBar1"
+            ]
+        },
+        {
+            "id": "ganttBar1",
+            "component": "div",
+            "props": {
+                "className": "absolute left-0 w-1/2 h-7 top-[10px] bg-inverse-surface rounded-md flex items-center px-2 overflow-hidden"
+            },
+            "children": [
+                "ganttBar1Label"
+            ]
+        },
+        {
+            "id": "ganttBar1Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-white font-medium truncate",
+                "value": {
+                    "path": "/taskTableRows/0/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttRow2",
+            "component": "div",
+            "props": {
+                "className": "relative h-12 border-b border-divider"
+            },
+            "children": [
+                "ganttBar2"
+            ]
+        },
+        {
+            "id": "ganttBar2",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[16.67%] w-2/3 h-7 top-[10px] bg-error rounded-md flex items-center px-2 gap-1.5 overflow-hidden"
+            },
+            "children": [
+                "ganttBar2Icon",
+                "ganttBar2Label"
+            ]
+        },
+        {
+            "id": "ganttBar2Icon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/taskTableRows/1/ganttBar/barIconName"
+                },
+                "className": "w-3.5 h-3.5 shrink-0",
+                "color": "inverse"
+            }
+        },
+        {
+            "id": "ganttBar2Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-white font-medium truncate",
+                "value": {
+                    "path": "/taskTableRows/1/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttRow3",
+            "component": "div",
+            "props": {
+                "className": "relative h-12 border-b border-divider"
+            },
+            "children": [
+                "ganttBar3"
+            ]
+        },
+        {
+            "id": "ganttBar3",
+            "component": "div",
+            "props": {
+                "className": "absolute left-1/2 w-1/2 h-7 top-[10px] bg-[#64748B] rounded-md flex items-center px-2 overflow-hidden"
+            },
+            "children": [
+                "ganttBar3Label"
+            ]
+        },
+        {
+            "id": "ganttBar3Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-white font-medium truncate",
+                "value": {
+                    "path": "/taskTableRows/2/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttRow4",
+            "component": "div",
+            "props": {
+                "className": "relative h-12 border-b border-divider"
+            },
+            "children": [
+                "ganttBar4"
+            ]
+        },
+        {
+            "id": "ganttBar4",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[16.67%] w-1/2 h-7 top-[10px] bg-inverse-surface rounded-md flex items-center px-2 overflow-hidden"
+            },
+            "children": [
+                "ganttBar4Label"
+            ]
+        },
+        {
+            "id": "ganttBar4Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-white font-medium truncate",
+                "value": {
+                    "path": "/taskTableRows/3/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttRow5",
+            "component": "div",
+            "props": {
+                "className": "relative h-12 border-b border-divider"
+            },
+            "children": [
+                "ganttBar5"
+            ]
+        },
+        {
+            "id": "ganttBar5",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[16.67%] w-1/2 h-7 top-[10px] bg-warning rounded-md flex items-center px-2 gap-1.5 overflow-hidden"
+            },
+            "children": [
+                "ganttBar5Icon",
+                "ganttBar5Label"
+            ]
+        },
+        {
+            "id": "ganttBar5Icon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/taskTableRows/4/ganttBar/barIconName"
+                },
+                "className": "w-3.5 h-3.5 shrink-0",
+                "color": "inverse"
+            }
+        },
+        {
+            "id": "ganttBar5Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-white font-medium truncate",
+                "value": {
+                    "path": "/taskTableRows/4/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttRow6",
+            "component": "div",
+            "props": {
+                "className": "relative h-12"
+            },
+            "children": [
+                "ganttMilestone6"
+            ]
+        },
+        {
+            "id": "ganttMilestone6",
+            "component": "div",
+            "props": {
+                "className": "absolute left-[83.33%] top-[6px] flex flex-col items-center gap-0.5 -translate-x-1/2"
+            },
+            "children": [
+                "ganttMilestone6Icon",
+                "ganttMilestone6Label"
+            ]
+        },
+        {
+            "id": "ganttMilestone6Icon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/taskTableRows/5/milestoneIconName"
+                },
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "ganttMilestone6Label",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface font-medium whitespace-nowrap",
+                "value": {
+                    "path": "/taskTableRows/5/ganttBar/barLabel"
+                }
+            }
+        },
+        {
+            "id": "ganttDepLineV",
+            "component": "div",
+            "props": {
+                "className": "absolute z-20 left-1/2 top-[40px] h-2 border-l-2 border-dashed border-error"
+            }
+        },
+        {
+            "id": "ganttDepLineH",
+            "component": "div",
+            "props": {
+                "className": "absolute z-20 top-[48px] left-[16.67%] w-[33.33%] border-t-2 border-dashed border-error"
+            }
+        },
+        {
+            "id": "footerStatusBar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between h-10 px-4 bg-surface-container-highest border-t border-divider shrink-0"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/leftStats",
+                "componentId": "footerStatItem"
+            }
+        },
+        {
+            "id": "footerStatItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1.5"
+            },
+            "children": [
+                "footerStatIcon",
+                "footerStatValue",
+                "footerStatLabel"
+            ]
+        },
+        {
+            "id": "footerStatIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "iconName"
+                },
+                "color": {
+                    "path": "iconColor"
+                },
+                "className": "w-3.5 h-3.5"
+            }
+        },
+        {
+            "id": "footerStatValue",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-semibold text-on-surface",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "footerStatLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "footerUpdatedText",
+                "footerSyncDot",
+                "footerSyncText"
+            ]
+        },
+        {
+            "id": "footerUpdatedText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/rightSync/lastUpdated"
+                }
+            }
+        },
+        {
+            "id": "footerSyncDot",
+            "component": "div",
+            "props": {
+                "className": "w-2 h-2 rounded-full bg-success"
+            }
+        },
+        {
+            "id": "footerSyncText",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-success font-medium",
+                "value": {
+                    "path": "/rightSync/syncStatus"
+                }
+            }
+        }
+    ]
+}

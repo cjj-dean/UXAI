@@ -1,0 +1,1400 @@
+{
+    "state": {
+        "logoIcon": "zap",
+        "productName": "Nexus CRM",
+        "globalSearchValue": "",
+        "globalSearchPlaceholder": "搜索客户、任务、联系人...",
+        "notificationIcon": "bell",
+        "unreadNotificationCount": 3,
+        "userAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+        "menuItems": [
+            {
+                "menuName": "Dashboard",
+                "menuIcon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "menuName": "Contacts",
+                "menuIcon": "users",
+                "isActive": false
+            },
+            {
+                "menuName": "Companies",
+                "menuIcon": "building",
+                "isActive": false
+            },
+            {
+                "menuName": "Deals",
+                "menuIcon": "handshake",
+                "isActive": false
+            },
+            {
+                "menuName": "Tasks",
+                "menuIcon": "check-square",
+                "isActive": true
+            },
+            {
+                "menuName": "Reports",
+                "menuIcon": "bar-chart-2",
+                "isActive": false
+            }
+        ],
+        "breadcrumbPaths": [
+            {
+                "label": "Home",
+                "link": "/"
+            },
+            {
+                "label": "Tasks",
+                "link": "/tasks"
+            },
+            {
+                "label": "Detail",
+                "link": null
+            }
+        ],
+        "taskTitleEnglish": "Follow up on TechCorp Enterprise License Purchase",
+        "taskTitleChinese": "跟进 TechCorp 企业版许可证采购",
+        "statusIcon": "clock",
+        "primaryActionLabel": "Mark as Done",
+        "secondaryActionLabel": "Edit Task",
+        "cardTitle": "Task Description & Checklist",
+        "descriptionContent": "我们需要在这个季度内完成与 TechCorp 的企业版采购谈判。该客户主要关注数据安全性和API的并发限制。请确保在推进过程中，所有的技术解答都经过架构团队的确认，避免过度承诺。",
+        "keyPointsList": [
+            {
+                "text": "重点强调我们的 ISO 27001 认证和端到端加密机制。"
+            },
+            {
+                "text": "提供针对他们业务场景的高并发 API 压测报告。"
+            },
+            {
+                "text": "明确 MLPP (主许可协议) 中的 SLA 条款。"
+            }
+        ],
+        "subtasks": [
+            {
+                "subtaskId": "st_001",
+                "subtaskTitle": "发送产品安全白皮书给采购负责人 Sarah",
+                "isChecked": true,
+                "assigneeImage": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            {
+                "subtaskId": "st_002",
+                "subtaskTitle": "拉取并发送给客户过去三个月的 API 性能基准测试数据",
+                "isChecked": true,
+                "assigneeImage": "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                "subtaskId": "st_003",
+                "subtaskTitle": "与架构师确认针对 TechCorp 的 SLA 定制化方案",
+                "isChecked": false,
+                "assigneeImage": "https://randomuser.me/api/portraits/women/44.jpg"
+            }
+        ],
+        "addSubtaskButtonLabel": "+ Add Subtask",
+        "personnelCard": {
+            "cardTitle": "Assignees",
+            "owner": {
+                "name": "Evelyn Zhang",
+                "role": "Account Manager",
+                "avatarImage": "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            "participants": [
+                {
+                    "name": "Lucas Chen",
+                    "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+                },
+                {
+                    "name": "Michael Scott",
+                    "avatarImage": "https://randomuser.me/api/portraits/men/11.jpg"
+                }
+            ]
+        },
+        "progressCard": {
+            "cardTitle": "Timeline & Progress",
+            "startDate": "2023-10-15",
+            "endDate": "2023-11-30",
+            "progressPercentage": 68,
+            "progressStatusText": "In Progress",
+            "estimatedHours": 40,
+            "actualHours": 27.5
+        },
+        "discussionCard": {
+            "cardTitle": "Internal Comments",
+            "comments": [
+                {
+                    "userAvatarImage": "https://randomuser.me/api/portraits/women/44.jpg",
+                    "userName": "Evelyn Zhang",
+                    "timeAgo": "2 hours ago",
+                    "messageContent": "Hi Lucas, 客户已经确认收到了安全白皮书，他们对我们架构的抗压能力很感兴趣，能不能准备一份详细的压测报告？"
+                },
+                {
+                    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+                    "userName": "Lucas Chen",
+                    "timeAgo": "1 hour ago",
+                    "messageContent": "收到。我刚刚在预发环境跑了一轮模拟。但为了更贴近真实场景，我需要他们提供一下日常业务的高峰期流量特征，你能帮我问一下吗？"
+                }
+            ],
+            "commentInputPlaceholder": "Add a comment..."
+        },
+        "commentInputValue": ""
+    },
+    "rootId": "pageRoot",
+    "elements": [
+        {
+            "id": "pageRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "gnRoot",
+                "bodyRoot"
+            ]
+        },
+        {
+            "id": "gnRoot",
+            "component": "div",
+            "props": {
+                "className": "h-14 flex items-center bg-surface-container-highest shadow-sm px-6 justify-between shrink-0"
+            },
+            "children": [
+                "gnLeft",
+                "gnCenter",
+                "gnRight"
+            ]
+        },
+        {
+            "id": "gnLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "gnLogo",
+                "gnName"
+            ]
+        },
+        {
+            "id": "gnLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/logoIcon"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "gnName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/productName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "gnCenter",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center max-w-md mx-8"
+            },
+            "children": [
+                "gnSearch"
+            ]
+        },
+        {
+            "id": "gnSearch",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/globalSearchValue"
+                },
+                "placeholder": {
+                    "path": "/globalSearchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "gnRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "gnBellWrap",
+                "gnHelp",
+                "gnAvatar"
+            ]
+        },
+        {
+            "id": "gnBellWrap",
+            "component": "div",
+            "props": {
+                "className": "relative cursor-pointer"
+            },
+            "children": [
+                "gnBell",
+                "gnBadge"
+            ]
+        },
+        {
+            "id": "gnBell",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/notificationIcon"
+                },
+                "className": "w-5 h-5 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "gnBadge",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/unreadNotificationCount"
+                },
+                "className": "absolute -top-1.5 -right-1.5 bg-error text-on-error text-xs rounded-full min-w-4 h-4 flex items-center justify-center font-medium leading-none px-1"
+            }
+        },
+        {
+            "id": "gnHelp",
+            "component": "Icon",
+            "props": {
+                "name": "circle-help",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "gnAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/userAvatarImage"
+                },
+                "alt": "User Avatar",
+                "className": "w-8 h-8 rounded-full object-cover cursor-pointer"
+            }
+        },
+        {
+            "id": "bodyRoot",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 overflow-hidden"
+            },
+            "children": [
+                "sbRoot",
+                "mainRoot"
+            ]
+        },
+        {
+            "id": "sbRoot",
+            "component": "div",
+            "props": {
+                "className": "w-56 bg-surface-container-highest border-r border-divider flex flex-col py-4 shrink-0"
+            },
+            "children": [
+                "sbDashboard",
+                "sbContacts",
+                "sbCompanies",
+                "sbDeals",
+                "sbTasks",
+                "sbReports"
+            ]
+        },
+        {
+            "id": "sbDashboard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbDashboardIcon",
+                "sbDashboardLabel"
+            ]
+        },
+        {
+            "id": "sbDashboardIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layout-dashboard",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbDashboardLabel",
+            "component": "span",
+            "props": {
+                "value": "Dashboard",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sbContacts",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbContactsIcon",
+                "sbContactsLabel"
+            ]
+        },
+        {
+            "id": "sbContactsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "users",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbContactsLabel",
+            "component": "span",
+            "props": {
+                "value": "Contacts",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sbCompanies",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbCompaniesIcon",
+                "sbCompaniesLabel"
+            ]
+        },
+        {
+            "id": "sbCompaniesIcon",
+            "component": "Icon",
+            "props": {
+                "name": "building",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbCompaniesLabel",
+            "component": "span",
+            "props": {
+                "value": "Companies",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sbDeals",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbDealsIcon",
+                "sbDealsLabel"
+            ]
+        },
+        {
+            "id": "sbDealsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "handshake",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbDealsLabel",
+            "component": "span",
+            "props": {
+                "value": "Deals",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "sbTasks",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action bg-primary-container cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbTasksIcon",
+                "sbTasksLabel"
+            ]
+        },
+        {
+            "id": "sbTasksIcon",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "color": "primary",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbTasksLabel",
+            "component": "span",
+            "props": {
+                "value": "Tasks",
+                "className": "text-sm font-medium text-primary"
+            }
+        },
+        {
+            "id": "sbReports",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-4 py-2.5 mx-2 rounded-action text-on-surface-variant hover:bg-surface-variant cursor-pointer transition-colors"
+            },
+            "children": [
+                "sbReportsIcon",
+                "sbReportsLabel"
+            ]
+        },
+        {
+            "id": "sbReportsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "bar-chart-2",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "sbReportsLabel",
+            "component": "span",
+            "props": {
+                "value": "Reports",
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "mainRoot",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-auto"
+            },
+            "children": [
+                "thRoot",
+                "tbRoot"
+            ]
+        },
+        {
+            "id": "thRoot",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start px-gutter pt-gutter pb-4"
+            },
+            "children": [
+                "thLeft",
+                "thRight"
+            ]
+        },
+        {
+            "id": "thLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "thBreadcrumb",
+                "thTitleBlock"
+            ]
+        },
+        {
+            "id": "thBreadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": [
+                    {
+                        "title": "Home"
+                    },
+                    {
+                        "title": "Tasks"
+                    },
+                    {
+                        "title": "Detail"
+                    }
+                ],
+                "separator": "/"
+            }
+        },
+        {
+            "id": "thTitleBlock",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 mt-1"
+            },
+            "children": [
+                "thTitleRow",
+                "thTitleCn"
+            ]
+        },
+        {
+            "id": "thTitleRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "thStatusIcon",
+                "thTitleEn",
+                "thStatusTag"
+            ]
+        },
+        {
+            "id": "thStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/statusIcon"
+                },
+                "color": "warning",
+                "shape": "outline",
+                "className": "w-5 h-5"
+            }
+        },
+        {
+            "id": "thTitleEn",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/taskTitleEnglish"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "thStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/progressCard/progressStatusText"
+                },
+                "color": "processing",
+                "icon": "clock"
+            }
+        },
+        {
+            "id": "thTitleCn",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/taskTitleChinese"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "thRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3 pt-4"
+            },
+            "children": [
+                "thBtnPrimary",
+                "thBtnSecondary"
+            ]
+        },
+        {
+            "id": "thBtnPrimary",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/primaryActionLabel"
+                },
+                "icon": "check-circle",
+                "iconPlacement": "start",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "thBtnSecondary",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/secondaryActionLabel"
+                },
+                "icon": "pencil",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "tbRoot",
+            "component": "div",
+            "props": {
+                "className": "flex gap-gutter px-gutter pb-gutter flex-1 min-h-0"
+            },
+            "children": [
+                "tcRoot",
+                "tsRoot"
+            ]
+        },
+        {
+            "id": "tcRoot",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col min-w-0"
+            },
+            "children": [
+                "tcCard"
+            ]
+        },
+        {
+            "id": "tcCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col gap-4"
+            },
+            "children": [
+                "tcCardTitle",
+                "tcDesc",
+                "tcKpDivider",
+                "tcKpTitle",
+                "tcKpList",
+                "tcStDivider",
+                "tcStTitle",
+                "tcSt1",
+                "tcSt2",
+                "tcSt3",
+                "tcAddBtn"
+            ]
+        },
+        {
+            "id": "tcCardTitle",
+            "component": "h2",
+            "props": {
+                "value": {
+                    "path": "/cardTitle"
+                },
+                "className": "text-lg font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tcDesc",
+            "component": "p",
+            "props": {
+                "value": {
+                    "path": "/descriptionContent"
+                },
+                "className": "text-sm text-on-surface-variant leading-relaxed"
+            }
+        },
+        {
+            "id": "tcKpDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "tcKpTitle",
+            "component": "span",
+            "props": {
+                "value": "Key Points",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tcKpList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2 pl-1"
+            },
+            "children": {
+                "path": "/keyPointsList",
+                "componentId": "tcKpItem"
+            }
+        },
+        {
+            "id": "tcKpItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-2"
+            },
+            "children": [
+                "tcKpBullet",
+                "tcKpText"
+            ]
+        },
+        {
+            "id": "tcKpBullet",
+            "component": "Icon",
+            "props": {
+                "name": "chevron-right",
+                "color": "primary",
+                "className": "w-4 h-4 mt-0.5 shrink-0"
+            }
+        },
+        {
+            "id": "tcKpText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "text"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tcStDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "tcStTitle",
+            "component": "span",
+            "props": {
+                "value": "Subtasks",
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tcSt1",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 py-2 px-3 rounded-action hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "tcSt1Check",
+                "tcSt1Text",
+                "tcSt1Avatar"
+            ]
+        },
+        {
+            "id": "tcSt1Check",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "color": "primary",
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "tcSt1Text",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/subtasks/0/subtaskTitle"
+                },
+                "className": "text-sm text-on-surface-variant line-through flex-1"
+            }
+        },
+        {
+            "id": "tcSt1Avatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/subtasks/0/assigneeImage"
+                },
+                "alt": "Assignee",
+                "className": "w-6 h-6 rounded-full object-cover shrink-0"
+            }
+        },
+        {
+            "id": "tcSt2",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 py-2 px-3 rounded-action hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "tcSt2Check",
+                "tcSt2Text",
+                "tcSt2Avatar"
+            ]
+        },
+        {
+            "id": "tcSt2Check",
+            "component": "Icon",
+            "props": {
+                "name": "check-square",
+                "color": "primary",
+                "className": "w-5 h-5 shrink-0"
+            }
+        },
+        {
+            "id": "tcSt2Text",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/subtasks/1/subtaskTitle"
+                },
+                "className": "text-sm text-on-surface-variant line-through flex-1"
+            }
+        },
+        {
+            "id": "tcSt2Avatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/subtasks/1/assigneeImage"
+                },
+                "alt": "Assignee",
+                "className": "w-6 h-6 rounded-full object-cover shrink-0"
+            }
+        },
+        {
+            "id": "tcSt3",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 py-2 px-3 rounded-action hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "tcSt3Check",
+                "tcSt3Text",
+                "tcSt3Avatar"
+            ]
+        },
+        {
+            "id": "tcSt3Check",
+            "component": "Icon",
+            "props": {
+                "name": "square",
+                "className": "w-5 h-5 shrink-0 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tcSt3Text",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/subtasks/2/subtaskTitle"
+                },
+                "className": "text-sm text-on-surface flex-1"
+            }
+        },
+        {
+            "id": "tcSt3Avatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/subtasks/2/assigneeImage"
+                },
+                "alt": "Assignee",
+                "className": "w-6 h-6 rounded-full object-cover shrink-0"
+            }
+        },
+        {
+            "id": "tcAddBtn",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/addSubtaskButtonLabel"
+                },
+                "icon": "plus",
+                "iconPlacement": "start",
+                "className": "self-start mt-1"
+            }
+        },
+        {
+            "id": "tsRoot",
+            "component": "div",
+            "props": {
+                "className": "w-80 flex flex-col gap-4 shrink-0"
+            },
+            "children": [
+                "tsPersonnelCard",
+                "tsProgressCard",
+                "tsDiscussionCard"
+            ]
+        },
+        {
+            "id": "tsPersonnelCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col gap-4"
+            },
+            "children": [
+                "tsPersonnelTitle",
+                "tsPersonnelOwner",
+                "tsPersonnelDivider",
+                "tsParticipantSectionLabel",
+                "tsParticipantList"
+            ]
+        },
+        {
+            "id": "tsPersonnelTitle",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/personnelCard/cardTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsPersonnelOwner",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3"
+            },
+            "children": [
+                "tsPersonnelOwnerAvatar",
+                "tsPersonnelOwnerInfo"
+            ]
+        },
+        {
+            "id": "tsPersonnelOwnerAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/personnelCard/owner/avatarImage"
+                },
+                "alt": "Owner",
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "tsPersonnelOwnerInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "tsPersonnelOwnerName",
+                "tsPersonnelOwnerRole"
+            ]
+        },
+        {
+            "id": "tsPersonnelOwnerName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/personnelCard/owner/name"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "tsPersonnelOwnerRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/personnelCard/owner/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsPersonnelDivider",
+            "component": "Divider",
+            "props": {}
+        },
+        {
+            "id": "tsParticipantSectionLabel",
+            "component": "span",
+            "props": {
+                "value": "Participants",
+                "className": "text-xs font-medium text-on-surface-variant uppercase tracking-wide"
+            }
+        },
+        {
+            "id": "tsParticipantList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/personnelCard/participants",
+                "componentId": "tsParticipantItem"
+            }
+        },
+        {
+            "id": "tsParticipantItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "tsParticipantAvatar",
+                "tsParticipantName"
+            ]
+        },
+        {
+            "id": "tsParticipantAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatarImage"
+                },
+                "alt": "Participant",
+                "className": "w-7 h-7 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "tsParticipantName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col gap-4"
+            },
+            "children": [
+                "tsProgressTitle",
+                "tsProgressDateRow",
+                "tsProgressBar",
+                "tsProgressStatusRow",
+                "tsProgressHoursRow"
+            ]
+        },
+        {
+            "id": "tsProgressTitle",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/progressCard/cardTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressDateRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4"
+            },
+            "children": [
+                "tsProgressStartCol",
+                "tsProgressEndCol"
+            ]
+        },
+        {
+            "id": "tsProgressStartCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 flex-1"
+            },
+            "children": [
+                "tsProgressStartLabel",
+                "tsProgressStartValue"
+            ]
+        },
+        {
+            "id": "tsProgressStartLabel",
+            "component": "span",
+            "props": {
+                "value": "Start Date",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsProgressStartValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/progressCard/startDate"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressEndCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 flex-1"
+            },
+            "children": [
+                "tsProgressEndLabel",
+                "tsProgressEndValue"
+            ]
+        },
+        {
+            "id": "tsProgressEndLabel",
+            "component": "span",
+            "props": {
+                "value": "End Date",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsProgressEndValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/progressCard/endDate"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressBar",
+            "component": "Progress",
+            "props": {
+                "percent": {
+                    "path": "/progressCard/progressPercentage"
+                },
+                "status": "active",
+                "strokeColor": "#0067D1",
+                "showInfo": true
+            }
+        },
+        {
+            "id": "tsProgressStatusRow",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "tsProgressStatusIcon",
+                "tsProgressStatusTag"
+            ]
+        },
+        {
+            "id": "tsProgressStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": "loader",
+                "color": "primary",
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "tsProgressStatusTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/progressCard/progressStatusText"
+                },
+                "color": "processing",
+                "size": "small"
+            }
+        },
+        {
+            "id": "tsProgressHoursRow",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4 bg-surface-variant rounded-lg p-3"
+            },
+            "children": [
+                "tsProgressEstCol",
+                "tsProgressActCol"
+            ]
+        },
+        {
+            "id": "tsProgressEstCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 flex-1"
+            },
+            "children": [
+                "tsProgressEstLabel",
+                "tsProgressEstValueWrap"
+            ]
+        },
+        {
+            "id": "tsProgressEstLabel",
+            "component": "span",
+            "props": {
+                "value": "Estimated",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsProgressEstValueWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-0.5"
+            },
+            "children": [
+                "tsProgressEstValue",
+                "tsProgressEstUnit"
+            ]
+        },
+        {
+            "id": "tsProgressEstValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/progressCard/estimatedHours"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressEstUnit",
+            "component": "span",
+            "props": {
+                "value": "h",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsProgressActCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 flex-1"
+            },
+            "children": [
+                "tsProgressActLabel",
+                "tsProgressActValueWrap"
+            ]
+        },
+        {
+            "id": "tsProgressActLabel",
+            "component": "span",
+            "props": {
+                "value": "Actual",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsProgressActValueWrap",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-0.5"
+            },
+            "children": [
+                "tsProgressActValue",
+                "tsProgressActUnit"
+            ]
+        },
+        {
+            "id": "tsProgressActValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/progressCard/actualHours"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsProgressActUnit",
+            "component": "span",
+            "props": {
+                "value": "h",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsDiscussionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset flex flex-col gap-4"
+            },
+            "children": [
+                "tsDiscussionTitle",
+                "tsDiscussionCommentList",
+                "tsDiscussionInput"
+            ]
+        },
+        {
+            "id": "tsDiscussionTitle",
+            "component": "h3",
+            "props": {
+                "value": {
+                    "path": "/discussionCard/cardTitle"
+                },
+                "className": "text-sm font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsDiscussionCommentList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/discussionCard/comments",
+                "componentId": "tsCommentItem"
+            }
+        },
+        {
+            "id": "tsCommentItem",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3"
+            },
+            "children": [
+                "tsCommentAvatar",
+                "tsCommentBody"
+            ]
+        },
+        {
+            "id": "tsCommentAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "userAvatarImage"
+                },
+                "alt": "User",
+                "className": "w-8 h-8 rounded-full object-cover shrink-0 mt-0.5"
+            }
+        },
+        {
+            "id": "tsCommentBody",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 min-w-0"
+            },
+            "children": [
+                "tsCommentHeader",
+                "tsCommentText"
+            ]
+        },
+        {
+            "id": "tsCommentHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "tsCommentName",
+                "tsCommentTime"
+            ]
+        },
+        {
+            "id": "tsCommentName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "userName"
+                },
+                "className": "text-xs font-semibold text-on-surface"
+            }
+        },
+        {
+            "id": "tsCommentTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "timeAgo"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tsCommentText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "messageContent"
+                },
+                "className": "text-sm text-on-surface-variant leading-relaxed"
+            }
+        },
+        {
+            "id": "tsDiscussionInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/commentInputValue"
+                },
+                "placeholder": {
+                    "path": "/discussionCard/commentInputPlaceholder"
+                },
+                "className": "w-full"
+            }
+        }
+    ]
+}

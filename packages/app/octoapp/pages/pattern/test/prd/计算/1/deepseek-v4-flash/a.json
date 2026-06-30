@@ -1,0 +1,836 @@
+{
+  "state": {
+    "brandLogoImage": "https://fpoimg.com/40x40?gradient=0067D1,004EA8&text_color=ffffff&text=L",
+    "brandText": "IMaster IIXI",
+    "brandIcon": "diamond",
+    "navItems": [
+      {
+        "title": "首页",
+        "key": "home",
+        "icon": "home"
+      },
+      {
+        "title": "项目管理",
+        "key": "project",
+        "icon": "folder-kanban"
+      },
+      {
+        "title": "任务调度",
+        "key": "task",
+        "icon": "list-checks"
+      },
+      {
+        "title": "资源监控",
+        "key": "resource",
+        "icon": "monitor"
+      },
+      {
+        "title": "告警中心",
+        "key": "alert",
+        "icon": "bell"
+      },
+      {
+        "title": "安全策略",
+        "key": "security",
+        "icon": "shield"
+      },
+      {
+        "title": "操作日志",
+        "key": "log",
+        "icon": "file-text"
+      },
+      {
+        "title": "系统设置",
+        "key": "setting",
+        "icon": "settings"
+      }
+    ],
+    "selectedMenuKeys": [
+      "security"
+    ],
+    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "userName": "Admin",
+    "helpIcon": "help-circle",
+    "menuTitle": "视图导航",
+    "searchPlaceholder": "搜索菜单...",
+    "sidebarSearch": "",
+    "sidebarExpandedKeys": [
+      "network"
+    ],
+    "sidebarSelectedKeys": [
+      "bandwidth"
+    ],
+    "sidebarTreeData": [
+      {
+        "title": "网络连接",
+        "key": "network",
+        "icon": "network",
+        "children": [
+          {
+            "title": "本地网络",
+            "key": "local",
+            "icon": "monitor"
+          },
+          {
+            "title": "带宽需求",
+            "key": "bandwidth",
+            "icon": "gauge"
+          },
+          {
+            "title": "系统占用",
+            "key": "system",
+            "icon": "hard-drive"
+          },
+          {
+            "title": "对等网络",
+            "key": "peer",
+            "icon": "share-2"
+          },
+          {
+            "title": "速度测试",
+            "key": "speed",
+            "icon": "zap"
+          }
+        ]
+      },
+      {
+        "title": "性能优化",
+        "key": "performance",
+        "icon": "zap",
+        "children": []
+      },
+      {
+        "title": "分支业务",
+        "key": "branch",
+        "icon": "git-branch",
+        "children": []
+      },
+      {
+        "title": "策略管理",
+        "key": "policy",
+        "icon": "shield",
+        "children": []
+      },
+      {
+        "title": "基础设施",
+        "key": "infra",
+        "icon": "server",
+        "children": []
+      },
+      {
+        "title": "组织架构",
+        "key": "org",
+        "icon": "building-2",
+        "children": []
+      }
+    ],
+    "activeTab": "active",
+    "searchValue": "",
+    "policyCards": [
+      {
+        "cardTitle": "北京机房核心交换机DDoS防护（日间）",
+        "tag": "高优策略",
+        "blockCount": 93620,
+        "riskIpCount": 6,
+        "peakBandwidthMbps": 26,
+        "latestBlockTime": "2026-05-27 14:30:00",
+        "effectiveTime": "2026-05-27 09:00:00"
+      },
+      {
+        "cardTitle": "上海数据中心Web应用防火墙",
+        "tag": "高优策略",
+        "blockCount": 56432,
+        "riskIpCount": 12,
+        "peakBandwidthMbps": 45,
+        "latestBlockTime": "2026-05-27 13:15:00",
+        "effectiveTime": "2026-05-26 08:00:00"
+      },
+      {
+        "cardTitle": "核心业务API网关限流策略",
+        "tag": "高优策略",
+        "blockCount": 128750,
+        "riskIpCount": 23,
+        "peakBandwidthMbps": 112,
+        "latestBlockTime": "2026-05-27 12:45:00",
+        "effectiveTime": "2026-05-25 00:00:00"
+      }
+    ]
+  },
+  "rootId": "appShell",
+  "elements": [
+    {
+      "id": "appShell",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen bg-surface-container-lowest"
+      },
+      "children": [
+        "topNavContainer",
+        "mainAreaContainer"
+      ]
+    },
+    {
+      "id": "topNavContainer",
+      "component": "div",
+      "props": {
+        "className": "h-12 flex-shrink-0 bg-surface-container-highest shadow-sm"
+      },
+      "children": [
+        "headerInnerWrapper"
+      ]
+    },
+    {
+      "id": "mainAreaContainer",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row flex-1 overflow-hidden"
+      },
+      "children": [
+        "leftMenuContainer",
+        "mainContentContainer"
+      ]
+    },
+    {
+      "id": "leftMenuContainer",
+      "component": "div",
+      "props": {
+        "className": "w-[15.5rem] flex-shrink-0 bg-surface-container-highest shadow-sm overflow-y-auto"
+      },
+      "children": [
+        "sidebarTitle",
+        "sidebarDivider",
+        "sidebarSearchRow",
+        "sidebarTree",
+        "sidebarFooter"
+      ]
+    },
+    {
+      "id": "mainContentContainer",
+      "component": "div",
+      "props": {
+        "className": "flex-1 overflow-y-auto bg-surface p-8"
+      },
+      "children": [
+        "mainPageTitle",
+        "mainTabsContainer"
+      ]
+    },
+    {
+      "id": "headerInnerWrapper",
+      "component": "div",
+      "props": {
+        "className": "flex justify-between items-center h-full w-full px-4"
+      },
+      "children": [
+        "headerLeftSection",
+        "headerCenterSection",
+        "headerRightSection"
+      ]
+    },
+    {
+      "id": "headerLeftSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "headerBrandLogo",
+        "headerBrandText",
+        "headerBrandIcon"
+      ]
+    },
+    {
+      "id": "headerBrandLogo",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/brandLogoImage"
+        },
+        "className": "w-8 h-8 rounded-lg object-cover",
+        "alt": "Brand Logo"
+      }
+    },
+    {
+      "id": "headerBrandText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandText"
+        },
+        "className": "text-md font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "headerBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "headerCenterSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center"
+      },
+      "children": [
+        "headerNavMenu"
+      ]
+    },
+    {
+      "id": "headerNavMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "horizontal",
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/navItems"
+        },
+        "className": "border-0 bg-transparent"
+      }
+    },
+    {
+      "id": "headerRightSection",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-3"
+      },
+      "children": [
+        "headerUserAvatar",
+        "headerUserName",
+        "headerHelpIcon"
+      ]
+    },
+    {
+      "id": "headerUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userAvatarImage"
+        },
+        "className": "w-8 h-8 rounded-full object-cover",
+        "alt": "User Avatar"
+      }
+    },
+    {
+      "id": "headerUserName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/userName"
+        },
+        "className": "text-md text-on-surface"
+      }
+    },
+    {
+      "id": "headerHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/helpIcon"
+        },
+        "color": "on-surface-variant",
+        "shape": "outline",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "sidebarTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface px-4 pt-4 pb-2 block",
+        "value": {
+          "path": "/menuTitle"
+        }
+      }
+    },
+    {
+      "id": "sidebarDivider",
+      "component": "Divider",
+      "props": {
+        "className": "mx-4 my-2",
+        "variant": "solid"
+      }
+    },
+    {
+      "id": "sidebarSearchRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 px-3 mb-2"
+      },
+      "children": [
+        "sidebarSearchInput",
+        "sidebarSearchIcon"
+      ]
+    },
+    {
+      "id": "sidebarSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/sidebarSearch"
+        },
+        "placeholder": {
+          "path": "/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "flex-1 text-md"
+      }
+    },
+    {
+      "id": "sidebarSearchIcon",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "className": "w-4 h-4 text-on-surface-variant"
+      }
+    },
+    {
+      "id": "sidebarTree",
+      "component": "Tree",
+      "props": {
+        "defaultExpandedKeys": {
+          "path": "/sidebarExpandedKeys"
+        },
+        "defaultSelectedKeys": {
+          "path": "/sidebarSelectedKeys"
+        },
+        "options": {
+          "path": "/sidebarTreeData"
+        },
+        "className": "flex-1 px-2 py-1"
+      }
+    },
+    {
+      "id": "sidebarFooter",
+      "component": "div",
+      "props": {
+        "className": "p-3 border-t border-divider"
+      },
+      "children": [
+        "sidebarCollapseBtn"
+      ]
+    },
+    {
+      "id": "sidebarCollapseBtn",
+      "component": "Button",
+      "props": {
+        "icon": "panel-left-close",
+        "className": "w-full justify-center"
+      }
+    },
+    {
+      "id": "mainPageTitle",
+      "component": "h1",
+      "props": {
+        "className": "text-3xl font-bold text-on-surface mb-6",
+        "value": "安全防护策略列表"
+      }
+    },
+    {
+      "id": "mainTabsContainer",
+      "component": "Tabs",
+      "props": {
+        "activeKey": {
+          "path": "/activeTab"
+        },
+        "className": "mb-6"
+      },
+      "children": [
+        "mainTabActive",
+        "mainTabArchived"
+      ]
+    },
+    {
+      "id": "mainTabActive",
+      "component": "TabItem",
+      "props": {
+        "key": "active",
+        "label": "当前应用策略",
+        "content": {
+          "componentId": "mainActiveContent"
+        }
+      }
+    },
+    {
+      "id": "mainTabArchived",
+      "component": "TabItem",
+      "props": {
+        "key": "archived",
+        "label": "历史归档策略",
+        "content": {
+          "componentId": "mainArchivedContent"
+        }
+      }
+    },
+    {
+      "id": "mainArchivedContent",
+      "component": "div",
+      "props": {
+        "className": "p-12 text-center text-on-surface-variant text-md"
+      },
+      "children": [
+        "mainArchivedText"
+      ]
+    },
+    {
+      "id": "mainArchivedText",
+      "component": "span",
+      "props": {
+        "value": "暂无历史归档策略数据"
+      }
+    },
+    {
+      "id": "mainActiveContent",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section"
+      },
+      "children": [
+        "mainAlertCard",
+        "mainToolbar",
+        "mainPolicyList"
+      ]
+    },
+    {
+      "id": "mainAlertCard",
+      "component": "div",
+      "props": {
+        "className": "flex items-start gap-3 p-4 rounded-xl bg-info-container"
+      },
+      "children": [
+        "mainAlertIcon",
+        "mainAlertMessage",
+        "mainAlertClose"
+      ]
+    },
+    {
+      "id": "mainAlertIcon",
+      "component": "Icon",
+      "props": {
+        "name": "triangle-alert",
+        "color": "info",
+        "shape": "outline",
+        "className": "w-5 h-5 mt-0.5 shrink-0"
+      }
+    },
+    {
+      "id": "mainAlertMessage",
+      "component": "span",
+      "props": {
+        "className": "flex-1 text-md text-on-info-container",
+        "value": "Alert：系统检测到近期有大量针对核心业务的异常访问请求，系统已自动拦截并记录。建议管理员定期复核安全访问控制列表及防火墙配置，确保系统处于最佳安全状态。"
+      }
+    },
+    {
+      "id": "mainAlertClose",
+      "component": "Icon",
+      "props": {
+        "name": "x",
+        "color": "info",
+        "shape": "outline",
+        "className": "w-5 h-5 mt-0.5 shrink-0 cursor-pointer"
+      }
+    },
+    {
+      "id": "mainToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "mainSearchInput",
+        "mainCreateBtn"
+      ]
+    },
+    {
+      "id": "mainSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": "请输入策略名称或ID",
+        "prefix": "search",
+        "className": "w-80"
+      }
+    },
+    {
+      "id": "mainCreateBtn",
+      "component": "Button",
+      "props": {
+        "value": "新建安全策略",
+        "icon": "plus",
+        "iconPlacement": "start",
+        "color": "primary",
+        "size": "medium"
+      }
+    },
+    {
+      "id": "mainPolicyList",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col gap-section"
+      },
+      "children": {
+        "path": "/policyCards",
+        "componentId": "mainPolicyCardItem"
+      }
+    },
+    {
+      "id": "mainPolicyCardItem",
+      "component": "div",
+      "props": {
+        "className": "flex items-stretch gap-6 p-6 rounded-xl bg-surface-container-highest shadow-card"
+      },
+      "children": [
+        "mainPolicyCardLeft",
+        "mainPolicyCardMiddle",
+        "mainPolicyCardRight"
+      ]
+    },
+    {
+      "id": "mainPolicyCardLeft",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-start gap-3 min-w-0 shrink-0"
+      },
+      "children": [
+        "mainPolicyCardIcon",
+        "mainPolicyCardTitle",
+        "mainPolicyCardTag"
+      ]
+    },
+    {
+      "id": "mainPolicyCardIcon",
+      "component": "Icon",
+      "props": {
+        "name": "file-text",
+        "color": "primary",
+        "shape": "square",
+        "className": "w-10 h-10"
+      }
+    },
+    {
+      "id": "mainPolicyCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface whitespace-nowrap",
+        "value": {
+          "path": "cardTitle"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyCardTag",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "tag"
+        },
+        "color": "error"
+      }
+    },
+    {
+      "id": "mainPolicyCardMiddle",
+      "component": "div",
+      "props": {
+        "className": "flex-1 flex items-center justify-center"
+      },
+      "children": [
+        "mainPolicyCardMiddleInner"
+      ]
+    },
+    {
+      "id": "mainPolicyCardMiddleInner",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-0 px-6 py-4 rounded-lg bg-surface-variant"
+      },
+      "children": [
+        "mainPolicyMetricBlock1",
+        "mainPolicyDivider1",
+        "mainPolicyMetricBlock2",
+        "mainPolicyDivider2",
+        "mainPolicyMetricBlock3"
+      ]
+    },
+    {
+      "id": "mainPolicyMetricBlock1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center px-4"
+      },
+      "children": [
+        "mainPolicyMetricValue1",
+        "mainPolicyMetricLabel1"
+      ]
+    },
+    {
+      "id": "mainPolicyMetricValue1",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "blockCount"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyMetricLabel1",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1 whitespace-nowrap",
+        "value": "拦截次数"
+      }
+    },
+    {
+      "id": "mainPolicyDivider1",
+      "component": "div",
+      "props": {
+        "className": "w-px h-12 bg-divider"
+      }
+    },
+    {
+      "id": "mainPolicyMetricBlock2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center px-4"
+      },
+      "children": [
+        "mainPolicyMetricValue2",
+        "mainPolicyMetricLabel2"
+      ]
+    },
+    {
+      "id": "mainPolicyMetricValue2",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "riskIpCount"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyMetricLabel2",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1 whitespace-nowrap",
+        "value": "风险源IP数"
+      }
+    },
+    {
+      "id": "mainPolicyDivider2",
+      "component": "div",
+      "props": {
+        "className": "w-px h-12 bg-divider"
+      }
+    },
+    {
+      "id": "mainPolicyMetricBlock3",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center px-4"
+      },
+      "children": [
+        "mainPolicyMetricValue3",
+        "mainPolicyMetricLabel3"
+      ]
+    },
+    {
+      "id": "mainPolicyMetricValue3",
+      "component": "span",
+      "props": {
+        "className": "text-2xl font-bold text-on-surface",
+        "value": {
+          "path": "peakBandwidthMbps"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyMetricLabel3",
+      "component": "span",
+      "props": {
+        "className": "text-sm text-on-surface-variant mt-1 whitespace-nowrap",
+        "value": "峰值流量"
+      }
+    },
+    {
+      "id": "mainPolicyCardRight",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center justify-center gap-4 shrink-0 min-w-0"
+      },
+      "children": [
+        "mainPolicyTimeBlock1",
+        "mainPolicyTimeBlock2"
+      ]
+    },
+    {
+      "id": "mainPolicyTimeBlock1",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center"
+      },
+      "children": [
+        "mainPolicyTimeValue1",
+        "mainPolicyTimeLabel1"
+      ]
+    },
+    {
+      "id": "mainPolicyTimeValue1",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface whitespace-nowrap",
+        "value": {
+          "path": "latestBlockTime"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyTimeLabel1",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1 whitespace-nowrap",
+        "value": "最新拦截时间"
+      }
+    },
+    {
+      "id": "mainPolicyTimeBlock2",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col items-center"
+      },
+      "children": [
+        "mainPolicyTimeValue2",
+        "mainPolicyTimeLabel2"
+      ]
+    },
+    {
+      "id": "mainPolicyTimeValue2",
+      "component": "span",
+      "props": {
+        "className": "text-md font-medium text-on-surface whitespace-nowrap",
+        "value": {
+          "path": "effectiveTime"
+        }
+      }
+    },
+    {
+      "id": "mainPolicyTimeLabel2",
+      "component": "span",
+      "props": {
+        "className": "text-xs text-on-surface-variant mt-1 whitespace-nowrap",
+        "value": "策略生效时间"
+      }
+    }
+  ]
+}

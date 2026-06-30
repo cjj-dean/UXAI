@@ -1,0 +1,1344 @@
+{
+    "state": {
+        "systemName": "HRConnect Pro",
+        "searchPlaceholder": "Search employees, schedules, rules...",
+        "notificationCount": 12,
+        "currentUser": {
+            "nickName": "Admin Alex",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        "activeGroup": "Global Ops",
+        "menuItems": [
+            {
+                "label": "Dashboard",
+                "icon": "layout-dashboard",
+                "isActive": false
+            },
+            {
+                "label": "Team Schedule",
+                "icon": "calendar-days",
+                "isActive": false
+            },
+            {
+                "label": "Attendance",
+                "icon": "user-check",
+                "isActive": false
+            },
+            {
+                "label": "Leave Management",
+                "icon": "plane",
+                "isActive": false
+            },
+            {
+                "label": "Rostering",
+                "icon": "clock",
+                "isActive": true
+            },
+            {
+                "label": "Reports",
+                "icon": "bar-chart-3",
+                "isActive": false
+            }
+        ],
+        "pageHeader": {
+            "title": "Attendance & Rostering",
+            "subtitle": "Manage shift cycles, team schedules, and resolve punch-in anomalies.",
+            "breadcrumb": [
+                {
+                    "title": "Global Ops"
+                },
+                {
+                    "title": "HR Administration"
+                },
+                {
+                    "title": "Rostering"
+                }
+            ]
+        },
+        "shiftConfig": {
+            "template": "General R&D (Flexible)",
+            "isFlexible": true,
+            "coreStart": "08:30 AM",
+            "coreEnd": "10:30 AM",
+            "breaks": [
+                {
+                    "name": "Lunch Break",
+                    "time": "12:00-13:00",
+                    "icon": "utensils"
+                },
+                {
+                    "name": "Afternoon Tea",
+                    "time": "15:30-15:45",
+                    "icon": "coffee"
+                }
+            ],
+            "allowance": "¥120/day"
+        },
+        "exceptions": [
+            {
+                "name": "Chen, Wei",
+                "avatar": "https://randomuser.me/api/portraits/men/44.jpg",
+                "type": "Location Anomaly",
+                "detail": "Offset 5.2km from registered site",
+                "status": "error"
+            },
+            {
+                "name": "Sarah Jenkins",
+                "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+                "type": "Missing Clock-out",
+                "detail": "System auto-logged out at 22:00",
+                "status": "warning"
+            }
+        ],
+        "calendar": {
+            "month": "September 2023",
+            "activeView": "Week",
+            "alert": "Shift Conflict Detected: 3 Engineers on leave simultaneously for Sept 14th. Operational risk is HIGH.",
+            "weekly": [
+                {
+                    "day": "Mon 11",
+                    "shifts": [
+                        {
+                            "team": "R&D Team A",
+                            "time": "09:00-18:00",
+                            "type": "RD"
+                        }
+                    ]
+                },
+                {
+                    "day": "Tue 12",
+                    "shifts": [
+                        {
+                            "team": "CS Team Alpha",
+                            "time": "08:00-17:00",
+                            "type": "CS"
+                        }
+                    ]
+                },
+                {
+                    "day": "Wed 13",
+                    "shifts": [
+                        {
+                            "team": "R&D Team A",
+                            "time": "09:00-18:00",
+                            "type": "RD"
+                        }
+                    ]
+                },
+                {
+                    "day": "Thu 14",
+                    "shifts": [
+                        {
+                            "team": "Ops Team B (Conflict)",
+                            "time": "09:00-18:00",
+                            "type": "Conflict"
+                        }
+                    ],
+                    "isConflict": true
+                },
+                {
+                    "day": "Fri 15",
+                    "shifts": [
+                        {
+                            "team": "R&D Team A",
+                            "time": "09:00-18:00",
+                            "type": "RD"
+                        }
+                    ]
+                },
+                {
+                    "day": "Sat 16",
+                    "shifts": []
+                },
+                {
+                    "day": "Sun 17",
+                    "shifts": []
+                }
+            ]
+        },
+        "adjustments": [
+            {
+                "user": "Elena Rodriguez",
+                "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+                "action": "Shift Swap Request",
+                "status": "Pending Approval",
+                "time": "10 mins ago"
+            },
+            {
+                "user": "Mark Zuckerberg",
+                "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+                "action": "Overtime Confirmed",
+                "status": "3.5h logged",
+                "time": "1 hour ago"
+            },
+            {
+                "user": "Li Na",
+                "avatar": "https://randomuser.me/api/portraits/women/22.jpg",
+                "action": "Leave Approved",
+                "status": "Sept 20-22",
+                "time": "3 hours ago"
+            }
+        ]
+    },
+    "rootId": "appShell",
+    "elements": [
+        {
+            "id": "appShell",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarContainer",
+                "mainWrapper"
+            ]
+        },
+        {
+            "id": "sidebarContainer",
+            "component": "div",
+            "props": {
+                "className": "w-64 flex flex-col bg-surface-container-highest border-r border-divider"
+            },
+            "children": [
+                "sidebarBrand",
+                "sidebarNav",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarBrand",
+            "component": "div",
+            "props": {
+                "className": "p-6 flex items-center gap-3"
+            },
+            "children": [
+                "brandIcon",
+                "brandName"
+            ]
+        },
+        {
+            "id": "brandIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layers",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandName",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/systemName"
+                }
+            }
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-4 py-2 flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "navItem"
+            }
+        },
+        {
+            "id": "navItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-action cursor-pointer hover:bg-surface-variant transition-colors"
+            },
+            "children": [
+                "navItemIcon",
+                "navItemLabel"
+            ]
+        },
+        {
+            "id": "navItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "navItemLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider"
+            },
+            "children": [
+                "clockInBtn"
+            ]
+        },
+        {
+            "id": "clockInBtn",
+            "component": "Button",
+            "props": {
+                "value": "Clock In/Out",
+                "color": "primary",
+                "icon": "timer",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "mainWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "topNav",
+                "scrollArea"
+            ]
+        },
+        {
+            "id": "topNav",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider flex items-center justify-between px-6"
+            },
+            "children": [
+                "searchBox",
+                "topActions"
+            ]
+        },
+        {
+            "id": "searchBox",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": {
+                    "path": "/searchPlaceholder"
+                },
+                "prefix": "search",
+                "className": "w-96"
+            }
+        },
+        {
+            "id": "topActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "notifBadge",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "notifBadge",
+            "component": "Badge",
+            "props": {
+                "count": {
+                    "path": "/notificationCount"
+                },
+                "status": "error"
+            },
+            "children": [
+                "notifIconBtn"
+            ]
+        },
+        {
+            "id": "notifIconBtn",
+            "component": "Button",
+            "props": {
+                "icon": "bell",
+                "shape": "circle",
+                "className": "bg-transparent border-none"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 pl-4 border-l border-divider"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatarImage"
+                },
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "/currentUser/nickName"
+                }
+            }
+        },
+        {
+            "id": "scrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "pageHeaderSection",
+                "contentGrid",
+                "footerSection"
+            ]
+        },
+        {
+            "id": "pageHeaderSection",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "headerTextGroup",
+                "headerBtnGroup"
+            ]
+        },
+        {
+            "id": "headerTextGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "breadcrumb",
+                "pageTitle",
+                "pageSubtitle"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/pageHeader/breadcrumb"
+                }
+            }
+        },
+        {
+            "id": "pageTitle",
+            "component": "h1",
+            "props": {
+                "className": "text-3xl font-bold text-on-surface",
+                "value": {
+                    "path": "/pageHeader/title"
+                }
+            }
+        },
+        {
+            "id": "pageSubtitle",
+            "component": "p",
+            "props": {
+                "className": "text-on-surface-variant",
+                "value": {
+                    "path": "/pageHeader/subtitle"
+                }
+            }
+        },
+        {
+            "id": "headerBtnGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "exportBtn",
+                "newRuleBtn"
+            ]
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "value": "Export Report",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "newRuleBtn",
+            "component": "Button",
+            "props": {
+                "value": "New Shift Rule",
+                "icon": "plus",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "contentGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-12 gap-gutter"
+            },
+            "children": [
+                "leftCol",
+                "rightCol"
+            ]
+        },
+        {
+            "id": "leftCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 flex flex-col gap-gutter"
+            },
+            "children": [
+                "configCard",
+                "exceptionCard"
+            ]
+        },
+        {
+            "id": "configCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+            },
+            "children": [
+                "configHeader",
+                "configForm"
+            ]
+        },
+        {
+            "id": "configHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "configTitle",
+                "configFlexTag"
+            ]
+        },
+        {
+            "id": "configTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-lg",
+                "value": "Shift Configuration"
+            }
+        },
+        {
+            "id": "configFlexTag",
+            "component": "Tag",
+            "props": {
+                "value": "Flexible",
+                "color": "success",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "configForm",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4"
+            },
+            "children": [
+                "templateSelectGroup",
+                "coreHoursGroup",
+                "breakListGroup",
+                "subsidyGroup"
+            ]
+        },
+        {
+            "id": "templateSelectGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "tplLabel",
+                "tplSelect"
+            ]
+        },
+        {
+            "id": "tplLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Shift Template"
+            }
+        },
+        {
+            "id": "tplSelect",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/shiftConfig/template"
+                },
+                "options": [
+                    {
+                        "label": "General R&D (Flexible)",
+                        "value": "General R&D (Flexible)"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "coreHoursGroup",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "coreLabel",
+                "corePicker"
+            ]
+        },
+        {
+            "id": "coreLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "Core Hours"
+            }
+        },
+        {
+            "id": "corePicker",
+            "component": "TimePicker",
+            "props": {
+                "range": true,
+                "value": [
+                    "08:30",
+                    "10:30"
+                ],
+                "format": "HH:mm"
+            }
+        },
+        {
+            "id": "breakListGroup",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant p-3 rounded-lg flex flex-col gap-2"
+            },
+            "children": {
+                "path": "/shiftConfig/breaks",
+                "componentId": "breakItem"
+            }
+        },
+        {
+            "id": "breakItem",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "breakNameGroup",
+                "breakTime"
+            ]
+        },
+        {
+            "id": "breakNameGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "breakIcon",
+                "breakName"
+            ]
+        },
+        {
+            "id": "breakIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "breakName",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "breakTime",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-mono text-on-surface-variant",
+                "value": {
+                    "path": "time"
+                }
+            }
+        },
+        {
+            "id": "subsidyGroup",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center pt-2 border-t border-divider"
+            },
+            "children": [
+                "subsidyLabel",
+                "subsidyValue"
+            ]
+        },
+        {
+            "id": "subsidyLabel",
+            "component": "span",
+            "props": {
+                "className": "text-sm",
+                "value": "Night Shift Subsidy"
+            }
+        },
+        {
+            "id": "subsidyValue",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold text-primary",
+                "value": {
+                    "path": "/shiftConfig/allowance"
+                }
+            }
+        },
+        {
+            "id": "exceptionCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card p-inset flex flex-col gap-stack"
+            },
+            "children": [
+                "exHeader",
+                "exList"
+            ]
+        },
+        {
+            "id": "exHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "exTitle",
+                "exBadge"
+            ]
+        },
+        {
+            "id": "exTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold text-lg",
+                "value": "Exception Workbench"
+            }
+        },
+        {
+            "id": "exBadge",
+            "component": "Badge",
+            "props": {
+                "count": 8,
+                "status": "error"
+            },
+            "children": [
+                "exBadgePlaceholder"
+            ]
+        },
+        {
+            "id": "exBadgePlaceholder",
+            "component": "span",
+            "props": {
+                "className": "px-2"
+            }
+        },
+        {
+            "id": "exList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/exceptions",
+                "componentId": "exItem"
+            }
+        },
+        {
+            "id": "exItem",
+            "component": "div",
+            "props": {
+                "className": "flex gap-3 p-3 bg-surface-variant rounded-lg border border-divider"
+            },
+            "children": [
+                "exAvatar",
+                "exContent"
+            ]
+        },
+        {
+            "id": "exAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-10 h-10 rounded-full"
+            }
+        },
+        {
+            "id": "exContent",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col"
+            },
+            "children": [
+                "exNameRow",
+                "exDetail"
+            ]
+        },
+        {
+            "id": "exNameRow",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "exName",
+                "exTypeTag"
+            ]
+        },
+        {
+            "id": "exName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": {
+                    "path": "name"
+                }
+            }
+        },
+        {
+            "id": "exTypeTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "type"
+                },
+                "color": {
+                    "path": "status"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "exDetail",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant mt-1",
+                "value": {
+                    "path": "detail"
+                }
+            }
+        },
+        {
+            "id": "rightCol",
+            "component": "div",
+            "props": {
+                "className": "col-span-8 flex flex-col gap-gutter"
+            },
+            "children": [
+                "calendarCard"
+            ]
+        },
+        {
+            "id": "calendarCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl shadow-card flex flex-col"
+            },
+            "children": [
+                "calHeader",
+                "calAlert",
+                "calGrid",
+                "calLegend"
+            ]
+        },
+        {
+            "id": "calHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "calTitleGroup",
+                "calViewTabs"
+            ]
+        },
+        {
+            "id": "calTitleGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "calMonth",
+                "calNavBtns"
+            ]
+        },
+        {
+            "id": "calMonth",
+            "component": "span",
+            "props": {
+                "className": "text-xl font-bold",
+                "value": {
+                    "path": "/calendar/month"
+                }
+            }
+        },
+        {
+            "id": "calNavBtns",
+            "component": "div",
+            "props": {
+                "className": "flex gap-1"
+            },
+            "children": [
+                "prevBtn",
+                "nextBtn"
+            ]
+        },
+        {
+            "id": "prevBtn",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-left",
+                "size": "small"
+            }
+        },
+        {
+            "id": "nextBtn",
+            "component": "Button",
+            "props": {
+                "icon": "chevron-right",
+                "size": "small"
+            }
+        },
+        {
+            "id": "calViewTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": "Week",
+                "size": "small"
+            },
+            "children": [
+                "tabWeek",
+                "tabMonth",
+                "tabTeam"
+            ]
+        },
+        {
+            "id": "tabWeek",
+            "component": "TabItem",
+            "props": {
+                "key": "Week",
+                "label": "Week"
+            }
+        },
+        {
+            "id": "tabMonth",
+            "component": "TabItem",
+            "props": {
+                "key": "Month",
+                "label": "Month"
+            }
+        },
+        {
+            "id": "tabTeam",
+            "component": "TabItem",
+            "props": {
+                "key": "Team View",
+                "label": "Team View"
+            }
+        },
+        {
+            "id": "calAlert",
+            "component": "div",
+            "props": {
+                "className": "mx-inset mt-4 p-3 bg-warning-container rounded-lg flex items-center gap-3"
+            },
+            "children": [
+                "alertIcon",
+                "alertText"
+            ]
+        },
+        {
+            "id": "alertIcon",
+            "component": "Icon",
+            "props": {
+                "name": "alert-triangle",
+                "color": "warning"
+            }
+        },
+        {
+            "id": "alertText",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-warning-container font-medium",
+                "value": {
+                    "path": "/calendar/alert"
+                }
+            }
+        },
+        {
+            "id": "calGrid",
+            "component": "div",
+            "props": {
+                "className": "p-inset grid grid-cols-7 gap-2 min-h-[400px]"
+            },
+            "children": {
+                "path": "/calendar/weekly",
+                "componentId": "calDayCol"
+            }
+        },
+        {
+            "id": "calDayCol",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "calDayHeader",
+                "calShiftList"
+            ]
+        },
+        {
+            "id": "calDayHeader",
+            "component": "div",
+            "props": {
+                "className": "text-center py-2 border-b border-divider"
+            },
+            "children": [
+                "calDayLabel"
+            ]
+        },
+        {
+            "id": "calDayLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant",
+                "value": {
+                    "path": "day"
+                }
+            }
+        },
+        {
+            "id": "calShiftList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": {
+                "path": "shifts",
+                "componentId": "calShiftBlock"
+            }
+        },
+        {
+            "id": "calShiftBlock",
+            "component": "div",
+            "props": {
+                "className": "p-2 rounded border-l-4 bg-surface-variant",
+                "style": "border-color: #3B82F6"
+            },
+            "children": [
+                "shiftTeam",
+                "shiftTime"
+            ]
+        },
+        {
+            "id": "shiftTeam",
+            "component": "span",
+            "props": {
+                "className": "block text-[10px] font-bold truncate",
+                "value": {
+                    "path": "team"
+                }
+            }
+        },
+        {
+            "id": "shiftTime",
+            "component": "span",
+            "props": {
+                "className": "block text-[10px] text-on-surface-variant",
+                "value": {
+                    "path": "time"
+                }
+            }
+        },
+        {
+            "id": "calLegend",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex gap-6 justify-center"
+            },
+            "children": [
+                "legRD",
+                "legCS",
+                "legOps",
+                "legConflict"
+            ]
+        },
+        {
+            "id": "legRD",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotRD",
+                "lblRD"
+            ]
+        },
+        {
+            "id": "dotRD",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#3B82F6]"
+            }
+        },
+        {
+            "id": "lblRD",
+            "component": "span",
+            "props": {
+                "className": "text-xs",
+                "value": "R&D"
+            }
+        },
+        {
+            "id": "legCS",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotCS",
+                "lblCS"
+            ]
+        },
+        {
+            "id": "dotCS",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#10B981]"
+            }
+        },
+        {
+            "id": "lblCS",
+            "component": "span",
+            "props": {
+                "className": "text-xs",
+                "value": "CS"
+            }
+        },
+        {
+            "id": "legOps",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotOps",
+                "lblOps"
+            ]
+        },
+        {
+            "id": "dotOps",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#F59E0B]"
+            }
+        },
+        {
+            "id": "lblOps",
+            "component": "span",
+            "props": {
+                "className": "text-xs",
+                "value": "Ops"
+            }
+        },
+        {
+            "id": "legConflict",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "dotConflict",
+                "lblConflict"
+            ]
+        },
+        {
+            "id": "dotConflict",
+            "component": "div",
+            "props": {
+                "className": "w-3 h-3 rounded-full bg-[#EF4444]"
+            }
+        },
+        {
+            "id": "lblConflict",
+            "component": "span",
+            "props": {
+                "className": "text-xs",
+                "value": "Conflict"
+            }
+        },
+        {
+            "id": "footerSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-xl p-inset shadow-sm"
+            },
+            "children": [
+                "footerHeader",
+                "footerList"
+            ]
+        },
+        {
+            "id": "footerHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-4"
+            },
+            "children": [
+                "footerTitle",
+                "historyLink"
+            ]
+        },
+        {
+            "id": "footerTitle",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": "Recent Schedule Adjustments"
+            }
+        },
+        {
+            "id": "historyLink",
+            "component": "span",
+            "props": {
+                "className": "text-primary text-sm cursor-pointer",
+                "value": "View History Log"
+            }
+        },
+        {
+            "id": "footerList",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-3 gap-6"
+            },
+            "children": {
+                "path": "/adjustments",
+                "componentId": "adjCard"
+            }
+        },
+        {
+            "id": "adjCard",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "adjAvatar",
+                "adjInfo"
+            ]
+        },
+        {
+            "id": "adjAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "avatar"
+                },
+                "className": "w-8 h-8 rounded-full"
+            }
+        },
+        {
+            "id": "adjInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "adjUser",
+                "adjAction",
+                "adjMeta"
+            ]
+        },
+        {
+            "id": "adjUser",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold",
+                "value": {
+                    "path": "user"
+                }
+            }
+        },
+        {
+            "id": "adjAction",
+            "component": "span",
+            "props": {
+                "className": "text-xs",
+                "value": {
+                    "path": "action"
+                }
+            }
+        },
+        {
+            "id": "adjMeta",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between mt-1"
+            },
+            "children": [
+                "adjStatus",
+                "adjTime"
+            ]
+        },
+        {
+            "id": "adjStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "size": "small",
+                "color": "processing"
+            }
+        },
+        {
+            "id": "adjTime",
+            "component": "span",
+            "props": {
+                "className": "text-[10px] text-on-surface-variant",
+                "value": {
+                    "path": "time"
+                }
+            }
+        }
+    ]
+}

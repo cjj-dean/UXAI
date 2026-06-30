@@ -1,0 +1,988 @@
+{
+    "state": {
+        "brand": {
+            "logoIcon": "network",
+            "title": "iMaster NCE"
+        },
+        "menus": [
+            {
+                "label": "概览",
+                "isActive": true
+            },
+            {
+                "label": "资源监控",
+                "isActive": false
+            },
+            {
+                "label": "故障诊断",
+                "isActive": false
+            },
+            {
+                "label": "策略中心",
+                "isActive": false
+            },
+            {
+                "label": "报表分析",
+                "isActive": false
+            }
+        ],
+        "currentUser": {
+            "userName": "admin",
+            "avatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+            "role": "超级管理员"
+        },
+        "ceiGauge": {
+            "score": 88.5,
+            "status": "良好",
+            "subText": "较昨日 +1.2%"
+        },
+        "trendArea": [
+            {
+                "time": "00:00",
+                "value": 82
+            },
+            {
+                "time": "04:00",
+                "value": 80
+            },
+            {
+                "time": "08:00",
+                "value": 85
+            },
+            {
+                "time": "12:00",
+                "value": 91
+            },
+            {
+                "time": "16:00",
+                "value": 88
+            },
+            {
+                "time": "20:00",
+                "value": 89
+            },
+            {
+                "time": "23:59",
+                "value": 88.5
+            }
+        ],
+        "deductionPie": [
+            {
+                "name": "时延抖动",
+                "value": 450
+            },
+            {
+                "name": "丢包异常",
+                "value": 320
+            },
+            {
+                "name": "认证失败",
+                "value": 280
+            },
+            {
+                "name": "带宽受限",
+                "value": 190
+            }
+        ],
+        "userDistribution": [
+            {
+                "range": "0-20",
+                "count": 12
+            },
+            {
+                "range": "20-40",
+                "count": 45
+            },
+            {
+                "range": "40-60",
+                "count": 128
+            },
+            {
+                "range": "60-80",
+                "count": 856
+            },
+            {
+                "range": "80-100",
+                "count": 2430
+            }
+        ],
+        "topCauses": [
+            {
+                "name": "光衰耗过大",
+                "value": 92
+            },
+            {
+                "name": "Wi-Fi干扰",
+                "value": 78
+            },
+            {
+                "name": "终端版本过低",
+                "value": 56
+            },
+            {
+                "name": "频繁重连",
+                "value": 42
+            },
+            {
+                "name": "DNS解析慢",
+                "value": 25
+            }
+        ],
+        "activeTab": "remote",
+        "tabs": [
+            {
+                "key": "remote",
+                "label": "远程优化"
+            },
+            {
+                "key": "local",
+                "label": "现场排障"
+            },
+            {
+                "key": "history",
+                "label": "优化历史"
+            },
+            {
+                "key": "policy",
+                "label": "自动化策略"
+            }
+        ],
+        "searchValue": "",
+        "tableData": [
+            {
+                "id": "1",
+                "pppoeAccount": "user_sh_001",
+                "email": "sh_001@isp.com",
+                "ceiScore": 45,
+                "status": "待优化",
+                "lastIssue": "高时延",
+                "region": "上海-浦东"
+            },
+            {
+                "id": "2",
+                "pppoeAccount": "user_bj_042",
+                "email": "bj_042@isp.com",
+                "ceiScore": 32,
+                "status": "优化中",
+                "lastIssue": "频繁掉线",
+                "region": "北京-朝阳"
+            },
+            {
+                "id": "3",
+                "pppoeAccount": "user_gd_109",
+                "email": "gd_109@isp.com",
+                "ceiScore": 89,
+                "status": "已完成",
+                "lastIssue": "无",
+                "region": "广东-深圳"
+            },
+            {
+                "id": "4",
+                "pppoeAccount": "user_hz_552",
+                "email": "hz_552@isp.com",
+                "ceiScore": 58,
+                "status": "待优化",
+                "lastIssue": "带宽不足",
+                "region": "浙江-杭州"
+            },
+            {
+                "id": "5",
+                "pppoeAccount": "user_cd_088",
+                "email": "cd_088@isp.com",
+                "ceiScore": 41,
+                "status": "优化失败",
+                "lastIssue": "硬件故障",
+                "region": "四川-成都"
+            },
+            {
+                "id": "6",
+                "pppoeAccount": "user_wh_221",
+                "email": "wh_221@isp.com",
+                "ceiScore": 76,
+                "status": "已完成",
+                "lastIssue": "干扰优化",
+                "region": "湖北-武汉"
+            },
+            {
+                "id": "7",
+                "pppoeAccount": "user_xa_312",
+                "email": "xa_312@isp.com",
+                "ceiScore": 22,
+                "status": "待优化",
+                "lastIssue": "光路中断",
+                "region": "陕西-西安"
+            },
+            {
+                "id": "8",
+                "pppoeAccount": "user_nj_904",
+                "email": "nj_904@isp.com",
+                "ceiScore": 65,
+                "status": "优化中",
+                "lastIssue": "配置同步",
+                "region": "江苏-南京"
+            },
+            {
+                "id": "9",
+                "pppoeAccount": "user_sy_115",
+                "email": "sy_115@isp.com",
+                "ceiScore": 92,
+                "status": "已完成",
+                "lastIssue": "无",
+                "region": "辽宁-沈阳"
+            },
+            {
+                "id": "10",
+                "pppoeAccount": "user_km_667",
+                "email": "km_667@isp.com",
+                "ceiScore": 38,
+                "status": "待优化",
+                "lastIssue": "认证超时",
+                "region": "云南-昆明"
+            }
+        ],
+        "system": {
+            "version": "v3.22.10-RELEASE",
+            "lastUpdateTime": "2023-10-27 14:30:05",
+            "serviceStatus": "云端引擎连接正常"
+        }
+    },
+    "rootId": "globalAppContainer",
+    "elements": [
+        {
+            "id": "globalAppContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "navHeader",
+                "mainScrollArea",
+                "systemFooter"
+            ]
+        },
+        {
+            "id": "navHeader",
+            "component": "header",
+            "props": {
+                "className": "sticky top-0 z-50 flex items-center justify-between px-gutter h-14 bg-surface-container-highest shadow-sm border-b border-divider"
+            },
+            "children": [
+                "navLeftSection",
+                "navCenterSection",
+                "navRightSection"
+            ]
+        },
+        {
+            "id": "navLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navLogo",
+                "navTitle"
+            ]
+        },
+        {
+            "id": "navLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logoIcon"
+                },
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "navTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold text-on-surface",
+                "value": {
+                    "path": "/brand/title"
+                }
+            }
+        },
+        {
+            "id": "navCenterSection",
+            "component": "nav",
+            "props": {
+                "className": "flex items-center gap-6"
+            },
+            "children": {
+                "path": "/menus",
+                "componentId": "navMenuItem"
+            }
+        },
+        {
+            "id": "navMenuItem",
+            "component": "span",
+            "props": {
+                "className": "text-md cursor-pointer hover:text-primary transition-colors",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "navRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "navSearchIcon",
+                "navDivider",
+                "navUserArea",
+                "navSettingsIcon"
+            ]
+        },
+        {
+            "id": "navSearchIcon",
+            "component": "Icon",
+            "props": {
+                "name": "search",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "navDivider",
+            "component": "div",
+            "props": {
+                "className": "w-px h-4 bg-divider"
+            }
+        },
+        {
+            "id": "navUserArea",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "navUserText"
+            ]
+        },
+        {
+            "id": "navUserText",
+            "component": "span",
+            "props": {
+                "className": "text-sm text-on-surface",
+                "value": {
+                    "path": "/currentUser/userName"
+                }
+            }
+        },
+        {
+            "id": "navSettingsIcon",
+            "component": "Icon",
+            "props": {
+                "name": "settings",
+                "className": "w-5 h-5 text-on-surface-variant cursor-pointer"
+            }
+        },
+        {
+            "id": "mainScrollArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "kpiSection",
+                "analysisSection",
+                "operationSection"
+            ]
+        },
+        {
+            "id": "kpiSection",
+            "component": "section",
+            "props": {
+                "className": "grid grid-cols-3 gap-gutter"
+            },
+            "children": [
+                "ceiGaugeCard",
+                "trendAreaCard",
+                "deductionPieCard"
+            ]
+        },
+        {
+            "id": "ceiGaugeCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "ceiGaugeHeader",
+                "ceiGaugeChart",
+                "ceiGaugeFooter"
+            ]
+        },
+        {
+            "id": "ceiGaugeHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "ceiGaugeTitle",
+                "ceiGaugeInfo"
+            ]
+        },
+        {
+            "id": "ceiGaugeTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold",
+                "value": "CEI平均分"
+            }
+        },
+        {
+            "id": "ceiGaugeInfo",
+            "component": "Icon",
+            "props": {
+                "name": "info",
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "ceiGaugeChart",
+            "component": "GaugeChart",
+            "props": {
+                "option": {
+                    "data": [
+                        {
+                            "value": {
+                                "path": "/ceiGauge/score"
+                            },
+                            "name": "CEI"
+                        }
+                    ],
+                    "splitColor": [
+                        [
+                            0.6,
+                            "#E02128"
+                        ],
+                        [
+                            0.8,
+                            "#F4840C"
+                        ],
+                        [
+                            1,
+                            "#09AA71"
+                        ]
+                    ]
+                },
+                "className": "h-40 w-full"
+            }
+        },
+        {
+            "id": "ceiGaugeFooter",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center"
+            },
+            "children": [
+                "ceiGaugeStatus",
+                "ceiGaugeTrend"
+            ]
+        },
+        {
+            "id": "ceiGaugeStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/ceiGauge/status"
+                },
+                "color": "success",
+                "variant": "filled"
+            }
+        },
+        {
+            "id": "ceiGaugeTrend",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-success mt-1",
+                "value": {
+                    "path": "/ceiGauge/subText"
+                }
+            }
+        },
+        {
+            "id": "trendAreaCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "trendAreaHeader",
+                "trendAreaChart"
+            ]
+        },
+        {
+            "id": "trendAreaHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "trendAreaTitle",
+                "trendAreaTime"
+            ]
+        },
+        {
+            "id": "trendAreaTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold",
+                "value": "CEI趋势分析"
+            }
+        },
+        {
+            "id": "trendAreaTime",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": "过去24小时"
+            }
+        },
+        {
+            "id": "trendAreaChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/trendArea"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "Score",
+                    "area": true,
+                    "smooth": true,
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-56 w-full"
+            }
+        },
+        {
+            "id": "deductionPieCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-stack"
+            },
+            "children": [
+                "deductionPieTitle",
+                "deductionPieChart"
+            ]
+        },
+        {
+            "id": "deductionPieTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold",
+                "value": "扣分分布"
+            }
+        },
+        {
+            "id": "deductionPieChart",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "data": {
+                        "path": "/deductionPie"
+                    },
+                    "title": {
+                        "text": "1240",
+                        "subText": "总扣分"
+                    },
+                    "color": [
+                        "#E02128",
+                        "#F4840C",
+                        "#0067D1",
+                        "#09AA71"
+                    ]
+                },
+                "className": "h-56 w-full"
+            }
+        },
+        {
+            "id": "analysisSection",
+            "component": "section",
+            "props": {
+                "className": "grid grid-cols-10 gap-gutter"
+            },
+            "children": [
+                "userDistCard",
+                "topCausesCard"
+            ]
+        },
+        {
+            "id": "userDistCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-6 bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "userDistTitle",
+                "userDistChart"
+            ]
+        },
+        {
+            "id": "userDistTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold block mb-4",
+                "value": "用户CEI分布柱状图"
+            }
+        },
+        {
+            "id": "userDistChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "data": {
+                        "path": "/userDistribution"
+                    },
+                    "xAxis": {
+                        "data": "range"
+                    },
+                    "yAxisTitle": "用户数",
+                    "color": [
+                        "#0067D1"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "topCausesCard",
+            "component": "div",
+            "props": {
+                "className": "col-span-4 bg-surface-container-highest p-inset rounded-container shadow-card"
+            },
+            "children": [
+                "topCausesTitle",
+                "topCausesChart"
+            ]
+        },
+        {
+            "id": "topCausesTitle",
+            "component": "span",
+            "props": {
+                "className": "text-md font-semibold block mb-4",
+                "value": "Top 5 扣分原因"
+            }
+        },
+        {
+            "id": "topCausesChart",
+            "component": "ProcessChart",
+            "props": {
+                "option": {
+                    "name": "ProcessBarChart",
+                    "data": {
+                        "path": "/topCauses"
+                    },
+                    "unit": "户",
+                    "color": [
+                        "#F4840C"
+                    ]
+                },
+                "className": "h-64 w-full"
+            }
+        },
+        {
+            "id": "operationSection",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "opTabs",
+                "opContent"
+            ]
+        },
+        {
+            "id": "opTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": {
+                    "path": "/activeTab"
+                },
+                "className": "px-inset pt-inset"
+            },
+            "children": {
+                "path": "/tabs",
+                "componentId": "opTabItem"
+            }
+        },
+        {
+            "id": "opTabItem",
+            "component": "TabItem",
+            "props": {
+                "key": {
+                    "path": "key"
+                },
+                "label": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "opContent",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex flex-col gap-stack"
+            },
+            "children": [
+                "opToolbar",
+                "opTable"
+            ]
+        },
+        {
+            "id": "opToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center bg-surface-variant p-stack rounded-md"
+            },
+            "children": [
+                "opSearchInput",
+                "opActionGroup"
+            ]
+        },
+        {
+            "id": "opSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchValue"
+                },
+                "placeholder": "搜索PPPoE账号/IP...",
+                "prefix": "search",
+                "className": "w-72"
+            }
+        },
+        {
+            "id": "opActionGroup",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "btnConfig",
+                "btnExport",
+                "btnOptimize"
+            ]
+        },
+        {
+            "id": "btnConfig",
+            "component": "Button",
+            "props": {
+                "value": "策略配置",
+                "icon": "settings"
+            }
+        },
+        {
+            "id": "btnExport",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download"
+            }
+        },
+        {
+            "id": "btnOptimize",
+            "component": "Button",
+            "props": {
+                "value": "批量优化",
+                "icon": "zap",
+                "color": "primary"
+            }
+        },
+        {
+            "id": "opTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/tableData"
+                },
+                "columns": [
+                    {
+                        "title": "PPPoE账号",
+                        "dataIndex": "pppoeAccount"
+                    },
+                    {
+                        "title": "邮箱",
+                        "dataIndex": "email"
+                    },
+                    {
+                        "title": "CEI分数",
+                        "dataIndex": "ceiScore",
+                        "sort": true
+                    },
+                    {
+                        "title": "优化状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "核心问题",
+                        "dataIndex": "lastIssue"
+                    },
+                    {
+                        "title": "所属区域",
+                        "dataIndex": "region"
+                    }
+                ]
+            },
+            "children": {
+                "path": "/tableData",
+                "componentId": "opTableRow"
+            }
+        },
+        {
+            "id": "opTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellAccount",
+                "cellEmail",
+                "cellScore",
+                "cellStatus",
+                "cellIssue",
+                "cellRegion"
+            ]
+        },
+        {
+            "id": "cellAccount",
+            "component": "span",
+            "props": {
+                "className": "font-medium text-primary",
+                "value": {
+                    "path": "pppoeAccount"
+                }
+            }
+        },
+        {
+            "id": "cellEmail",
+            "component": "a",
+            "props": {
+                "className": "text-on-surface-variant underline",
+                "href": {
+                    "path": "email"
+                },
+                "value": {
+                    "path": "email"
+                }
+            }
+        },
+        {
+            "id": "cellScore",
+            "component": "span",
+            "props": {
+                "className": "font-bold",
+                "value": {
+                    "path": "ceiScore"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "processing"
+            }
+        },
+        {
+            "id": "cellIssue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "lastIssue"
+                }
+            }
+        },
+        {
+            "id": "cellRegion",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "region"
+                }
+            }
+        },
+        {
+            "id": "systemFooter",
+            "component": "footer",
+            "props": {
+                "className": "h-10 px-gutter flex items-center justify-between bg-surface-container-highest border-t border-divider text-xs text-on-surface-variant"
+            },
+            "children": [
+                "footerLeft",
+                "footerRight"
+            ]
+        },
+        {
+            "id": "footerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "footerVersion",
+                "footerUpdateTime"
+            ]
+        },
+        {
+            "id": "footerVersion",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/system/version"
+                }
+            }
+        },
+        {
+            "id": "footerUpdateTime",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/system/lastUpdateTime"
+                }
+            }
+        },
+        {
+            "id": "footerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-1 text-success"
+            },
+            "children": [
+                "footerStatusIcon",
+                "footerStatusText"
+            ]
+        },
+        {
+            "id": "footerStatusIcon",
+            "component": "Icon",
+            "props": {
+                "name": "check-circle",
+                "className": "w-3 h-3"
+            }
+        },
+        {
+            "id": "footerStatusText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/system/serviceStatus"
+                }
+            }
+        }
+    ]
+}

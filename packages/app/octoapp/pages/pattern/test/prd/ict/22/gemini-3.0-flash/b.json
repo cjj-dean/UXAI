@@ -1,0 +1,808 @@
+{
+    "state": {
+        "brandName": "iMaster MAE",
+        "pageTitle": "故障智能驾驶舱",
+        "switchLabel": "切换视角",
+        "actionIcons": [
+            {
+                "icon": "moon",
+                "tooltip": "深色模式"
+            },
+            {
+                "icon": "bell",
+                "tooltip": "系统通知"
+            },
+            {
+                "icon": "help-circle",
+                "tooltip": "帮助文档"
+            }
+        ],
+        "cornerBadge": "网络中心",
+        "metrics": [
+            {
+                "label": "故障总数",
+                "value": "1,284",
+                "unit": "个",
+                "color": "#FF4D4F",
+                "icon": "alert-circle"
+            },
+            {
+                "label": "自动诊断中",
+                "value": "85",
+                "unit": "个",
+                "color": "#1890FF",
+                "icon": "activity"
+            },
+            {
+                "label": "待人工介入",
+                "value": "12",
+                "unit": "个",
+                "color": "#FAAD14",
+                "icon": "user-check"
+            },
+            {
+                "label": "今日已修复",
+                "value": "942",
+                "unit": "个",
+                "color": "#52C41A",
+                "icon": "check-circle"
+            },
+            {
+                "label": "平均修复时长",
+                "value": "24",
+                "unit": "min",
+                "color": "#722ED1",
+                "icon": "clock"
+            },
+            {
+                "label": "告警压缩率",
+                "value": "98.2",
+                "unit": "%",
+                "color": "#13C2C2",
+                "icon": "zap"
+            }
+        ],
+        "processSteps": [
+            {
+                "title": "主动发现",
+                "desc": "AI巡检实时扫描",
+                "status": "finish"
+            },
+            {
+                "title": "故障诊断",
+                "desc": "根因定位与拓扑分析",
+                "status": "process"
+            },
+            {
+                "title": "故障上报",
+                "desc": "工单自动派发",
+                "status": "wait"
+            }
+        ],
+        "faultDonutData": [
+            {
+                "name": "硬件故障",
+                "value": 450
+            },
+            {
+                "name": "链路拥塞",
+                "value": 320
+            },
+            {
+                "name": "配置错误",
+                "value": 210
+            },
+            {
+                "name": "软件异常",
+                "value": 150
+            }
+        ],
+        "faultStackedData": [
+            {
+                "Time": "00:00",
+                "核心网": 12,
+                "接入网": 25
+            },
+            {
+                "Time": "04:00",
+                "核心网": 15,
+                "接入网": 32
+            },
+            {
+                "Time": "08:00",
+                "核心网": 45,
+                "接入网": 88
+            },
+            {
+                "Time": "12:00",
+                "核心网": 32,
+                "接入网": 76
+            },
+            {
+                "Time": "16:00",
+                "核心网": 28,
+                "接入网": 54
+            },
+            {
+                "Time": "20:00",
+                "核心网": 18,
+                "接入网": 30
+            }
+        ],
+        "reasonTopData": [
+            {
+                "reason": "光模块失效",
+                "count": 124
+            },
+            {
+                "reason": "BGP邻居断连",
+                "count": 98
+            },
+            {
+                "reason": "CPU负载过高",
+                "count": 87
+            },
+            {
+                "reason": "内存泄漏",
+                "count": 76
+            },
+            {
+                "reason": "非法访问拦截",
+                "count": 65
+            },
+            {
+                "reason": "光纤损耗过大",
+                "count": 54
+            },
+            {
+                "reason": "电源模块异常",
+                "count": 43
+            },
+            {
+                "reason": "风扇转速低",
+                "count": 32
+            },
+            {
+                "reason": "路由环路",
+                "count": 21
+            },
+            {
+                "reason": "端口频繁Up/Down",
+                "count": 15
+            }
+        ],
+        "diagnosticTable": [
+            {
+                "id": "D-001",
+                "target": "核心交换机-A01",
+                "conclusion": "建议更换光模块",
+                "confidence": "98%"
+            },
+            {
+                "id": "D-002",
+                "target": "汇聚路由器-B05",
+                "conclusion": "路由策略冲突",
+                "confidence": "85%"
+            },
+            {
+                "id": "D-003",
+                "target": "防火墙-C02",
+                "conclusion": "遭受DDoS攻击",
+                "confidence": "92%"
+            }
+        ],
+        "trendData": [
+            {
+                "time": "10-01",
+                "严重": 12,
+                "主要": 34,
+                "次要": 56
+            },
+            {
+                "time": "10-02",
+                "严重": 15,
+                "主要": 28,
+                "次要": 62
+            },
+            {
+                "time": "10-03",
+                "严重": 8,
+                "主要": 45,
+                "次要": 48
+            },
+            {
+                "time": "10-04",
+                "严重": 22,
+                "主要": 38,
+                "次要": 75
+            },
+            {
+                "time": "10-05",
+                "严重": 18,
+                "主要": 31,
+                "次要": 68
+            },
+            {
+                "time": "10-06",
+                "严重": 10,
+                "主要": 25,
+                "次要": 42
+            },
+            {
+                "time": "10-07",
+                "严重": 5,
+                "主要": 18,
+                "次要": 35
+            }
+        ]
+    },
+    "rootId": "dashboardContainer",
+    "elements": [
+        {
+            "id": "dashboardContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "globalHeader",
+                "mainScrollArea"
+            ]
+        },
+        {
+            "id": "globalHeader",
+            "component": "header",
+            "props": {
+                "className": "flex items-center justify-between px-gutter py-inline bg-surface-container-highest shadow-sm z-10"
+            },
+            "children": [
+                "headerLeft",
+                "headerCenter",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "brandLogo",
+                "brandText"
+            ]
+        },
+        {
+            "id": "brandLogo",
+            "component": "Icon",
+            "props": {
+                "name": "network",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "brandText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brandName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerCenter",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/pageTitle"
+                },
+                "className": "text-xl font-bold text-on-surface tracking-wide"
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-4"
+            },
+            "children": [
+                "switchButton",
+                "headerActionList"
+            ]
+        },
+        {
+            "id": "switchButton",
+            "component": "Button",
+            "props": {
+                "value": {
+                    "path": "/switchLabel"
+                },
+                "icon": "chevron-down",
+                "iconPlacement": "end",
+                "shape": "round",
+                "className": "bg-primary-container text-primary border-none"
+            }
+        },
+        {
+            "id": "headerActionList",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": {
+                "path": "/actionIcons",
+                "componentId": "headerActionIcon"
+            }
+        },
+        {
+            "id": "headerActionIcon",
+            "component": "Button",
+            "props": {
+                "icon": {
+                    "path": "icon"
+                },
+                "shape": "circle",
+                "className": "text-on-surface-variant hover:bg-surface-variant"
+            }
+        },
+        {
+            "id": "mainScrollArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-gutter flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricsPanel",
+                "analysisPanel",
+                "trendPanel"
+            ]
+        },
+        {
+            "id": "metricsPanel",
+            "component": "section",
+            "props": {
+                "className": "relative bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "panelBadge",
+                "metricsGrid"
+            ]
+        },
+        {
+            "id": "panelBadge",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 left-0"
+            },
+            "children": [
+                "badgeTag"
+            ]
+        },
+        {
+            "id": "badgeTag",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "/cornerBadge"
+                },
+                "color": "primary",
+                "variant": "filled",
+                "className": "rounded-tl-container rounded-br-container px-3"
+            }
+        },
+        {
+            "id": "metricsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-6 gap-gutter mt-4"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricItem"
+            }
+        },
+        {
+            "id": "metricItem",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-center text-center p-inline rounded-xl bg-surface-variant"
+            },
+            "children": [
+                "metricIcon",
+                "metricLabel",
+                "metricValueGroup"
+            ]
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "shape": "circle",
+                "className": "w-10 h-10 mb-2"
+            }
+        },
+        {
+            "id": "metricLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-xs text-on-surface-variant mb-1"
+            }
+        },
+        {
+            "id": "metricValueGroup",
+            "component": "div",
+            "props": {
+                "className": "flex items-baseline gap-1"
+            },
+            "children": [
+                "metricValue",
+                "metricUnit"
+            ]
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold",
+                "style": {
+                    "color": {
+                        "path": "color"
+                    }
+                }
+            }
+        },
+        {
+            "id": "metricUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "analysisPanel",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "analysisTitle",
+                "processStepsComp",
+                "analysisChartsGrid"
+            ]
+        },
+        {
+            "id": "analysisTitle",
+            "component": "h2",
+            "props": {
+                "value": "故障诊断全景分析",
+                "className": "text-lg font-bold mb-6 text-on-surface"
+            }
+        },
+        {
+            "id": "processStepsComp",
+            "component": "Steps",
+            "props": {
+                "current": 1,
+                "className": "mb-gutter"
+            },
+            "children": {
+                "path": "/processSteps",
+                "componentId": "processStepItem"
+            }
+        },
+        {
+            "id": "processStepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "content": {
+                    "path": "desc"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "analysisChartsGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter h-64"
+            },
+            "children": [
+                "donutChartBox",
+                "stackedBarBox",
+                "topReasonsBox",
+                "diagnosticTableBox"
+            ]
+        },
+        {
+            "id": "donutChartBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "donutTitle",
+                "donutChart"
+            ]
+        },
+        {
+            "id": "donutTitle",
+            "component": "span",
+            "props": {
+                "value": "故障总次数分布",
+                "className": "text-sm font-medium mb-2"
+            }
+        },
+        {
+            "id": "donutChart",
+            "component": "PieChart",
+            "props": {
+                "option": {
+                    "type": "circle",
+                    "data": {
+                        "path": "/faultDonutData"
+                    },
+                    "title": {
+                        "text": "1130",
+                        "subtext": "总数"
+                    }
+                },
+                "className": "flex-1 w-full"
+            }
+        },
+        {
+            "id": "stackedBarBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "stackedTitle",
+                "stackedChart"
+            ]
+        },
+        {
+            "id": "stackedTitle",
+            "component": "span",
+            "props": {
+                "value": "故障类型时段分布",
+                "className": "text-sm font-medium mb-2"
+            }
+        },
+        {
+            "id": "stackedChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "type": "stack",
+                    "data": {
+                        "path": "/faultStackedData"
+                    },
+                    "xAxis": {
+                        "data": "Time"
+                    },
+                    "yAxisTitle": "次数"
+                },
+                "className": "flex-1 w-full"
+            }
+        },
+        {
+            "id": "topReasonsBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "topTitle",
+                "topChart"
+            ]
+        },
+        {
+            "id": "topTitle",
+            "component": "span",
+            "props": {
+                "value": "根本原因 TOP 10",
+                "className": "text-sm font-medium mb-2"
+            }
+        },
+        {
+            "id": "topChart",
+            "component": "BarChart",
+            "props": {
+                "option": {
+                    "direction": "horizontal",
+                    "data": {
+                        "path": "/reasonTopData"
+                    },
+                    "xAxis": {
+                        "data": "reason"
+                    },
+                    "yAxisTitle": "数量"
+                },
+                "className": "flex-1 w-full"
+            }
+        },
+        {
+            "id": "diagnosticTableBox",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "tableTitle",
+                "diagTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "span",
+            "props": {
+                "value": "最新诊断结论",
+                "className": "text-sm font-medium mb-2"
+            }
+        },
+        {
+            "id": "diagTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/diagnosticTable"
+                },
+                "pagination": false,
+                "className": "text-xs",
+                "columns": [
+                    {
+                        "title": "目标",
+                        "dataIndex": "target"
+                    },
+                    {
+                        "title": "结论",
+                        "dataIndex": "conclusion"
+                    },
+                    {
+                        "title": "置信度",
+                        "dataIndex": "confidence",
+                        "width": 60
+                    }
+                ]
+            },
+            "children": {
+                "path": "/diagnosticTable",
+                "componentId": "diagTableRow"
+            }
+        },
+        {
+            "id": "diagTableRow",
+            "component": "TableRow",
+            "children": [
+                "cellTarget",
+                "cellConclusion",
+                "cellConfidence"
+            ]
+        },
+        {
+            "id": "cellTarget",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "target"
+                }
+            }
+        },
+        {
+            "id": "cellConclusion",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "conclusion"
+                },
+                "className": "text-primary"
+            }
+        },
+        {
+            "id": "cellConfidence",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "confidence"
+                },
+                "className": "font-bold text-success"
+            }
+        },
+        {
+            "id": "trendPanel",
+            "component": "section",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset"
+            },
+            "children": [
+                "trendHeader",
+                "trendChart"
+            ]
+        },
+        {
+            "id": "trendHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-gutter"
+            },
+            "children": [
+                "trendTitle",
+                "trendFilter"
+            ]
+        },
+        {
+            "id": "trendTitle",
+            "component": "h2",
+            "props": {
+                "value": "故障诊断趋势",
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "trendFilter",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "filterBtn"
+            ]
+        },
+        {
+            "id": "filterBtn",
+            "component": "Button",
+            "props": {
+                "value": "最近7天",
+                "size": "small",
+                "icon": "calendar"
+            }
+        },
+        {
+            "id": "trendChart",
+            "component": "LineChart",
+            "props": {
+                "option": {
+                    "smooth": true,
+                    "area": true,
+                    "data": {
+                        "path": "/trendData"
+                    },
+                    "xAxis": {
+                        "data": "time"
+                    },
+                    "yAxisTitle": "故障数",
+                    "color": [
+                        "#FF4D4F",
+                        "#FAAD14",
+                        "#1890FF"
+                    ]
+                },
+                "className": "h-80 w-full"
+            }
+        }
+    ]
+}

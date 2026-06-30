@@ -1,0 +1,1610 @@
+{
+    "state": {
+        "brand": {
+            "name": "LLMDevOps",
+            "logo": "box"
+        },
+        "searchVal": "",
+        "menuItems": [
+            {
+                "label": "评测总览",
+                "icon": "layout-dashboard"
+            },
+            {
+                "label": "评测集",
+                "icon": "database"
+            },
+            {
+                "label": "评测工作台",
+                "icon": "terminal",
+                "isExpanded": true
+            },
+            {
+                "label": "平台看板",
+                "icon": "bar-chart-3"
+            },
+            {
+                "label": "分析实验室",
+                "icon": "flask-conical"
+            }
+        ],
+        "subMenuItems": [
+            {
+                "label": "部署任务",
+                "active": false
+            },
+            {
+                "label": "人工评测",
+                "active": false
+            },
+            {
+                "label": "研发评测",
+                "active": false
+            },
+            {
+                "label": "版本评测",
+                "active": true
+            }
+        ],
+        "currentUser": {
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "name": "路政坤",
+            "role": "管理员"
+        },
+        "breadcrumbItems": [
+            {
+                "title": "评测工作台"
+            },
+            {
+                "title": "研发评测"
+            },
+            {
+                "title": "评测任务组详情"
+            },
+            {
+                "title": "子任务详情"
+            }
+        ],
+        "taskMeta": {
+            "id": "20240718101243",
+            "time": "2024-12-29 11:57",
+            "user": "路政坤",
+            "title": "1229_盘古718B-5.0.1.4版本_评测开源集Tau-Bench-慢思考"
+        },
+        "stepData": [
+            {
+                "title": "部署",
+                "status": "finish",
+                "desc": "已完成"
+            },
+            {
+                "title": "推理",
+                "status": "finish",
+                "desc": "已完成"
+            },
+            {
+                "title": "评分",
+                "status": "finish",
+                "desc": "已完成"
+            }
+        ],
+        "processMetrics": {
+            "endTime": "2026-03-09 21:59",
+            "samples": {
+                "total": 2480,
+                "pending": 0,
+                "percent": 100
+            },
+            "success": {
+                "rate": "100.0%",
+                "ok": 2489,
+                "fail": 0,
+                "retry": 2,
+                "empty": 0
+            },
+            "latency": {
+                "total": "38m9s",
+                "avg": "3m49s",
+                "max": "38m9s",
+                "p90": "15ms",
+                "p95": "3m49s",
+                "p99": "3m49s"
+            },
+            "tokens": {
+                "avg": 3560.27,
+                "in": 2497738,
+                "out": 92567
+            }
+        },
+        "scoreResult": {
+            "endTime": "2026-03-09 21:59",
+            "main": {
+                "name": "Exact Match",
+                "value": "85.6%"
+            },
+            "dataset": {
+                "name": "Tau-Bench v1.2",
+                "samples": 2500,
+                "metric": "Exact Match"
+            },
+            "model": {
+                "name": "盘古718B 5.0.1.4版本",
+                "params": "718B",
+                "active": "37B (MoE)"
+            }
+        },
+        "scoreTable": [
+            {
+                "id": "1",
+                "name": "评测开源集Tau-Bench",
+                "metric": "Exact Match",
+                "score": "85.6%",
+                "status": "Success"
+            },
+            {
+                "id": "2",
+                "name": "Tau-Bench-Retail",
+                "metric": "Exact Match",
+                "score": "82.1%",
+                "status": "Success"
+            },
+            {
+                "id": "3",
+                "name": "Tau-Bench-Airline",
+                "metric": "Exact Match",
+                "score": "89.3%",
+                "status": "Success"
+            },
+            {
+                "id": "4",
+                "name": "Tau-Bench-Hotel",
+                "metric": "Exact Match",
+                "score": "84.5%",
+                "status": "Success"
+            },
+            {
+                "id": "5",
+                "name": "Tau-Bench-Finance",
+                "metric": "Exact Match",
+                "score": "81.2%",
+                "status": "Success"
+            },
+            {
+                "id": "6",
+                "name": "Tau-Bench-Medical",
+                "metric": "Exact Match",
+                "score": "78.9%",
+                "status": "Success"
+            },
+            {
+                "id": "7",
+                "name": "Tau-Bench-Legal",
+                "metric": "Exact Match",
+                "score": "83.4%",
+                "status": "Success"
+            },
+            {
+                "id": "8",
+                "name": "Tau-Bench-Coding",
+                "metric": "Exact Match",
+                "score": "91.2%",
+                "status": "Success"
+            },
+            {
+                "id": "9",
+                "name": "Tau-Bench-Math",
+                "metric": "Exact Match",
+                "score": "76.5%",
+                "status": "Success"
+            },
+            {
+                "id": "10",
+                "name": "Tau-Bench-Logic",
+                "metric": "Exact Match",
+                "score": "88.0%",
+                "status": "Success"
+            }
+        ]
+    },
+    "rootId": "dashboardLayout",
+    "elements": [
+        {
+            "id": "dashboardLayout",
+            "component": "div",
+            "props": {
+                "className": "flex min-h-screen bg-surface-container-lowest"
+            },
+            "children": [
+                "sideNav",
+                "mainContainer"
+            ]
+        },
+        {
+            "id": "sideNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest flex flex-col border-r border-divider"
+            },
+            "children": [
+                "navHeader",
+                "navSearch",
+                "navMenu",
+                "navUser"
+            ]
+        },
+        {
+            "id": "navHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset flex items-center gap-2"
+            },
+            "children": [
+                "navLogo",
+                "navBrandName"
+            ]
+        },
+        {
+            "id": "navLogo",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/brand/logo"
+                },
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "navBrandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/brand/name"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "navSearch",
+            "component": "div",
+            "props": {
+                "className": "px-4 mb-4"
+            },
+            "children": [
+                "navSearchInput"
+            ]
+        },
+        {
+            "id": "navSearchInput",
+            "component": "Input",
+            "props": {
+                "value": {
+                    "path": "/searchVal"
+                },
+                "placeholder": "搜索",
+                "prefix": "search",
+                "size": "small"
+            }
+        },
+        {
+            "id": "navMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 px-2 overflow-y-auto"
+            },
+            "children": [
+                "menuList",
+                "subMenuContainer"
+            ]
+        },
+        {
+            "id": "menuList",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "menuItem"
+            }
+        },
+        {
+            "id": "menuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 px-3 py-2 rounded-md hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "menuItemIcon",
+                "menuItemLabel"
+            ]
+        },
+        {
+            "id": "menuItemIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-4 h-4 text-on-surface-variant"
+            }
+        },
+        {
+            "id": "menuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": "text-sm text-on-surface"
+            }
+        },
+        {
+            "id": "subMenuContainer",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1 mt-1 ml-9"
+            },
+            "children": {
+                "path": "/subMenuItems",
+                "componentId": "subMenuItem"
+            }
+        },
+        {
+            "id": "subMenuItem",
+            "component": "div",
+            "props": {
+                "className": "px-3 py-1.5 rounded-md text-sm cursor-pointer"
+            },
+            "children": [
+                "subMenuItemLabel"
+            ]
+        },
+        {
+            "id": "subMenuItemLabel",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "label"
+                },
+                "className": {
+                    "path": "active"
+                }
+            }
+        },
+        {
+            "id": "navUser",
+            "component": "div",
+            "props": {
+                "className": "p-4 border-t border-divider flex items-center gap-3"
+            },
+            "children": [
+                "userAvatar",
+                "userInfo",
+                "userRoleTag"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/currentUser/avatar"
+                },
+                "className": "w-10 h-10 rounded-full object-cover"
+            }
+        },
+        {
+            "id": "userInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "userName",
+                "userRole"
+            ]
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/name"
+                },
+                "className": "text-sm font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "userRole",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/currentUser/role"
+                },
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "userRoleTag",
+            "component": "Tag",
+            "props": {
+                "value": "Admin",
+                "size": "small",
+                "color": "primary",
+                "className": "ml-auto"
+            }
+        },
+        {
+            "id": "mainContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden"
+            },
+            "children": [
+                "mainHeader",
+                "mainScrollArea"
+            ]
+        },
+        {
+            "id": "mainHeader",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest px-6 py-4 border-b border-divider"
+            },
+            "children": [
+                "breadcrumb",
+                "headerMeta"
+            ]
+        },
+        {
+            "id": "breadcrumb",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbItems"
+                },
+                "className": "mb-4"
+            }
+        },
+        {
+            "id": "headerMeta",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-end"
+            },
+            "children": [
+                "headerMetaLeft",
+                "headerMetaRight"
+            ]
+        },
+        {
+            "id": "headerMetaLeft",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "headerMetaInfo",
+                "headerTitle"
+            ]
+        },
+        {
+            "id": "headerMetaInfo",
+            "component": "div",
+            "props": {
+                "className": "flex gap-4 text-xs text-on-surface-variant"
+            },
+            "children": [
+                "metaId",
+                "metaTime",
+                "metaUser"
+            ]
+        },
+        {
+            "id": "metaId",
+            "component": "span",
+            "props": {
+                "value": "任务ID 20240718101243"
+            }
+        },
+        {
+            "id": "metaTime",
+            "component": "span",
+            "props": {
+                "value": "创建时间 2024-12-29 11:57"
+            }
+        },
+        {
+            "id": "metaUser",
+            "component": "span",
+            "props": {
+                "value": "创建人 路政坤"
+            }
+        },
+        {
+            "id": "headerTitle",
+            "component": "h1",
+            "props": {
+                "value": {
+                    "path": "/taskMeta/title"
+                },
+                "className": "text-xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "headerMetaRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2"
+            },
+            "children": [
+                "btnSettings",
+                "btnClone",
+                "btnDelete"
+            ]
+        },
+        {
+            "id": "btnSettings",
+            "component": "Button",
+            "props": {
+                "value": "评价设置",
+                "icon": "settings",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "btnClone",
+            "component": "Button",
+            "props": {
+                "value": "克隆",
+                "icon": "copy",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "btnDelete",
+            "component": "Button",
+            "props": {
+                "value": "删除",
+                "icon": "trash-2",
+                "color": "danger",
+                "size": "medium"
+            }
+        },
+        {
+            "id": "mainScrollArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-6 flex flex-col gap-6"
+            },
+            "children": [
+                "stepperCard",
+                "processCard",
+                "resultCard",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "stepperCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "taskSteps"
+            ]
+        },
+        {
+            "id": "taskSteps",
+            "component": "Steps",
+            "props": {
+                "current": 2,
+                "className": "max-w-3xl mx-auto"
+            },
+            "children": {
+                "path": "/stepData",
+                "componentId": "stepItem"
+            }
+        },
+        {
+            "id": "stepItem",
+            "component": "StepItem",
+            "props": {
+                "title": {
+                    "path": "title"
+                },
+                "description": {
+                    "path": "desc"
+                },
+                "status": {
+                    "path": "status"
+                }
+            }
+        },
+        {
+            "id": "processCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "processHeader",
+                "processGrid"
+            ]
+        },
+        {
+            "id": "processHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "processTitle",
+                "processEndTime"
+            ]
+        },
+        {
+            "id": "processTitle",
+            "component": "span",
+            "props": {
+                "value": "过程分析",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "processEndTime",
+            "component": "span",
+            "props": {
+                "value": "推理结束时间：2026-03-09 21:59",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "processGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-6"
+            },
+            "children": [
+                "metricSamples",
+                "metricSuccess",
+                "metricLatency",
+                "metricTokens"
+            ]
+        },
+        {
+            "id": "metricSamples",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-4 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "sampleHeader",
+                "sampleProgress",
+                "sampleAction"
+            ]
+        },
+        {
+            "id": "sampleHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between"
+            },
+            "children": [
+                "sampleTotal",
+                "samplePending"
+            ]
+        },
+        {
+            "id": "sampleTotal",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "sampleTotalLabel",
+                "sampleTotalVal"
+            ]
+        },
+        {
+            "id": "sampleTotalLabel",
+            "component": "span",
+            "props": {
+                "value": "总样本数",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sampleTotalVal",
+            "component": "span",
+            "props": {
+                "value": "2480",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "samplePending",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col items-end"
+            },
+            "children": [
+                "samplePendingLabel",
+                "samplePendingVal"
+            ]
+        },
+        {
+            "id": "samplePendingLabel",
+            "component": "span",
+            "props": {
+                "value": "待处理数",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "samplePendingVal",
+            "component": "span",
+            "props": {
+                "value": "0",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "sampleProgress",
+            "component": "Progress",
+            "props": {
+                "percent": 100,
+                "status": "success",
+                "size": "small"
+            }
+        },
+        {
+            "id": "sampleAction",
+            "component": "Button",
+            "props": {
+                "value": "导出日志",
+                "icon": "download",
+                "size": "small",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "metricSuccess",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "successRate",
+                "successDetails"
+            ]
+        },
+        {
+            "id": "successRate",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col mb-2"
+            },
+            "children": [
+                "successLabel",
+                "successVal"
+            ]
+        },
+        {
+            "id": "successLabel",
+            "component": "span",
+            "props": {
+                "value": "推理成功率",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "successVal",
+            "component": "span",
+            "props": {
+                "value": "100.0%",
+                "className": "text-xl font-bold text-success"
+            }
+        },
+        {
+            "id": "successDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "succRow1",
+                "succRow2",
+                "succRow3",
+                "succRow4"
+            ]
+        },
+        {
+            "id": "succRow1",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "succL1",
+                "succV1"
+            ]
+        },
+        {
+            "id": "succL1",
+            "component": "span",
+            "props": {
+                "value": "推理成功"
+            }
+        },
+        {
+            "id": "succV1",
+            "component": "span",
+            "props": {
+                "value": "2489"
+            }
+        },
+        {
+            "id": "succRow2",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "succL2",
+                "succV2"
+            ]
+        },
+        {
+            "id": "succL2",
+            "component": "span",
+            "props": {
+                "value": "推理失败"
+            }
+        },
+        {
+            "id": "succV2",
+            "component": "span",
+            "props": {
+                "value": "0"
+            }
+        },
+        {
+            "id": "succRow3",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "succL3",
+                "succV3"
+            ]
+        },
+        {
+            "id": "succL3",
+            "component": "span",
+            "props": {
+                "value": "重试设置"
+            }
+        },
+        {
+            "id": "succV3",
+            "component": "span",
+            "props": {
+                "value": "2"
+            }
+        },
+        {
+            "id": "succRow4",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "succL4",
+                "succV4"
+            ]
+        },
+        {
+            "id": "succL4",
+            "component": "span",
+            "props": {
+                "value": "结果为空"
+            }
+        },
+        {
+            "id": "succV4",
+            "component": "span",
+            "props": {
+                "value": "0"
+            }
+        },
+        {
+            "id": "metricLatency",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "latTotal",
+                "latDetails"
+            ]
+        },
+        {
+            "id": "latTotal",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col mb-2"
+            },
+            "children": [
+                "latLabel",
+                "latVal"
+            ]
+        },
+        {
+            "id": "latLabel",
+            "component": "span",
+            "props": {
+                "value": "总耗时",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "latVal",
+            "component": "span",
+            "props": {
+                "value": "38m9s",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "latDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "latRow1",
+                "latRow2",
+                "latRow3",
+                "latRow4",
+                "latRow5"
+            ]
+        },
+        {
+            "id": "latRow1",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "latL1",
+                "latV1"
+            ]
+        },
+        {
+            "id": "latL1",
+            "component": "span",
+            "props": {
+                "value": "单条Query平均"
+            }
+        },
+        {
+            "id": "latV1",
+            "component": "span",
+            "props": {
+                "value": "3m49s"
+            }
+        },
+        {
+            "id": "latRow2",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "latL2",
+                "latV2"
+            ]
+        },
+        {
+            "id": "latL2",
+            "component": "span",
+            "props": {
+                "value": "最大耗时"
+            }
+        },
+        {
+            "id": "latV2",
+            "component": "span",
+            "props": {
+                "value": "38m9s"
+            }
+        },
+        {
+            "id": "latRow3",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "latL3",
+                "latV3"
+            ]
+        },
+        {
+            "id": "latL3",
+            "component": "span",
+            "props": {
+                "value": "P90"
+            }
+        },
+        {
+            "id": "latV3",
+            "component": "span",
+            "props": {
+                "value": "15ms"
+            }
+        },
+        {
+            "id": "latRow4",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "latL4",
+                "latV4"
+            ]
+        },
+        {
+            "id": "latL4",
+            "component": "span",
+            "props": {
+                "value": "P95"
+            }
+        },
+        {
+            "id": "latV4",
+            "component": "span",
+            "props": {
+                "value": "3m49s"
+            }
+        },
+        {
+            "id": "latRow5",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "latL5",
+                "latV5"
+            ]
+        },
+        {
+            "id": "latL5",
+            "component": "span",
+            "props": {
+                "value": "P99"
+            }
+        },
+        {
+            "id": "latV5",
+            "component": "span",
+            "props": {
+                "value": "3m49s"
+            }
+        },
+        {
+            "id": "metricTokens",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "tokAvg",
+                "tokDetails"
+            ]
+        },
+        {
+            "id": "tokAvg",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col mb-2"
+            },
+            "children": [
+                "tokLabel",
+                "tokVal"
+            ]
+        },
+        {
+            "id": "tokLabel",
+            "component": "span",
+            "props": {
+                "value": "平均Tokens",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tokVal",
+            "component": "span",
+            "props": {
+                "value": "3560.27",
+                "className": "text-xl font-bold"
+            }
+        },
+        {
+            "id": "tokDetails",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-1"
+            },
+            "children": [
+                "tokRow1",
+                "tokRow2"
+            ]
+        },
+        {
+            "id": "tokRow1",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "tokL1",
+                "tokV1"
+            ]
+        },
+        {
+            "id": "tokL1",
+            "component": "span",
+            "props": {
+                "value": "输入Tokens"
+            }
+        },
+        {
+            "id": "tokV1",
+            "component": "span",
+            "props": {
+                "value": "2497738"
+            }
+        },
+        {
+            "id": "tokRow2",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between text-xs"
+            },
+            "children": [
+                "tokL2",
+                "tokV2"
+            ]
+        },
+        {
+            "id": "tokL2",
+            "component": "span",
+            "props": {
+                "value": "输出Tokens"
+            }
+        },
+        {
+            "id": "tokV2",
+            "component": "span",
+            "props": {
+                "value": "92567"
+            }
+        },
+        {
+            "id": "resultCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "resultHeader",
+                "resultGrid"
+            ]
+        },
+        {
+            "id": "resultHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center mb-6"
+            },
+            "children": [
+                "resultTitle",
+                "resultEndTime"
+            ]
+        },
+        {
+            "id": "resultTitle",
+            "component": "span",
+            "props": {
+                "value": "评分结果",
+                "className": "text-lg font-bold"
+            }
+        },
+        {
+            "id": "resultEndTime",
+            "component": "span",
+            "props": {
+                "value": "评分结束时间：2026-03-09 21:59",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "resultGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-5 gap-6"
+            },
+            "children": [
+                "scoreMain",
+                "scoreDataset",
+                "scoreModel",
+                "scoreLab"
+            ]
+        },
+        {
+            "id": "scoreMain",
+            "component": "div",
+            "props": {
+                "className": "col-span-2 flex flex-col items-center justify-center p-6 bg-primary-container rounded-lg"
+            },
+            "children": [
+                "scoreIcon",
+                "scoreName",
+                "scoreValue",
+                "scoreActions"
+            ]
+        },
+        {
+            "id": "scoreIcon",
+            "component": "Icon",
+            "props": {
+                "name": "award",
+                "color": "primary",
+                "shape": "circle",
+                "className": "w-12 h-12 mb-2"
+            }
+        },
+        {
+            "id": "scoreName",
+            "component": "span",
+            "props": {
+                "value": "Exact Match",
+                "className": "text-sm text-on-primary-container"
+            }
+        },
+        {
+            "id": "scoreValue",
+            "component": "span",
+            "props": {
+                "value": "85.6%",
+                "className": "text-4xl font-bold text-primary"
+            }
+        },
+        {
+            "id": "scoreActions",
+            "component": "div",
+            "props": {
+                "className": "flex gap-2 mt-4"
+            },
+            "children": [
+                "scoreExport",
+                "scoreDownload"
+            ]
+        },
+        {
+            "id": "scoreExport",
+            "component": "Button",
+            "props": {
+                "value": "导出日志",
+                "icon": "file-text",
+                "size": "small"
+            }
+        },
+        {
+            "id": "scoreDownload",
+            "component": "Button",
+            "props": {
+                "value": "下载报告",
+                "icon": "file-down",
+                "size": "small"
+            }
+        },
+        {
+            "id": "scoreDataset",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 flex flex-col gap-3 p-4 border-r border-divider"
+            },
+            "children": [
+                "dsTitle",
+                "dsItem1",
+                "dsItem2"
+            ]
+        },
+        {
+            "id": "dsTitle",
+            "component": "span",
+            "props": {
+                "value": "Tau-Bench v1.2",
+                "className": "font-bold text-md"
+            }
+        },
+        {
+            "id": "dsItem1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "dsL1",
+                "dsV1"
+            ]
+        },
+        {
+            "id": "dsL1",
+            "component": "span",
+            "props": {
+                "value": "样本数",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "dsV1",
+            "component": "span",
+            "props": {
+                "value": "2500",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "dsItem2",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "dsL2",
+                "dsV2"
+            ]
+        },
+        {
+            "id": "dsL2",
+            "component": "span",
+            "props": {
+                "value": "评测指标",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "dsV2",
+            "component": "span",
+            "props": {
+                "value": "Exact Match",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "scoreModel",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 flex flex-col gap-3 p-4"
+            },
+            "children": [
+                "mdTitle",
+                "mdItem1",
+                "mdItem2"
+            ]
+        },
+        {
+            "id": "mdTitle",
+            "component": "span",
+            "props": {
+                "value": "盘古718B 5.0.1.4版本",
+                "className": "font-bold text-md"
+            }
+        },
+        {
+            "id": "mdItem1",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "mdL1",
+                "mdV1"
+            ]
+        },
+        {
+            "id": "mdL1",
+            "component": "span",
+            "props": {
+                "value": "总参数量",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mdV1",
+            "component": "span",
+            "props": {
+                "value": "718B",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "mdItem2",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "mdL2",
+                "mdV2"
+            ]
+        },
+        {
+            "id": "mdL2",
+            "component": "span",
+            "props": {
+                "value": "激活量",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "mdV2",
+            "component": "span",
+            "props": {
+                "value": "37B (MoE)",
+                "className": "text-sm font-medium"
+            }
+        },
+        {
+            "id": "scoreLab",
+            "component": "div",
+            "props": {
+                "className": "col-span-1 flex flex-col gap-2 p-4 bg-surface-variant rounded-lg"
+            },
+            "children": [
+                "labTitle",
+                "labDesc",
+                "labBtn"
+            ]
+        },
+        {
+            "id": "labTitle",
+            "component": "span",
+            "props": {
+                "value": "分析实验室",
+                "className": "font-bold text-sm"
+            }
+        },
+        {
+            "id": "labDesc",
+            "component": "span",
+            "props": {
+                "value": "基于评测结果进行多维度Badcase挖掘与归因分析",
+                "className": "text-xs text-on-surface-variant"
+            }
+        },
+        {
+            "id": "labBtn",
+            "component": "Button",
+            "props": {
+                "value": "深度分析",
+                "icon": "microscope",
+                "color": "primary",
+                "size": "small",
+                "className": "mt-auto"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-6 rounded-xl shadow-card"
+            },
+            "children": [
+                "tableTitle",
+                "scoreTable"
+            ]
+        },
+        {
+            "id": "tableTitle",
+            "component": "span",
+            "props": {
+                "value": "评分结果汇总",
+                "className": "text-lg font-bold block mb-4"
+            }
+        },
+        {
+            "id": "scoreTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/scoreTable"
+                },
+                "columns": [
+                    {
+                        "title": "子评测集名称",
+                        "dataIndex": "name"
+                    },
+                    {
+                        "title": "评测指标",
+                        "dataIndex": "metric"
+                    },
+                    {
+                        "title": "得分",
+                        "dataIndex": "score"
+                    },
+                    {
+                        "title": "状态",
+                        "dataIndex": "status",
+                        "width": 120
+                    }
+                ]
+            },
+            "children": {
+                "path": "/scoreTable",
+                "componentId": "scoreTableRow"
+            }
+        },
+        {
+            "id": "scoreTableRow",
+            "component": "TableRow",
+            "children": [
+                "tableNameCell",
+                "tableMetricCell",
+                "tableScoreCell",
+                "tableStatusCell"
+            ]
+        },
+        {
+            "id": "tableNameCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "name"
+                },
+                "className": "text-sm"
+            }
+        },
+        {
+            "id": "tableMetricCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "metric"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "tableScoreCell",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "score"
+                },
+                "className": "text-sm font-bold text-primary"
+            }
+        },
+        {
+            "id": "tableStatusCell",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": "success",
+                "size": "small"
+            }
+        }
+    ]
+}

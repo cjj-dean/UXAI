@@ -1,0 +1,997 @@
+{
+    "state": {
+        "systemInfo": {
+            "name": "Nexus ERP",
+            "subTitle": "Financial Enterprise Suite"
+        },
+        "menuItems": [
+            {
+                "id": "ov",
+                "label": "Overview",
+                "icon": "layout-dashboard",
+                "active": false
+            },
+            {
+                "id": "ap",
+                "label": "AR/AP",
+                "icon": "arrow-left-right",
+                "active": false
+            },
+            {
+                "id": "pr",
+                "label": "Procurement",
+                "icon": "shopping-cart",
+                "active": false
+            },
+            {
+                "id": "lo",
+                "label": "Logistics",
+                "icon": "truck",
+                "active": false
+            },
+            {
+                "id": "ve",
+                "label": "Vendors",
+                "icon": "users",
+                "active": false
+            },
+            {
+                "id": "gl",
+                "label": "General Ledger",
+                "icon": "book-open",
+                "active": true
+            },
+            {
+                "id": "al",
+                "label": "Audit Logs",
+                "icon": "clipboard-check",
+                "active": false
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "title": "FINANCE"
+            },
+            {
+                "title": "GENERAL LEDGER"
+            }
+        ],
+        "metrics": [
+            {
+                "title": "TOTAL ASSETS",
+                "value": "¥45,280,400.00",
+                "trend": "+12.5%",
+                "icon": "trending-up",
+                "color": "success",
+                "sub": "from last month"
+            },
+            {
+                "title": "TOTAL LIABILITIES",
+                "value": "¥21,150,200.50",
+                "trend": "+4.2%",
+                "icon": "trending-up",
+                "color": "error",
+                "sub": "from last month"
+            },
+            {
+                "title": "EQUITY",
+                "value": "¥24,130,199.50",
+                "trend": "Stable",
+                "icon": "clock",
+                "color": "primary",
+                "sub": "Updated 5m ago"
+            },
+            {
+                "title": "TRIAL BALANCE",
+                "value": "BALANCED",
+                "trend": "Success",
+                "icon": "check-circle",
+                "color": "success",
+                "sub": "Difference: ¥0.00"
+            }
+        ],
+        "filterData": {
+            "dateRange": [],
+            "accountType": "All Accounts",
+            "status": "ALL",
+            "accountOptions": [
+                {
+                    "label": "All Accounts",
+                    "value": "All Accounts"
+                },
+                {
+                    "label": "Cash",
+                    "value": "Cash"
+                },
+                {
+                    "label": "Bank",
+                    "value": "Bank"
+                },
+                {
+                    "label": "Accounts Receivable",
+                    "value": "AR"
+                }
+            ]
+        },
+        "ledgerData": [
+            {
+                "id": "1",
+                "voucherId": "#GL-2024-0892",
+                "date": "2024-10-15",
+                "account": "1002-Bank Deposit",
+                "debit": "¥12,450.00",
+                "credit": "¥0.00",
+                "status": "POSTED",
+                "statusColor": "success"
+            },
+            {
+                "id": "2",
+                "voucherId": "#GL-2024-0893",
+                "date": "2024-10-16",
+                "account": "1122-Accounts Receivable",
+                "debit": "¥0.00",
+                "credit": "¥5,200.00",
+                "status": "DRAFT",
+                "statusColor": "default"
+            },
+            {
+                "id": "3",
+                "voucherId": "#GL-2024-0894",
+                "date": "2024-10-16",
+                "account": "6601-Office Expenses",
+                "debit": "¥1,200.00",
+                "credit": "¥0.00",
+                "status": "POSTED",
+                "statusColor": "success"
+            },
+            {
+                "id": "4",
+                "voucherId": "#GL-2024-0895",
+                "date": "2024-10-17",
+                "account": "1001-Cash",
+                "debit": "¥0.00",
+                "credit": "¥800.00",
+                "status": "POSTED",
+                "statusColor": "success"
+            },
+            {
+                "id": "5",
+                "voucherId": "#GL-2024-0896",
+                "date": "2024-10-17",
+                "account": "2202-Accounts Payable",
+                "debit": "¥15,000.00",
+                "credit": "¥0.00",
+                "status": "POSTED",
+                "statusColor": "success"
+            }
+        ],
+        "drawer": {
+            "visible": true,
+            "voucherId": "#GL-2024-0892",
+            "desc": "Payment for quarterly office supply replenishment from Staples. Includes paper, toner, and ergonomic chairs.",
+            "entries": [
+                {
+                    "type": "DEBIT",
+                    "account": "1002-Bank Deposit",
+                    "amount": "¥12,450.00"
+                },
+                {
+                    "type": "CREDIT",
+                    "account": "1122-Accounts Receivable",
+                    "amount": "¥12,450.00"
+                }
+            ]
+        }
+    },
+    "rootId": "erpMainLayout",
+    "elements": [
+        {
+            "id": "erpMainLayout",
+            "component": "div",
+            "props": {
+                "className": "flex h-screen bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "sidebarNav",
+                "mainContentWrapper"
+            ]
+        },
+        {
+            "id": "sidebarNav",
+            "component": "div",
+            "props": {
+                "className": "w-64 bg-surface-container-highest shadow-card flex flex-col z-10"
+            },
+            "children": [
+                "sidebarHeader",
+                "sidebarMenu",
+                "sidebarFooter"
+            ]
+        },
+        {
+            "id": "sidebarHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider"
+            },
+            "children": [
+                "sidebarLogo",
+                "sidebarSub"
+            ]
+        },
+        {
+            "id": "sidebarLogo",
+            "component": "span",
+            "props": {
+                "className": "text-xl font-bold text-primary block",
+                "value": {
+                    "path": "/systemInfo/name"
+                }
+            }
+        },
+        {
+            "id": "sidebarSub",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "/systemInfo/subTitle"
+                }
+            }
+        },
+        {
+            "id": "sidebarMenu",
+            "component": "div",
+            "props": {
+                "className": "flex-1 py-gutter px-inline overflow-y-auto flex flex-col gap-1"
+            },
+            "children": {
+                "path": "/menuItems",
+                "componentId": "sidebarMenuItem"
+            }
+        },
+        {
+            "id": "sidebarMenuItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-3 p-3 rounded-action transition-colors hover:bg-surface-variant cursor-pointer"
+            },
+            "children": [
+                "sidebarMenuIcon",
+                "sidebarMenuLabel"
+            ]
+        },
+        {
+            "id": "sidebarMenuIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "className": "w-5 h-5",
+                "color": "default"
+            }
+        },
+        {
+            "id": "sidebarMenuLabel",
+            "component": "span",
+            "props": {
+                "className": "text-md font-medium",
+                "value": {
+                    "path": "label"
+                }
+            }
+        },
+        {
+            "id": "sidebarFooter",
+            "component": "div",
+            "props": {
+                "className": "p-gutter border-t border-divider"
+            },
+            "children": [
+                "newVoucherBtn"
+            ]
+        },
+        {
+            "id": "newVoucherBtn",
+            "component": "Button",
+            "props": {
+                "value": "New Voucher",
+                "icon": "plus-circle",
+                "color": "primary",
+                "className": "w-full"
+            }
+        },
+        {
+            "id": "mainContentWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col overflow-hidden relative"
+            },
+            "children": [
+                "topHeader",
+                "scrollableBody",
+                "detailDrawer"
+            ]
+        },
+        {
+            "id": "topHeader",
+            "component": "div",
+            "props": {
+                "className": "h-16 bg-surface-container-highest border-b border-divider px-inset flex items-center justify-between shrink-0"
+            },
+            "children": [
+                "headerLeft",
+                "headerRight"
+            ]
+        },
+        {
+            "id": "headerLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "breadcrumbNav"
+            ]
+        },
+        {
+            "id": "breadcrumbNav",
+            "component": "Breadcrumb",
+            "props": {
+                "items": {
+                    "path": "/breadcrumbs"
+                }
+            }
+        },
+        {
+            "id": "headerRight",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "globalSearch",
+                "userProfile"
+            ]
+        },
+        {
+            "id": "globalSearch",
+            "component": "Input",
+            "props": {
+                "value": "",
+                "placeholder": "Search accounts...",
+                "prefix": "search",
+                "className": "w-64"
+            }
+        },
+        {
+            "id": "userProfile",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "userAvatar",
+                "userName"
+            ]
+        },
+        {
+            "id": "userAvatar",
+            "component": "img",
+            "props": {
+                "src": "https://randomuser.me/api/portraits/men/32.jpg",
+                "className": "w-8 h-8 rounded-full border border-divider"
+            }
+        },
+        {
+            "id": "userName",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-semibold",
+                "value": "Zhou Wei"
+            }
+        },
+        {
+            "id": "scrollableBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-gutter"
+            },
+            "children": [
+                "metricGrid",
+                "filterSection",
+                "tableCard"
+            ]
+        },
+        {
+            "id": "metricGrid",
+            "component": "div",
+            "props": {
+                "className": "grid grid-cols-4 gap-gutter"
+            },
+            "children": {
+                "path": "/metrics",
+                "componentId": "metricCard"
+            }
+        },
+        {
+            "id": "metricCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-inset rounded-container shadow-card flex flex-col gap-2"
+            },
+            "children": [
+                "metricHeader",
+                "metricValue",
+                "metricFooter"
+            ]
+        },
+        {
+            "id": "metricHeader",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-start"
+            },
+            "children": [
+                "metricTitle",
+                "metricIcon"
+            ]
+        },
+        {
+            "id": "metricTitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant tracking-wider",
+                "value": {
+                    "path": "title"
+                }
+            }
+        },
+        {
+            "id": "metricIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "icon"
+                },
+                "color": {
+                    "path": "color"
+                },
+                "className": "w-4 h-4"
+            }
+        },
+        {
+            "id": "metricValue",
+            "component": "span",
+            "props": {
+                "className": "text-2xl font-bold text-on-surface",
+                "value": {
+                    "path": "value"
+                }
+            }
+        },
+        {
+            "id": "metricFooter",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2"
+            },
+            "children": [
+                "metricTrend",
+                "metricSub"
+            ]
+        },
+        {
+            "id": "metricTrend",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold",
+                "value": {
+                    "path": "trend"
+                }
+            }
+        },
+        {
+            "id": "metricSub",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-on-surface-variant",
+                "value": {
+                    "path": "sub"
+                }
+            }
+        },
+        {
+            "id": "filterSection",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest p-gutter rounded-container shadow-sm flex items-center justify-between"
+            },
+            "children": [
+                "filterLeft",
+                "filterRight"
+            ]
+        },
+        {
+            "id": "filterLeft",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-gutter"
+            },
+            "children": [
+                "dateFilter",
+                "accountFilter",
+                "statusTabs"
+            ]
+        },
+        {
+            "id": "dateFilter",
+            "component": "DatePicker",
+            "props": {
+                "value": {
+                    "path": "/filterData/dateRange"
+                },
+                "range": true,
+                "size": "medium",
+                "placeholder": [
+                    "Start",
+                    "End"
+                ]
+            }
+        },
+        {
+            "id": "accountFilter",
+            "component": "Select",
+            "props": {
+                "value": {
+                    "path": "/filterData/accountType"
+                },
+                "options": {
+                    "path": "/filterData/accountOptions"
+                },
+                "className": "w-48"
+            }
+        },
+        {
+            "id": "statusTabs",
+            "component": "Tabs",
+            "props": {
+                "activeKey": "ALL",
+                "size": "small",
+                "className": "mb-0"
+            },
+            "children": [
+                "tabAll",
+                "tabPosted",
+                "tabDraft"
+            ]
+        },
+        {
+            "id": "tabAll",
+            "component": "TabItem",
+            "props": {
+                "key": "ALL",
+                "label": "ALL"
+            }
+        },
+        {
+            "id": "tabPosted",
+            "component": "TabItem",
+            "props": {
+                "key": "POSTED",
+                "label": "POSTED"
+            }
+        },
+        {
+            "id": "tabDraft",
+            "component": "TabItem",
+            "props": {
+                "key": "DRAFT",
+                "label": "DRAFT"
+            }
+        },
+        {
+            "id": "filterRight",
+            "component": "div",
+            "props": {
+                "className": "flex gap-inline"
+            },
+            "children": [
+                "advFilterBtn",
+                "exportBtn"
+            ]
+        },
+        {
+            "id": "advFilterBtn",
+            "component": "Button",
+            "props": {
+                "value": "Advanced",
+                "icon": "filter"
+            }
+        },
+        {
+            "id": "exportBtn",
+            "component": "Button",
+            "props": {
+                "icon": "download",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "tableCard",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card overflow-hidden"
+            },
+            "children": [
+                "ledgerTable"
+            ]
+        },
+        {
+            "id": "ledgerTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "id",
+                "dataSource": {
+                    "path": "/ledgerData"
+                },
+                "columns": [
+                    {
+                        "title": "Voucher ID",
+                        "dataIndex": "voucherId"
+                    },
+                    {
+                        "title": "Date",
+                        "dataIndex": "date"
+                    },
+                    {
+                        "title": "Account",
+                        "dataIndex": "account"
+                    },
+                    {
+                        "title": "Debit",
+                        "dataIndex": "debit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "Credit",
+                        "dataIndex": "credit",
+                        "align": "right"
+                    },
+                    {
+                        "title": "Status",
+                        "dataIndex": "status",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/ledgerData",
+                "componentId": "ledgerRow"
+            }
+        },
+        {
+            "id": "ledgerRow",
+            "component": "TableRow",
+            "children": [
+                "cellVid",
+                "cellDate",
+                "cellAcc",
+                "cellDebit",
+                "cellCredit",
+                "cellStatus"
+            ]
+        },
+        {
+            "id": "cellVid",
+            "component": "span",
+            "props": {
+                "className": "font-mono text-primary",
+                "value": {
+                    "path": "voucherId"
+                }
+            }
+        },
+        {
+            "id": "cellDate",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "date"
+                }
+            }
+        },
+        {
+            "id": "cellAcc",
+            "component": "span",
+            "props": {
+                "className": "font-medium",
+                "value": {
+                    "path": "account"
+                }
+            }
+        },
+        {
+            "id": "cellDebit",
+            "component": "span",
+            "props": {
+                "className": "text-success font-semibold",
+                "value": {
+                    "path": "debit"
+                }
+            }
+        },
+        {
+            "id": "cellCredit",
+            "component": "span",
+            "props": {
+                "className": "text-on-surface",
+                "value": {
+                    "path": "credit"
+                }
+            }
+        },
+        {
+            "id": "cellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                },
+                "size": "small"
+            }
+        },
+        {
+            "id": "detailDrawer",
+            "component": "div",
+            "props": {
+                "className": "absolute top-0 right-0 w-96 h-full bg-surface-container-highest shadow-xl border-l border-divider z-20 flex flex-col transform transition-transform"
+            },
+            "children": [
+                "drawerHeader",
+                "drawerBody"
+            ]
+        },
+        {
+            "id": "drawerHeader",
+            "component": "div",
+            "props": {
+                "className": "p-inset border-b border-divider flex justify-between items-center"
+            },
+            "children": [
+                "drawerTitle",
+                "closeDrawerBtn"
+            ]
+        },
+        {
+            "id": "drawerTitle",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "drawerMainTitle",
+                "drawerSubTitle"
+            ]
+        },
+        {
+            "id": "drawerMainTitle",
+            "component": "span",
+            "props": {
+                "className": "text-lg font-bold",
+                "value": "Voucher Details"
+            }
+        },
+        {
+            "id": "drawerSubTitle",
+            "component": "span",
+            "props": {
+                "className": "text-xs text-primary font-mono",
+                "value": {
+                    "path": "/drawer/voucherId"
+                }
+            }
+        },
+        {
+            "id": "closeDrawerBtn",
+            "component": "Button",
+            "props": {
+                "icon": "x",
+                "shape": "circle"
+            }
+        },
+        {
+            "id": "drawerBody",
+            "component": "div",
+            "props": {
+                "className": "flex-1 overflow-y-auto p-inset flex flex-col gap-inset"
+            },
+            "children": [
+                "drawerDescSection",
+                "drawerEntrySection",
+                "drawerDocSection"
+            ]
+        },
+        {
+            "id": "drawerDescSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "descLabel",
+                "descText"
+            ]
+        },
+        {
+            "id": "descLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant",
+                "value": "DESCRIPTION"
+            }
+        },
+        {
+            "id": "descText",
+            "component": "p",
+            "props": {
+                "className": "text-sm text-on-surface leading-relaxed",
+                "value": {
+                    "path": "/drawer/desc"
+                }
+            }
+        },
+        {
+            "id": "drawerEntrySection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "entryLabel",
+                "entryList"
+            ]
+        },
+        {
+            "id": "entryLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant",
+                "value": "DOUBLE ENTRY"
+            }
+        },
+        {
+            "id": "entryList",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-variant rounded-lg p-gutter flex flex-col gap-3"
+            },
+            "children": {
+                "path": "/drawer/entries",
+                "componentId": "entryItem"
+            }
+        },
+        {
+            "id": "entryItem",
+            "component": "div",
+            "props": {
+                "className": "flex justify-between items-center"
+            },
+            "children": [
+                "entryAccInfo",
+                "entryAmount"
+            ]
+        },
+        {
+            "id": "entryAccInfo",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col"
+            },
+            "children": [
+                "entryType",
+                "entryAcc"
+            ]
+        },
+        {
+            "id": "entryType",
+            "component": "span",
+            "props": {
+                "className": "text-[10px] font-bold text-on-surface-variant",
+                "value": {
+                    "path": "type"
+                }
+            }
+        },
+        {
+            "id": "entryAcc",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-medium",
+                "value": {
+                    "path": "account"
+                }
+            }
+        },
+        {
+            "id": "entryAmount",
+            "component": "span",
+            "props": {
+                "className": "text-sm font-bold",
+                "value": {
+                    "path": "amount"
+                }
+            }
+        },
+        {
+            "id": "drawerDocSection",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-2"
+            },
+            "children": [
+                "docLabel",
+                "docPreview"
+            ]
+        },
+        {
+            "id": "docLabel",
+            "component": "span",
+            "props": {
+                "className": "text-xs font-bold text-on-surface-variant",
+                "value": "SOURCE DOCUMENT"
+            }
+        },
+        {
+            "id": "docPreview",
+            "component": "div",
+            "props": {
+                "className": "rounded-lg border border-divider overflow-hidden"
+            },
+            "children": [
+                "docImg",
+                "docFooter"
+            ]
+        },
+        {
+            "id": "docImg",
+            "component": "img",
+            "props": {
+                "src": "https://picsum.photos/seed/invoice-preview/400/300",
+                "className": "w-full h-32 object-cover"
+            }
+        },
+        {
+            "id": "docFooter",
+            "component": "div",
+            "props": {
+                "className": "p-2 bg-surface-container flex justify-between items-center"
+            },
+            "children": [
+                "docName",
+                "viewDocBtn"
+            ]
+        },
+        {
+            "id": "docName",
+            "component": "span",
+            "props": {
+                "className": "text-xs truncate w-32",
+                "value": "INV-88291-OFFICE.pdf"
+            }
+        },
+        {
+            "id": "viewDocBtn",
+            "component": "Button",
+            "props": {
+                "value": "View",
+                "size": "small",
+                "color": "primary"
+            }
+        }
+    ]
+}

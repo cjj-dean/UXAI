@@ -1,0 +1,1051 @@
+{
+    "state": {
+        "ghdrBrand": {
+            "logoIcon": "shield-check",
+            "platformName": "iMaster Admin"
+        },
+        "ghdrNavSelected": [
+            "reports"
+        ],
+        "ghdrNavItems": [
+            {
+                "title": "首页",
+                "key": "home"
+            },
+            {
+                "title": "资产管理",
+                "key": "assets"
+            },
+            {
+                "title": "数据分析",
+                "key": "analysis"
+            },
+            {
+                "title": "报表中心",
+                "key": "reports"
+            },
+            {
+                "title": "文档中心",
+                "key": "docs"
+            },
+            {
+                "title": "系统设置",
+                "key": "settings"
+            }
+        ],
+        "ghdrUserProfile": {
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "name": "Admin User"
+        },
+        "snavModuleTitle": "智能决策平台",
+        "snavSelectedKeys": [
+            "physic"
+        ],
+        "snavOpenKeys": [
+            "compute"
+        ],
+        "snavMenuItems": [
+            {
+                "key": "auth",
+                "title": "用户权限管理",
+                "icon": "user-check"
+            },
+            {
+                "key": "org",
+                "title": "组织架构配置",
+                "icon": "network"
+            },
+            {
+                "key": "compute",
+                "title": "计算资源管理",
+                "icon": "cpu",
+                "children": [
+                    {
+                        "key": "physic",
+                        "title": "物理服务器列表"
+                    },
+                    {
+                        "key": "vm",
+                        "title": "虚拟机实例"
+                    },
+                    {
+                        "key": "k8s",
+                        "title": "容器集群状态"
+                    },
+                    {
+                        "key": "storage",
+                        "title": "云盘存储分配"
+                    },
+                    {
+                        "key": "lb",
+                        "title": "负载均衡配置"
+                    },
+                    {
+                        "key": "fw",
+                        "title": "安全组防火墙"
+                    }
+                ]
+            },
+            {
+                "key": "topo",
+                "title": "网络拓扑视图",
+                "icon": "share-2"
+            },
+            {
+                "key": "log",
+                "title": "性能日志分析",
+                "icon": "file-text"
+            },
+            {
+                "key": "alert",
+                "title": "告警规则策略",
+                "icon": "bell-ring"
+            },
+            {
+                "key": "inspect",
+                "title": "系统巡检报告",
+                "icon": "clipboard-check"
+            },
+            {
+                "key": "workflow",
+                "title": "工单审批流程",
+                "icon": "git-pull-request"
+            }
+        ],
+        "rmetCardTitle": "核心运行指标",
+        "rmetMetricGroups": [
+            {
+                "id": "cpu",
+                "illustrationImage": "https://fpoimg.com/200x200?gradient=0067D1,E6F2FD&text_color=0067D1&text=CPU",
+                "groupTitle": "CPU与算力",
+                "metrics": [
+                    {
+                        "value": "68.3 %",
+                        "unit": "使用率",
+                        "colorClass": "text-primary"
+                    },
+                    {
+                        "value": "128 核",
+                        "unit": "总计",
+                        "colorClass": "text-on-surface"
+                    }
+                ]
+            },
+            {
+                "id": "nodes",
+                "illustrationImage": "https://fpoimg.com/200x200?gradient=09AA71,E7FBF2&text_color=09AA71&text=NODES",
+                "groupTitle": "节点连接状态",
+                "metrics": [
+                    {
+                        "value": "22 个",
+                        "unit": "在线",
+                        "colorClass": "text-success"
+                    },
+                    {
+                        "value": "5 个",
+                        "unit": "离线",
+                        "colorClass": "text-on-surface-variant"
+                    },
+                    {
+                        "value": "2 个",
+                        "unit": "异常报警",
+                        "colorClass": "text-error"
+                    }
+                ]
+            }
+        ],
+        "sltbCardTitle": "物理服务器运行列表",
+        "sltbSelectedRowKeys": [],
+        "sltbTableData": [
+            {
+                "deviceId": "SVR-1001",
+                "deviceName": "核心网关A",
+                "ipAddress": "192.168.0.1",
+                "room": "华北一区",
+                "os": "CentOS 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "12%",
+                "memUsage": "24%",
+                "diskCap": "45%",
+                "network": "150 Mbps"
+            },
+            {
+                "deviceId": "SVR-1002",
+                "deviceName": "核心网关B",
+                "ipAddress": "192.168.0.2",
+                "room": "华北一区",
+                "os": "CentOS 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "15%",
+                "memUsage": "26%",
+                "diskCap": "45%",
+                "network": "180 Mbps"
+            },
+            {
+                "deviceId": "SVR-1003",
+                "deviceName": "数据库主库",
+                "ipAddress": "10.1.5.10",
+                "room": "华东二区",
+                "os": "RedHat 8",
+                "status": "警告",
+                "statusColor": "warning",
+                "cpuLoad": "85%",
+                "memUsage": "92%",
+                "diskCap": "88%",
+                "network": "420 Mbps"
+            },
+            {
+                "deviceId": "SVR-1004",
+                "deviceName": "数据库从库",
+                "ipAddress": "10.1.5.11",
+                "room": "华东二区",
+                "os": "RedHat 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "45%",
+                "memUsage": "60%",
+                "diskCap": "45%",
+                "network": "310 Mbps"
+            },
+            {
+                "deviceId": "SVR-1005",
+                "deviceName": "缓存节点A",
+                "ipAddress": "10.2.1.100",
+                "room": "华南一区",
+                "os": "CentOS 7",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "22%",
+                "memUsage": "80%",
+                "diskCap": "15%",
+                "network": "800 Mbps"
+            },
+            {
+                "deviceId": "SVR-1006",
+                "deviceName": "缓存节点B",
+                "ipAddress": "10.2.1.101",
+                "room": "华南一区",
+                "os": "CentOS 7",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "25%",
+                "memUsage": "82%",
+                "diskCap": "16%",
+                "network": "750 Mbps"
+            },
+            {
+                "deviceId": "SVR-1007",
+                "deviceName": "日志服务器",
+                "ipAddress": "10.2.0.50",
+                "room": "华北二区",
+                "os": "Ubuntu 20",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "15%",
+                "memUsage": "40%",
+                "diskCap": "75%",
+                "network": "900 Mbps"
+            },
+            {
+                "deviceId": "SVR-1008",
+                "deviceName": "消息队列A",
+                "ipAddress": "10.3.1.10",
+                "room": "华东一区",
+                "os": "CentOS 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "35%",
+                "memUsage": "55%",
+                "diskCap": "30%",
+                "network": "600 Mbps"
+            },
+            {
+                "deviceId": "SVR-1009",
+                "deviceName": "消息队列B",
+                "ipAddress": "10.3.1.11",
+                "room": "华东一区",
+                "os": "CentOS 8",
+                "status": "异常",
+                "statusColor": "error",
+                "cpuLoad": "99%",
+                "memUsage": "98%",
+                "diskCap": "95%",
+                "network": "15 Mbps"
+            },
+            {
+                "deviceId": "SVR-1010",
+                "deviceName": "业务网关",
+                "ipAddress": "192.168.2.1",
+                "room": "华南二区",
+                "os": "Debian 11",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "40%",
+                "memUsage": "30%",
+                "diskCap": "20%",
+                "network": "250 Mbps"
+            },
+            {
+                "deviceId": "SVR-1011",
+                "deviceName": "搜索引擎A",
+                "ipAddress": "10.4.0.20",
+                "room": "华北一区",
+                "os": "CentOS 7",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "60%",
+                "memUsage": "75%",
+                "diskCap": "50%",
+                "network": "400 Mbps"
+            },
+            {
+                "deviceId": "SVR-1012",
+                "deviceName": "搜索引擎B",
+                "ipAddress": "10.4.0.21",
+                "room": "华北一区",
+                "os": "CentOS 7",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "58%",
+                "memUsage": "72%",
+                "diskCap": "52%",
+                "network": "380 Mbps"
+            },
+            {
+                "deviceId": "SVR-1013",
+                "deviceName": "大数据节点",
+                "ipAddress": "10.5.5.10",
+                "room": "西南区",
+                "os": "RedHat 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "70%",
+                "memUsage": "85%",
+                "diskCap": "60%",
+                "network": "500 Mbps"
+            },
+            {
+                "deviceId": "SVR-1014",
+                "deviceName": "离线计算库",
+                "ipAddress": "10.5.5.11",
+                "room": "西南区",
+                "os": "RedHat 8",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "72%",
+                "memUsage": "88%",
+                "diskCap": "62%",
+                "network": "480 Mbps"
+            },
+            {
+                "deviceId": "SVR-1015",
+                "deviceName": "异地备份库",
+                "ipAddress": "192.168.9.99",
+                "room": "华北二区",
+                "os": "Ubuntu 22",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "5%",
+                "memUsage": "15%",
+                "diskCap": "90%",
+                "network": "1024 Mbps"
+            },
+            {
+                "deviceId": "SVR-1016",
+                "deviceName": "监控探针",
+                "ipAddress": "10.0.0.254",
+                "room": "核心交换区",
+                "os": "Alpine 3",
+                "status": "正常",
+                "statusColor": "success",
+                "cpuLoad": "2%",
+                "memUsage": "10%",
+                "diskCap": "5%",
+                "network": "10 Mbps"
+            }
+        ]
+    },
+    "rootId": "rootAppShell",
+    "elements": [
+        {
+            "id": "rootAppShell",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col h-screen w-full bg-surface-container-lowest overflow-hidden"
+            },
+            "children": [
+                "shellHeaderContainer",
+                "shellBodyWrapper"
+            ]
+        },
+        {
+            "id": "shellHeaderContainer",
+            "component": "header",
+            "props": {
+                "className": "h-12 w-full bg-surface-container-highest shadow-sm z-50 flex items-center px-page shrink-0"
+            },
+            "children": [
+                "ghdrLeftSection",
+                "ghdrCenterSection",
+                "ghdrRightSection"
+            ]
+        },
+        {
+            "id": "shellBodyWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-1 w-full overflow-hidden"
+            },
+            "children": [
+                "shellSiderContainer",
+                "shellMainScrollArea"
+            ]
+        },
+        {
+            "id": "shellSiderContainer",
+            "component": "aside",
+            "props": {
+                "className": "w-64 h-full bg-surface-container-highest border-r border-divider shrink-0 overflow-y-auto flex flex-col"
+            },
+            "children": [
+                "snavHeaderWrapper",
+                "snavMenuBody"
+            ]
+        },
+        {
+            "id": "shellMainScrollArea",
+            "component": "main",
+            "props": {
+                "className": "flex-1 h-full overflow-y-auto bg-surface-container-lowest"
+            },
+            "children": [
+                "shellMainContentStack"
+            ]
+        },
+        {
+            "id": "shellMainContentStack",
+            "component": "div",
+            "props": {
+                "className": "flex flex-col gap-section p-page min-h-full"
+            },
+            "children": [
+                "shellMetricsSlot",
+                "shellTableSlot"
+            ]
+        },
+        {
+            "id": "shellMetricsSlot",
+            "component": "section",
+            "props": {
+                "className": "w-full shrink-0 flex flex-col gap-stack"
+            },
+            "children": [
+                "rmetTitleText",
+                "rmetMainContainer"
+            ]
+        },
+        {
+            "id": "shellTableSlot",
+            "component": "section",
+            "props": {
+                "className": "w-full flex-1 bg-surface-container-highest rounded-container shadow-card overflow-hidden flex flex-col"
+            },
+            "children": [
+                "sltbHeader",
+                "sltbTableContainer"
+            ]
+        },
+        {
+            "id": "ghdrLeftSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 shrink-0"
+            },
+            "children": [
+                "ghdrLogoIcon",
+                "ghdrBrandName"
+            ]
+        },
+        {
+            "id": "ghdrLogoIcon",
+            "component": "Icon",
+            "props": {
+                "name": {
+                    "path": "/ghdrBrand/logoIcon"
+                },
+                "color": "primary",
+                "className": "w-6 h-6"
+            }
+        },
+        {
+            "id": "ghdrBrandName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghdrBrand/platformName"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "ghdrCenterSection",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex justify-center px-gutter"
+            },
+            "children": [
+                "ghdrTopMenu"
+            ]
+        },
+        {
+            "id": "ghdrTopMenu",
+            "component": "Menu",
+            "props": {
+                "mode": "horizontal",
+                "selectedKeys": {
+                    "path": "/ghdrNavSelected"
+                },
+                "items": {
+                    "path": "/ghdrNavItems"
+                },
+                "className": "border-none bg-transparent"
+            }
+        },
+        {
+            "id": "ghdrRightSection",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-stack shrink-0"
+            },
+            "children": [
+                "ghdrHelpBtn",
+                "ghdrLangBtn",
+                "ghdrUserWrapper"
+            ]
+        },
+        {
+            "id": "ghdrHelpBtn",
+            "component": "Button",
+            "props": {
+                "icon": "help-circle",
+                "types": "default",
+                "className": "border-none shadow-none bg-transparent"
+            }
+        },
+        {
+            "id": "ghdrLangBtn",
+            "component": "Button",
+            "props": {
+                "icon": "languages",
+                "types": "default",
+                "className": "border-none shadow-none bg-transparent"
+            }
+        },
+        {
+            "id": "ghdrUserWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-2 ml-2 pl-2 border-l border-divider"
+            },
+            "children": [
+                "ghdrUserAvatar",
+                "ghdrUserName"
+            ]
+        },
+        {
+            "id": "ghdrUserAvatar",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "/ghdrUserProfile/avatar"
+                },
+                "className": "w-8 h-8 rounded-full object-cover border border-divider"
+            }
+        },
+        {
+            "id": "ghdrUserName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/ghdrUserProfile/name"
+                },
+                "className": "text-md font-medium text-on-surface-variant"
+            }
+        },
+        {
+            "id": "snavHeaderWrapper",
+            "component": "div",
+            "props": {
+                "className": "px-inset py-stack flex items-center gap-inline border-b border-divider mb-stack"
+            },
+            "children": [
+                "snavHeaderIcon",
+                "snavHeaderTitle"
+            ]
+        },
+        {
+            "id": "snavHeaderIcon",
+            "component": "Icon",
+            "props": {
+                "name": "layout-grid",
+                "color": "primary",
+                "shape": "square",
+                "className": "w-8 h-8"
+            }
+        },
+        {
+            "id": "snavHeaderTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/snavModuleTitle"
+                },
+                "className": "text-lg font-bold text-on-surface truncate"
+            }
+        },
+        {
+            "id": "snavMenuBody",
+            "component": "Menu",
+            "props": {
+                "mode": "vertical",
+                "selectedKeys": {
+                    "path": "/snavSelectedKeys"
+                },
+                "openKeys": {
+                    "path": "/snavOpenKeys"
+                },
+                "items": {
+                    "path": "/snavMenuItems"
+                },
+                "className": "flex-1 border-none"
+            }
+        },
+        {
+            "id": "rmetTitleText",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/rmetCardTitle"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "rmetMainContainer",
+            "component": "div",
+            "props": {
+                "className": "bg-surface-container-highest rounded-container shadow-card p-inset w-full"
+            },
+            "children": [
+                "rmetGroupsWrapper"
+            ]
+        },
+        {
+            "id": "rmetGroupsWrapper",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row flex-wrap gap-gutter justify-start items-start"
+            },
+            "children": {
+                "path": "/rmetMetricGroups",
+                "componentId": "rmetGroupItem"
+            }
+        },
+        {
+            "id": "rmetGroupItem",
+            "component": "div",
+            "props": {
+                "className": "flex items-start gap-inset p-gutter bg-transparent shrink-0"
+            },
+            "children": [
+                "rmetGroupIllustration",
+                "rmetGroupContentArea"
+            ]
+        },
+        {
+            "id": "rmetGroupIllustration",
+            "component": "div",
+            "props": {
+                "className": "w-20 h-20 shrink-0 rounded-md overflow-hidden"
+            },
+            "children": [
+                "rmetGroupImage"
+            ]
+        },
+        {
+            "id": "rmetGroupImage",
+            "component": "img",
+            "props": {
+                "src": {
+                    "path": "illustrationImage"
+                },
+                "className": "w-full h-full object-cover"
+            }
+        },
+        {
+            "id": "rmetGroupContentArea",
+            "component": "div",
+            "props": {
+                "className": "flex-1 flex flex-col gap-stack items-start text-left"
+            },
+            "children": [
+                "rmetGroupHeaderTitle",
+                "rmetMetricsRow"
+            ]
+        },
+        {
+            "id": "rmetGroupHeaderTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "groupTitle"
+                },
+                "className": "text-md font-semibold text-on-surface-variant"
+            }
+        },
+        {
+            "id": "rmetMetricsRow",
+            "component": "div",
+            "props": {
+                "className": "flex flex-wrap gap-x-gutter gap-y-inline justify-start"
+            },
+            "children": {
+                "path": "metrics",
+                "componentId": "rmetMetricDataBlock"
+            }
+        },
+        {
+            "id": "rmetMetricDataBlock",
+            "component": "div",
+            "props": {
+                "className": "flex flex-row items-baseline gap-inline"
+            },
+            "children": [
+                "rmetMetricValue",
+                "rmetMetricUnit"
+            ]
+        },
+        {
+            "id": "rmetMetricValue",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "value"
+                },
+                "className": "text-2xl font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "rmetMetricUnit",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "unit"
+                },
+                "className": "text-sm text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sltbHeader",
+            "component": "div",
+            "props": {
+                "className": "flex items-center justify-between px-inset py-stack border-b border-divider"
+            },
+            "children": [
+                "sltbTitle",
+                "sltbToolbar"
+            ]
+        },
+        {
+            "id": "sltbTitle",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "/sltbCardTitle"
+                },
+                "className": "text-lg font-bold text-on-surface"
+            }
+        },
+        {
+            "id": "sltbToolbar",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "sltbExportBtn",
+                "sltbPrintBtn",
+                "sltbRefreshBtn",
+                "sltbAddBtn"
+            ]
+        },
+        {
+            "id": "sltbExportBtn",
+            "component": "Button",
+            "props": {
+                "value": "导出",
+                "icon": "download",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "sltbPrintBtn",
+            "component": "Button",
+            "props": {
+                "value": "打印",
+                "icon": "printer",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "sltbRefreshBtn",
+            "component": "Button",
+            "props": {
+                "value": "刷新",
+                "icon": "rotate-cw",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "sltbAddBtn",
+            "component": "Button",
+            "props": {
+                "value": "新增设备",
+                "color": "primary",
+                "icon": "plus",
+                "iconPlacement": "start"
+            }
+        },
+        {
+            "id": "sltbTableContainer",
+            "component": "div",
+            "props": {
+                "className": "flex-1 p-gutter overflow-auto"
+            },
+            "children": [
+                "sltbMainTable"
+            ]
+        },
+        {
+            "id": "sltbMainTable",
+            "component": "Table",
+            "props": {
+                "rowKey": "deviceId",
+                "dataSource": {
+                    "path": "/sltbTableData"
+                },
+                "rowSelection": {
+                    "type": "checkbox",
+                    "selectedRowKeys": {
+                        "path": "/sltbSelectedRowKeys"
+                    }
+                },
+                "columns": [
+                    {
+                        "title": "设备ID",
+                        "dataIndex": "deviceId",
+                        "sort": true
+                    },
+                    {
+                        "title": "设备名称",
+                        "dataIndex": "deviceName",
+                        "minWidth": 150
+                    },
+                    {
+                        "title": "IP地址",
+                        "dataIndex": "ipAddress"
+                    },
+                    {
+                        "title": "所属机房",
+                        "dataIndex": "room"
+                    },
+                    {
+                        "title": "操作系统",
+                        "dataIndex": "os"
+                    },
+                    {
+                        "title": "运行状态",
+                        "dataIndex": "status"
+                    },
+                    {
+                        "title": "CPU负载",
+                        "dataIndex": "cpuLoad"
+                    },
+                    {
+                        "title": "内存使用",
+                        "dataIndex": "memUsage"
+                    },
+                    {
+                        "title": "磁盘容量",
+                        "dataIndex": "diskCap"
+                    },
+                    {
+                        "title": "网络吞吐",
+                        "dataIndex": "network"
+                    },
+                    {
+                        "title": "操作",
+                        "dataIndex": "actions",
+                        "fixed": "end",
+                        "width": 100
+                    }
+                ]
+            },
+            "children": {
+                "path": "/sltbTableData",
+                "componentId": "sltbTableRow"
+            }
+        },
+        {
+            "id": "sltbTableRow",
+            "component": "TableRow",
+            "children": [
+                "sltbCellDeviceId",
+                "sltbCellDeviceName",
+                "sltbCellIp",
+                "sltbCellRoom",
+                "sltbCellOs",
+                "sltbCellStatus",
+                "sltbCellCpu",
+                "sltbCellMem",
+                "sltbCellDisk",
+                "sltbCellNet",
+                "sltbCellActions"
+            ]
+        },
+        {
+            "id": "sltbCellDeviceId",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deviceId"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellDeviceName",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "deviceName"
+                },
+                "className": "text-md font-medium text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellIp",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "ipAddress"
+                },
+                "className": "text-md text-on-surface-variant"
+            }
+        },
+        {
+            "id": "sltbCellRoom",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "room"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellOs",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "os"
+                },
+                "variant": "outlined"
+            }
+        },
+        {
+            "id": "sltbCellStatus",
+            "component": "Tag",
+            "props": {
+                "value": {
+                    "path": "status"
+                },
+                "color": {
+                    "path": "statusColor"
+                }
+            }
+        },
+        {
+            "id": "sltbCellCpu",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "cpuLoad"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellMem",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "memUsage"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellDisk",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "diskCap"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellNet",
+            "component": "span",
+            "props": {
+                "value": {
+                    "path": "network"
+                },
+                "className": "text-md text-on-surface"
+            }
+        },
+        {
+            "id": "sltbCellActions",
+            "component": "div",
+            "props": {
+                "className": "flex items-center gap-inline"
+            },
+            "children": [
+                "sltbEditBtn",
+                "sltbDeleteBtn"
+            ]
+        },
+        {
+            "id": "sltbEditBtn",
+            "component": "Button",
+            "props": {
+                "icon": "file-edit",
+                "types": "link",
+                "size": "small"
+            }
+        },
+        {
+            "id": "sltbDeleteBtn",
+            "component": "Button",
+            "props": {
+                "icon": "trash-2",
+                "types": "link",
+                "color": "danger",
+                "size": "small"
+            }
+        }
+    ]
+}
