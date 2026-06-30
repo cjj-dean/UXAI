@@ -1,0 +1,84 @@
+```json
+{
+  "rootId": "root",
+  "elements": [
+    {
+      "id": "root",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen overflow-hidden bg-surface-container-lowest"
+      },
+      "children": [
+        "header",
+        "body"，
+        "dialog" /* 🔵 dialog可选，根据页面蓝图来 */
+      ]
+    },
+    {
+      "id": "header",
+      "component": "header",
+      "props": {
+        "className": "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]"
+      },
+      "children": []
+    },
+    {
+      "id": "body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row flex-1 min-h-0 overflow-hidden"
+      },
+      "children": [
+        "aside",  /* 🔵 aside可选，根据页面蓝图来 */
+        "main"
+      ]
+    },
+    { 
+       /* 🔵 aside可选，根据页面蓝图来 */
+      "id": "aside",
+      "component": "aside",
+      "props": {
+        "className": "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between w-[54px] h-full"
+      },
+      "children": []
+    },
+    {
+      "id": "main",
+      "component": "main",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        /* 🔵 可修改：按 section 数量添加 slot 容器 */
+      ]
+    }
+    {
+      "id": "dialog",
+      "component": "dialog",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "section_id": "header",
+      "element_id": "header",
+      "id_prefix": "header"
+    },
+    {
+      "section_id": "aside",
+      "element_id": "aside",
+      "id_prefix": "aside"
+    }
+    {
+      "section_id": "dialog",
+      "element_id": "dialog",
+      "id_prefix": "dialog"
+    }
+    /* 🔵 可修改：按 section 数量追加 slot，element_id 必须在 elements 中存在 */
+  ]
+}
+```
