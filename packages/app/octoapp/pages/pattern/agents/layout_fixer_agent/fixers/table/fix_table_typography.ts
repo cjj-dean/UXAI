@@ -1,9 +1,12 @@
 import { type A2UIJson, type Fixer } from "../../types"
 
 /**
- * Forces all text elements inside Table cells to use text-md text-on-surface.
- * Strips conflicting text size and color classes, but leaves Tag components untouched
- * (Tag conveys status via its own color prop).
+ * Forces all text elements inside Table cells to use text-md text-on-surface
+ * with whitespace-nowrap. Strips conflicting text size and color classes,
+ * ensures no-wrap behavior so column minWidth works correctly.
+ *
+ * Leaves Tag and Button components untouched (Tag conveys status via its own
+ * color prop; Button has its own sizing).
  */
 
 const SIZE_CLASSES = /\btext-(xs|sm|lg|xl|2xl|3xl|base)\b/g
@@ -68,6 +71,13 @@ export const fixTableTypography: Fixer = (json): [A2UIJson, string[]] => {
     if (COLOR_CLASSES.test(newCls)) {
       newCls = newCls.replace(COLOR_CLASSES, "text-on-surface")
       newCls = newCls.replace(/(?:text-on-surface\s*)+/g, "text-on-surface ")
+      modified = true
+    }
+
+    // Ensure whitespace-nowrap so text doesn't wrap inside the cell
+    const NOWRAP_RE = /\bwhitespace-nowrap\b/
+    if (!NOWRAP_RE.test(newCls)) {
+      newCls = newCls.replace(/\s*$/, " whitespace-nowrap")
       modified = true
     }
 

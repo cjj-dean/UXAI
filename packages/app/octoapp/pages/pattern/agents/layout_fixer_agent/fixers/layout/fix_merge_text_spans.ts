@@ -35,7 +35,7 @@ export const fixMergeTextSpans: Fixer = (json) => {
           parts.push(val)
         } else if (val && typeof val === "object" && "path" in val) {
           const p = val.path
-          let key = p.rsplit("/", 1).pop() || p.split("/").pop() || "v"
+          let key = p.split("/").pop() || "v"
           if (used.has(key)) key = `${key}_${used.size}`
           used.add(key)
           bindings[key] = { path: p }

@@ -89,11 +89,20 @@ const fix_chart_data: Fixer = (json): [A2UIJson, string[]] => {
           changed = true
         }
       }
+
+      // Sanitize name: collapse whitespace, strip newlines (SVG text breaks on \n)
+      if (typeof item.name === "string" && /[\n\r\t]|\s{2,}/.test(item.name)) {
+        const before = item.name
+        item.name = item.name.replace(/[\n\r\t]+/g, " ").replace(/\s{2,}/g, " ").trim()
+        detail.push(`#${i + 1}: name 含换行/多空格 → "${item.name}"`)
+        changed = true
+      }
     }
 
     if (changed) {
       writeStatePath(json.state, dataPath, data)
-      fixes.push(`[${el.id}] ${el.component} 数据字段修正: 确保 name + value`)
+      const detailStr = detail.length ? `\n  - ${detail.join("\n  - ")}` : ""
+      fixes.push(`[${el.id}] ${el.component} 数据字段修正: 确保 name + value${detailStr}`)
     }
   }
 

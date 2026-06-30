@@ -476,7 +476,7 @@ function PatternContent() {
       // 开启本次调试日志
       logStartSession(sid, text)
       // 流程执行完毕后的回调
-      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog }: any) => {
+      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog }: any) => {
           // 写入 fixer 日志、merged 数据、agent 调试日志到 {workspace}/pattern/workflow/{sid}/
           const desktopApi = (window as unknown as {
             api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
@@ -487,6 +487,9 @@ function PatternContent() {
             const encoder = new TextEncoder()
             if (fixerLog?.length) {
               await desktopApi.writeFileBuffer(`${wfDir}/fixer.log`, encoder.encode(fixerLog.join("\n")).buffer)
+            }
+            if (plannerValidateLog?.length) {
+              await desktopApi.writeFileBuffer(`${wfDir}/planner_validate.log`, encoder.encode(plannerValidateLog.join("\n")).buffer)
             }
             if (pageJson) {
               await desktopApi.writeFileBuffer(`${wfDir}/merged.json`, encoder.encode(JSON.stringify(pageJson, null, 2)).buffer)

@@ -44,7 +44,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     onSessionCreated 
   } = input
   // 组装输入提示词
-  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription)
+  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput)
   console.log("----- 模块渲染Agent开始执行 ----- ");
   const startTime = Date.now()
   // 执行模块渲染
@@ -73,12 +73,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
 }
 
 // 组装模块生成的输入文本
-function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any) {
-  // 拓展意图
-  let userInput = intentDescription.userInput ?? "";
-  let intentAnalysis = intentDescription.intentAnalysis ?? "";
-  let pageDescription = intentDescription.pageDescription ?? "";
-  intentAnalysis += pageDescription;
+function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string) {
   let layoutDesc = intentDescription.layoutDescription ?? "";
   let sections = intentDescription.sections ?? [];
   let sectionsStr = JSON.stringify(sections, null, 2);
@@ -103,8 +98,6 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   humanMessage = `请为以下模块生成 A2UI JSON：
 
   [完整页面蓝图:] ==================================
-  - 用户输入: ${userInput}
-  - 意图分析: ${intentAnalysis}
   - 布局描述: ${layoutDesc}
   - 页面结构: ${sectionsStr}
 
@@ -120,7 +113,13 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   ${sectionDetailStr}
 
   [需要被渲染模块的根节点:] ${elementId}
-  [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
+   [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
+
+  **CRITICAL — Path 语法约束：**
+  - 数据绑定 path 禁止使用 ".."（目录回溯语法），如 "/menuItems/0/../8" 不会解析。
+  - 两个不同区域引用同一数据源时（如"顶部 8 个图标"+"底部 2 个图标"），数据必须预先拆分为两个独立数组（如 topMenuItems / bottomMenuItems），分别绑定各自的 path。
+  - 正确示例：{ "path": "/topMenuItems" } 和 { "path": "/bottomMenuItems" }
+  - 错误示例：{ "path": "/menuItems/0/../8" }
 
   如果需要使用 Section 和 Icon 以外的组件，调用 \`load_components_docs\` 工具查询 API（只有一次机会，一次性传入全部组件名）。
   如果只需要 Section 和 Icon，无需调用任何工具，直接输出 JSON。

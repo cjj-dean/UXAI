@@ -23,6 +23,16 @@ export const fixOverflow: Fixer = (json) => {
     const isMainContent = elem.id === "mainContent" || elem.component === "main"
     if (!isMainContent) {
       const toks2 = tokens(getClassName(elem))
+      // Section 自带边距和背景，不应设置 overflow-*（会导致内容被截断）
+      if (elem.component === "Section") {
+        const oldLen = toks2.length
+        const cleaned = toks2.filter((t) => !t.startsWith("overflow-"))
+        if (cleaned.length !== oldLen) {
+          setClassName(elem, cleaned.join(" "))
+          fixes.push(`[${elem.id}](${elem.component}) Section 移除 overflow 类: 已被清理`)
+        }
+        continue
+      }
       let changed = false
       const newToks = toks2.map((t) => {
         if (["overflow-y-auto", "overflow-auto", "overflow-y-scroll"].includes(t)) {

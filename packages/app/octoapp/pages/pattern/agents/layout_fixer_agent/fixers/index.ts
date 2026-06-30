@@ -14,6 +14,7 @@ import { fixMainBackground } from "./layout"
 import { fixMergeTextSpans } from "./layout"
 import { fixFlexMinHeight } from "./layout"
 import { fixDuplicateRef } from "./layout"
+import { fixHeaderLayout } from "./layout"
 import { fixImageRadius } from "./component"
 import { fixChartHeight } from "./component"
 import { fixCircleProcessChart } from "./component"
@@ -22,12 +23,14 @@ import {
   fixTableColumnWidth,
   fixTableTypography,
   fixTableCellBinding,
+  fixTablePagination,
 } from "./table"
 import { fixTagColors } from "./component"
 import { fixMenuIcons } from "./component"
 import { fixChartBuiltinLegend } from "./component"
 import { fixChartData } from "./component"
 import { fixIconProps } from "./component"
+import { fixInvalidPaths } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "orphan_elements", fn: fixOrphanElements },
@@ -55,5 +58,8 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "chart_data", fn: fixChartData },
   { name: "table_typography", fn: fixTableTypography },
   { name: "table_cell_binding", fn: fixTableCellBinding },
+  { name: "table_pagination", fn: fixTablePagination },
+  { name: "header_layout", fn: fixHeaderLayout },
   { name: "icon_props", fn: fixIconProps },
+  { name: "invalid_paths", fn: fixInvalidPaths },
 ]

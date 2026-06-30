@@ -70,11 +70,17 @@ export const fixTableSelectionColumn: Fixer = (json) => {
     }
 
     if (cols && cols.length) {
-      const kept = cols.filter((c) => !isSelectionColumn(c))
-      if (kept.length !== cols.length) {
-        const removed = cols.filter((c) => isSelectionColumn(c))
-        // Direct array: write back. Path-bound: mutate the resolved (same reference as state) array.
-        if (!colsFromState) elem.props!.columns = kept
+      const removed: any[] = []
+      // splice from end to avoid index shifting when mutating in place
+      for (let i = cols.length - 1; i >= 0; i--) {
+        if (isSelectionColumn(cols[i])) {
+          removed.push(cols[i])
+          cols.splice(i, 1)
+        }
+      }
+      if (removed.length) {
+        // Direct array: write back. Path-bound: cols is same reference as state, mutation persists.
+        if (!colsFromState) elem.props!.columns = cols
         const ids = removed.map((c: any) => c?.dataIndex ?? c?.title ?? "?")
         fixes.push(`[${elem.id}] 移除冗余选择占位列: ${ids} (rowSelection.type=${rsType}，由内置选择列接管)`)
       }

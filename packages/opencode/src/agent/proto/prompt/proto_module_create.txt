@@ -86,6 +86,22 @@
   18. **Tab Content No Padding**: The element referenced by `TabItem`'s `content.componentId` MUST NOT include `p-*` padding classes in its className. The parent container (e.g. Section) already provides padding — adding padding to tab content causes misaligned indentation between nested Tab levels.
   19. **Sidebar Navigation MUST Use Menu (CRITICAL)**: Sidebar navigation menus MUST use the `Menu` component (NOT `Collapse`/`CollapseItem`). `Menu` has built-in accordion behavior, selection state, and hierarchical submenu support. Using `Collapse` for sidebar navigation is FORBIDDEN.
   20. **Chart Components Are Self-Contained (CRITICAL)**: Chart components (PieChart, BarChart, LineChart, ProcessChart, etc.) already include legends, center text, axis labels, tooltips, and color dots. You MUST NOT create any sibling div/span elements for these features inside the chart's parent container. Specifically: do NOT create legend containers (colored dot + text rows), do NOT create center number overlays (absolute-positioned text in the donut hole). The chart's `option.title` handles center text; the chart auto-renders legends from data `name` fields.
+  21. **User Intent — Component Vocabulary (CRITICAL, 最高优先级)**: 用户原文中**显式提到的组件名词**是最高优先级的指令。当用户在 intent/blueprint 里写了以下任一关键词时，必须用对应组件，不得用"看着像"的同义组件替换：
+     - "下拉/dropdown/下拉选择器/下拉菜单/选择器" → `Select` 或 `Dropdown`
+     - "tab/标签页/选项卡" → `Tabs` + `TabItem`（组合切换），单选切换用 `Segmented` 不算 tab
+     - "开关/toggle/切换" → `Switch`（二元）或 `Segmented`（多态）
+     - "弹窗/对话框/popup/modal/dialog" → `Modal` 或 `Drawer`
+     - "菜单/menu" → `Menu`（侧栏和头部导航的菜单）
+     - "步骤条/steps/分步" → `Steps` + `StepItem`
+     - "面包屑/breadcrumb" → `Breadcrumb`
+     - "树/tree" → `Tree`
+     - "标签/tag/徽章/badge" → `Tag` / `Badge`
+     - "折叠面板/collapse/手风琴/accordion" → `Collapse` + `CollapseItem`（**非侧栏导航**场景才用 Collapse）
+     - "进度条/progress" → `Progress`
+     - "时间线/timeline" → `Timeline` + `TimelineItem`
+     - "分页/pagination" → Table 自带，无需额外组件
+
+     反面教材：用户写 "Top5 dropdown选择器" → 不能用 `Segmented`；用户写 "侧栏菜单" → 不能用 `Collapse`；用户写 "弹窗" → 不能用 `Dropdown`。**用户用词是契约，不是建议**。设计系统里的样式映射规则只用于"用户没指定组件"时做默认选择。
 
 #Tool Use Constraint: 
    `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需通过工具加载。

@@ -181,6 +181,7 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
 ### Header Navigation
   - **Surface:** Use `surface-container-highest` as the base background.
   - **Size:** Use 3rem as height.
+  - **Padding:** MUST include `px-[1.5rem]` (left/right inset matches the `inset: 1.5rem` design token). Without this padding, left/right groups sit flush against the viewport edge.
 
 ### 边框和分割线
   - border-base 的使用限制：border-base 仅可用于扁平、无海拔 (无 shadow) 的元素外壳。例如：默认表单输入框、卡片内部嵌套的次级扁平区块、空状态占位图。
@@ -196,6 +197,23 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - PieChart 的中心文字通过 `option.title: {text: "数字", subtext: "总数"}` 实现，禁止在饼图上叠加 div 做中心文字。
     - 坐标轴、网格线、tooltip 均由图表组件内部处理。
   - 也就是说：图表组件的唯一子元素就是它自身，**不要在图表的父容器中添加图例 div、颜色圆点 div、中心文字 div 等任何辅助元素**。
+  - **Chart Sibling Elements — FORBIDDEN (CRITICAL, 最高优先级):**
+    - 图表（如 PieChart、CircleProcessChart、BarChart）的 `children` 数组里、或图表同父级的兄弟节点，**禁止出现以下"伪中心文字/伪图例"模式**：
+      - `absolute` 定位的 span/div（用 `text-3xl` / `text-2xl` 等大字号渲染数字+小字副标题）→ 这是手动模拟 PieChart 中心文字
+      - 一行排列的"圆点 div（`rounded-full bg-xxx`）+ 文字 span"组合 → 这是手动模拟图表图例
+      - 任何模仿 `option.title`（text+subtext）行为的子元素结构
+    - **必须用图表自带的 `option.title` / 内置图例**，不要在图表外手动叠加。
+    - 错误示例（绝不要这样写）：
+      ```json
+      { "id": "chartWrap", "children": ["centerNumber", "centerLabel", "chart"] }
+      { "id": "centerNumber", "component": "span", "props": { "className": "absolute text-3xl", "value": { "path": "/totalCount" } } }
+      { "id": "centerLabel", "component": "span", "props": { "className": "absolute text-sm", "value": { "path": "/totalLabel" } } }
+      ```
+    - 正确写法（让 chart 自己渲染中心文字）：
+      ```json
+      { "id": "chartWrap", "children": ["chart"] }
+      { "id": "chart", "component": "PieChart", "props": { "option": { "title": { "text": { "path": "/totalCount" }, "subtext": { "path": "/totalLabel" } } } } }
+      ```
   - 图表的高度一定要能够占满对应的父容器，否则大量的留白非常丑陋.
   - 为方便可读性，必须将图表数据Key名转换为中文.
   - **Constraints:**
@@ -215,7 +233,7 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
   Encourage the proactive use of icons to establish visual anchors. Icon shape is strictly determined by its Tailwind size.
   - **Size by Context (CRITICAL):** Icon 大小由所在场景决定，禁止随意混用：
     - 顶部导航栏 (header): `w-5 h-5`
-    - 侧边栏 (aside/sidebar nav): `w-6 h-6`
+    - 侧边栏 (aside/sidebar nav): `w-5 h-5`
     - 卡片标题旁/表头旁: `w-4 h-4`
     - 表格单元格内: `w-4 h-4`
     - 下拉箭头/小辅助: `w-3 h-3`
@@ -224,13 +242,12 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - 品牌图标: `color: "primary"`
     - 语义图标（状态指示）: `color: "success" | "warning" | "error" | "primary"`
   - **Shape (`<Icon shape />`):**
-    - `outline`: Standard UI, inline text, card titles, inputs, secondary navigation, tables, unselected states.
-    - `fill`: active states, feedback, destructive actions.
-    - `circle`: Primarily for global status (Success/Error), empty states.
-    - `square`: Primarily for data metrics, module entries, dashboard grid anchors, file types.
+    - `outline`: 标准 UI——所有 ≤ w-6 的图标必须使用 outline，禁止用 fill。激活态只需要 `color: "primary"`，shape 不变。
+    - `circle`: 全局状态（Success/Error）、空状态。
+    - `square`: 数据指标、模块入口、仪表盘网格锚点、文件类型。
   - **Size & Shape Sync:** 
-    - At or below w-6 Must use `outline|fill`. 
-    - Above w-6 Must use `circle|square`.
+    - ≤ w-6（≤ 24px）：**必须**用 `outline`，禁止 `fill`。
+    - > w-6（> 24px）：必须用 `circle | square`。
   - **Constraints:**
     - **NO Background shape**: `<Icon/>` component automatically generates its own internal container block. **DO NOT** manually wrap the icon inside any background shape.
     - **禁止 default(黑)/inverse(白)**：独立 `<Icon>` 组件一律不得使用纯黑或纯白色值。

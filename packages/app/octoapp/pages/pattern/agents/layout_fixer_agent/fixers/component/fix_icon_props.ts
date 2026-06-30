@@ -1,13 +1,13 @@
-import { type A2UIJson, type Fixer, elemMap, childToParent, type A2UIElement } from "../../types"
+import { type A2UIJson, type Fixer, elemMap, childToParent, resolveState, type A2UIElement } from "../../types"
 
 /**
  * Enforces consistent Icon color and size across the page.
  *
  * Rules:
  * 1. Strip text-* color classes from className (Icon uses color prop only)
- * 2. If color prop missing/default/inverse → "#777777"
+ * 2. If color prop missing/default/inverse/path→non-color → "#777777"
  * 3. If no size class → add based on context (header/aside/table/default)
- * 4. Ensure shape is set (default based on size)
+ * 4. Ensure shape is set (default based on size); ≤ w-6 ONLY outline, fill→outline
  */
 
 const TEXT_COLOR_RE = /\btext-(?:on-surface(?:-variant|-container)?|primary|success|warning|critical|error|info|inverse|on-primary|on-secondary|default)\b/g
@@ -34,8 +34,20 @@ const fix_icon_props: Fixer = (json): [A2UIJson, string[]] => {
       modified = true
     }
 
-    // 2) Ensure color prop
-    if (!p.color || p.color === "default" || p.color === "inverse") {
+    // 2) Ensure color prop is a valid color string
+    if (typeof p.color === "string") {
+      if (p.color === "default" || p.color === "inverse") {
+        p.color = "#777777"
+        modified = true
+      }
+    } else if (p.color && typeof p.color === "object" && typeof p.color.path === "string") {
+      const sample = resolveState(json.state, p.color.path)
+      if (typeof sample !== "string") {
+        fixes.push(`[${el.id}](Icon) color 绑定到 ${p.color.path} 解析为非字符串值（${sample === null ? "null" : typeof sample}），降级为 #777777`)
+        p.color = "#777777"
+        modified = true
+      }
+    } else {
       p.color = "#777777"
       modified = true
     }
@@ -45,18 +57,21 @@ const fix_icon_props: Fixer = (json): [A2UIJson, string[]] => {
     if (!SIZE_RE.test(currentCls)) {
       const ctx = detectContext(el, map, parentOf)
       const sizeCls = ctx === "header" ? "w-5 h-5"
-        : ctx === "sidebar" ? "w-6 h-6"
+        : ctx === "sidebar" ? "w-5 h-5"
         : ctx === "table" ? "w-4 h-4"
         : "w-4 h-4"
       p.className = (currentCls + " " + sizeCls).trim()
       modified = true
     }
 
-    // 4) Ensure shape
+    // 4) Ensure shape — ≤ w-6 ONLY outline, never fill
+    const sizeMatch = (typeof p.className === "string" ? p.className : "").match(SIZE_RE)
+    const size = sizeMatch ? parseInt(sizeMatch[1]) : 4
     if (!p.shape) {
-      const sizeMatch = (typeof p.className === "string" ? p.className : "").match(SIZE_RE)
-      const size = sizeMatch ? parseInt(sizeMatch[1]) : 4
       p.shape = size <= 6 ? "outline" : "square"
+      modified = true
+    } else if (size <= 6 && p.shape === "fill") {
+      p.shape = "outline"
       modified = true
     }
 

@@ -794,7 +794,11 @@ const COMPONENT_API_REFERENCE = `
 \`\`\`
 { "component": "Segmented", "props": { "value": { "path": "/activeTab" }, "options": [{ "label": "日", "value": "day", "icon": "lucide-icon" }], "block": false, "orientation": "horizontal" | "vertical", "size": "large" | "medium" | "small" } }
 \`\`\`
-Card top-right multi-select/toggle SHOULD use Segmented.
+**When to use which card-top-right selector (CRITICAL — do NOT confuse these):**
+- **Compact single-value selection (e.g. Top5/Top10/Top20, time range, status filter, "save as dropdown"):** Use \`Select\` (or \`Dropdown\`). The picker is collapsed into one button showing the current value.
+- **Visible multi-state switching / view toggle (e.g. 日/周/月 view switch, grid/list view, status tabs):** Use \`Segmented\`. All options are visible at once as a tab group.
+
+\`Segmented\` is FORBIDDEN for compact single-value pickers like "Top5/Top10" — it eats horizontal space and looks like a tab group, not a dropdown. Use \`Select\` instead.
 
 ### Tree
 \`\`\`
@@ -1070,9 +1074,9 @@ A semi-circle gauge with gradient arc, tick marks, glowing indicator, and animat
 Horizontal stacked bar chart with fixed colors: normal(green), warning(yellow), danger(orange), error(red).
 
 ## TopN Chart Selection Rules
+- **Horizontal ranking / TopN with text labels:** Use ProcessChart (horizontal bar chart). Data: \`[{"name": "iPhone12", "value": 1869}, {"name": "OPPO", "value": 1016}]\`
+- **Vertical distribution over X-axis (e.g., alarm count by duration range):** Use HillChart (vertical area/mountain chart). Data: \`[{"name": "0-2h", "value": 45}, {"name": "2-4h", "value": 80}]\`
 - **Multi-Series Data (Highest Priority):** MUST use BarChart
-- **Percentage / Ratio Values:** Use ProcessChart. Data: [{"name": "A", "value": 45}, {"name": "B", "value": 80}]
-- **Absolute Values:** Use HillChart. Data: [{"name": "A", "value": 1250}, {"name": "B", "value": 840}]
 
 **CRITICAL**: Charts MUST use \`option.data\` pattern. FORBIDDEN to use \`color\` as a top-level prop on charts. Charts have built-in legends, units, axes — do NOT generate UI elements for these.
 `
@@ -1097,9 +1101,9 @@ export function buildIntentPrompt(opts: {
     `- Card: 卡片右上角的多选/切换功能，优先使用 \`Segmented\``,
     ``,
     `## TopN Chart Selection Rules`,
+    `- **Horizontal ranking / TopN with text labels:** Use ProcessChart (horizontal bar chart). Data: \`[{"name": "iPhone12", "value": 1869}, {"name": "OPPO", "value": 1016}]\``,
+    `- **Vertical distribution over X-axis (e.g., alarm count by duration range):** Use HillChart (vertical area/mountain chart). Data: \`[{"name": "0-2h", "value": 45}, {"name": "2-4h", "value": 80}]\``,
     `- **Multi-Series Data (Highest Priority):** MUST use BarChart`,
-    `- **Percentage / Ratio Values:** Use ProcessChart. Data: [{"name": "A", "value": 45}, {"name": "B", "value": 80}]`,
-    `- **Absolute Values:** Use HillChart. Data: [{"name": "A", "value": 1250}, {"name": "B", "value": 840}]`,
     ``,
     `---`,
     ``,

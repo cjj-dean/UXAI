@@ -1,4 +1,4 @@
-import { type A2UIJson, type Fixer } from "../../types"
+import { type A2UIJson, type Fixer, resolveState } from "../../types"
 
 /**
  * Removes manually-generated legend divs and center-text overlays that are
@@ -7,9 +7,13 @@ import { type A2UIJson, type Fixer } from "../../types"
  * Detection:
  * - Center text: chart's option.title text/subtext matches sibling span text
  * - Legend: sibling subtree contains "colored dot (div/span) + adjacent text span" pairs
+ *
+ * Path bindings in both option.title and sibling text values are resolved
+ * against json.state so the comparison can match real (resolved) strings.
  */
 const fix_chart_builtin_legend: Fixer = (json): [A2UIJson, string[]] => {
   const root = json
+  const state = json.state ?? {}
   const fixes: string[] = []
   const byId = new Map<string, any>()
   const parentOf = new Map<string, string>()
@@ -33,14 +37,14 @@ const fix_chart_builtin_legend: Fixer = (json): [A2UIJson, string[]] => {
     const parent = byId.get(parentId)
     if (!parent || !Array.isArray(parent.children)) continue
 
-    const titleTexts = collectTitleTexts(el)
+    const titleTexts = collectTitleTexts(el, state)
 
     const removed: string[] = []
     parent.children = parent.children.filter((childId: string) => {
       if (childId === el.id) return true
       const child = byId.get(childId)
       if (!child) return true
-      if (isRedundantChartSibling(child, byId, titleTexts)) {
+      if (isRedundantChartSibling(child, byId, titleTexts, state)) {
         removed.push(childId)
         return false
       }
@@ -58,35 +62,48 @@ const fix_chart_builtin_legend: Fixer = (json): [A2UIJson, string[]] => {
   return [json, fixes]
 }
 
-function collectTitleTexts(chartEl: any): Set<string> {
+function collectTitleTexts(chartEl: any, state: any): Set<string> {
   const out = new Set<string>()
   const title = chartEl.props?.option?.title
   if (!title) return out
-  if (typeof title.text === "string") out.add(title.text.trim())
-  if (typeof title.subtext === "string") out.add(title.subtext.trim())
-  if (title.text?.path || title.subtext?.path) out.add("__has_title__")
-  return out
-}
-
-function collectTexts(elId: string, byId: Map<string, any>): string[] {
-  const out: string[] = []
-  const el = byId.get(elId)
-  if (!el) return out
-  const v = el.props?.value ?? el.props?.text
-  if (typeof v === "string" && v.trim()) out.push(v.trim())
-  const kids = (el as any).children
-  if (Array.isArray(kids)) {
-    for (const k of kids) {
-      if (typeof k === "string") out.push(...collectTexts(k, byId))
+  for (const key of ["text", "subtext"] as const) {
+    const v = title[key]
+    if (typeof v === "string") {
+      if (v.trim()) out.add(v.trim())
+    } else if (v && typeof v === "object" && typeof v.path === "string") {
+      // Resolve path binding against state to get the real text
+      const resolved = resolveState(state, v.path)
+      if (typeof resolved === "string" && resolved.trim()) out.add(resolved.trim())
     }
   }
   return out
 }
 
-function isRedundantChartSibling(el: any, byId: Map<string, any>, titleTexts: Set<string>): boolean {
+function collectTexts(elId: string, byId: Map<string, any>, state: any): string[] {
+  const out: string[] = []
+  const el = byId.get(elId)
+  if (!el) return out
+  const v = el.props?.value ?? el.props?.text
+  if (typeof v === "string" && v.trim()) {
+    out.push(v.trim())
+  } else if (v && typeof v === "object" && typeof v.path === "string") {
+    // Resolve path binding against state
+    const resolved = resolveState(state, v.path)
+    if (typeof resolved === "string" && resolved.trim()) out.push(resolved.trim())
+  }
+  const kids = (el as any).children
+  if (Array.isArray(kids)) {
+    for (const k of kids) {
+      if (typeof k === "string") out.push(...collectTexts(k, byId, state))
+    }
+  }
+  return out
+}
+
+function isRedundantChartSibling(el: any, byId: Map<string, any>, titleTexts: Set<string>, state: any): boolean {
   // 1) Center text: element's subtree contains spans matching option.title text
   if (titleTexts.size > 0) {
-    const texts = collectTexts(el.id, byId)
+    const texts = collectTexts(el.id, byId, state)
     if (texts.some((t) => titleTexts.has(t))) return true
   }
 

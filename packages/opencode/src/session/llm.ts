@@ -59,12 +59,33 @@ async function* tapOutput(
     if (e.type === "text-delta" && typeof e.text === "string") text += e.text
     yield event
   }
+  // Beautify JSON output: try to extract JSON and pretty-print
+  let display = text
+  let content = "" // extracted content text for separate file
+  try {
+    const match = display.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/)
+    const raw = match ? match[1] : display
+    const parsed = JSON.parse(raw)
+    const formatted = JSON.stringify(parsed, null, 2)
+    display = match
+      ? display.replace(raw, formatted)
+      : formatted
+    content = formatted
+  } catch { /* not JSON, use raw text */ }
   void writeTrace(trace.dir, trace.base, "llm_output", {
     agent: trace.agent,
     sessionID: trace.sessionID,
     timestamp: new Date().toISOString(),
-    text,
+    text: display,
   })
+  // Also write extracted content as a standalone formatted file
+  if (content) {
+    try {
+      const file = path.join(trace.dir, `${trace.base}_llm_output.md`)
+      await mkdir(trace.dir, { recursive: true })
+      await writeFile(file, content, "utf-8")
+    } catch { /* best-effort */ }
+  }
 }
 
 const REASONING_TYPES = new Set(["reasoning-start", "reasoning-delta", "reasoning-end"])
@@ -498,7 +519,7 @@ const live: Layer.Layer<
             const result = yield* run({ ...input, abort: ctrl.signal })
 
             const trace = _llmTrace.get(input.sessionID)
-            const isProto = input.agent.name.startsWith("proto_")
+            const isProto = input.agent.name.startsWith("proto_") && input.agent.name !== "proto_planner_create"
             let source: AsyncIterable<Event> = result.fullStream
             if (trace) source = tapOutput(source, trace)
             if (isProto) source = dropReasoning(source)

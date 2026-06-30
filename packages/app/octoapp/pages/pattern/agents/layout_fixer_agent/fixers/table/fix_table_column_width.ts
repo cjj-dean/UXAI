@@ -22,7 +22,7 @@ function textWidthPx(text: any): number {
 
 function sampleField(rows: any[], field: string): any[] {
   if (!field) return []
-  const parts = field.split(".")
+  const parts = field.split("/")
   return rows.map((r) => {
     if (!r || typeof r !== "object") return null
     let cur = r
@@ -204,14 +204,13 @@ export const fixTableColumnWidth: Fixer = (json) => {
       }
 
       if (!isText) {
-        if (col.width != null || col.minWidth != null) continue
         const headerText = textWidthPx(col.title ?? "")
         let icons = 0
         if (col.sort) icons += ICON_SORT
         if (col.filters) icons += ICON_FILTER
         const headerTotal = headerText + HEADER_PAD + icons + BUFFER
 
-        // 估算非文本单元格内容宽度
+        // 估算非文本单元格内容宽度（即使已有 minWidth 也重算，不足则补充）
         let cellTotal = 0
         if (cell) {
           cellTotal = estimateCellWidth(cell, rows, map) + CELL_PAD + BUFFER

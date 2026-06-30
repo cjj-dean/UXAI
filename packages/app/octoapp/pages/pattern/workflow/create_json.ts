@@ -4,6 +4,7 @@ import proto_planner_create from "../agents/proto_planner_create"
 import proto_module_create from "../agents/proto_module_create"
 import { mergeModules } from "../agents/merge"
 import layoutFixer from "../agents/layout_fixer_agent"
+import { validatePlannerOutput, formatValidationFeedback } from "../agents/planner_validator"
 
 type ProtoCreateJsonInput = {
   // 公共sdk
@@ -35,9 +36,44 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
     //   })
     // }
           
-    // 第三步：页面局部
+    // 第三步：页面局部 — 最多尝试 2 次
     let pageDescriptionStr = JSON.stringify(intentResult.intent_description);
-    const planner = await proto_planner_create({ ...inputCtx, intentDescription: pageDescriptionStr });
+    const intentSectionCount = (intentResult.intent_description?.sections as Array<any> ?? []).length
+    const hasSidebar = (intentResult.intent_description?.sectionDetailList as Array<any> ?? []).some(
+      (s: any) => s.id?.toLowerCase().includes("sidebar") || s.id?.toLowerCase().includes("side")
+    )
+    const plannerValidateLog: string[] = []
+    let planner: any = null
+    for (let attempt = 0; attempt < 2; attempt++) {
+      planner = await proto_planner_create({ ...inputCtx, intentDescription: pageDescriptionStr });
+      const layout = planner.layout_planner as any
+      if (!layout?.elements || !layout?.slots) continue
+      const issues = validatePlannerOutput(layout, intentSectionCount, hasSidebar)
+      const errors = issues.filter((i) => i.severity === "error")
+      if (errors.length === 0) {
+        const warnCount = issues.filter((i) => i.severity === "warning").length
+        plannerValidateLog.push(`[planner_validate] 校验通过${warnCount > 0 ? `（${warnCount} 个警告）` : ""}`)
+        if (warnCount > 0) {
+          issues.filter((i) => i.severity === "warning").forEach((i) => plannerValidateLog.push(`  - ${i.message}: ${i.detail}`))
+        }
+        break
+      }
+      plannerValidateLog.push(`[planner_validate] 第 ${attempt + 1} 次输出有 ${errors.length} 个错误，准备重试:`)
+      errors.forEach((e) => plannerValidateLog.push(`  [ERROR] ${e.message}: ${e.detail}`))
+      console.warn(`[planner_validate] 第 ${attempt + 1} 次输出有 ${errors.length} 个错误，准备重试:\n${formatValidationFeedback(errors)}`)
+      if (attempt === 0) {
+        pageDescriptionStr = pageDescriptionStr.replace(/\}\s*$/, `, "__planner_feedback__": ${JSON.stringify(formatValidationFeedback(errors))} }`)
+      }
+    }
+    if (planner) {
+      const finalIssues = validatePlannerOutput(planner.layout_planner, intentSectionCount, hasSidebar)
+      const finalErrors = finalIssues.filter((i) => i.severity === "error")
+      if (finalErrors.length > 0) {
+        plannerValidateLog.push(`[planner_validate] 最终输出仍有 ${finalErrors.length} 个错误:`)
+        finalErrors.forEach((e) => plannerValidateLog.push(`  [ERROR] ${e.message}: ${e.detail}`))
+        console.warn(`[planner_validate] 最终输出仍有 ${finalErrors.length} 个错误:\n${formatValidationFeedback(finalErrors)}`)
+      }
+    }
           
     // 第四步：并行生成 A2UI JSON
     const modules = await Promise.all(
@@ -79,5 +115,7 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         pageJson: fixed,
         // fixer 执行日志
         fixerLog,
+        // planner 校验日志
+        plannerValidateLog,
     })    
 }
