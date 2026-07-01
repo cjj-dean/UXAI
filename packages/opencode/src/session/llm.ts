@@ -2,7 +2,7 @@ import { Provider } from "@/provider/provider"
 import * as Log from "@opencode-ai/core/util/log"
 import { Context, Effect, Layer, Record } from "effect"
 import * as Stream from "effect/Stream"
-import { streamText, wrapLanguageModel, type ModelMessage, type Tool, tool, jsonSchema } from "ai"
+import { streamText, generateText, wrapLanguageModel, type ModelMessage, type Tool, tool, jsonSchema } from "ai"
 import { mergeDeep } from "remeda"
 import { GitLabWorkflowLanguageModel } from "gitlab-ai-provider"
 import { ProviderTransform } from "@/provider/transform"
@@ -30,6 +30,7 @@ import path from "path"
 const log = Log.create({ service: "llm" })
 export const OUTPUT_TOKEN_MAX = ProviderTransform.OUTPUT_TOKEN_MAX
 type Result = Awaited<ReturnType<typeof streamText>>
+type GenerateResult = Awaited<ReturnType<typeof generateText>>
 
 const _llmRound = new Map<string, number>()
 const _llmTrace = new Map<string, { dir: string; base: string; agent: string; sessionID: string }>()
@@ -124,6 +125,7 @@ export type Event = Result["fullStream"] extends AsyncIterable<infer T> ? T : ne
 
 export interface Interface {
   readonly stream: (input: StreamInput) => Stream.Stream<Event, unknown>
+  readonly generate: (input: StreamInput) => Effect.Effect<GenerateResult, unknown>
 }
 
 export class Service extends Context.Service<Service, Interface>()("@opencode/LLM") {}
@@ -141,7 +143,7 @@ const live: Layer.Layer<
     const plugin = yield* Plugin.Service
     const perm = yield* Permission.Service
 
-    const run = Effect.fn("LLM.run")(function* (input: StreamRequest) {
+    const buildParams = Effect.fn("LLM.buildParams")(function* (input: StreamRequest) {
       const l = log
         .clone()
         .tag("providerID", input.model.providerID)
@@ -150,7 +152,7 @@ const live: Layer.Layer<
         .tag("small", (input.small ?? false).toString())
         .tag("agent", input.agent.name)
         .tag("mode", input.agent.mode)
-      l.info("stream", {
+      l.info("build", {
         modelID: input.model.id,
         providerID: input.model.providerID,
       })
@@ -425,16 +427,29 @@ const live: Layer.Layer<
         })
       }
 
+      return {
+        messages,
+        tools,
+        params,
+        headers,
+        language,
+        opencodeProjectID,
+        cfg,
+        telemetryTracer,
+        options,
+      }
+    })
+
+    const run = Effect.fn("LLM.run")(function* (input: StreamRequest) {
+      const built = yield* buildParams(input)
       return streamText({
         onError(error) {
-          l.error("stream error", {
-            error,
-          })
+          log.error("stream error", { error })
         },
         async experimental_repairToolCall(failed) {
           const lower = failed.toolCall.toolName.toLowerCase()
-          if (lower !== failed.toolCall.toolName && tools[lower]) {
-            l.info("repairing tool call", {
+          if (lower !== failed.toolCall.toolName && built.tools[lower]) {
+            log.info("repairing tool call", {
               tool: failed.toolCall.toolName,
               repaired: lower,
             })
@@ -452,19 +467,19 @@ const live: Layer.Layer<
             toolName: "invalid",
           }
         },
-        temperature: params.temperature,
-        topP: params.topP,
-        topK: params.topK,
-        providerOptions: ProviderTransform.providerOptions(input.model, params.options),
-        activeTools: Object.keys(tools).filter((x) => x !== "invalid"),
-        tools,
+        temperature: built.params.temperature,
+        topP: built.params.topP,
+        topK: built.params.topK,
+        providerOptions: ProviderTransform.providerOptions(input.model, built.params.options),
+        activeTools: Object.keys(built.tools).filter((x) => x !== "invalid"),
+        tools: built.tools,
         toolChoice: input.toolChoice,
-        maxOutputTokens: params.maxOutputTokens,
+        maxOutputTokens: built.params.maxOutputTokens,
         abortSignal: input.abort,
         headers: {
           ...(input.model.providerID.startsWith("opencode")
             ? {
-                "x-opencode-project": opencodeProjectID,
+                "x-opencode-project": built.opencodeProjectID,
                 "x-opencode-session": input.sessionID,
                 "x-opencode-request": input.user.id,
                 "x-opencode-client": Flag.OPENCODE_CLIENT,
@@ -476,19 +491,19 @@ const live: Layer.Layer<
                 "User-Agent": `opencode/${InstallationVersion}`,
               }),
           ...input.model.headers,
-          ...headers,
+          ...built.headers,
         },
         maxRetries: input.retries ?? 0,
-        messages,
+        messages: built.messages,
         model: wrapLanguageModel({
-          model: language,
+          model: built.language,
           middleware: [
             {
               specificationVersion: "v3" as const,
               async transformParams(args) {
                 if (args.type === "stream") {
                   // @ts-expect-error
-                  args.params.prompt = ProviderTransform.message(args.params.prompt, input.model, options)
+                  args.params.prompt = ProviderTransform.message(args.params.prompt, input.model, built.options)
                 }
                 return args.params
               },
@@ -496,16 +511,79 @@ const live: Layer.Layer<
           ],
         }),
         experimental_telemetry: {
-          isEnabled: cfg.experimental?.openTelemetry,
+          isEnabled: built.cfg.experimental?.openTelemetry,
           functionId: "session.llm",
-          tracer: telemetryTracer,
+          tracer: built.telemetryTracer,
           metadata: {
-            userId: cfg.username ?? "unknown",
+            userId: built.cfg.username ?? "unknown",
             sessionId: input.sessionID,
           },
         },
       })
     })
+
+    const generate: Interface["generate"] = (input) =>
+      Effect.gen(function* () {
+        const ctrl = yield* Effect.acquireRelease(
+          Effect.sync(() => new AbortController()),
+          (ctrl) => Effect.sync(() => ctrl.abort()),
+        )
+        const built = yield* buildParams({ ...input, abort: ctrl.signal })
+        return yield* Effect.tryPromise(() =>
+          generateText({
+            temperature: built.params.temperature,
+            topP: built.params.topP,
+            topK: built.params.topK,
+            providerOptions: ProviderTransform.providerOptions(input.model, built.params.options),
+            activeTools: Object.keys(built.tools).filter((x) => x !== "invalid"),
+            tools: built.tools,
+            toolChoice: input.toolChoice,
+            maxOutputTokens: built.params.maxOutputTokens,
+            abortSignal: ctrl.signal,
+            headers: {
+              ...(input.model.providerID.startsWith("opencode")
+                ? {
+                    "x-opencode-project": built.opencodeProjectID,
+                    "x-opencode-session": input.sessionID,
+                    "x-opencode-request": input.user.id,
+                    "x-opencode-client": Flag.OPENCODE_CLIENT,
+                    "User-Agent": `opencode/${InstallationVersion}`,
+                  }
+                : {
+                    "x-session-affinity": input.sessionID,
+                    ...(input.parentSessionID ? { "x-parent-session-id": input.parentSessionID } : {}),
+                    "User-Agent": `opencode/${InstallationVersion}`,
+                  }),
+              ...input.model.headers,
+              ...built.headers,
+            },
+            maxRetries: input.retries ?? 0,
+            messages: built.messages,
+            model: wrapLanguageModel({
+              model: built.language,
+              middleware: [
+                {
+                  specificationVersion: "v3" as const,
+                  async transformParams(args) {
+                    // @ts-expect-error
+                    args.params.prompt = ProviderTransform.message(args.params.prompt, input.model, built.options)
+                    return args.params
+                  },
+                },
+              ],
+            }),
+            experimental_telemetry: {
+              isEnabled: built.cfg.experimental?.openTelemetry,
+              functionId: "session.llm.generate",
+              tracer: built.telemetryTracer,
+              metadata: {
+                userId: built.cfg.username ?? "unknown",
+                sessionId: input.sessionID,
+              },
+            },
+          }),
+        )
+      }).pipe(Effect.scoped)
 
     const stream: Interface["stream"] = (input) =>
       Stream.scoped(
@@ -528,7 +606,7 @@ const live: Layer.Layer<
         ),
       )
 
-    return Service.of({ stream })
+    return Service.of({ stream, generate })
   }),
 )
 

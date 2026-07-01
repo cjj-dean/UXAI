@@ -270,6 +270,7 @@ function llm() {
           const stream = typeof item === "function" ? item(input) : item
           return stream.pipe(Stream.mapEffect((event) => Effect.succeed(event)))
         },
+        generate: () => Effect.die("not implemented"),
       }),
     ),
   }
