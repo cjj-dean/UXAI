@@ -34,11 +34,11 @@
       ]
     },
     { 
-       /* 🔵 aside可选，根据页面蓝图来 */
+       /* 🔵 aside可选，根据页面蓝图来，可能需要根据内容添加宽度 */
       "id": "aside",
       "component": "aside",
       "props": {
-        "className": "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between w-[54px] h-full"
+        "className": "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full"
       },
       "children": []
     },
@@ -54,9 +54,9 @@
     }
     {
       "id": "dialog",
-      "component": "dialog",
+      "component": "div",
       "props": {
-        "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0"
+        "className": "z-[99] overflow-y-auto p-[1.5rem] flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm"
       },
       "children": [
       ]

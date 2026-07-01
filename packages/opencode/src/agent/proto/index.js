@@ -9,6 +9,7 @@ import CARD_EXAMPLE from "./prompt/stastics/CARD_EXAMPLE.txt"
 import LIST_EXAMPLE from "./prompt/stastics/LIST_EXAMPLE.txt"
 import TABS_EXAMPLE from "./prompt/stastics/TABS_EXAMPLE.txt"
 import FORM_EXAMPLE from "./prompt/stastics/FORM_EXAMPLE.txt"
+import PLANNER_TEMPLATE from "./prompt/stastics/PLANNER_TEMPLATE.txt"
 
 import _PROMPT_PROTO_INTENT from "./prompt/proto_intent.txt"
 import _PROMPT_PROTO_INTENT_AUDIT from "./prompt/proto_intent_audit.txt"
@@ -29,6 +30,7 @@ const data = {
   LIST_EXAMPLE,
   TABS_EXAMPLE,
   FORM_EXAMPLE,
+  PLANNER_TEMPLATE,
 }
 
 function formatPrompt(template) {

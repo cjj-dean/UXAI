@@ -97,6 +97,14 @@ export const fixChartHeight: Fixer = (json) => {
   for (const elem of json.elements) {
     if (!CHART_COMPONENTS.has(elem.component)) continue
     const cls = getClassName(elem)
+    let minHMatch = cls.match(/min-h-\[(\d+(?:\.\d+)?)px\]/)
+    if (minHMatch) {
+      const minH = parseFloat(minHMatch[1])
+      const replaced = cls.replace(/min-h-\[\d+(?:\.\d+)?px\]/, `h-[${minH}px]`)
+      setClassName(elem, replaced)
+      fixes.push(`[${elem.id}](${elem.component}) min-h-[${minH}px] 替换为 h-[${minH}px]（图表必须使用固定高度）`)
+      continue
+    }
     let available = findAncestorContentHeight(elem.id, map, c2p)
     if (available !== null) {
       available -= HEADER_BUFFER

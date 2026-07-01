@@ -15,6 +15,7 @@ import { fixMergeTextSpans } from "./layout"
 import { fixFlexMinHeight } from "./layout"
 import { fixDuplicateRef } from "./layout"
 import { fixHeaderLayout } from "./layout"
+import { fixHiddenClass } from "./layout"
 import { fixImageRadius } from "./component"
 import { fixChartHeight } from "./component"
 import { fixCircleProcessChart } from "./component"
@@ -31,8 +32,11 @@ import { fixChartBuiltinLegend } from "./component"
 import { fixChartData } from "./component"
 import { fixIconProps } from "./component"
 import { fixInvalidPaths } from "./component"
+import { fixDialogClass } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
+  { name: "dialog_class", fn: fixDialogClass },
+  { name: "hidden_class", fn: fixHiddenClass },
   { name: "orphan_elements", fn: fixOrphanElements },
   { name: "duplicate_ref", fn: fixDuplicateRef },
   { name: "greedy_width", fn: fixGreedyWidth },

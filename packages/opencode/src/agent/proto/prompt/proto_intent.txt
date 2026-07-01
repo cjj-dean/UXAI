@@ -10,8 +10,9 @@
    - 正确做法：一个"独立区块" = 一个 section，section 内用 `elements` 数组 + `layout` 描述内部结构
 
 2. **结构性全局组件是 section**：
-   - 顶部导航栏 (`topNav`) → 独立 section
-   - 侧边栏 (`leftSidebar`) → 独立 section
+   - 顶部导航栏 (`header`) → 独立 section，id **必须**为 `header`（不可使用 topNav、navbar 等其他 id）
+   - 侧边栏 (`aside`) → 独立 section，id **必须**为 `aside`（不可使用 sidebar、leftSidebar 等其他 id）
+   - 弹窗/悬浮框 (`dialog`) → 独立 section，id **必须**为 `dialog`（不可使用 detailPanelDialog、modal、drawer 等其他 id）
    - 这两个**不能**被拆成"导航条"+"下拉菜单"+"搜索框"等多个 section，也不能嵌套在其他 section 内
 
 3. **section 之间是平级兄弟**：

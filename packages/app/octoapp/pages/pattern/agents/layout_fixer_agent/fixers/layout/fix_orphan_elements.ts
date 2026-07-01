@@ -69,36 +69,7 @@ export const fixOrphanElements: Fixer = (json: A2UIJson): [A2UIJson, string[]] =
       fixes.push(`[${elem.id}](${elem.component ?? "?"}) 空孤儿元素: 已删除`)
       continue
     }
-    const comp = elem.component ?? ""
-    const isHeaderLike = comp === "header" || elem.id.toLowerCase().includes("header")
-    ;(isHeaderLike ? leading : trailing).push(elem.id)
-    for (const id of collectSubtree(map, elem.id)) nowReachable.add(id)
+    fixes.push(`[${elem.id}](${elem.component ?? "?"}) 孤儿元素不可达: 已跳过（未挂回 root）`)
   }
-
-  if (emptyOrphanIds.size) {
-    json.elements = elements.filter((e) => !emptyOrphanIds.has(e.id))
-  }
-
-  if (!leading.length && !trailing.length) return [json, fixes]
-
-  const existing: string[] = Array.isArray(root.children) ? root.children.filter((c: any) => typeof c === "string") : []
-  const existingSet = new Set(existing)
-
-  const prepended: string[] = []
-  for (const oid of leading) {
-    if (existingSet.has(oid)) continue
-    prepended.push(oid)
-    existingSet.add(oid)
-    fixes.push(`[${oid}](${map[oid]?.component ?? "?"}) 孤儿元素不可达: 前置挂回 root[${rootId}].children`)
-  }
-  const appended: string[] = []
-  for (const oid of trailing) {
-    if (existingSet.has(oid)) continue
-    appended.push(oid)
-    existingSet.add(oid)
-    fixes.push(`[${oid}](${map[oid]?.component ?? "?"}) 孤儿元素不可达: 追加挂回 root[${rootId}].children`)
-  }
-
-  root.children = [...prepended, ...existing, ...appended]
   return [json, fixes]
 }

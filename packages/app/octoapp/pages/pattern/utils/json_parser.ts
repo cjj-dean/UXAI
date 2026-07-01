@@ -44,7 +44,62 @@ function tryParse(raw: string): Record<string, unknown> | null {
     return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
   } catch { }
 
+  try {
+    let balanced = repairBracketBalance(raw.trim())
+    let parsed = JSON.parse(balanced)
+    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
+  } catch { }
+
+  try {
+    let fixed = repairExtraBrackets(raw.trim())
+    let parsed = JSON.parse(fixed)
+    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : null
+  } catch { }
+
   return null
+}
+
+function repairBracketBalance(text: string): string {
+  let depth = 0
+  let lastValidEnd = text.length
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i]
+    if (c === '{' || c === '[') depth++
+    else if (c === '}' || c === ']') {
+      depth--
+      if (depth === 0) { lastValidEnd = i + 1; break }
+      if (depth < 0) break
+    }
+  }
+  if (lastValidEnd < text.length && lastValidEnd > 0) {
+    const candidate = text.substring(0, lastValidEnd)
+    try { JSON.parse(candidate); return candidate } catch { }
+  }
+  return text
+}
+
+function repairExtraBrackets(text: string): string {
+  let t = text
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try { JSON.parse(t); return t } catch (e: any) {
+      const m = String(e.message).match(/position (\d+)/)
+      if (!m) break
+      const pos = parseInt(m[1])
+      const at = t[pos]
+      if (at === ']' || at === '}') {
+        t = t.substring(0, pos) + t.substring(pos + 1)
+      } else {
+        const before = t.substring(Math.max(0, pos - 10), pos)
+        if (before.includes('}]')) {
+          const idx = t.lastIndexOf('}]', pos)
+          if (idx > -1 && idx + 2 < t.length && (t[idx + 2] === ']' || t[idx + 2] === '}')) {
+            t = t.substring(0, idx + 2) + t.substring(idx + 3)
+          } else break
+        } else break
+      }
+    }
+  }
+  return t
 }
 
 function repairUnescapedQuotes(text: string): string {
