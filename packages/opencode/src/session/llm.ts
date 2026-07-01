@@ -211,7 +211,7 @@ const live: Layer.Layer<
         options.instructions = system.join("\n")
       }
 
-      if (input.agent.name.startsWith("proto_")) {
+      if (input.agent.name.startsWith("proto_") && input.agent.name !== "proto_module_create") {
         options.thinking = { type: "disabled" }
       }
 
