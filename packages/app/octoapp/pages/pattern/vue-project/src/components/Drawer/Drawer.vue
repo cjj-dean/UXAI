@@ -30,7 +30,7 @@ const mergedClass = computed(() => {
     :model-value="true"
     :title="properties.title || ''"
     :direction="properties.direction || 'rtl'"
-    :size="properties.size || '30%'"
+    :size="properties.size || '20%'"
     :class="mergedClass"
     :show-close="true"
     :close-on-click-modal="false"
