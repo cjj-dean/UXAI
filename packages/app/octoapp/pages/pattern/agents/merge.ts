@@ -71,9 +71,20 @@ export function mergeModules(shell: A2UIModule, modules: A2UIModule[], slots?: S
 
     const modRoot = mod.elements.find((e) => e.id === originalRootId)
     if (modRoot) {
-      elements[slotIndex].component = modRoot.component
-      if (modRoot.props) elements[slotIndex].props = { ...modRoot.props }
-      if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
+      const shellComponent = elements[slotIndex].component
+      const overlayComponents = ["Dialog", "Drawer"]
+      if (overlayComponents.includes(shellComponent)) {
+        if (modRoot.props) {
+          const mergedProps = { ...(elements[slotIndex].props ?? {}), ...modRoot.props }
+          delete mergedProps.className
+          elements[slotIndex].props = mergedProps
+        }
+        if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
+      } else {
+        elements[slotIndex].component = modRoot.component
+        if (modRoot.props) elements[slotIndex].props = { ...modRoot.props }
+        if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
+      }
     }
 
     for (const el of mod.elements) {

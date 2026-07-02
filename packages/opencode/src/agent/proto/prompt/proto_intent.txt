@@ -13,9 +13,10 @@
 2. **结构性全局组件是 section**：
    - 顶部导航栏 (`header`) → 独立 section，id **必须**为 `header`（不可使用 topNav、navbar 等其他 id）
    - 侧边栏 (`aside`) → 独立 section，id **必须**为 `aside`（不可使用 sidebar、leftSidebar 等其他 id）
-   - 弹窗/悬浮框 (`dialog`) → 独立 section，id **必须**为 `dialog`（不可使用 detailPanelDialog、modal 等其他 id）
-   - 抽屉 (`drawer`) → 独立 section，id **必须**为 `drawer`（不可使用 sideDrawer、detailDrawer 等其他 id）
-   - 这四个**不能**被拆成多个 section，也不能嵌套在其他 section 内
+   - 弹窗/居中悬浮框 (`dialog`) → 独立 section，id **必须**为 `dialog`（不可使用 detailPanelDialog、modal 等其他 id）。**仅当用户原文说"弹窗"/"对话框"/"模态框"/"居中弹出"时使用此 id**
+    - 抽屉/侧滑面板 (`drawer`) → 独立 section，id **必须**为 `drawer`（不可使用 sideDrawer、detailDrawer 等其他 id）。**当用户原文说"抽屉"/"侧边滑出"/"右侧面板"/"侧滑"/"从侧边滑出"时必须使用此 id，绝不能用 dialog**
+    - **关键区分**：dialog 是居中弹出的模态框，drawer 是从屏幕边缘侧滑出的面板。两者绝不能混用！当用户说"抽屉"时 id 必须是 `drawer`，当用户说"弹窗"时 id 必须是 `dialog`。即使用户同时提到"弹窗"和"抽屉"，也要分别生成 id 为 `dialog` 和 `drawer` 的两个独立 section
+    - 这四个**不能**被拆成多个 section，也不能嵌套在其他 section 内
 
 3. **section 之间是平级兄弟**：
    - 多个"独立区块"在 `sections` 数组中并列
