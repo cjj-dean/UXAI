@@ -1,0 +1,1609 @@
+var data_default = {
+	rootId: "root",
+	elements: [
+		{
+			"id": "root",
+			"component": "div",
+			"props": { "className": "flex flex-col h-screen overflow-hidden bg-surface-container-lowest overflow-x-hidden" },
+			"children": [
+				"header",
+				"body",
+				"drawer"
+			]
+		},
+		{
+			"id": "header",
+			"component": "header",
+			"props": { "className": "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem] z-[1] h-[3rem]" },
+			"children": ["headerLeftSection", "headerRightSection"]
+		},
+		{
+			"id": "body",
+			"component": "div",
+			"props": { "className": "flex flex-row flex-1 overflow-hidden" },
+			"children": ["main"]
+		},
+		{
+			"id": "main",
+			"component": "main",
+			"props": { "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0" },
+			"children": ["mainContentArea"]
+		},
+		{
+			"id": "mainContentArea",
+			"component": "Section",
+			"props": { "className": "flex flex-col gap-[1rem] shrink-0" },
+			"children": [
+				"mainTitleRow",
+				"mainFilterToolbar",
+				"mainDataTable"
+			]
+		},
+		{
+			"id": "drawer",
+			"component": "Drawer",
+			"props": {
+				"title": "指标详情",
+				"direction": "rtl",
+				"size": "40%",
+				"className": "z-[99] flex flex-col gap-[1rem] bg-surface-container-highest"
+			},
+			"children": ["drawerContent"]
+		},
+		{
+			"id": "headerLeftSection",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.75rem]" },
+			"children": [
+				"headerMenuIcon",
+				"headerPlatformName",
+				"headerNavHealth",
+				"headerNavBigScreen"
+			]
+		},
+		{
+			"id": "headerMenuIcon",
+			"component": "Icon",
+			"props": {
+				"name": "menu",
+				"color": "#777777",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "headerPlatformName",
+			"component": "span",
+			"props": {
+				"className": "text-md font-semibold text-on-surface",
+				"value": { "path": "/platformName" }
+			}
+		},
+		{
+			"id": "headerNavHealth",
+			"component": "Button",
+			"props": {
+				"icon": "activity",
+				"iconPlacement": "start",
+				"value": "健康看板",
+				"types": "link",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerNavBigScreen",
+			"component": "Button",
+			"props": {
+				"icon": "monitor",
+				"iconPlacement": "start",
+				"value": "大屏",
+				"types": "link",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerRightSection",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.75rem]" },
+			"children": [
+				"headerPolicyCenter",
+				"headerBellBadge",
+				"headerSettingsIcon",
+				"headerHelpIcon",
+				"headerLogoutIcon",
+				"headerUserAvatar",
+				"headerUserName"
+			]
+		},
+		{
+			"id": "headerPolicyCenter",
+			"component": "Button",
+			"props": {
+				"value": "策略中心",
+				"types": "link",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerBellBadge",
+			"component": "Badge",
+			"props": {
+				"count": 3,
+				"overflowCount": 99
+			},
+			"children": ["headerBellBtn"]
+		},
+		{
+			"id": "headerBellBtn",
+			"component": "Button",
+			"props": {
+				"icon": "bell",
+				"shape": "circle",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerSettingsIcon",
+			"component": "Button",
+			"props": {
+				"icon": "settings",
+				"shape": "circle",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerHelpIcon",
+			"component": "Button",
+			"props": {
+				"icon": "help-circle",
+				"shape": "circle",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerLogoutIcon",
+			"component": "Button",
+			"props": {
+				"icon": "log-out",
+				"shape": "circle",
+				"size": "medium"
+			}
+		},
+		{
+			"id": "headerUserAvatar",
+			"component": "img",
+			"props": {
+				"src": { "path": "/userInfo/avatarImage" },
+				"alt": "Admin",
+				"className": "w-7 h-7 object-cover rounded-[8px]"
+			}
+		},
+		{
+			"id": "headerUserName",
+			"component": "span",
+			"props": {
+				"className": "text-md text-on-surface font-medium",
+				"value": { "path": "/userInfo/username" }
+			}
+		},
+		{
+			"id": "mainTitleRow",
+			"component": "div",
+			"props": { "className": "flex items-center" },
+			"children": ["mainTitleText"]
+		},
+		{
+			"id": "mainTitleText",
+			"component": "span",
+			"props": {
+				"value": { "path": "/cardTitle" },
+				"className": "text-lg font-bold text-on-surface"
+			}
+		},
+		{
+			"id": "mainFilterToolbar",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[0.75rem] items-center" },
+			"children": ["mainFilterSelect", "mainSearchInput"]
+		},
+		{
+			"id": "mainFilterSelect",
+			"component": "Select",
+			"props": {
+				"value": { "path": "/selectedFilter" },
+				"options": { "path": "/filterOptions" },
+				"placeholder": "请选择",
+				"className": "w-48"
+			}
+		},
+		{
+			"id": "mainSearchInput",
+			"component": "Input",
+			"props": {
+				"value": { "path": "/searchValue" },
+				"placeholder": "请输入搜索内容",
+				"prefix": "search",
+				"className": "w-64"
+			}
+		},
+		{
+			"id": "mainDataTable",
+			"component": "Table",
+			"props": {
+				"rowKey": "id",
+				"dataSource": { "path": "/tableData" },
+				"rowSelection": {
+					"type": "checkbox",
+					"selectedRowKeys": { "path": "/selectedKeys" }
+				},
+				"columns": [
+					{
+						"title": "对端端口crc(近一天)",
+						"dataIndex": "peerPortCrc",
+						"minWidth": 165
+					},
+					{
+						"title": "本端光模块告警(近一天)",
+						"dataIndex": "localOpticalAlarm",
+						"minWidth": 186
+					},
+					{
+						"title": "对端告警(近一天)",
+						"dataIndex": "peerAlarm",
+						"minWidth": 144
+					},
+					{
+						"title": "温度",
+						"dataIndex": "temperature",
+						"minWidth": 81
+					},
+					{
+						"title": "电压",
+						"dataIndex": "voltage",
+						"minWidth": 80
+					},
+					{
+						"title": "发送功率(本端)",
+						"dataIndex": "txPowerLocal",
+						"minWidth": 130
+					},
+					{
+						"title": "接收功率(本端)",
+						"dataIndex": "rxPowerLocal",
+						"minWidth": 130
+					},
+					{
+						"title": "电流(本端)",
+						"dataIndex": "currentLocal",
+						"minWidth": 123
+					},
+					{
+						"title": "信噪比(本端)",
+						"dataIndex": "snrLocal",
+						"minWidth": 116
+					},
+					{
+						"title": "误码率(本端)",
+						"dataIndex": "berLocal",
+						"minWidth": 116
+					},
+					{
+						"title": "发送功率(对端)",
+						"dataIndex": "txPowerPeer",
+						"minWidth": 130
+					},
+					{
+						"title": "操作",
+						"dataIndex": "operation",
+						"fixed": "end",
+						"width": 100,
+						"minWidth": 88
+					}
+				],
+				"pagination": true
+			},
+			"children": {
+				"path": "/tableData",
+				"componentId": "mainTableRow"
+			}
+		},
+		{
+			"id": "mainTableRow",
+			"component": "TableRow",
+			"children": [
+				"mainPeerPortCrcCell",
+				"mainLocalOpticalAlarmCell",
+				"mainPeerAlarmCell",
+				"mainTemperatureCell",
+				"mainVoltageCell",
+				"mainTxPowerLocalCell",
+				"mainRxPowerLocalCell",
+				"mainCurrentLocalCell",
+				"mainSnrLocalCell",
+				"mainBerLocalCell",
+				"mainTxPowerPeerCell",
+				"mainOperationCell"
+			],
+			"props": {}
+		},
+		{
+			"id": "mainPeerPortCrcCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "peerPortCrc" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainLocalOpticalAlarmCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "localOpticalAlarm" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainPeerAlarmCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "peerAlarm" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainTemperatureCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "temperature" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainVoltageCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "voltage" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainTxPowerLocalCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "txPowerLocal" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainRxPowerLocalCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "rxPowerLocal" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainCurrentLocalCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "currentLocal" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainSnrLocalCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "snrLocal" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainBerLocalCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "berLocal" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainTxPowerPeerCell",
+			"component": "span",
+			"props": {
+				"value": { "path": "txPowerPeer" },
+				"className": "text-md text-on-surface whitespace-nowrap"
+			}
+		},
+		{
+			"id": "mainOperationCell",
+			"component": "div",
+			"props": { "className": "flex items-center gap-[0.5rem] whitespace-nowrap" },
+			"children": ["mainOperationEyeIcon", "mainOperationSettingsIcon"]
+		},
+		{
+			"id": "mainOperationEyeIcon",
+			"component": "Icon",
+			"props": {
+				"name": "eye",
+				"color": "primary",
+				"className": "w-4 h-4 cursor-pointer whitespace-nowrap",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "mainOperationSettingsIcon",
+			"component": "Icon",
+			"props": {
+				"name": "settings",
+				"color": "#777777",
+				"className": "w-4 h-4 cursor-pointer whitespace-nowrap",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "drawerContent",
+			"component": "div",
+			"props": { "className": "flex flex-col gap-[1rem] overflow-hidden" },
+			"children": ["drawerHeaderRow", "drawerTabs"]
+		},
+		{
+			"id": "drawerHeaderRow",
+			"component": "div",
+			"props": { "className": "flex flex-row justify-between items-center" },
+			"children": ["drawerHeaderTitle", "drawerHeaderTime"]
+		},
+		{
+			"id": "drawerHeaderTitle",
+			"component": "span",
+			"props": {
+				"className": "text-xl font-bold text-on-surface",
+				"value": { "path": "/panelTitle" }
+			}
+		},
+		{
+			"id": "drawerHeaderTime",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": { "path": "/timeRange" }
+			}
+		},
+		{
+			"id": "drawerTabs",
+			"component": "Tabs",
+			"props": { "activeKey": { "path": "/activeTab" } },
+			"children": ["drawerTabLocal", "drawerTabPeer"]
+		},
+		{
+			"id": "drawerTabLocal",
+			"component": "TabItem",
+			"props": {
+				"key": "local",
+				"label": "本端",
+				"content": { "componentId": "drawerTabContent" }
+			}
+		},
+		{
+			"id": "drawerTabPeer",
+			"component": "TabItem",
+			"props": {
+				"key": "peer",
+				"label": "对端",
+				"content": { "componentId": "drawerTabContent" }
+			}
+		},
+		{
+			"id": "drawerTabContent",
+			"component": "div",
+			"props": { "className": "flex flex-col gap-[1rem]" },
+			"children": [
+				"drawerDeviceInfoSection",
+				"drawerRxPowerCard",
+				"drawerTxPowerCard",
+				"drawerCurrentCard"
+			]
+		},
+		{
+			"id": "drawerDeviceInfoSection",
+			"component": "Section",
+			"props": { "className": "flex flex-col gap-[0.75rem]" },
+			"children": ["drawerDeviceRow1", "drawerDeviceRow2"]
+		},
+		{
+			"id": "drawerDeviceRow1",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[1rem]" },
+			"children": ["drawerDeviceNameGroup", "drawerDevicePortGroup"]
+		},
+		{
+			"id": "drawerDeviceNameGroup",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.5rem]" },
+			"children": ["drawerDeviceNameLabel", "drawerDeviceNameValue"]
+		},
+		{
+			"id": "drawerDeviceNameLabel",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": "设备名称"
+			}
+		},
+		{
+			"id": "drawerDeviceNameValue",
+			"component": "span",
+			"props": {
+				"className": "text-md font-medium text-on-surface",
+				"value": { "path": "/deviceName" }
+			}
+		},
+		{
+			"id": "drawerDevicePortGroup",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.5rem]" },
+			"children": ["drawerDevicePortLabel", "drawerDevicePortValue"]
+		},
+		{
+			"id": "drawerDevicePortLabel",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": "设备端口"
+			}
+		},
+		{
+			"id": "drawerDevicePortValue",
+			"component": "span",
+			"props": {
+				"className": "text-md font-medium text-on-surface",
+				"value": { "path": "/devicePort" }
+			}
+		},
+		{
+			"id": "drawerDeviceRow2",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.5rem]" },
+			"children": ["drawerAggregationLabel", "drawerAggregationSelect"]
+		},
+		{
+			"id": "drawerAggregationLabel",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": "聚合方式"
+			}
+		},
+		{
+			"id": "drawerAggregationSelect",
+			"component": "Select",
+			"props": {
+				"value": { "path": "/aggregationMethod" },
+				"options": { "path": "/aggregationOptions" },
+				"className": "w-40"
+			}
+		},
+		{
+			"id": "drawerRxPowerCard",
+			"component": "Card",
+			"props": { "className": "flex flex-col gap-[0.75rem]" },
+			"children": [
+				"drawerRxPowerTitle",
+				"drawerRxPowerStatsRow",
+				"drawerRxPowerChart"
+			]
+		},
+		{
+			"id": "drawerRxPowerTitle",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-semibold text-on-surface",
+				"value": "接收功率"
+			}
+		},
+		{
+			"id": "drawerRxPowerStatsRow",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[1rem]" },
+			"children": [
+				"drawerRxPowerMaxStat",
+				"drawerRxPowerMinStat",
+				"drawerRxPowerAvgStat"
+			]
+		},
+		{
+			"id": "drawerRxPowerMaxStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerRxPowerMaxLabel",
+				"drawerRxPowerMaxValue",
+				"drawerRxPowerMaxUnit"
+			]
+		},
+		{
+			"id": "drawerRxPowerMaxLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最大值"
+			}
+		},
+		{
+			"id": "drawerRxPowerMaxValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/rxPowerStats/max" }
+			}
+		},
+		{
+			"id": "drawerRxPowerMaxUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerRxPowerMinStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerRxPowerMinLabel",
+				"drawerRxPowerMinValue",
+				"drawerRxPowerMinUnit"
+			]
+		},
+		{
+			"id": "drawerRxPowerMinLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最小值"
+			}
+		},
+		{
+			"id": "drawerRxPowerMinValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/rxPowerStats/min" }
+			}
+		},
+		{
+			"id": "drawerRxPowerMinUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerRxPowerAvgStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerRxPowerAvgLabel",
+				"drawerRxPowerAvgValue",
+				"drawerRxPowerAvgUnit"
+			]
+		},
+		{
+			"id": "drawerRxPowerAvgLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "平均值"
+			}
+		},
+		{
+			"id": "drawerRxPowerAvgValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/rxPowerStats/avg" }
+			}
+		},
+		{
+			"id": "drawerRxPowerAvgUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerRxPowerChart",
+			"component": "LineChart",
+			"props": {
+				"option": {
+					"data": { "path": "/rxPowerChartData" },
+					"xAxis": {
+						"data": "timestamp",
+						"name": "时间"
+					},
+					"yAxisTitle": "dBm",
+					"smooth": true
+				},
+				"className": "h-48"
+			}
+		},
+		{
+			"id": "drawerTxPowerCard",
+			"component": "Card",
+			"props": { "className": "flex flex-col gap-[0.75rem]" },
+			"children": [
+				"drawerTxPowerTitle",
+				"drawerTxPowerStatsRow",
+				"drawerTxPowerChart"
+			]
+		},
+		{
+			"id": "drawerTxPowerTitle",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-semibold text-on-surface",
+				"value": "发送功率"
+			}
+		},
+		{
+			"id": "drawerTxPowerStatsRow",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[1rem]" },
+			"children": [
+				"drawerTxPowerMaxStat",
+				"drawerTxPowerMinStat",
+				"drawerTxPowerAvgStat"
+			]
+		},
+		{
+			"id": "drawerTxPowerMaxStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerTxPowerMaxLabel",
+				"drawerTxPowerMaxValue",
+				"drawerTxPowerMaxUnit"
+			]
+		},
+		{
+			"id": "drawerTxPowerMaxLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最大值"
+			}
+		},
+		{
+			"id": "drawerTxPowerMaxValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/txPowerStats/max" }
+			}
+		},
+		{
+			"id": "drawerTxPowerMaxUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerTxPowerMinStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerTxPowerMinLabel",
+				"drawerTxPowerMinValue",
+				"drawerTxPowerMinUnit"
+			]
+		},
+		{
+			"id": "drawerTxPowerMinLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最小值"
+			}
+		},
+		{
+			"id": "drawerTxPowerMinValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/txPowerStats/min" }
+			}
+		},
+		{
+			"id": "drawerTxPowerMinUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerTxPowerAvgStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerTxPowerAvgLabel",
+				"drawerTxPowerAvgValue",
+				"drawerTxPowerAvgUnit"
+			]
+		},
+		{
+			"id": "drawerTxPowerAvgLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "平均值"
+			}
+		},
+		{
+			"id": "drawerTxPowerAvgValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/txPowerStats/avg" }
+			}
+		},
+		{
+			"id": "drawerTxPowerAvgUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "dBm"
+			}
+		},
+		{
+			"id": "drawerTxPowerChart",
+			"component": "LineChart",
+			"props": {
+				"option": {
+					"data": { "path": "/txPowerChartData" },
+					"xAxis": {
+						"data": "timestamp",
+						"name": "时间"
+					},
+					"yAxisTitle": "dBm",
+					"smooth": true
+				},
+				"className": "h-48"
+			}
+		},
+		{
+			"id": "drawerCurrentCard",
+			"component": "Card",
+			"props": { "className": "flex flex-col gap-[0.75rem]" },
+			"children": [
+				"drawerCurrentTitle",
+				"drawerCurrentStatsRow",
+				"drawerCurrentChart"
+			]
+		},
+		{
+			"id": "drawerCurrentTitle",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-semibold text-on-surface",
+				"value": "电流"
+			}
+		},
+		{
+			"id": "drawerCurrentStatsRow",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[1rem]" },
+			"children": [
+				"drawerCurrentMaxStat",
+				"drawerCurrentMinStat",
+				"drawerCurrentAvgStat"
+			]
+		},
+		{
+			"id": "drawerCurrentMaxStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerCurrentMaxLabel",
+				"drawerCurrentMaxValue",
+				"drawerCurrentMaxUnit"
+			]
+		},
+		{
+			"id": "drawerCurrentMaxLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最大值"
+			}
+		},
+		{
+			"id": "drawerCurrentMaxValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/currentStats/max" }
+			}
+		},
+		{
+			"id": "drawerCurrentMaxUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "mA"
+			}
+		},
+		{
+			"id": "drawerCurrentMinStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerCurrentMinLabel",
+				"drawerCurrentMinValue",
+				"drawerCurrentMinUnit"
+			]
+		},
+		{
+			"id": "drawerCurrentMinLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "最小值"
+			}
+		},
+		{
+			"id": "drawerCurrentMinValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/currentStats/min" }
+			}
+		},
+		{
+			"id": "drawerCurrentMinUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "mA"
+			}
+		},
+		{
+			"id": "drawerCurrentAvgStat",
+			"component": "div",
+			"props": { "className": "flex flex-col items-center flex-1 bg-surface-container-high rounded-lg p-[0.5rem] min-w-0" },
+			"children": [
+				"drawerCurrentAvgLabel",
+				"drawerCurrentAvgValue",
+				"drawerCurrentAvgUnit"
+			]
+		},
+		{
+			"id": "drawerCurrentAvgLabel",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "平均值"
+			}
+		},
+		{
+			"id": "drawerCurrentAvgValue",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-bold text-on-surface",
+				"value": { "path": "/currentStats/avg" }
+			}
+		},
+		{
+			"id": "drawerCurrentAvgUnit",
+			"component": "span",
+			"props": {
+				"className": "text-xs text-on-surface-variant",
+				"value": "mA"
+			}
+		},
+		{
+			"id": "drawerCurrentChart",
+			"component": "LineChart",
+			"props": {
+				"option": {
+					"data": { "path": "/currentChartData" },
+					"xAxis": {
+						"data": "timestamp",
+						"name": "时间"
+					},
+					"yAxisTitle": "mA",
+					"smooth": true
+				},
+				"className": "h-48"
+			}
+		}
+	],
+	state: {
+		"platformName": "iMaster NCE-FabricInsight",
+		"navLinks": [{
+			"text": "健康看板",
+			"icon": "activity",
+			"path": "/health"
+		}, {
+			"text": "大屏",
+			"icon": "monitor",
+			"path": "/bigscreen"
+		}],
+		"rightLinks": [{
+			"text": "策略中心",
+			"path": "/policy"
+		}],
+		"userInfo": {
+			"username": "Admin",
+			"avatarImage": "https://randomuser.me/api/portraits/men/1.jpg",
+			"systemIcons": [
+				{
+					"icon": "bell",
+					"name": "通知",
+					"badge": 3
+				},
+				{
+					"icon": "settings",
+					"name": "设置"
+				},
+				{
+					"icon": "help-circle",
+					"name": "帮助"
+				},
+				{
+					"icon": "log-out",
+					"name": "退出"
+				}
+			]
+		},
+		"cardTitle": "链路结果",
+		"selectedFilter": "",
+		"filterOptions": [
+			{
+				"label": "请选择",
+				"value": ""
+			},
+			{
+				"label": "按告警类型",
+				"value": "alarmType"
+			},
+			{
+				"label": "按端口状态",
+				"value": "portStatus"
+			}
+		],
+		"searchValue": "",
+		"selectedKeys": ["01"],
+		"tableData": [
+			{
+				"id": "01",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "光模块IIC故障",
+				"peerAlarm": "无",
+				"temperature": "41.40°C",
+				"voltage": "3.35V",
+				"txPowerLocal": "Lane1:-1dBm",
+				"rxPowerLocal": "Lane0:2.43dBm",
+				"currentLocal": "Lane0:87.23mA",
+				"snrLocal": "Lane0:1dB",
+				"berLocal": "NA",
+				"txPowerPeer": "Lane0:-0.95dBm"
+			},
+			{
+				"id": "02",
+				"peerPortCrc": "0.01%",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "无",
+				"temperature": "38.75°C",
+				"voltage": "3.31V",
+				"txPowerLocal": "Lane0:-1.2dBm",
+				"rxPowerLocal": "Lane0:2.10dBm",
+				"currentLocal": "Lane0:82.56mA",
+				"snrLocal": "Lane0:0.8dB",
+				"berLocal": "1.2E-6",
+				"txPowerPeer": "Lane1:-1.05dBm"
+			},
+			{
+				"id": "03",
+				"peerPortCrc": "0.03%",
+				"localOpticalAlarm": "光模块温度异常",
+				"peerAlarm": "对端光模块故障",
+				"temperature": "55.20°C",
+				"voltage": "3.28V",
+				"txPowerLocal": "Lane2:-2.5dBm",
+				"rxPowerLocal": "Lane1:1.89dBm",
+				"currentLocal": "Lane1:78.90mA",
+				"snrLocal": "Lane1:0.6dB",
+				"berLocal": "3.5E-5",
+				"txPowerPeer": "Lane0:-1.78dBm"
+			},
+			{
+				"id": "04",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "无",
+				"temperature": "39.10°C",
+				"voltage": "3.33V",
+				"txPowerLocal": "Lane0:-0.8dBm",
+				"rxPowerLocal": "Lane2:2.55dBm",
+				"currentLocal": "Lane2:85.10mA",
+				"snrLocal": "Lane0:1.2dB",
+				"berLocal": "NA",
+				"txPowerPeer": "Lane1:-1.12dBm"
+			},
+			{
+				"id": "05",
+				"peerPortCrc": "0.05%",
+				"localOpticalAlarm": "光模块电压异常",
+				"peerAlarm": "无",
+				"temperature": "42.60°C",
+				"voltage": "3.10V",
+				"txPowerLocal": "Lane1:-1.8dBm",
+				"rxPowerLocal": "Lane0:2.02dBm",
+				"currentLocal": "Lane0:80.35mA",
+				"snrLocal": "Lane1:0.7dB",
+				"berLocal": "2.8E-6",
+				"txPowerPeer": "Lane2:-1.30dBm"
+			},
+			{
+				"id": "06",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "对端告警",
+				"temperature": "37.90°C",
+				"voltage": "3.36V",
+				"txPowerLocal": "Lane0:-0.5dBm",
+				"rxPowerLocal": "Lane1:2.60dBm",
+				"currentLocal": "Lane1:86.78mA",
+				"snrLocal": "Lane0:1.5dB",
+				"berLocal": "NA",
+				"txPowerPeer": "Lane0:-0.88dBm"
+			},
+			{
+				"id": "07",
+				"peerPortCrc": "0.02%",
+				"localOpticalAlarm": "光模块故障",
+				"peerAlarm": "无",
+				"temperature": "48.30°C",
+				"voltage": "3.25V",
+				"txPowerLocal": "Lane3:-3.0dBm",
+				"rxPowerLocal": "Lane0:1.75dBm",
+				"currentLocal": "Lane2:76.42mA",
+				"snrLocal": "Lane2:0.4dB",
+				"berLocal": "5.1E-5",
+				"txPowerPeer": "Lane1:-2.10dBm"
+			},
+			{
+				"id": "08",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "无",
+				"temperature": "40.50°C",
+				"voltage": "3.34V",
+				"txPowerLocal": "Lane1:-1.1dBm",
+				"rxPowerLocal": "Lane2:2.35dBm",
+				"currentLocal": "Lane0:84.00mA",
+				"snrLocal": "Lane0:0.9dB",
+				"berLocal": "NA",
+				"txPowerPeer": "Lane0:-1.20dBm"
+			},
+			{
+				"id": "09",
+				"peerPortCrc": "0.08%",
+				"localOpticalAlarm": "光模块IIC故障",
+				"peerAlarm": "无",
+				"temperature": "43.80°C",
+				"voltage": "3.30V",
+				"txPowerLocal": "Lane0:-1.5dBm",
+				"rxPowerLocal": "Lane1:2.15dBm",
+				"currentLocal": "Lane3:81.50mA",
+				"snrLocal": "Lane1:0.5dB",
+				"berLocal": "4.2E-6",
+				"txPowerPeer": "Lane2:-1.45dBm"
+			},
+			{
+				"id": "10",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "对端告警",
+				"temperature": "36.50°C",
+				"voltage": "3.37V",
+				"txPowerLocal": "Lane2:-0.6dBm",
+				"rxPowerLocal": "Lane0:2.70dBm",
+				"currentLocal": "Lane1:87.90mA",
+				"snrLocal": "Lane0:1.3dB",
+				"berLocal": "NA",
+				"txPowerPeer": "Lane1:-0.75dBm"
+			},
+			{
+				"id": "11",
+				"peerPortCrc": "0.01%",
+				"localOpticalAlarm": "无",
+				"peerAlarm": "无",
+				"temperature": "39.80°C",
+				"voltage": "3.32V",
+				"txPowerLocal": "Lane0:-0.9dBm",
+				"rxPowerLocal": "Lane2:2.48dBm",
+				"currentLocal": "Lane2:83.65mA",
+				"snrLocal": "Lane0:1.0dB",
+				"berLocal": "0.9E-6",
+				"txPowerPeer": "Lane0:-1.02dBm"
+			},
+			{
+				"id": "12",
+				"peerPortCrc": "未检测",
+				"localOpticalAlarm": "光模块温度异常",
+				"peerAlarm": "对端光模块故障",
+				"temperature": "52.40°C",
+				"voltage": "3.22V",
+				"txPowerLocal": "Lane1:-2.2dBm",
+				"rxPowerLocal": "Lane1:1.92dBm",
+				"currentLocal": "Lane0:79.20mA",
+				"snrLocal": "Lane2:0.3dB",
+				"berLocal": "6.0E-5",
+				"txPowerPeer": "Lane3:-1.95dBm"
+			}
+		],
+		"panelTitle": "指标详情",
+		"timeRange": "2025/05/15 00:54:12 - 2025/05/15 14:54:12",
+		"activeTab": "local",
+		"deviceName": "POD7-spine1",
+		"devicePort": "25GE1/0/4",
+		"aggregationMethod": "avg",
+		"aggregationOptions": [
+			{
+				"label": "平均值",
+				"value": "avg"
+			},
+			{
+				"label": "最大值",
+				"value": "max"
+			},
+			{
+				"label": "最小值",
+				"value": "min"
+			}
+		],
+		"rxPowerStats": {
+			"max": -1.74,
+			"min": -1.74,
+			"avg": -1.74
+		},
+		"rxPowerChartData": [
+			{
+				"timestamp": "00:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			},
+			{
+				"timestamp": "01:00",
+				"Lane0": -1.82,
+				"Lane1": -2.25,
+				"Lane2": -1.62,
+				"Lane3": -2.65
+			},
+			{
+				"timestamp": "02:00",
+				"Lane0": -1.95,
+				"Lane1": -2.4,
+				"Lane2": -1.75,
+				"Lane3": -2.8
+			},
+			{
+				"timestamp": "03:00",
+				"Lane0": -2.1,
+				"Lane1": -2.55,
+				"Lane2": -1.9,
+				"Lane3": -2.95
+			},
+			{
+				"timestamp": "04:00",
+				"Lane0": -1.88,
+				"Lane1": -2.3,
+				"Lane2": -1.68,
+				"Lane3": -2.7
+			},
+			{
+				"timestamp": "05:00",
+				"Lane0": -1.65,
+				"Lane1": -2.05,
+				"Lane2": -1.45,
+				"Lane3": -2.45
+			},
+			{
+				"timestamp": "06:00",
+				"Lane0": -1.7,
+				"Lane1": -2.15,
+				"Lane2": -1.55,
+				"Lane3": -2.55
+			},
+			{
+				"timestamp": "07:00",
+				"Lane0": -2.05,
+				"Lane1": -2.5,
+				"Lane2": -1.85,
+				"Lane3": -2.9
+			},
+			{
+				"timestamp": "08:00",
+				"Lane0": -2.3,
+				"Lane1": -2.75,
+				"Lane2": -2.1,
+				"Lane3": -3.15
+			},
+			{
+				"timestamp": "09:00",
+				"Lane0": -2.15,
+				"Lane1": -2.6,
+				"Lane2": -1.95,
+				"Lane3": -3
+			},
+			{
+				"timestamp": "10:00",
+				"Lane0": -1.9,
+				"Lane1": -2.35,
+				"Lane2": -1.7,
+				"Lane3": -2.75
+			},
+			{
+				"timestamp": "11:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			},
+			{
+				"timestamp": "12:00",
+				"Lane0": -1.78,
+				"Lane1": -2.2,
+				"Lane2": -1.58,
+				"Lane3": -2.6
+			},
+			{
+				"timestamp": "13:00",
+				"Lane0": -1.92,
+				"Lane1": -2.38,
+				"Lane2": -1.72,
+				"Lane3": -2.78
+			},
+			{
+				"timestamp": "14:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			}
+		],
+		"txPowerStats": {
+			"max": -1.74,
+			"min": -1.74,
+			"avg": -1.74
+		},
+		"txPowerChartData": [
+			{
+				"timestamp": "00:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			},
+			{
+				"timestamp": "01:00",
+				"Lane0": -1.8,
+				"Lane1": -2.22,
+				"Lane2": -1.6,
+				"Lane3": -2.62
+			},
+			{
+				"timestamp": "02:00",
+				"Lane0": -1.92,
+				"Lane1": -2.38,
+				"Lane2": -1.72,
+				"Lane3": -2.78
+			},
+			{
+				"timestamp": "03:00",
+				"Lane0": -2.08,
+				"Lane1": -2.52,
+				"Lane2": -1.88,
+				"Lane3": -2.92
+			},
+			{
+				"timestamp": "04:00",
+				"Lane0": -1.85,
+				"Lane1": -2.28,
+				"Lane2": -1.65,
+				"Lane3": -2.68
+			},
+			{
+				"timestamp": "05:00",
+				"Lane0": -1.62,
+				"Lane1": -2.02,
+				"Lane2": -1.42,
+				"Lane3": -2.42
+			},
+			{
+				"timestamp": "06:00",
+				"Lane0": -1.68,
+				"Lane1": -2.12,
+				"Lane2": -1.52,
+				"Lane3": -2.52
+			},
+			{
+				"timestamp": "07:00",
+				"Lane0": -2.02,
+				"Lane1": -2.48,
+				"Lane2": -1.82,
+				"Lane3": -2.88
+			},
+			{
+				"timestamp": "08:00",
+				"Lane0": -2.28,
+				"Lane1": -2.72,
+				"Lane2": -2.08,
+				"Lane3": -3.12
+			},
+			{
+				"timestamp": "09:00",
+				"Lane0": -2.12,
+				"Lane1": -2.58,
+				"Lane2": -1.92,
+				"Lane3": -2.98
+			},
+			{
+				"timestamp": "10:00",
+				"Lane0": -1.88,
+				"Lane1": -2.32,
+				"Lane2": -1.68,
+				"Lane3": -2.72
+			},
+			{
+				"timestamp": "11:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			},
+			{
+				"timestamp": "12:00",
+				"Lane0": -1.76,
+				"Lane1": -2.18,
+				"Lane2": -1.56,
+				"Lane3": -2.58
+			},
+			{
+				"timestamp": "13:00",
+				"Lane0": -1.9,
+				"Lane1": -2.35,
+				"Lane2": -1.7,
+				"Lane3": -2.75
+			},
+			{
+				"timestamp": "14:00",
+				"Lane0": -1.74,
+				"Lane1": -2.1,
+				"Lane2": -1.5,
+				"Lane3": -2.5
+			}
+		],
+		"currentStats": {
+			"max": 87.23,
+			"min": 87.23,
+			"avg": 87.23
+		},
+		"currentChartData": [
+			{
+				"timestamp": "00:00",
+				"Lane0": 87.23,
+				"Lane1": 82.56,
+				"Lane2": 85.1,
+				"Lane3": 78.9
+			},
+			{
+				"timestamp": "01:00",
+				"Lane0": 86.5,
+				"Lane1": 81.8,
+				"Lane2": 84.4,
+				"Lane3": 78.2
+			},
+			{
+				"timestamp": "02:00",
+				"Lane0": 85.8,
+				"Lane1": 81.1,
+				"Lane2": 83.7,
+				"Lane3": 77.5
+			},
+			{
+				"timestamp": "03:00",
+				"Lane0": 84.9,
+				"Lane1": 80.2,
+				"Lane2": 82.8,
+				"Lane3": 76.6
+			},
+			{
+				"timestamp": "04:00",
+				"Lane0": 86.1,
+				"Lane1": 81.4,
+				"Lane2": 84,
+				"Lane3": 77.8
+			},
+			{
+				"timestamp": "05:00",
+				"Lane0": 87.5,
+				"Lane1": 82.8,
+				"Lane2": 85.4,
+				"Lane3": 79.2
+			},
+			{
+				"timestamp": "06:00",
+				"Lane0": 87,
+				"Lane1": 82.3,
+				"Lane2": 84.9,
+				"Lane3": 78.7
+			},
+			{
+				"timestamp": "07:00",
+				"Lane0": 85.2,
+				"Lane1": 80.5,
+				"Lane2": 83.1,
+				"Lane3": 77
+			},
+			{
+				"timestamp": "08:00",
+				"Lane0": 84,
+				"Lane1": 79.3,
+				"Lane2": 81.9,
+				"Lane3": 75.8
+			},
+			{
+				"timestamp": "09:00",
+				"Lane0": 84.6,
+				"Lane1": 79.9,
+				"Lane2": 82.5,
+				"Lane3": 76.4
+			},
+			{
+				"timestamp": "10:00",
+				"Lane0": 85.9,
+				"Lane1": 81.2,
+				"Lane2": 83.8,
+				"Lane3": 77.6
+			},
+			{
+				"timestamp": "11:00",
+				"Lane0": 87.23,
+				"Lane1": 82.56,
+				"Lane2": 85.1,
+				"Lane3": 78.9
+			},
+			{
+				"timestamp": "12:00",
+				"Lane0": 86.8,
+				"Lane1": 82.1,
+				"Lane2": 84.6,
+				"Lane3": 78.4
+			},
+			{
+				"timestamp": "13:00",
+				"Lane0": 85.4,
+				"Lane1": 80.7,
+				"Lane2": 83.2,
+				"Lane3": 77
+			},
+			{
+				"timestamp": "14:00",
+				"Lane0": 87.23,
+				"Lane1": 82.56,
+				"Lane2": 85.1,
+				"Lane3": 78.9
+			}
+		]
+	}
+};
+//#endregion
+export { data_default as default };

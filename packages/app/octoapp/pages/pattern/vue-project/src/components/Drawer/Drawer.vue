@@ -18,7 +18,7 @@ const props = defineProps<A2UIComponentProps<DrawerNode>>()
 const { node, surfaceId } = props
 const properties = computed(() => node.properties)
 
-const fixedClass = "z-[99] bg-surface-container-highest p-[1.5rem] flex flex-col gap-[1rem]"
+const fixedClass = ""
 const mergedClass = computed(() => {
   const userClass = properties.value.className || ""
   return `${fixedClass} ${userClass}`.trim()

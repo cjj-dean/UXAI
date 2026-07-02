@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-BDtcZ50h.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-D-3pzp-l.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
 //#region \0rolldown/runtime.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -119176,7 +119176,7 @@ var Carousel_default = /* @__PURE__ */ defineComponent({
 });
 //#endregion
 //#region src/components/Dialog/Dialog.vue?vue&type=script&setup=true&lang.ts
-var fixedClass$1 = "z-[99] overflow-y-auto p-[1.5rem] flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm";
+var fixedClass$1 = "z-[99] overflow-y-auto flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm";
 //#endregion
 //#region src/components/Dialog/Dialog.vue
 var Dialog_default = /* @__PURE__ */ defineComponent({
@@ -119220,7 +119220,7 @@ var Dialog_default = /* @__PURE__ */ defineComponent({
 });
 //#endregion
 //#region src/components/Drawer/Drawer.vue?vue&type=script&setup=true&lang.ts
-var fixedClass = "z-[99] bg-surface-container-highest p-[1.5rem] flex flex-col gap-[1rem]";
+var fixedClass = "z-[99] bg-surface-container-highest flex flex-col gap-[1rem]";
 //#endregion
 //#region src/components/Drawer/Drawer.vue
 var Drawer_default = /* @__PURE__ */ defineComponent({
@@ -257684,7 +257684,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-BJ1LFQEE.js");
+						const { default: testData } = await import("./data-Dk1RcG1h.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -257716,12 +257716,12 @@ var router = createRouter({
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-BDtcZ50h.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./ExplorerPage-D-3pzp-l.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-Ce63b_xq.js"), [])
+			component: () => __vitePreload(() => import("./CustomPage-CgRuiXAL.js"), [])
 		}
 	]
 });

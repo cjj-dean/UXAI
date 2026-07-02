@@ -17,7 +17,7 @@ const props = defineProps<A2UIComponentProps<DialogNode>>()
 const { node, surfaceId } = props
 const properties = computed(() => node.properties)
 
-const fixedClass = "z-[99] overflow-y-auto p-[1.5rem] flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm"
+const fixedClass = "z-[99] overflow-y-auto flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm"
 const mergedClass = computed(() => {
   const userClass = properties.value.className || ""
   return `${fixedClass} ${userClass}`.trim()
