@@ -15,7 +15,7 @@ export const fixDialogClass: Fixer = (json) => {
   const fixes: string[] = []
 
   for (const elem of json.elements) {
-    if (elem.component !== "dialog") continue
+    if (elem.component !== "Dialog" && elem.component !== "dialog") continue
     const cls = getClassName(elem)
     if (!cls) {
       setClassName(elem, [...REQUIRED].join(" "))

@@ -481,6 +481,27 @@ interface ImageNode extends AnyComponentNode<ResolvedImage> {
   type: "Image";
 }
 
+interface ResolvedDialog {
+  title?: string;
+  width?: string;
+  className?: string;
+  children?: AnyComponentNode[];
+}
+interface DialogNode extends AnyComponentNode<ResolvedDialog> {
+  type: "Dialog";
+}
+
+interface ResolvedDrawer {
+  title?: string;
+  direction?: "ltr" | "rtl" | "ttb" | "btt";
+  size?: string;
+  className?: string;
+  children?: AnyComponentNode[];
+}
+interface DrawerNode extends AnyComponentNode<ResolvedDrawer> {
+  type: "Drawer";
+}
+
 interface ResolvedLink {
   text: DynamicString;
 }
@@ -533,6 +554,8 @@ export type {
   CarouselNode,
   TreeNodeNode,
   ImageNode,
+  DialogNode,
+  DrawerNode,
   StreamNode,
   LinkNode
 }

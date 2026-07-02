@@ -11,6 +11,9 @@ function isSection(elem: A2UIElement): boolean {
 function isCard(elem: A2UIElement): boolean {
   return elem.component === "Card"
 }
+function isOverlay(elem: A2UIElement): boolean {
+  return elem.component === "Dialog" || elem.component === "Drawer"
+}
 function hasElevationBg(elem: A2UIElement): boolean {
   const cls = getClassName(elem)
   return ELEVATION_MARKERS.some((m) => cls.includes(m))
@@ -59,6 +62,7 @@ export const fixElevationNesting: Fixer = (json) => {
   for (const elem of elements) {
     if (!isElevated(elem)) continue
     if (isCard(elem)) continue
+    if (isOverlay(elem)) continue
     if (isSection(elem) && hasExplicitBg(elem)) continue
     let ancestorId = c2p[elem.id]
     while (ancestorId) {

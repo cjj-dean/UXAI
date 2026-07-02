@@ -23,5 +23,8 @@ export default defineConfig(({ mode }) => {
     server: {
       port: parseInt(rootEnv.VUE_FRONTEND_PORT || '51856'),
     },
+    build: {
+      minify: false,
+    },
   }
 })

@@ -12,6 +12,7 @@
         "header",
         "body"，
         "dialog" /* 🔵 dialog可选，根据页面蓝图来 */
+        "drawer" /* 🔵 drawer可选，根据页面蓝图来 */
       ]
     },
     {
@@ -54,9 +55,21 @@
     }
     {
       "id": "dialog",
-      "component": "div",
+      "component": "Dialog",
       "props": {
-        "className": "z-[99] overflow-y-auto p-[1.5rem] flex flex-col gap-[1rem] bg-surface-container-highest shadow-sm"
+        "title": "",
+        "width": "50%"
+      },
+      "children": [
+      ]
+    },
+    {
+      "id": "drawer",
+      "component": "Drawer",
+      "props": {
+        "title": "",
+        "direction": "rtl",
+        "size": "30%"
       },
       "children": [
       ]
@@ -77,6 +90,11 @@
       "section_id": "dialog",
       "element_id": "dialog",
       "id_prefix": "dialog"
+    },
+    {
+      "section_id": "drawer",
+      "element_id": "drawer",
+      "id_prefix": "drawer"
     }
     /* 🔵 可修改：按 section 数量追加 slot，element_id 必须在 elements 中存在 */
   ]

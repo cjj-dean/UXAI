@@ -38,7 +38,7 @@ export const DESKTOP_COMPONENTS = [
   "RadioGroup", "Switch", "Slider", "Rate", "DatePicker", "TimePicker",
   "Table", "TableRow", "Tag", "Badge", "Collapse", "CollapseItem",
   "Timeline", "TimelineItem", "Divider", "Carousel", "Segmented", "Tree",
-  "Progress",
+  "Progress", "Dialog", "Drawer",
   "LineChart", "BarChart", "PieChart", "RadarChart", "GaugeChart",
   "ProcessChart", "BubbleChart", "AssembleBubbleChart", "BulletChart",
   "FunnelChart", "HillChart", "JadeJueChart", "ScatterChart", "CircleProcessChart",
@@ -564,7 +564,7 @@ function componentCatalogList(catalog: ComponentCatalog): string {
   }
   const navSet = new Set(["Tabs", "TabItem", "Steps", "StepItem", "Breadcrumb", "Dropdown", "Menu"])
   const entrySet = new Set(["Input", "InputNumber", "TextArea", "Select", "Checkbox", "CheckboxGroup", "RadioGroup", "Switch", "Slider", "Rate", "DatePicker", "TimePicker", "Field", "Search"])
-  const displaySet = new Set(["Table", "TableRow", "Tag", "Badge", "Collapse", "CollapseItem", "Timeline", "TimelineItem", "Divider", "Carousel", "Segmented", "Tree"])
+  const displaySet = new Set(["Table", "TableRow", "Tag", "Badge", "Collapse", "CollapseItem", "Timeline", "TimelineItem", "Divider", "Carousel", "Segmented", "Tree", "Dialog", "Drawer"])
   const chartSet = new Set(["LineChart", "BarChart", "PieChart", "RadarChart", "GaugeChart", "ProcessChart", "BubbleChart", "AssembleBubbleChart", "BulletChart", "FunnelChart", "HillChart", "JadeJueChart", "ScatterChart", "CircleProcessChart"])
   const customSet = new Set(["PatGauge", "PatStackedBar"])
   for (const comp of components) {
@@ -810,6 +810,35 @@ const COMPONENT_API_REFERENCE = `
 \`\`\`
 { "component": "Progress", "props": { "percent": { "path": "/progress" }, "status": "success" | "exception" | "normal" | "active", "showInfo": true, "strokeColor": "#hex", "size": "medium" | "small" } }
 \`\`\`
+
+### Dialog
+\`\`\`
+{
+  "component": "Dialog",
+  "props": {
+    "title": "对话框标题",
+    "width": "50%" | "400px",
+    "className": "tailwind-classes"
+  },
+  "children": ["contentId1", "contentId2"]
+}
+\`\`\`
+**Dialog** is a modal overlay for confirmations, forms, or detail views. It blocks background interaction. Use \`title\` for the header text, \`width\` for size control (default "50%"), and \`children\` for body content.
+
+### Drawer
+\`\`\`
+{
+  "component": "Drawer",
+  "props": {
+    "title": "抽屉标题",
+    "direction": "rtl" | "ltr" | "ttb" | "btt",
+    "size": "30%" | "400px",
+    "className": "tailwind-classes"
+  },
+  "children": ["contentId1", "contentId2"]
+}
+\`\`\`
+**Drawer** is a sliding panel from screen edge for filters, detail panels, or auxiliary content. \`direction\` controls slide direction (default "rtl" = right-to-left), \`size\` controls panel width/height (default "30%").
 
 ## Charts (ALL charts use \`option\` prop pattern)
 

@@ -32,6 +32,8 @@ import A2UiMenu from "./Menu/Menu.vue"
 import A2UiSegmented from "./Segmented/Segmented.vue"
 import A2UiTree from "./Tree/Tree.vue"
 import A2UiCarousel from "./Carousel/Carousel.vue"
+import A2UiDialog from "./Dialog/Dialog.vue"
+import A2UiDrawer from "./Drawer/Drawer.vue"
 
 // import A2UiImage from "./Image/Image.vue"
 
@@ -95,6 +97,8 @@ const catelog = {
   Steps: A2UiSteps,
   Tree: A2UiTree,
   Carousel: A2UiCarousel,
+  Dialog: A2UiDialog,
+  Drawer: A2UiDrawer,
 
   // Image: A2UiImage,
   Stream: A2UiStream,
@@ -128,6 +132,9 @@ function initDefaultCatlog() {
       component,
     })
   }
+  console.log('[initDefaultCatlog] Registered types:', instance.getRegisteredTypes())
+  console.log('[initDefaultCatlog] Drawer:', instance.has('Drawer'), instance.get('Drawer'))
+  console.log('[initDefaultCatlog] Dialog:', instance.has('Dialog'), instance.get('Dialog'))
 }
 
 export { initDefaultCatlog }

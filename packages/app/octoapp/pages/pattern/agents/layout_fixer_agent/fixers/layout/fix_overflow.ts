@@ -24,7 +24,7 @@ export const fixOverflow: Fixer = (json) => {
     if (!isMainContent) {
       const toks2 = tokens(getClassName(elem))
       // Section/Card 自带边距和背景，不应设置 overflow-*（会导致内容被截断）
-      if (elem.component === "Section" || elem.component === "Card") {
+      if (elem.component === "Section" || elem.component === "Card" || elem.component === "Dialog" || elem.component === "Drawer") {
         const oldLen = toks2.length
         const cleaned = toks2.filter((t) => !t.startsWith("overflow-"))
         if (cleaned.length !== oldLen) {

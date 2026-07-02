@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, watch } from "vue"
 
 import { ComponentRegistry } from "../registry/ComponentRegistry"
 
@@ -19,9 +19,17 @@ const nodeType = computed(() =>
     ? props.node.type
     : null
 )
-const Component = computed(() =>
-  nodeType.value ? actualRegistry.value.get(nodeType.value) : null
-)
+const Component = computed(() => {
+  const nt = nodeType.value
+  const reg = actualRegistry.value
+  const result = nt ? reg.get(nt) : null
+  console.log('[ComponentNode] nodeType:', nt, 'registry.get result:', result, 'registry types:', reg.getRegisteredTypes())
+  return result
+})
+
+watch([nodeType, Component], ([nt, comp]) => {
+  console.log('[ComponentNode watch] nodeType:', nt, 'Component:', comp, 'fallback:', !comp && !!nt)
+}, { immediate: true })
 
 const elementPropsJson = computed(() => {
   const raw = props.node.properties || {}
