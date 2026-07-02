@@ -14,7 +14,6 @@ export const fixThreeColCenter: Fixer = (json) => {
   const map = elemMap(json.elements)
 
   for (const elem of json.elements) {
-    if (elem.component === "div" && elem.component === "Card") continue
     if (!Array.isArray(elem.children) || elem.children.length !== 3) continue
     const cls = getClassName(elem)
     const toks = tokens(cls)
