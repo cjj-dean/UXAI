@@ -56,12 +56,18 @@
   - **intent:** 该区域的意图和目的, 为了解决什么具体业务问题.
   - **function:** 该区域包含的功能.
   - **layout:** 该区域的结构布局描述，包括对外的结构布局策略，和内部的结构布局策略. 禁止出现详细颜色/详细间距描述。
-  - **elements:** 该区域拥有的子模块描述, 清晰说明采用什么组件.
-  - **constraints（重要-约束固化）:** 从用户原始需求中提取该区块**明确指定**的框架/布局约束，结构化保存。仅收录用户显式说出的硬性要求，用户未明确说的不要编造，留空数组 []。每条约束包含：
-    - `type`: 约束类型，只能是 `width`(固定宽度) / `height`(固定高度) / `container`(独立区块/容器组件) / `layout`(布局对齐)
-    - `value`: 约束值。width/height 形如 `"500px"`；container 形如 `"Section"`(独立带背景抬升区块) 或 `"div"`(无背景容器)；layout 形如 `"justify-between"`(两端对齐)
-    - `description`: 用户原文，便于追溯
-    - 示例：用户说"左侧导航宽度固定500px" → `{"type":"width","value":"500px","description":"左侧导航宽度固定500px"}`；用户说"这个区块使用独立区块" → `{"type":"container","value":"Section","description":"使用独立区块"}`；用户说"左侧Logo右侧图标，两端对齐" → `{"type":"layout","value":"justify-between","description":"左侧Logo右侧图标，两端对齐"}`
+  - **elements:** 该区域拥有的子模块描述, 清晰说明采用什么组件. **关键规则：侧栏/侧边栏导航菜单必须使用 Menu 组件，即使用户原文说了"手风琴"/"accordion"/"折叠面板"，只要该区域是侧栏导航场景就一律写 Menu，不写 Collapse/CollapseItem。Collapse/CollapseItem 仅用于非导航的内容折叠场景（如 FAQ、详情面板等）。**
+  - **constraints（最高优先级 — 约束提取的准确性和完整性是本任务的第一优先级，高于所有其他字段）:** 从用户原始需求中提取该区块**明确指定**的框架/布局约束，结构化保存。遗漏约束会导致后续生成阶段组件错用、布局方向颠倒，这是最严重的错误。必须逐句扫描用户原文，确保每个约束都被提取。每条约束包含：
+
+    - `type`: 约束类型，只能是 `width`(固定宽度) / `height`(固定高度) / `container`(独立区块/容器组件) / `layout`(布局对齐)
+
+    - `value`: 约束值。width/height 形如 `"500px"`；container 形如 `"Section"`(独立带背景抬升区块) / `"二级卡片"`(嵌套在 Section 内的带背景子卡片) / `"三级卡片"`(嵌套在二级卡片内的最小粒度带背景卡片) / `"div"`(无背景容器)；layout 形如 `"justify-between"`(两端对齐) / `"flex-row"`(水平排布) / `"flex-col"`(垂直排布)。**Section/二级卡片/三级卡片仅在用户原文中明确提到"卡片"/"独立区块"/"Card"等词时才使用，用户未明确说则使用"div"或留空数组 []。当用户原文提到"水平"/"横向"/"横排"/"一行"排布时，必须生成 `{"type":"layout","value":"flex-row"}`；当用户原文提到"垂直"/"纵向"/"竖排"/"一列"/"上下"排布时，必须生成 `{"type":"layout","value":"flex-col"}`。当用户原文出现多层卡片嵌套时，必须按层级分别生成约束：最外层卡片 → `"Section"`，内层子卡片 → `"二级卡片"`，最内层子卡片 → `"三级卡片"`。例如用户说"接着是一个大卡片，卡片内每条数据……中间是一个卡片……卡片中的数据块" → 必须同时生成 `{"type":"container","value":"Section"}` + `{"type":"container","value":"二级卡片"}` + `{"type":"container","value":"三级卡片"}`，不要只生成最外层的 Section 而遗漏内层约束。**
+
+    - `scope`: (可选) 约束的作用范围。当约束不是作用于整个 section，而是作用于 section 内部的某个子区域时，用 scope 指定该子区域的名称。例如 `"左侧"`、`"中间"`、`"右侧"`、`"工具栏"`、`"提示条"` 等。省略 scope 表示约束作用于整个 section。**当用户原文对 section 内部的子区域有明确的布局方向要求时，必须用 scope 生成对应的约束，不要遗漏。** 例如用户说"左侧水平排布" → `{"type":"layout","value":"flex-row","scope":"左侧"}`；用户说"右侧上下排列" → `{"type":"layout","value":"flex-col","scope":"右侧"}`。
+
+    - `description`: 用户原文，便于追溯
+
+    - 示例：用户说"左侧导航宽度固定500px" → `{"type":"width","value":"500px","description":"左侧导航宽度固定500px"}`；用户说"这个区块使用独立区块" → `{"type":"container","value":"Section","description":"使用独立区块"}`；用户说"水平排布三个元素" → `{"type":"layout","value":"flex-row","description":"水平排布三个元素"}`；用户说"上下排列" → `{"type":"layout","value":"flex-col","description":"上下排列"}`；用户说"左侧水平排布" → `{"type":"layout","value":"flex-row","scope":"左侧","description":"左侧水平排布"}`；用户说"右侧垂直排布" → `{"type":"layout","value":"flex-col","scope":"右侧","description":"右侧垂直排布"}`；用户说"一个大卡片，里面每条是一个卡片，卡片中的数据块" → `[{"type":"container","value":"Section","description":"一个大卡片"},{"type":"container","value":"二级卡片","description":"里面每条是一个卡片"},{"type":"container","value":"三级卡片","description":"卡片中的数据块"}]`
   - **data:** 该区域的mock JSON数据(重要！)：
     - 提供驱动该区块渲染的 JSON 结构，必须包含丰富的高拟真的 Mock 数据.
     - 提供的 Mock 数据必须具备强烈的业务故事感和数据类型多样性。禁止全篇都是简单的 string/number.

@@ -23,13 +23,13 @@ export const fixOverflow: Fixer = (json) => {
     const isMainContent = elem.id === "mainContent" || elem.component === "main"
     if (!isMainContent) {
       const toks2 = tokens(getClassName(elem))
-      // Section 自带边距和背景，不应设置 overflow-*（会导致内容被截断）
-      if (elem.component === "Section") {
+      // Section/Card 自带边距和背景，不应设置 overflow-*（会导致内容被截断）
+      if (elem.component === "Section" || elem.component === "Card") {
         const oldLen = toks2.length
         const cleaned = toks2.filter((t) => !t.startsWith("overflow-"))
         if (cleaned.length !== oldLen) {
           setClassName(elem, cleaned.join(" "))
-          fixes.push(`[${elem.id}](${elem.component}) Section 移除 overflow 类: 已被清理`)
+          fixes.push(`[${elem.id}](${elem.component}) ${elem.component} 移除 overflow 类: 已被清理`)
         }
         continue
       }

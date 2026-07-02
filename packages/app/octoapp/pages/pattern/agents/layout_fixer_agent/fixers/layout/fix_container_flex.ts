@@ -4,6 +4,17 @@ const SKIP_COMPONENTS = new Set(["Table", "TableRow", "Tabs", "TabItem", "Collap
 const JUSTIFY_DISTRIBUTE = new Set(["justify-evenly", "justify-between", "justify-around"])
 const LEAF_COMPONENTS = new Set(["Icon", "span", "Tag", "Badge", "Button", "Input", "Select", "img", "a", "strong", "em", "code", "Progress", "Rate", "Switch", "Avatar", "Pagination", "DatePicker", "TimePicker", "Cascader"])
 const MB_RE = /^mb-(?:\[|\d)/
+const MARGIN_RE = /^m[tlrb]?-(?:\[|\d)/
+const PADDING_RE = /^p[tlrb]?-(?:\[|\d)/
+const SPACING_COMPONENTS = new Set(["Divider"])
+
+function childHasSelfSpacing(childElems: A2UIElement[]): boolean {
+  return childElems.some((c) => {
+    if (SPACING_COMPONENTS.has(c.component)) return true
+    const toks = tokens(getClassName(c))
+    return toks.some((t) => MARGIN_RE.test(t) || PADDING_RE.test(t))
+  })
+}
 
 function isShellChrome(elem: A2UIElement): boolean {
   const cls = getClassName(elem)
@@ -60,6 +71,7 @@ export const fixContainerFlex: Fixer = (json) => {
         fixes.push(`[${elem.id}](${elem.component}) 多子容器无 flex: 为子元素补充 ${mbCls}（末元素除外）`)
       }
     } else if (!hasGap) {
+      if (childHasSelfSpacing(childElems)) continue
       const gapCls = pickGap(childComps)
       setClassName(elem, `${cls} ${gapCls}`.trim())
       fixes.push(`[${elem.id}](${elem.component}) 多子容器缺少 ${gapCls}: 已补充`)

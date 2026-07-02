@@ -16,6 +16,8 @@ import { fixFlexMinHeight } from "./layout"
 import { fixDuplicateRef } from "./layout"
 import { fixHeaderLayout } from "./layout"
 import { fixHiddenClass } from "./layout"
+import { fixBgPadding } from "./layout"
+import { fixThreeColCenter } from "./layout"
 import { fixImageRadius } from "./component"
 import { fixChartHeight } from "./component"
 import { fixCircleProcessChart } from "./component"
@@ -45,6 +47,8 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "redundant_padding", fn: fixRedundantPadding },
   { name: "overflow", fn: fixOverflow },
   { name: "container_flex", fn: fixContainerFlex },
+  { name: "bg_padding", fn: fixBgPadding },
+  { name: "three_col_center", fn: fixThreeColCenter },
   { name: "scroll_shrink", fn: fixScrollShrink },
   { name: "flex_min_height", fn: fixFlexMinHeight },
   { name: "redundant_class", fn: fixRedundantClass },

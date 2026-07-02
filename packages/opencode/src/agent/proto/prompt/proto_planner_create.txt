@@ -34,9 +34,9 @@ When the page has ONLY a header and NO sidebar: use `min-h-screen` on root and `
 
 ## Section Component — OPT-IN only (NOT the default)
 
-**DEFAULT: every container is a `<div>`.** You MUST use `<div>` for ALL slot parents and structural containers. The planner creates `Section` ONLY when a section's constraint explicitly contains `{"type":"container","value":"Section"}` — in that case the slot parent for that section MUST use `Section` component (not `div`).
+**DEFAULT: every container is a `<div>`.** You MUST use `<div>` for ALL slot parents and structural containers. The planner creates `Section` or `Card` ONLY when a section's constraint explicitly contains `{"type":"container","value":"Section"}` / `{"type":"container","value":"二级卡片"}` / `{"type":"container","value":"三级卡片"}` — in that case the slot parent for that section MUST use the corresponding component (not `div`). If no container constraint exists, the slot parent MUST be `div`, never `Section` or `Card`.
 
-**Slot parents are `<div>` by default.** If a section's constraints contain `{"type":"container","value":"Section"}`, the slot parent for that section MUST be `Section` (not `div`). The `Section` provides built-in bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem], so do NOT add those classes manually.
+**Slot parents are `<div>` by default.** If a section's constraints contain `{"type":"container","value":"Section"}`, the slot parent MUST be `Section`. If a section's constraints contain `{"type":"container","value":"二级卡片"}` or `{"type":"container","value":"三级卡片"}`, the slot parent MUST be `Card`. The `Section` provides built-in bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]; the `Card` provides built-in bg-surface-variant + rounded-xl + p-[1.5rem]. Do NOT add those classes manually.
 
 `Section` renders as a `<div>` with BUILT-IN fixed visuals (bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]). Because it carries a strong elevated surface, it must be reserved for blocks the user explicitly marked as "独立区块".
 
@@ -63,13 +63,17 @@ Given a page blueprint (intent description), your job is to:
 2. Decompose the page into **N independent modules** strictly mapped to the `sections` provided in the blueprint.
 3. For each section, designate a layout container in the shell as its slot parent (set `children: []` on it). Do NOT create extra wrapper elements. The slot parent should be the outermost layout container that directly bounds and constrains the section's content.
 
-## Constraint Solidification (约束固化 — CRITICAL)
-The blueprint's `sectionDetailList[].constraints` carries **explicit framework/layout requirements directly from the user**. When you build the slot parent for a section, apply these rules:
+## Constraint Solidification (约束固化 — 最高优先级 CRITICAL)
+The blueprint's `sectionDetailList[].constraints` carries **explicit framework/layout requirements directly from the user**. Violating a constraint is the most serious error — it means ignoring the user's explicit intent. When you build the slot parent for a section, apply these rules:
 - `type:"container", value:"Section"` → the slot parent MUST use `Section` component (not `div`). Slot parents are `<div>` by default; `container:Section` overrides this and makes it a `Section`. The `Section` provides built-in bg/shadow/rounded/padding.
+- `type:"container", value:"二级卡片"` → the slot parent MUST use `Card` component (not `div`). `Card` provides built-in bg-surface-variant + rounded-xl + p-[1.5rem], and signals that inner card-level elements must use Card components.
+- `type:"container", value:"三级卡片"` → the slot parent MUST use `Card` component (not `div`). Same as 二级卡片 for the slot parent, and signals that deeply nested data block elements must use Card components.
 - `type:"width", value:"500px"` → the slot parent className MUST include `w-[500px]` (and MUST NOT include conflicting `w-*`/`flex-1`/`min-w-*` width classes).
 - `type:"height", value:"300px"` → the slot parent className MUST include `h-[300px]`.
 - `type:"layout", value:"justify-between"` → the slot parent className MUST include `justify-between` (for left/right two-end alignment).
-Do not reinterpret, soften, or drop width/height constraints — they will be deterministically verified downstream.
+- `type:"layout", value:"flex-row"` → the slot parent className MUST include `flex flex-row` (for horizontal arrangement). This overrides the default flex-col direction.
+- `type:"layout", value:"flex-col"` → the slot parent className MUST include `flex flex-col` (for vertical arrangement).
+Do not reinterpret, soften, or drop width/height/layout constraints — they will be deterministically verified downstream.
 
 ## Slot Parent Flex Direction (CRITICAL)
 You MUST read each section's `layout` field and set the slot parent's flex direction accordingly:

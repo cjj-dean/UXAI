@@ -1,5 +1,6 @@
 import A2UiCheckbox from "./Checkbox/Checkbox.vue"
 import A2UiSection from "./Section/Section.vue"
+import A2UiCard from "./Card/Card.vue"
 import A2UiCheckboxGroup from "./CheckboxGroup/CheckboxGroup.vue"
 import A2UiDatePicker from "./DatePicker/DatePicker.vue"
 import A2UiInput from "./Input/Input.vue"
@@ -64,6 +65,7 @@ import { ComponentRegistry } from "../renderer"
 const catelog = {
   Checkbox: A2UiCheckbox,
   Section: A2UiSection,
+  Card: A2UiCard,
   CheckboxGroup: A2UiCheckboxGroup,
   DatePicker: A2UiDatePicker,
   InputNumber: A2UiInputNumber,
