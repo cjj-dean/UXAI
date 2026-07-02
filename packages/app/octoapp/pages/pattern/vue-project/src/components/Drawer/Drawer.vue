@@ -45,3 +45,9 @@ const mergedClass = computed(() => {
     />
   </ElDrawer>
 </template>
+
+<style>
+.el-drawer__header {
+  margin-bottom: 0 !important;
+}
+</style>

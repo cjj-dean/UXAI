@@ -43,3 +43,9 @@ const mergedClass = computed(() => {
     />
   </ElDialog>
 </template>
+
+<style>
+.el-dialog__header {
+  margin-bottom: 0 !important;
+}
+</style>
