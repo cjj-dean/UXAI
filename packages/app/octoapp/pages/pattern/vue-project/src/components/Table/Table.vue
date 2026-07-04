@@ -156,12 +156,40 @@ const tableData = computed(() => {
     const rowData: Record<string, any> = {
       [rowKey.value]: dataIsObj ? data[rowKey.value] : `row-${index}`,
     }
-    columns.value.forEach((col, colIndex) => {
-      const cell = cells[colIndex]
-      if (cell) {
-        rowData[col.prop] = cell
+
+    const colDefs = Array.isArray(properties.columns)
+      ? properties.columns
+      : (resolveValue(properties.columns) as any[]) || []
+    const isSparseCells = cells.length < colDefs.length
+
+    if (isSparseCells) {
+      // Sparse format: TableRow children only contain custom-rendered columns.
+      // Each cell's properties.dataIndex identifies which column it belongs to.
+      // Simple text columns (no matching cell) are auto-rendered from data[dataIndex].
+      const customCellMap = new Map<string, any>()
+      for (const cell of cells) {
+        const cellDataIndex = cell?.properties?.dataIndex
+        if (cellDataIndex) {
+          customCellMap.set(String(cellDataIndex), cell)
+        }
       }
-    })
+      columns.value.forEach((col) => {
+        const customCell = customCellMap.get(col.prop)
+        if (customCell) {
+          rowData[col.prop] = customCell
+        } else if (dataIsObj && data[col.prop] !== undefined) {
+          rowData[col.prop] = { type: "AutoText", value: data[col.prop] }
+        }
+      })
+    } else {
+      // Legacy format: cells map 1:1 to columns by position
+      columns.value.forEach((col, colIndex) => {
+        const cell = cells[colIndex]
+        if (cell) {
+          rowData[col.prop] = cell
+        }
+      })
+    }
 
     // 从 TableRow props.expandedRowRender 中获取展开内容
     if (hasExpandable.value && itemProps.expandedRowRender) {
@@ -220,8 +248,11 @@ const tableData = computed(() => {
         :sortable="col.sortable"
       >
         <template #default="{ row }">
+          <template v-if="row[col.prop]?.type === 'AutoText'">
+            <span class="text-md text-on-surface">{{ row[col.prop].value ?? "" }}</span>
+          </template>
           <ComponentNode
-            v-if="row[col.prop]"
+            v-else-if="row[col.prop]"
             :node="row[col.prop]"
             :surface-id="surfaceId"
           />

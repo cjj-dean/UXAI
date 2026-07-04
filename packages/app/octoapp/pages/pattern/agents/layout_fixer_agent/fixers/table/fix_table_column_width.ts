@@ -190,10 +190,9 @@ export const fixTableColumnWidth: Fixer = (json) => {
           }
         }
       } else {
-        if (cells.length > 0) {
-          // No matching cell in row template — fall through to header-based width
-        } else if (!rows.length) {
-          // No cells and no rows — fall through to header-based width
+        // No matching cell in row template — auto-rendered column, use dataSource for width
+        if (!rows.length) {
+          // No rows — fall through to header-based width
         } else {
           const samples = sampleField(rows, dx).filter((v) => v != null)
           if (samples.length && samples.every((v) => typeof v !== "object")) {

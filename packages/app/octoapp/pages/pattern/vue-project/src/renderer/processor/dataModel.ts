@@ -6,6 +6,36 @@ export class DataModel {
 
     constructor(initialData: Record<string, unknown> = {}) {
         this.data = initialData
+        this.expandCountArrays(this.data)
+    }
+
+    private expandCountArrays(obj: any): void {
+        if (!obj || typeof obj !== "object" || Array.isArray(obj)) return
+        for (const key of Object.keys(obj)) {
+            const val = obj[key]
+            if (Array.isArray(val) && val.length === 1) {
+                const countKey = `_${key}_count`
+                if (typeof obj[countKey] === "number" && obj[countKey] > 1) {
+                    const sample = val[0]
+                    const count = obj[countKey] as number
+                    const expanded = []
+                    for (let i = 0; i < count; i++) {
+                        expanded.push(i === 0 ? sample : JSON.parse(JSON.stringify(sample)))
+                    }
+                    obj[key] = expanded
+                    delete obj[countKey]
+                }
+            }
+            if (val && typeof val === "object") {
+                if (Array.isArray(val)) {
+                    for (const item of val) {
+                        if (item && typeof item === "object") this.expandCountArrays(item)
+                    }
+                } else {
+                    this.expandCountArrays(val)
+                }
+            }
+        }
     }
 
     get(path: string): unknown {

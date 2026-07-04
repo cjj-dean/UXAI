@@ -65,5 +65,18 @@ export function resolveState(state: any, path: string): any {
       return null
     }
   }
+  if (Array.isArray(cur) && cur.length === 1) {
+    const parent = resolveState(state, path.split("/").slice(0, -1).join("/"))
+    const countKey = `_${path.split("/").pop()}_count`
+    if (parent && typeof parent === "object" && typeof parent[countKey] === "number" && parent[countKey] > 1) {
+      const sample = cur[0]
+      const count = parent[countKey] as number
+      const expanded = []
+      for (let i = 0; i < count; i++) {
+        expanded.push(i === 0 ? sample : JSON.parse(JSON.stringify(sample)))
+      }
+      return expanded
+    }
+  }
   return cur
 }

@@ -545,32 +545,49 @@ async function runPattern(index: number): Promise<RunResult> {
 // ─── 复制 LLM trace 文件 ───
 
 async function copyLLMTraces(sessionId: string, targetDir: string) {
-  // LLM trace 文件存放在 {InstanceState}/pattern/workflow/{sessionId}/
-  // 以及 session 级别的 llm trace（由 llm.ts 写入）
-  // 由于我们无法直接获取 InstanceState 目录，改为记录 session ID 供报告引用
   const traceDir = join(targetDir, "llm_traces")
   await mkdir(traceDir, { recursive: true })
 
-  // 写一个映射文件，说明在哪里找 trace
   await writeFile(
     join(traceDir, "_trace_info.txt"),
-    `Session ID: ${sessionId}\nLLM traces are in: {workspace}/pattern/workflow/${sessionId}/\n`,
+    `Session ID: ${sessionId}\nLLM traces are in: {workspace}/pattern/workflow/${sessionId}/{agent}/{subsession}/\n`,
     "utf-8",
   )
 
-  // 尝试从 workspace 的 pattern/workflow/{sid} 目录复制
   const possibleTraceDir = join(directory!, "pattern", "workflow", sessionId)
   try {
-    const entries = await readdir(possibleTraceDir)
-    for (const entry of entries) {
-      const src = join(possibleTraceDir, entry)
-      const s = await stat(src)
-      if (s.isFile()) {
-        const content = await readFile(src)
-        await writeFile(join(traceDir, entry), content)
+    let totalFiles = 0
+    const agentEntries = await readdir(possibleTraceDir)
+    for (const agentEntry of agentEntries) {
+      const agentPath = join(possibleTraceDir, agentEntry)
+      if (!(await stat(agentPath)).isDirectory()) {
+        const content = await readFile(agentPath)
+        await writeFile(join(traceDir, agentEntry), content)
+        totalFiles++
+        continue
+      }
+      const subEntries = await readdir(agentPath)
+      for (const subEntry of subEntries) {
+        const subPath = join(agentPath, subEntry)
+        if ((await stat(subPath)).isDirectory()) {
+          const files = await readdir(subPath)
+          const destDir = join(traceDir, agentEntry, subEntry)
+          await mkdir(destDir, { recursive: true })
+          for (const file of files) {
+            const content = await readFile(join(subPath, file))
+            await writeFile(join(destDir, file), content)
+          }
+          totalFiles += files.length
+        } else {
+          const content = await readFile(subPath)
+          const destDir = join(traceDir, agentEntry)
+          await mkdir(destDir, { recursive: true })
+          await writeFile(join(destDir, subEntry), content)
+          totalFiles++
+        }
       }
     }
-    console.log(`  📋 已复制 ${entries.length} 个 LLM trace 文件`)
+    if (totalFiles) console.log(`  📋 已复制 ${totalFiles} 个 LLM trace 文件`)
   } catch {
     // trace 目录可能不存在（非 Electron 环境或尚未写入）
   }
