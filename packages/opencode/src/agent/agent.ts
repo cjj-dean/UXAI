@@ -299,7 +299,7 @@ export const layer = Layer.effect(
             options: {},
             mode: "primary",
             native: false,
-            block: true,
+            block: false,
           },
           octo_pattern_module: {
             name: "octo_pattern_module",
@@ -310,7 +310,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             hidden: true,
-            block: true,
           },
           compaction: {
             name: "compaction",
@@ -369,7 +368,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.2,
-            block: true,
           },
           proto_intent_audit: {
             name: "proto_intent_audit",
@@ -382,7 +380,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.4,
-            block: true,
           },
           proto_module_create: {
             name: "proto_module_create",
@@ -394,7 +391,6 @@ export const layer = Layer.effect(
             native: false,
             temperature: 0.0,
             steps: 2,
-            block: true,
           },
           proto_module_modify: {
             name: "proto_module_modify",
@@ -405,7 +401,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.0,
-            block: true,
           },
           proto_planner_create: {
             name: "proto_planner_create",
@@ -418,7 +413,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.0,
-            block: true,
           },
           proto_planner_modify: {
             name: "proto_planner_modify",
@@ -431,7 +425,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.0,
-            block: true,
           },
           proto_triage: {
             name: "proto_triage",
@@ -442,7 +435,6 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.1,
-            block: true,
           },
         }
 

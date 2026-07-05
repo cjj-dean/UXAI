@@ -1,0 +1,1629 @@
+{
+  "rootId": "root",
+  "elements": [
+    {
+      "id": "root",
+      "component": "div",
+      "props": {
+        "className": "flex flex-col h-screen overflow-hidden bg-surface-container-lowest overflow-x-hidden"
+      },
+      "children": [
+        "header",
+        "body"
+      ]
+    },
+    {
+      "id": "header",
+      "component": "header",
+      "props": {
+        "className": "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem] z-[1] h-[3rem]"
+      },
+      "children": [
+        "hdrLeftBrand",
+        "hdrRightActions"
+      ]
+    },
+    {
+      "id": "body",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row flex-1 overflow-hidden"
+      },
+      "children": [
+        "aside",
+        "main"
+      ]
+    },
+    {
+      "id": "aside",
+      "component": "aside",
+      "props": {
+        "className": "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between w-[54px]"
+      },
+      "children": [
+        "asdTopMenu",
+        "asdBottomMenu"
+      ]
+    },
+    {
+      "id": "main",
+      "component": "main",
+      "props": {
+        "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "chartRow",
+        "terminalUserManagement"
+      ]
+    },
+    {
+      "id": "chartRow",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row gap-[1rem] items-stretch shrink-0"
+      },
+      "children": [
+        "terminalTypeCard",
+        "accessTypeCard",
+        "terminalTrafficCard",
+        "appTrafficCard",
+        "onlineDurationCard"
+      ]
+    },
+    {
+      "id": "terminalTypeCard",
+      "component": "Section",
+      "props": {
+        "className": "flex-1 h-[300px] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "ttCardHeader",
+        "ttCardChartWrap"
+      ]
+    },
+    {
+      "id": "accessTypeCard",
+      "component": "Section",
+      "props": {
+        "className": "flex-1 h-[300px] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "atCardHeader",
+        "atCardChart"
+      ]
+    },
+    {
+      "id": "terminalTrafficCard",
+      "component": "Section",
+      "props": {
+        "className": "flex-1 h-[300px] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "tfCardHeader",
+        "tfCardChart"
+      ]
+    },
+    {
+      "id": "appTrafficCard",
+      "component": "Section",
+      "props": {
+        "className": "flex-1 h-[300px] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "afCardHeader",
+        "afCardChart"
+      ]
+    },
+    {
+      "id": "onlineDurationCard",
+      "component": "Section",
+      "props": {
+        "className": "flex-1 h-[300px] flex flex-col gap-[1rem] min-w-0"
+      },
+      "children": [
+        "odCardTitleRow",
+        "odCardChart"
+      ]
+    },
+    {
+      "id": "terminalUserManagement",
+      "component": "Section",
+      "props": {
+        "className": "flex flex-col gap-[1rem] shrink-0"
+      },
+      "children": [
+        "tumTitle",
+        "tumToolbar",
+        "tumTable"
+      ]
+    },
+    {
+      "id": "hdrLeftBrand",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-[0.5rem]"
+      },
+      "children": [
+        "hdrBrandLogo",
+        "hdrBrandText",
+        "hdrProjectDropdown"
+      ]
+    },
+    {
+      "id": "hdrBrandLogo",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/brandLogoIcon"
+        },
+        "color": "primary",
+        "shape": "square",
+        "className": "w-5 h-5"
+      }
+    },
+    {
+      "id": "hdrBrandText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/brandText"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "hdrProjectDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomLeft",
+        "menu": {
+          "path": "/projectList"
+        }
+      },
+      "children": [
+        "hdrProjectTrigger"
+      ]
+    },
+    {
+      "id": "hdrProjectTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-[0.25rem] cursor-pointer"
+      },
+      "children": [
+        "hdrProjectName",
+        "hdrProjectArrow"
+      ]
+    },
+    {
+      "id": "hdrProjectName",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/projectName"
+        },
+        "className": "text-md text-on-surface-variant"
+      }
+    },
+    {
+      "id": "hdrProjectArrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "#777777",
+        "className": "w-3 h-3",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "hdrRightActions",
+      "component": "div",
+      "props": {
+        "className": "flex flex-row items-center gap-[1rem]"
+      },
+      "children": [
+        "hdrNotificationBadge",
+        "hdrUserAvatar",
+        "hdrHomeBtn"
+      ]
+    },
+    {
+      "id": "hdrNotificationBadge",
+      "component": "Badge",
+      "props": {
+        "count": {
+          "path": "/notificationBadgeCount"
+        },
+        "overflowCount": 99,
+        "className": "flex-1"
+      },
+      "children": [
+        "hdrNotificationIcon"
+      ]
+    },
+    {
+      "id": "hdrNotificationIcon",
+      "component": "Icon",
+      "props": {
+        "name": "bell",
+        "color": "#777777",
+        "className": "w-5 h-5 cursor-pointer",
+        "shape": "outline"
+      }
+    },
+    {
+      "id": "hdrUserAvatar",
+      "component": "img",
+      "props": {
+        "src": {
+          "path": "/userAvatarImage"
+        },
+        "alt": "用户头像",
+        "className": "w-7 h-7 object-cover rounded-[8px]"
+      }
+    },
+    {
+      "id": "hdrHomeBtn",
+      "component": "Button",
+      "props": {
+        "value": "返回首页",
+        "icon": "home",
+        "iconPlacement": "start",
+        "types": "link",
+        "className": "flex-1"
+      }
+    },
+    {
+      "id": "asdTopMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": true,
+        "selectedKeys": {
+          "path": "/selectedMenuKeys"
+        },
+        "items": {
+          "path": "/topMenuItems"
+        },
+        "className": "flex-1 border-none min-w-0"
+      }
+    },
+    {
+      "id": "asdBottomMenu",
+      "component": "Menu",
+      "props": {
+        "mode": "vertical",
+        "inlineCollapsed": true,
+        "selectedKeys": [],
+        "items": {
+          "path": "/bottomMenuItems"
+        },
+        "className": "border-none"
+      }
+    },
+    {
+      "id": "ttCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "ttCardTitleIcon",
+        "ttCardTitleText"
+      ]
+    },
+    {
+      "id": "ttCardTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "monitor-smartphone",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "ttCardTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "ttCardChartWrap",
+      "component": "div",
+      "props": {
+        "className": "flex-1 min-w-0"
+      },
+      "children": [
+        "ttCardPieChart"
+      ]
+    },
+    {
+      "id": "ttCardPieChart",
+      "component": "PieChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/terminalTypeChart"
+          },
+          "title": {
+            "text": {
+              "path": "/totalValue"
+            },
+            "subtext": {
+              "path": "/totalLabel"
+            }
+          }
+        },
+        "className": "w-full h-[188px]"
+      }
+    },
+    {
+      "id": "atCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "atCardTitleIcon",
+        "atCardTitleText"
+      ]
+    },
+    {
+      "id": "atCardTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "cable",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "atCardTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "atCardChart",
+      "component": "PieChart",
+      "props": {
+        "className": "min-w-0 h-[188px]",
+        "option": {
+          "data": {
+            "path": "/accessTypeChart"
+          },
+          "title": {
+            "text": {
+              "path": "/totalValue"
+            },
+            "subtext": {
+              "path": "/totalLabel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tfCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "tfCardHeaderLeft",
+        "tfCardHeaderRight"
+      ]
+    },
+    {
+      "id": "tfCardHeaderLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1.5"
+      },
+      "children": [
+        "tfCardTitle",
+        "tfCardHelpIcon"
+      ]
+    },
+    {
+      "id": "tfCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "tfCardHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/helpIcon"
+        },
+        "color": "#777777",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "tfCardHeaderRight",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomRight",
+        "menu": {
+          "path": "/topSelectorMenuItems"
+        }
+      },
+      "children": [
+        "tfCardDropdownTrigger"
+      ]
+    },
+    {
+      "id": "tfCardDropdownTrigger",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 cursor-pointer text-md text-on-surface-variant hover:text-primary transition-colors"
+      },
+      "children": [
+        "tfCardDropdownText",
+        "tfCardDropdownArrow"
+      ]
+    },
+    {
+      "id": "tfCardDropdownText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/selectedTop"
+        }
+      }
+    },
+    {
+      "id": "tfCardDropdownArrow",
+      "component": "Icon",
+      "props": {
+        "name": "chevron-down",
+        "color": "#777777",
+        "shape": "outline",
+        "className": "w-3 h-3"
+      }
+    },
+    {
+      "id": "tfCardChart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/terminalTrafficChart"
+          }
+        },
+        "className": "min-w-0 h-[188px]"
+      }
+    },
+    {
+      "id": "afCardHeader",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "afCardTitle",
+        "afCardHelpIcon"
+      ]
+    },
+    {
+      "id": "afCardTitle",
+      "component": "span",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "afCardHelpIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "/helpIcon"
+        },
+        "color": "#777777",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "afCardChart",
+      "component": "HillChart",
+      "props": {
+        "option": {
+          "data": {
+            "path": "/appTrafficChart"
+          }
+        },
+        "className": "min-w-0 h-[188px]"
+      }
+    },
+    {
+      "id": "odCardTitleRow",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2"
+      },
+      "children": [
+        "odCardTitleIcon",
+        "odCardTitleText"
+      ]
+    },
+    {
+      "id": "odCardTitleIcon",
+      "component": "Icon",
+      "props": {
+        "name": "clock",
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4"
+      }
+    },
+    {
+      "id": "odCardTitleText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "/cardTitle"
+        },
+        "className": "text-lg font-semibold text-on-surface"
+      }
+    },
+    {
+      "id": "odCardChart",
+      "component": "BarChart",
+      "props": {
+        "className": "min-w-0 h-[188px]",
+        "option": {
+          "data": {
+            "path": "/onlineDurationChart"
+          },
+          "direction": "vertical",
+          "xAxis": {
+            "data": "时长区间"
+          },
+          "yAxisTitle": {
+            "path": "/yAxisLabel"
+          }
+        }
+      }
+    },
+    {
+      "id": "tumTitle",
+      "component": "h2",
+      "props": {
+        "className": "text-lg font-semibold text-on-surface",
+        "value": {
+          "path": "/cardTitle"
+        }
+      }
+    },
+    {
+      "id": "tumToolbar",
+      "component": "div",
+      "props": {
+        "className": "flex items-center justify-between"
+      },
+      "children": [
+        "tumToolbarLeft",
+        "tumToolbarRight"
+      ]
+    },
+    {
+      "id": "tumToolbarLeft",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-[0.5rem]"
+      },
+      "children": [
+        "tumSearchInput",
+        "tumAdvancedSearchBtn"
+      ]
+    },
+    {
+      "id": "tumSearchInput",
+      "component": "Input",
+      "props": {
+        "value": {
+          "path": "/searchValue"
+        },
+        "placeholder": {
+          "path": "/searchPlaceholder"
+        },
+        "prefix": "search",
+        "className": "w-60"
+      }
+    },
+    {
+      "id": "tumAdvancedSearchBtn",
+      "component": "Button",
+      "props": {
+        "value": "高级搜索",
+        "types": "link",
+        "icon": "chevron-up",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "tumToolbarRight",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-[0.5rem]"
+      },
+      "children": [
+        "tumScanDropdown",
+        "tumUnbindBtn",
+        "tumBindBtn",
+        "tumGuardedListBtn",
+        "tumSpeedLimitListBtn",
+        "tumRefreshBtn"
+      ]
+    },
+    {
+      "id": "tumScanDropdown",
+      "component": "Dropdown",
+      "props": {
+        "trigger": [
+          "click"
+        ],
+        "placement": "bottomLeft",
+        "menu": [
+          {
+            "label": "快速扫描",
+            "key": "quickScan",
+            "icon": "zap"
+          },
+          {
+            "label": "深度扫描",
+            "key": "deepScan",
+            "icon": "scan-search"
+          },
+          {
+            "label": "定时扫描",
+            "key": "scheduledScan",
+            "icon": "clock"
+          }
+        ]
+      },
+      "children": [
+        "tumScanBtn"
+      ]
+    },
+    {
+      "id": "tumScanBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolbarButtons/scanButtonText"
+        },
+        "color": "primary",
+        "icon": "chevron-down",
+        "iconPlacement": "end"
+      }
+    },
+    {
+      "id": "tumUnbindBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolbarButtons/unbindButtonText"
+        }
+      }
+    },
+    {
+      "id": "tumBindBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolbarButtons/bindButtonText"
+        }
+      }
+    },
+    {
+      "id": "tumGuardedListBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolbarButtons/guardedListButtonText"
+        }
+      }
+    },
+    {
+      "id": "tumSpeedLimitListBtn",
+      "component": "Button",
+      "props": {
+        "value": {
+          "path": "/toolbarButtons/speedLimitListButtonText"
+        }
+      }
+    },
+    {
+      "id": "tumRefreshBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "/toolbarButtons/refreshIcon"
+        },
+        "shape": "circle"
+      }
+    },
+    {
+      "id": "tumTable",
+      "component": "Table",
+      "props": {
+        "rowKey": "id",
+        "dataSource": {
+          "path": "/tableRows"
+        },
+        "rowSelection": {
+          "type": "checkbox",
+          "selectedRowKeys": {
+            "path": "/selectedRowKeys"
+          }
+        },
+        "columns": [
+          {
+            "title": "终端名称",
+            "dataIndex": "terminalName",
+            "minWidth": 168,
+            "fixed": "start"
+          },
+          {
+            "title": "终端类型",
+            "dataIndex": "terminalType",
+            "minWidth": 88
+          },
+          {
+            "title": "IP地址",
+            "dataIndex": "ipAddress",
+            "minWidth": 123
+          },
+          {
+            "title": "MAC地址",
+            "dataIndex": "macAddress",
+            "minWidth": 151
+          },
+          {
+            "title": "VLAN",
+            "dataIndex": "vlan",
+            "minWidth": 80
+          },
+          {
+            "title": "厂商",
+            "dataIndex": "vendor",
+            "minWidth": 80
+          },
+          {
+            "title": "型号",
+            "dataIndex": "model",
+            "minWidth": 165
+          },
+          {
+            "title": "系统",
+            "dataIndex": "system",
+            "minWidth": 158
+          },
+          {
+            "title": "在线时长",
+            "dataIndex": "onlineDuration",
+            "minWidth": 95
+          },
+          {
+            "title": "接入时间",
+            "dataIndex": "accessTime",
+            "minWidth": 165
+          },
+          {
+            "title": "上行速率",
+            "dataIndex": "uploadSpeed",
+            "minWidth": 119
+          },
+          {
+            "title": "下行速率",
+            "dataIndex": "downloadSpeed",
+            "minWidth": 126
+          },
+          {
+            "title": "流量消耗",
+            "dataIndex": "trafficConsumption",
+            "minWidth": 88
+          },
+          {
+            "title": "接入设备",
+            "dataIndex": "accessDevice",
+            "minWidth": 109
+          },
+          {
+            "title": "守护",
+            "dataIndex": "guardianStatus",
+            "minWidth": 106
+          },
+          {
+            "title": "连接",
+            "dataIndex": "connectionType",
+            "minWidth": 137
+          },
+          {
+            "title": "操作",
+            "dataIndex": "operations",
+            "width": 80,
+            "fixed": "end",
+            "minWidth": 152
+          }
+        ],
+        "className": ""
+      },
+      "children": {
+        "path": "/tableRows",
+        "componentId": "tumRow"
+      }
+    },
+    {
+      "id": "tumRow",
+      "component": "TableRow",
+      "children": [
+        "tumRowTerminalName",
+        "tumRowTerminalType",
+        "tumRowIpAddress",
+        "tumRowMacAddress",
+        "tumRowVlan",
+        "tumRowVendor",
+        "tumRowModel",
+        "tumRowSystem",
+        "tumRowOnlineDuration",
+        "tumRowAccessTime",
+        "tumRowUploadSpeed",
+        "tumRowDownloadSpeed",
+        "tumRowTrafficConsumption",
+        "tumRowAccessDevice",
+        "tumRowGuardianStatus",
+        "tumRowConnectionType",
+        "tumRowOperations"
+      ],
+      "props": {}
+    },
+    {
+      "id": "tumRowTerminalName",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 whitespace-nowrap"
+      },
+      "children": [
+        "tumRowBrandIcon",
+        "tumRowTerminalLink"
+      ]
+    },
+    {
+      "id": "tumRowBrandIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "brandLogoIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-4 h-4 shrink-0 whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowTerminalLink",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "terminalName"
+        },
+        "href": {
+          "path": "terminalNameLink"
+        },
+        "className": "text-md text-on-surface hover:underline truncate whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowTerminalType",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "terminalType"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowIpAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "ipAddress"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowMacAddress",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "macAddress"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowVlan",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "vlan"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowVendor",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "vendor"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowModel",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "model"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowSystem",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "system"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowOnlineDuration",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "onlineDuration"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowAccessTime",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accessTime"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowUploadSpeed",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 whitespace-nowrap"
+      },
+      "children": [
+        "tumRowUploadIcon",
+        "tumRowUploadText"
+      ]
+    },
+    {
+      "id": "tumRowUploadIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "uploadSpeedIcon"
+        },
+        "color": "success",
+        "shape": "outline",
+        "className": "w-3 h-3 whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowUploadText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "uploadSpeed"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowDownloadSpeed",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-1 whitespace-nowrap"
+      },
+      "children": [
+        "tumRowDownloadIcon",
+        "tumRowDownloadText"
+      ]
+    },
+    {
+      "id": "tumRowDownloadIcon",
+      "component": "Icon",
+      "props": {
+        "name": {
+          "path": "downloadSpeedIcon"
+        },
+        "color": "primary",
+        "shape": "outline",
+        "className": "w-3 h-3 whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowDownloadText",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "downloadSpeed"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowTrafficConsumption",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "trafficConsumption"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowAccessDevice",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "accessDevice"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowGuardianStatus",
+      "component": "Tag",
+      "props": {
+        "value": {
+          "path": "guardianStatus"
+        },
+        "icon": {
+          "path": "guardianShieldIcon"
+        },
+        "color": {
+          "path": "guardianStatus"
+        },
+        "variant": "outlined",
+        "size": "small"
+      }
+    },
+    {
+      "id": "tumRowConnectionType",
+      "component": "span",
+      "props": {
+        "value": {
+          "path": "connectionType"
+        },
+        "className": "text-md text-on-surface whitespace-nowrap"
+      }
+    },
+    {
+      "id": "tumRowOperations",
+      "component": "div",
+      "props": {
+        "className": "flex items-center gap-2 whitespace-nowrap"
+      },
+      "children": [
+        "tumRowEditBtn",
+        "tumRowLinkBtn"
+      ]
+    },
+    {
+      "id": "tumRowEditBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "editIcon"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    },
+    {
+      "id": "tumRowLinkBtn",
+      "component": "Button",
+      "props": {
+        "icon": {
+          "path": "linkIcon"
+        },
+        "types": "link",
+        "size": "small"
+      }
+    }
+  ],
+  "state": {
+    "brandLogoIcon": "huawei",
+    "brandText": "华为坤灵",
+    "projectName": "智慧园区网络",
+    "notificationBadgeCount": 5,
+    "userAvatarImage": "https://randomuser.me/api/portraits/men/32.jpg",
+    "projectList": [
+      {
+        "label": "智慧园区网络",
+        "key": "smart-park"
+      },
+      {
+        "label": "企业数据中心",
+        "key": "enterprise-dc"
+      },
+      {
+        "label": "校园网络管理",
+        "key": "campus-net"
+      }
+    ],
+    "selectedMenuKeys": [
+      "terminal"
+    ],
+    "topMenuItems": [
+      {
+        "menuIcon": "layout-dashboard",
+        "menuName": "仪表盘",
+        "isActive": false,
+        "key": "dashboard"
+      },
+      {
+        "menuIcon": "network",
+        "menuName": "网络拓扑",
+        "isActive": false,
+        "key": "topology"
+      },
+      {
+        "menuIcon": "shield-check",
+        "menuName": "安全中心",
+        "isActive": false,
+        "key": "security"
+      },
+      {
+        "menuIcon": "file-text",
+        "menuName": "策略管理",
+        "isActive": false,
+        "key": "policy"
+      },
+      {
+        "menuIcon": "smartphone",
+        "menuName": "终端设备",
+        "isActive": true,
+        "key": "terminal"
+      },
+      {
+        "menuIcon": "activity",
+        "menuName": "流量分析",
+        "isActive": false,
+        "key": "traffic"
+      },
+      {
+        "menuIcon": "scroll-text",
+        "menuName": "日志审计",
+        "isActive": false,
+        "key": "audit"
+      },
+      {
+        "menuIcon": "settings",
+        "menuName": "系统设置",
+        "isActive": false,
+        "key": "settings"
+      }
+    ],
+    "bottomMenuItems": [
+      {
+        "menuIcon": "circle-help",
+        "menuName": "帮助文档",
+        "isActive": false,
+        "key": "help"
+      },
+      {
+        "menuIcon": "message-square",
+        "menuName": "用户反馈",
+        "isActive": false,
+        "key": "feedback"
+      }
+    ],
+    "cardTitle": "终端用户",
+    "totalValue": 12,
+    "totalLabel": "总数",
+    "terminalTypeChart": [
+      {
+        "name": "手机",
+        "value": 33.33
+      },
+      {
+        "name": "家居设备",
+        "value": 33.33
+      },
+      {
+        "name": "平板",
+        "value": 16.67
+      },
+      {
+        "name": "其他",
+        "value": 16.67
+      }
+    ],
+    "accessTypeChart": [
+      {
+        "name": "有线",
+        "value": 66.66
+      },
+      {
+        "name": "无线",
+        "value": 33.34
+      }
+    ],
+    "helpIcon": "circle-help",
+    "topSelectorOptions": [
+      "Top5",
+      "Top10"
+    ],
+    "topSelectorMenuItems": [
+      {
+        "label": "Top5",
+        "key": "top5"
+      },
+      {
+        "label": "Top10",
+        "key": "top10"
+      }
+    ],
+    "selectedTop": "Top5",
+    "terminalTrafficChart": [
+      {
+        "name": "iphone12",
+        "value": 1869,
+        "unit": "MB",
+        "macAddress": "A4:83:E7:2B:1C:F5"
+      },
+      {
+        "name": "oppo",
+        "value": 1016,
+        "unit": "MB",
+        "macAddress": "8C:16:45:D3:7A:E2"
+      },
+      {
+        "name": "mate70",
+        "value": 664,
+        "unit": "MB",
+        "macAddress": "5F:92:B1:C8:4D:A6"
+      },
+      {
+        "name": "iphone16",
+        "value": 167,
+        "unit": "MB",
+        "macAddress": "D3:07:E4:9A:1B:F8"
+      },
+      {
+        "name": "ipad",
+        "value": 167,
+        "unit": "MB",
+        "macAddress": "71:C5:F2:8E:3D:B4"
+      }
+    ],
+    "appTrafficChart": [
+      {
+        "name": "微信",
+        "value": 1869,
+        "unit": "MB"
+      },
+      {
+        "name": "支付宝",
+        "value": 1016,
+        "unit": "MB"
+      },
+      {
+        "name": "抖音",
+        "value": 664,
+        "unit": "MB"
+      },
+      {
+        "name": "淘宝",
+        "value": 167,
+        "unit": "MB"
+      },
+      {
+        "name": "微博",
+        "value": 167,
+        "unit": "MB"
+      }
+    ],
+    "yAxisLabel": "终端数",
+    "onlineDurationChart": [
+      {
+        "时长区间": "小于1h",
+        "终端数": 25
+      },
+      {
+        "时长区间": "1-3h",
+        "终端数": 68
+      },
+      {
+        "时长区间": "3-6h",
+        "终端数": 42
+      },
+      {
+        "时长区间": "6-8h",
+        "终端数": 85
+      },
+      {
+        "时长区间": "大于8h",
+        "终端数": 53
+      }
+    ],
+    "searchPlaceholder": "请输入搜索内容",
+    "searchValue": "",
+    "toolbarButtons": {
+      "scanButtonText": "立即扫描",
+      "unbindButtonText": "IP/MAC解绑",
+      "bindButtonText": "IP/MAC绑定",
+      "guardedListButtonText": "已守护列表",
+      "speedLimitListButtonText": "已限速列表",
+      "refreshIcon": "refresh-cw"
+    },
+    "selectedRowKeys": [],
+    "tableRows": [
+      {
+        "id": "row1",
+        "isSelected": false,
+        "brandLogoIcon": "smartphone",
+        "terminalName": "huawei",
+        "terminalNameLink": "#",
+        "terminalType": "手机",
+        "ipAddress": "192.168.1.1",
+        "macAddress": "0O:E0:FC:A3:7B:2D",
+        "vlan": 204,
+        "vendor": "Huawei",
+        "model": "Mate 60 Pro",
+        "system": "HarmonyOS 4.0",
+        "onlineDuration": "9min",
+        "accessTime": "2022-07-15 14:32:08",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "3.30Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "4.61Kbps",
+        "trafficConsumption": "3.4GB",
+        "accessDevice": "android",
+        "guardianShieldIcon": "shield-check",
+        "guardianStatus": "守护中",
+        "connectionType": "Wifi_5G-Office",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row2",
+        "isSelected": false,
+        "brandLogoIcon": "laptop",
+        "terminalName": "Dell-Workstation",
+        "terminalNameLink": "#",
+        "terminalType": "电脑",
+        "ipAddress": "192.168.1.22",
+        "macAddress": "B4:2E:99:F1:0C:A8",
+        "vlan": 100,
+        "vendor": "Dell",
+        "model": "Latitude 5540",
+        "system": "Windows 11 Pro",
+        "onlineDuration": "4h23min",
+        "accessTime": "2022-07-15 09:15:42",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "12.50Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "58.32Kbps",
+        "trafficConsumption": "8.7GB",
+        "accessDevice": "Windows",
+        "guardianShieldIcon": "shield-off",
+        "guardianStatus": "未守护",
+        "connectionType": "Eth_Switch-3F",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row3",
+        "isSelected": false,
+        "brandLogoIcon": "tablet-smartphone",
+        "terminalName": "iPad-Pro-12",
+        "terminalNameLink": "#",
+        "terminalType": "平板",
+        "ipAddress": "192.168.2.55",
+        "macAddress": "3A:F7:D2:E8:91:4C",
+        "vlan": 204,
+        "vendor": "Apple",
+        "model": "iPad Pro 12.9",
+        "system": "iPadOS 17.5",
+        "onlineDuration": "2h08min",
+        "accessTime": "2022-07-14 18:20:55",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "1.20Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "22.18Kbps",
+        "trafficConsumption": "1.2GB",
+        "accessDevice": "iOS",
+        "guardianShieldIcon": "shield-check",
+        "guardianStatus": "守护中",
+        "connectionType": "Wifi_5G-Meeting",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row4",
+        "isSelected": false,
+        "brandLogoIcon": "refrigerator",
+        "terminalName": "Smart-Fridge-01",
+        "terminalNameLink": "#",
+        "terminalType": "家居设备",
+        "ipAddress": "192.168.3.10",
+        "macAddress": "E6:1B:C4:5A:F3:79",
+        "vlan": 300,
+        "vendor": "Midea",
+        "model": "MS-520W",
+        "system": "RTOS 2.1",
+        "onlineDuration": "72h15min",
+        "accessTime": "2022-07-12 06:00:11",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "0.05Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "0.12Kbps",
+        "trafficConsumption": "45MB",
+        "accessDevice": "IoT_Gateway",
+        "guardianShieldIcon": "shield-off",
+        "guardianStatus": "未守护",
+        "connectionType": "Wifi_2.4G-IoT",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row5",
+        "isSelected": false,
+        "brandLogoIcon": "smartphone",
+        "terminalName": "OPPO-Find-X7",
+        "terminalNameLink": "#",
+        "terminalType": "手机",
+        "ipAddress": "192.168.1.88",
+        "macAddress": "9C:5A:DB:73:E2:F6",
+        "vlan": 204,
+        "vendor": "OPPO",
+        "model": "Find X7 Ultra",
+        "system": "Android 14",
+        "onlineDuration": "1h42min",
+        "accessTime": "2022-07-15 12:50:33",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "5.80Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "18.94Kbps",
+        "trafficConsumption": "2.1GB",
+        "accessDevice": "android",
+        "guardianShieldIcon": "shield-alert",
+        "guardianStatus": "待确认",
+        "connectionType": "Wifi_5G-Office",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row6",
+        "isSelected": false,
+        "brandLogoIcon": "monitor",
+        "terminalName": "iMac-Design-02",
+        "terminalNameLink": "#",
+        "terminalType": "电脑",
+        "ipAddress": "192.168.2.14",
+        "macAddress": "C2:4F:AE:81:B5:D0",
+        "vlan": 100,
+        "vendor": "Apple",
+        "model": "iMac 24-inch M3",
+        "system": "macOS Sonoma 14.5",
+        "onlineDuration": "6h55min",
+        "accessTime": "2022-07-15 08:05:19",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "8.45Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "102.30Kbps",
+        "trafficConsumption": "15.6GB",
+        "accessDevice": "macOS",
+        "guardianShieldIcon": "shield-check",
+        "guardianStatus": "守护中",
+        "connectionType": "Eth_Switch-2F",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row7",
+        "isSelected": false,
+        "brandLogoIcon": "watch",
+        "terminalName": "Apple-Watch-S9",
+        "terminalNameLink": "#",
+        "terminalType": "穿戴设备",
+        "ipAddress": "192.168.3.31",
+        "macAddress": "7D:A3:18:CF:42:9E",
+        "vlan": 300,
+        "vendor": "Apple",
+        "model": "Watch Series 9",
+        "system": "watchOS 10.5",
+        "onlineDuration": "18h30min",
+        "accessTime": "2022-07-14 20:02:47",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "0.15Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "0.82Kbps",
+        "trafficConsumption": "320MB",
+        "accessDevice": "watchOS",
+        "guardianShieldIcon": "shield-off",
+        "guardianStatus": "未守护",
+        "connectionType": "BT_Bridge-1F",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      },
+      {
+        "id": "row8",
+        "isSelected": false,
+        "brandLogoIcon": "printer",
+        "terminalName": "HP-LaserJet-Pro",
+        "terminalNameLink": "#",
+        "terminalType": "打印设备",
+        "ipAddress": "192.168.2.200",
+        "macAddress": "F1:6E:B2:94:D8:3A",
+        "vlan": 100,
+        "vendor": "HP",
+        "model": "LaserJet Pro M404dn",
+        "system": "Embedded Linux 3.8",
+        "onlineDuration": "120h00min",
+        "accessTime": "2022-07-10 09:00:00",
+        "uploadSpeedIcon": "arrow-up",
+        "uploadSpeed": "0.02Kbps",
+        "downloadSpeedIcon": "arrow-down",
+        "downloadSpeed": "0.55Kbps",
+        "trafficConsumption": "18MB",
+        "accessDevice": "Linux",
+        "guardianShieldIcon": "shield-check",
+        "guardianStatus": "守护中",
+        "connectionType": "Eth_Switch-3F",
+        "editIcon": "pencil",
+        "linkIcon": "link"
+      }
+    ]
+  }
+}
