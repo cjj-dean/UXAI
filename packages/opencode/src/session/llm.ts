@@ -34,6 +34,7 @@ type GenerateResult = Awaited<ReturnType<typeof generateText>>
 
 const _llmRound = new Map<string, number>()
 const _llmTrace = new Map<string, { dir: string; base: string; agent: string; sessionID: string }>()
+const _llmRoundTiming = new Map<string, { reasoningEndTs: number; textStartTs: number }[]>()
 
 function pad2(n: number) {
   return String(n).padStart(2, "0")
@@ -55,11 +56,28 @@ async function* tapOutput(
   trace: { dir: string; base: string; agent: string; sessionID: string },
 ): AsyncGenerator<Event> {
   let text = ""
+  let reasoningEndTs = 0
+  let textStartTs = 0
+  let hasSeenText = false
   for await (const event of source) {
     const e = event as unknown as Record<string, unknown>
-    if (e.type === "text-delta" && typeof e.text === "string") text += e.text
+    if (e.type === "text-delta" && typeof e.text === "string") {
+      if (!hasSeenText) {
+        hasSeenText = true
+        textStartTs = Date.now()
+      }
+      text += e.text
+    }
+    if (e.type === "reasoning-end" && !reasoningEndTs) {
+      reasoningEndTs = Date.now()
+    }
     yield event
   }
+  if (!reasoningEndTs && textStartTs) reasoningEndTs = textStartTs
+  if (!textStartTs && reasoningEndTs) textStartTs = reasoningEndTs
+  const timings = _llmRoundTiming.get(trace.sessionID) ?? []
+  timings.push({ reasoningEndTs, textStartTs })
+  _llmRoundTiming.set(trace.sessionID, timings)
   // Beautify JSON output: try to extract JSON and pretty-print
   let display = text
   let content = "" // extracted content text for separate file
@@ -78,6 +96,8 @@ async function* tapOutput(
     sessionID: trace.sessionID,
     timestamp: new Date().toISOString(),
     text: display,
+    reasoningEndTs: reasoningEndTs || undefined,
+    textStartTs: textStartTs || undefined,
   })
   // Also write extracted content as a standalone formatted file
   if (content) {
@@ -600,7 +620,7 @@ const live: Layer.Layer<
             const isProto = input.agent.name.startsWith("proto_") && input.agent.name !== "proto_planner_create"
             let source: AsyncIterable<Event> = result.fullStream
             if (trace) source = tapOutput(source, trace)
-            if (isProto) source = dropReasoning(source)
+            // if (isProto) source = dropReasoning(source)
             return Stream.fromAsyncIterable(source, (e) => (e instanceof Error ? e : new Error(String(e))))
           }),
         ),
@@ -639,6 +659,10 @@ export function hasToolCalls(messages: ModelMessage[]): boolean {
     }
   }
   return false
+}
+
+export function getRoundTimings(sessionID: string): { reasoningEndTs: number; textStartTs: number }[] {
+  return _llmRoundTiming.get(sessionID) ?? []
 }
 
 export * as LLM from "./llm"

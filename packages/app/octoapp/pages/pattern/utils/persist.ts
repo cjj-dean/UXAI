@@ -227,14 +227,24 @@ export async function deletePatternVersion(
 
 // ─── Debug 日志收集（内存累积，管线结束后注入版本 JSON） ───
 
+export type RoundTiming = {
+  round: number
+  tsStart: number
+  tsEnd: number
+  reasoningEndTs: number
+  textStartTs: number
+}
+
 export type LogEntry = {
   idx: number
   ts: number
+  tsStart: number
   agent: string
   sessionId: string
   input: string
   output: unknown
   parsed: unknown
+  rounds: RoundTiming[]
 }
 
 export type SessionDebugLog = {
@@ -247,6 +257,7 @@ export type SessionDebugLog = {
 let _current: SessionDebugLog | null = null
 let _entryIdx = 0
 const _sessionIdxMap = new Map<string, number>()
+const _agentStartMap = new Map<string, number>()
 
 export function logStartSession(sessionId: string, userInput: string) {
   _current = {
@@ -257,13 +268,22 @@ export function logStartSession(sessionId: string, userInput: string) {
   }
   _entryIdx = 0
   _sessionIdxMap.clear()
+  _agentStartMap.clear()
 }
 
-export function logAgentCall(agent: string, sessionId: string, input: string, output: unknown) {
+export function logAgentStart(agent: string, sessionId: string) {
+  if (!_current) return
+  _agentStartMap.set(agent + ":" + sessionId, Date.now())
+}
+
+export function logAgentCall(agent: string, sessionId: string, input: string, output: unknown, rounds?: RoundTiming[]) {
   if (!_current) return
   const idx = ++_entryIdx
-  _current.entries.push({ idx, ts: Date.now(), agent, sessionId, input, output, parsed: null })
+  const key = agent + ":" + sessionId
+  const tsStart = _agentStartMap.get(key) ?? Date.now()
+  _current.entries.push({ idx, ts: Date.now(), tsStart, agent, sessionId, input, output, parsed: null, rounds: rounds ?? [] })
   _sessionIdxMap.set(sessionId, idx)
+  _agentStartMap.delete(key)
 }
 
 export function logAgentParsed(sessionId: string, parsed: unknown) {
@@ -284,4 +304,5 @@ export function clearDebugLog() {
   _current = null
   _entryIdx = 0
   _sessionIdxMap.clear()
+  _agentStartMap.clear()
 }
