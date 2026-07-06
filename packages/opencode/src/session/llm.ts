@@ -56,6 +56,7 @@ async function* tapOutput(
   trace: { dir: string; base: string; agent: string; sessionID: string },
 ): AsyncGenerator<Event> {
   let text = ""
+  let reasoning = ""
   let reasoningEndTs = 0
   let textStartTs = 0
   let hasSeenText = false
@@ -67,6 +68,9 @@ async function* tapOutput(
         textStartTs = Date.now()
       }
       text += e.text
+    }
+    if (e.type === "reasoning-delta" && typeof e.text === "string") {
+      reasoning += e.text
     }
     if (e.type === "reasoning-end" && !reasoningEndTs) {
       reasoningEndTs = Date.now()
@@ -99,12 +103,18 @@ async function* tapOutput(
     reasoningEndTs: reasoningEndTs || undefined,
     textStartTs: textStartTs || undefined,
   })
-  // Also write extracted content as a standalone formatted file
   if (content) {
     try {
       const file = path.join(trace.dir, `${trace.base}_llm_output.md`)
       await mkdir(trace.dir, { recursive: true })
       await writeFile(file, content, "utf-8")
+    } catch { /* best-effort */ }
+  }
+  if (reasoning) {
+    try {
+      const file = path.join(trace.dir, `${trace.base}_llm_reasoning.md`)
+      await mkdir(trace.dir, { recursive: true })
+      await writeFile(file, reasoning, "utf-8")
     } catch { /* best-effort */ }
   }
 }
@@ -769,16 +779,26 @@ const live: Layer.Layer<
                 display = match ? display.replace(raw, formatted) : formatted
                 content = formatted
               } catch { /* not JSON */ }
+              const reasoningText = result.reasoning.map((r) => (typeof r.text === "string" ? r.text : "")).join("")
+              const tsNow = Date.now()
               void writeTrace(trace.dir, trace.base, "llm_output", {
                 agent: trace.agent,
                 sessionID: trace.sessionID,
                 timestamp: new Date().toISOString(),
                 text: display,
+                reasoningEndTs: reasoningText ? tsNow : undefined,
+                textStartTs: tsNow,
               })
               if (content) {
                 try {
                   const file = path.join(trace.dir, `${trace.base}_llm_output.md`)
                   void mkdir(trace.dir, { recursive: true }).then(() => writeFile(file, content, "utf-8"))
+                } catch { /* best-effort */ }
+              }
+              if (reasoningText) {
+                try {
+                  const file = path.join(trace.dir, `${trace.base}_llm_reasoning.md`)
+                  void mkdir(trace.dir, { recursive: true }).then(() => writeFile(file, reasoningText, "utf-8"))
                 } catch { /* best-effort */ }
               }
             }
