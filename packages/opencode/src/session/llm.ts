@@ -412,8 +412,8 @@ const live: Layer.Layer<
         const round = (_llmRound.get(input.sessionID) ?? 0) + 1
         _llmRound.set(input.sessionID, round)
         const d = new Date()
-        const base = `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}_${pad2(d.getHours())}${pad2(d.getMinutes())}${pad2(d.getSeconds())}_${input.agent.name}_${input.sessionID.slice(-8)}_round${round}`
-        const traceDir = path.join(yield* InstanceState.directory, "pattern", "workflow", workflowID)
+        const base = `round${round}`
+        const traceDir = path.join(yield* InstanceState.directory, "pattern", "workflow", workflowID, input.agent.name, input.sessionID.slice(-8))
         l.info("llm-trace", { agent: input.agent.name, sessionID: input.sessionID, workflowID, round, dir: traceDir })
         _llmTrace.set(input.sessionID, { dir: traceDir, base, agent: input.agent.name, sessionID: input.sessionID })
         void writeTrace(traceDir, base, "llm_input", {
