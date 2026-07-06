@@ -62,6 +62,7 @@ export const Info = Schema.Struct({
   prompt: Schema.optional(Schema.String),
   options: Schema.Record(Schema.String, Schema.Unknown),
   steps: Schema.optional(Schema.Finite),
+  block: Schema.optional(Schema.Boolean),
   skills: Schema.optional(Schema.Array(Schema.String)),
   mcp: Schema.optional(Schema.Array(Schema.String)),
 })
@@ -298,6 +299,7 @@ export const layer = Layer.effect(
             options: {},
             mode: "primary",
             native: false,
+            block: false,
           },
           octo_pattern_module: {
             name: "octo_pattern_module",
@@ -463,6 +465,7 @@ export const layer = Layer.effect(
           item.hidden = value.hidden ?? item.hidden
           item.name = value.name ?? item.name
           item.steps = value.steps ?? item.steps
+          item.block = value.block ?? item.block
           item.skills = value.skills ?? item.skills
           item.options = mergeDeep(item.options, value.options ?? {})
           item.permission = Permission.merge(item.permission, Permission.fromConfig(value.permission ?? {}))

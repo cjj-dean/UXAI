@@ -271,6 +271,7 @@ function llm() {
           return stream.pipe(Stream.mapEffect((event) => Effect.succeed(event)))
         },
         generate: () => Effect.die("not implemented"),
+        generateEvents: () => Stream.empty,
       }),
     ),
   }

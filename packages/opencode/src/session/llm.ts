@@ -146,6 +146,7 @@ export type Event = Result["fullStream"] extends AsyncIterable<infer T> ? T : ne
 export interface Interface {
   readonly stream: (input: StreamInput) => Stream.Stream<Event, unknown>
   readonly generate: (input: StreamInput) => Effect.Effect<GenerateResult, unknown>
+  readonly generateEvents: (input: StreamInput) => Stream.Stream<Event, unknown>
 }
 
 export class Service extends Context.Service<Service, Interface>()("@opencode/LLM") {}
@@ -626,7 +627,168 @@ const live: Layer.Layer<
         ),
       )
 
-    return Service.of({ stream, generate })
+    const generateEvents: Interface["generateEvents"] = (input) =>
+      Stream.scoped(
+        Stream.unwrap(
+          Effect.gen(function* () {
+            const ctrl = yield* Effect.acquireRelease(
+              Effect.sync(() => new AbortController()),
+              (ctrl) => Effect.sync(() => ctrl.abort()),
+            )
+
+            const built = yield* buildParams({ ...input, abort: ctrl.signal })
+
+            const trace = _llmTrace.get(input.sessionID)
+            const isProto = input.agent.name.startsWith("proto_") && input.agent.name !== "proto_planner_create"
+
+            const result = yield* Effect.tryPromise(() =>
+              generateText({
+                temperature: built.params.temperature,
+                topP: built.params.topP,
+                topK: built.params.topK,
+                providerOptions: ProviderTransform.providerOptions(input.model, built.params.options),
+                activeTools: Object.keys(built.tools).filter((x) => x !== "invalid"),
+                tools: built.tools,
+                toolChoice: input.toolChoice,
+                maxOutputTokens: built.params.maxOutputTokens,
+                abortSignal: ctrl.signal,
+                headers: {
+                  ...(input.model.providerID.startsWith("opencode")
+                    ? {
+                        "x-opencode-project": built.opencodeProjectID,
+                        "x-opencode-session": input.sessionID,
+                        "x-opencode-request": input.user.id,
+                        "x-opencode-client": Flag.OPENCODE_CLIENT,
+                        "User-Agent": `opencode/${InstallationVersion}`,
+                      }
+                    : {
+                        "x-session-affinity": input.sessionID,
+                        ...(input.parentSessionID ? { "x-parent-session-id": input.parentSessionID } : {}),
+                        "User-Agent": `opencode/${InstallationVersion}`,
+                      }),
+                  ...input.model.headers,
+                  ...built.headers,
+                },
+                maxRetries: input.retries ?? 0,
+                messages: built.messages,
+                model: wrapLanguageModel({
+                  model: built.language,
+                  middleware: [
+                    {
+                      specificationVersion: "v3" as const,
+                      async transformParams(args) {
+                        // @ts-expect-error
+                        args.params.prompt = ProviderTransform.message(args.params.prompt, input.model, built.options)
+                        return args.params
+                      },
+                    },
+                  ],
+                }),
+                experimental_telemetry: {
+                  isEnabled: built.cfg.experimental?.openTelemetry,
+                  functionId: "session.llm.generate",
+                  tracer: built.telemetryTracer,
+                  metadata: {
+                    userId: built.cfg.username ?? "unknown",
+                    sessionId: input.sessionID,
+                  },
+                },
+              }),
+            )
+
+            const events: Event[] = [
+              { type: "start" },
+              { type: "start-step", request: result.request, warnings: result.warnings ?? [] },
+            ]
+
+            if (result.reasoning.length > 0 && !isProto) {
+              for (const r of result.reasoning) {
+                const id = (r as { id?: string }).id ?? `reasoning-${Math.random().toString(36).slice(2)}`
+                events.push({ type: "reasoning-start", id, providerMetadata: r.providerMetadata })
+                if (r.text) events.push({ type: "reasoning-delta", id, text: r.text, providerMetadata: r.providerMetadata })
+                events.push({ type: "reasoning-end", id, providerMetadata: r.providerMetadata })
+              }
+            }
+
+            if (result.text) {
+              const textId = `text-${Math.random().toString(36).slice(2)}`
+              events.push({ type: "text-start", id: textId })
+              events.push({ type: "text-delta", id: textId, text: result.text })
+              events.push({ type: "text-end", id: textId })
+            }
+
+            for (const toolCall of result.toolCalls) {
+              events.push({
+                type: "tool-input-start",
+                id: toolCall.toolCallId,
+                toolName: toolCall.toolName,
+              })
+              events.push({ type: "tool-input-end", id: toolCall.toolCallId })
+              events.push({
+                type: "tool-call",
+                toolCallId: toolCall.toolCallId,
+                toolName: toolCall.toolName,
+                input: toolCall.input,
+              } as unknown as Event)
+            }
+
+            for (const toolResult of result.toolResults) {
+              events.push({
+                type: "tool-result",
+                toolCallId: toolResult.toolCallId,
+                toolName: toolResult.toolName,
+                output: toolResult.output,
+              } as unknown as Event)
+            }
+
+            events.push({
+              type: "finish-step",
+              response: result.response,
+              usage: result.usage,
+              finishReason: result.finishReason,
+              rawFinishReason: result.rawFinishReason,
+              providerMetadata: undefined,
+            })
+
+            events.push({
+              type: "finish",
+              finishReason: result.finishReason,
+              rawFinishReason: result.rawFinishReason,
+              totalUsage: result.totalUsage,
+            })
+
+            if (trace) {
+              let text = result.text
+              let display = text
+              let content = ""
+              try {
+                const match = display.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/)
+                const raw = match ? match[1] : display
+                const parsed = JSON.parse(raw)
+                const formatted = JSON.stringify(parsed, null, 2)
+                display = match ? display.replace(raw, formatted) : formatted
+                content = formatted
+              } catch { /* not JSON */ }
+              void writeTrace(trace.dir, trace.base, "llm_output", {
+                agent: trace.agent,
+                sessionID: trace.sessionID,
+                timestamp: new Date().toISOString(),
+                text: display,
+              })
+              if (content) {
+                try {
+                  const file = path.join(trace.dir, `${trace.base}_llm_output.md`)
+                  void mkdir(trace.dir, { recursive: true }).then(() => writeFile(file, content, "utf-8"))
+                } catch { /* best-effort */ }
+              }
+            }
+
+            return Stream.fromIterable(events)
+          }),
+        ),
+      )
+
+    return Service.of({ stream, generate, generateEvents })
   }),
 )
 
