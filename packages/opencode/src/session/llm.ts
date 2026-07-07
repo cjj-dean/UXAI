@@ -847,4 +847,8 @@ export function getRoundTimings(sessionID: string): { reasoningEndTs: number; te
   return _llmRoundTiming.get(sessionID) ?? []
 }
 
+export function getTraceDir(sessionID: string): string | undefined {
+  return _llmTrace.get(sessionID)?.dir
+}
+
 export * as LLM from "./llm"

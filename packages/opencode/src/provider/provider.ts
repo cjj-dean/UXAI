@@ -1,6 +1,8 @@
 import os from "os"
+import nodeFs from "fs"
 import fuzzysort from "fuzzysort"
 import { Config } from "@/config/config"
+import { LLM } from "@/session/llm"
 import { mapValues, mergeDeep, omit, pickBy, sortBy } from "remeda"
 import { NoSuchModelError, type Provider as SDK } from "ai"
 import * as Log from "@opencode-ai/core/util/log"
@@ -1621,6 +1623,34 @@ const layer: Layer.Layer<
               opts.body = JSON.stringify(body)
             }
           }
+
+          try {
+            if (opts.method === "POST" && opts.body) {
+              const hdrs = opts.headers instanceof Headers
+                ? Object.fromEntries(opts.headers.entries())
+                : Array.isArray(opts.headers)
+                  ? Object.fromEntries(opts.headers as [string, string][])
+                  : (opts.headers as Record<string, string> | undefined) ?? {}
+              const sessionID = hdrs["x-opencode-session"] ?? hdrs["x-session-affinity"]
+              const traceDir = sessionID ? LLM.getTraceDir(sessionID) : undefined
+              if (traceDir) {
+                const timestamp = new Date().toISOString().replace(/[:.]/g, "-")
+                const logData = {
+                  timestamp: new Date().toISOString(),
+                  providerID: model.providerID,
+                  modelID: model.id,
+                  npm: model.api.npm,
+                  url: typeof input === "string" ? input : input instanceof URL ? input.toString() : String(input),
+                  method: opts.method ?? "POST",
+                  headers: hdrs,
+                  body: JSON.parse(opts.body as string),
+                }
+                const logPath = path.join(traceDir, `llm-request-${timestamp}.json`)
+                nodeFs.mkdirSync(traceDir, { recursive: true })
+                nodeFs.writeFileSync(logPath, JSON.stringify(logData, null, 2), "utf-8")
+              }
+            }
+          } catch {}
 
           const res = await fetchFn(input, {
             ...opts,
