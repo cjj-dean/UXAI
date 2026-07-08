@@ -25,6 +25,8 @@ type ProtoModuleCreateInput = {
   layoutPlanner: any
   // 意图扩展结论
   intentDescription: any
+  // 预加载的组件 API 文档（由 proto_component_lookup + loadComponentDocs 程序化生成）
+  componentDocs?: string
   // 子 session 创建回调
   onSessionCreated?: (childSessionID: string) => void
 }
@@ -41,10 +43,11 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     elementId,
     layoutPlanner,
     intentDescription,
+    componentDocs,
     onSessionCreated 
   } = input
   // 组装输入提示词
-  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput)
+  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput, componentDocs)
   console.log("----- 模块渲染Agent开始执行 ----- ");
   const startTime = Date.now()
   // 执行模块渲染
@@ -73,7 +76,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
 }
 
 // 组装模块生成的输入文本
-function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string) {
+function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string, componentDocs?: string) {
   let layoutDesc = intentDescription.layoutDescription ?? "";
   let sections = intentDescription.sections ?? [];
   let sectionsStr = JSON.stringify(sections, null, 2);
@@ -93,6 +96,11 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   let constraintsStr = constraints.length
     ? constraints.map((c: any) => `${c.type}:${c.value} (${c.description})`).join("; ")
     : "无";
+
+  let componentDocsSection = ""
+  if (componentDocs) {
+    componentDocsSection = `\n\n  [组件 API 文档（已预加载，无需调用工具）:] ==================================\n  ${componentDocs}\n\n  严格按照以上文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。`
+  }
 
   let humanMessage: string;
   humanMessage = `请为以下模块生成 A2UI JSON：
@@ -114,15 +122,13 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
 
   [需要被渲染模块的根节点:] ${elementId}
    [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
-
+  ${componentDocsSection}
   **CRITICAL — Path 语法约束：**
   - 数据绑定 path 禁止使用 ".."（目录回溯语法），如 "/menuItems/0/../8" 不会解析。
   - 两个不同区域引用同一数据源时（如"顶部 8 个图标"+"底部 2 个图标"），数据必须预先拆分为两个独立数组（如 topMenuItems / bottomMenuItems），分别绑定各自的 path。
   - 正确示例：{ "path": "/topMenuItems" } 和 { "path": "/bottomMenuItems" }
   - 错误示例：{ "path": "/menuItems/0/../8" }
 
-  如果需要使用 Section 和 Icon 以外的组件，调用 \`load_components_docs\` 工具查询 API（只有一次机会，一次性传入全部组件名）。
-  如果只需要 Section 和 Icon，无需调用任何工具，直接输出 JSON。
-  无论是否调用工具，你的最终回复必须是一个纯 JSON 对象（以 { 开头，以 } 结尾），禁止输出思考过程、分析或任何自然语言。`;
+  你的最终回复必须是一个纯 JSON 对象（以 { 开头，以 } 结尾），禁止输出思考过程、分析或任何自然语言。`;
   return humanMessage;
 }

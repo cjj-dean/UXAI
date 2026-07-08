@@ -3,7 +3,9 @@ import proto_triage from "../agents/proto_triage"
 import proto_planner_create from "../agents/proto_planner_create"
 import proto_planner_modify from "../agents/proto_planner_modify"
 import proto_module_create from "../agents/proto_module_create"
-import proto_module_modify from "../agents/proto_module_modify" 
+import proto_module_modify from "../agents/proto_module_modify"
+import proto_component_lookup from "../agents/proto_component_lookup"
+import { loadComponentDocs } from "../utils/load_component_docs"
 import { mergeModules } from "../agents/merge"
 
 type ProtoModifyJsonInput = {
@@ -66,7 +68,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
         const oldSlots = ((lastPlanner.slots ?? lastPlanner.layout_planner?.slots) as Array<{ section_id: string; element_id: string }>) ?? []
         const oldElementBySection = new Map(oldSlots.map((s) => [s.section_id, s.element_id]))
 
-        const modulePromises = modifyResult.output.slots.map((slot) => {
+        const modulePromises = modifyResult.output.slots.map(async (slot) => {
             const findPrevModule = () => {
                 const byNewId = prevModules.find((m: any) => m.rootId === slot.element_id)
                 if (byNewId) return byNewId
@@ -74,7 +76,6 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                 if (oldId && oldId !== slot.element_id) {
                     return prevModules.find((m: any) => m.rootId === oldId) ?? null
                 }
-                // 沿旧 planner 元素树向上查找父元素匹配
                 const oldElements = (lastPlanner.elements ?? []) as Array<{ id: string; children?: string[] }>
                 const childParentMap = new Map<string, string>()
                 for (const el of oldElements) {
@@ -97,6 +98,18 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
             if (slot.operation === "none") {
                 return findPrevModule() ?? null
             }
+
+            const lookupResult = await proto_component_lookup({
+                ...inputCtx,
+                sectionId: slot.section_id,
+                elementId: slot.element_id,
+                layoutPlanner: modifyResult.output as unknown as Record<string, unknown>,
+                intentDescription: updatedIntent as any,
+            })
+            console.log(`[modify_json_ai] lookupResult: section_id=${slot.section_id}, component_names=${JSON.stringify(lookupResult.component_names)}`)
+            const componentDocs = lookupResult.component_names.length > 0 ? await loadComponentDocs(lookupResult.component_names) : ""
+            console.log(`[modify_json_ai] loadComponentDocs 结果: docs长度=${componentDocs.length}`)
+
             // 新增模块
             if (slot.operation === "create") {
                 return proto_module_create({
@@ -106,6 +119,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                     elementId: slot.element_id,
                     layoutPlanner: modifyResult.output as unknown as Record<string, unknown>,
                     intentDescription: updatedIntent as any,
+                    componentDocs,
                 }).then((r) => r.ui_json)
             }
             // 修改模块
@@ -122,6 +136,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                         originModules: originModule,
                         modifications: modAction as unknown as Record<string, unknown>,
                         intentDescription: updatedIntent as any,
+                        componentDocs,
                     },
                 }).then((r) => r.ui_json)
             }

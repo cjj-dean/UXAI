@@ -234,6 +234,8 @@ export function registerIpcHandlers(deps: Deps) {
     }
   })
 
+  ipcMain.handle("get-home-dir", () => homedir())
+
   ipcMain.handle("read-clipboard-image", () => {
     const image = clipboard.readImage()
     if (image.isEmpty()) return null

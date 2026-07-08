@@ -2,6 +2,8 @@ import proto_intent from "../agents/proto_intent"
 import proto_intent_audit from "../agents/proto_intent_audit"
 import proto_planner_create from "../agents/proto_planner_create"
 import proto_module_create from "../agents/proto_module_create"
+import proto_component_lookup from "../agents/proto_component_lookup"
+import { loadComponentDocs } from "../utils/load_component_docs"
 import { mergeModules } from "../agents/merge"
 import layoutFixer from "../agents/layout_fixer_agent"
 import { validatePlannerOutput, formatValidationFeedback } from "../agents/planner_validator"
@@ -75,7 +77,26 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
       }
     }
           
-    // 第四步：并行生成 A2UI JSON
+    // 第四步：并行查询每个 slot 需要的组件，程序化加载组件文档
+    const lookupResults = await Promise.all(
+        (planner.layout_planner.slots as Array<any>).map(slot =>
+            proto_component_lookup({
+                ...inputCtx,
+                sectionId: slot.section_id,
+                elementId: slot.element_id,
+                layoutPlanner: planner.layout_planner,
+                intentDescription: intentResult.intent_description
+            })
+        )
+    )
+    const docsMap = new Map(await Promise.all(lookupResults.map(async r => {
+        console.log(`[create_json] lookupResult: element_id=${r.element_id}, component_names=${JSON.stringify(r.component_names)}`)
+        const docs = r.component_names.length > 0 ? await loadComponentDocs(r.component_names) : ""
+        console.log(`[create_json] loadComponentDocs 结果: element_id=${r.element_id}, docs长度=${docs.length}`)
+        return [r.element_id, docs] as [string, string]
+    })))
+
+    // 第五步：并行生成 A2UI JSON
     const modules = await Promise.all(
         (planner.layout_planner.slots as Array<any>).map(slot =>
             proto_module_create({
@@ -84,12 +105,13 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
                 sectionId: slot.section_id,
                 elementId: slot.element_id,
                 layoutPlanner: planner.layout_planner,
-                intentDescription: intentResult.intent_description
+                intentDescription: intentResult.intent_description,
+                componentDocs: docsMap.get(slot.element_id) ?? ""
             }).then(r => r.ui_json)
         )
     )
 
-    // 第五步：合并完整UI JSON
+    // 第六步：合并完整UI JSON
     const merged = mergeModules(
         { 
             rootId: planner.layout_planner.rootId as string, 
@@ -99,7 +121,7 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         planner.layout_planner.slots as any,
     )
 
-    // 第六步：布局修正（算法修正，非LLM）
+    // 第七步：布局修正（算法修正，非LLM）
     const [fixed, fixerLog] = layoutFixer(merged as any)
     if (fixerLog.length) console.log("[LayoutFixer] 日志:\n" + fixerLog.join("\n"))
 

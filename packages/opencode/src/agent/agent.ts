@@ -28,6 +28,7 @@ import {
   PROMPT_PROTO_PLANNER_CREATE,
   PROMPT_PROTO_PLANNER_MODIFY,
   PROMPT_PROTO_TRIAGE,
+  PROMPT_PROTO_COMPONENT_LOOKUP,
 } from "./proto"
 import { Permission } from "@/permission"
 import { mergeDeep, pipe, sortBy, values } from "remeda"
@@ -385,18 +386,17 @@ export const layer = Layer.effect(
             name: "proto_module_create",
             description: "Proto module create agent.",
             prompt: PROMPT_PROTO_MODULE_CREATE,
-            permission: Permission.fromConfig({ "*": "deny", load_components_docs: "allow" }),
+            permission: Permission.fromConfig({ "*": "deny" }),
             options: {},
             mode: "primary",
             native: false,
             temperature: 0.0,
-            steps: 2,
           },
           proto_module_modify: {
             name: "proto_module_modify",
             description: "Proto module modify agent.",
             prompt: PROMPT_PROTO_MODULE_MODIFY,
-            permission: Permission.fromConfig({ "*": "deny", load_components_docs: "allow" }),
+            permission: Permission.fromConfig({ "*": "deny" }),
             options: {},
             mode: "primary",
             native: false,
@@ -435,6 +435,16 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.1,
+          },
+          proto_component_lookup: {
+            name: "proto_component_lookup",
+            description: "Component lookup specialist agent for A2UI generative UI system.",
+            prompt: PROMPT_PROTO_COMPONENT_LOOKUP,
+            permission: Permission.fromConfig({ "*": "deny" }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.0,
           },
         }
 

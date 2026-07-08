@@ -11,6 +11,7 @@ export interface ModuleModifyInput {
   originModules: Record<string, unknown>
   modifications: Record<string, unknown>
   intentDescription?: Record<string, unknown>
+  componentDocs?: string
 }
 
 export interface ModuleModifyResult {
@@ -107,6 +108,15 @@ function buildHumanMessage(input: ModuleModifyInput): string {
       ``,
       `[更新后的页面意图] ===============`,
       JSON.stringify(input.intentDescription),
+    )
+  }
+  if (input.componentDocs) {
+    lines.push(
+      ``,
+      `[组件 API 文档（已预加载，无需调用工具）:] ===============`,
+      input.componentDocs,
+      ``,
+      `严格按照以上文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。`,
     )
   }
   return lines.join("\n")

@@ -58,8 +58,5 @@
   13. **Root ClassName Immutability**: NEVER alter the root element's `props.className`. You may ONLY populate its `children` array.
 
 #Tool Use Constraint: 
-   `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需通过工具加载。
-   其他组件必须使用 `load_components_docs` 工具:
-   你必须确定了需要用到哪些组件（如 Table, Tabs, Button），你必须且只能调用 `load_components_docs` 工具，并将组件名称作为数组传入（例如 ["Table", "Tabs", "Button"]）。
-   仔细阅读工具返回的 API 和 Example 组合，严格按照返回的格式生成最终的 JSON。严禁依靠记忆编造任何未在文档中出现的属性。
-   不可以遗漏组件，比如要使用Table组件，改组件必须使用`load_components_docs` 工具查询使用方法！遗漏未查看文档的组件，会使本agent出现重大错误！
+   `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需额外加载。
+   其他组件的 API 文档已预加载到 prompt 中（[组件 API 文档] 区段），请严格按照文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。

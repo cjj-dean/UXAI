@@ -25,8 +25,8 @@
       - **Data Controls:** Search bars, filters, and sorting tabs for collections.
       - **Visual Semantics:** Status badges, star ratings, and contextual **Lucide icons** for raw data.
   3. **Component Mapping & API Retrieval:** NEVER hallucinate APIs. 
-    - **Manifest Extraction:** Compile a definitive list of all required components based on the planned UI (Steps 1 & 2).
-    - **Function Calling:** MUST STRICTLY use the designated **`load_components_docs`** tool to retrieve the exact API schemas, and code examples before generating JSON. [CRITICAL!]
+     - **Manifest Extraction:** Compile a definitive list of all required components based on the planned UI (Steps 1 & 2).
+     - **Pre-loaded Docs:** Component API docs are already injected into the prompt — read them carefully and follow the exact API schema. Do NOT rely on memory.
   4. **Synthesis & Styling:** 
     - Translate the strategy into the UI JSON, strictly the **A2UI JSON Protocol**. 
     - Inject the enriched data payloads into their respective nodes.
@@ -130,8 +130,5 @@
      反面教材：用户写 "Top5 dropdown选择器" → 不能用 `Segmented`；用户写 "侧栏菜单" → 不能用 `Collapse`；用户写 "弹窗" → 不能用 `Dropdown`。**用户用词是契约，不是建议**。设计系统里的样式映射规则只用于"用户没指定组件"时做默认选择。
 
 #Tool Use Constraint: 
-   `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需通过工具加载。
-   其他组件必须使用 `load_components_docs` 工具（只有一次调用机会！）:
-   你必须一次性列出该模块所需的**全部**组件（不含 Section 和 Icon），调用一次 `load_components_docs` 工具，将所有组件名称作为数组传入（例如 ["Table", "Tabs", "Button"]）。
-   ⚠️ 你只有一次调用机会，遗漏的组件无法补查！请在调用前仔细检查蓝图，确保所有组件都已包含。
-   仔细阅读工具返回的 API 和 Example 组合，严格按照返回的格式生成最终的 JSON。严禁依靠记忆编造任何未在文档中出现的属性。
+   `Section` 和 `Icon` 组件已在上方 **Pre-loaded Components** 中提供完整 API，无需额外加载。
+   其他组件的 API 文档已预加载到 prompt 中（[组件 API 文档] 区段），请严格按照文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。

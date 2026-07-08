@@ -100,4 +100,5 @@ export type ElectronAPI = {
   getOctoPatternDir: () => Promise<string>
   runPixsoBuild: (input: string) => Promise<string>
   exportZip: (opts: { defaultName: string; files: { name: string; content: string }[] }) => Promise<string | null>
+  getHomeDir: () => Promise<string>
 }
