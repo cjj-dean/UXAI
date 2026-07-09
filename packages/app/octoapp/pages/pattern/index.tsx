@@ -117,6 +117,7 @@ function PatternContent() {
   }
 
   const [childSessionIDs, setChildSessionIDs] = createSignal<string[]>([])
+  const [directCallTimings, setDirectCallTimings] = createSignal<{ agent: string; startTime: number; endTime?: number }[]>([])
   const [sessionSynced, setSessionSynced] = createSignal(false)
   let discoverVersion = 0
 
@@ -134,6 +135,7 @@ function PatternContent() {
 
         // ── 2. 无条件同步重置 ──
         setChildSessionIDs([])
+        setDirectCallTimings([])
         setSessionSynced(false)
         discoverVersion++
         setPendingPreviewData(null)
@@ -287,6 +289,13 @@ function PatternContent() {
         }
       }
 
+      // Direct LLM call timings (proto_module_create via directLLMCall)
+      for (const dt of directCallTimings()) {
+        if (dt.startTime < roundStart || dt.startTime >= roundEnd) continue
+        if (dt.startTime < startTime) startTime = dt.startTime
+        if (dt.endTime && (!endTime || dt.endTime > endTime)) endTime = dt.endTime
+      }
+
       items.sort((a, b) => a.time - b.time)
       if (startTime === Infinity) startTime = items.length > 0 ? items[0].time : Date.now()
       return { startTime, endTime, items }
@@ -315,6 +324,10 @@ function PatternContent() {
       // 有 user 消息但还没有 assistant 消息 → agent 刚启动，还在生成
       const hasUser = childMsgs.some((m) => m.role === "user")
       if (hasUser && !lastChildAssistant) return true
+    }
+    // Direct LLM calls still in progress
+    for (const dt of directCallTimings()) {
+      if (!dt.endTime) return true
     }
     return false
   })
@@ -470,6 +483,20 @@ function PatternContent() {
         onSessionCreated: (childID: string) => {
           if (params.id !== sid) return
           setChildSessionIDs((prev) => [...prev, childID])
+        },
+        onDirectCallTiming: (timing: { agent: string; startTime: number; endTime?: number }) => {
+          if (params.id !== sid) return
+          setDirectCallTimings((prev) => {
+            if (timing.endTime != null) {
+              const idx = prev.findIndex((t) => t.agent === timing.agent && t.startTime === timing.startTime && t.endTime == null)
+              if (idx >= 0) {
+                const next = [...prev]
+                next[idx] = timing
+                return next
+              }
+            }
+            return [...prev, timing]
+          })
         },
       }
 

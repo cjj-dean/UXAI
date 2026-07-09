@@ -35,6 +35,7 @@ import { fixChartData } from "./component"
 import { fixIconProps } from "./component"
 import { fixInvalidPaths } from "./component"
 import { fixDialogClass } from "./component"
+import { fixSlotComponents } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "dialog_class", fn: fixDialogClass },
@@ -70,4 +71,5 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "header_layout", fn: fixHeaderLayout },
   { name: "icon_props", fn: fixIconProps },
   { name: "invalid_paths", fn: fixInvalidPaths },
+  { name: "slot_components", fn: fixSlotComponents },
 ]

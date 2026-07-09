@@ -1,34 +1,22 @@
-import { extractJson } from '../../utils/json_parser';
-import { runChildSession } from '../run_child_session';
-import { logAgentParsed } from "../../utils/persist"
+import { directLLMCall } from '../../utils/direct_llm_call'
+import { logAgentParsed, logAgentStart, logAgentCall } from "../../utils/persist"
 
 const AGENT_NAME = "proto_module_create";
 
 type ProtoModuleCreateInput = {
-  // 公共sdk
   sdk: any
-  // 公共流式数据
   sync: any
-  // 当前使用的模型
-  modelKey: any
-  // 根节点session
+  modelKey: { providerID: string; modelID: string }
   rootSession: string
-  // 用户输入
   userInput: string
-  // 用户输入
   idPrefix: string
-  // 本模块对应意图模块
   sectionId: string
-  // 本模块对应父容器
   elementId: string
-  // 完整布局规划
   layoutPlanner: any
-  // 意图扩展结论
   intentDescription: any
-  // 预加载的组件 API 文档（由 proto_component_lookup + loadComponentDocs 程序化生成）
   componentDocs?: string
-  // 子 session 创建回调
   onSessionCreated?: (childSessionID: string) => void
+  onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
 }
 
 export default async function proto_module_create(input: ProtoModuleCreateInput) {
@@ -44,26 +32,31 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     layoutPlanner,
     intentDescription,
     componentDocs,
-    onSessionCreated 
-  } = input
-  // 组装输入提示词
-  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput, componentDocs)
-  console.log("----- 模块渲染Agent开始执行 ----- ");
-  const startTime = Date.now()
-  // 执行模块渲染
-  const moduleResult = await runChildSession({
-    client: sdk.client,
-    directory: sdk.directory,
-    parentSessionID: rootSession,
-    agent: AGENT_NAME,
-    modelKey,
-    prompt: humanMessage,
-    sync,
     onSessionCreated,
+    onDirectCallTiming,
+  } = input
+  const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput, componentDocs)
+
+  const traceSessionId = `direct-${Date.now().toString(36)}`
+  logAgentStart(AGENT_NAME, traceSessionId)
+
+  console.log("----- 模块渲染Agent开始执行（直连LLM） -----")
+  const startTime = Date.now()
+  if (onDirectCallTiming) onDirectCallTiming({ agent: AGENT_NAME, startTime })
+  const result = await directLLMCall({
+    modelKey,
+    agentName: AGENT_NAME,
+    humanMessage,
+    workflowId: rootSession,
+    workDir: sdk.directory,
   })
-  console.log("----- 模块渲染Agent运行结束，耗时：", (Date.now() - startTime) / 1000, 's -----');
-  // 转换成 a2ui json
-  const moduleJson = extractJson(moduleResult.text)
+  const elapsedMs = Date.now() - startTime
+  if (onDirectCallTiming) onDirectCallTiming({ agent: AGENT_NAME, startTime, endTime: Date.now() })
+  console.log("----- 模块渲染Agent运行结束，耗时：", elapsedMs / 1000, 's -----')
+
+  logAgentCall(AGENT_NAME, traceSessionId, humanMessage, result.parsed, [])
+
+  const moduleJson = result.parsed
   if (!moduleJson) throw new Error("----- Module JSON did not return valid JSON -----")
   const returnValue = {
     "ui_json": moduleJson,
@@ -71,7 +64,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     "element_id": elementId,
     "id_prefix": idPrefix
   }
-  logAgentParsed(moduleResult.childSessionId, returnValue)
+  logAgentParsed(traceSessionId, returnValue)
   return returnValue
 }
 

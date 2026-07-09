@@ -9,18 +9,13 @@ import { loadComponentDocs } from "../utils/load_component_docs"
 import { mergeModules } from "../agents/merge"
 
 type ProtoModifyJsonInput = {
-  // 公共sdk
   sdk: any
-  // 公共流式数据
   sync: any
-  // 当前使用的模型
   modelKey: any
-  // 根节点session
   rootSession: string
-  // 用户输入
   userInput: string
-  // 子 session 创建回调
   onSessionCreated?: (childSessionID: string) => void
+  onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
 }
 
 type LastDataInput = {
@@ -120,6 +115,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                     layoutPlanner: modifyResult.output as unknown as Record<string, unknown>,
                     intentDescription: updatedIntent as any,
                     componentDocs,
+                    onDirectCallTiming: inputCtx.onDirectCallTiming,
                 }).then((r) => r.ui_json)
             }
             // 修改模块

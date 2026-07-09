@@ -9,16 +9,12 @@ import layoutFixer from "../agents/layout_fixer_agent"
 import { validatePlannerOutput, formatValidationFeedback } from "../agents/planner_validator"
 
 type ProtoCreateJsonInput = {
-  // 公共sdk
   sdk: any
-  // 公共流式数据
   sync: any
-  // 当前使用的模型
   modelKey: any
-  // 根节点session
   rootSession: string
-  // 用户输入
   userInput: string
+  onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
 }
 
 export default async function create_json(inputCtx: ProtoCreateJsonInput, onFinshed: (finalJson: any) => Promise<void>){
@@ -106,7 +102,8 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
                 elementId: slot.element_id,
                 layoutPlanner: planner.layout_planner,
                 intentDescription: intentResult.intent_description,
-                componentDocs: docsMap.get(slot.element_id) ?? ""
+                componentDocs: docsMap.get(slot.element_id) ?? "",
+                onDirectCallTiming: inputCtx.onDirectCallTiming,
             }).then(r => r.ui_json)
         )
     )
