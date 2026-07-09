@@ -16,6 +16,7 @@ type ProtoModifyJsonInput = {
   userInput: string
   onSessionCreated?: (childSessionID: string) => void
   onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
+  onReasoningDelta?: (agent: string, delta: string) => void
 }
 
 type LastDataInput = {
@@ -116,6 +117,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                     intentDescription: updatedIntent as any,
                     componentDocs,
                     onDirectCallTiming: inputCtx.onDirectCallTiming,
+                    onReasoningDelta: inputCtx.onReasoningDelta,
                 }).then((r) => r.ui_json)
             }
             // 修改模块

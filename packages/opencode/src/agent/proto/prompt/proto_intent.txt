@@ -14,7 +14,7 @@
    - 顶部导航栏 (`header`) → 独立 section，id **必须**为 `header`（不可使用 topNav、navbar 等其他 id）
    - 侧边栏 (`aside`) → 独立 section，id **必须**为 `aside`（不可使用 sidebar、leftSidebar 等其他 id）
    - 弹窗/居中悬浮框 (`dialog`) → 独立 section，id **必须**为 `dialog`（不可使用 detailPanelDialog、modal 等其他 id）。**仅当用户原文说"弹窗"/"对话框"/"模态框"/"居中弹出"时使用此 id**
-    - 抽屉/侧滑面板 (`drawer`) → 独立 section，id **必须**为 `drawer`（不可使用 sideDrawer、detailDrawer 等其他 id）。**当用户原文说"抽屉"/"侧边滑出"/"右侧面板"/"侧滑"/"从侧边滑出"时必须使用此 id，绝不能用 dialog**
+   - 抽屉/侧滑面板 (`drawer`) → 独立 section，id **必须**为 `drawer`（不可使用 sideDrawer、detailDrawer 等其他 id）。**当用户原文说"抽屉"/"侧边滑出"/"右侧面板"/"侧滑"/"从侧边滑出"时必须使用此 id，绝不能用 dialog**
     - **关键区分**：dialog 是居中弹出的模态框，drawer 是从屏幕边缘侧滑出的面板。两者绝不能混用！当用户说"抽屉"时 id 必须是 `drawer`，当用户说"弹窗"时 id 必须是 `dialog`。即使用户同时提到"弹窗"和"抽屉"，也要分别生成 id 为 `dialog` 和 `drawer` 的两个独立 section
     - 这四个**不能**被拆成多个 section，也不能嵌套在其他 section 内
 
@@ -30,13 +30,13 @@
 
 - `type`: 约束类型，只能是 `width`(固定宽度) / `height`(固定高度) / `container`(独立区块/容器组件) / `layout`(布局对齐)
 
-- `value`: 约束值。width/height 形如 `"500px"`；container 形如 `"Section"`(独立带背景抬升区块) / `"二级卡片"`(嵌套在 Section 内的带背景子卡片) / `"三级卡片"(嵌套在二级卡片内的最小粒度带背景卡片) / `"div"`(无背景容器)；layout 形如 `"justify-between"`(两端对齐) / `"flex-row"`(水平排布) / `"flex-col"`(垂直排布)。**Section 约束只对该 section 内作为大卡片/独立区块的容器元素生效，不能用于整个 section 的顶层。如果 section 包含页面标题+标签页+大卡片，则 Section 约束只作用于大卡片，标题和标签页不在 Section 内。二级卡片/三级卡片同理——它们只作用于有独立背景的子卡片元素，不作用于结构性容器。****Section/二级卡片/三级卡片仅在用户原文中明确提到"卡片"/"独立区块"/"Card"等词时才使用，用户未明确说则使用"div"或留空数组 []。当用户原文提到"水平"/"横向"/"横排"/"一行"排布时，必须生成 `{"type":"layout","value":"flex-row"}`；当用户原文提到"垂直"/"纵向"/"竖排"/"一列"/"上下"排布时，必须生成 `{"type":"layout","value":"flex-col"}`。当用户原文出现多层卡片嵌套时，必须按层级分别生成约束：最外层卡片 → `"Section"`，内层子卡片 → `"二级卡片"`，最内层子卡片 → `"三级卡片"`。例如用户说"接着是一个大卡片，卡片内每条数据……中间是一个卡片……卡片中的数据块" → 必须同时生成 `{"type":"container","value":"Section"}` + `{"type":"container","value":"二级卡片"}` + `{"type":"container","value":"三级卡片"}`，不要只生成最外层的 Section 而遗漏内层约束。**
+- `value`: 约束值。width/height 形如 `"500px"`；container 形如 `"Section"`(独立带背景抬升区块) / `"child section"`(该 section 的子元素是多个独立 Section 卡片，用于与 section 本身就是 Section 的情况区分) / `"二级卡片"`(嵌套在 Section 内的带背景子卡片) / `"三级卡片"(嵌套在二级卡片内的最小粒度带背景卡片) / `"div"`(无背景容器)；layout 形如 `"justify-between"`(两端对齐) / `"flex-row"`(水平排布) / `"flex-col"`(垂直排布)。**Section 约束只对该 section 内作为大卡片/独立区块的容器元素生效，不能用于整个 section 的顶层。如果 section 包含页面标题+标签页+大卡片，则 Section 约束只作用于大卡片，标题和标签页不在 Section 内。child section 约束用于该 section 的子元素是多个独立 Section 卡片的场景（如横向排列的多个数据概览卡片），此时子元素使用 Section。child section 可以与 Section 同时使用：同时出现时表示该 section 本身是一个 Section（带背景抬升），且其子元素也是多个独立 Section 卡片；仅 child section 单独出现时表示 section 本身是普通 div 布局容器，子元素是 Section 卡片。二级卡片/三级卡片同理——它们只作用于有独立背景的子卡片元素，不作用于结构性容器。****Section/child section/二级卡片/三级卡片仅在用户原文中明确提到"卡片"/"独立区块"/"Card"等词时才使用，用户未明确说则使用"div"或留空数组 []。当用户原文提到"水平"/"横向"/"横排"/"一行"排布时，必须生成 `{"type":"layout","value":"flex-row"}`；当用户原文提到"垂直"/"纵向"/"竖排"/"一列"/"上下"排布时，必须生成 `{"type":"layout","value":"flex-col"}`。当用户原文出现多层卡片嵌套时，必须按层级分别生成约束：最外层卡片 → `"Section"`，内层子卡片 → `"二级卡片"`，最内层子卡片 → `"三级卡片"`。例如用户说"接着是一个大卡片，卡片内每条数据……中间是一个卡片……卡片中的数据块" → 必须同时生成 `{"type":"container","value":"Section"}` + `{"type":"container","value":"二级卡片"}` + `{"type":"container","value":"三级卡片"}`，不要只生成最外层的 Section 而遗漏内层约束。**
 
 - `scope`: (可选) 约束的作用范围。当约束不是作用于整个 section，而是作用于 section 内部的某个子区域时，用 scope 指定该子区域的名称。例如 `"左侧"`、`"中间"`、`"右侧"`、`"工具栏"`、`"提示条"` 等。省略 scope 表示约束作用于整个 section。**当用户原文对 section 内部的子区域有明确的布局方向要求时，必须用 scope 生成对应的约束，不要遗漏。** 例如用户说"左侧水平排布" → `{"type":"layout","value":"flex-row","scope":"左侧"}`；用户说"右侧上下排列" → `{"type":"layout","value":"flex-col","scope":"右侧"}`。
 
 - `description`: 用户原文，便于追溯
 
-- 示例：用户说"左侧导航宽度固定500px" → `{"type":"width","value":"500px","description":"左侧导航宽度固定500px"}`；用户说"这个区块使用独立区块" → `{"type":"container","value":"Section","description":"使用独立区块"}`；用户说"水平排布三个元素" → `{"type":"layout","value":"flex-row","description":"水平排布三个元素"}`；用户说"上下排列" → `{"type":"layout","value":"flex-col","description":"上下排列"}`；用户说"左侧水平排布" → `{"type":"layout","value":"flex-row","scope":"左侧","description":"左侧水平排布"}`；用户说"右侧垂直排布" → `{"type":"layout","value":"flex-col","scope":"右侧","description":"右侧垂直排布"}`；用户说"一个大卡片，里面每条是一个卡片，卡片中的数据块" → `[{"type":"container","value":"Section","description":"一个大卡片"},{"type":"container","value":"二级卡片","description":"里面每条是一个卡片"},{"type":"container","value":"三级卡片","description":"卡片中的数据块"}]`
+- 示例：用户说"左侧导航宽度固定500px" → `{"type":"width","value":"500px","description":"左侧导航宽度固定500px"}`；用户说"这个区块使用独立区块" → `{"type":"container","value":"Section","description":"使用独立区块"}`；用户说"水平排列5个独立卡片" → `{"type":"container","value":"child section","description":"子元素是多个独立卡片"},{"type":"layout","value":"flex-row","description":"水平排列5个卡片"}`；用户说"一个大卡片里面横向排列5个独立卡片" → `[{"type":"container","value":"Section","description":"大卡片"},{"type":"container","value":"child section","description":"里面横向排列5个独立卡片"},{"type":"layout","value":"flex-row","description":"横向排列"}]`；用户说"水平排布三个元素" → `{"type":"layout","value":"flex-row","description":"水平排布三个元素"}`；用户说"上下排列" → `{"type":"layout","value":"flex-col","description":"上下排列"}`；用户说"左侧水平排布" → `{"type":"layout","value":"flex-row","scope":"左侧","description":"左侧水平排布"}`；用户说"右侧垂直排布" → `{"type":"layout","value":"flex-col","scope":"右侧","description":"右侧垂直排布"}`；用户说"一个大卡片，里面每条是一个卡片，卡片中的数据块" → `[{"type":"container","value":"Section","description":"一个大卡片"},{"type":"container","value":"二级卡片","description":"里面每条是一个卡片"},{"type":"container","value":"三级卡片","description":"卡片中的数据块"}]`
 
 ## 规则 A2：独立区块拆分原则（最高优先级）
 
@@ -44,7 +44,7 @@
 
 **特别注意**：当用户描述中出现"大卡片"/"独立区块"等词时，该大卡片必须拆为独立 section，大卡片之外的页面标题、标签页等元素属于另一个 section。例如用户说"右侧内容区首先是页面标题、标签页，接着是一个大卡片"，则必须拆为两个 section：一个包含标题+标签页（无 Section 约束），另一个包含大卡片（有 Section 约束）。不能把标题+标签页+大卡片合并为一个 section。
 
-**但是**：当用户描述中出现多个重复的"独立区块"时（如"每个设备是一个独立卡片"、"每条数据是一个卡片"等列表循环场景），这些重复区块不属于多个 section，而是同一个 section 内通过数据循环渲染的重复项，用 constraints 中的 `"二级卡片"` 约束每个循环项的容器样式。
+**但是**：当用户描述中出现多个重复的"独立区块"时（如"每个设备是一个独立卡片"、"每行4个卡片"等列表循环/网格布局场景），这些重复区块不属于多个 section，而是同一个 section 内通过数据循环渲染的重复项。此时必须使用 `"child section"` 约束（表示子元素是多个独立 Section 卡片），**不要**使用 `"Section"` 约束（Section 表示该 section 本身就是一个卡片，会导致整个网格容器被加上背景/阴影）。如果该网格容器本身也是一个带背景的独立区块，则同时使用 `"Section"` + `"child section"`。**关键区分**：`"Section"` = 这个 section 本身就是一个卡片；`"child section"` = 这个 section 的子元素是多个卡片。当描述为"每个XX是一个独立卡片/区块"时，约束值必须是 `"child section"`，不是 `"Section"`。
 
 ## 规则 A3：侧栏导航必须用 Menu
 

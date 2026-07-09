@@ -43,8 +43,9 @@ function parseRemToPx(cls: string, re: RegExp): number | null {
   return m ? parseFloat(m[1]) * 16 : null
 }
 
-function findAncestorContentHeight(chartId: string, map: Record<string, A2UIElement>, c2p: Record<string, string>): number | null {
+function findAncestorContentHeight(chartId: string, map: Record<string, A2UIElement>, c2p: Record<string, string>): { height: number; isDirectParent: boolean } | null {
   let current = chartId
+  let isFirst = true
   while (current in c2p) {
     const parentId = c2p[current]
     const parent = map[parentId]
@@ -54,13 +55,14 @@ function findAncestorContentHeight(chartId: string, map: Record<string, A2UIElem
     const hRem = parseRemToPx(cls, /h-\[(\d+(?:\.\d+)?)rem\]/)
     if (hPx === null && hRem === null) {
       current = parentId
+      isFirst = false
       continue
     }
     const rawH = hPx ?? hRem!
     const pRem = parseRemToPx(cls, /p-\[(\d+(?:\.\d+)?)rem\]/)
     const pPx = parsePx(cls, /p-\[(\d+(?:\.\d+)?)px\]/)
     const pad = pRem !== null ? pRem * 2 : pPx !== null ? pPx * 2 : 0
-    return rawH - pad
+    return { height: rawH - pad, isDirectParent: isFirst }
   }
   return null
 }
@@ -105,8 +107,9 @@ export const fixChartHeight: Fixer = (json) => {
       fixes.push(`[${elem.id}](${elem.component}) min-h-[${minH}px] 替换为 h-[${minH}px]（图表必须使用固定高度）`)
       continue
     }
-    let available = findAncestorContentHeight(elem.id, map, c2p)
-    if (available !== null) {
+    let ancestorResult = findAncestorContentHeight(elem.id, map, c2p)
+    let available: number | null = ancestorResult?.height ?? null
+    if (available !== null && !ancestorResult!.isDirectParent) {
       available -= HEADER_BUFFER
       if (available < 100) available = 100
     }

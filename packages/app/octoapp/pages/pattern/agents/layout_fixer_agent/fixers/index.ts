@@ -35,7 +35,9 @@ import { fixChartData } from "./component"
 import { fixIconProps } from "./component"
 import { fixInvalidPaths } from "./component"
 import { fixDialogClass } from "./component"
+import { fixRedundantLoopWrapper } from "./layout"
 import { fixSlotComponents } from "./component"
+import { fixStepsFullWidth } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "dialog_class", fn: fixDialogClass },
@@ -72,4 +74,6 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "icon_props", fn: fixIconProps },
   { name: "invalid_paths", fn: fixInvalidPaths },
   { name: "slot_components", fn: fixSlotComponents },
+  { name: "redundant_loop_wrapper", fn: fixRedundantLoopWrapper },
+  { name: "steps_full_width", fn: fixStepsFullWidth },
 ]

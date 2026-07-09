@@ -34,10 +34,16 @@ function RoundCard(props: {
   startTime: number
   endTime?: number
   onOpenPreview: () => void
+  directCallReasonings?: Record<string, string>
 }): JSX.Element {
   const isLatest = () => props.roundIndex === props.totalRounds - 1
   const generating = () => isLatest() && props.pipelineBusy
   const done = () => !isLatest() || !props.pipelineBusy
+  const reasoningTexts = () => {
+    const map = props.directCallReasonings
+    if (!map) return []
+    return Object.entries(map).filter(([, v]) => v.length > 0).map(([agent, text]) => ({ agent, text }))
+  }
   return (
     <>
       <GenerationCard
@@ -45,6 +51,20 @@ function RoundCard(props: {
         canPreview={done()}
         onOpenPreview={props.onOpenPreview}
       />
+      <Show when={reasoningTexts().length > 0}>
+        <div class="mx-3 mb-2 px-3 py-2 rounded-md text-xs leading-relaxed overflow-auto reasoning-text">
+          <For each={reasoningTexts()}>
+            {(entry, i) => (
+              <>
+                <Show when={i() > 0}>
+                  <div class="my-1.5 split-line" />
+                </Show>
+                <div class="whitespace-pre-wrap">{entry.text}</div>
+              </>
+            )}
+          </For>
+        </div>
+      </Show>
       <Show when={done() || generating()}>
         <TurnDuration startTime={props.startTime} endTime={props.endTime} active={generating()} />
       </Show>
@@ -95,6 +115,8 @@ export function ChatPanel(props: {
   onDeleteSession: (id: string) => Promise<void>
   /** 标题修改后通知父组件刷新 */
   onTitleChanged: () => void
+  /** direct LLM call 的 reasoning 文本（按 agent 名索引） */
+  directCallReasonings?: Record<string, string>
 }) {
   const params = useParams<{ id?: string }>()
   const sdk = useSDK()
@@ -282,6 +304,7 @@ export function ChatPanel(props: {
                           startTime={round().startTime}
                           endTime={round().endTime}
                           onOpenPreview={props.onOpenPreview}
+                          directCallReasonings={props.directCallReasonings}
                         />
                       </>
                     )}

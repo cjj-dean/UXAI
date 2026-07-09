@@ -17,6 +17,7 @@ type ProtoModuleCreateInput = {
   componentDocs?: string
   onSessionCreated?: (childSessionID: string) => void
   onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
+  onReasoningDelta?: (agent: string, delta: string) => void
 }
 
 export default async function proto_module_create(input: ProtoModuleCreateInput) {
@@ -34,6 +35,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     componentDocs,
     onSessionCreated,
     onDirectCallTiming,
+    onReasoningDelta,
   } = input
   const humanMessage = buildHumanMessage(idPrefix, sectionId, elementId, layoutPlanner, intentDescription, userInput, componentDocs)
 
@@ -49,6 +51,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     humanMessage,
     workflowId: rootSession,
     workDir: sdk.directory,
+    onReasoningDelta,
   })
   const elapsedMs = Date.now() - startTime
   if (onDirectCallTiming) onDirectCallTiming({ agent: AGENT_NAME, startTime, endTime: Date.now() })

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-DuvR28GE.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-JF6kH4IX.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
 //#region \0rolldown/runtime.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -254600,8 +254600,14 @@ var CircleProcessChart_default = /* @__PURE__ */ defineComponent({
 				"name": "value"
 			}];
 			if (opt?.data && !opt?.data?.path) data.forEach((item) => {
-				if (item?.value?.path) item.value = resolveValue(item.value) || "";
-				if (item?.name?.path) item.name = resolveValue(item.name) || "";
+				if (item?.value?.path) {
+					const resolved = resolveValue(item.value);
+					item.value = typeof resolved === "number" ? resolved : 50;
+				}
+				if (item?.name?.path) {
+					const resolved = resolveValue(item.name);
+					item.name = resolved != null ? String(resolved) : "value";
+				}
 			});
 			if (opt?.data?.path) data = resolveValue(opt?.data) || [{
 				"value": 50,
@@ -254609,13 +254615,23 @@ var CircleProcessChart_default = /* @__PURE__ */ defineComponent({
 			}];
 			return data;
 		};
-		if (properties.option?.color?.path) properties.option.color = resolveValue(properties.option.color) || [];
+		if (properties.option?.color?.path) properties.option.color = resolveValue(properties.option?.color) || [];
 		if (properties.option?.title) {
 			let title = properties.option.title;
-			if (title?.text?.path) title.text = resolveValue(title?.text) || {};
-			if (title?.subtext?.path) title.subtext = resolveValue(title?.subtext) || {};
+			if (title?.text?.path) {
+				const resolved = resolveValue(title.text);
+				title.text = typeof resolved === "number" ? `${resolved}%` : resolved != null ? String(resolved) : "50%";
+			} else if (typeof title?.text === "number") title.text = `${title.text}%`;
+			else if (title?.text == null) title.text = "50%";
+			if (title?.subtext?.path) {
+				const resolved = resolveValue(title.subtext);
+				title.subtext = resolved != null ? String(resolved) : "Used";
+			} else if (title?.subtext == null) title.subtext = "Used";
 			properties.option.title = title;
-		}
+		} else properties.option.title = {
+			text: "50%",
+			subtext: "Used"
+		};
 		const defOption = {
 			a2ui: true,
 			data: getChartData(),
@@ -257724,7 +257740,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-ZT_Ipt44.js");
+						const { default: testData } = await import("./data-DCqqlNK0.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -257756,12 +257772,12 @@ var router = createRouter({
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-DuvR28GE.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./ExplorerPage-JF6kH4IX.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-DCn07H3Q.js"), [])
+			component: () => __vitePreload(() => import("./CustomPage-ClcbKBg0.js"), [])
 		}
 	]
 });

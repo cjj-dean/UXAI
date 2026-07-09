@@ -1,4 +1,4 @@
-import { C as openBlock, O as ref, _ as createElementBlock, r as Renderer_default, t as __vitePreload, u as provideA2UI, v as createVNode, x as onMounted, y as defineComponent } from "./index-qX80PLDF.js";
+import { C as openBlock, O as ref, _ as createElementBlock, r as Renderer_default, t as __vitePreload, u as provideA2UI, v as createVNode, x as onMounted, y as defineComponent } from "./index-5Z3LeqLa.js";
 //#region src/views/CustomPage.vue?vue&type=script&setup=true&lang.ts
 var _hoisted_1 = { class: "flex flex-col h-screen overflow-auto bg-gray-50" };
 var _hoisted_2 = {

@@ -39,7 +39,7 @@ import { handleModifyElement as runQuickModify, type QuickModifyContext, type Mo
 // import { runProtoPlannerModify } from "./agents/proto_planner_modify"
 // import { runModuleModify } from "./agents/proto_module_modify"
 import { mergeModules } from "./agents/merge"
-import { appendPatternVersion, loadCurrentPatternState, listPatternVersions, type VersionEntry } from "./utils/persist"
+import { appendPatternVersion, loadCurrentPatternState, listPatternVersions, type VersionEntry, type DirectCallTiming } from "./utils/persist"
 import { rollbackToVersion } from "./utils/history"
 import { buildIntentPrompt, detectCatalog, detectA2UIJson, type ComponentCatalog } from "./utils/a2ui-protocol"
 import { logStartSession, getDebugSnapshot, clearDebugLog } from "./utils/persist"
@@ -117,7 +117,8 @@ function PatternContent() {
   }
 
   const [childSessionIDs, setChildSessionIDs] = createSignal<string[]>([])
-  const [directCallTimings, setDirectCallTimings] = createSignal<{ agent: string; startTime: number; endTime?: number }[]>([])
+  const [directCallTimings, setDirectCallTimings] = createSignal<DirectCallTiming[]>([])
+  const [directCallReasonings, setDirectCallReasonings] = createSignal<Record<string, string>>({})
   const [sessionSynced, setSessionSynced] = createSignal(false)
   let discoverVersion = 0
 
@@ -136,6 +137,7 @@ function PatternContent() {
         // ── 2. 无条件同步重置 ──
         setChildSessionIDs([])
         setDirectCallTimings([])
+        setDirectCallReasonings({})
         setSessionSynced(false)
         discoverVersion++
         setPendingPreviewData(null)
@@ -184,6 +186,8 @@ function PatternContent() {
                 const mergedJson = detectA2UIJson(JSON.stringify(a2ui))
                 if (mergedJson) sendToPreview(mergedJson)
               }
+              if (state.directCallTimings?.length) setDirectCallTimings(state.directCallTimings)
+              if (state.directCallReasonings && Object.keys(state.directCallReasonings).length > 0) setDirectCallReasonings(state.directCallReasonings)
             })
             void listPatternVersions(dir, id).then(({ versions, current }) => {
               if (params.id !== id) return
@@ -309,6 +313,7 @@ function PatternContent() {
   })
 
   const isBusy = createMemo(() => {
+    if (!sessionSynced()) return true
     if (sessionStatus().type !== "idle") return true
     const id = params.id
     if (!id) return false
@@ -498,6 +503,10 @@ function PatternContent() {
             return [...prev, timing]
           })
         },
+        onReasoningDelta: (agent: string, delta: string) => {
+          if (params.id !== sid) return
+          setDirectCallReasonings((prev) => ({ ...prev, [agent]: (prev[agent] ?? "") + delta }))
+        },
       }
 
       // 开启本次调试日志
@@ -534,6 +543,8 @@ function PatternContent() {
                 lastPlanner: layoutPlanner,
                 lastModules: modulesJson,
                 mergedA2UI: pageJson as unknown as Record<string, unknown>,
+                directCallTimings: directCallTimings(),
+                directCallReasonings: directCallReasonings(),
                 debug,
             }, text.slice(0, 80))
             if (params.id === sid) {
@@ -905,6 +916,7 @@ function PatternContent() {
             onOpenPreview={handleOpenPreview}
             onDeleteSession={deleteSession}
             onTitleChanged={() => void refetchSession()}
+            directCallReasonings={directCallReasonings()}
           />
         </Show>
 

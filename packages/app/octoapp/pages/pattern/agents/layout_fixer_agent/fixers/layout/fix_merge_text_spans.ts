@@ -25,32 +25,11 @@ export const fixMergeTextSpans: Fixer = (json) => {
       if (!elem.props) elem.props = {}
       elem.props.value = merged
       fixes.push(`[${elem.id}](${elem.component}) 合并 ${elem.children.length} 个静态 span → 纯文本 value`)
-    } else {
-      const parts: string[] = []
-      const bindings: Record<string, any> = {}
-      const used = new Set<string>()
-      for (const c of childElems) {
-        const val = c.props!.value
-        if (typeof val === "string") {
-          parts.push(val)
-        } else if (val && typeof val === "object" && "path" in val) {
-          const p = val.path
-          let key = p.split("/").pop() || "v"
-          if (used.has(key)) key = `${key}_${used.size}`
-          used.add(key)
-          bindings[key] = { path: p }
-          parts.push(`{${key}}`)
-        }
+      for (const cid of elem.children) {
+        if (typeof cid === "string") idsToRemove.add(cid)
       }
-      if (!elem.props) elem.props = {}
-      elem.props.value = { template: parts.join(""), bindings }
-      fixes.push(`[${elem.id}](${elem.component}) 合并 ${elem.children.length} 个 span → template binding`)
+      elem.children = []
     }
-
-    for (const cid of elem.children) {
-      if (typeof cid === "string") idsToRemove.add(cid)
-    }
-    elem.children = []
   }
 
   if (idsToRemove.size) {

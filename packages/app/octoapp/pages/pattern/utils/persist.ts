@@ -19,11 +19,19 @@ function getDesktopApi(): DesktopApi | undefined {
 }
 
 /** 一次生成/修改的完整页面状态 */
+export type DirectCallTiming = {
+  agent: string
+  startTime: number
+  endTime?: number
+}
+
 export type PatternSessionState = {
   lastIntent: Record<string, unknown> | null
   lastPlanner: Record<string, unknown> | null
   lastModules: Array<Record<string, unknown>>
   mergedA2UI?: Record<string, unknown>
+  directCallTimings?: DirectCallTiming[]
+  directCallReasonings?: Record<string, string>
   debug?: SessionDebugLog | null
 }
 

@@ -15,6 +15,23 @@ type ProtoCreateJsonInput = {
   rootSession: string
   userInput: string
   onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
+  onReasoningDelta?: (agent: string, delta: string) => void
+}
+
+function buildSlotsFromSections(sections: Array<any>): Array<{ section_id: string; element_id: string; id_prefix: string }> {
+  const SHELL_SECTION_IDS = new Set(["header", "aside"])
+  return sections.map((s) => {
+    const id = s.id as string
+    const element_id = SHELL_SECTION_IDS.has(id) ? id : id + "Slot"
+    const id_prefix = deriveIdPrefix(id)
+    return { section_id: id, element_id, id_prefix }
+  })
+}
+
+function deriveIdPrefix(sectionId: string): string {
+  const parts = sectionId.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
+  if (parts.length === 1) return parts[0].slice(0, 4)
+  return parts.map((p) => p.slice(0, 2)).join("").slice(0, 6)
 }
 
 export default async function create_json(inputCtx: ProtoCreateJsonInput, onFinshed: (finalJson: any) => Promise<void>){
@@ -35,18 +52,25 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
     // }
           
     // 第三步：页面局部 — 最多尝试 2 次
-    let pageDescriptionStr = JSON.stringify(intentResult.intent_description);
-    const intentSectionCount = (intentResult.intent_description?.sections as Array<any> ?? []).length
-    const hasSidebar = (intentResult.intent_description?.sectionDetailList as Array<any> ?? []).some(
+    const intentSections = (intentResult.intent_description?.sections as Array<any> ?? [])
+    const intentSectionDetailList = (intentResult.intent_description?.sectionDetailList as Array<any> ?? [])
+    const hasSidebar = intentSectionDetailList.some(
       (s: any) => s.id?.toLowerCase().includes("sidebar") || s.id?.toLowerCase().includes("side")
     )
+
+    const algorithmicSlots = buildSlotsFromSections(intentSections)
+
+    let pageDescriptionStr = JSON.stringify(intentResult.intent_description);
     const plannerValidateLog: string[] = []
     let planner: any = null
     for (let attempt = 0; attempt < 2; attempt++) {
-      planner = await proto_planner_create({ ...inputCtx, intentDescription: pageDescriptionStr });
+      planner = await proto_planner_create({ ...inputCtx, intentDescription: pageDescriptionStr, predefinedSlots: algorithmicSlots });
       const layout = planner.layout_planner as any
-      if (!layout?.elements || !layout?.slots) continue
-      const issues = validatePlannerOutput(layout, intentSectionCount, hasSidebar)
+      if (!layout?.elements) continue
+
+      layout.slots = algorithmicSlots
+
+      const issues = validatePlannerOutput(layout, hasSidebar)
       const errors = issues.filter((i) => i.severity === "error")
       if (errors.length === 0) {
         const warnCount = issues.filter((i) => i.severity === "warning").length
@@ -64,7 +88,8 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
       }
     }
     if (planner) {
-      const finalIssues = validatePlannerOutput(planner.layout_planner, intentSectionCount, hasSidebar)
+      planner.layout_planner.slots = algorithmicSlots
+      const finalIssues = validatePlannerOutput(planner.layout_planner, hasSidebar)
       const finalErrors = finalIssues.filter((i) => i.severity === "error")
       if (finalErrors.length > 0) {
         plannerValidateLog.push(`[planner_validate] 最终输出仍有 ${finalErrors.length} 个错误:`)
@@ -72,7 +97,7 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
         console.warn(`[planner_validate] 最终输出仍有 ${finalErrors.length} 个错误:\n${formatValidationFeedback(finalErrors)}`)
       }
     }
-          
+            
     // 第四步：并行查询每个 slot 需要的组件，程序化加载组件文档
     const lookupResults = await Promise.all(
         (planner.layout_planner.slots as Array<any>).map(slot =>
@@ -104,6 +129,7 @@ export default async function create_json(inputCtx: ProtoCreateJsonInput, onFins
                 intentDescription: intentResult.intent_description,
                 componentDocs: docsMap.get(slot.element_id) ?? "",
                 onDirectCallTiming: inputCtx.onDirectCallTiming,
+                onReasoningDelta: inputCtx.onReasoningDelta,
             }).then(r => r.ui_json)
         )
     )

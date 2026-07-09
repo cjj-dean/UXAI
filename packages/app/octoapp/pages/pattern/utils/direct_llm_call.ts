@@ -95,6 +95,7 @@ export type DirectLLMCallInput = {
   humanMessage: string
   workflowId?: string
   workDir?: string
+  onReasoningDelta?: (agent: string, delta: string) => void
 }
 
 export type DirectLLMCallResult = {
@@ -126,7 +127,7 @@ async function getSystemPrompt(agentName: string): Promise<string> {
 }
 
 export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLLMCallResult> {
-  const { modelKey, agentName, humanMessage, workflowId, workDir } = input
+  const { modelKey, agentName, humanMessage, workflowId, workDir, onReasoningDelta } = input
 
   const [providerConfig, systemPrompt] = await Promise.all([
     resolveProviderConfig(modelKey),
@@ -175,7 +176,7 @@ export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLL
     throw new Error(`LLM API error ${response.status}: ${errorText}`)
   }
 
-  const { content: text, reasoning } = await readStreamResponse(response)
+  const { content: text, reasoning } = await readStreamResponse(response, agentName, onReasoningDelta)
   const latencyMs = Date.now() - startTime
 
   console.log(`[directLLMCall] Response received, latency=${latencyMs}ms, text length=${text.length}, reasoning length=${reasoning.length}`)
@@ -212,7 +213,7 @@ async function writeTrace(workDir: string, workflowId: string, agentName: string
   }
 }
 
-async function readStreamResponse(response: Response): Promise<{ content: string; reasoning: string }> {
+async function readStreamResponse(response: Response, agentName: string, onReasoningDelta?: (agent: string, delta: string) => void): Promise<{ content: string; reasoning: string }> {
   const reader = response.body!.getReader()
   const decoder = new TextDecoder()
   let buffer = ""
@@ -256,7 +257,10 @@ async function readStreamResponse(response: Response): Promise<{ content: string
         if (!choice) continue
         const delta = choice.delta
         if (delta?.content) content += delta.content
-        if (delta?.reasoning_content) reasoning += delta.reasoning_content
+        if (delta?.reasoning_content) {
+          reasoning += delta.reasoning_content
+          onReasoningDelta?.(agentName, delta.reasoning_content)
+        }
         if (choice.finish_reason) {
           console.log("[directLLMCall] stream finished, reason:", choice.finish_reason)
         }

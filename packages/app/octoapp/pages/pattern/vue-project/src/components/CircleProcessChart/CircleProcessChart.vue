@@ -23,40 +23,48 @@ const { isDark } = useTheme();
 
 const getChartData = () => {
   const opt = properties.option as any
-  let data = opt?.data ||  [{ "value": 50, "name": "value" }];
-  if(opt?.data && !opt?.data?.path) {
-
+  let data = opt?.data || [{ "value": 50, "name": "value" }]
+  if (opt?.data && !opt?.data?.path) {
     data.forEach((item: any) => {
-      if(item?.value?.path) {
-        item.value = resolveValue(item.value) || ''
+      if (item?.value?.path) {
+        const resolved = resolveValue(item.value)
+        item.value = typeof resolved === 'number' ? resolved : 50
       }
-      if(item?.name?.path) {
-        item.name = resolveValue(item.name) || ''
+      if (item?.name?.path) {
+        const resolved = resolveValue(item.name)
+        item.name = resolved != null ? String(resolved) : 'value'
       }
     })
-    
   }
   if (opt?.data?.path) {
-    data = resolveValue(opt?.data) || [{ "value": 50, "name": "value" }];
+    data = resolveValue(opt?.data) || [{ "value": 50, "name": "value" }]
   }
-  
   return data
 }
 
 if ((properties.option as any)?.color?.path) {
-  (properties.option as any).color = resolveValue((properties.option as any).color) || []
+  (properties.option as any).color = resolveValue((properties.option as any)?.color) || []
 }
 
 if ((properties.option as any)?.title) {
-
-  let title = (properties.option as any).title;
+  let title = (properties.option as any).title
   if (title?.text?.path) {
-    title.text = resolveValue(title?.text) || {}
+    const resolved = resolveValue(title.text)
+    title.text = typeof resolved === 'number' ? `${resolved}%` : resolved != null ? String(resolved) : '50%'
+  } else if (typeof title?.text === 'number') {
+    title.text = `${title.text}%`
+  } else if (title?.text == null) {
+    title.text = '50%'
   }
   if (title?.subtext?.path) {
-    title.subtext = resolveValue(title?.subtext) || {}
+    const resolved = resolveValue(title.subtext)
+    title.subtext = resolved != null ? String(resolved) : 'Used'
+  } else if (title?.subtext == null) {
+    title.subtext = 'Used'
   }
-  (properties.option as any).title = title;
+  (properties.option as any).title = title
+} else {
+  (properties.option as any).title = { text: '50%', subtext: 'Used' }
 }
 
 const defOption =  {

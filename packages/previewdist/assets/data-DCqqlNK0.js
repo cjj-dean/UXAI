@@ -1,0 +1,596 @@
+var data_default = {
+	rootId: "root",
+	elements: [
+		{
+			"id": "root",
+			"component": "div",
+			"props": { "className": "flex flex-col h-screen overflow-hidden bg-surface-container-lowest overflow-x-hidden" },
+			"children": ["header", "body"]
+		},
+		{
+			"id": "header",
+			"component": "header",
+			"props": { "className": "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem] z-[1] h-[3rem]" },
+			"children": ["headLeftGroup", "headRightGroup"]
+		},
+		{
+			"id": "body",
+			"component": "div",
+			"props": { "className": "flex flex-row flex-1 overflow-hidden" },
+			"children": ["aside", "main"]
+		},
+		{
+			"id": "aside",
+			"component": "aside",
+			"props": { "className": "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between w-[240px]" },
+			"children": ["asidMenu"]
+		},
+		{
+			"id": "main",
+			"component": "main",
+			"props": { "className": "flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0" },
+			"children": ["mainContentAreaSlot", "storageCardsGridSlot"]
+		},
+		{
+			"id": "mainContentAreaSlot",
+			"component": "div",
+			"props": { "className": "shrink-0 flex flex-col gap-[1rem]" },
+			"children": [
+				"macoarTitle",
+				"macoarTabs",
+				"macoarToolbar"
+			]
+		},
+		{
+			"id": "storageCardsGridSlot",
+			"component": "div",
+			"props": { "className": "flex-1 flex flex-col gap-[1rem] min-w-0" },
+			"children": ["stcagrCardGrid"]
+		},
+		{
+			"id": "headLeftGroup",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.5rem]" },
+			"children": ["headLogoIcon", "headBrandName"]
+		},
+		{
+			"id": "headLogoIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "/logoIcon" },
+				"color": "primary",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "headBrandName",
+			"component": "span",
+			"props": {
+				"value": { "path": "/brandName" },
+				"className": "text-md font-bold text-on-surface"
+			}
+		},
+		{
+			"id": "headRightGroup",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.75rem]" },
+			"children": [
+				"headSearchIcon",
+				"headNotificationIcon",
+				"headDocumentIcon",
+				"headUserAvatar",
+				"headHelpIcon"
+			]
+		},
+		{
+			"id": "headSearchIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "/searchIcon" },
+				"color": "#777777",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "headNotificationIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "/notificationIcon" },
+				"color": "#777777",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "headDocumentIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "/documentIcon" },
+				"color": "#777777",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "headUserAvatar",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[0.5rem]" },
+			"children": ["headUserImg", "headUserName"]
+		},
+		{
+			"id": "headUserImg",
+			"component": "img",
+			"props": {
+				"src": { "path": "/userAvatarImage" },
+				"className": "w-6 h-6 object-cover rounded-[8px]"
+			}
+		},
+		{
+			"id": "headUserName",
+			"component": "span",
+			"props": {
+				"value": { "path": "/userName" },
+				"className": "text-md text-on-surface"
+			}
+		},
+		{
+			"id": "headHelpIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "/helpIcon" },
+				"color": "#777777",
+				"className": "w-5 h-5",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "asidMenu",
+			"component": "Menu",
+			"props": {
+				"mode": "vertical",
+				"inlineCollapsed": false,
+				"selectedKeys": { "path": "/selectedKeys" },
+				"openKeys": { "path": "/openKeys" },
+				"items": { "path": "/menuItems" },
+				"className": "flex-1 overflow-hidden min-w-0"
+			}
+		},
+		{
+			"id": "macoarTitle",
+			"component": "span",
+			"props": {
+				"className": "text-3xl font-bold text-on-surface",
+				"value": "Storage"
+			}
+		},
+		{
+			"id": "macoarTabs",
+			"component": "Tabs",
+			"props": { "activeKey": { "path": "/activeTab" } },
+			"children": ["macoarTabEnterprise", "macoarTabDistributed"]
+		},
+		{
+			"id": "macoarTabEnterprise",
+			"component": "TabItem",
+			"props": {
+				"key": "enterprise",
+				"label": "Enterprise Storage"
+			}
+		},
+		{
+			"id": "macoarTabDistributed",
+			"component": "TabItem",
+			"props": {
+				"key": "distributed",
+				"label": "Distributed Storage"
+			}
+		},
+		{
+			"id": "macoarToolbar",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center justify-between" },
+			"children": ["macoarSearch", "macoarToolbarRight"]
+		},
+		{
+			"id": "macoarSearch",
+			"component": "Input",
+			"props": {
+				"value": { "path": "/searchValue" },
+				"placeholder": "Filter",
+				"prefix": "search",
+				"className": "w-64"
+			}
+		},
+		{
+			"id": "macoarToolbarRight",
+			"component": "div",
+			"props": { "className": "flex flex-row items-center gap-[1rem]" },
+			"children": [
+				"macoarTotal",
+				"macoarSortSelect",
+				"macoarViewToggle"
+			]
+		},
+		{
+			"id": "macoarTotal",
+			"component": "span",
+			"props": {
+				"className": "text-md text-on-surface",
+				"value": "Total: 18/18"
+			}
+		},
+		{
+			"id": "macoarSortSelect",
+			"component": "Select",
+			"props": {
+				"value": { "path": "/sortValue" },
+				"options": [
+					{
+						"label": "Sort by Health Score",
+						"value": "health_score"
+					},
+					{
+						"label": "Sort by Name",
+						"value": "name"
+					},
+					{
+						"label": "Sort by Capacity",
+						"value": "capacity"
+					}
+				],
+				"className": "shrink-0 w-auto"
+			}
+		},
+		{
+			"id": "macoarViewToggle",
+			"component": "Button",
+			"props": {
+				"icon": "layout-grid",
+				"color": "default"
+			}
+		},
+		{
+			"id": "stcagrCardGrid",
+			"component": "div",
+			"props": { "className": "grid grid-cols-4 gap-4" },
+			"children": {
+				"path": "/devices",
+				"componentId": "stcagrDeviceCard"
+			}
+		},
+		{
+			"id": "stcagrDeviceCard",
+			"component": "Section",
+			"props": { "className": "flex flex-col gap-[0.75rem]" },
+			"children": ["stcagrCardHeader", "stcagrCardBody"]
+		},
+		{
+			"id": "stcagrCardHeader",
+			"component": "div",
+			"props": { "className": "flex flex-col gap-[0.25rem]" },
+			"children": ["stcagrHeaderRow1", "stcagrHeaderRow2"]
+		},
+		{
+			"id": "stcagrHeaderRow1",
+			"component": "div",
+			"props": { "className": "flex items-center gap-[0.5rem]" },
+			"children": [
+				"stcagrDeviceName",
+				"stcagrOnlineIcon",
+				"stcagrHealthBadge"
+			]
+		},
+		{
+			"id": "stcagrDeviceName",
+			"component": "span",
+			"props": {
+				"className": "text-lg font-semibold text-on-surface truncate",
+				"value": { "path": "deviceName" }
+			}
+		},
+		{
+			"id": "stcagrOnlineIcon",
+			"component": "Icon",
+			"props": {
+				"name": { "path": "onlineIcon" },
+				"color": "success",
+				"className": "w-4 h-4",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "stcagrHealthBadge",
+			"component": "Tag",
+			"props": {
+				"value": { "path": "healthBadge" },
+				"color": { "path": "badgeColor" }
+			}
+		},
+		{
+			"id": "stcagrHeaderRow2",
+			"component": "div",
+			"props": { "className": "flex items-center gap-[0.5rem] text-sm text-on-surface-variant" },
+			"children": ["stcagrLocation", "stcagrModel"]
+		},
+		{
+			"id": "stcagrLocation",
+			"component": "span",
+			"props": {
+				"className": "truncate",
+				"value": { "path": "location" }
+			}
+		},
+		{
+			"id": "stcagrModel",
+			"component": "span",
+			"props": {
+				"className": "truncate",
+				"value": { "path": "model" }
+			}
+		},
+		{
+			"id": "stcagrCardBody",
+			"component": "div",
+			"props": { "className": "flex flex-row gap-[0.75rem] items-center" },
+			"children": ["stcagrChartArea", "stcagrInfoArea"]
+		},
+		{
+			"id": "stcagrChartArea",
+			"component": "div",
+			"props": { "className": "w-[140px] h-[140px] shrink-0" },
+			"children": ["stcagrCircleChart"]
+		},
+		{
+			"id": "stcagrCircleChart",
+			"component": "CircleProcessChart",
+			"props": {
+				"option": {
+					"data": [{
+						"value": { "path": "capacityUtilization" },
+						"name": "已用容量"
+					}],
+					"title": {
+						"text": { "path": "capacityUtilization" },
+						"subtext": "利用率"
+					}
+				},
+				"className": "w-full h-[140px]"
+			}
+		},
+		{
+			"id": "stcagrInfoArea",
+			"component": "div",
+			"props": { "className": "flex-1 flex flex-col gap-[0.5rem] min-w-0" },
+			"children": ["stcagrCapacitySection", "stcagrPerformanceSection"]
+		},
+		{
+			"id": "stcagrCapacitySection",
+			"component": "div",
+			"props": { "className": "flex flex-col gap-[0.125rem]" },
+			"children": [
+				"stcagrUsedPct",
+				"stcagrFreeTB",
+				"stcagrDataReductionRow"
+			]
+		},
+		{
+			"id": "stcagrUsedPct",
+			"component": "span",
+			"props": {
+				"className": "text-md font-semibold text-on-surface",
+				"value": { "path": "usedPercentageText" }
+			}
+		},
+		{
+			"id": "stcagrFreeTB",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": { "path": "freeTB" }
+			}
+		},
+		{
+			"id": "stcagrDataReductionRow",
+			"component": "div",
+			"props": { "className": "flex items-center gap-[0.25rem]" },
+			"children": ["stcagrDataReductionIcon", "stcagrDataReductionText"]
+		},
+		{
+			"id": "stcagrDataReductionIcon",
+			"component": "Icon",
+			"props": {
+				"name": "file-text",
+				"color": "#777777",
+				"className": "w-3 h-3",
+				"shape": "outline"
+			}
+		},
+		{
+			"id": "stcagrDataReductionText",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface-variant",
+				"value": { "path": "dataReduction" }
+			}
+		},
+		{
+			"id": "stcagrPerformanceSection",
+			"component": "div",
+			"props": { "className": "flex flex-col gap-[0.125rem]" },
+			"children": [
+				"stcagrLatency",
+				"stcagrIops",
+				"stcagrBandwidth"
+			]
+		},
+		{
+			"id": "stcagrLatency",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface",
+				"value": { "path": "latency" }
+			}
+		},
+		{
+			"id": "stcagrIops",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface",
+				"value": { "path": "iops" }
+			}
+		},
+		{
+			"id": "stcagrBandwidth",
+			"component": "span",
+			"props": {
+				"className": "text-sm text-on-surface",
+				"value": { "path": "bandwidth" }
+			}
+		}
+	],
+	state: {
+		"logoIcon": "zap",
+		"brandName": "DME IQ",
+		"userName": "Jasper",
+		"userAvatarImage": "https://randomuser.me/api/portraits/men/44.jpg",
+		"searchIcon": "search",
+		"notificationIcon": "bell",
+		"documentIcon": "file-text",
+		"helpIcon": "circle-help",
+		"menuItems": [
+			{
+				"title": "Home",
+				"key": "home",
+				"icon": "home"
+			},
+			{
+				"title": "Assets",
+				"key": "assets",
+				"icon": "hard-drive",
+				"children": [{
+					"title": "Storage (21)",
+					"key": "assets-storage"
+				}, {
+					"title": "Servers (25)",
+					"key": "assets-servers"
+				}]
+			},
+			{
+				"title": "Analytics",
+				"key": "analytics",
+				"icon": "bar-chart-3",
+				"children": [
+					{
+						"title": "Applications",
+						"key": "analytics-applications"
+					},
+					{
+						"title": "VMs",
+						"key": "analytics-vms"
+					},
+					{
+						"title": "Storage Performance",
+						"key": "analytics-storage-performance"
+					},
+					{
+						"title": "Disk Risk",
+						"key": "analytics-disk-risk"
+					}
+				]
+			},
+			{
+				"title": "Planning",
+				"key": "planning",
+				"icon": "calendar",
+				"children": [{
+					"title": "Workload",
+					"key": "planning-workload"
+				}, {
+					"title": "Capacity",
+					"key": "planning-capacity"
+				}]
+			},
+			{
+				"title": "Messages",
+				"key": "messages",
+				"icon": "message-square",
+				"children": [{
+					"title": "Alerts",
+					"key": "messages-alerts"
+				}]
+			},
+			{
+				"title": "Support",
+				"key": "support",
+				"icon": "life-buoy",
+				"children": [{
+					"title": "Service Requests",
+					"key": "support-service-requests"
+				}, {
+					"title": "Warranty Contracts",
+					"key": "support-warranty-contracts"
+				}]
+			},
+			{
+				"title": "Admin",
+				"key": "admin",
+				"icon": "shield",
+				"children": [
+					{
+						"title": "Multi-tenant",
+						"key": "admin-multi-tenant"
+					},
+					{
+						"title": "Authorization",
+						"key": "admin-authorization"
+					},
+					{
+						"title": "Notification",
+						"key": "admin-notification"
+					},
+					{
+						"title": "Operation Logs",
+						"key": "admin-operation-logs"
+					}
+				]
+			},
+			{
+				"title": "Report",
+				"key": "report",
+				"icon": "file-bar-chart"
+			}
+		],
+		"selectedKeys": ["assets-storage"],
+		"openKeys": [
+			"assets",
+			"analytics",
+			"planning",
+			"messages",
+			"support",
+			"admin"
+		],
+		"activeTab": "enterprise",
+		"searchValue": "",
+		"sortValue": "health_score",
+		"devices": [{
+			"deviceName": "Huawei_Dorado79",
+			"onlineIcon": "arrow-up",
+			"healthBadge": "Critical",
+			"badgeColor": "error",
+			"location": "Site: Chengdu, Sichuan",
+			"model": "Model: Dorado5000 V3",
+			"capacityUtilization": 87,
+			"usedPercentageText": "87%",
+			"freeTB": "21.3 TB Free",
+			"dataReduction": "3.2:1",
+			"latency": "0.8 ms",
+			"iops": "125,400",
+			"bandwidth": "6.2 GB/s"
+		}],
+		"_devices_count": 16
+	}
+};
+//#endregion
+export { data_default as default };

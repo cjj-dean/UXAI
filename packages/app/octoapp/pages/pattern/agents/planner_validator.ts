@@ -10,7 +10,7 @@ export interface ValidationIssue {
   detail: string
 }
 
-export function validatePlannerOutput(planner: PlannerOutput, sectionCount: number, hasSidebar: boolean): ValidationIssue[] {
+export function validatePlannerOutput(planner: PlannerOutput, hasSidebar: boolean): ValidationIssue[] {
   const issues: ValidationIssue[] = []
   const elMap = new Map<string, typeof planner.elements[0]>()
   const referenced = new Set<string>()
@@ -80,9 +80,12 @@ export function validatePlannerOutput(planner: PlannerOutput, sectionCount: numb
     }
   }
 
-  // 8) Check section count matches slot count
-  if (planner.slots.length !== sectionCount) {
-    issues.push({ severity: "error", message: "section 数量与 slot 数量不匹配", detail: `intent 有 ${sectionCount} 个 section，但 planner 只创建了 ${planner.slots.length} 个 slot` })
+  // 8) Check all slot element_ids exist in elements
+  const slots = planner.slots ?? []
+  for (const slot of slots) {
+    if (!elMap.has(slot.element_id)) {
+      issues.push({ severity: "error", message: `slot "${slot.element_id}" 不在 elements 中`, detail: `slot section_id="${slot.section_id}" 引用了不存在的 element_id，planner 必须在 elements 中创建该元素` })
+    }
   }
 
   return issues
