@@ -2,6 +2,7 @@ import { extractJson } from './json_parser'
 
 type DesktopApi = {
   readFileBuffer?: (path: string) => Promise<ArrayBuffer | null>
+  writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void>
   getHomeDir?: () => Promise<string>
 }
 
@@ -222,7 +223,7 @@ async function readStreamResponse(response: Response): Promise<{ content: string
   const deadline = Date.now() + TIMEOUT_MS
 
   while (Date.now() < deadline) {
-    let chunk: ReadableStreamDefaultReadResult<Uint8Array>
+    let chunk: { done: false; value: Uint8Array } | { done: true; value?: undefined }
     try {
       chunk = await Promise.race([
         reader.read(),
