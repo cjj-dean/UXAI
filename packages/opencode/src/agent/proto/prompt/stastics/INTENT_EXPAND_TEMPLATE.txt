@@ -1,0 +1,55 @@
+```json
+{
+  "id": "root", "name": "根节点",  /* 🔴 不可改 */
+  "layout": "vertical",  /* 🔴 不可改 */
+  "children": [
+    {
+      "id": "header", "name": "顶部导航",  /* 🔴 不可改， */
+      "layout": "horizontal",  /* 🔴 不可改 */
+      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中“资源管理”处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+    },
+    {
+      "id": "infoBar", "name": "信息栏",  /* 🔵 可选：根据页面蓝图决定是否存在 */
+      "layout": "horizontal",
+      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中“资源管理”处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+    },
+    {
+      "id": "body", "name": "主体区域",  /* 🔴 不可改 */
+      "layout": "horizontal",  /* 🔴 不可改 */
+      "children": [
+        {
+          "id": "aside", "name": "侧边栏",  /* 🔵 可选 */
+          "style": "固定宽度54px"/* 🟡 可改 */
+          "layout": "vertical",
+          "description": " 左侧菜单栏是缩略版的菜单栏，采用纵向纯图标排布，上方模块垂直排布 8 个功能图标，其中第 5 个终端设备图标处于高亮选中状态。在最下方垂直排布 2 个功能图标。"
+        },
+        {
+          "id": "main", "name": "主内容区域",  /* 🔴 id不可改 */
+          "layout": "vertical",  /* 🟡 可改 */
+          "children": []  /* 🟡 可改：按section数量添加模块，每个模块需要id和name */
+        }
+      ]
+    },
+    {
+      "id": "dialog", "name": "弹窗",  /* 🔵 可选 */
+      "description": ""  /* 🟡 可改 */
+    },
+    {
+      "id": "drawer", "name": "抽屉",  /* 🔵 可选 */
+      "description": ""  /* 🟡 可改 */
+    }
+  ]
+}
+```
+
+### 标注说明
+- 🔴 不可改：页面壳层结构，由布局规则决定，不能修改
+- 🟡 可改：具体内容，根据用户意图填充
+- 🔵 可选：根据页面蓝图决定是否需要该区域
+
+### mainContent 子模块示例
+在 mainContent.children 中添加的每个模块都需要 id 和 name：
+```json
+{ "id": "kpiOverview", "name": "指标概览", "layout": "horizontal", "children": [...] }
+{ "id": "trendChart", "name": "趋势图表", "children": [...] }
+```

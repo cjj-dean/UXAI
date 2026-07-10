@@ -29,6 +29,7 @@ import {
   PROMPT_PROTO_PLANNER_MODIFY,
   PROMPT_PROTO_TRIAGE,
   PROMPT_PROTO_COMPONENT_LOOKUP,
+  PROMPT_INTENT_EXPAND,
 } from "./proto"
 import { Permission } from "@/permission"
 import { mergeDeep, pipe, sortBy, values } from "remeda"
@@ -357,6 +358,18 @@ export const layer = Layer.effect(
               user,
             ),
             prompt: PROMPT_SUMMARY,
+          },
+          intent_expand: {
+            name: "intent_expand",
+            description: "Intent expansion and standardization agent that enriches simple user intent and converts to standardized JSON format.",
+            prompt: PROMPT_INTENT_EXPAND,
+            permission: Permission.fromConfig({
+              "*": "deny",
+            }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.2,
           },
           proto_intent: {
             name: "proto_intent",

@@ -244,7 +244,7 @@ const live: Layer.Layer<
         options.instructions = system.join("\n")
       }
 
-      if (input.agent.name.startsWith("proto_")) {
+      if (input.agent.name.startsWith("proto_") || input.agent.name.startsWith("intent_")) {
         options.thinking = { type: "disabled" }
       }
 
@@ -438,7 +438,7 @@ const live: Layer.Layer<
         ? (yield* InstanceState.context).project.id
         : undefined
 
-      if (input.agent.name.startsWith("proto_")) {
+      if (input.agent.name.startsWith("proto_") || input.agent.name.startsWith("intent_")) {
         const workflowID = input.parentSessionID ?? input.sessionID
         const round = (_llmRound.get(input.sessionID) ?? 0) + 1
         _llmRound.set(input.sessionID, round)
@@ -628,7 +628,7 @@ const live: Layer.Layer<
             const result = yield* run({ ...input, abort: ctrl.signal })
 
             const trace = _llmTrace.get(input.sessionID)
-            const isProto = input.agent.name.startsWith("proto_") && input.agent.name !== "proto_planner_create"
+            const isProto = (input.agent.name.startsWith("proto_") || input.agent.name.startsWith("intent_")) && input.agent.name !== "proto_planner_create"
             let source: AsyncIterable<Event> = result.fullStream
             if (trace) source = tapOutput(source, trace)
             // if (isProto) source = dropReasoning(source)
@@ -649,7 +649,7 @@ const live: Layer.Layer<
             const built = yield* buildParams({ ...input, abort: ctrl.signal })
 
             const trace = _llmTrace.get(input.sessionID)
-            const isProto = input.agent.name.startsWith("proto_") && input.agent.name !== "proto_planner_create"
+            const isProto = (input.agent.name.startsWith("proto_") || input.agent.name.startsWith("intent_")) && input.agent.name !== "proto_planner_create"
 
             const result = yield* Effect.tryPromise(() =>
               generateText({

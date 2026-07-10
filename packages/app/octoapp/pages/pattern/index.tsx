@@ -50,6 +50,29 @@ import resultEmptySvg from "./assets/images/IllustrationResultEmpty.svg?url"
 
 const AGENT_NAME = "proto_triage"
 
+function formatIntentExpandMd(data: any): string {
+  const lines: string[] = []
+  lines.push("# 意图扩展与标准化结果")
+  lines.push("")
+  lines.push(`**是否简单意图**: ${data.is_simple ? "是" : "否"}`)
+  lines.push("")
+  if (data.standardized_intent) {
+    lines.push("## 标准化JSON")
+    lines.push("")
+    lines.push("```json")
+    lines.push(JSON.stringify(data.standardized_intent, null, 2))
+    lines.push("```")
+    lines.push("")
+    lines.push("## 结构说明")
+    lines.push("")
+    lines.push("- **非叶子节点**: 只有 layout / children / width 等结构属性")
+    lines.push("- **叶子节点**: 只有 description 属性")
+    lines.push("- **模板引用**: 通过 template 字段引用 page-templates.json 中的模板")
+    lines.push("- **重复内容容器**: 使用 style / layout / item / itemTemplate / data 结构")
+  }
+  return lines.join("\n")
+}
+
 export default function PatternPage() {
   const dir = useProjectDir()
 
@@ -512,7 +535,7 @@ function PatternContent() {
       // 开启本次调试日志
       logStartSession(sid, text)
       // 流程执行完毕后的回调
-      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog }: any) => {
+      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog, intentExpand }: any) => {
           // 写入 fixer 日志、merged 数据、agent 调试日志到 {workspace}/pattern/workflow/{sid}/
           const desktopApi = (window as unknown as {
             api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
@@ -532,6 +555,10 @@ function PatternContent() {
             }
             if (debug) {
               await desktopApi.writeFileBuffer(`${wfDir}/debug.json`, encoder.encode(JSON.stringify(debug, null, 2)).buffer)
+            }
+            if (intentExpand) {
+              const expandMd = formatIntentExpandMd(intentExpand)
+              await desktopApi.writeFileBuffer(`${wfDir}/intent_expand.md`, encoder.encode(expandMd).buffer)
             }
             console.log(`[LayoutFixer] workflow 数据已写入: ${wfDir}`)
           }

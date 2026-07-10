@@ -10,6 +10,7 @@ import LIST_EXAMPLE from "./prompt/stastics/LIST_EXAMPLE.txt"
 import TABS_EXAMPLE from "./prompt/stastics/TABS_EXAMPLE.txt"
 import FORM_EXAMPLE from "./prompt/stastics/FORM_EXAMPLE.txt"
 import PLANNER_TEMPLATE from "./prompt/stastics/PLANNER_TEMPLATE.txt"
+import INTENT_EXPAND_TEMPLATE from "./prompt/stastics/INTENT_EXPAND_TEMPLATE.txt"
 
 import _PROMPT_PROTO_INTENT from "./prompt/proto_intent.txt"
 import _PROMPT_PROTO_INTENT_AUDIT from "./prompt/proto_intent_audit.txt"
@@ -19,6 +20,7 @@ import _PROMPT_PROTO_PLANNER_CREATE from "./prompt/proto_planner_create.txt"
 import _PROMPT_PROTO_PLANNER_MODIFY from "./prompt/proto_planner_modify.txt"
 import _PROMPT_PROTO_TRIAGE from "./prompt/proto_triage.txt"
 import _PROMPT_PROTO_COMPONENT_LOOKUP from "./prompt/proto_component_lookup.txt"
+import _PROMPT_INTENT_EXPAND from "./prompt/intent_expand.txt"
 
 const data = {
   COMPONENTS_CATALOG,
@@ -32,6 +34,7 @@ const data = {
   TABS_EXAMPLE,
   FORM_EXAMPLE,
   PLANNER_TEMPLATE,
+  INTENT_EXPAND_TEMPLATE,
 }
 
 function formatPrompt(template) {
@@ -50,3 +53,4 @@ export const PROMPT_PROTO_PLANNER_CREATE = formatPrompt(_PROMPT_PROTO_PLANNER_CR
 export const PROMPT_PROTO_PLANNER_MODIFY = formatPrompt(_PROMPT_PROTO_PLANNER_MODIFY)
 export const PROMPT_PROTO_TRIAGE = formatPrompt(_PROMPT_PROTO_TRIAGE)
 export const PROMPT_PROTO_COMPONENT_LOOKUP = formatPrompt(_PROMPT_PROTO_COMPONENT_LOOKUP)
+export const PROMPT_INTENT_EXPAND = formatPrompt(_PROMPT_INTENT_EXPAND)
