@@ -54,7 +54,7 @@ Data assignment is categorized into **Static Literals** and **Dynamic Pointers**
   - **`{{"content": {{ "componentId": "tabItemContent" }}}}`** -  Map slot properties to specific child element IDs.
 
 **DATA BINDING CRITICAL CONSTRAINTS:** 
-  - **Sparse Array Data + Count:** For any array in `state` that represents repeated rows/items (Table rows, card lists, etc.), output ONLY ONE sample item in the array and add a count key at the same level. Format: `"tableData": [ { ...one sample... } ], "_tableData_count": 8`. The count key is `_` + arrayKey + `_count`. The renderer auto-replicates the sample to fill the array. Small config arrays (tab items, menu items, select options with 5 or fewer items) should be output in full without count keys.
+  - **Full Array Data Output:** For any array in `state` that represents repeated rows/items (Table rows, card lists, etc.), output ALL items in full based on the user's intent/blueprint data. Do NOT truncate, skip, or reduce array items. Each item MUST include ALL keys with realistic and varied values. Small config arrays (tab items, menu items, select options with 5 or fewer items) should also be output in full.
   - **Children Rule:** The `children` array MUST ONLY contain element `id` references. NEVER raw text strings.
   - **Text Assignment:** HTML5 element raw text MUST be assigned via `props` (e.g., for a `span`, use `props: {{ "value": "Next" }}`).
   - **Mixed Siblings (Text + Elements):** ONLY when raw text and elements share the same parent, you MUST wrap the text in a `<span>` to generate an ID reference.
