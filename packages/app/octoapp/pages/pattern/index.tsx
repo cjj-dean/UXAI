@@ -32,7 +32,7 @@ import proto_planner_create from "./agents/proto_planner_create"
 import proto_module_create from "./agents/proto_module_create"
 // import { getDesignMap, readDesignFile } from "./design/load_design"
 
-import create_json from './workflow/create_json'
+import create_json_new from './workflow/create_json_new'
 import modify_json_ai from './workflow/modify_json_ai'
 import { handleModifyElement as runQuickModify, type QuickModifyContext, type ModifyElementData } from './workflow/modify_json_quick'
 
@@ -65,10 +65,54 @@ function formatIntentExpandMd(data: any): string {
     lines.push("")
     lines.push("## 结构说明")
     lines.push("")
-    lines.push("- **非叶子节点**: 只有 layout / children / width 等结构属性")
-    lines.push("- **叶子节点**: 只有 description 属性")
-    lines.push("- **模板引用**: 通过 template 字段引用 page-templates.json 中的模板")
-    lines.push("- **重复内容容器**: 使用 style / layout / item / itemTemplate / data 结构")
+    lines.push("- **非叶子节点**: 只有 layout / children / style 等结构属性")
+    lines.push("- **叶子节点**: 只有 description 和 style 属性")
+    lines.push("- **isRegion**: true 表示独立区块，必须为叶子节点")
+  }
+  return lines.join("\n")
+}
+
+function formatPlannerNewMd(data: any): string {
+  const lines: string[] = []
+  lines.push("# 新布局规划结果")
+  lines.push("")
+  if (data.rootId) {
+    lines.push(`**Root ID**: ${data.rootId}`)
+    lines.push("")
+  }
+  if (data.elements) {
+    lines.push("## Elements")
+    lines.push("")
+    lines.push("```json")
+    lines.push(JSON.stringify(data.elements, null, 2))
+    lines.push("```")
+    lines.push("")
+  }
+  if (data.slots) {
+    lines.push("## Slots")
+    lines.push("")
+    lines.push("| section_id | element_id | id_prefix |")
+    lines.push("|------|------|------|")
+    for (const s of data.slots) {
+      lines.push(`| ${s.section_id ?? ""} | ${s.element_id ?? ""} | ${s.id_prefix ?? ""} |`)
+    }
+    lines.push("")
+  }
+  return lines.join("\n")
+}
+
+function formatModulesMd(modules: any[]): string {
+  const lines: string[] = []
+  lines.push("# 模块生成结果")
+  lines.push("")
+  for (let i = 0; i < modules.length; i++) {
+    const m = modules[i]
+    lines.push(`## Module ${i}: rootId=${m?.rootId ?? "unknown"}`)
+    lines.push("")
+    lines.push("```json")
+    lines.push(JSON.stringify(m, null, 2))
+    lines.push("```")
+    lines.push("")
   }
   return lines.join("\n")
 }
@@ -536,59 +580,67 @@ function PatternContent() {
       logStartSession(sid, text)
       // 流程执行完毕后的回调
       let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog, intentExpand }: any) => {
-          // 写入 fixer 日志、merged 数据、agent 调试日志到 {workspace}/pattern/workflow/{sid}/
-          const desktopApi = (window as unknown as {
-            api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
-          }).api
-          const debug = getDebugSnapshot()
-          if (desktopApi?.writeFileBuffer) {
-            const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
-            const encoder = new TextEncoder()
-            if (fixerLog?.length) {
-              await desktopApi.writeFileBuffer(`${wfDir}/fixer.log`, encoder.encode(fixerLog.join("\n")).buffer)
-            }
-            if (plannerValidateLog?.length) {
-              await desktopApi.writeFileBuffer(`${wfDir}/planner_validate.log`, encoder.encode(plannerValidateLog.join("\n")).buffer)
-            }
-            if (pageJson) {
-              await desktopApi.writeFileBuffer(`${wfDir}/merged.json`, encoder.encode(JSON.stringify(pageJson, null, 2)).buffer)
-            }
-            if (debug) {
-              await desktopApi.writeFileBuffer(`${wfDir}/debug.json`, encoder.encode(JSON.stringify(debug, null, 2)).buffer)
-            }
+           // 写入 fixer 日志、merged 数据、agent 调试日志到 {workspace}/pattern/workflow/{sid}/
+           const desktopApi = (window as unknown as {
+             api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
+           }).api
+           const debug = getDebugSnapshot()
+           if (desktopApi?.writeFileBuffer) {
+             const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+             const encoder = new TextEncoder()
+             if (fixerLog?.length) {
+               await desktopApi.writeFileBuffer(`${wfDir}/fixer.log`, encoder.encode(fixerLog.join("\n")).buffer)
+             }
+             if (plannerValidateLog?.length) {
+               await desktopApi.writeFileBuffer(`${wfDir}/planner_validate.log`, encoder.encode(plannerValidateLog.join("\n")).buffer)
+             }
+             if (pageJson) {
+               await desktopApi.writeFileBuffer(`${wfDir}/merged.json`, encoder.encode(JSON.stringify(pageJson, null, 2)).buffer)
+             }
+             if (debug) {
+               await desktopApi.writeFileBuffer(`${wfDir}/debug.json`, encoder.encode(JSON.stringify(debug, null, 2)).buffer)
+             }
             if (intentExpand) {
               const expandMd = formatIntentExpandMd(intentExpand)
               await desktopApi.writeFileBuffer(`${wfDir}/intent_expand.md`, encoder.encode(expandMd).buffer)
             }
-            console.log(`[LayoutFixer] workflow 数据已写入: ${wfDir}`)
-          }
-          // 历史保存始终执行（与当前查看的 session 无关）
-          const dir = patternHistoryDir()
-          if (dir) {
-            const vid = await appendPatternVersion(dir, sid, {
-                lastIntent: pageIntent,
-                lastPlanner: layoutPlanner,
-                lastModules: modulesJson,
-                mergedA2UI: pageJson as unknown as Record<string, unknown>,
-                directCallTimings: directCallTimings(),
-                directCallReasonings: directCallReasonings(),
-                debug,
-            }, text.slice(0, 80))
-            if (params.id === sid) {
-                setVersions((prev) => [...prev, { id: vid, createdAt: Date.now(), summary: text.slice(0, 80) }])
-                setCurrentVersionId(vid)
-                clearDebugLog()
-            }
-          }
-          // 视图状态仅在仍在该 session 时更新
-          if (params.id !== sid) return
-          // 触发页面渲染
-          if (pageJson) sendToPreview(pageJson)
-          // 内存数据更新
-          setLastIntent(pageIntent)
-          setLastPlanner(layoutPlanner)
-          setLastModules(modulesJson)
-      }
+             if (layoutPlanner) {
+               const plannerMd = formatPlannerNewMd(layoutPlanner)
+               await desktopApi.writeFileBuffer(`${wfDir}/planner_new.md`, encoder.encode(plannerMd).buffer)
+             }
+             if (modulesJson?.length) {
+               const modulesMd = formatModulesMd(modulesJson)
+               await desktopApi.writeFileBuffer(`${wfDir}/modules.md`, encoder.encode(modulesMd).buffer)
+             }
+             console.log(`[LayoutFixer] workflow 数据已写入: ${wfDir}`)
+           }
+           // 历史保存始终执行（与当前查看的 session 无关）
+           const dir = patternHistoryDir()
+           if (dir) {
+             const vid = await appendPatternVersion(dir, sid, {
+                 lastIntent: pageIntent ?? intentExpand,
+                 lastPlanner: layoutPlanner,
+                 lastModules: modulesJson,
+                 mergedA2UI: pageJson as unknown as Record<string, unknown>,
+                 directCallTimings: directCallTimings(),
+                 directCallReasonings: directCallReasonings(),
+                 debug,
+             }, text.slice(0, 80))
+             if (params.id === sid) {
+                 setVersions((prev) => [...prev, { id: vid, createdAt: Date.now(), summary: text.slice(0, 80) }])
+                 setCurrentVersionId(vid)
+                 clearDebugLog()
+             }
+           }
+           // 视图状态仅在仍在该 session 时更新
+           if (params.id !== sid) return
+           // 触发页面渲染
+           if (pageJson) sendToPreview(pageJson)
+           // 内存数据更新
+           setLastIntent(pageIntent ?? intentExpand)
+           setLastPlanner(layoutPlanner)
+           setLastModules(modulesJson)
+       }
 
       if(lastIntent()){
         let lastData = {
@@ -605,7 +657,7 @@ function PatternContent() {
         }
       }else{
         // 首次创建页面
-        await create_json(intentCtx, onFinshed);
+        await create_json_new(intentCtx, onFinshed);
       }
 
       const genDuration = ((performance.now() - genStartTime)/1000).toFixed(0)

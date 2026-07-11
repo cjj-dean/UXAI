@@ -4,14 +4,14 @@
   "layout": "vertical",  /* 🔴 不可改 */
   "children": [
     {
-      "id": "header", "name": "顶部导航",  /* 🔴 不可改， */
+      "id": "header", "name": "顶部导航",  /* 🔴 不可改 */
       "layout": "horizontal",  /* 🔴 不可改 */
-      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中“资源管理”处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
     },
     {
       "id": "infoBar", "name": "信息栏",  /* 🔵 可选：根据页面蓝图决定是否存在 */
       "layout": "horizontal",
-      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中“资源管理”处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
     },
     {
       "id": "body", "name": "主体区域",  /* 🔴 不可改 */
@@ -19,14 +19,14 @@
       "children": [
         {
           "id": "aside", "name": "侧边栏",  /* 🔵 可选 */
-          "style": "固定宽度54px"/* 🟡 可改 */
+          "style": "固定宽度54px",  /* 🟡 可改 */
           "layout": "vertical",
-          "description": " 左侧菜单栏是缩略版的菜单栏，采用纵向纯图标排布，上方模块垂直排布 8 个功能图标，其中第 5 个终端设备图标处于高亮选中状态。在最下方垂直排布 2 个功能图标。"
+          "description": "左侧菜单栏是缩略版的菜单栏，采用纵向纯图标排布，上方模块垂直排布 8 个功能图标，其中第 5 个终端设备图标处于高亮选中状态。在最下方垂直排布 2 个功能图标。"
         },
         {
           "id": "main", "name": "主内容区域",  /* 🔴 id不可改 */
-          "layout": "vertical",  /* 🟡 可改 */
-          "children": []  /* 🟡 可改：按section数量添加模块，每个模块需要id和name */
+          "layout": "vertical",
+          "children": []  /* 🟢 以下main的children内容全部可改，根据用户意图填充 */
         }
       ]
     },
@@ -46,10 +46,74 @@
 - 🔴 不可改：页面壳层结构，由布局规则决定，不能修改
 - 🟡 可改：具体内容，根据用户意图填充
 - 🔵 可选：根据页面蓝图决定是否需要该区域
+- 🟢 main内容区：以下所有内容均可根据用户意图自由修改和填充
 
-### mainContent 子模块示例
-在 mainContent.children 中添加的每个模块都需要 id 和 name：
+---
+
+### main 子模板（🟢 以下内容全部可改，根据用户意图填充）
+
 ```json
-{ "id": "kpiOverview", "name": "指标概览", "layout": "horizontal", "children": [...] }
-{ "id": "trendChart", "name": "趋势图表", "children": [...] }
+{
+  "id": "main", "name": "主内容区域",
+  "layout": "vertical",
+  "children": [
+    {
+      "id": "dataOverview", "name": "数据概览区",
+      "layout": "horizontal",
+      "style": "横向等宽等距排布",
+      "children": [
+        {
+          "id": "termTypeCard", "name": "终端类型",
+          "isRegion": true,
+          "style": "独立区块,固定高度300px",
+          "description": "标题:终端类型,标题下方环形图+图例,中心垂直排布大字号数字12及文本总数,数据:手机33.33%,家居设备33.33%,平板16.67%,其他16.67%"
+        },
+        {
+          "id": "accessTypeCard", "name": "接入类型",
+          "isRegion": true,
+          "style": "独立区块,固定高度300px",
+          "description": "标题:接入类型,结构与终端类型卡片一致,中心数字12及总数,数据:有线66.66%,无线33.34%"
+        },
+        {
+          "id": "termTrafficCard", "name": "终端流量使用",
+          "isRegion": true,
+          "style": "独立区块,固定高度300px",
+          "description": "标题:终端流量使用,标题右侧带?提示图标,右上角Top5 dropdown选择器,标题下方Top5图表,数据:iphone12 1869MB,oppo 1016MB,mate70 664MB,iphone16 167MB,ipad 167MB,MAC地址用虚拟数据占位"
+        },
+        {
+          "id": "appTrafficCard", "name": "应用流量使用",
+          "isRegion": true,
+          "style": "独立区块,固定高度300px",
+          "description": "标题:应用流量使用,标题右侧带?提示图标,结构与终端流量使用相同,数据:微信1869MB,支付宝1016MB,抖音664MB,淘宝167MB,微博167MB"
+        },
+        {
+          "id": "termOnlineCard", "name": "终端在线时长",
+          "isRegion": true,
+          "style": "独立区块,固定高度300px",
+          "description": "标题:终端在线时长,基础垂直柱状图,纵轴标题终端数刻度0/20/40/60/80/100,横轴标签小于1h/1-3h/3-6h/6-8h/大于8h,5根高度不同的垂直柱子"
+        }
+      ]
+    },
+    {
+      "id": "termUserMgmt", "name": "终端用户管理",
+      "style": "独立区块",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "termUserTitle", "name": "模块标题",
+          "description": "独立大标题:终端用户"
+        },
+        {
+          "id": "termUserToolbar", "name": "工具栏",
+          "layout": "horizontal",
+          "description": "左右两端对齐,左侧:定宽搜索输入框(内含搜索图标+placeholder请输入搜索内容)+带向上折叠箭头的高级搜索文本按钮,右侧:带下拉箭头的立即扫描按钮+IP/MAC解绑按钮+IP/MAC绑定按钮+已守护列表按钮+已限速列表按钮+刷新图标"
+        },
+        {
+          "id": "termUserTable", "name": "终端用户表格",
+          "description": "核心数据表格,18列:全选复选框/终端名称(品牌Logo图标+超链接)/终端类型/IP地址/MAC地址/VLAN/厂商/型号/系统/在线时长/接入时间/上行速率(向上箭头图标)/下行速率(向下箭头图标)/流量消耗/接入设备/守护(盾牌状态图标)/连接/操作(编辑铅笔+链接图标),8行数据,示例行:图标+huawei/手机/192.168.1.1/0O:E0:FC:.../204/oppo/Intel(R)/Windows 10/9min/2022-07-.../3.30Kbps↑/4.61Kbps↓/3.4GB/android/图标+守护中/Wifi_xxx"
+        }
+      ]
+    }
+  ]
+}
 ```

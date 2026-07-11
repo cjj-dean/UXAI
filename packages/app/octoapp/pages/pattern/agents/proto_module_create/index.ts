@@ -72,26 +72,26 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
 }
 
 // 组装模块生成的输入文本
-function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string, componentDocs?: string) {
-  let layoutDesc = intentDescription.layoutDescription ?? "";
-  let sections = intentDescription.sections ?? [];
-  let sectionsStr = JSON.stringify(sections, null, 2);
+function findNodeById(node: any, id: string): any {
+  if (!node) return null
+  if (node.id === id) return node
+  if (Array.isArray(node.children)) {
+    for (const child of node.children) {
+      const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
+      const found = findNodeById(childNode, id)
+      if (found) return found
+    }
+  }
+  return null
+}
 
-  // 布局规划
+function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string, componentDocs?: string) {
   let elements = layoutPlanner.elements ?? [];
   let slotElement = elements.find((e: any) => e?.id === elementId) ?? {};
   let slotElemnetStr = JSON.stringify(slotElement, null, 2);
 
-  // 该模块详细意图
-  let sectionDetailList = intentDescription.sectionDetailList ?? [];
-  let sectionDetail = sectionDetailList.find((item: any) => item?.id === sectionId) ?? {};
-  let sectionDetailStr = JSON.stringify(sectionDetail, null, 2);
-
-  // 提取 constraints 高亮显示，确保模型不遗漏
-  let constraints = sectionDetail.constraints ?? [];
-  let constraintsStr = constraints.length
-    ? constraints.map((c: any) => `${c.type}:${c.value} (${c.description})`).join("; ")
-    : "无";
+  let node = findNodeById(intentDescription, sectionId)
+  let nodeStr = JSON.stringify(node, null, 2);
 
   let componentDocsSection = ""
   if (componentDocs) {
@@ -101,20 +101,13 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   let humanMessage: string;
   humanMessage = `请为以下模块生成 A2UI JSON：
 
-  [完整页面蓝图:] ==================================
-  - 布局描述: ${layoutDesc}
-  - 页面结构: ${sectionsStr}
-
   [模块顶层容器:] ==================================
   - Root ID: ${elementId}
   - Root UI:
     ${slotElemnetStr}
-    
-  [⚠️ 本模块约束（必须遵循）:] ==================================
-  ${constraintsStr}
 
   [需要被渲染的模块详细蓝图:] ==================================
-  ${sectionDetailStr}
+  ${nodeStr}
 
   [需要被渲染模块的根节点:] ${elementId}
    [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)

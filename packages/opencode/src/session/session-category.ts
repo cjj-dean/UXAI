@@ -19,6 +19,7 @@ export const AGENT_TO_CATEGORY: Record<string, SessionCategory> = {
   octo_pattern_intent: "prototype",
   octo_pattern_module: "prototype",
   intent_expand: "prototype",
+  planner_new_create: "prototype",
   octo_insight: "analysis",
   octo_studio: "creative",
   plan: "planning",

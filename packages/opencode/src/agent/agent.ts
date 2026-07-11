@@ -30,6 +30,7 @@ import {
   PROMPT_PROTO_TRIAGE,
   PROMPT_PROTO_COMPONENT_LOOKUP,
   PROMPT_INTENT_EXPAND,
+  PROMPT_PLANNER_NEW_CREATE,
 } from "./proto"
 import { Permission } from "@/permission"
 import { mergeDeep, pipe, sortBy, values } from "remeda"
@@ -431,6 +432,18 @@ export const layer = Layer.effect(
             name: "proto_planner_modify",
             description: "Proto planner modify agent.",
             prompt: PROMPT_PROTO_PLANNER_MODIFY,
+            permission: Permission.fromConfig({
+              "*": "deny",
+            }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.0,
+          },
+          planner_new_create: {
+            name: "planner_new_create",
+            description: "New planner create agent for macro-layout planning.",
+            prompt: PROMPT_PLANNER_NEW_CREATE,
             permission: Permission.fromConfig({
               "*": "deny",
             }),

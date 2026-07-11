@@ -62,40 +62,36 @@ export default async function proto_component_lookup(input: ProtoComponentLookup
   return returnValue
 }
 
-function buildHumanMessage(sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any): string {
-  let layoutDesc = intentDescription.layoutDescription ?? ""
-  let sections = intentDescription.sections ?? []
-  let sectionsStr = JSON.stringify(sections, null, 2)
+function findNodeById(node: any, id: string): any {
+  if (!node) return null
+  if (node.id === id) return node
+  if (Array.isArray(node.children)) {
+    for (const child of node.children) {
+      const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
+      const found = findNodeById(childNode, id)
+      if (found) return found
+    }
+  }
+  return null
+}
 
+function buildHumanMessage(sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any): string {
   let elements = layoutPlanner.elements ?? []
   let slotElement = elements.find((e: any) => e?.id === elementId) ?? {}
   let slotElementStr = JSON.stringify(slotElement, null, 2)
 
-  let sectionDetailList = intentDescription.sectionDetailList ?? []
-  let sectionDetail = sectionDetailList.find((item: any) => item?.id === sectionId) ?? {}
-  let sectionDetailStr = JSON.stringify(sectionDetail, null, 2)
-
-  let constraints = sectionDetail.constraints ?? []
-  let constraintsStr = constraints.length
-    ? constraints.map((c: any) => `${c.type}:${c.value} (${c.description})`).join("; ")
-    : "无"
+  let node = findNodeById(intentDescription, sectionId)
+  let nodeStr = JSON.stringify(node, null, 2)
 
   return `请分析以下模块蓝图，确定需要哪些 A2UI 组件（不含 Section 和 Icon），输出一个 JSON 数组。
-
-[完整页面蓝图:] ==================================
-- 布局描述: ${layoutDesc}
-- 页面结构: ${sectionsStr}
 
 [模块顶层容器:] ==================================
 - Root ID: ${elementId}
 - Root UI:
   ${slotElementStr}
 
-[⚠️ 本模块约束:] ==================================
-${constraintsStr}
-
 [需要被渲染的模块详细蓝图:] ==================================
-${sectionDetailStr}
+${nodeStr}
 
 请仔细分析蓝图，列出所有需要的组件名（排除 Section 和 Icon），只输出一个 JSON 数组，例如 ["Table", "Tabs", "Button"]。不要输出任何其他内容。`
 }

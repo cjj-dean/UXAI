@@ -18,6 +18,7 @@ import _PROMPT_PROTO_MODULE_CREATE from "./prompt/proto_module_create.txt"
 import _PROMPT_PROTO_MODULE_MODIFY from "./prompt/proto_module_modify.txt"
 import _PROMPT_PROTO_PLANNER_CREATE from "./prompt/proto_planner_create.txt"
 import _PROMPT_PROTO_PLANNER_MODIFY from "./prompt/proto_planner_modify.txt"
+import _PROMPT_PLANNER_NEW_CREATE from "./prompt/planner_new_create.txt"
 import _PROMPT_PROTO_TRIAGE from "./prompt/proto_triage.txt"
 import _PROMPT_PROTO_COMPONENT_LOOKUP from "./prompt/proto_component_lookup.txt"
 import _PROMPT_INTENT_EXPAND from "./prompt/intent_expand.txt"
@@ -51,6 +52,7 @@ export const PROMPT_PROTO_MODULE_CREATE = formatPrompt(_PROMPT_PROTO_MODULE_CREA
 export const PROMPT_PROTO_MODULE_MODIFY = formatPrompt(_PROMPT_PROTO_MODULE_MODIFY)
 export const PROMPT_PROTO_PLANNER_CREATE = formatPrompt(_PROMPT_PROTO_PLANNER_CREATE)
 export const PROMPT_PROTO_PLANNER_MODIFY = formatPrompt(_PROMPT_PROTO_PLANNER_MODIFY)
+export const PROMPT_PLANNER_NEW_CREATE = formatPrompt(_PROMPT_PLANNER_NEW_CREATE)
 export const PROMPT_PROTO_TRIAGE = formatPrompt(_PROMPT_PROTO_TRIAGE)
 export const PROMPT_PROTO_COMPONENT_LOOKUP = formatPrompt(_PROMPT_PROTO_COMPONENT_LOOKUP)
 export const PROMPT_INTENT_EXPAND = formatPrompt(_PROMPT_INTENT_EXPAND)
