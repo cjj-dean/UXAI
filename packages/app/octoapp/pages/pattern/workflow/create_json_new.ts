@@ -89,7 +89,7 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
     const m = validModules[i]
     console.log(`[create_json_new] module[${i}]: rootId=${m?.rootId}, elementsCount=${m?.elements?.length}, firstElementIds=${(m?.elements ?? []).slice(0, 3).map((e: any) => e?.id).join(",")}`)
   }
-  console.log(`[create_json_new] shell: rootId=${layoutPlanner.rootId}, elementsCount=${layoutPlanner.elements?.length}, slotElementIds=${slots.map((s: any) => s.element_id).join(",")}`)
+  console.log(`[create_json_new] shell: rootId=${layoutPlanner.rootId}, elementsCount=${(layoutPlanner.elements as any[])?.length}, slotElementIds=${slots.map((s: any) => s.element_id).join(",")}`)
 
   // 第五步：合并完整UI JSON
   console.log("[create_json_new] ===== mergeModules START =====")
