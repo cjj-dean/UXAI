@@ -1,0 +1,141 @@
+{
+  '顶部导航': {
+    layout: 'horizontal',
+    children: [
+      {
+        '左侧': {
+          description: '图标+文字 iMaster Pro'
+        }
+      },
+      {
+        '居中': {
+          description: '导航菜单: 概览 | 节点管理 | 拓扑列表 | 性能监控 | 外部接入 | 规则配置 | 日志分析'
+        }
+      },
+      {
+        '右侧': {
+          description: '设置图标 | 界面视图控制图标 | 用户个人图标(靠右边缘)'
+        }
+      }
+    ]
+  },
+  '导航栏下方信息行': {
+    layout: 'horizontal',
+    children: [
+      {
+        '左侧': {
+          description: '全局页面标题: 网络运行总览'
+        }
+      },
+      {
+        '右侧': {
+          description: '系统时间: 2026-05-27 14:30:00 + 告警监控图标'
+        }
+      }
+    ]
+  },
+  '主体区域': {
+    layout: 'horizontal',
+    children: [
+      {
+        '左侧主内容区域': {
+          layout: 'vertical',
+          children: [
+            {
+              'Tab导航': {
+                description: '核心路由 | 边缘网关 | 接入层'
+              }
+            },
+            {
+              'CPU使用率': {
+                layout: 'horizontal',
+                children: [
+                  {
+                    '左侧30%': {
+                      description: 'PatGauge仪表盘'
+                    }
+                  },
+                  {
+                    '右侧70%': {
+                      layout: 'horizontal',
+                      children: [
+                        { template: '统计块', value: '1574', label: '运行中' },
+                        { template: '统计块', value: '050', label: '待检修' }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              '网络流量趋势': {
+                children: [
+                  {
+                    '上行': {
+                      layout: 'horizontal',
+                      children: [
+                        {
+                          '左侧': {
+                            description: '标题: 网络流量趋势'
+                          }
+                        },
+                        {
+                          '右侧': {
+                            description: '下拉控件: 近30天'
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    '下行': {
+                      description: '折线图(单条数据,占满模块宽度)'
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              '小型图表组': {
+                layout: 'horizontal',
+                children: [
+                  { template: '堆叠折线图卡片', title: '计算资源池监控', series: '核心集群>84% | 高频区6%~09% | 闲置区' },
+                  { template: '堆叠折线图卡片', title: '存储容量使用趋势', series: '固态存储>58% | 机械硬盘2%~14% | 备份区' },
+                  { template: '堆叠折线图卡片', title: '网络IO流量监控', series: '下行流量>63% | 上行流量5%~12% | 广播包' }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        '右侧侧边区域': {
+          width: '400px',
+          children: [
+            {
+              '统计概览面板': {
+                children: [
+                  {
+                    '标题': {
+                      description: '设备在线数(6119) | 异常告警(766)'
+                    }
+                  },
+                  {
+                    '大字数值': {
+                      description: '6415 总数'
+                    }
+                  },
+                  {
+                    '堆叠条形图': {
+                      description: 'PatStackedBar'
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

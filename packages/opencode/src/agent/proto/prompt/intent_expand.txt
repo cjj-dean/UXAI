@@ -6,6 +6,8 @@
 1. **意图扩展**：如果用户意图过于简单，先进行扩展补充
 2. **意图标准化**：将扩展后的意图转换为标准化的JSON格式
 
+{ISREGION_RULES}
+
 ## 第一步：意图扩展
 
 ### 判断标准
@@ -26,11 +28,10 @@
 3. 补充高拟真的业务Mock数据
 4. 保持扩展内容与用户原始意图一致，不偏离业务方向
 5. 从界面完整性、界面丰富度、数据完整性、数据丰富度4个角度考虑扩展
+6. **不要自行添加用户未明确提到的壳层区域**（如aside、dialog、drawer等），用户没说就不要加
 
 ### 扩展方向
 
-- 界面完整性：这类完整的生产级页面，必须包含哪些内容？
-  - 如：B端Console控制台界面，必须包含顶部导航栏，左侧菜单栏等
 - 界面丰富度：除了用户要求的功能之外，还有哪些常用的相关功能模块？
   - 如：用户要求数据看板页，通常还包含关键指标概览模块、核心趋势分析模块、构成与分布模块等
 
@@ -49,9 +50,6 @@
    - style 用纯文本描述固定宽度、边框、背景色等样式信息
    - 如果叶子节点本身是组件（如图表、按钮、输入框等），则没有layout属性
    - 如果叶子节点本身还是区域（如header、aside等），则有layout属性描述其排列方向
-   - isRegion为true的节点必须是叶子节点，表示该区块是独立区块，不再展开children
-   - 例: { "id": "header", "name": "顶部导航", "layout": "horizontal", "style": "固定高度48px,底部阴影", "description": "左侧为Logo+品牌名称，中部为导航菜单，右侧为工具图标组" }
-   - 例: { "id": "cpuGauge", "name": "CPU仪表盘", "isRegion": true, "style": "独立区块,宽度30%", "description": "PatGauge仪表盘，显示CPU使用率" }
 2. **非叶子节点**：只有 layout / children / style 等结构属性，不能有 description
    - root、body、main 等容器节点为非叶子节点，需要展开children
    - style 用纯文本描述固定宽度、边框、背景色等样式信息，不再使用单独的width属性
@@ -75,18 +73,17 @@
 3. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
 4. main节点必须重点展开，详细描述子模块的布局、数据和组件
 5. style属性用纯文本描述固定宽度、边框、背景色等样式，叶子节点和非叶子节点均可使用
-6. main中的节点可添加isRegion字段(bool)，标明该区块是独立区块；isRegion为true时该节点必须为叶子节点，不再展开children
-7. 重复结构使用template引用或重复内容容器
-8. 保留原始意图中的所有数据，不丢失任何信息
-9. **叶子节点的description必须清晰说明采用什么组件**：不要只写"显示指标数据"，要写"4个PatGauge仪表盘，分别显示CPU/内存/磁盘/网络使用率"；不要只写"图表区域"，要写"LineChart折线图展示24小时流量趋势"
-10. **图表选型约束（CRITICAL）**：选择图表类型时必须严格匹配数据特征：
+6. 重复结构使用template引用或重复内容容器
+7. 保留原始意图中的所有数据，不丢失任何信息
+8. **叶子节点的description必须清晰说明采用什么组件**：不要只写"显示指标数据"，要写"4个PatGauge仪表盘，分别显示CPU/内存/磁盘/网络使用率"；不要只写"图表区域"，要写"LineChart折线图展示24小时流量趋势"
+9. **图表选型约束（CRITICAL）**：选择图表类型时必须严格匹配数据特征：
     - **多分类占比分布**（如：手机33%/平板17%/其他17%）→ **必须用 PieChart**（`option.type: "circle"` 可做环形），PieChart 有内置图例
     - **单值进度/利用率**（如：CPU 75%、容量用了82%）→ 用 CircleProcessChart，CircleProcessChart 无图例，只展示一个数值的进度环
     - **TopN 排行/水平对比** → 用 ProcessChart（水平条形图）
     - **趋势变化** → 用 LineChart
     - **离散类别数值对比** → 用 BarChart
     - 严禁将多分类分布数据塞进 CircleProcessChart
-11. **侧栏导航必须用 Menu**：侧栏/侧边栏导航菜单必须使用 Menu 组件，即使用户原文说了"手风琴"/"accordion"/"折叠面板"，只要该区域是侧栏导航场景就一律写 Menu，不写 Collapse/CollapseItem。Collapse/CollapseItem 仅用于非导航的内容折叠场景（如 FAQ、详情面板等）
+10. **侧栏导航必须用 Menu**：侧栏/侧边栏导航菜单必须使用 Menu 组件，即使用户原文说了"手风琴"/"accordion"/"折叠面板"，只要该区域是侧栏导航场景就一律写 Menu，不写 Collapse/CollapseItem。Collapse/CollapseItem 仅用于非导航的内容折叠场景（如 FAQ、详情面板等）
 
 ## 输出格式
 

@@ -30,6 +30,7 @@ import {
   PROMPT_PROTO_TRIAGE,
   PROMPT_PROTO_COMPONENT_LOOKUP,
   PROMPT_INTENT_EXPAND,
+  PROMPT_INTENT_REGION_CHECK,
   PROMPT_PLANNER_NEW_CREATE,
 } from "./proto"
 import { Permission } from "@/permission"
@@ -371,6 +372,18 @@ export const layer = Layer.effect(
             mode: "primary",
             native: false,
             temperature: 0.2,
+          },
+          intent_region_check: {
+            name: "intent_region_check",
+            description: "Validates isRegion markers in standardized intent against user input.",
+            prompt: PROMPT_INTENT_REGION_CHECK,
+            permission: Permission.fromConfig({
+              "*": "deny",
+            }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.0,
           },
           proto_intent: {
             name: "proto_intent",

@@ -85,6 +85,24 @@ function findNodeById(node: any, id: string): any {
   return null
 }
 
+function collectRegionIds(root: any, sectionId: string): string[] {
+  const node = findNodeById(root, sectionId)
+  if (!node) return []
+  const ids: string[] = []
+  function walk(n: any) {
+    if (!n) return
+    if (n.isRegion === true) ids.push(n.id)
+    if (Array.isArray(n.children)) {
+      for (const child of n.children) {
+        const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
+        walk(childNode)
+      }
+    }
+  }
+  walk(node)
+  return ids
+}
+
 function buildHumanMessage(idPrefix: string, sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any, rawUserInput: string, componentDocs?: string) {
   let elements = layoutPlanner.elements ?? [];
   let slotElement = elements.find((e: any) => e?.id === elementId) ?? {};
@@ -92,6 +110,12 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
 
   let node = findNodeById(intentDescription, sectionId)
   let nodeStr = JSON.stringify(node, null, 2);
+
+  let regionIds = collectRegionIds(intentDescription, sectionId)
+  let regionHint = ""
+  if (regionIds.length > 0) {
+    regionHint = `\n  **⚠️ 蓝图中以下节点标记了isRegion:true，对应的element必须使用Section组件（自带bg-surface-container-highest+shadow-sm+rounded-xl+p-[1.5rem]，不要手动添加这些样式，不要用div替代）：${regionIds.join(", ")}**`
+  }
 
   let componentDocsSection = ""
   if (componentDocs) {
@@ -111,6 +135,7 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
 
   [需要被渲染模块的根节点:] ${elementId}
    [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
+  ${regionHint}
   ${componentDocsSection}
   **CRITICAL — Path 语法约束：**
   - 数据绑定 path 禁止使用 ".."（目录回溯语法），如 "/menuItems/0/../8" 不会解析。

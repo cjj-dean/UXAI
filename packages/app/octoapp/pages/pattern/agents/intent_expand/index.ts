@@ -45,9 +45,10 @@ ${userInput}
   const expandJson = extractJson(result.text)
   if (!expandJson) throw new Error("----- Intent Expand did not return valid JSON -----")
 
+  const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? null
   const returnValue = {
-    is_simple: expandJson.isSimple ?? true,
-    standardized_intent: expandJson.standardizedIntent ?? null,
+    is_simple: expandJson.isSimple ?? expandJson.is_simple ?? true,
+    standardized_intent: standardizedIntent,
     current_step: "intent_expand"
   }
 

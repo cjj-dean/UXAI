@@ -18,6 +18,7 @@ type PlannerNewCreateInput = {
 const SHELL_COMPONENT_MAP: Record<string, string> = {
   root: "div",
   header: "header",
+  infoBar: "div",
   body: "div",
   aside: "aside",
   main: "main",
@@ -25,18 +26,20 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
   drawer: "Drawer",
 }
 
+const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
+
 function deriveIdPrefix(id: string): string {
   const parts = id.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
   if (parts.length === 1) return parts[0].slice(0, 4)
   return parts.map((p) => p.slice(0, 2)).join("").slice(0, 6)
 }
 
-function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren: string[]) {
+function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren: string[], isUnderMain: boolean = false) {
   if (!node) return
   const id = node.id
   if (!id) return
 
-  const isLeaf = !node.children || node.children.length === 0 || node.isRegion === true
+  const isLeaf = !node.children || node.children.length === 0
   const isShellNode = id in SHELL_COMPONENT_MAP
   const isRegion = node.isRegion === true
 
@@ -46,10 +49,23 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
       ? "Section"
       : "div"
 
+  const FIXED_CLASSNAMES: Record<string, string> = {
+    header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
+    infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
+    aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
+    body: "flex flex-row flex-1 min-h-0 overflow-hidden",
+    root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
+  }
+
+  let className = FIXED_CLASSNAMES[id] ?? ""
+  if (id === "main") {
+    className = "flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0"
+  }
+
   const element: any = {
     id,
     component,
-    props: { className: "" },
+    props: { className },
     children: [] as string[],
   }
 
@@ -59,18 +75,51 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     element.props = { ...element.props, title: "", direction: "rtl", size: "30%" }
   }
 
-  if (isLeaf) {
+  // header/aside/dialog/drawer 各只对应一个slot，不递归展开内部
+  // main的直接子节点直接作为slot；如果main只有一个子节点，则往下再找一层
+  if (SHELL_SLOT_IDS.has(id)) {
     slots.push({
       section_id: id,
       element_id: id,
       id_prefix: deriveIdPrefix(id),
     })
-  } else {
+  } else if (isUnderMain) {
+    const childNodes = (node.children ?? [])
+      .map((child: any) => child.id ? child : (Object.values(child)[0] as any ?? child))
+      .filter((c: any) => c && c.id)
+    if (childNodes.length === 1 && childNodes[0].children?.length > 0 && !childNodes[0].isRegion) {
+      const onlyChild = childNodes[0]
+      const grandChildren = onlyChild.children
+        .map((gc: any) => gc.id ? gc : (Object.values(gc)[0] as any ?? gc))
+        .filter((c: any) => c && c.id)
+      if (grandChildren.length > 0) {
+        element.children = grandChildren.map((gc: any) => gc.id)
+        for (const gc of grandChildren) {
+          slots.push({
+            section_id: gc.id,
+            element_id: gc.id,
+            id_prefix: deriveIdPrefix(gc.id),
+          })
+          buildSkeleton(gc, elements, slots, [], false)
+        }
+        elements.push(element)
+        parentChildren.push(id)
+        return
+      }
+    }
+    slots.push({
+      section_id: id,
+      element_id: id,
+      id_prefix: deriveIdPrefix(id),
+    })
+    return
+  } else if (node.children && node.children.length > 0) {
     const childIds: string[] = []
+    const childIsUnderMain = id === "main"
     for (const child of node.children) {
       if (typeof child === "object" && child !== null) {
         const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
-        buildSkeleton(childNode, elements, slots, childIds)
+        buildSkeleton(childNode, elements, slots, childIds, childIsUnderMain)
       }
     }
     element.children = childIds
@@ -83,7 +132,7 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
 function flattenForPrompt(node: any, results: Array<{ id: string; name: string; layout: string; style: string; isLeaf: boolean; isRegion: boolean; description: string }>) {
   if (!node) return
   const id = node.id ?? ""
-  const isLeaf = !node.children || node.children.length === 0 || node.isRegion === true
+  const isLeaf = !node.children || node.children.length === 0
   results.push({
     id,
     name: node.name ?? "",
@@ -136,8 +185,9 @@ ${JSON.stringify({ rootId: standardizedIntent.id ?? "root", elements, slots }, n
 - style中的"横向等宽等距排布" → flex-1
 - 有children的容器必须加 gap-[1rem]
 - header固定: shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]
+- infoBar固定: shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]
 - aside固定: shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full
-- main固定: flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0
+- main默认: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0，再根据layout添加flex-row或flex-col
 - root固定: flex flex-col h-screen overflow-hidden bg-surface-container-lowest
 
 请输出完整的A2UI JSON（包含rootId、elements、slots）。`
@@ -164,7 +214,17 @@ ${JSON.stringify({ rootId: standardizedIntent.id ?? "root", elements, slots }, n
   const layoutPlanner = {
     rootId: plannerJson.rootId ?? standardizedIntent.id ?? "root",
     elements: plannerJson.elements ?? elements,
-    slots: plannerJson.slots ?? slots,
+    slots,
+  }
+
+  try {
+    const desktopApi = (window as any).api
+    if (desktopApi?.writeFileBuffer) {
+      const data = new TextEncoder().encode(JSON.stringify(slots, null, 2))
+      await desktopApi.writeFileBuffer(`${sdk.directory}/pattern/workflow/${rootSession}/planner_new_create/programmatic_slots.json`, data.buffer)
+    }
+  } catch (e) {
+    console.error("[planner_new_create] failed to write programmatic_slots.json", e)
   }
 
   const returnValue = {

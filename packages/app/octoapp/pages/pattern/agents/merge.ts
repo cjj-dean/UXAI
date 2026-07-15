@@ -81,8 +81,12 @@ export function mergeModules(shell: A2UIModule, modules: A2UIModule[], slots?: S
         }
         if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
       } else {
+        const shellClassName = (elements[slotIndex].props?.className as string) ?? ""
         elements[slotIndex].component = modRoot.component
-        if (modRoot.props) elements[slotIndex].props = { ...modRoot.props }
+        if (modRoot.props) {
+          elements[slotIndex].props = { ...modRoot.props }
+          if (shellClassName) elements[slotIndex].props.className = shellClassName
+        }
         if (modRoot.children) elements[slotIndex].children = copyChildren(modRoot.children) as string[]
       }
     }
