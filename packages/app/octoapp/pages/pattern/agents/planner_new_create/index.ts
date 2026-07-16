@@ -1,5 +1,4 @@
-import { extractJson } from '../../utils/json_parser'
-import { runChildSession } from '../run_child_session'
+import { directLLMCall } from '../../utils/direct_llm_call'
 import { logAgentParsed } from "../../utils/persist"
 
 const AGENT_NAME = "planner_new_create"
@@ -28,18 +27,31 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
 
 const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
 
+const FIXED_CLASSNAMES: Record<string, string> = {
+  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
+  infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
+  aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
+  body: "flex flex-row flex-1 min-h-0 overflow-hidden",
+  root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
+}
+
 function deriveIdPrefix(id: string): string {
   const parts = id.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
   if (parts.length === 1) return parts[0].slice(0, 4)
   return parts.map((p) => p.slice(0, 2)).join("").slice(0, 6)
 }
 
-function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren: string[], isUnderMain: boolean = false) {
+function getChildNodes(node: any): any[] {
+  return (node.children ?? [])
+    .map((child: any) => child.id ? child : (Object.values(child)[0] as any ?? child))
+    .filter((c: any) => c && c.id)
+}
+
+function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren: string[], isDirectChildOfMain: boolean = false) {
   if (!node) return
   const id = node.id
   if (!id) return
 
-  const isLeaf = !node.children || node.children.length === 0
   const isShellNode = id in SHELL_COMPONENT_MAP
   const isRegion = node.isRegion === true
 
@@ -49,24 +61,26 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
       ? "Section"
       : "div"
 
-  const FIXED_CLASSNAMES: Record<string, string> = {
-    header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
-    infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
-    aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
-    body: "flex flex-row flex-1 min-h-0 overflow-hidden",
-    root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
-  }
-
   let className = FIXED_CLASSNAMES[id] ?? ""
   if (id === "main") {
-    className = "flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0"
+    const layoutDir = node.layout === "horizontal" ? "flex flex-row" : "flex flex-col"
+    className = `flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${layoutDir}`
+  } else if (!(id in FIXED_CLASSNAMES)) {
+    const layoutDir = node.layout === "horizontal" ? "flex flex-row" : node.layout === "grid" ? "grid" : "flex flex-col"
+    className = `${layoutDir} gap-[1rem]`
   }
+
+  const needsClassName = !(id in FIXED_CLASSNAMES) && id !== "main"
 
   const element: any = {
     id,
     component,
     props: { className },
     children: [] as string[],
+    layout: node.layout ?? "",
+    style: node.style ?? "",
+    isRegion,
+    needsClassName,
   }
 
   if (component === "Dialog") {
@@ -75,51 +89,33 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     element.props = { ...element.props, title: "", direction: "rtl", size: "30%" }
   }
 
-  // header/aside/dialog/drawer 各只对应一个slot，不递归展开内部
-  // main的直接子节点直接作为slot；如果main只有一个子节点，则往下再找一层
   if (SHELL_SLOT_IDS.has(id)) {
-    slots.push({
-      section_id: id,
-      element_id: id,
-      id_prefix: deriveIdPrefix(id),
-    })
-  } else if (isUnderMain) {
-    const childNodes = (node.children ?? [])
-      .map((child: any) => child.id ? child : (Object.values(child)[0] as any ?? child))
-      .filter((c: any) => c && c.id)
-    if (childNodes.length === 1 && childNodes[0].children?.length > 0 && !childNodes[0].isRegion) {
-      const onlyChild = childNodes[0]
-      const grandChildren = onlyChild.children
-        .map((gc: any) => gc.id ? gc : (Object.values(gc)[0] as any ?? gc))
-        .filter((c: any) => c && c.id)
-      if (grandChildren.length > 0) {
-        element.children = grandChildren.map((gc: any) => gc.id)
-        for (const gc of grandChildren) {
-          slots.push({
-            section_id: gc.id,
-            element_id: gc.id,
-            id_prefix: deriveIdPrefix(gc.id),
-          })
-          buildSkeleton(gc, elements, slots, [], false)
-        }
-        elements.push(element)
-        parentChildren.push(id)
-        return
+    slots.push({ section_id: id, element_id: id, id_prefix: deriveIdPrefix(id) })
+  } else if (id === "main") {
+    const childNodes = getChildNodes(node)
+    const nonRegionChildren = childNodes.filter((c: any) => !c.isRegion)
+    if (childNodes.length === 1 && nonRegionChildren.length === 1 && getChildNodes(nonRegionChildren[0]).length > 0) {
+      const grandChildren = getChildNodes(nonRegionChildren[0])
+      element.children = grandChildren.map((gc: any) => gc.id)
+      for (const gc of grandChildren) {
+        slots.push({ section_id: gc.id, element_id: gc.id, id_prefix: deriveIdPrefix(gc.id) })
+        buildSkeleton(gc, elements, slots, [], false)
+      }
+    } else {
+      element.children = childNodes.map((c: any) => c.id)
+      for (const c of childNodes) {
+        slots.push({ section_id: c.id, element_id: c.id, id_prefix: deriveIdPrefix(c.id) })
+        buildSkeleton(c, elements, slots, [], false)
       }
     }
-    slots.push({
-      section_id: id,
-      element_id: id,
-      id_prefix: deriveIdPrefix(id),
-    })
-    return
+  } else if (isDirectChildOfMain) {
+    slots.push({ section_id: id, element_id: id, id_prefix: deriveIdPrefix(id) })
   } else if (node.children && node.children.length > 0) {
     const childIds: string[] = []
-    const childIsUnderMain = id === "main"
     for (const child of node.children) {
       if (typeof child === "object" && child !== null) {
         const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
-        buildSkeleton(childNode, elements, slots, childIds, childIsUnderMain)
+        buildSkeleton(childNode, elements, slots, childIds, false)
       }
     }
     element.children = childIds
@@ -129,91 +125,90 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
   parentChildren.push(id)
 }
 
-function flattenForPrompt(node: any, results: Array<{ id: string; name: string; layout: string; style: string; isLeaf: boolean; isRegion: boolean; description: string }>) {
-  if (!node) return
-  const id = node.id ?? ""
-  const isLeaf = !node.children || node.children.length === 0
-  results.push({
-    id,
-    name: node.name ?? "",
-    layout: node.layout ?? "",
-    style: node.style ?? "",
-    isLeaf,
-    isRegion: node.isRegion === true,
-    description: node.description ?? "",
-  })
-  if (!isLeaf && Array.isArray(node.children)) {
-    for (const child of node.children) {
-      if (typeof child === "object" && child !== null) {
-        const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
-        flattenForPrompt(childNode, results)
-      }
-    }
+function applyClassNames(elements: any[], llmElements: any[]) {
+  const llmMap = new Map<string, string>()
+  for (const el of llmElements) {
+    if (el.id && el.props?.className) llmMap.set(el.id, el.props.className)
+  }
+  for (const el of elements) {
+    const llmClassName = llmMap.get(el.id)
+    if (!llmClassName) continue
+    if (el.id in FIXED_CLASSNAMES || el.id === "main") continue
+    el.props.className = llmClassName
   }
 }
 
 export default async function planner_new_create(input: PlannerNewCreateInput) {
-  const { sdk, sync, modelKey, rootSession, standardizedIntent, onSessionCreated } = input
+  const { sdk, sync, modelKey, rootSession, standardizedIntent, onDirectCallTiming, onReasoningDelta } = input
 
-  // 程序化构建骨架：elements + slots
   const elements: any[] = []
   const slots: any[] = []
   const rootChildren: string[] = []
   buildSkeleton(standardizedIntent, elements, slots, rootChildren)
 
-  // 收集节点信息用于生成 className prompt
-  const flatNodes: Array<{ id: string; name: string; layout: string; style: string; isLeaf: boolean; isRegion: boolean; description: string }> = []
-  flattenForPrompt(standardizedIntent, flatNodes)
+  const needsClassNameNodes = elements.filter(el => el.needsClassName)
+  const hasStyleNodes = needsClassNameNodes.filter(el => el.style && el.style !== "独立区块")
 
-  const nonLeafNodes = flatNodes.filter(n => !n.isLeaf)
-
-  const humanMessage = `[意图扩展输出的标准化JSON:] ==================================
-${JSON.stringify(standardizedIntent, null, 2)}
-
-[程序化生成的布局骨架（className为空，需要你填充）:] ==================================
+  const humanMessage = `[程序化生成的布局骨架:] ==================================
 ${JSON.stringify({ rootId: standardizedIntent.id ?? "root", elements, slots }, null, 2)}
 
-请根据骨架中每个节点的layout和style属性，生成完整的Tailwind className，输出完整的A2UI JSON（rootId + elements + slots）。
+请为骨架中 needsClassName=true 的节点生成完整的 Tailwind className，输出完整的 elements 数组。
+
 规则：
-- 层级关系、children、component、id 不可更改，必须与骨架完全一致
+- id、component、children 不可更改，必须与骨架完全一致
+- 只需填充 needsClassName=true 节点的 props.className，其余节点的 className 保持骨架原值
 - layout "horizontal" → flex flex-row
 - layout "vertical" → flex flex-col
 - layout "grid" → grid
-- style中的"固定宽度54px" → w-[54px]
+- style中的"固定宽度54px" → w-[54px] shrink-0
 - style中的"固定高度300px" → h-[300px]
-- style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加
+- style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
 - style中的"横向等宽等距排布" → flex-1
 - 有children的容器必须加 gap-[1rem]
-- header固定: shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]
-- infoBar固定: shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]
-- aside固定: shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full
-- main默认: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0，再根据layout添加flex-row或flex-col
-- root固定: flex flex-col h-screen overflow-hidden bg-surface-container-lowest
+- 子元素间需要等分空间时，给子元素加 flex-1
+- flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出
+- Children MUST NOT use margin-* for spacing
+- 固定宽度的侧边面板加 shrink-0
 
-请输出完整的A2UI JSON（包含rootId、elements、slots）。`
+输出格式：{ "elements": [...] }
+只输出JSON对象，不要输出任何其他内容。`
 
   console.log("----- 新布局规划Agent开始执行 -----")
   const startTime = Date.now()
+  onDirectCallTiming?.({ agent: AGENT_NAME, startTime })
 
-  const result = await runChildSession({
-    sync,
+  const result = await directLLMCall({
     modelKey,
-    onSessionCreated,
-    agent: AGENT_NAME,
-    client: sdk.client,
-    prompt: humanMessage,
-    directory: sdk.directory,
-    parentSessionID: rootSession
+    agentName: AGENT_NAME,
+    humanMessage,
+    systemPromptOverride: "You are a UI layout architect. Generate Tailwind className for layout skeleton nodes. Output only valid JSON.",
+    noThinking: true,
+    workflowId: rootSession,
+    workDir: sdk.directory,
+    onReasoningDelta,
   })
 
-  console.log("----- 新布局规划Agent运行结束，耗时：", (Date.now() - startTime) / 1000, 's -----')
+  const latencyMs = Date.now() - startTime
+  onDirectCallTiming?.({ agent: AGENT_NAME, startTime, endTime: Date.now() })
+  console.log("----- 新布局规划Agent运行结束，耗时：", latencyMs / 1000, 's -----')
 
-  const plannerJson = extractJson(result.text)
-  if (!plannerJson) throw new Error("----- Planner New Create did not return valid JSON -----")
+  const parsed = result.parsed as { elements?: any[] } | null
+  if (parsed?.elements && Array.isArray(parsed.elements)) {
+    applyClassNames(elements, parsed.elements)
+  } else {
+    console.warn("[planner_new_create] LLM did not return valid elements array, using skeleton defaults")
+  }
+
+  for (const el of elements) {
+    delete el.layout
+    delete el.style
+    delete el.isRegion
+    delete el.needsClassName
+  }
 
   const layoutPlanner = {
-    rootId: plannerJson.rootId ?? standardizedIntent.id ?? "root",
-    elements: plannerJson.elements ?? elements,
+    rootId: standardizedIntent.id ?? "root",
+    elements,
     slots,
   }
 
@@ -232,6 +227,6 @@ ${JSON.stringify({ rootId: standardizedIntent.id ?? "root", elements, slots }, n
     current_step: "planner_new_create"
   }
 
-  logAgentParsed(result.childSessionId, returnValue)
+  logAgentParsed(`direct-${Date.now().toString(36)}`, returnValue)
   return returnValue
 }

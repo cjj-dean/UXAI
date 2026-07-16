@@ -93,6 +93,8 @@ export type DirectLLMCallInput = {
   modelKey: { providerID: string; modelID: string }
   agentName: string
   humanMessage: string
+  systemPromptOverride?: string
+  noThinking?: boolean
   workflowId?: string
   workDir?: string
   onReasoningDelta?: (agent: string, delta: string) => void
@@ -127,12 +129,14 @@ async function getSystemPrompt(agentName: string): Promise<string> {
 }
 
 export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLLMCallResult> {
-  const { modelKey, agentName, humanMessage, workflowId, workDir, onReasoningDelta } = input
+  const { modelKey, agentName, humanMessage, systemPromptOverride, noThinking, workflowId, workDir, onReasoningDelta } = input
 
-  const [providerConfig, systemPrompt] = await Promise.all([
+  const [providerConfig, defaultSystemPrompt] = await Promise.all([
     resolveProviderConfig(modelKey),
-    getSystemPrompt(agentName),
+    systemPromptOverride ? Promise.resolve("") : getSystemPrompt(agentName),
   ])
+
+  const systemPrompt = systemPromptOverride ?? defaultSystemPrompt
 
   const url = `${providerConfig.baseURL}/chat/completions`
   const startTime = Date.now()
@@ -168,6 +172,7 @@ export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLL
       temperature: 0,
       messages,
       stream: true,
+      ...(noThinking ? { thinking: { type: "disabled" } } : {}),
     }),
   })
 
