@@ -39,6 +39,8 @@ import { fixRedundantLoopWrapper } from "./layout"
 import { fixSlotComponents } from "./component"
 import { fixStepsFullWidth } from "./component"
 import { fixPatStackedBar } from "./component"
+import { fixTabContent } from "./component"
+import { fixBorderBox } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "dialog_class", fn: fixDialogClass },
@@ -78,4 +80,6 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "redundant_loop_wrapper", fn: fixRedundantLoopWrapper },
   { name: "steps_full_width", fn: fixStepsFullWidth },
   { name: "pat_stacked_bar", fn: fixPatStackedBar },
+  { name: "tab_content", fn: fixTabContent },
+  { name: "border_box", fn: fixBorderBox },
 ]

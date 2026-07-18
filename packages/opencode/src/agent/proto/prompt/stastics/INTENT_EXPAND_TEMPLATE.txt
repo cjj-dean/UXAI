@@ -9,7 +9,7 @@
       "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
     },
     {
-      "id": "infoBar", "name": "信息栏",  /* 🔵 可选，必须是叶子节点，不能有children */
+      "id": "infoBar", "name": "信息栏",  /* 🔵 可选，必须是叶子节点，不能有children，必须放在root下，不能放到body下 */
       "layout": "horizontal",
       "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
     },
@@ -60,6 +60,7 @@
 - 🔵 可选：根据页面蓝图决定是否需要该区域
 - 🟢 main内容区：以下所有内容均可根据用户意图自由修改和填充
 - body下必须包含main，可选包含aside；aside在左侧，main在中间
+- infoBar必须放在root的children里，与header、body并列，不能放到body下
 - main下分为mainContent（核心内容）和rightPanel（右侧面板，可选）；rightPanel必须放在main的children里，不能放到body下
 - layout必须根据子节点的实际排列方向决定：子节点左右排列→horizontal，子节点上下排列→vertical。不要照搬模板中的layout值
 - 用户意图中 `{{独立区块}}` 紧跟在节点名称后面，表示该节点是独立区块，需要设置 isRegion:true 和 style:"独立区块"。例如："左侧区域{{独立区块}}"表示左侧区域节点是独立区块

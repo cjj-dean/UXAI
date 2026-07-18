@@ -2,6 +2,7 @@ import { type A2UIElement, type Fixer, childToParent, elemMap, getClassName, set
 
 const CHART_COMPONENTS = new Set(["LineChart", "BarChart", "PieChart", "RadarChart", "GaugeChart", "ProcessChart", "BubbleChart", "AssembleBubbleChart", "BulletChart", "FunnelChart", "HillChart", "ScatterChart", "JadeJueChart", "CircleProcessChart"])
 const DEFAULT_CHART_HEIGHT = 250
+const MIN_CHART_HEIGHT = 180
 const HEADER_BUFFER = 80
 const CONFLICTING_CLASSES = new Set(["flex-1", "min-h-0", "flex-grow", "grow", "h-full", "h-screen"])
 
@@ -125,7 +126,11 @@ export const fixChartHeight: Fixer = (json) => {
       fixes.push(`[${elem.id}](${elem.component}) 缺少显式高度: 设置 h-[${targetH}px]`)
     } else {
       let newCls = cleanedCls
-      if (available && currentH > available) {
+      if (currentH < MIN_CHART_HEIGHT) {
+        let targetH = Math.max(MIN_CHART_HEIGHT, miniThreshold)
+        newCls = setChartHeightPx(cleanedCls, targetH)
+        fixes.push(`[${elem.id}](${elem.component}) 图表高度 ${Math.floor(currentH)}px 低于最小 ${MIN_CHART_HEIGHT}px: 提升到 h-[${targetH}px]`)
+      } else if (available && currentH > available) {
         let targetH = Math.floor(available)
         if (miniThreshold > targetH) targetH = miniThreshold
         newCls = setChartHeightPx(cleanedCls, targetH)

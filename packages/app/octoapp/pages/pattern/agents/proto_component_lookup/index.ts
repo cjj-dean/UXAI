@@ -93,5 +93,9 @@ function buildHumanMessage(sectionId: string, elementId: string, layoutPlanner: 
 [需要被渲染的模块详细蓝图:] ==================================
 ${nodeStr}
 
+规则：
+- 如果蓝图的description中明确提到了组件名（如PatGauge、PatStackedBar、LineChart等），必须使用该组件名，不要替换为其他类似组件
+- 例如：描述中写"PatGauge"就必须用"PatGauge"，不能用"GaugeChart"替代
+
 请仔细分析蓝图，列出所有需要的组件名（排除 Section 和 Icon），只输出一个 JSON 数组，例如 ["Table", "Tabs", "Button"]。不要输出任何其他内容。`
 }
