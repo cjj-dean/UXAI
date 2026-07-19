@@ -47,12 +47,9 @@ async function resolveProviderConfig(modelKey: { providerID: string; modelID: st
 }
 
 const PROMPT_TEMPLATE_FILES = [
-  "COMPONENTS_CATALOG",
   "COMPONENTS_USAGE",
   "DESIGN_SYSTEM_PROMPT",
   "A2UI_JSON_PROTOCOL",
-  "A2UI_SCHEMA",
-  "HTML5_SCHEMA",
   "HTML_EXAMPLE",
   "CARD_EXAMPLE",
   "LIST_EXAMPLE",

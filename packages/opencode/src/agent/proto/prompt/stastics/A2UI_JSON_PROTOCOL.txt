@@ -1,4 +1,4 @@
-# A2UI JSON Protocol
+﻿# A2UI JSON Protocol
 
 ## 1. Global Structure
 
@@ -10,102 +10,96 @@ The JSON is a single object containing three top-level keys: `state`, `rootId`, 
 | `rootId` | String | The ID of the outermost container element. |
 | `elements` | Array | A flat list of elements defining the complete UI. |
 
-**A2UI JSON CRITICAL CONSTRAINT:**
-  - Output sequence MUST strictly be: `state` -> `rootId` -> `elements`.
-  - MUST load and validate the output `JSON` against the `SCHEMA` defined in **A2UI STRUCTURE SCHEMA**.
+**CRITICAL:** Output sequence MUST strictly be: `state` -> `rootId` -> `elements`.
 
 ## 2. Elements Array Structure
 
-`elements` is defined as a **flat list** with ID references, supporting both HTML5 tags + A2UI Components from **A2UI Components Catalog** + Tailwind classes:
+`elements` is a **flat list** with ID references, supporting both HTML5 tags + A2UI Components + Tailwind classes:
 
 ```json
 "elements": [
   {{ "id": "mainCardContainer", "component": "div", "props": {{ "className": "flex flex-col gap-4 p-6 bg-white rounded-xl shadow-sm" }}, "children": ["mainCardTitle", "mainCardBtn"] }},
-  {{ "id": "mainCardTitle", "component": "span", "props": {{ "className": "text-lg font-bold text-slate-800", "value": "春游江南极易遇雨，务必携带伞具" }} }},
-  {{ "id": "mainCardBtn", "component": "Button", "props": {{ "className": "w-full", "type": "primary", "value": "确认出行" }} }}
+  {{ "id": "mainCardTitle", "component": "span", "props": {{ "className": "text-lg font-bold text-slate-800", "value": "Title" }} }},
+  {{ "id": "mainCardBtn", "component": "Button", "props": {{ "className": "w-full", "type": "primary", "value": "Confirm" }} }}
 ]
 ```
 
-**UI COMPOSITION STRATEGY:**
-  - **Natural Mix:** Build the UI using standard HTML5 tags and A2UI components. Apply Tailwind CSS via `className` to BOTH.
-  - **Ant Design Alignment:** Follow **Ant Design APIs**. Pure JSON only: NO JavaScript functions (e.g., JSX `render`).
-
-**ELEMENTS CRITICAL CONSTRAINTS:**
-  - **Parent First:** Parent components MUST be output before their children.
-  - **Flat Array:** DO NOT nest element objects. Reference component by ID in `children`.
-  - **Unique IDs:** Every element MUST possess a globally unique `id`. Never omit `id`.
-  - **ID Naming Convention:** MUST follow `[Zone][Module][Type]` three-segment camelCase pattern.
-    - **Bad:** `btn1`, `actionBtnItem`(missing zone), `div3`(no semantics).
-    - **Good:** `headerNavBtn`, `sidebarSearchInput`, `mainMetricCard`, `mainTableIdCell`.
-  - **No Missing Elements:** Every ID referenced in `children` MUST be defined in the `elements` array.
-  - **Complete Rendering:** Fully resolve the UI tree to all absolute bottom leaf nodes.  
+**CRITICAL CONSTRAINTS:**
+- **Parent First:** Parent components MUST be output before their children.
+- **Flat Array:** DO NOT nest element objects. Reference component by ID in `children`.
+- **Unique IDs:** Every element MUST possess a globally unique `id`. Never omit `id`.
+- **ID Naming:** MUST follow `[Zone][Module][Type]` three-segment camelCase pattern.
+  - Bad: `btn1`, `actionBtnItem`(missing zone), `div3`(no semantics).
+  - Good: `headerNavBtn`, `sidebarSearchInput`, `mainMetricCard`.
+- **No Missing Elements:** Every ID referenced in `children` MUST be defined in `elements`.
+- **Complete Rendering:** Fully resolve the UI tree to all absolute bottom leaf nodes.
+- **UI Composition:** Mix HTML5 tags and A2UI components. Apply Tailwind via `className` to both. Follow **Ant Design APIs**. Pure JSON only — NO JavaScript functions.
 
 ## 3. Data Binding
 
-Data assignment is categorized into **Static Literals** and **Dynamic Pointers**. 
+1. **Static Literals:** Fixed UI text. Do not reference `state`.
+   - `{{"value": "Confirm your itinerary"}}`
 
-1. Static Literals: Fixed UI text. Do not reference `state`.
-  - **`{{"value": "Confirm your itinerary"}}`** - Hardcoded strings.
+2. **Dynamic Pointers:** Use `path` object pointing to state data. Follow JSON Pointers (RFC 6901).
+   - `{{"value": {{ "path": "/emailValue" }}}}` — Binds to `state` data (absolute path with leading `/`).
+   - `{{"children": {{ "path": "/employeeList", "componentId": "listItem" }}}}` — Loops an array, rendering `componentId` per item.
+   - `{{"value": {{ "path": "profile/name" }}}}` — Relative path inside a loop (omit leading `/`).
+   - `{{"content": {{ "componentId": "tabItemContent" }}}}` — Slot binding.
 
-2. Dynamic Pointers: Use `path` object pointing to state data for two-way binding. Follow JSON Pointers (RFC 6901).
-  - **`{{"value": {{ "path": "/emailValue" }}}}`** - Binds to `state` data.
-  - **`{{"children": {{ "path": "/employeeList", "componentId": "listItem" }}}}`** - Loops an array in `state`, rendering `componentId` per item.
-  - **`{{"value": {{ "path": "profile/name" }}}}`** - Binds to a local field inside a loop. Omit the leading slash for relative paths.
-  - **`{{"content": {{ "componentId": "tabItemContent" }}}}`** -  Map slot properties to specific child element IDs.
-
-**DATA BINDING CRITICAL CONSTRAINTS:** 
-  - **Full Array Data Output:** For any array in `state` that represents repeated rows/items (Table rows, card lists, etc.), output ALL items in full based on the user's intent/blueprint data. Do NOT truncate, skip, or reduce array items. Each item MUST include ALL keys with realistic and varied values. Small config arrays (tab items, menu items, select options with 5 or fewer items) should also be output in full.
-  - **Children Rule:** The `children` array MUST ONLY contain element `id` references. NEVER raw text strings.
-  - **Text Assignment:** HTML5 element raw text MUST be assigned via `props` (e.g., for a `span`, use `props: {{ "value": "Next" }}`).
-  - **Mixed Siblings (Text + Elements):** ONLY when raw text and elements share the same parent, you MUST wrap the text in a `<span>` to generate an ID reference.
-    - **Bad:** `<a>Text<icon/></a>`  (Invalid: Raw text cannot generate an ID for `children`)
-    - **Good:** `<a><span>Text</span><icon/></a>`(Valid: Wrapping with `span` generates an ID for `children`)
-    - **Pure Text Rule:** DO NOT wrap text if the parent contains ONLY text. Use `props: {{ "value": "..." }}` instead.
-  - **Dynamic Pointers:** Form inputs (`value`) and loops MUST use `path` binding (e.g., `{{ "path": "/UserList" }}`).
-  - **Semantic Keys:** Data keys in `state` must have clear semantic meaning (Good: `hotel_name`, Bad: `val1`).
-  - **State Referential Integrity:** Every referenced `path` MUST exist in the `state` object.
+**CRITICAL CONSTRAINTS:**
+- **Children Rule:** `children` array MUST ONLY contain element `id` references. NEVER raw text strings.
+- **Text Assignment:** HTML5 element raw text MUST be assigned via `props` (e.g., `props: {{ "value": "Next" }}`).
+- **Mixed Siblings:** When raw text and elements share the same parent, wrap text in `<span>` to generate an ID reference.
+  - Bad: `<a>Text<icon/></a>` | Good: `<a><span>Text</span><icon/></a>`
+  - **Pure Text Rule:** DO NOT wrap if parent contains ONLY text. Use `props: {{ "value": "..." }}` instead.
+- **Semantic Keys:** Data keys in `state` must have clear semantic meaning (Good: `hotel_name`, Bad: `val1`).
+- **State Referential Integrity:** Every referenced `path` MUST exist in the `state` object.
+- **Path Separator:** Nested object paths use `/`, NOT `.` (Correct: `"path": "terminalName/icon"`, Wrong: `"path": "terminalName.icon"`).
 
 ## 4. Loop Generation
 
 **Syntax:** `{"children": { "path": "/employeeList", "componentId": "card_employee" }}`
-  - `path`: Points to the data array in `state`.
-  - `componentId`: The template component ID for each array item.
-
-**LOOP CRITICAL CONSTRAINTS:**
-  - **No Forced Loops:** ONLY use loops for list data with identical structures.
-  - **Handle Irregular Information:** For uneven or irregular information structures, DO NOT force a loop. Unroll components sequentially using Static Literals instead.
-  - **Nested Loops (CRITICAL):** A template element's own `children` can ALSO use template-children binding for nested arrays. For example, a card template may contain a stat group that loops over a `statsGroups` sub-array. You MUST use nested template binding for ALL levels of repeated identical structures — do NOT unroll nested arrays even if they have only 2-3 items.
-    - **Bad (unrolled):** `"children": ["statGroup1", "statDivider1", "statGroup2", "statDivider2", "statGroup3"]` with 3 separate nearly-identical elements.
-    - **Good (nested loop):** `"children": { "path": "statsGroups", "componentId": "statGroup" }` with 1 template element. The `statGroup` template uses relative paths like `{ "path": "value" }` and `{ "path": "label" }`.                                           
-                                                                                                           
-**Anti-Forced Loop Example:**
-  - Context: Travel Itinerary (Day 1: Morning, Afternoon. Day 2: Morning, Noon, Afternoon).
-  - **Bad:** Forcing this uneven data into a nested `state` array just to loop it.
-  - **Good:** Rendering Day 1 and Day 2 explicitly as sequential UI components in the `elements` array without loops.
-
-## 5. Slot Syntax & Component Composition 
-
-AS Loop Syntax, `Tab/TabItem`, `Steps/StepItem`, `Table/TableRow`, `Collapse/CollapseItem`, `Timeline/TimelineItem` 也同样考虑到
-
-**Identical Structures Composition Syntax:** `"component": "Steps", "children": {{ "path": "/stateArray", "componentId": "StepItem_id" }}`
 - `path`: Points to the data array in `state`.
-- `componentId`: Cross-reference ID of the `StepItem` template.
+- `componentId`: The template component ID for each array item.
 
-**Irregular Structures Composition Syntax:** `"component": "Tabs", "children": [tabItem_user, tabItem_product, tabItem_server]`
-- Child items require distinct, non-uniform internal structures or completely independent logic.
+**CRITICAL CONSTRAINTS:**
+- **No Forced Loops:** ONLY use loops for list data with identical structures.
+- **Irregular Structures:** For uneven structures, unroll sequentially using Static Literals instead.
+- **Nested Loops:** Template elements' own `children` can also use template-children binding for nested arrays. You MUST use nested template binding for ALL levels of repeated identical structures — do NOT unroll nested arrays even if they have only 2-3 items.
+  - **Bad (unrolled):** `"children": ["statGroup1", "statDivider1", "statGroup2", "statDivider2", "statGroup3"]` with 3 nearly-identical elements.
+  - **Good (nested loop):** `"children": { "path": "statsGroups", "componentId": "statGroup" }` with 1 template using relative paths like `{ "path": "value" }`.
+
+**Anti-Forced Loop Example:**
+- Context: Travel Itinerary (Day 1: Morning, Afternoon. Day 2: Morning, Noon, Afternoon).
+- **Bad:** Forcing this uneven data into a nested `state` array just to loop it.
+- **Good:** Render Day 1 and Day 2 explicitly as sequential UI components without loops.
+
+## 5. Slot Syntax & Component Composition
+
+Same loop syntax applies to: `Tab/TabItem`, `Steps/StepItem`, `Table/TableRow`, `Collapse/CollapseItem`, `Timeline/TimelineItem`.
+
+**Identical Structures:** `"component": "Steps", "children": {{ "path": "/stateArray", "componentId": "StepItem_id" }}`
+
+**Irregular Structures:** `"component": "Tabs", "children": ["tabItem_user", "tabItem_product", "tabItem_server"]`
 
 **Slot Syntax:** `"props": {{ "key": {{ "path": "id" }}, "label": {{ "path": "name" }}, "content": {{ "componentId": "div_id" }} }}`
-- `key` / `label` / `icon`: Relative data bindings mapped directly from the current array item.
-- `content`: Slot binding. MUST use `{{ "componentId": "elementId" }}` to reference the complex structural node (e.g., a `div` containing the actual tab body).
+- `key` / `label` / `icon`: Relative data bindings from the current array item.
+- `content`: Slot binding. MUST use `{{ "componentId": "elementId" }}` to reference the complex structural node.
+
+## 6. HTML5 Native Elements
+
+HTML5 elements use `component` matching pattern `^[a-z]+[1-6]?$` (lowercase tags: div, span, p, h1-h6, img, a, section).
+
+Key props:
+- `className`: Tailwind CSS classes
+- `value`: Text content (string or `{path}` object for dynamic binding)
+- `src`: Source URL for img (string or `{path}` object)
+- `href`: Hyperlink for a tags (string or `{path}` object)
+- `target`: Where to open link. Enum: "_blank" | "_self" | "_parent" | "_top"
+- `alt`: Alternative text for img tags
+- `title`: Extra information about an element, usually shown as a tooltip on hover
 
 ------
-
-# A2UI STRUCTURE SCHEMA
-{A2UI_SCHEMA}
-
-# HTML5 Native Element SCHEMA
-重点属性包括：injecting Tailwind via `className`, assigning raw text to `value`, nesting nodes in `children`
-{HTML5_SCHEMA}
 
 # A2UI SYNTAX EXAMPLE
 ## HTML5 Native Element

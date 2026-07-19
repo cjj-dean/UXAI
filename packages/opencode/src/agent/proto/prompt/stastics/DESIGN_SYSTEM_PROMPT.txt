@@ -160,7 +160,6 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - **Structural Parity**: Side-by-side buttons must share identical structures (All-Text, All-Icon, or All-Icon+Text). Mixing structures within a single row is prohibited to maintain visual parity.
 
 ### Tables
-  - Table必须在`surface-container-highest`内，不可以直接放在`surface-container-lowest`中。
   - Table默认具有分页功能，在不显性控制分页器时，必须给Table组件添加下边距。
   - Never put Badge in Table。
   - **Typography (CRITICAL):** 表格所有单元格内的文本元素（span、a、div等）必须统一使用 `text-md text-on-surface`，禁止使用 `text-sm`、`text-lg`、`text-on-surface-variant` 或其他字号/颜色。状态色（success/warning/error 等）仅通过 Tag 组件表达，不直接改文字颜色。
@@ -170,11 +169,9 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - 禁止给所有列都加 width。
 
 ### Side Navigation
-  - **Surface:** Use `surface-container-highest` as the base background.
   - **Size:** Use 15.5rem for the default width. use 3rem for the collapsed bar width.
 
 ### Header Navigation
-  - **Surface:** Use `surface-container-highest` as the base background.
   - **Size:** Use 3rem as height.
   - **Padding:** MUST include `px-[1.5rem]` (left/right inset matches the `inset: 1.5rem` design token). Without this padding, left/right groups sit flush against the viewport edge.
 
@@ -187,32 +184,10 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - 需要在两个同级组件之间增加视觉分隔时，优先使用 `gap-[1rem]` 间距或 `border-b border-divider` 加在上方组件自身，而非插入独立的分割线元素。
 
 ## Charts
-  - **CRITICAL — 禁止用 div/span 手动生成图表的图例、中心文字、坐标轴标签！** 图表组件（PieChart、BarChart、LineChart 等）已内置这些功能：
-    - PieChart/ProcessChart 的图例由组件自动渲染（`legend:{show:true}`），数据中的 `name` 字段就是图例文字。
-    - PieChart 的中心文字通过 `option.title: {text: "数字", subtext: "总数"}` 实现，禁止在饼图上叠加 div 做中心文字。
-    - 坐标轴、网格线、tooltip 均由图表组件内部处理。
-  - 也就是说：图表组件的唯一子元素就是它自身，**不要在图表的父容器中添加图例 div、颜色圆点 div、中心文字 div 等任何辅助元素**。
-  - **Chart Sibling Elements — FORBIDDEN (CRITICAL, 最高优先级):**
-    - 图表（如 PieChart、CircleProcessChart、BarChart）的 `children` 数组里、或图表同父级的兄弟节点，**禁止出现以下"伪中心文字/伪图例"模式**：
-      - `absolute` 定位的 span/div（用 `text-3xl` / `text-2xl` 等大字号渲染数字+小字副标题）→ 这是手动模拟 PieChart 中心文字
-      - 一行排列的"圆点 div（`rounded-full bg-xxx`）+ 文字 span"组合 → 这是手动模拟图表图例
-      - 任何模仿 `option.title`（text+subtext）行为的子元素结构
-    - **必须用图表自带的 `option.title` / 内置图例**，不要在图表外手动叠加。
-    - 错误示例（绝不要这样写）：
-      ```json
-      { "id": "chartWrap", "children": ["centerNumber", "centerLabel", "chart"] }
-      { "id": "centerNumber", "component": "span", "props": { "className": "absolute text-3xl", "value": { "path": "/totalCount" } } }
-      { "id": "centerLabel", "component": "span", "props": { "className": "absolute text-sm", "value": { "path": "/totalLabel" } } }
-      ```
-    - 正确写法（让 chart 自己渲染中心文字）：
-      ```json
-      { "id": "chartWrap", "children": ["chart"] }
-      { "id": "chart", "component": "PieChart", "props": { "option": { "title": { "text": { "path": "/totalCount" }, "subtext": { "path": "/totalLabel" } } } } }
-      ```
-  - 图表的高度一定要能够占满对应的父容器，否则大量的留白非常丑陋.
-  - 为方便可读性，必须将图表数据Key名转换为中文.
-  - **Constraints:**
-    - 严禁使用`color`属性！
+  - 图表组件已内置图例、中心文字、坐标轴、tooltip。详见约束 #18（Chart Components Are Self-Contained）。
+  - 图表高度必须占满父容器，避免留白。
+  - 图表数据 Key 名必须转换为中文。
+  - 严禁使用 `color` 属性。
 
 ## IMAGE
   - 将图片资源路径用的渐变色gradient=hex_start,hex_end的两个颜色改成本设计规范中的相关颜色
@@ -225,25 +200,8 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
     - Table Content: Must use `text-md`.
 
 ## Iconography
-  Encourage the proactive use of icons to establish visual anchors. Icon shape is strictly determined by its Tailwind size.
-  - **Size by Context (CRITICAL):** Icon 大小由所在场景决定，禁止随意混用：
-    - 顶部导航栏 (header): `w-5 h-5`
-    - 侧边栏 (aside/sidebar nav): `w-5 h-5`
-    - 卡片标题旁/表头旁: `w-4 h-4`
-    - 表格单元格内: `w-4 h-4`
-    - 下拉箭头/小辅助: `w-3 h-3`
-  - **Color (CRITICAL):** Icon 颜色统一用 `color` prop，禁止在 className 中用 `text-*` 设置图标颜色：
-    - 中性/装饰图标（帮助、箭头、搜索、刷新等）: `color: "#777777"`
-    - 品牌图标: `color: "primary"`
-    - 语义图标（状态指示）: `color: "success" | "warning" | "error" | "primary"`
-  - **Shape (`<Icon shape />`):**
-    - `outline`: 标准 UI——所有 ≤ w-6 的图标必须使用 outline，禁止用 fill。激活态只需要 `color: "primary"`，shape 不变。
-    - `circle`: 全局状态（Success/Error）、空状态。
-    - `square`: 数据指标、模块入口、仪表盘网格锚点、文件类型。
-  - **Size & Shape Sync:** 
-    - ≤ w-6（≤ 24px）：**必须**用 `outline`，禁止 `fill`。
-    - > w-6（> 24px）：必须用 `circle | square`。
-  - **Constraints:**
-    - **NO Background shape**: `<Icon/>` component automatically generates its own internal container block. **DO NOT** manually wrap the icon inside any background shape.
-    - **禁止 default(黑)/inverse(白)**：独立 `<Icon>` 组件一律不得使用纯黑或纯白色值。
-    - **禁止 className text-* 设颜色**：Icon 颜色只能通过 `color` prop 控制，不要在 className 中写 `text-primary`、`text-on-surface-variant` 等。
+  Icon shape is strictly determined by its Tailwind size.
+  - **Size by Context:** 顶部导航栏/侧边栏: `w-5 h-5` | 卡片标题/表头旁: `w-4 h-4` | 表格单元格: `w-4 h-4` | 下拉箭头/小辅助: `w-3 h-3`
+  - **Color:** 统一用 `color` prop，禁止在 className 中用 `text-*` 设色。中性装饰: `"#777777"` | 品牌: `"primary"` | 语义: `"success"|"warning"|"error"|"primary"`
+  - **Shape:** ≤ w-6 必须用 `outline` | > w-6 必须用 `circle|square`。`circle`用于全局状态/空状态，`square`用于数据指标/模块入口。
+  - **Constraints:** 不要手动包裹背景形状；禁止 default(黑)/inverse(白)色值。
