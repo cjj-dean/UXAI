@@ -28,7 +28,7 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
 const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
 
 const FIXED_CLASSNAMES: Record<string, string> = {
-  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
+  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row items-center h-[48px] px-[1.5rem]",
   infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
   aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
   body: "flex flex-row flex-1 min-h-0 overflow-hidden",

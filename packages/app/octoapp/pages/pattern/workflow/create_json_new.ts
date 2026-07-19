@@ -3,7 +3,7 @@ import intent_region_check from "../agents/intent_region_check"
 import planner_new_create from "../agents/planner_new_create"
 import proto_module_create from "../agents/proto_module_create"
 import proto_component_lookup from "../agents/proto_component_lookup"
-import { loadComponentDocs } from "../utils/load_component_docs"
+import { loadComponentDocs, loadLayoutRules } from "../utils/load_component_docs"
 import { mergeModules } from "../agents/merge"
 import layoutFixer from "../agents/layout_fixer_agent"
 
@@ -57,9 +57,13 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   )
 
   const docsMap = new Map(await Promise.all(lookupResults.map(async (r: any) => {
-    console.log(`[create_json_new] lookupResult: element_id=${r.element_id}, component_names=${JSON.stringify(r.component_names)}`)
-    const docs = r.component_names.length > 0 ? await loadComponentDocs(r.component_names) : ""
-    return [r.element_id, docs] as [string, string]
+    console.log(`[create_json_new] lookupResult: element_id=${r.element_id}, component_names=${JSON.stringify(r.component_names)}, layout_patterns=${JSON.stringify(r.layout_patterns)}`)
+    const [compDocs, layoutDocs] = await Promise.all([
+      r.component_names.length > 0 ? loadComponentDocs(r.component_names) : Promise.resolve(""),
+      r.layout_patterns.length > 0 ? loadLayoutRules(r.layout_patterns) : Promise.resolve(""),
+    ])
+    const combined = [compDocs, layoutDocs].filter(Boolean).join("\n\n---\n\n")
+    return [r.element_id, combined] as [string, string]
   })))
 
   // 第四步：并行生成 A2UI JSON

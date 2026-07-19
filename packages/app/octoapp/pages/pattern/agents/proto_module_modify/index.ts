@@ -113,10 +113,10 @@ function buildHumanMessage(input: ModuleModifyInput): string {
   if (input.componentDocs) {
     lines.push(
       ``,
-      `[组件 API 文档（已预加载，无需调用工具）:] ===============`,
+      `[预加载文档（组件 API + 布局规则，无需调用工具）:] ===============`,
       input.componentDocs,
       ``,
-      `严格按照以上文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。`,
+      `严格按照以上文档中的 API Schema、Example 和布局规则生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性或违反布局规则。`,
     )
   }
   return lines.join("\n")

@@ -11,7 +11,7 @@
      - 全量使用用户提供的属性：必须使用提供数据中每个数组的所有项和每个对象的所有键。绝不要截断、跳过或减少数组项。
      - 如果组件的 schema 支持，将提供的数据（如 chartUnit）映射到目标组件的已有属性。
   3. **组件映射与 API 检索**：绝不要凭空编造 API。
-     - 组件 API 文档已注入到提示词中——仔细阅读并严格遵循 API schema。不要依赖记忆。
+     - 组件 API 文档和布局规则已注入到提示词中——仔细阅读并严格遵循 API schema 和布局规则。不要依赖记忆。
   4. **合成与样式**：
      - 将策略转化为 UI JSON，严格遵循 **A2UI JSON 协议**。
      - 将丰富的数据载荷注入到各自的节点中。
@@ -53,29 +53,11 @@
   11. **前缀强制**：elements 数组中的每个 id 必须以提供的 ID 前缀开头（根元素除外）。
   12. **范围限定**：不要尝试构建宏页面包装器。仅为目标模块生成 UI JSON。
   13. **根元素 ClassName 不可变性**：永远不要修改根元素的 `props.className` 或 `component`。你只能填充其 `children` 数组。
-  14. **约束合规 — 最高优先级（关键）**：约束是用户意图的契约，违反约束等于违反用户需求。`Section` 和 `Card` 组件不是默认选项。你必须对所有容器元素使用普通 `div`，除非模块的 `constraints` 明确包含以下之一：
-      - `{"type":"container","value":"Section"}` → 你必须仅对用户明确描述为卡片/区块的个别卡片/项级元素使用 `Section` 组件。不要将 Section 用于结构包装器如标签容器、工具栏行、标题区域或布局分割线——那些保持为普通 `div`。Section 提供内置的 bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]，所以不要在其 className 中添加这些类——只添加布局类如 `flex flex-col`、`gap-[1rem]`、`flex-1`。
-      - `{"type":"container","value":"child section"}` → 模块的直接子元素是独立的 Section 卡片。每个子卡片必须使用 `Section` 组件。根元素组件取决于是否也存在 `Section` 约束：如果同时存在 `Section` 和 `child section` → 根是 `Section`（包含子卡片的提升块）；如果仅有 `child section` → 根是普通 `div`（无 bg/shadow/rounded 的布局包装器）。根 div 只是一个布局包装器（如 `flex flex-row gap-[1rem]`），没有 bg/shadow/rounded 样式。
-      - `{"type":"container","value":"二级卡片"}` → 用户明确描述为卡片的外部卡片/区块必须使用 `Card` 组件。Card 提供内置的 bg-surface-variant + rounded-xl + p-[1.5rem]，所以不要在其 className 中添加这些类。此外，该外部卡片内任何具有自身背景的嵌套子卡片或数据块也必须使用 `Card`（不是普通 `div`）。
-      - `{"type":"container","value":"三级卡片"}` → 每一级嵌套卡片/区块——外层、内层和最深层——只要存在背景或视觉边界就必须使用 `Card` 组件。系统自动处理海拔嵌套。
-      **当模块的约束中不存在容器约束时，你不得在任何地方使用 `Section` 或 `Card`——改用 `div`。**
-  14b. **三列居中对齐（关键）**：当蓝图描述"左-中-右"布局且中间列必须相对于父容器水平居中时，你必须按以下方式实现：
-      - 父容器：`flex flex-row items-center`
-      - 左列：在 className 中添加 `flex-1`（使其扩展填充左侧可用空间）
-      - 中间列：保持固定宽度（如 `w-[400px]`），但不要添加 `flex-1` 或 `mx-auto`
-      - 右列：在 className 中添加 `flex-1`（使其扩展填充右侧可用空间）
-      - 不要在父元素上添加 `justify-between` 或 `justify-around`——左右列的 `flex-1` 自然将固定宽度的中间列推到中心。
-  15. **Tab 内容隔离（关键）**：使用 `Tabs`/`TabItem` 时，`TabItem` 的 `content.componentId` 引用的元素不得也出现在任何父元素的 `children` 数组中。Tab 内容元素仅通过 `content.componentId` 引用存在——它们不得作为 `Tabs` 组件的兄弟节点放置在 DOM 树中。将它们放在两个位置会导致重复渲染。
-  16. **Tab 内容无内边距**：`TabItem` 的 `content.componentId` 引用的元素不得在其 className 中包含 `p-*` 内边距类。父容器（如 Section）已提供内边距——在 tab 内容中添加内边距会导致嵌套 Tab 层级之间的缩进不对齐。
-  17. **侧边栏导航必须使用 Menu（关键）**：侧边栏导航菜单必须使用 `Menu` 组件（不是 `Collapse`/`CollapseItem`）。`Menu` 具有内置的手风琴行为、选择状态和分层子菜单支持。禁止使用 `Collapse` 作为侧边栏导航。
-  18. **图表组件自包含（关键）**：图表组件（PieChart、BarChart、LineChart、ProcessChart 等）已包含图例、中心文字、坐标轴标签、tooltip 和颜色圆点。你不得在图表的父容器中为这些功能创建任何兄弟 div/span 元素。具体来说：不要创建图例容器（彩色圆点+文本行），不要创建中心数字覆盖层（在甜甜圈孔中绝对定位的文本）。图表的 `option.title` 处理中心文字；图表从数据 `name` 字段自动渲染图例。
-  19. **表格自动渲染（关键）**：Table 的 columns 数组中 title + dataIndex 已经告诉渲染器如何显示简单文本单元格。你必须遵循以下规则：
+  14. **Tab 内容隔离（关键）**：使用 `Tabs`/`TabItem` 时，`TabItem` 的 `content.componentId` 引用的元素不得也出现在任何父元素的 `children` 数组中。Tab 内容元素仅通过 `content.componentId` 引用存在——它们不得作为 `Tabs` 组件的兄弟节点放置在 DOM 树中。将它们放在两个位置会导致重复渲染。
+  15. **Tab 内容无内边距**：`TabItem` 的 `content.componentId` 引用的元素不得在其 className 中包含 `p-*` 内边距类。父容器（如 Section）已提供内边距——在 tab 内容中添加内边距会导致嵌套 Tab 层级之间的缩进不对齐。
+  16. **表格自动渲染（关键）**：Table 的 columns 数组中 title + dataIndex 已经告诉渲染器如何显示简单文本单元格。你必须遵循以下规则：
       - **简单列**（纯文本如名称、IP、ID、日期、状态文本）：不要为这些列创建 TableRow 子元素。渲染器从 dataIndex 自动渲染它们。仅在列需要自定义渲染（Icon、Tag、Button、值+单位组合、嵌套结构等）时才在 TableRow 中包含子元素。
       - **仅自定义列在 TableRow 中**：仅为需要纯文本以外组件的列在 TableRow 中定义子元素。
       - **自定义单元格上的 dataIndex（关键）**：TableRow 中的每个自定义单元格元素必须包含匹配其列 dataIndex 值的 props.dataIndex。示例：{ "id": "tdGuard", "component": "div", "props": { "dataIndex": "guardStatus", "className": "..." }, "children": [...] }。
       - **列顺序保持**：TableRow 的 children 数组必须仅包含自定义渲染列的元素，顺序与其对应列条目相同。简单列隐式存在（自动渲染），不占用 children 数组中的位置。
       - **示例**：一个有 17 列的 Table，其中只有 3 列需要自定义渲染 → TableRow 恰好有 3 个子元素（每个都有 props.dataIndex），而不是 17 个。
-
-# 工具使用约束：
-   `Section` 和 `Icon` 组件已在上方 **预加载组件** 中提供完整 API，无需额外加载。
-   其他组件的 API 文档已预加载到 prompt 中（[组件 API 文档] 区段），请严格按照文档中的 API Schema 和 Example 生成 JSON。严禁依靠记忆编造任何未在文档中出现的属性。

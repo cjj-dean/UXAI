@@ -48,13 +48,32 @@ export default async function proto_component_lookup(input: ProtoComponentLookup
 
   console.log("----- 组件查询Agent运行结束，耗时：", (Date.now() - startTime) / 1000, "s -----")
 
-  const componentNames = extractJson(result.text)
-  if (!Array.isArray(componentNames)) {
-    console.warn("----- 组件查询Agent返回非数组，尝试从文本提取 -----")
+  const parsed = extractJson(result.text)
+  let componentNames: string[] = []
+  let layoutPatterns: string[] = []
+
+  if (Array.isArray(parsed)) {
+    componentNames = parsed
+  } else if (parsed && typeof parsed === "object") {
+    if (Array.isArray(parsed.component_names)) componentNames = parsed.component_names
+    if (Array.isArray(parsed.layout_patterns)) layoutPatterns = parsed.layout_patterns
+  } else {
+    console.warn("----- 组件查询Agent返回非数组/非对象，尝试从文本提取 -----")
+  }
+
+  if (sectionId === "header") {
+    if (!componentNames.includes("Menu")) componentNames.push("Menu")
+    componentNames = componentNames.filter(c => c !== "Tabs" && c !== "TabItem")
+    if (!layoutPatterns.includes("three-column-center")) layoutPatterns.push("three-column-center")
+  }
+  if (sectionId === "aside") {
+    if (!componentNames.includes("Menu")) componentNames.push("Menu")
+    componentNames = componentNames.filter(c => c !== "Collapse" && c !== "CollapseItem")
   }
 
   const returnValue = {
-    component_names: Array.isArray(componentNames) ? componentNames : [],
+    component_names: componentNames,
+    layout_patterns: layoutPatterns,
     section_id: sectionId,
     element_id: elementId,
   }
@@ -83,7 +102,7 @@ function buildHumanMessage(sectionId: string, elementId: string, layoutPlanner: 
   let node = findNodeById(intentDescription, sectionId)
   let nodeStr = JSON.stringify(node, null, 2)
 
-  return `请分析以下模块蓝图，确定需要哪些 A2UI 组件（不含 Section 和 Icon），输出一个 JSON 数组。
+  return `请分析以下模块蓝图，确定需要哪些 A2UI 组件（不含 Section 和 Icon）以及适用的布局模式，输出一个 JSON 对象。
 
 [模块顶层容器:] ==================================
 - Root ID: ${elementId}
@@ -96,6 +115,9 @@ ${nodeStr}
 规则：
 - 如果蓝图的description中明确提到了组件名（如PatGauge、PatStackedBar、LineChart等），必须使用该组件名，不要替换为其他类似组件
 - 例如：描述中写"PatGauge"就必须用"PatGauge"，不能用"GaugeChart"替代
+- 当蓝图描述的布局结构匹配布局模式词汇时，必须在layout_patterns中输出
 
-请仔细分析蓝图，列出所有需要的组件名（排除 Section 和 Icon），只输出一个 JSON 数组，例如 ["Table", "Tabs", "Button"]。不要输出任何其他内容。`
+请仔细分析蓝图，输出 JSON 对象，格式如下：
+{"component_names": ["Table", "Tabs", "Button"], "layout_patterns": ["three-column-center"]}
+如果无布局模式匹配，layout_patterns 输出空数组 []。不要输出任何其他内容。`
 }

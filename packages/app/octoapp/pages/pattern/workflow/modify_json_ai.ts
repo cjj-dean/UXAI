@@ -5,7 +5,7 @@ import proto_planner_modify from "../agents/proto_planner_modify"
 import proto_module_create from "../agents/proto_module_create"
 import proto_module_modify from "../agents/proto_module_modify"
 import proto_component_lookup from "../agents/proto_component_lookup"
-import { loadComponentDocs } from "../utils/load_component_docs"
+import { loadComponentDocs, loadLayoutRules } from "../utils/load_component_docs"
 import { mergeModules } from "../agents/merge"
 
 type ProtoModifyJsonInput = {
@@ -102,9 +102,13 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                 layoutPlanner: modifyResult.output as unknown as Record<string, unknown>,
                 intentDescription: updatedIntent as any,
             })
-            console.log(`[modify_json_ai] lookupResult: section_id=${slot.section_id}, component_names=${JSON.stringify(lookupResult.component_names)}`)
-            const componentDocs = lookupResult.component_names.length > 0 ? await loadComponentDocs(lookupResult.component_names) : ""
-            console.log(`[modify_json_ai] loadComponentDocs 结果: docs长度=${componentDocs.length}`)
+            console.log(`[modify_json_ai] lookupResult: section_id=${slot.section_id}, component_names=${JSON.stringify(lookupResult.component_names)}, layout_patterns=${JSON.stringify(lookupResult.layout_patterns)}`)
+            const [componentDocs, layoutDocs] = await Promise.all([
+                lookupResult.component_names.length > 0 ? loadComponentDocs(lookupResult.component_names) : Promise.resolve(""),
+                lookupResult.layout_patterns.length > 0 ? loadLayoutRules(lookupResult.layout_patterns) : Promise.resolve(""),
+            ])
+            const combinedDocs = [componentDocs, layoutDocs].filter(Boolean).join("\n\n---\n\n")
+            console.log(`[modify_json_ai] loadComponentDocs+loadLayoutRules 结果: docs长度=${combinedDocs.length}`)
 
             // 新增模块
             if (slot.operation === "create") {
@@ -115,7 +119,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                     elementId: slot.element_id,
                     layoutPlanner: modifyResult.output as unknown as Record<string, unknown>,
                     intentDescription: updatedIntent as any,
-                    componentDocs,
+                    componentDocs: combinedDocs,
                     onDirectCallTiming: inputCtx.onDirectCallTiming,
                     onReasoningDelta: inputCtx.onReasoningDelta,
                 }).then((r) => r.ui_json)
@@ -134,7 +138,7 @@ export default async function modify_json_ai(inputCtx: ProtoModifyJsonInput, las
                         originModules: originModule,
                         modifications: modAction as unknown as Record<string, unknown>,
                         intentDescription: updatedIntent as any,
-                        componentDocs,
+                        componentDocs: combinedDocs,
                     },
                 }).then((r) => r.ui_json)
             }

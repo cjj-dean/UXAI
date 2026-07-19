@@ -1,5 +1,5 @@
 const COMPONENT_CATALOG: Record<string, string[]> = {
-  Layout: ["Section"],
+  Layout: ["Section", "three-column-center"],
   General: ["Button", "Icon"],
   Navigation: ["Tabs", "TabItem", "Steps", "StepItem", "Breadcrumb", "Dropdown", "Menu"],
   DataEntry: ["Checkbox", "CheckboxGroup", "RadioGroup", "Select", "Slider", "Switch", "Input", "InputNumber", "TextArea", "TimePicker", "DatePicker", "Rate"],
@@ -8,6 +8,8 @@ const COMPONENT_CATALOG: Record<string, string[]> = {
   Chart: ["LineChart", "BarChart", "PieChart", "RadarChart", "GaugeChart", "ProcessChart", "BubbleChart", "AssembleBubbleChart", "BulletChart", "FunnelChart", "HillChart", "ScatterChart", "JadeJueChart", "CircleProcessChart"],
   Custom: ["PatGauge", "PatStackedBar"],
 }
+
+const LAYOUT_PATTERNS = ["three-column-center"]
 
 const ALL_COMPONENTS = Object.values(COMPONENT_CATALOG).flat()
 
@@ -270,6 +272,29 @@ function compactSchemasBatch(schemas: JsonSchema[]): string {
 
   for (const schema of schemas) {
     parts.push(compactSchema(schema, sharedDefs))
+  }
+
+  return parts.join("\n\n---\n\n")
+}
+
+export async function loadLayoutRules(layoutPatterns: string[]): Promise<string> {
+  if (!layoutPatterns || layoutPatterns.length === 0) return ""
+
+  const layoutDir = "D:/vibeCoding/UXAI/UXAI/packages/opencode/src/tool/proto_tool/components/api/Layout"
+  const parts: string[] = []
+
+  for (const pattern of layoutPatterns) {
+    if (!LAYOUT_PATTERNS.includes(pattern)) {
+      console.warn(`[loadLayoutRules] 布局模式 [${pattern}] 未注册，已跳过`)
+      continue
+    }
+    const content = await readTextFile(`${layoutDir}/${pattern}.md`)
+    if (content) {
+      parts.push(content)
+      console.log(`[loadLayoutRules] 布局规则 [${pattern}] 加载成功，长度: ${content.length}`)
+    } else {
+      console.warn(`[loadLayoutRules] 布局规则 [${pattern}] 文件不存在`)
+    }
   }
 
   return parts.join("\n\n---\n\n")
