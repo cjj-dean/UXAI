@@ -9,14 +9,12 @@ const COMPONENT_CATALOG: Record<string, string[]> = {
   Custom: ["PatGauge", "PatStackedBar"],
 }
 
-const LAYOUT_PATTERNS = ["three-column-center"]
-
-const ALL_COMPONENTS = Object.values(COMPONENT_CATALOG).flat()
-
 const COMPONENT_TO_CATEGORY: Record<string, string> = {}
 for (const [category, comps] of Object.entries(COMPONENT_CATALOG)) {
   for (const comp of comps) COMPONENT_TO_CATEGORY[comp] = category
 }
+
+const LAYOUT_PATTERNS = COMPONENT_CATALOG.Layout.filter(c => c !== "Section")
 
 const COMPONENT_CHILDREN: Record<string, string[]> = {
   Tabs: ["TabItem"],
@@ -24,6 +22,14 @@ const COMPONENT_CHILDREN: Record<string, string[]> = {
   Table: ["TableRow"],
   Collapse: ["CollapseItem"],
   Timeline: ["TimelineItem"],
+}
+
+const USAGE_ALIASES: Record<string, string> = {
+  LineChart: "Chart", BarChart: "Chart", PieChart: "Chart", RadarChart: "Chart",
+  GaugeChart: "Chart", ProcessChart: "Chart", BubbleChart: "Chart", AssembleBubbleChart: "Chart",
+  BulletChart: "Chart", FunnelChart: "Chart", HillChart: "Chart", ScatterChart: "Chart",
+  JadeJueChart: "Chart", CircleProcessChart: "Chart",
+  img: "Image",
 }
 
 function expandComponents(input: string[]): string[] {
@@ -37,27 +43,31 @@ function expandComponents(input: string[]): string[] {
   return expanded
 }
 
-type DesktopApi = {
-  readFileBuffer?: (path: string) => Promise<ArrayBuffer | null>
-  getHomeDir?: () => Promise<string>
-}
+const apiModules = import.meta.glob<{ default: string }>(
+  "../../../../../opencode/src/tool/proto_tool/components/api/**/*.json",
+  { query: "?raw", import: "default", eager: false },
+)
 
-function getDesktopApi(): DesktopApi | undefined {
-  return (window as unknown as { api?: DesktopApi }).api
-}
+const exampleModules = import.meta.glob<{ default: string }>(
+  "../../../../../opencode/src/tool/proto_tool/components/example/**/*.md",
+  { query: "?raw", import: "default", eager: false },
+)
 
-async function readTextFile(filePath: string): Promise<string | null> {
-  const api = getDesktopApi()
-  if (!api?.readFileBuffer) return null
-  const buf = await api.readFileBuffer(filePath)
-  if (!buf) return null
-  return new TextDecoder().decode(buf)
-}
+const layoutModules = import.meta.glob<{ default: string }>(
+  "../../../../../opencode/src/tool/proto_tool/components/api/Layout/*.md",
+  { query: "?raw", import: "default", eager: false },
+)
 
-async function getHomeDir(): Promise<string> {
-  const api = getDesktopApi()
-  if (api?.getHomeDir) return api.getHomeDir()
-  return ""
+const usageModules = import.meta.glob<{ default: string }>(
+  "../../../../../opencode/src/tool/proto_tool/components/usage/*.md",
+  { query: "?raw", import: "default", eager: false },
+)
+
+async function loadGlobModule(modules: Record<string, () => Promise<{ default: string }>>, globPath: string): Promise<string | null> {
+  const loader = modules[globPath]
+  if (!loader) return null
+  const mod = await loader()
+  return typeof mod === "string" ? mod : mod.default
 }
 
 type JsonSchema = Record<string, unknown>
@@ -280,7 +290,6 @@ function compactSchemasBatch(schemas: JsonSchema[]): string {
 export async function loadLayoutRules(layoutPatterns: string[]): Promise<string> {
   if (!layoutPatterns || layoutPatterns.length === 0) return ""
 
-  const layoutDir = "D:/vibeCoding/UXAI/UXAI/packages/opencode/src/tool/proto_tool/components/api/Layout"
   const parts: string[] = []
 
   for (const pattern of layoutPatterns) {
@@ -288,7 +297,7 @@ export async function loadLayoutRules(layoutPatterns: string[]): Promise<string>
       console.warn(`[loadLayoutRules] 布局模式 [${pattern}] 未注册，已跳过`)
       continue
     }
-    const content = await readTextFile(`${layoutDir}/${pattern}.md`)
+    const content = await loadGlobModule(layoutModules, `../../../../../opencode/src/tool/proto_tool/components/api/Layout/${pattern}.md`)
     if (content) {
       parts.push(content)
       console.log(`[loadLayoutRules] 布局规则 [${pattern}] 加载成功，长度: ${content.length}`)
@@ -308,18 +317,6 @@ export async function loadComponentDocs(componentNames: string[]): Promise<strin
 
   console.log("[loadComponentDocs] 开始加载组件文档，组件列表:", componentNames)
 
-  const home = (await getHomeDir()).replace(/\\/g, "/")
-  console.log("[loadComponentDocs] homeDir:", home || "(空)")
-  if (!home) {
-    console.warn("[loadComponentDocs] 无法获取 homeDir，跳过文档加载")
-    return ""
-  }
-
-  const apiDir = home + "/.config/octo/components/api"
-  const exampleDir = home + "/.config/octo/components/example"
-  console.log("[loadComponentDocs] apiDir:", apiDir)
-  console.log("[loadComponentDocs] exampleDir:", exampleDir)
-
   const expanded = expandComponents(componentNames)
   console.log("[loadComponentDocs] expandComponents 后:", expanded)
 
@@ -327,18 +324,19 @@ export async function loadComponentDocs(componentNames: string[]): Promise<strin
   const apiSchemas: JsonSchema[] = []
 
   for (const comp of expanded) {
-    if (!ALL_COMPONENTS.includes(comp)) {
+    if (!COMPONENT_TO_CATEGORY[comp]) {
       console.warn(`[loadComponentDocs] 组件 [${comp}] 未在 CATALOG 注册，已过滤`)
       continue
     }
     validComps.push(comp)
 
     const category = COMPONENT_TO_CATEGORY[comp] ?? ""
-    const apiPath = category ? `${apiDir}/${category}/${comp}.json` : `${apiDir}/${comp}.json`
-    console.log(`[loadComponentDocs] 读取 API 文件: ${apiPath}`)
-    const raw = await readTextFile(apiPath)
+    const globPath = category
+      ? `../../../../../opencode/src/tool/proto_tool/components/api/${category}/${comp}.json`
+      : `../../../../../opencode/src/tool/proto_tool/components/api/${comp}.json`
+    const raw = await loadGlobModule(apiModules, globPath)
     if (!raw) {
-      console.warn(`[loadComponentDocs] 组件 [${comp}] 在 API 目录下找不到文件: ${apiPath}`)
+      console.warn(`[loadComponentDocs] 组件 [${comp}] 在 API 目录下找不到文件: ${globPath}`)
       continue
     }
     console.log(`[loadComponentDocs] 组件 [${comp}] API 文件读取成功，长度: ${raw.length}`)
@@ -354,10 +352,23 @@ export async function loadComponentDocs(componentNames: string[]): Promise<strin
 
   for (const comp of validComps) {
     const category = COMPONENT_TO_CATEGORY[comp] ?? ""
-    const examplePath = category ? `${exampleDir}/${category}/${comp}.md` : `${exampleDir}/${comp}.md`
-    const content = await readTextFile(examplePath)
+    const globPath = category
+      ? `../../../../../opencode/src/tool/proto_tool/components/example/${category}/${comp}.md`
+      : `../../../../../opencode/src/tool/proto_tool/components/example/${comp}.md`
+    const content = await loadGlobModule(exampleModules, globPath)
     if (!content) continue
     console.log(`[loadComponentDocs] 组件 [${comp}] Example 文件读取成功，长度: ${content.length}`)
+    resultParts.push(content)
+  }
+
+  const usageLoaded = new Set<string>()
+  for (const comp of [...expanded, ...validComps]) {
+    const usageName = USAGE_ALIASES[comp] ?? comp
+    if (usageLoaded.has(usageName)) continue
+    const content = await loadGlobModule(usageModules, `../../../../../opencode/src/tool/proto_tool/components/usage/${usageName}.md`)
+    if (!content) continue
+    usageLoaded.add(usageName)
+    console.log(`[loadComponentDocs] 组件 [${comp}] Usage 文件读取成功 (${usageName}.md)，长度: ${content.length}`)
     resultParts.push(content)
   }
 
