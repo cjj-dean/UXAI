@@ -3,11 +3,6 @@ import DESIGN_SYSTEM_PROMPT from "./prompt/stastics/DESIGN_SYSTEM_PROMPT.txt"
 import A2UI_JSON_PROTOCOL_RAW from "./prompt/stastics/A2UI_JSON_PROTOCOL.txt"
 import A2UI_SCHEMA from "./prompt/stastics/A2UI_SCHEMA.txt"
 import HTML5_SCHEMA from "./prompt/stastics/HTML5_SCHEMA.txt"
-import HTML_EXAMPLE from "./prompt/stastics/HTML_EXAMPLE.txt"
-import CARD_EXAMPLE from "./prompt/stastics/CARD_EXAMPLE.txt"
-import LIST_EXAMPLE from "./prompt/stastics/LIST_EXAMPLE.txt"
-import TABS_EXAMPLE from "./prompt/stastics/TABS_EXAMPLE.txt"
-import FORM_EXAMPLE from "./prompt/stastics/FORM_EXAMPLE.txt"
 import PLANNER_TEMPLATE from "./prompt/stastics/PLANNER_TEMPLATE.txt"
 import INTENT_EXPAND_TEMPLATE from "./prompt/stastics/INTENT_EXPAND_TEMPLATE.txt"
 import ISREGION_RULES from "./prompt/stastics/ISREGION_RULES.txt"
@@ -29,11 +24,6 @@ const data = {
   DESIGN_SYSTEM_PROMPT,
   A2UI_SCHEMA,
   HTML5_SCHEMA,
-  HTML_EXAMPLE,
-  CARD_EXAMPLE,
-  LIST_EXAMPLE,
-  TABS_EXAMPLE,
-  FORM_EXAMPLE,
   PLANNER_TEMPLATE,
   INTENT_EXPAND_TEMPLATE,
   ISREGION_RULES,
