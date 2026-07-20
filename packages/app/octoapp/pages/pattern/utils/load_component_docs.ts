@@ -32,6 +32,8 @@ const USAGE_ALIASES: Record<string, string> = {
   img: "Image",
 }
 
+const PRELOADED_COMPONENTS = ["Section", "Icon"]
+
 function expandComponents(input: string[]): string[] {
   const expanded = [...input]
   for (const comp of input) {
@@ -309,6 +311,17 @@ export async function loadLayoutRules(layoutPatterns: string[]): Promise<string>
   return parts.join("\n\n---\n\n")
 }
 
+export async function loadPreloadedUsage(): Promise<string> {
+  const parts: string[] = []
+  for (const comp of PRELOADED_COMPONENTS) {
+    const content = await loadGlobModule(usageModules, `../../../../../opencode/src/tool/proto_tool/components/usage/${comp}.md`)
+    if (!content) continue
+    console.log(`[loadPreloadedUsage] 预加载组件 [${comp}] Usage 文件读取成功，长度: ${content.length}`)
+    parts.push(content)
+  }
+  return parts.join("\n\n---\n\n")
+}
+
 export async function loadComponentDocs(componentNames: string[]): Promise<string> {
   if (!componentNames || componentNames.length === 0) {
     console.log("[loadComponentDocs] componentNames 为空，跳过")
@@ -362,7 +375,7 @@ export async function loadComponentDocs(componentNames: string[]): Promise<strin
   }
 
   const usageLoaded = new Set<string>()
-  for (const comp of [...expanded, ...validComps]) {
+  for (const comp of [...PRELOADED_COMPONENTS, ...expanded, ...validComps]) {
     const usageName = USAGE_ALIASES[comp] ?? comp
     if (usageLoaded.has(usageName)) continue
     const content = await loadGlobModule(usageModules, `../../../../../opencode/src/tool/proto_tool/components/usage/${usageName}.md`)

@@ -1,5 +1,4 @@
 import COMPONENTS_CATALOG from "./prompt/stastics/COMPONENTS_CATALOG.txt"
-import COMPONENTS_USAGE from "./prompt/stastics/COMPONENTS_USAGE.txt"
 import DESIGN_SYSTEM_PROMPT from "./prompt/stastics/DESIGN_SYSTEM_PROMPT.txt"
 import A2UI_JSON_PROTOCOL_RAW from "./prompt/stastics/A2UI_JSON_PROTOCOL.txt"
 import A2UI_SCHEMA from "./prompt/stastics/A2UI_SCHEMA.txt"
@@ -27,7 +26,6 @@ import _PROMPT_INTENT_REGION_CHECK from "./prompt/intent_region_check.txt"
 
 const data = {
   COMPONENTS_CATALOG,
-  COMPONENTS_USAGE,
   DESIGN_SYSTEM_PROMPT,
   A2UI_SCHEMA,
   HTML5_SCHEMA,
