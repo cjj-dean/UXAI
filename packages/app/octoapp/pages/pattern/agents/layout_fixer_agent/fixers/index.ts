@@ -36,6 +36,7 @@ import { fixIconProps } from "./component"
 import { fixInvalidPaths } from "./component"
 import { fixDialogClass } from "./component"
 import { fixRedundantLoopWrapper } from "./layout"
+import { fixAsideWidth } from "./layout"
 import { fixSlotComponents } from "./component"
 import { fixStepsFullWidth } from "./component"
 import { fixPatStackedBar } from "./component"
@@ -82,4 +83,5 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "pat_stacked_bar", fn: fixPatStackedBar },
   { name: "tab_content", fn: fixTabContent },
   { name: "border_box", fn: fixBorderBox },
+  { name: "aside_width", fn: fixAsideWidth },
 ]

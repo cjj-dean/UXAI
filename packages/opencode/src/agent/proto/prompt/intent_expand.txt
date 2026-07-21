@@ -69,11 +69,11 @@
 ### 关键规则
 
 1. 叶子节点只有description和style，不能有children；区域型叶子节点有layout，组件型叶子节点没有layout
-2. 非叶子节点不能有description，只能有layout/children/style等结构属性，不再使用单独的width属性
+2. 非叶子节点不能有description，只能有layout/children/style/itemTemplate/data等结构属性，不再使用单独的width属性
 3. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
 4. main节点必须重点展开，详细描述子模块的布局、数据和组件
 5. style属性用纯文本描述固定宽度、边框、背景色等样式，叶子节点和非叶子节点均可使用
-6. 重复结构使用template引用或重复内容容器
+6. **重复结构必须使用 itemTemplate + data（CRITICAL）**：2个及以上结构相同的元素禁止逐个展开，必须用重复内容容器描述。仅当每项布局/结构不同时才可逐个展开。
 7. 保留原始意图中的所有数据，不丢失任何信息
 8. **叶子节点的description必须清晰说明采用什么组件**：不要只写"显示指标数据"，要写"4个PatGauge仪表盘，分别显示CPU/内存/磁盘/网络使用率"；不要只写"图表区域"，要写"LineChart折线图展示24小时流量趋势"
 9. **图表选型约束（CRITICAL）**：选择图表类型时必须严格匹配数据特征：
@@ -84,10 +84,16 @@
     - **离散类别数值对比** → 用 BarChart
     - 严禁将多分类分布数据塞进 CircleProcessChart
 10. **侧栏导航必须用 Menu**：侧栏/侧边栏导航菜单必须使用 Menu 组件，即使用户原文说了"手风琴"/"accordion"/"折叠面板"，只要该区域是侧栏导航场景就一律写 Menu，不写 Collapse/CollapseItem。Collapse/CollapseItem 仅用于非导航的内容折叠场景（如 FAQ、详情面板等）
+11. **{{}}标注保留（CRITICAL）**：用户意图中用 `{{...}}` 标注的内容是结构/语义约束标记，必须在标准化JSON中完整保留。保留方式：在对应节点新增 `annotations` 字符串数组字段，将所有 `{{}}` 标注原样放入。`{{独立区块}}` 同时需设置 `isRegion: true`。`{{水平排列}}` 和 `{{垂直排列}}` 表示子元素的排列方向约束。`{{宽度Npx}}`（如 `{{宽度400px}}`）表示固定宽度约束。详见 {ANNOTATIONS_RULES}
+    - 紧跟标记：`左侧区域{{独立区块}}` → 该节点 annotations:["独立区块"], isRegion:true
+    - 包裹标记：`{{独立区块：提示信息...工具栏...}}` → 包裹内所有内容属于同一个 isRegion:true 的父节点，包裹内嵌套的 `{{卡片}}`、`{{二级卡片}}` 等仍保留在对应子节点
+    - 排列标记：`数据区域{{水平排列}}` → 该节点 annotations:["水平排列"]，子元素水平排列
+    - 宽度标记：`统计卡片{{宽度400px}}` → 该节点 annotations:["宽度400px"]，固定宽度400px
+    - 禁止省略、改写或丢失任何 `{{}}` 标注
 
 ## 输出格式
 
-请严格按照以下JSON结构输出：
+**只输出一个完整的JSON对象，禁止输出任何自然语言、分析、步骤说明。** 重复结构必须使用 itemTemplate + data，禁止逐个展开。
 
 ```json
 {
@@ -103,7 +109,29 @@
         "layout": "horizontal",
         "children": [...]
       },
-      ...
+      {
+        "id": "strategyList",
+        "name": "策略列表",
+        "layout": "vertical",
+        "annotations": ["独立区块"],
+        "isRegion": true,
+        "itemTemplate": {
+          "id": "strategyItem",
+          "name": "策略卡片",
+          "style": "卡片",
+          "layout": "horizontal",
+          "annotations": ["卡片"],
+          "children": [
+            { "id": "strategyLeft", "name": "左侧信息", "description": "蓝色文件图标+标题{title}+Tag{tag}" },
+            { "id": "statCard", "name": "统计卡片", "style": "固定宽度400px", "annotations": ["二级卡片"], "description": "三组数据: {intercept}拦截次数 | {riskIP}风险源IP数 | {peak}峰值流量" },
+            { "id": "timeInfo", "name": "时间信息", "description": "两组: {latestTime}最新拦截时间 | {effectTime}策略生效时间" }
+          ]
+        },
+        "data": [
+          { "title": "北京机房核心交换机DDoS防护（日间）", "tag": "高优策略", "intercept": "93,620", "riskIP": "6", "peak": "26 Mbps", "latestTime": "2026-05-27 14:30:00", "effectTime": "2026-05-27 09:00:00" },
+          { "title": "上海数据中心核心交换机DDoS防护（夜间）", "tag": "高优策略", "intercept": "48,215", "riskIP": "12", "peak": "18 Mbps", "latestTime": "2026-05-27 23:00:00", "effectTime": "2026-05-26 21:00:00" }
+        ]
+      }
     ]
   }
 }

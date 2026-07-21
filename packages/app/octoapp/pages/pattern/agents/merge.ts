@@ -12,7 +12,18 @@ interface A2UIModule {
 }
 
 function copyChildren(children: unknown): unknown {
-  if (Array.isArray(children)) return [...(children as string[])]
+  if (Array.isArray(children)) {
+    if (
+      children.length === 1 &&
+      children[0] &&
+      typeof children[0] === "object" &&
+      "path" in (children[0] as Record<string, unknown>) &&
+      "componentId" in (children[0] as Record<string, unknown>)
+    ) {
+      return { ...(children[0] as Record<string, unknown>) }
+    }
+    return [...(children as string[])]
+  }
   if (children && typeof children === "object") return { ...(children as Record<string, unknown>) }
   return children
 }
@@ -124,7 +135,10 @@ export function mergeModules(shell: A2UIModule, modules: A2UIModule[], slots?: S
     const referenced = new Set<string>()
     for (const el of elements) {
       if (Array.isArray(el.children)) {
-        for (const c of el.children) if (typeof c === "string") referenced.add(c)
+        for (const c of el.children) {
+          if (typeof c === "string") referenced.add(c)
+          if (c && typeof c === "object" && "componentId" in (c as Record<string, unknown>)) referenced.add((c as { componentId: string }).componentId)
+        }
       } else if (el.children && typeof el.children === "object" && typeof (el.children as { componentId?: unknown }).componentId === "string") {
         referenced.add((el.children as { componentId: string }).componentId)
       }

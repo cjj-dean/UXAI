@@ -2,34 +2,59 @@
 export function extractJson(text: string): Record<string, unknown> | null {
   if (!text || !text.trim()) return null
 
-  // 预处理：LLM 有时会输出智能引号（\u201C\u201D\u201E\u2018\u2019）代替英文引号
   text = text.replace(/[\u201C\u201D\u201E\u2018\u2019]/g, '"')
 
-  let raw = text
-  let match = text.match(/```(?:json)?\s*\n([\s\S]*?)\n?```/)
-  if (match) raw = match[1]
-  else {
-    let start = text.indexOf("{")
-    let end = text.lastIndexOf("}")
-    if (start !== -1 && end > start) raw = text.substring(start, end + 1)
+  // 尝试提取所有 ```json ``` 代码块，优先返回包含 standardizedIntent 的
+  const codeBlocks = [...text.matchAll(/```(?:json)?\s*\n([\s\S]*?)\n?```/g)]
+  if (codeBlocks.length > 0) {
+    const candidates = codeBlocks.map(m => m[1])
+    const withIntent = candidates.find(b => tryParse(b)?.standardizedIntent || tryParse(b)?.standardized_intent)
+    if (withIntent) { const p = tryParse(withIntent); if (p) return p }
+    const first = candidates[0]
+    const p = tryParse(first); if (p) return p
   }
 
-  if (tryParse(raw)) return tryParse(raw)!
-
-  // 尝试从每个 '{' 位置解析（处理输出开头有多余字符的情况）
-  let searchFrom = 0
-  while (true) {
-    const nextStart = text.indexOf("{", searchFrom + 1)
-    if (nextStart === -1) break
-    const end = text.lastIndexOf("}")
-    if (end <= nextStart) break
-    const subRaw = text.substring(nextStart, end + 1)
-    const parsed = tryParse(subRaw)
-    if (parsed) return parsed
-    searchFrom = nextStart
+  // 无代码块时，尝试提取所有顶层 JSON 对象
+  const jsonCandidates = extractTopLevelJsons(text)
+  if (jsonCandidates.length > 0) {
+    const withIntent = jsonCandidates.find(b => tryParse(b)?.standardizedIntent || tryParse(b)?.standardized_intent)
+    if (withIntent) { const p = tryParse(withIntent); if (p) return p }
+    for (const c of jsonCandidates) { const p = tryParse(c); if (p) return p }
   }
 
   return null
+}
+
+function extractTopLevelJsons(text: string): string[] {
+  const results: string[] = []
+  let i = 0
+  while (i < text.length) {
+    const start = text.indexOf("{", i)
+    if (start === -1) break
+    let depth = 0
+    let inStr = false
+    let esc = false
+    let end = -1
+    for (let j = start; j < text.length; j++) {
+      const c = text[j]
+      if (esc) { esc = false; continue }
+      if (c === "\\" && inStr) { esc = true; continue }
+      if (c === '"') { inStr = !inStr; continue }
+      if (inStr) continue
+      if (c === "{") depth++
+      else if (c === "}") {
+        depth--
+        if (depth === 0) { end = j; break }
+      }
+    }
+    if (end !== -1) {
+      results.push(text.substring(start, end + 1))
+      i = end + 1
+    } else {
+      i = start + 1
+    }
+  }
+  return results
 }
 
 function tryParse(raw: string): Record<string, unknown> | null {

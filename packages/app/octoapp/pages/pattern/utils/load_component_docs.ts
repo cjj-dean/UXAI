@@ -1,5 +1,5 @@
 const COMPONENT_CATALOG: Record<string, string[]> = {
-  Layout: ["Section", "three-column-center"],
+  Layout: ["Section", "Card", "three-column-center"],
   General: ["Button", "Icon"],
   Navigation: ["Tabs", "TabItem", "Steps", "StepItem", "Breadcrumb", "Dropdown", "Menu"],
   DataEntry: ["Checkbox", "CheckboxGroup", "RadioGroup", "Select", "Slider", "Switch", "Input", "InputNumber", "TextArea", "TimePicker", "DatePicker", "Rate"],

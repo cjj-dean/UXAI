@@ -82,6 +82,10 @@ function findNodeById(node: any, id: string): any {
       if (found) return found
     }
   }
+  if (node.itemTemplate) {
+    const found = findNodeById(node.itemTemplate, id)
+    if (found) return found
+  }
   return null
 }
 
@@ -98,6 +102,7 @@ function collectRegionIds(root: any, sectionId: string): string[] {
         walk(childNode)
       }
     }
+    if (n.itemTemplate) walk(n.itemTemplate)
   }
   walk(node)
   return ids
@@ -115,6 +120,32 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   let regionHint = ""
   if (regionIds.length > 0) {
     regionHint = `\n  **⚠️ 蓝图中以下节点标记了isRegion:true，对应的element必须使用Section组件（自带bg-surface-container-highest+shadow-sm+rounded-xl+p-[1.5rem]，不要手动添加这些样式，不要用div替代）：${regionIds.join(", ")}**`
+  }
+
+  let annotationsHint = ""
+  const nodeAnnotations: string[] = node?.annotations ?? []
+  if (nodeAnnotations.includes("卡片")) {
+    annotationsHint += `\n  **⚠️ 该模块标注了"卡片"，顶层容器必须使用 Card 组件（自带 bg-surface-container-highest+shadow-sm+rounded-xl+p-*）。**`
+  }
+  if (nodeAnnotations.includes("二级卡片")) {
+    annotationsHint += `\n  **⚠️ 该模块标注了"二级卡片"，嵌套子卡片用 Card 组件 + bg-surface-variant rounded-[16px]，不用 shadow。**`
+  }
+  const collectAnnotationIds = (n: any, result: {id: string, annotations: string[]}[] = []): {id: string, annotations: string[]}[] => {
+    if (!n) return result
+    const ann: string[] = n.annotations ?? []
+    if (ann.includes("卡片") || ann.includes("二级卡片")) result.push({ id: n.id, annotations: ann })
+    if (Array.isArray(n.children)) {
+      for (const child of n.children) {
+        const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
+        collectAnnotationIds(childNode, result)
+      }
+    }
+    if (n.itemTemplate) collectAnnotationIds(n.itemTemplate, result)
+    return result
+  }
+  const childAnnotations = collectAnnotationIds(node).filter(a => a.id !== node?.id)
+  if (childAnnotations.length > 0) {
+    annotationsHint += `\n  **⚠️ 蓝图子节点标注约束：${childAnnotations.map(a => `${a.id} → [${a.annotations.join(", ")}]`).join("； ")}**`
   }
 
   let componentDocsSection = ""
@@ -135,7 +166,7 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
 
   [需要被渲染模块的根节点:] ${elementId}
    [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
-  ${regionHint}
+  ${regionHint}${annotationsHint}
   ${componentDocsSection}
   **CRITICAL — Path 语法约束：**
   - 数据绑定 path 禁止使用 ".."（目录回溯语法），如 "/menuItems/0/../8" 不会解析。

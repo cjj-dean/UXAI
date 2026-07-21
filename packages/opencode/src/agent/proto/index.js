@@ -6,6 +6,7 @@ import HTML5_SCHEMA from "./prompt/stastics/HTML5_SCHEMA.txt"
 import PLANNER_TEMPLATE from "./prompt/stastics/PLANNER_TEMPLATE.txt"
 import INTENT_EXPAND_TEMPLATE from "./prompt/stastics/INTENT_EXPAND_TEMPLATE.txt"
 import ISREGION_RULES from "./prompt/stastics/ISREGION_RULES.txt"
+import ANNOTATIONS_RULES from "./prompt/stastics/ANNOTATIONS_RULES.txt"
 
 import _PROMPT_PROTO_INTENT from "./prompt/proto_intent.txt"
 import _PROMPT_PROTO_INTENT_AUDIT from "./prompt/proto_intent_audit.txt"
@@ -27,6 +28,7 @@ const data = {
   PLANNER_TEMPLATE,
   INTENT_EXPAND_TEMPLATE,
   ISREGION_RULES,
+  ANNOTATIONS_RULES,
 }
 
 function formatPrompt(template) {

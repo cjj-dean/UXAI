@@ -28,12 +28,13 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
 const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
 
 const FIXED_CLASSNAMES: Record<string, string> = {
-  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row items-center h-[48px] px-[1.5rem]",
+  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
   infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
-  aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
   body: "flex flex-row flex-1 min-h-0 overflow-hidden",
   root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
 }
+
+const ASIDE_BASE_CLASSNAME = "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col"
 
 function deriveIdPrefix(id: string): string {
   const parts = id.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
@@ -47,11 +48,19 @@ function getChildNodes(node: any): any[] {
     .filter((c: any) => c && c.id)
 }
 
+function resolveComponent(node: any): string {
+  const id = node.id ?? ""
+  if (id in SHELL_COMPONENT_MAP) return SHELL_COMPONENT_MAP[id]
+  if (node.isRegion === true) return "Section"
+  const annotations: string[] = node.annotations ?? []
+  if (annotations.includes("卡片") || annotations.includes("二级卡片")) return "Card"
+  return "div"
+}
+
 function addSlotElement(node: any, elements: any[]) {
   const id = node.id
   if (!id) return
-  const isRegion = node.isRegion === true
-  const component = isRegion ? "Section" : "div"
+  const component = resolveComponent(node)
   const childNodes = getChildNodes(node)
   elements.push({
     id,
@@ -60,7 +69,8 @@ function addSlotElement(node: any, elements: any[]) {
     children: childNodes.map((c: any) => c.id),
     layout: node.layout ?? "",
     style: node.style ?? "",
-    isRegion,
+    isRegion: node.isRegion === true,
+    annotations: node.annotations ?? [],
     needsClassName: true,
   })
 }
@@ -70,22 +80,17 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
   const id = node.id
   if (!id) return
 
-  const isShellNode = id in SHELL_COMPONENT_MAP
-  const isRegion = node.isRegion === true
-
-  const component = isShellNode
-    ? SHELL_COMPONENT_MAP[id]
-    : isRegion
-      ? "Section"
-      : "div"
+  const component = resolveComponent(node)
 
   let className = FIXED_CLASSNAMES[id] ?? ""
-  if (id === "main") {
+  if (id === "aside") {
+    className = ASIDE_BASE_CLASSNAME
+  } else if (id === "main") {
     const layoutDir = node.layout === "horizontal" ? "flex flex-row" : "flex flex-col"
     className = `flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${layoutDir}`
   }
 
-  const needsClassName = !(id in FIXED_CLASSNAMES) && id !== "main"
+  const needsClassName = id === "aside" || (!(id in FIXED_CLASSNAMES) && id !== "main")
 
   const element: any = {
     id,
@@ -94,7 +99,8 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     children: [] as string[],
     layout: node.layout ?? "",
     style: node.style ?? "",
-    isRegion,
+    isRegion: node.isRegion === true,
+    annotations: node.annotations ?? [],
     needsClassName,
   }
 
@@ -145,7 +151,11 @@ function applyClassNames(elements: any[], classMap: Record<string, string>) {
     const className = classMap[el.id]
     if (!className) continue
     if (el.id in FIXED_CLASSNAMES || el.id === "main") continue
-    el.props.className = className
+    if (el.id === "aside") {
+      el.props.className = `${ASIDE_BASE_CLASSNAME} ${className}`.trim()
+    } else {
+      el.props.className = className
+    }
   }
 }
 
@@ -195,7 +205,9 @@ export default async function planner_new_create(input: PlannerNewCreateInput) {
     if (el.layout) parts.push(`layout: ${el.layout}`)
     if (el.style) parts.push(`style: ${el.style}`)
     if (el.isRegion) parts.push("isRegion: true")
+    if (el.annotations?.length) parts.push(`annotations: [${el.annotations.join(", ")}]`)
     if (el.children.length > 0) parts.push(`children: [${el.children.join(", ")}]`)
+    if (el.id === "aside") parts.push(`基础样式已固定: ${ASIDE_BASE_CLASSNAME}，只需补充宽度`)
     return parts.join(", ")
   })
 
@@ -207,15 +219,20 @@ ${siblingInfo.length > 0 ? siblingInfo.join("\n") : "（无）"}
 
 [已固定的 className:] ==================================
 ${Object.entries(FIXED_CLASSNAMES).filter(([id]) => elements.some(el => el.id === id)).map(([id, cn]) => `${id}: ${cn}`).join("\n")}
+aside: ${ASIDE_BASE_CLASSNAME}（宽度待补充）
 main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.children?.find((c: any) => c.id === "body")?.children?.find((c: any) => c.id === "main")?.layout === "horizontal" ? "flex flex-row" : "flex flex-col"}
 
 规则：
 - layout "horizontal" → flex flex-row
 - layout "vertical" → flex flex-col
 - layout "grid" → grid
+- annotations中的"水平排列" → flex flex-row（优先于 layout 属性）
+- annotations中的"垂直排列" → flex flex-col（优先于 layout 属性）
 - style中的"固定宽度54px" → w-[54px] shrink-0
 - style中的"固定高度300px" → h-[300px]
 - style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
+- annotations中的"二级卡片" → Card组件 + bg-surface-variant rounded-[16px]，不用shadow
+- annotations中的"宽度Npx"（如"宽度400px"） → w-[Npx] shrink-0
 - style中的"横向等宽等距排布" → flex-1
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
@@ -263,6 +280,7 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
     delete el.style
     delete el.isRegion
     delete el.needsClassName
+    if (!el.annotations?.length) delete el.annotations
   }
 
   const layoutPlanner = {
@@ -287,5 +305,6 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
   }
 
   logAgentParsed(`direct-${Date.now().toString(36)}`, returnValue)
+  console.log("----- 新布局规划Agent结果（后处理后）：", JSON.stringify({ elements: elements.map(e => ({ id: e.id, component: e.component, className: e.props.className, annotations: e.annotations })), slots }))
   return returnValue
 }

@@ -138,7 +138,7 @@ watch(
   <ElTag
     v-show="label !== ''"
     :id="id"
-    :class="['self-start', className]"
+    :class="className"
     :size="size as any"
     :closable="closable"
     :effect="effect as any"

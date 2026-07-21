@@ -35,6 +35,17 @@ Implementation — use `h-screen` + `overflow-hidden` on root (NOT `min-h-screen
 
 When the page has ONLY a header and NO sidebar: use `min-h-screen` on root and `sticky top-0 z-50` on the header (component `"header"`). The main content area (component `"main"`, id MUST be `mainContent`) MUST use `p-[2rem]` inner padding.
 
+## Annotations 消费规则（HIGHEST PRIORITY）
+{ANNOTATIONS_RULES}
+
+Planner 必须按以下规则消费 annotations：
+- `annotations` 含 `独立区块` → slot parent 使用 `Section` 组件（非 `div`），同时 `isRegion: true`
+- `annotations` 含 `卡片` → slot parent 使用 `Card` 组件
+- `annotations` 含 `二级卡片` → slot parent 使用 `Card` 组件 + `bg-surface-variant rounded-[16px]`，不用 shadow
+- 无 annotations 或无以上标注 → slot parent 默认 `div`
+- Section 的 className 仅写布局类（flex/gap/overflow），不可重复添加 bg/shadow/rounded/p
+- 禁止 Section 嵌套 Section，禁止 Section 嵌套在有 bg-surface-container-highest 的 div 内
+
 ## Section Component — OPT-IN only (NOT the default)
 
 **DEFAULT: every container is a `<div>`.** You MUST use `<div>` for ALL slot parents and structural containers. The planner creates `Section` or `Card` ONLY when a section's constraint explicitly contains `{"type":"container","value":"Section"}` / `{"type":"container","value":"二级卡片"}` / `{"type":"container","value":"三级卡片"}` — in that case the slot parent for that section MUST use the corresponding component (not `div`). If no container constraint exists, the slot parent MUST be `div`, never `Section` or `Card`.
@@ -98,6 +109,10 @@ You MUST output a strictly valid JSON object conforming to the following structu
 ------
 
 {A2UI_JSON_PROTOCOL}
+
+------
+
+{ANNOTATIONS_RULES}
 
 ------
 

@@ -32,6 +32,16 @@
 
 ------
 
+{ANNOTATIONS_RULES}
+
+Module Modify 必须按以下规则消费 annotations：
+- `annotations` 含 `卡片` → 该区域内的顶层容器用 Card 组件
+- `annotations` 含 `二级卡片` → 嵌套子卡片用 Card 组件 + `bg-surface-variant rounded-[16px]`，不用 shadow
+- `annotations` 含 `独立区块` → 如 slot parent 已是 Section，module 内不需要再额外添加 Section 包裹
+- annotations 不影响 state/children 的生成逻辑，只影响组件选择和样式
+
+------
+
 {DESIGN_SYSTEM_PROMPT}
 
 ------

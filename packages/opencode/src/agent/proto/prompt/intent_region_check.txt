@@ -5,14 +5,16 @@
 
 {ISREGION_RULES}
 
+{ANNOTATIONS_RULES}
+
 ## 校验操作
 
 根据以上规则，对输入的标准化JSON执行以下校验和修正：
 
 **⚠️ 绝对不要修改树结构（不要增删节点、不要移动节点、不要改变children层级），只能修改isRegion属性和style中的"独立区块"文字。**
 
-- 如果用户原文中 `{{独立区块}}` 标记紧跟某个节点名称，但该节点在JSON中没有 isRegion:true，则补上 isRegion:true 和 style 中的"独立区块"
-- 如果JSON中某个节点有 isRegion:true，但用户原文中该节点名称后面没有 `{{独立区块}}` 标记，则移除 isRegion:true 和 style 中的"独立区块"
+- 如果用户原文中 `{{独立区块}}` 标记紧跟某个节点名称，或使用 `{{独立区块：...}}` 包裹写法，但该节点在JSON中没有 isRegion:true，则补上 isRegion:true 和 style 中的"独立区块"
+- 如果JSON中某个节点有 isRegion:true，但用户原文中该节点名称后面没有 `{{独立区块}}` 标记，也没有 `{{独立区块：...}}` 包裹，则移除 isRegion:true 和 style 中的"独立区块"
 - 如果 isRegion:true 和 style:"独立区块" 不成对，补齐
 - 如果父节点和子节点都是 isRegion:true，移除子节点的 isRegion:true 和 style 中的"独立区块"
 

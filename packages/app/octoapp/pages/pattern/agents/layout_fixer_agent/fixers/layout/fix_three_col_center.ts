@@ -42,8 +42,9 @@ export const fixThreeColCenter: Fixer = (json) => {
       changes.push(`左栏[${left.id}] 补充 flex-1`)
     }
     if (!hasFlex1(rightToks)) {
-      setClassName(right, `${rightCls} flex-1`.trim())
-      changes.push(`右栏[${right.id}] 补充 flex-1`)
+      const rightClsNew = rightToks.includes("justify-end") ? `${rightCls} flex-1` : `${rightCls} flex-1 justify-end`
+      setClassName(right, rightClsNew.trim())
+      changes.push(`右栏[${right.id}] 补充 flex-1 justify-end`)
     }
     if (changes.length) {
       fixes.push(`[${elem.id}](${elem.component}) 三栏居中布局: ${changes.join(", ")}`)

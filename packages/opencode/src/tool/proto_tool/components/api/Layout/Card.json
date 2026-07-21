@@ -1,0 +1,78 @@
+{
+	"name": "Card",
+	"type": "object",
+	"$defs": {
+		"DataBinding": {
+			"type": "object",
+			"description": "JSON Pointer state reference",
+			"required": ["path"],
+			"properties": {
+				"path": {
+					"type": "string",
+					"description": "A JSON Pointer path to a value in the state",
+					"examples": ["/value", "/form/value"]
+				}
+			}
+		},
+		"StaticChildren": {
+			"type": "array",
+			"items": { "type": "string" },
+			"description": "A static list of child component IDs."
+		},
+		"TemplateChildren": {
+			"type": "object",
+			"description": "A template for generating a dynamic list of children from a data model list.",
+			"required": ["componentId", "path"],
+			"properties": {
+				"componentId": {
+					"type": "string",
+					"description": "The unique identifier for a component"
+				},
+				"path": {
+					"type": "string",
+					"description": "The path to the list of component property objects in the data model."
+				}
+			}
+		}
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"description": "Unique ID for cross-referencing."
+		},
+		"component": {
+			"type": "string",
+			"const": "Card"
+		},
+		"props": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"oneOf": [
+						{ "type": "string" },
+						{ "$ref": "#/$defs/DataBinding" }
+					],
+					"description": "Card title text."
+				},
+				"variant": {
+					"type": "string",
+					"enum": ["default", "outlined", "elevated"],
+					"default": "default",
+					"description": "Card style variant. default = bg-surface-container-highest + shadow-sm + rounded-xl; outlined = border border-base rounded-xl; elevated = bg-surface-container-highest + shadow-md + rounded-xl."
+				},
+				"className": {
+					"type": "string",
+					"description": "Tailwind CSS classes for the component."
+				}
+			}
+		},
+		"children": {
+			"oneOf": [
+				{ "$ref": "#/$defs/StaticChildren" },
+				{ "$ref": "#/$defs/TemplateChildren" }
+			],
+			"description": "Child elements inside the card."
+		}
+	},
+	"required": ["id", "component", "props"]
+}

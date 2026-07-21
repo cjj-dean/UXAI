@@ -71,6 +71,11 @@ export default async function proto_component_lookup(input: ProtoComponentLookup
     componentNames = componentNames.filter(c => c !== "Collapse" && c !== "CollapseItem")
   }
 
+  const annotationComponents = collectAnnotationComponents(intentDescription, sectionId)
+  for (const comp of annotationComponents) {
+    if (!componentNames.includes(comp)) componentNames.push(comp)
+  }
+
   const returnValue = {
     component_names: componentNames,
     layout_patterns: layoutPatterns,
@@ -78,6 +83,7 @@ export default async function proto_component_lookup(input: ProtoComponentLookup
     element_id: elementId,
   }
   logAgentParsed(result.childSessionId, returnValue)
+  console.log("----- 组件查询Agent结果（后处理后）：", JSON.stringify(returnValue))
   return returnValue
 }
 
@@ -91,7 +97,43 @@ function findNodeById(node: any, id: string): any {
       if (found) return found
     }
   }
+  if (node.itemTemplate) {
+    const found = findNodeById(node.itemTemplate, id)
+    if (found) return found
+  }
   return null
+}
+
+const ANNOTATION_COMPONENT_MAP: Record<string, string> = {
+  "卡片": "Card",
+  "二级卡片": "Card",
+}
+
+function collectAnnotationComponents(intentDescription: any, sectionId: string): string[] {
+  const node = findNodeById(intentDescription, sectionId)
+  if (!node) return []
+  const components: string[] = []
+  const seen = new Set<string>()
+  const walk = (n: any) => {
+    if (!n) return
+    const annotations: string[] = n.annotations ?? []
+    for (const ann of annotations) {
+      const comp = ANNOTATION_COMPONENT_MAP[ann]
+      if (comp && !seen.has(comp)) {
+        seen.add(comp)
+        components.push(comp)
+      }
+    }
+    if (Array.isArray(n.children)) {
+      for (const child of n.children) {
+        const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
+        walk(childNode)
+      }
+    }
+    if (n.itemTemplate) walk(n.itemTemplate)
+  }
+  walk(node)
+  return components
 }
 
 function buildHumanMessage(sectionId: string, elementId: string, layoutPlanner: any, intentDescription: any): string {

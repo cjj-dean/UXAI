@@ -3,8 +3,9 @@
 
 **此规则优先级高于所有其他规则，遇到冲突时以此规则为准：**
 
-1. **只有当用户原文中出现 `{{独立区块}}` 标记时**，才设置 isRegion:true 并在style中写"独立区块"。不要自行添加，用户没写 `{{独立区块}}` 就不加
+1. **只有当用户原文中出现 `{{独立区块}}` 或 `{{独立区块：...}}` 标记时**，才设置 isRegion:true 并在style中写"独立区块"。不要自行添加，用户没写就不加
    - ✅ 正确：用户写"左侧区域{{独立区块}}：" → leftPanel 设 isRegion:true, style:"独立区块"
+   - ✅ 正确：用户写"{{独立区块：第一行是提示信息...下方是工具栏...}}" → 包裹内的所有内容属于同一个 isRegion:true 的节点
    - ❌ 错误：用户没写 `{{独立区块}}`，但LLM自行给某个模块加了 isRegion:true
 2. **isRegion:true 和 style中的"独立区块"必须成对出现，缺一不可**
    - ✅ 正确：`{ "id": "leftPanel", "isRegion": true, "style": "独立区块", ... }`
@@ -13,7 +14,10 @@
 3. **`{{独立区块}}` 标记紧跟在哪个节点名称后面，isRegion就标记在那个节点上，绝对不要下放到子节点**
    - ✅ 正确：用户写"左侧区域{{独立区块}}：" → leftPanel 本身 isRegion:true，leftPanel下的子模块（Tab、图表等）都不加 isRegion
    - ❌ 错误：用户写"左侧区域{{独立区块}}：" → leftPanel 不加 isRegion，却给 leftPanel 下的 cpuModule、trendModule 各自加了 isRegion:true
-4. **父容器如果是 isRegion:true，则其子节点不能是 isRegion:true**（独立区块不能嵌套独立区块）
+4. **包裹写法 `{{独立区块：...}}` 的处理**：用 `{{独立区块：` 开头、`}}` 结尾包裹一段内容时，包裹内的所有内容属于同一个 isRegion:true 的节点，该节点是包裹内所有子元素的父容器。包裹内嵌套的 `{{卡片}}`、`{{二级卡片}}` 等标注仍然保留在对应的子节点上
+   - ✅ 正确：`{{独立区块：提示信息...工具栏...内容列表(每条是{{卡片}})...}}` → 父节点 isRegion:true + annotations:["独立区块"]，子节点 policyItem annotations:["卡片"]
+   - ❌ 错误：把包裹拆成多个独立的 isRegion:true 节点
+5. **父容器如果是 isRegion:true，则其子节点不能是 isRegion:true**（独立区块不能嵌套独立区块）
    - ✅ 正确：leftPanel isRegion:true → leftPanel 的所有子节点和后代节点都不加 isRegion:true
    - ❌ 错误：leftPanel isRegion:true，且 leftModule1 也 isRegion:true（嵌套独立区块）
-5. **违反此规则是最常见的错误**，输出前请反复检查：每个 isRegion:true 的节点是否对应用户原文中 `{{独立区块}}` 标记紧跟的节点，且其父节点不是 isRegion:true
+6. **违反此规则是最常见的错误**，输出前请反复检查：每个 isRegion:true 的节点是否对应用户原文中 `{{独立区块}}` 标记紧跟的节点，且其父节点不是 isRegion:true
