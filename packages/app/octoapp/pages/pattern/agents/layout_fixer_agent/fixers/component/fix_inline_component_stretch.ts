@@ -26,12 +26,11 @@ export function fixInlineComponentStretch(json: A2UIJson): [A2UIJson, string[]] 
   const logs: string[] = []
   for (const el of json.elements) {
     if (!INLINE_COMPONENTS.has(el.component)) continue
-    const cn = el.props?.className
-    if (!cn || typeof cn !== "string") continue
-    const fixed = removeStretchClasses(cn)
-    if (fixed !== cn) {
+    if (!el.props?.className || typeof el.props.className !== "string") continue
+    const fixed = removeStretchClasses(el.props.className)
+    if (fixed !== el.props.className) {
       el.props.className = fixed || "w-fit"
-      logs.push(`[inline_stretch] ${el.id}: removed stretch classes from "${cn}" -> "${el.props.className}"`)
+      logs.push(`[inline_stretch] ${el.id}: removed stretch classes from "${el.props.className}" -> "${fixed || "w-fit"}"`)
     }
   }
   return [json, logs]
