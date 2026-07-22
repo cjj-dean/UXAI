@@ -21,15 +21,17 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
   body: "div",
   aside: "aside",
   main: "main",
+  footer: "div",
   dialog: "Dialog",
   drawer: "Drawer",
 }
 
-const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
+const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "footer", "dialog", "drawer"])
 
 const FIXED_CLASSNAMES: Record<string, string> = {
   header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
   infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
+  footer: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-end items-center px-[1.5rem] py-[0.75rem]",
   body: "flex flex-row flex-1 min-h-0 overflow-hidden",
   root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
 }
@@ -233,7 +235,7 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 - style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
 - annotations中的"二级卡片" → Card组件 + bg-surface-variant rounded-[16px]，不用shadow
 - annotations中的"宽度Npx"（如"宽度400px"） → w-[Npx] shrink-0
-- style中的"横向等宽等距排布" → flex-1
+- style中的"横向等宽等距排布" → 父容器 flex flex-row，每个子元素加 flex-1 min-w-0
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出

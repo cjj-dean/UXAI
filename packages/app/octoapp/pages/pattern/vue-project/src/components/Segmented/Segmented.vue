@@ -19,7 +19,12 @@ const properties = node.properties
 const { resolveValue, setValue } = useA2UIComponent(node, surfaceId)
 
 const id = computed(() => node.id)
-const className = computed(() => properties.className || "")
+const className = computed(() => {
+  const base = properties.className || ""
+  const isBlock = properties.block === true
+  if (!isBlock && !base.includes("w-")) return `w-fit ${base}`.trim()
+  return base
+})
 
 const normalizedOptions = computed(() => {
   const raw = properties.options

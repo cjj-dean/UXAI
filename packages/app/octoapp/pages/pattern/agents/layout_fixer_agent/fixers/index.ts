@@ -42,6 +42,7 @@ import { fixStepsFullWidth } from "./component"
 import { fixPatStackedBar } from "./component"
 import { fixTabContent } from "./component"
 import { fixBorderBox } from "./component"
+import { fixInlineComponentStretch } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "dialog_class", fn: fixDialogClass },
@@ -84,4 +85,5 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "tab_content", fn: fixTabContent },
   { name: "border_box", fn: fixBorderBox },
   { name: "aside_width", fn: fixAsideWidth },
+  { name: "inline_component_stretch", fn: fixInlineComponentStretch },
 ]

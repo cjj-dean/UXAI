@@ -41,18 +41,26 @@
 
 ### 页面壳层模板（🔴不可改 🔵可选 🟡可改）
 
+**壳层结构是强制约束（CRITICAL）**：
+- `root → header + body + footer(可选)` 结构不可改
+- `body → aside(可选) + main(必须)` 结构不可改，body 下**必须**包含 main 节点，所有页面内容必须放在 main 下
+- footer 必须放在 root 的 children 里，与 header、body 并列，在 body 下方；footer 必须是叶子节点，不能有 children
+- main 的子节点根据用户意图自由组织，不限于 mainContent/rightPanel
+- 禁止跳过 main 直接在 body 下放置内容节点
+- **{{独立区块：...}}包裹标记（CRITICAL）**：必须创建一个父节点包裹标记内的所有内容，该父节点设置 isRegion:true, annotations:["独立区块"]，标记内所有内容作为该父节点的children。禁止将包裹内容拆分到多个独立节点
+
 {INTENT_EXPAND_TEMPLATE}
 
 ### 节点类型规范
 
 1. **叶子节点**：只有 description 和 style 属性，用纯文本描述该节点的内容
    - header、infoBar、dialog、drawer、aside 等简单模块均为叶子节点，不再展开children，用description描述其内容
-   - style 用纯文本描述固定宽度、边框、背景色等样式信息
-   - 如果叶子节点本身是组件（如图表、按钮、输入框等），则没有layout属性
+    - style 约束见关键规则第1条
+    - 如果叶子节点本身是组件（如图表、按钮、输入框等），则没有layout属性
    - 如果叶子节点本身还是区域（如header、aside等），则有layout属性描述其排列方向
 2. **非叶子节点**：只有 layout / children / style 等结构属性，不能有 description
    - root、body、main 等容器节点为非叶子节点，需要展开children
-   - style 用纯文本描述固定宽度、边框、背景色等样式信息，不再使用单独的width属性
+    - style 约束见关键规则第1条，不再使用单独的width属性
    - main 节点是页面核心内容区，必须重点展开，详细描述每个子模块
 3. **模板引用节点**：通过 template 字段引用模板，只传数据props
    - 例: {{ template: "统计块", value: "1574", label: "运行中" }}
@@ -68,11 +76,12 @@
 
 ### 关键规则
 
-1. 叶子节点只有description和style，不能有children；区域型叶子节点有layout，组件型叶子节点没有layout
-2. 非叶子节点不能有description，只能有layout/children/style/itemTemplate/data等结构属性，不再使用单独的width属性
-3. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
-4. main节点必须重点展开，详细描述子模块的布局、数据和组件
-5. style属性用纯文本描述固定宽度、边框、背景色等样式，叶子节点和非叶子节点均可使用
+1. **style属性约束（CRITICAL）**：style只能用中文语义描述（如"固定宽度240px"、"独立区块"、"横向等宽等距排布"），禁止写Tailwind className（如"p-4 gap-4 flex-1"等）。只记录用户意图中明确提到的样式，禁止自行创造用户未提及的样式。叶子节点和非叶子节点均可使用style
+   - **壳层节点（header/aside/infoBar/dialog/drawer）禁止自行添加宽度样式**：这些节点的宽度由布局系统自动处理，除非用户明确说了"侧边栏宽度240px"等，否则不要在style中写"固定宽度Npx"
+2. 叶子节点只有description和style，不能有children；区域型叶子节点有layout，组件型叶子节点没有layout
+3. 非叶子节点不能有description，只能有layout/children/style/itemTemplate/data等结构属性，不再使用单独的width属性
+4. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
+5. main节点必须重点展开，详细描述子模块的布局、数据和组件
 6. **重复结构必须使用 itemTemplate + data（CRITICAL）**：2个及以上结构相同的元素禁止逐个展开，必须用重复内容容器描述。仅当每项布局/结构不同时才可逐个展开。
 7. 保留原始意图中的所有数据，不丢失任何信息
 8. **叶子节点的description必须清晰说明采用什么组件**：不要只写"显示指标数据"，要写"4个PatGauge仪表盘，分别显示CPU/内存/磁盘/网络使用率"；不要只写"图表区域"，要写"LineChart折线图展示24小时流量趋势"
@@ -83,10 +92,9 @@
     - **趋势变化** → 用 LineChart
     - **离散类别数值对比** → 用 BarChart
     - 严禁将多分类分布数据塞进 CircleProcessChart
-10. **侧栏导航必须用 Menu**：侧栏/侧边栏导航菜单必须使用 Menu 组件，即使用户原文说了"手风琴"/"accordion"/"折叠面板"，只要该区域是侧栏导航场景就一律写 Menu，不写 Collapse/CollapseItem。Collapse/CollapseItem 仅用于非导航的内容折叠场景（如 FAQ、详情面板等）
 11. **{{}}标注保留（CRITICAL）**：用户意图中用 `{{...}}` 标注的内容是结构/语义约束标记，必须在标准化JSON中完整保留。保留方式：在对应节点新增 `annotations` 字符串数组字段，将所有 `{{}}` 标注原样放入。`{{独立区块}}` 同时需设置 `isRegion: true`。`{{水平排列}}` 和 `{{垂直排列}}` 表示子元素的排列方向约束。`{{宽度Npx}}`（如 `{{宽度400px}}`）表示固定宽度约束。详见 {ANNOTATIONS_RULES}
     - 紧跟标记：`左侧区域{{独立区块}}` → 该节点 annotations:["独立区块"], isRegion:true
-    - 包裹标记：`{{独立区块：提示信息...工具栏...}}` → 包裹内所有内容属于同一个 isRegion:true 的父节点，包裹内嵌套的 `{{卡片}}`、`{{二级卡片}}` 等仍保留在对应子节点
+    - 包裹标记：`{{独立区块：提示信息...工具栏...}}` → 必须创建一个父节点包裹标记内的所有内容，该父节点设置 isRegion:true, annotations:["独立区块"]，标记内的所有内容作为该父节点的children。禁止将包裹内容拆分到多个独立节点
     - 排列标记：`数据区域{{水平排列}}` → 该节点 annotations:["水平排列"]，子元素水平排列
     - 宽度标记：`统计卡片{{宽度400px}}` → 该节点 annotations:["宽度400px"]，固定宽度400px
     - 禁止省略、改写或丢失任何 `{{}}` 标注

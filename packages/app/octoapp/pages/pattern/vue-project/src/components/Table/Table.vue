@@ -63,18 +63,20 @@ const showPagination = computed(() => properties.pagination === false ? false : 
 const rowsPerPage = ref(10)
 const page = ref(1)
 const rows = computed(() => {
+  const childNodes = (Array.isArray(properties.children) ? properties.children : []) as any[]
+  const data = Array.isArray(dataSource.value) ? dataSource.value : []
   if (showPagination.value) {
     const start = (page.value - 1) * rowsPerPage.value
     const end = start + rowsPerPage.value
     return {
-      node: properties.children.slice(start, end),
-      data: dataSource.value.slice(start, end),
+      node: childNodes.slice(start, end),
+      data: data.slice(start, end),
     }
   }
 
   return {
-    node: properties.children,
-    data: dataSource.value,
+    node: childNodes,
+    data: data,
   }
 })
 function handlePageChange(newPage: number) {
@@ -145,16 +147,34 @@ const columns = computed(() => {
   })
 })
 
-// 表体 -- 节点驱动
+// 表体 -- 节点驱动，数据兜底
 const tableData = computed(() => {
-  return rows.value.node.map((item, index) => {
+  const nodes = rows.value.node
+  const data = rows.value.data
+
+  if (nodes.length === 0 && data.length > 0) {
+    return data.map((row, index) => {
+      const dataIsObj = Object.prototype.toString.call(row) === "[object Object]"
+      const rowData: Record<string, any> = {
+        [rowKey.value]: dataIsObj ? row[rowKey.value] : `row-${index}`,
+      }
+      columns.value.forEach((col) => {
+        if (dataIsObj && row[col.prop] !== undefined) {
+          rowData[col.prop] = { type: "AutoText", value: row[col.prop] }
+        }
+      })
+      return rowData
+    })
+  }
+
+  return nodes.map((item, index) => {
     const { properties: itemProps } = item
     const { children: cells } = itemProps
-    const data = rows.value.data[index]
-    const dataIsObj = Object.prototype.toString.call(data) === "[object Object]"
+    const row = data[index]
+    const dataIsObj = Object.prototype.toString.call(row) === "[object Object]"
 
     const rowData: Record<string, any> = {
-      [rowKey.value]: dataIsObj ? data[rowKey.value] : `row-${index}`,
+      [rowKey.value]: dataIsObj ? row[rowKey.value] : `row-${index}`,
     }
 
     const colDefs = Array.isArray(properties.columns)
@@ -163,9 +183,6 @@ const tableData = computed(() => {
     const isSparseCells = cells.length < colDefs.length
 
     if (isSparseCells) {
-      // Sparse format: TableRow children only contain custom-rendered columns.
-      // Each cell's properties.dataIndex identifies which column it belongs to.
-      // Simple text columns (no matching cell) are auto-rendered from data[dataIndex].
       const customCellMap = new Map<string, any>()
       for (const cell of cells) {
         const cellDataIndex = cell?.properties?.dataIndex
@@ -177,12 +194,11 @@ const tableData = computed(() => {
         const customCell = customCellMap.get(col.prop)
         if (customCell) {
           rowData[col.prop] = customCell
-        } else if (dataIsObj && data[col.prop] !== undefined) {
-          rowData[col.prop] = { type: "AutoText", value: data[col.prop] }
+        } else if (dataIsObj && row[col.prop] !== undefined) {
+          rowData[col.prop] = { type: "AutoText", value: row[col.prop] }
         }
       })
     } else {
-      // Legacy format: cells map 1:1 to columns by position
       columns.value.forEach((col, colIndex) => {
         const cell = cells[colIndex]
         if (cell) {
@@ -191,7 +207,6 @@ const tableData = computed(() => {
       })
     }
 
-    // 从 TableRow props.expandedRowRender 中获取展开内容
     if (hasExpandable.value && itemProps.expandedRowRender) {
       rowData["_expandedRowRender"] = itemProps.expandedRowRender
     }

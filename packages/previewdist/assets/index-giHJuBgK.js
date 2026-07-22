@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-CxnWI_R7.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/ExplorerPage-euHpYUXO.js","assets/ExplorerPage-DqD1rBK4.css"])))=>i.map(i=>d[i]);
 //#region \0rolldown/runtime.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -117971,17 +117971,19 @@ var Table_default = /* @__PURE__ */ defineComponent({
 		const rowsPerPage = /* @__PURE__ */ ref(10);
 		const page = /* @__PURE__ */ ref(1);
 		const rows = computed(() => {
+			const childNodes = Array.isArray(properties.children) ? properties.children : [];
+			const data = Array.isArray(dataSource.value) ? dataSource.value : [];
 			if (showPagination.value) {
 				const start = (page.value - 1) * rowsPerPage.value;
 				const end = start + rowsPerPage.value;
 				return {
-					node: properties.children.slice(start, end),
-					data: dataSource.value.slice(start, end)
+					node: childNodes.slice(start, end),
+					data: data.slice(start, end)
 				};
 			}
 			return {
-				node: properties.children,
-				data: dataSource.value
+				node: childNodes,
+				data
 			};
 		});
 		function handlePageChange(newPage) {
@@ -118025,12 +118027,25 @@ var Table_default = /* @__PURE__ */ defineComponent({
 			});
 		});
 		const tableData = computed(() => {
-			return rows.value.node.map((item, index) => {
+			const nodes = rows.value.node;
+			const data = rows.value.data;
+			if (nodes.length === 0 && data.length > 0) return data.map((row, index) => {
+				const dataIsObj = Object.prototype.toString.call(row) === "[object Object]";
+				const rowData = { [rowKey.value]: dataIsObj ? row[rowKey.value] : `row-${index}` };
+				columns.value.forEach((col) => {
+					if (dataIsObj && row[col.prop] !== void 0) rowData[col.prop] = {
+						type: "AutoText",
+						value: row[col.prop]
+					};
+				});
+				return rowData;
+			});
+			return nodes.map((item, index) => {
 				const { properties: itemProps } = item;
 				const { children: cells } = itemProps;
-				const data = rows.value.data[index];
-				const dataIsObj = Object.prototype.toString.call(data) === "[object Object]";
-				const rowData = { [rowKey.value]: dataIsObj ? data[rowKey.value] : `row-${index}` };
+				const row = data[index];
+				const dataIsObj = Object.prototype.toString.call(row) === "[object Object]";
+				const rowData = { [rowKey.value]: dataIsObj ? row[rowKey.value] : `row-${index}` };
 				const colDefs = Array.isArray(properties.columns) ? properties.columns : resolveValue(properties.columns) || [];
 				if (cells.length < colDefs.length) {
 					const customCellMap = /* @__PURE__ */ new Map();
@@ -118041,9 +118056,9 @@ var Table_default = /* @__PURE__ */ defineComponent({
 					columns.value.forEach((col) => {
 						const customCell = customCellMap.get(col.prop);
 						if (customCell) rowData[col.prop] = customCell;
-						else if (dataIsObj && data[col.prop] !== void 0) rowData[col.prop] = {
+						else if (dataIsObj && row[col.prop] !== void 0) rowData[col.prop] = {
 							type: "AutoText",
-							value: data[col.prop]
+							value: row[col.prop]
 						};
 					});
 				} else columns.value.forEach((col, colIndex) => {
@@ -118313,7 +118328,7 @@ var Tag_default = /* @__PURE__ */ defineComponent({
 		return (_ctx, _cache) => {
 			return withDirectives((openBlock(), createBlock(unref(ElTag), {
 				id: id.value,
-				class: normalizeClass(["self-start", className.value]),
+				class: normalizeClass(className.value),
 				size: size.value,
 				closable: closable.value,
 				effect: effect.value,
@@ -118980,7 +118995,11 @@ var Segmented_default = /* @__PURE__ */ defineComponent({
 		const properties = node.properties;
 		const { resolveValue, setValue } = useA2UIComponent(node, surfaceId);
 		const id = computed(() => node.id);
-		const className = computed(() => properties.className || "");
+		const className = computed(() => {
+			const base = properties.className || "";
+			if (!(properties.block === true) && !base.includes("w-")) return `w-fit ${base}`.trim();
+			return base;
+		});
 		const normalizedOptions = computed(() => {
 			const raw = properties.options;
 			let opts = [];
@@ -257740,7 +257759,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-CNpsJ7rR.js");
+						const { default: testData } = await import("./data-BCwNwFVG.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -257772,12 +257791,12 @@ var router = createRouter({
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-CxnWI_R7.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./ExplorerPage-euHpYUXO.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-DVu9x5_A.js"), [])
+			component: () => __vitePreload(() => import("./CustomPage-CXvd2euU.js"), [])
 		}
 	]
 });

@@ -188,6 +188,9 @@ export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLL
     if (reasoning) traceData.reasoning = reasoning
     const latencySec = (latencyMs / 1000).toFixed(1)
     await writeTrace(workDir, workflowId, agentName, sessionId, `round1_llm_output_${latencySec}s`, traceData)
+
+    const mdContent = reasoning ? `## Reasoning\n\n${reasoning}\n\n## Output\n\n\`\`\`json\n${text}\n\`\`\`` : `\`\`\`json\n${text}\n\`\`\``
+    await writeTrace(workDir, workflowId, agentName, sessionId, `round1_llm_output`, mdContent, ".md")
   }
 
   const parsed = extractJson(text)
@@ -195,13 +198,15 @@ export async function directLLMCall(input: DirectLLMCallInput): Promise<DirectLL
   return { text, reasoning, parsed, latencyMs }
 }
 
-async function writeTrace(workDir: string, workflowId: string, agentName: string, sessionId: string, filename: string, data: unknown) {
+async function writeTrace(workDir: string, workflowId: string, agentName: string, sessionId: string, filename: string, data: unknown, ext: string = ".json") {
   try {
     const api = getDesktopApi()
     if (!api?.writeFileBuffer) return
-    const dir = `${workDir.replace(/\\/g, "/")}/pattern/workflow/${workflowId}/${agentName}/${sessionId.slice(-8)}`
-    const path = `${dir}/${filename}.json`
-    const content = new TextEncoder().encode(JSON.stringify(data, null, 2))
+    const dir = `${workDir.replace(/\\/g, "/")}/pattern/workflow/${workflowId}/${agentName}/${sessionId}`
+    const path = `${dir}/${filename}${ext}`
+    const content = ext === ".json"
+      ? new TextEncoder().encode(JSON.stringify(data, null, 2))
+      : new TextEncoder().encode(typeof data === "string" ? data : String(data))
     await api.writeFileBuffer(path, content.buffer as ArrayBuffer)
     console.log(`[directLLMCall] trace written: ${path}`)
   } catch (e) {
