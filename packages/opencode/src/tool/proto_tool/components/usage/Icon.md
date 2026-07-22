@@ -17,14 +17,6 @@
 }
 ```
 
-### Example: Icon with state path
-```json
-{
-  "id": "iconStatus",
-  "component": "Icon",
-  "props": { "name": { "path": "/currentStatusIcon" }, "color": "primary", "className": "w-6 h-6" }
-}
-```
 
 ### Iconography
   Icon shape is strictly determined by its Tailwind size.
