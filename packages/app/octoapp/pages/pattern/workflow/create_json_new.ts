@@ -44,7 +44,7 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
         sectionId: slot.section_id,
         elementId: slot.element_id,
         layoutPlanner,
-        intentDescription: checkedIntent,
+        intentDescription: standardizedIntent,
       })
     )
   )
@@ -68,7 +68,7 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
         sectionId: slot.section_id,
         elementId: slot.element_id,
         layoutPlanner,
-        intentDescription: checkedIntent,
+        intentDescription: standardizedIntent,
         componentDocs: docsMap.get(slot.element_id) ?? "",
         onDirectCallTiming: ctx.onDirectCallTiming,
         onReasoningDelta: ctx.onReasoningDelta,
@@ -110,7 +110,6 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   // 执行完成的回调
   await onFinshed({
     intentExpand: expandResult,
-    checkedIntent,
     layoutPlanner,
     modulesJson: validModules,
     pageJson: fixed,
