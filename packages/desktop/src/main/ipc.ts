@@ -3,6 +3,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, cpSync, readdirSync
 import { mkdir, readFile, writeFile, rm } from "node:fs/promises"
 import { dirname, join, basename } from "node:path"
 import { homedir, tmpdir } from "node:os"
+import { fileURLToPath } from "node:url"
 import { BrowserWindow, Notification, app, clipboard, dialog, ipcMain, shell } from "electron"
 import type { IpcMainEvent, IpcMainInvokeEvent } from "electron"
 
@@ -235,6 +236,12 @@ export function registerIpcHandlers(deps: Deps) {
   })
 
   ipcMain.handle("get-home-dir", () => homedir())
+
+  ipcMain.handle("get-prompt-dir", () => {
+    if (app.isPackaged) return join(process.resourcesPath, "prompt")
+    const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "../..")
+    return join(projectRoot, "packages", "opencode", "src", "agent", "proto", "prompt")
+  })
 
   ipcMain.handle("read-clipboard-image", () => {
     const image = clipboard.readImage()

@@ -4,6 +4,7 @@ type DesktopApi = {
   readFileBuffer?: (path: string) => Promise<ArrayBuffer | null>
   writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void>
   getHomeDir?: () => Promise<string>
+  getPromptDir?: () => Promise<string>
 }
 
 function getDesktopApi(): DesktopApi | undefined {
@@ -53,13 +54,20 @@ const PROMPT_TEMPLATE_FILES = [
 
 type PromptData = Record<string, string>
 
+async function getPromptDir(): Promise<string> {
+  const api = getDesktopApi()
+  if (!api?.getPromptDir) throw new Error("Electron IPC getPromptDir not available")
+  return (await api.getPromptDir()).replace(/\\/g, "/")
+}
+
 async function loadPromptTemplates(): Promise<PromptData> {
   const api = getDesktopApi()
   if (!api?.readFileBuffer) throw new Error("Electron IPC readFileBuffer not available")
+  const promptDir = await getPromptDir()
 
   const entries = await Promise.all(
     PROMPT_TEMPLATE_FILES.map(async (name) => {
-      const filePath = `D:/vibeCoding/UXAI/UXAI/packages/opencode/src/agent/proto/prompt/stastics/${name}.txt`
+      const filePath = `${promptDir}/stastics/${name}.txt`
       const content = await readFileText(api, filePath)
       return [name, content] as [string, string]
     })
@@ -70,7 +78,8 @@ async function loadPromptTemplates(): Promise<PromptData> {
 async function loadAgentPrompt(agentName: string): Promise<string> {
   const api = getDesktopApi()
   if (!api?.readFileBuffer) throw new Error("Electron IPC readFileBuffer not available")
-  const filePath = `D:/vibeCoding/UXAI/UXAI/packages/opencode/src/agent/proto/prompt/${agentName}.txt`
+  const promptDir = await getPromptDir()
+  const filePath = `${promptDir}/${agentName}.txt`
   return readFileText(api, filePath)
 }
 

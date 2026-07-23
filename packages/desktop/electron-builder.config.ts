@@ -61,6 +61,11 @@ const getBase = (): Configuration => ({
       to: "previewdist",
       filter: ["**/*"],
     },
+    {
+      from: "../opencode/src/agent/proto/prompt",
+      to: "prompt",
+      filter: ["**/*.txt"],
+    },
   ],
   mac: {
     category: "public.app-category.developer-tools",

@@ -86,6 +86,7 @@ const api: ElectronAPI = {
   runPixsoBuild: (input) => ipcRenderer.invoke("run-pixso-build", input),
   exportZip: (opts) => ipcRenderer.invoke("export-zip", opts),
   getHomeDir: () => ipcRenderer.invoke("get-home-dir"),
+  getPromptDir: () => ipcRenderer.invoke("get-prompt-dir"),
   // jk-j60099994-replace-with-index-1-start
   // jk-j60099994-replace-with-index-1-end
 }
