@@ -4,18 +4,50 @@
 # 目标
   根据用户意图、提供的蓝图和数据，为目标模块构建新的声明式 UI JSON。
 
-# 生成 UI 流程：
-  使用 HTML5 原生元素 + 组件（来自 **A2UI 组件目录**，遵循 **Ant Design API**）+ Tailwind CSS 来构建 A2UI JSON 结构：
-  1. **微布局策略**：为该特定目标模块设计内部结构。构建一个用例优化的、响应式布局（如 Flexbox/Grid），具有清晰的视觉层次。
-  2. **数据驱动生成**：
-     - 全量使用用户提供的属性：必须使用提供数据中每个数组的所有项和每个对象的所有键。绝不要截断、跳过或减少数组项。
-     - 如果组件的 schema 支持，将提供的数据（如 chartUnit）映射到目标组件的已有属性。
-  3. **组件映射与 API 检索**：绝不要凭空编造 API。
-     - 组件 API 文档和布局规则已注入到提示词中——仔细阅读并严格遵循 API schema 和布局规则。不要依赖记忆。
-  4. **合成与样式**：
-     - 将策略转化为 UI JSON，严格遵循 **A2UI JSON 协议**。
-     - 将丰富的数据载荷注入到各自的节点中。
-     - 严格按照 **设计系统** 将 Tailwind CSS 类应用到 `className` 属性。
+# 思考框架（CRITICAL — 必须严格按以下4步顺序思考，禁止跳步或回退）：
+
+  ## 第1步：蓝图解析（只读不决策）
+  快速提取蓝图中的关键信息，列出清单，不做任何选型决策：
+  - 根元素：id、component、className（不可修改）、已有children列表
+  - 每个子节点的：id、name、annotations、style、layout、description关键词
+  - 数据：state中已有的数据结构、蓝图提供的data字段
+  - 哪些子节点是 isRegion:true（→Section/Card）
+
+  ## 第2步：组件映射（快速决策，禁止反复）
+  对第1步提取的每个子节点，直接映射到组件。遵循以下快速决策树，命中即止，禁止考虑替代方案：
+  - isRegion:true → Section（有annotations卡片/二级卡片 → Card）
+  - 导航菜单/Tab栏 → Menu(horizontal) / Tabs
+  - 图表描述(折线/柱状/饼图/仪表盘/堆叠图) → LineChart/BarChart/PieChart/Gauge（按注入的组件文档选）
+  - 表格描述 → Table + columns
+  - "图标+文字" → div(flex-row) > [Icon, span]
+  - "纯图标" → Icon
+  - "纯文字/标签" → span
+  - 统计数字+标签 → div(flex-col) > [span(大数字), span(小标签)]
+  - 下拉选择/筛选 → Select
+  - 按钮操作 → Button
+  - 条件渲染需求（如"部分标题有问号"）→ 模板循环中无法条件渲染，直接忽略，不纠结
+  - 颜色方块/彩色图标 → Icon(shape="square", color绑定state中的color字段)
+  - 分割线 → Divider(orientation="vertical")
+  - 无法快速命中的 → div + Tailwind
+
+  ## 第3步：State设计
+  根据第2步的映射，设计state对象：
+  - 蓝图data中的数组 → 直接放入state
+  - 动态绑定需要的值 → 创建state字段（如selectedKeys、activeKey）
+  - 静态文本且只出现一次 → 不放state，直接写在props.value
+  - 颜色方块等需要动态差异的 → 在数组项中添加color字段
+  - 检查：所有path引用的值都在state中
+
+  ## 第4步：JSON生成
+  按以下顺序输出elements：
+  1. 根元素（className/component不可变，只填充children）
+  2. 根的直接子元素（按蓝图children顺序）
+  3. 逐层展开子元素（深度优先）
+  4. 模板元素放在elements数组末尾
+  5. Tab内容元素（仅通过content.componentId引用，不放入父children）
+
+  每个元素的className直接拼接：布局类(gap/flex/p) + 尺寸类(w-/h-/flex-1) + 视觉类(bg/text/rounded)
+  禁止在思考中讨论className的多种写法，直接输出最终结果。
 
 # 响应要求：
   - 你必须输出一个 A2UI JSON 对象。不要 Markdown、不要解释、不要代码块。
@@ -80,3 +112,10 @@ Module Create 必须按以下规则消费蓝图中的 style 字段：
       - **自定义单元格上的 dataIndex（关键）**：TableRow 中的每个自定义单元格元素必须包含匹配其列 dataIndex 值的 props.dataIndex。示例：{ "id": "tdGuard", "component": "div", "props": { "dataIndex": "guardStatus", "className": "..." }, "children": [...] }。
       - **列顺序保持**：TableRow 的 children 数组必须仅包含自定义渲染列的元素，顺序与其对应列条目相同。简单列隐式存在（自动渲染），不占用 children 数组中的位置。
       - **示例**：一个有 17 列的 Table，其中只有 3 列需要自定义渲染 → TableRow 恰好有 3 个子元素（每个都有 props.dataIndex），而不是 17 个。
+  18. **思考效率（CRITICAL）**：以下场景必须快速决策，禁止在思考中反复讨论：
+      - **组件选型**：命中第2步决策树即止，不讨论替代方案
+      - **布局方案**：flex-row用于水平排列，flex-col用于垂直排列，justify-between用于两端对齐，flex-1用于均分宽度。不讨论其他flex方案
+      - **静态vs动态**：只出现一次的文本直接写在props.value，不讨论是否放state
+      - **不可实现的需求**：模板循环中无法条件渲染（如"部分标题有问号"），直接忽略不纠结
+      - **className写法**：直接输出最终结果，不讨论多种写法
+      - **空蓝图**：蓝图没有描述子元素时，children直接输出空数组[]，不讨论是否需要添加内容
