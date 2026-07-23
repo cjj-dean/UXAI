@@ -1,5 +1,4 @@
 import intent_expand from "../agents/intent_expand"
-import intent_region_check from "../agents/intent_region_check"
 import planner_new_create from "../agents/planner_new_create"
 import proto_module_create from "../agents/proto_module_create"
 import proto_component_lookup from "../agents/proto_component_lookup"
@@ -28,16 +27,10 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   const standardizedIntent = expandResult.standardized_intent
   if (!standardizedIntent) throw new Error("----- intent_expand did not return standardizedIntent -----")
 
-  const checkedIntent = await intent_region_check({
-    ...ctx,
-    userInput: normalizedInput,
-    standardizedIntent,
-  })
-
   // 第二步：新布局规划 — 程序化构建骨架 + LLM生成className
   const plannerResult = await planner_new_create({
     ...ctx,
-    standardizedIntent: checkedIntent,
+    standardizedIntent,
   })
 
   const layoutPlanner = plannerResult.layout_planner
