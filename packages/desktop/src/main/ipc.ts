@@ -239,7 +239,7 @@ export function registerIpcHandlers(deps: Deps) {
 
   ipcMain.handle("get-prompt-dir", () => {
     if (app.isPackaged) return join(process.resourcesPath, "prompt")
-    const projectRoot = join(app.getAppPath(), "..")
+    const projectRoot = join(app.getAppPath(), "../..")
     return join(projectRoot, "packages", "opencode", "src", "agent", "proto", "prompt")
   })
 
