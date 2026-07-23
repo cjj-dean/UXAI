@@ -239,8 +239,7 @@ export function registerIpcHandlers(deps: Deps) {
 
   ipcMain.handle("get-prompt-dir", () => {
     if (app.isPackaged) return join(process.resourcesPath, "prompt")
-    const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "../../..")
-    return join(projectRoot, "packages", "opencode", "src", "agent", "proto", "prompt")
+    return join(app.getAppPath(), "packages", "opencode", "src", "agent", "proto", "prompt")
   })
 
   ipcMain.handle("read-clipboard-image", () => {
