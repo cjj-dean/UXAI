@@ -14,6 +14,10 @@ function isCard(elem: A2UIElement): boolean {
 function isOverlay(elem: A2UIElement): boolean {
   return elem.component === "Dialog" || elem.component === "Drawer"
 }
+function isRegionBlock(elem: A2UIElement): boolean {
+  const annotations: string[] = (elem as any).annotations ?? []
+  return annotations.some((a: string) => a.startsWith("独立区块"))
+}
 function hasElevationBg(elem: A2UIElement): boolean {
   const cls = getClassName(elem)
   return ELEVATION_MARKERS.some((m) => cls.includes(m))
@@ -54,7 +58,11 @@ export const fixElevationNesting: Fixer = (json) => {
     if (!isElevated(elem) || !Array.isArray(elem.children)) continue
     const sectionChildren = elem.children.filter((c: any) => typeof c === "string" && map[c] && isSection(map[c]))
     if (sectionChildren.length > 1) {
-      fixes.push(downgradeToDiv(elem, `包含 ${sectionChildren.length} 个 Section 子元素，为包裹容器层`))
+      for (const childId of sectionChildren) {
+        const child = map[childId]
+        if (isRegionBlock(child)) continue
+        fixes.push(downgradeToDiv(child, `父元素包含 ${sectionChildren.length} 个 Section 子元素，为包裹容器层`))
+      }
       parentDowngraded.add(elem.id)
     }
   }
@@ -63,7 +71,7 @@ export const fixElevationNesting: Fixer = (json) => {
     if (!isElevated(elem)) continue
     if (isCard(elem)) continue
     if (isOverlay(elem)) continue
-    if (isSection(elem) && hasExplicitBg(elem)) continue
+    if (isSection(elem) && (hasExplicitBg(elem) || isRegionBlock(elem))) continue
     let ancestorId = c2p[elem.id]
     while (ancestorId) {
       const ancestor = map[ancestorId]

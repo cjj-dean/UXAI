@@ -25,7 +25,7 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   // 第一步：意图扩展与标准化
   const expandResult = await intent_expand(ctx)
   const standardizedIntent = expandResult.standardized_intent
-  if (!standardizedIntent) throw new Error("----- intent_expand did not return standardizedIntent -----")
+  if (!standardizedIntent || !(standardizedIntent as any).id) throw new Error("----- intent_expand did not return standardizedIntent -----")
 
   // 第二步：新布局规划 — 程序化构建骨架 + LLM生成className
   const plannerResult = await planner_new_create({

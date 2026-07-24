@@ -66,15 +66,16 @@ function buildAnnotationHintsMessage(text: string): string {
   const lines: string[] = ["\n\n[程序化解析的{{}}标注（CRITICAL，必须严格遵守）:] =================================="]
   for (const h of hints) {
     if (h.type === "wrap") {
-      lines.push(`- {{${h.annotation}：...}} 是包裹标记：必须创建一个父节点，设置 isRegion:true, annotations:["${h.annotation}"], style:"${h.annotation}"，包裹内的所有内容作为该父节点的children。禁止将包裹内容拆分到多个节点`)
+      lines.push(`- {{${h.annotation}：...}} 是包裹标记：必须创建一个父节点，设置 annotations:["${h.annotation}"]，包裹内的所有内容作为该父节点的children。禁止将包裹内容拆分到多个节点`)
       if (h.nestedAnnotations && h.nestedAnnotations.length > 0) {
         lines.push(`  包裹内嵌套标注：${h.nestedAnnotations.map(a => `{{${a}}}`).join(", ")} — 这些标注保留在对应的子节点上`)
       }
     } else {
-      lines.push(`- {{${h.annotation}}} 是紧跟标记：在标注紧跟的节点上设置 annotations:["${h.annotation}"]${h.annotation === "独立区块" ? ", isRegion:true, style:\"独立区块\"" : ""}`)
+      lines.push(`- {{${h.annotation}}} 是紧跟标记：在标注紧跟的节点上设置 annotations:["${h.annotation}"]`)
     }
   }
   lines.push("- 禁止省略、改写或丢失任何标注")
+  lines.push(`- 只有上述{{}}标注明确标记的节点才能在annotations中添加对应标注，禁止对未标注的节点自行添加任何与标注同名的annotations`)
   return lines.join("\n")
 }
 
@@ -111,9 +112,8 @@ ${annotationHints}
   const expandJson = extractJson(result.text)
   if (!expandJson) throw new Error("----- Intent Expand did not return valid JSON -----")
 
-  const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? null
+  const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? expandJson
   const returnValue = {
-    is_simple: expandJson.isSimple ?? expandJson.is_simple ?? true,
     standardized_intent: standardizedIntent,
     current_step: "intent_expand"
   }

@@ -95,7 +95,8 @@ function collectRegionIds(root: any, sectionId: string): string[] {
   const ids: string[] = []
   function walk(n: any) {
     if (!n) return
-    if (n.isRegion === true) ids.push(n.id)
+    const annotations: string[] = n.annotations ?? []
+    if (annotations.some((a: string) => a.startsWith("独立区块"))) ids.push(n.id)
     if (Array.isArray(n.children)) {
       for (const child of n.children) {
         const childNode = child.id ? child : (Object.values(child)[0] as any ?? child)
@@ -119,7 +120,7 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   let regionIds = collectRegionIds(intentDescription, sectionId)
   let regionHint = ""
   if (regionIds.length > 0) {
-    regionHint = `\n  **⚠️ 蓝图中以下节点标记了isRegion:true，对应的element必须使用Section组件（自带bg-surface-container-highest+shadow-sm+rounded-xl+p-[1.5rem]，不要手动添加这些样式，不要用div替代）：${regionIds.join(", ")}**`
+    regionHint = `\n  **⚠️ 蓝图中以下节点的annotations包含"独立区块"，对应的element必须使用Section组件（自带bg-surface-container-highest+shadow-sm+rounded-xl+p-[1.5rem]，不要手动添加这些样式，不要用div替代）：${regionIds.join(", ")}**`
   }
 
   let annotationsHint = ""
