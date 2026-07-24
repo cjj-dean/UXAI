@@ -50,28 +50,10 @@ function getChildNodes(node: any): any[] {
     .filter((c: any) => c && c.id)
 }
 
-function isRegionNode(node: any): boolean {
-  const annotations: string[] = node.annotations ?? []
-  return annotations.some(a => a.startsWith("独立区块"))
-}
-
-function deriveStyle(node: any): string {
-  const annotations: string[] = node.annotations ?? []
-  const parts: string[] = []
-  for (const a of annotations) {
-    if (a.startsWith("独立区块")) parts.push("独立区块")
-    else if (/^宽度\d+px$/.test(a)) parts.push(`固定${a}`)
-    else if (/^高度\d+px$/.test(a)) parts.push(`固定${a}`)
-    else if (a === "横向等宽等距排布") parts.push(a)
-  }
-  if (node.style && !parts.includes(node.style)) parts.push(node.style)
-  return parts.join(",")
-}
-
 function resolveComponent(node: any): string {
   const id = node.id ?? ""
   if (id in SHELL_COMPONENT_MAP) return SHELL_COMPONENT_MAP[id]
-  if (isRegionNode(node)) return "Section"
+  if (node.isRegion === true) return "Section"
   const annotations: string[] = node.annotations ?? []
   if (annotations.includes("卡片") || annotations.includes("二级卡片")) return "Card"
   return "div"
@@ -88,8 +70,8 @@ function addSlotElement(node: any, elements: any[]) {
     props: { className: "" },
     children: childNodes.map((c: any) => c.id),
     layout: node.layout ?? "",
-    style: deriveStyle(node),
-    isRegion: isRegionNode(node),
+    style: node.style ?? "",
+    isRegion: node.isRegion === true,
     annotations: node.annotations ?? [],
     needsClassName: true,
   })
@@ -118,8 +100,8 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     props: { className: needsClassName ? "" : className },
     children: [] as string[],
     layout: node.layout ?? "",
-    style: deriveStyle(node),
-    isRegion: isRegionNode(node),
+    style: node.style ?? "",
+    isRegion: node.isRegion === true,
     annotations: node.annotations ?? [],
     needsClassName,
   }
@@ -134,7 +116,7 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     slots.push({ section_id: id, element_id: id, id_prefix: deriveIdPrefix(id) })
   } else if (id === "main") {
     const childNodes = getChildNodes(node)
-    const nonRegionChildren = childNodes.filter((c: any) => !isRegionNode(c))
+    const nonRegionChildren = childNodes.filter((c: any) => !c.isRegion)
     if (childNodes.length === 1 && nonRegionChildren.length === 1 && getChildNodes(nonRegionChildren[0]).length > 0) {
       const grandChildren = getChildNodes(nonRegionChildren[0])
       element.children = grandChildren.map((gc: any) => gc.id)
@@ -200,10 +182,8 @@ function buildSiblingInfo(elements: any[]): string[] {
       .map((sid: string) => {
         const sib = elementMap.get(sid)
         const sibClass = sib?.props?.className ?? ""
-        const sibAnnotations: string[] = sib?.annotations ?? []
         const sibStyle = sib?.style ?? ""
-        const sibAnnotationStr = sibAnnotations.filter((a: string) => a.startsWith("宽度") || a.startsWith("独立区块")).join(", ")
-        return `${sid}${sibAnnotationStr ? ` (annotations: ${sibAnnotationStr})` : ""}${sibStyle ? ` (style: ${sibStyle})` : ""}${sibClass ? ` [${sibClass}]` : ""}`
+        return `${sid}${sibStyle ? ` (style: ${sibStyle})` : ""}${sibClass ? ` [${sibClass}]` : ""}`
       })
     if (siblings.length > 0) {
       lines.push(`${el.id} 的兄弟节点: ${siblings.join(", ")}`)
@@ -226,6 +206,7 @@ export default async function planner_new_create(input: PlannerNewCreateInput) {
     const parts = [`id: ${el.id}`, `component: ${el.component}`]
     if (el.layout) parts.push(`layout: ${el.layout}`)
     if (el.style) parts.push(`style: ${el.style}`)
+    if (el.isRegion) parts.push("isRegion: true")
     if (el.annotations?.length) parts.push(`annotations: [${el.annotations.join(", ")}]`)
     if (el.children.length > 0) parts.push(`children: [${el.children.join(", ")}]`)
     if (el.id === "aside") parts.push(`基础样式已固定: ${ASIDE_BASE_CLASSNAME}，只需补充宽度`)
@@ -249,12 +230,12 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 - layout "grid" → grid
 - annotations中的"水平排列" → flex flex-row（优先于 layout 属性）
 - annotations中的"垂直排列" → flex flex-col（优先于 layout 属性）
-- annotations中的"宽度Npx" → w-[Npx] shrink-0（如"宽度54px" → w-[54px] shrink-0）
-- annotations中的"高度Npx" → h-[Npx]（如"高度300px" → h-[300px]）
-- annotations中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
+- style中的"固定宽度54px" → w-[54px] shrink-0
+- style中的"固定高度300px" → h-[300px]
+- style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
 - annotations中的"二级卡片" → Card组件 + bg-surface-variant rounded-[16px]，不用shadow
 - annotations中的"宽度Npx"（如"宽度400px"） → w-[Npx] shrink-0
-- annotations中的"横向等宽等距排布" → 父容器 flex flex-row，每个子元素加 flex-1 min-w-0
+- style中的"横向等宽等距排布" → 父容器 flex flex-row，每个子元素加 flex-1 min-w-0
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出

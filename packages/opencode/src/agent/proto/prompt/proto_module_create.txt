@@ -15,11 +15,11 @@
   - 根元素：id、component、className（不可修改）、已有children列表
   - 每个子节点的：id、name、annotations、style、layout、description关键词
   - 数据：state中已有的数据结构、蓝图提供的data字段
-  - 哪些子节点的annotations含"独立区块"（→Section/Card）
+  - 哪些子节点是 isRegion:true（→Section/Card）
 
   ## 第2步：组件映射（快速决策，禁止反复）
   对第1步提取的每个子节点，直接映射到组件。遵循以下快速决策树，命中即止，禁止考虑替代方案：
-  - annotations含"独立区块" → Section（annotations含"卡片"/"二级卡片" → Card）
+  - isRegion:true → Section（有annotations卡片/二级卡片 → Card）
   - 导航菜单/Tab栏 → Menu(horizontal) / Tabs
   - 图表描述(折线/柱状/饼图/仪表盘/堆叠图) → LineChart/BarChart/PieChart/Gauge（按注入的组件文档选）
   - 表格描述 → Table + columns
