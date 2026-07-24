@@ -10,15 +10,15 @@ const router = createRouter({
       component: PreviewPage,
     },
     {
+      path: "/intent-test",
+      name: "IntentTest",
+      component: () => import("../views/IntentTestPage.vue"),
+    },
+    {
       path: "/explorer",
       name: "Explorer",
       component: () => import("../views/ExplorerPage.vue"),
     },
-    //     {
-    //   path: "/icon",
-    //   name: "Icon",
-    //   component: () => import("../views/IconPage.vue"),
-    // },
     {
       path: "/custom",
       name: "Custom",

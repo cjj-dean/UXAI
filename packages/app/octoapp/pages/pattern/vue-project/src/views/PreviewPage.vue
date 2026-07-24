@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import A2UIRenderer from "../renderer/render/Renderer.vue";
+import IntentTreePage from "./IntentTreePage.vue";
 import { provideA2UI } from "../renderer/render/Provider";
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
@@ -9,6 +10,8 @@ const currentContent = ref<any>(null);
 const surfaceId = "preview-surface";
 const loading = ref(true);
 const surfaceCreated = ref(false);
+const mode = ref<"preview" | "intent">("preview");
+const intentData = ref<any>(null);
 
 const loadedClasses = new Set<string>();
 let cssLoadTimer: ReturnType<typeof setTimeout> | null = null;
@@ -73,12 +76,27 @@ async function loadDynamicCSS() {
 function handleMessage(event: MessageEvent) {
   if (event.data?.type === "A2UI_UPDATE") {
     loading.value = false
+    mode.value = "preview"
     if (event.data.payload === null) {
       currentContent.value = null
     } else if (event.data.payload) {
       applyA2UIJson(event.data.payload)
     }
+  } else if (event.data?.type === "INTENT_TREE_UPDATE") {
+    loading.value = false
+    mode.value = "intent"
+    intentData.value = event.data.payload
+    console.log("[PreviewPage] INTENT_TREE_UPDATE received, mode=intent, data:", JSON.stringify(event.data.payload)?.slice(0, 200))
   }
+}
+
+function handleIntentConfirm(data: any) {
+  const plain = JSON.parse(JSON.stringify(data))
+  window.parent.postMessage({ type: "INTENT_CONFIRM", payload: plain }, "*")
+}
+
+function handleIntentRegenerate() {
+  window.parent.postMessage({ type: "INTENT_REGENERATE" }, "*")
 }
 
 onMounted(async () => {
@@ -112,9 +130,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-screen overflow-auto bg-gray-50">
-    <!-- 渲染区 -->
-    <div v-if="currentContent" class="w-full h-full">
+  <div class="h-screen overflow-auto bg-gray-50">
+    <div v-if="mode === 'intent' && intentData" class="min-h-full">
+      <IntentTreePage
+        :data="intentData"
+        @confirm="handleIntentConfirm"
+        @regenerate="handleIntentRegenerate"
+      />
+    </div>
+    <div v-else-if="currentContent" class="w-full h-full">
       <A2UIRenderer :surfaceId="surfaceId" />
     </div>
     <div v-else class="flex items-center justify-center h-full text-gray-400 text-sm">

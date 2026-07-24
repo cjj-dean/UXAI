@@ -32,7 +32,7 @@ import proto_planner_create from "./agents/proto_planner_create"
 import proto_module_create from "./agents/proto_module_create"
 // import { getDesignMap, readDesignFile } from "./design/load_design"
 
-import create_json_new from './workflow/create_json_new'
+import { create_json_new_step1, create_json_new_step2 } from './workflow/create_json_new'
 import modify_json_ai from './workflow/modify_json_ai'
 import { handleModifyElement as runQuickModify, type QuickModifyContext, type ModifyElementData } from './workflow/modify_json_quick'
 
@@ -504,13 +504,49 @@ function PatternContent() {
 
   const autoScroll = createAutoScroll({ working: isBusy })
 
-  const previewApi: PreviewPageAPI = { sendToPreview: () => { }, postMessage: () => { }, refresh: () => { } }
+  const previewApi: PreviewPageAPI = { sendToPreview: () => { }, sendIntentTree: () => { }, postMessage: () => { }, refresh: () => { } }
 
   function sendToPreview(data: unknown) {
     console.log("[Pattern] sendToPreview called")
     setPendingPreviewData(data)
     previewApi.sendToPreview(data)
     setHasPreviewContent(true)
+  }
+
+  const [pendingIntentData, setPendingIntentData] = createSignal<unknown>(null)
+
+  function sendIntentTree(data: unknown) {
+    console.log("[Pattern] sendIntentTree called")
+    setPendingPreviewData(null)
+    setPendingIntentData(data)
+    setHasPreviewContent(true)
+    previewApi.sendIntentTree(data)
+  }
+
+  const [pendingIntentConfirm, setPendingIntentConfirm] = createSignal<{ resolve: (data: any) => void; reject: () => void } | null>(null)
+
+  previewApi.onIntentConfirm = (data: any) => {
+    const pending = pendingIntentConfirm()
+    console.log("[Pattern] onIntentConfirm, pending:", !!pending)
+    if (pending) {
+      setPendingIntentConfirm(null)
+      pending.resolve(data)
+    }
+  }
+
+  previewApi.onIntentRegenerate = () => {
+    const pending = pendingIntentConfirm()
+    console.log("[Pattern] onIntentRegenerate, pending:", !!pending)
+    if (pending) {
+      setPendingIntentConfirm(null)
+      pending.reject()
+    }
+  }
+
+  function waitForIntentConfirm(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      setPendingIntentConfirm({ resolve, reject })
+    })
   }
 
   async function handleSubmit() {
@@ -656,8 +692,24 @@ function PatternContent() {
           showToast({ title: (modifyResult as any).reply })
         }
       }else{
-        // 首次创建页面
-        await create_json_new(intentCtx, onFinshed);
+        // 首次创建页面 — step1: intent_expand
+        const step1Result = await create_json_new_step1(intentCtx)
+        const { expandResult, standardizedIntent, ctx: stepCtx } = step1Result
+
+        // 将 intent 结果发送到 iframe 渲染层级树
+        sendIntentTree(standardizedIntent)
+
+        // 等待用户确认
+        setPhase("intent")
+        try {
+          const confirmedIntent = await waitForIntentConfirm()
+          // step2: 用户确认后继续后续流程
+          await create_json_new_step2(stepCtx, confirmedIntent, onFinshed)
+        } catch {
+          // 用户点了重新生成，重新执行 step1
+          setSending(false)
+          return
+        }
       }
 
       const genDuration = ((performance.now() - genStartTime)/1000).toFixed(0)
@@ -1010,6 +1062,7 @@ function PatternContent() {
               <PreviewPage
                 api={previewApi}
                 pendingData={pendingPreviewData()}
+                pendingIntentData={pendingIntentData()}
                 onModifyElement={handleModifyElement}
                 onPickerSubmit={handlePickerSubmit}
                 onDownload={handleDownload}

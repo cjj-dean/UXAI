@@ -254,6 +254,8 @@
     --color-red-500: oklch(63.7% .237 25.331);
     --color-yellow-300: oklch(90.5% .182 98.111);
     --color-yellow-400: oklch(85.2% .199 91.936);
+    --color-green-50: oklch(98.2% .018 155.826);
+    --color-green-300: oklch(87.1% .15 154.449);
     --color-blue-50: oklch(97% .014 254.604);
     --color-blue-400: oklch(70.7% .165 254.624);
     --color-blue-500: oklch(62.3% .214 259.815);
@@ -271,6 +273,8 @@
     --breakpoint-2xl: 96rem;
     --container-md: 28rem;
     --container-lg: 32rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
     --container-5xl: 64rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
@@ -1294,10 +1298,6 @@
 
   .mr-\[1rem\] {
     margin-right: 1rem !important;
-  }
-
-  .mr-auto {
-    margin-right: auto !important;
   }
 
   .mb-0 {
@@ -2812,6 +2812,10 @@
     min-height: 480px !important;
   }
 
+  .min-h-full {
+    min-height: 100% !important;
+  }
+
   .min-h-screen {
     min-height: 100vh !important;
   }
@@ -3212,8 +3216,16 @@
     width: calc(var(--spacing) * 96) !important;
   }
 
+  .w-\[1px\] {
+    width: 1px !important;
+  }
+
   .w-\[15\.5rem\] {
     width: 15.5rem !important;
+  }
+
+  .w-\[30\%\] {
+    width: 30% !important;
   }
 
   .w-\[54px\] {
@@ -3224,12 +3236,12 @@
     width: 55% !important;
   }
 
-  .w-\[60px\] {
-    width: 60px !important;
-  }
-
   .w-\[64px\] {
     width: 64px !important;
+  }
+
+  .w-\[70\%\] {
+    width: 70% !important;
   }
 
   .w-\[128px\] {
@@ -3256,6 +3268,10 @@
     width: 420px !important;
   }
 
+  .w-\[450px\] {
+    width: 450px !important;
+  }
+
   .w-auto {
     width: auto !important;
   }
@@ -3280,8 +3296,16 @@
     max-width: calc(var(--spacing) * 2) !important;
   }
 
+  .max-w-2xl {
+    max-width: var(--container-2xl) !important;
+  }
+
   .max-w-3 {
     max-width: calc(var(--spacing) * 3) !important;
+  }
+
+  .max-w-3xl {
+    max-width: var(--container-3xl) !important;
   }
 
   .max-w-4 {
@@ -4293,6 +4317,10 @@
     gap: .75rem !important;
   }
 
+  .gap-\[0\.125rem\] {
+    gap: .125rem !important;
+  }
+
   .gap-\[1\.5rem\] {
     gap: 1.5rem !important;
   }
@@ -4481,6 +4509,10 @@
     border-style: none !important;
   }
 
+  .border-\[var\(--el-border-color-lighter\)\] {
+    border-color: var(--el-border-color-lighter) !important;
+  }
+
   .border-base {
     border-color: var(--border, #c9c9c9) !important;
   }
@@ -4491,6 +4523,10 @@
 
   .border-gray-600 {
     border-color: var(--color-gray-600) !important;
+  }
+
+  .border-green-300 {
+    border-color: var(--color-green-300) !important;
   }
 
   .border-primary {
@@ -4511,6 +4547,10 @@
     background-color: #eee !important;
   }
 
+  .bg-\[var\(--el-color-danger-light-9\)\] {
+    background-color: var(--el-color-danger-light-9) !important;
+  }
+
   .bg-divider {
     background-color: var(--divider, #f3f3f3) !important;
   }
@@ -4521,6 +4561,10 @@
 
   .bg-gray-800 {
     background-color: var(--color-gray-800) !important;
+  }
+
+  .bg-green-50 {
+    background-color: var(--color-green-50) !important;
   }
 
   .bg-on-surface-variant {
@@ -4757,6 +4801,10 @@
     padding: .5rem !important;
   }
 
+  .p-\[0\.75rem\] {
+    padding: .75rem !important;
+  }
+
   .p-\[0_2rem\] {
     padding: 0 2rem !important;
   }
@@ -4803,6 +4851,10 @@
 
   .px-1 {
     padding-inline: calc(var(--spacing) * 1) !important;
+  }
+
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5) !important;
   }
 
   .px-2 {
@@ -4901,7 +4953,7 @@
     padding-inline: 1.5rem !important;
   }
 
-  .px-gutter {
+  .px-\[1rem\], .px-gutter {
     padding-inline: 1rem !important;
   }
 
@@ -4927,6 +4979,10 @@
 
   .py-0 {
     padding-block: calc(var(--spacing) * 0) !important;
+  }
+
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * .5) !important;
   }
 
   .py-1 {
@@ -5031,6 +5087,10 @@
 
   .py-24 {
     padding-block: calc(var(--spacing) * 24) !important;
+  }
+
+  .py-\[0\.5rem\] {
+    padding-block: .5rem !important;
   }
 
   .py-\[0\.75rem\] {
@@ -5625,6 +5685,14 @@
     color: #676767 !important;
   }
 
+  .text-\[var\(--el-color-danger\)\] {
+    color: var(--el-color-danger) !important;
+  }
+
+  .text-\[var\(--el-text-color-placeholder\)\] {
+    color: var(--el-text-color-placeholder) !important;
+  }
+
   .text-blue-400 {
     color: var(--color-blue-400) !important;
   }
@@ -5707,6 +5775,10 @@
 
   .uppercase {
     text-transform: uppercase !important;
+  }
+
+  .italic {
+    font-style: italic !important;
   }
 
   .line-through {
@@ -5827,6 +5899,21 @@
     .group-hover\:text-yellow-300:is(:where(.group):hover *) {
       color: var(--color-yellow-300) !important;
     }
+  }
+
+  .last\:border-b-0:last-child {
+    border-bottom-style: var(--tw-border-style) !important;
+    border-bottom-width: 0 !important;
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-\[var\(--el-color-danger-light-7\)\]:hover {
+      background-color: var(--el-color-danger-light-7) !important;
+    }
+
+    .hover\:bg-\[var\(--el-fill-color\)\]:hover {
+      background-color: var(--el-fill-color) !important;
+    }
 
     .hover\:bg-blue-50:hover {
       background-color: var(--color-blue-50) !important;
@@ -5856,6 +5943,18 @@
       .hover\:bg-warning\/10:hover {
         background-color: color-mix(in oklab, var(--warning, #fcc800) 10%, transparent) !important;
       }
+    }
+
+    .hover\:text-\[var\(--el-color-primary\)\]:hover {
+      color: var(--el-color-primary) !important;
+    }
+
+    .hover\:text-\[var\(--el-text-color-primary\)\]:hover {
+      color: var(--el-text-color-primary) !important;
+    }
+
+    .hover\:text-gray-600:hover {
+      color: var(--color-gray-600) !important;
     }
 
     .hover\:text-on-surface:hover {
@@ -6313,6 +6412,9 @@
 .theme-dark .el-month-table td:hover .el-date-table-cell__text {
   background-color: rgb(from var(--neutral-50) r g b / 0.2);
 }
+.el-input {
+  min-width: 120px;
+}
 .el-input__prefix,
 .el-input__suffix {
   color: var(--el-text-color-regular);
@@ -6392,7 +6494,7 @@
 }
 .el-select {
   --el-select-width: auto;
-  min-width: 60px;
+  min-width: 120px;
 }
 .el-select-dropdown.is-multiple .el-select-dropdown__item.is-selected {
   background-color: transparent;

@@ -1,4 +1,5 @@
-import { C as openBlock, O as ref, _ as createElementBlock, r as Renderer_default, t as __vitePreload, u as provideA2UI, v as createVNode, x as onMounted, y as defineComponent } from "./index-giHJuBgK.js";
+import { F as openBlock, M as onMounted, _ as createVNode, ot as ref, p as createElementBlock, v as defineComponent } from "./runtime-core.esm-bundler-DGgENxrj.js";
+import { d as provideA2UI, i as Renderer_default, n as __vitePreload } from "./index-BEyd7BaU.js";
 //#region src/views/CustomPage.vue?vue&type=script&setup=true&lang.ts
 var _hoisted_1 = { class: "flex flex-col h-screen overflow-auto bg-gray-50" };
 var _hoisted_2 = {
@@ -23,7 +24,7 @@ var CustomPage_default = /* @__PURE__ */ defineComponent({
 		onMounted(async () => {
 			try {
 				const { default: testData } = await __vitePreload(async () => {
-					const { default: testData } = await import("./custom-f8t7xju5.js");
+					const { default: testData } = await import("./custom-PgWuEm_D.js");
 					return { default: testData };
 				}, []);
 				currentContent.value = JSON.parse(JSON.stringify(testData));

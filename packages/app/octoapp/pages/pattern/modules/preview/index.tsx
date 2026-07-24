@@ -11,8 +11,11 @@ import "../../assets/style/preview/index.css"
 
 export type PreviewPageAPI = {
   sendToPreview: (data: unknown) => void
+  sendIntentTree: (data: unknown) => void
   postMessage: (data: unknown) => void
   refresh: () => void
+  onIntentConfirm?: (data: any) => void
+  onIntentRegenerate?: () => void
 }
 
 interface RawRect {
@@ -25,6 +28,7 @@ interface RawRect {
 export function PreviewPage(props: {
   api?: PreviewPageAPI
   pendingData?: unknown
+  pendingIntentData?: unknown
   onPickerSubmit?: (text: string, domPickerId: string) => void
   onModifyElement?: (data: ModifyElementData) => void
   onDownload?: () => void
@@ -100,8 +104,14 @@ export function PreviewPage(props: {
     previewIframeRef.contentWindow.postMessage({ type: "A2UI_UPDATE", payload: data }, "*")
   }
 
+  function sendIntentTree(data: unknown) {
+    if (!previewIframeRef?.contentWindow) return
+    previewIframeRef.contentWindow.postMessage({ type: "INTENT_TREE_UPDATE", payload: data }, "*")
+  }
+
   if (props.api) {
     props.api.sendToPreview = sendToPreview
+    props.api.sendIntentTree = sendIntentTree
     props.api.postMessage = (data: unknown) => {
       if (!previewIframeRef?.contentWindow) return
       previewIframeRef.contentWindow.postMessage(data, "*")
@@ -262,9 +272,22 @@ export function PreviewPage(props: {
 
   const handleIframeMessage = (e: MessageEvent) => {
     handlePickerMessage(e)
-    if (e.data?.type === "A2UI_READY" && props.pendingData) {
-      console.log("[preview] A2UI_READY, re-sending pendingData")
-      sendToPreview(props.pendingData)
+    if (e.data?.type === "A2UI_READY") {
+      if (props.pendingIntentData) {
+        console.log("[preview] A2UI_READY, re-sending pendingIntentData")
+        sendIntentTree(props.pendingIntentData)
+      } else if (props.pendingData) {
+        console.log("[preview] A2UI_READY, re-sending pendingData")
+        sendToPreview(props.pendingData)
+      }
+    }
+    if (e.data?.type === "INTENT_CONFIRM") {
+      console.log("[preview] INTENT_CONFIRM received, api:", !!props.api, "onIntentConfirm:", !!props.api?.onIntentConfirm)
+      props.api?.onIntentConfirm?.(e.data.payload)
+    }
+    if (e.data?.type === "INTENT_REGENERATE") {
+      console.log("[preview] INTENT_REGENERATE received")
+      props.api?.onIntentRegenerate?.()
     }
   }
 
@@ -325,7 +348,7 @@ export function PreviewPage(props: {
 
       <CanvasView
         ref={(el) => { canvasRef = el }}
-        canvasMode={canvasMode()}
+        canvasMode={canvasMode() && !props.pendingIntentData}
         targetWidth={targetWidth()}
         targetHeight={targetHeight()}
       >
@@ -333,7 +356,8 @@ export function PreviewPage(props: {
           ref={(el) => { previewIframeRef = el }}
           src="http://127.0.0.1:51856"
           onLoad={() => {
-            if (props.pendingData) sendToPreview(props.pendingData)
+            if (props.pendingIntentData) sendIntentTree(props.pendingIntentData)
+            else if (props.pendingData) sendToPreview(props.pendingData)
           }}
           style={{ width: "100%", height: "100%", border: "none" }}
         />

@@ -16,18 +16,24 @@ type CreateJsonNewInput = {
   onReasoningDelta?: (agent: string, delta: string) => void
 }
 
-export default async function create_json_new(inputCtx: CreateJsonNewInput, onFinshed: (finalJson: any) => Promise<void>) {
+export async function create_json_new_step1(inputCtx: CreateJsonNewInput) {
   const normalizedInput = inputCtx.userInput
     .replace(/【独立区块】/g, "{{独立区块}}")
     .replace(/\[独立区块\]/g, "{{独立区块}}")
   const ctx = { ...inputCtx, userInput: normalizedInput }
 
-  // 第一步：意图扩展与标准化
   const expandResult = await intent_expand(ctx)
   const standardizedIntent = expandResult.standardized_intent
   if (!standardizedIntent) throw new Error("----- intent_expand did not return standardizedIntent -----")
 
-  // 第二步：新布局规划 — 程序化构建骨架 + LLM生成className
+  return { expandResult, standardizedIntent, ctx }
+}
+
+export async function create_json_new_step2(
+  ctx: CreateJsonNewInput & { userInput: string },
+  standardizedIntent: any,
+  onFinshed: (finalJson: any) => Promise<void>
+) {
   const plannerResult = await planner_new_create({
     ...ctx,
     standardizedIntent,
@@ -36,7 +42,6 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   const layoutPlanner = plannerResult.layout_planner
   const slots = layoutPlanner.slots ?? []
 
-  // 第三步：并行查询每个 slot 需要的组件
   const lookupResults = await Promise.all(
     slots.map((slot: any) =>
       proto_component_lookup({
@@ -59,7 +64,6 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
     return [r.element_id, combined] as [string, string]
   })))
 
-  // 第四步：并行生成 A2UI JSON
   const modules = await Promise.all(
     slots.map((slot: any) =>
       proto_module_create({
@@ -88,7 +92,6 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
   }
   console.log(`[create_json_new] shell: rootId=${layoutPlanner.rootId}, elementsCount=${(layoutPlanner.elements as any[])?.length}, slotElementIds=${slots.map((s: any) => s.element_id).join(",")}`)
 
-  // 第五步：合并完整UI JSON
   console.log("[create_json_new] ===== mergeModules START =====")
   const merged = mergeModules(
     {
@@ -103,16 +106,20 @@ export default async function create_json_new(inputCtx: CreateJsonNewInput, onFi
     console.log(`[create_json_new] merged element: id=${el.id}, component=${el.component}, children=${JSON.stringify(el.children)}`)
   }
 
-  // 第六步：布局修正
   const [fixed, fixerLog] = layoutFixer(merged as any)
   if (fixerLog.length) console.log("[LayoutFixer] 日志:\n" + fixerLog.join("\n"))
 
-  // 执行完成的回调
   await onFinshed({
-    intentExpand: expandResult,
     layoutPlanner,
     modulesJson: validModules,
     pageJson: fixed,
     fixerLog,
+  })
+}
+
+export default async function create_json_new(inputCtx: CreateJsonNewInput, onFinshed: (finalJson: any) => Promise<void>) {
+  const { expandResult, standardizedIntent, ctx } = await create_json_new_step1(inputCtx)
+  await create_json_new_step2(ctx, standardizedIntent, async (result) => {
+    await onFinshed({ ...result, intentExpand: expandResult })
   })
 }
