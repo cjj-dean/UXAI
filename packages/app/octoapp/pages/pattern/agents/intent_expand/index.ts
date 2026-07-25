@@ -87,8 +87,7 @@ export default async function intent_expand(input: IntentExpandInput) {
 ${userInput}
 ${annotationHints}
 
-请先判断意图是否过于简单，如果简单则用纯文本扩展补充，然后将扩展后的意图转换为标准化的JSON格式。
-如果已经足够详细，则将isSimple设为false，expandedText中直接返回用户原文，standardizedIntent中直接标准化用户原文。
+请将用户意图转换为标准化的JSON格式。如果意图过于简单，先扩展补充再标准化；如果已经足够详细，直接标准化。
 
 请开始意图扩展与标准化。`
 
@@ -111,10 +110,9 @@ ${annotationHints}
   const expandJson = extractJson(result.text)
   if (!expandJson) throw new Error("----- Intent Expand did not return valid JSON -----")
 
-  const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? null
+  const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? expandJson
   const returnValue = {
-    is_simple: expandJson.isSimple ?? expandJson.is_simple ?? true,
-    standardized_intent: standardizedIntent,
+    standardized_intent: standardizedIntent.id ? standardizedIntent : null,
     current_step: "intent_expand"
   }
 

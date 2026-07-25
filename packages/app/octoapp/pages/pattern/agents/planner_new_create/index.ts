@@ -113,6 +113,17 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
 
   if (SHELL_SLOT_IDS.has(id)) {
     slots.push({ section_id: id, element_id: id, id_prefix: deriveIdPrefix(id) })
+  } else if (id === "body") {
+    const childNodes = getChildNodes(node)
+    for (const c of childNodes) {
+      if (c.id === "main") {
+        buildSkeleton(c, elements, slots, element.children, false)
+      } else {
+        element.children.push(c.id)
+        slots.push({ section_id: c.id, element_id: c.id, id_prefix: deriveIdPrefix(c.id) })
+        addSlotElement(c, elements)
+      }
+    }
   } else if (id === "main") {
     const childNodes = getChildNodes(node)
     const nonRegionChildren = childNodes.filter((c: any) => !c.containerType)
