@@ -179,7 +179,7 @@ export function CanvasView(props: CanvasViewProps) {
             background: "transparent",
             "pointer-events": props.canvasMode ? "auto" : "none",
             cursor: isDragging() ? "grabbing" : "default"
-          }} 
+          }}
         />
       </div>
     </div>

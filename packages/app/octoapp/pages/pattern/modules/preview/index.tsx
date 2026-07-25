@@ -9,11 +9,14 @@ import { PropertyEditorPopup } from "./PropertyEditorPopup"
 import type { ModifyElementData } from "./PropertyEditorPopup"
 import "../../assets/style/preview/index.css"
 
+export type ViewMode = "preview" | "intent"
+
 export type PreviewPageAPI = {
   sendToPreview: (data: unknown) => void
   sendIntentTree: (data: unknown) => void
   postMessage: (data: unknown) => void
   refresh: () => void
+  setViewMode: (mode: ViewMode) => void
   onIntentConfirm?: (data: any) => void
   onIntentRegenerate?: () => void
 }
@@ -28,7 +31,6 @@ interface RawRect {
 export function PreviewPage(props: {
   api?: PreviewPageAPI
   pendingData?: unknown
-  pendingIntentData?: unknown
   onPickerSubmit?: (text: string, domPickerId: string) => void
   onModifyElement?: (data: ModifyElementData) => void
   onDownload?: () => void
@@ -45,6 +47,9 @@ export function PreviewPage(props: {
   let canvasRef: { reset: () => void; setScale: (scale: number) => void } | undefined
   const [canvasMode, setCanvasMode] = createSignal(true)
   const [editing, setEditing] = createSignal(false)
+  const [viewMode, setViewMode] = createSignal<ViewMode>("preview")
+  const [storedIntentData, setStoredIntentData] = createSignal<unknown>(null)
+  const [storedPreviewData, setStoredPreviewData] = createSignal<unknown>(null)
 
   const DEVICE_DIMENSIONS: Record<string, [number, number]> = {
     desktop: [1920, 1080],
@@ -96,6 +101,7 @@ export function PreviewPage(props: {
   }
 
   function sendToPreview(data: unknown) {
+    setStoredPreviewData(data)
     if (!previewIframeRef?.contentWindow) {
       console.log("[preview] sendToPreview skipped: no iframe")
       return
@@ -105,13 +111,21 @@ export function PreviewPage(props: {
   }
 
   function sendIntentTree(data: unknown) {
+    setStoredIntentData(data)
     if (!previewIframeRef?.contentWindow) return
     previewIframeRef.contentWindow.postMessage({ type: "INTENT_TREE_UPDATE", payload: data }, "*")
+  }
+
+  function switchViewMode(mode: ViewMode) {
+    setViewMode(mode)
+    if (!previewIframeRef?.contentWindow) return
+    previewIframeRef.contentWindow.postMessage({ type: "SWITCH_VIEW_MODE", mode }, "*")
   }
 
   if (props.api) {
     props.api.sendToPreview = sendToPreview
     props.api.sendIntentTree = sendIntentTree
+    props.api.setViewMode = switchViewMode
     props.api.postMessage = (data: unknown) => {
       if (!previewIframeRef?.contentWindow) return
       previewIframeRef.contentWindow.postMessage(data, "*")
@@ -273,9 +287,12 @@ export function PreviewPage(props: {
   const handleIframeMessage = (e: MessageEvent) => {
     handlePickerMessage(e)
     if (e.data?.type === "A2UI_READY") {
-      if (props.pendingIntentData) {
-        console.log("[preview] A2UI_READY, re-sending pendingIntentData")
-        sendIntentTree(props.pendingIntentData)
+      if (viewMode() === "intent" && storedIntentData()) {
+        console.log("[preview] A2UI_READY, re-sending storedIntentData")
+        sendIntentTree(storedIntentData())
+      } else if (storedPreviewData()) {
+        console.log("[preview] A2UI_READY, re-sending storedPreviewData")
+        sendToPreview(storedPreviewData())
       } else if (props.pendingData) {
         console.log("[preview] A2UI_READY, re-sending pendingData")
         sendToPreview(props.pendingData)
@@ -318,6 +335,9 @@ export function PreviewPage(props: {
     <div ref={(el) => { previewPageRef = el }} class="preview-container">
       <TitleBar
         canvasMode={canvasMode()}
+        viewMode={viewMode()}
+        hasIntentData={!!storedIntentData()}
+        onSwitchViewMode={switchViewMode}
         onToggleCanvasMode={() => {
           const next = !canvasMode()
           setCanvasMode(next)
@@ -346,22 +366,36 @@ export function PreviewPage(props: {
         onOptionChange={handleTitleBarOptionChange}
       />
 
-      <CanvasView
-        ref={(el) => { canvasRef = el }}
-        canvasMode={canvasMode() && !props.pendingIntentData}
-        targetWidth={targetWidth()}
-        targetHeight={targetHeight()}
+      <Show
+        when={viewMode() === "intent"}
+        fallback={
+          <CanvasView
+            ref={(el) => { canvasRef = el }}
+            canvasMode={canvasMode()}
+            targetWidth={targetWidth()}
+            targetHeight={targetHeight()}
+          >
+            <iframe
+              ref={(el) => { previewIframeRef = el }}
+              src="http://127.0.0.1:51856"
+              onLoad={() => {
+                if (storedPreviewData()) sendToPreview(storedPreviewData())
+                else if (props.pendingData) sendToPreview(props.pendingData)
+              }}
+              style={{ width: "100%", height: "100%", border: "none" }}
+            />
+          </CanvasView>
+        }
       >
         <iframe
           ref={(el) => { previewIframeRef = el }}
           src="http://127.0.0.1:51856"
           onLoad={() => {
-            if (props.pendingIntentData) sendIntentTree(props.pendingIntentData)
-            else if (props.pendingData) sendToPreview(props.pendingData)
+            if (storedIntentData()) sendIntentTree(storedIntentData())
           }}
           style={{ width: "100%", height: "100%", border: "none" }}
         />
-      </CanvasView>
+      </Show>
 
       <Show when={ctxMenu.show}>
         <div class="dom-picker-ctx-menu" style={{ left: ctxMenu.x + 'px', top: ctxMenu.y + 'px' }}

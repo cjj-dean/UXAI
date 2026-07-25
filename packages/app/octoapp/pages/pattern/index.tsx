@@ -504,23 +504,22 @@ function PatternContent() {
 
   const autoScroll = createAutoScroll({ working: isBusy })
 
-  const previewApi: PreviewPageAPI = { sendToPreview: () => { }, sendIntentTree: () => { }, postMessage: () => { }, refresh: () => { } }
+  const previewApi: PreviewPageAPI = { sendToPreview: () => { }, sendIntentTree: () => { }, postMessage: () => { }, refresh: () => { }, setViewMode: () => { } }
 
   function sendToPreview(data: unknown) {
     console.log("[Pattern] sendToPreview called")
     setPendingPreviewData(data)
     previewApi.sendToPreview(data)
+    previewApi.setViewMode("preview")
     setHasPreviewContent(true)
   }
-
-  const [pendingIntentData, setPendingIntentData] = createSignal<unknown>(null)
 
   function sendIntentTree(data: unknown) {
     console.log("[Pattern] sendIntentTree called")
     setPendingPreviewData(null)
-    setPendingIntentData(data)
     setHasPreviewContent(true)
     previewApi.sendIntentTree(data)
+    previewApi.setViewMode("intent")
   }
 
   const [pendingIntentConfirm, setPendingIntentConfirm] = createSignal<{ resolve: (data: any) => void; reject: () => void } | null>(null)
@@ -1069,7 +1068,6 @@ function PatternContent() {
               <PreviewPage
                 api={previewApi}
                 pendingData={pendingPreviewData()}
-                pendingIntentData={pendingIntentData()}
                 onModifyElement={handleModifyElement}
                 onPickerSubmit={handlePickerSubmit}
                 onDownload={handleDownload}

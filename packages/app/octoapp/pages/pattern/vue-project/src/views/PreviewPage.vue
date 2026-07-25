@@ -87,6 +87,13 @@ function handleMessage(event: MessageEvent) {
     mode.value = "intent"
     intentData.value = event.data.payload
     console.log("[PreviewPage] INTENT_TREE_UPDATE received, mode=intent, data:", JSON.stringify(event.data.payload)?.slice(0, 200))
+  } else if (event.data?.type === "SWITCH_VIEW_MODE") {
+    const targetMode = event.data.mode as "preview" | "intent"
+    if (targetMode === "intent" && intentData.value) {
+      mode.value = "intent"
+    } else if (targetMode === "preview" && currentContent.value) {
+      mode.value = "preview"
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-DFRqFBKP.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-BzDdEKjl.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-BUa068LI.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-DGDdks61.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-B0TXQMzW.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-BEcF7Q9T.js"])))=>i.map(i=>d[i]);
 import { i as __toESM, n as __exportAll, r as __require, t as __commonJSMin } from "./chunk-DQdmOO5m.js";
 import { $ as effectScope, A as onBeforeUpdate, At as isPromise, B as resolveDirective, Bt as normalizeStyle$1, C as inject, Ct as isArray$8, D as onActivated, Dt as isObject$8, E as nextTick, Et as isModelListener, F as openBlock, Ft as looseEqual, G as useAttrs$1, H as resolveTransitionHooks, Ht as toHandlerKey, I as provide, It as looseIndexOf, J as warn$1, K as useSlots, L as renderList, Lt as looseToNumber$1, M as onMounted, Mt as isSpecialBooleanAttr, N as onUnmounted, Nt as isString$3, O as onBeforeMount, Ot as isOn, P as onUpdated, Pt as isSymbol$1, Q as withDirectives, R as renderSlot, Rt as normalizeClass, S as h$1, St as invokeArrayFns, T as mergeProps, Tt as isFunction$3, U as setTransitionHooks, Ut as toNumber$1, V as resolveDynamicComponent, Vt as toDisplayString, W as toHandlers, X as watchEffect, Y as watch, Z as withCtx, _ as createVNode$1, _t as capitalize$1, a as Teleport, at as readonly, b as getTransitionRawChildren, bt as hyphenate$1, c as cloneVNode, ct as shallowRef, d as createBlock, dt as toRefs, et as getCurrentScope, f as createCommentVNode, ft as toValue$1, g as createTextVNode, gt as camelize$1, h as createSlots, ht as NOOP, i as Fragment, it as reactive, j as onDeactivated, jt as isSet$1, k as onBeforeUnmount, kt as isPlainObject$1, l as computed, lt as toRaw, m as createRenderer, mt as unref, n as BaseTransitionPropsValidators, nt as markRaw, o as Text, ot as ref, p as createElementBlock, pt as triggerRef, q as useTransitionState, r as Comment, rt as onScopeDispose, s as callWithAsyncErrorHandling, st as shallowReactive, t as BaseTransition, tt as isRef, u as createBaseVNode, ut as toRef, v as defineComponent, vt as extend$2, w as isVNode, wt as isDate, x as guardReactiveProps, xt as includeBooleanAttr, y as getCurrentInstance, yt as hasOwn$1, z as resolveComponent, zt as normalizeProps } from "./runtime-core.esm-bundler-DGgENxrj.js";
 //#region \0vite/modulepreload-polyfill.js
@@ -253479,7 +253479,11 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				mode.value = "intent";
 				intentData.value = event.data.payload;
 				console.log("[PreviewPage] INTENT_TREE_UPDATE received, mode=intent, data:", JSON.stringify(event.data.payload)?.slice(0, 200));
-			}
+			} else if (event.data?.type === "SWITCH_VIEW_MODE") {
+				const targetMode = event.data.mode;
+				if (targetMode === "intent" && intentData.value) mode.value = "intent";
+				else if (targetMode === "preview" && currentContent.value) mode.value = "preview";
+			} else if (event.data?.type === "WHEEL_SCROLL") window.scrollBy(event.data.deltaX ?? 0, event.data.deltaY ?? 0);
 		}
 		function handleIntentConfirm(data) {
 			const plain = JSON.parse(JSON.stringify(data));
@@ -253499,7 +253503,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-Du8ske0t.js");
+						const { default: testData } = await import("./data-C3v36o4o.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -253535,17 +253539,17 @@ var router = createRouter({
 		{
 			path: "/intent-test",
 			name: "IntentTest",
-			component: () => __vitePreload(() => import("./IntentTestPage-DFRqFBKP.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./IntentTestPage-DGDdks61.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-BzDdEKjl.js"), __vite__mapDeps([2,1,3]))
+			component: () => __vitePreload(() => import("./ExplorerPage-B0TXQMzW.js"), __vite__mapDeps([2,1,3]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-BUa068LI.js"), __vite__mapDeps([4,1]))
+			component: () => __vitePreload(() => import("./CustomPage-BEcF7Q9T.js"), __vite__mapDeps([4,1]))
 		}
 	]
 });

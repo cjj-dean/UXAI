@@ -1,5 +1,6 @@
 import { createSignal, onCleanup, For, Show } from "solid-js"
 import type { VersionEntry } from "../../utils/persist"
+import type { ViewMode } from "./index"
 import "../../assets/style/preview/titleBar.css"
 
 interface DropdownItem {
@@ -9,6 +10,9 @@ interface DropdownItem {
 
 interface TitleBarProps {
   canvasMode: boolean
+  viewMode: ViewMode
+  hasIntentData: boolean
+  onSwitchViewMode: (mode: ViewMode) => void
   onToggleCanvasMode: () => void
   onReset: () => void
   onRefresh: () => void
@@ -207,6 +211,19 @@ export function TitleBar(props: TitleBarProps) {
               </div>
             )}
           </div>
+
+          <Show when={props.hasIntentData}>
+            <div class="btn-vertical-divider" style={{ height: "10px" }} />
+            <button
+              class={`view-mode-toggle-btn ${props.viewMode === "intent" ? "intent-active" : "preview-active"}`}
+              onClick={() => props.onSwitchViewMode(props.viewMode === "preview" ? "intent" : "preview")}
+              title={props.viewMode === "preview" ? "切换到意图视图" : "切换到预览视图"}
+            >
+              <span class={`view-mode-label ${props.viewMode === "intent" ? "active" : ""}`}>意图</span>
+              <span class="view-mode-separator">/</span>
+              <span class={`view-mode-label ${props.viewMode === "preview" ? "active" : ""}`}>预览</span>
+            </button>
+          </Show>
 
         </div>
 
