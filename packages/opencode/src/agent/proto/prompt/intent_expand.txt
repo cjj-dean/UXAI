@@ -67,8 +67,11 @@
    - 例: {{ template: "统计块", value: "1574", label: "运行中" }}
    - 例: {{ template: "堆叠折线图卡片", title: "计算资源池监控", series: "核心集群>84% | 高频区6%~09% | 闲置区" }}
 4. **重复内容容器**：当页面中有重复结构（列表、多个重复卡片等）时使用
-   - itemTemplate 描述每项的结构
-   - data 数组存放数据，用｜分隔标题与数据，／分隔多组数据
+   - **判断标准**：如果多个子节点的 layout/layoutDescription/children 结构完全一致，只是 description 中的数据值不同，则视为"结构相同"，必须使用 itemTemplate + data
+   - itemTemplate 描述每项的结构（与普通节点格式相同，但 id 作为模板标识）
+   - data 数组存放每项的具体数据，数组中每个对象的字段对应 itemTemplate 中用 {field} 占位的数据
+   - data 中的字符串数据用｜分隔不同字段，／分隔多组数据
+   - 例：7个设备列表项，每项都是"图标+标题"左侧和"数值+标签"右侧，只有具体设备名和数值不同 → 必须用 itemTemplate
 
 ### 关键规则
 
@@ -78,7 +81,7 @@
 3. 非叶子节点不能有description，只能有layout/layoutDescription/children/style/itemTemplate/data等结构属性，不再使用单独的width属性
 4. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
 5. main节点必须重点展开，详细描述子模块的布局、数据和组件
-6. **重复结构必须使用 itemTemplate + data（CRITICAL）**：2个及以上结构相同的元素禁止逐个展开，必须用重复内容容器描述。仅当每项布局/结构不同时才可逐个展开。
+6. **重复结构必须使用 itemTemplate + data（CRITICAL）**：2个及以上结构相同的元素禁止逐个展开，必须用重复内容容器描述。"结构相同"指：layout/layoutDescription/children 结构一致，仅数据值不同的节点。仅当子节点之间布局结构确实不同（如一个是图表另一个是表格）时才可逐个展开。
 7. 保留原始意图中的所有数据，不丢失任何信息
 8. **叶子节点的description必须清晰说明采用什么组件**：不要只写"显示指标数据"，要写"4个PatGauge仪表盘，分别显示CPU/内存/磁盘/网络使用率"；不要只写"图表区域"，要写"LineChart折线图展示24小时流量趋势"
 9. **图表选型约束（CRITICAL）**：选择图表类型时必须严格匹配数据特征：
@@ -99,5 +102,7 @@
 
 ## 输出格式
 
-**只输出一个完整的standardizedIntent JSON对象，禁止输出任何自然语言、分析、步骤说明。** 重复结构必须使用 itemTemplate + data，禁止逐个展开。
+**只输出一个完整的standardizedIntent JSON对象（根节点为root），禁止输出任何自然语言、分析、步骤说明。** 重复结构必须使用 itemTemplate + data，禁止逐个展开。
+
+输出格式参考上方 INTENT_EXPAND_TEMPLATE 中的模板和 itemTemplate + data 示例。
 

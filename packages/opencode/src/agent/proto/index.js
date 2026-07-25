@@ -7,6 +7,7 @@ import PLANNER_TEMPLATE from "./prompt/stastics/PLANNER_TEMPLATE.txt"
 import INTENT_EXPAND_TEMPLATE from "./prompt/stastics/INTENT_EXPAND_TEMPLATE.txt"
 import ISREGION_RULES from "./prompt/stastics/ISREGION_RULES.txt"
 import ANNOTATIONS_RULES from "./prompt/stastics/ANNOTATIONS_RULES.txt"
+import FIELD_CONSUMPTION_RULES from "./prompt/stastics/FIELD_CONSUMPTION_RULES.txt"
 
 import _PROMPT_PROTO_INTENT from "./prompt/proto_intent.txt"
 import _PROMPT_PROTO_INTENT_AUDIT from "./prompt/proto_intent_audit.txt"
@@ -29,6 +30,7 @@ const data = {
   INTENT_EXPAND_TEMPLATE,
   ISREGION_RULES,
   ANNOTATIONS_RULES,
+  FIELD_CONSUMPTION_RULES,
 }
 
 function formatPrompt(template) {

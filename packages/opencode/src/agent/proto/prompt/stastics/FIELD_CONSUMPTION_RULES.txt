@@ -1,0 +1,77 @@
+# 蓝图字段消费规则（containerType / layout / layoutDescription / style）
+
+## 优先级：containerType > layoutDescription > layout > style
+
+---
+
+## 1. containerType — 组件选择（HIGHEST PRIORITY）
+
+| containerType | 组件 | 内置样式 | 约束> |
+|---|---|---|---|
+| `Region` | `Section` | bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem] | 不可手动添加内置样式；className 仅写布局类（flex/gap/overflow） |
+| `Card` | `Card` | bg-surface-container-highest + shadow-sm + rounded-xl + p-* | 同上 |
+| 无 | `div` | 无 | — |
+
+规则：
+- DEFAULT: 每个容器默认为 `div`。只有 `containerType` 为 `Region` 时才用 `Section`，为 `Card` 时才用 `Card`
+- Section/Card 的布局约束（`flex-1`/`shrink-0`/`w-`/`h-`/`gap-`）不是内置样式，必须保留在 className 中
+- 禁止 Section 嵌套 Section，禁止 Section 嵌套在有 bg-surface-container-highest 的 div 内
+
+---
+
+## 2. layoutDescription — 布局方式（HIGH PRIORITY）
+
+| layoutDescription | 转换规则 |
+|---|---|
+| `横向等宽等距排布` | 父容器已是 flex-row，**每个子元素加 `flex-1 min-w-0`** |
+| `两端对齐` / `两端对齐,左侧...右侧...` | 父容器加 `justify-between` |
+| `左中右三栏布局` | 父容器加 flex-row |
+| `左侧固定宽度,右侧自适应` | 左侧 shrink-0，右侧 flex-1 min-w-0 |
+| `左侧自适应,右侧固定宽度` | 左侧 flex-1 min-w-0，右侧 shrink-0 |
+| `左侧N%右侧M%` | 左侧 w-[N%] shrink-0，右侧 flex-1 min-w-0 |
+
+---
+
+## 3. layout — 布局方向（MEDIUM PRIORITY）
+
+| layout | 转换规则 |
+|---|---|
+| `horizontal` | `flex flex-row` |
+| `vertical` | `flex flex-col` |
+| `grid` | `grid` |
+
+规则：
+- 每个有 children 的容器必须声明一个布局方向
+- 有多个子节点的容器必须加 `gap-[1rem]`
+
+---
+
+## 4. style — 纯样式约束（LOW PRIORITY）
+
+| style 关键词 | 转换规则 |
+|---|---|
+| `固定宽度Npx` / `宽度Npx` | w-[Npx] shrink-0 |
+| `固定高度Npx` / `高度Npx` | h-[Npx] |
+| `圆角` | rounded-xl |
+| `描边` / `边框` | border border-outline-variant |
+| `圆角描边边框` | rounded-lg border border-outline-variant |
+| `阴影` | shadow-sm |
+
+规则：
+- style 只包含纯样式关键词，布局方向放 layout，布局方式放 layoutDescription
+- style 中的多个关键词用逗号分隔
+- 禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"）
+- 其他语义描述必须转换为对应的 Tailwind className
+
+---
+
+## 5. 全消费约束（CRITICAL）
+
+蓝图每个节点的 `containerType`、`layoutDescription`、`layout`、`style` 字段都包含必须执行的约束，每一条都必须转换为对应的 className 或组件选择，**禁止忽略任何一条**。
+
+---
+
+## 6. flex-1 vs w-full（CRITICAL）
+
+- 在 flex-row 父容器中均分子元素宽度时用 `flex-1`，禁止用 `w-full`
+- w-full 会让每个子元素占满父宽度，而不是均分

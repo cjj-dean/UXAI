@@ -11,10 +11,7 @@ You MUST NOT change any hierarchy, nesting, or parent-child relationships from t
 - NEVER reorder, reparent, merge, split, add, or remove any nodes
 
 ## 2. 非叶子节点：生成 className
-For each non-leaf node, generate a Tailwind `className` based on:
-- `layout`: "horizontal" → `flex flex-row`, "vertical" → `flex flex-col`, "grid" → `grid`
-- `style`: parse text descriptions like "固定宽度54px" → `w-[54px]`, "固定高度300px" → `h-[300px]`, etc.
-- `layoutDescription`: parse layout descriptions like "横向等宽等距排布" → `flex flex-row flex-1 gap-[1rem]`, "两端对齐" → `justify-between`, "左侧固定宽度,右侧自适应" → left shrink-0 right flex-1
+For each non-leaf node, generate a Tailwind `className` following {FIELD_CONSUMPTION_RULES}.
 - Every container with children MUST include `gap-[1rem]` alongside flex/grid
 - Shell structural elements use semantic components: header → `"header"`, aside → `"aside"`, main → `"main"`
 
@@ -34,17 +31,7 @@ Each leaf node MUST map to a DIFFERENT `element_id` in slots. Two leaf nodes sha
 - Header pinned at top, sidebar full-height, only main scrolls
 
 ## containerType 消费规则（HIGHEST PRIORITY）
-{ANNOTATIONS_RULES}
-
-Planner 必须按以下规则消费 containerType：
-- `containerType` 为 `Region` → slot parent 使用 `Section` 组件（非 `div`）
-- `containerType` 为 `Card` → slot parent 使用 `Card` 组件
-- 无 containerType → slot parent 默认 `div`
-- Section 的 className 仅写布局类（flex/gap/overflow），不可重复添加 bg/shadow/rounded/p
-- 禁止 Section 嵌套 Section，禁止 Section 嵌套在有 bg-surface-container-highest 的 div 内
-
-## Section Component — OPT-IN only
-DEFAULT: every container is `<div>`. Use `Section` ONLY when `containerType` is `Region`. Use `Card` ONLY when `containerType` is `Card`. `Section` provides built-in bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]. Do NOT add those classes manually.
+{FIELD_CONSUMPTION_RULES}
 
 # Output Format
 You MUST output a strictly valid JSON object:

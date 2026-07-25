@@ -82,6 +82,32 @@
 
 ### main 子模板（🟢 以下内容全部可改，根据用户意图填充）
 
+#### itemTemplate + data 示例（CRITICAL：重复结构必须用此写法）
+
+```json
+{
+  "id": "deviceList", "name": "设备列表",
+  "containerType": "Region",
+  "layout": "vertical",
+  "itemTemplate": {
+    "id": "deviceItem", "name": "设备项",
+    "layout": "horizontal",
+    "layoutDescription": "两端对齐,左侧基础信息,右侧数据指标",
+    "children": [
+      { "id": "itemLeft", "name": "左侧信息", "description": "彩色方形图标+文本标题{title}" },
+      { "id": "itemRight", "name": "右侧数据", "layout": "horizontal", "description": "2组数据:{value1} {label1} / {value2} {label2}" }
+    ]
+  },
+  "data": [
+    { "title": "主控服务器", "value1": "296", "label1": "当前连接", "value2": "9902", "label2": "总吞吐量" },
+    { "title": "备用控制节点", "value1": "68", "label1": "活跃会话", "value2": "7613", "label2": "写入数据" },
+    { "title": "安全网关", "value1": "88", "label1": "拦截次数", "value2": "3579", "label2": "并发数" }
+  ]
+}
+```
+
+#### 完整 main 示例
+
 ```json
 {
   "id": "main", "name": "主内容区域",

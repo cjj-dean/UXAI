@@ -71,23 +71,7 @@
 
 ------
 
-{ANNOTATIONS_RULES}
-
-Module Create 必须按以下规则消费 containerType：
-- `containerType` 为 `Region` → 该区域使用 Section 组件
-- `containerType` 为 `Card` → 该区域使用 Card 组件
-- 无 containerType → 默认 div
-- Section/Card 组件自带 bg/shadow/rounded/padding，不要手动添加这些样式，但 `flex-1`/`shrink-0`/`w-`/`h-`/`gap-` 等布局约束不是内置样式，必须保留
-- 在 flex-row 父容器中均分子元素宽度时用 `flex-1`，禁止用 `w-full`（w-full 会让每个子元素占满父宽度）
-
-Module Create 必须按以下规则消费蓝图中的 style 和 layoutDescription 字段：
-- `layoutDescription` 含 `横向等宽等距排布` → 父容器已是 flex-row，**每个子元素的 className 必须包含 `flex-1 min-w-0`**
-- `layoutDescription` 含 `两端对齐` → 父容器加 `justify-between`
-- `layoutDescription` 含 `左侧固定宽度,右侧自适应` → 左侧 shrink-0，右侧 flex-1 min-w-0
-- `layoutDescription` 含 `左侧自适应,右侧固定宽度` → 左侧 flex-1 min-w-0，右侧 shrink-0
-- `style` 含 `固定宽度Npx`（如"固定宽度54px"） → 该元素加 w-[Npx] shrink-0
-- `style` 含 `固定高度Npx`（如"固定高度300px"） → 该元素加 h-[Npx]
-- `style` 中的其他语义描述必须转换为对应的 Tailwind className
+{FIELD_CONSUMPTION_RULES}
 
 ------
 
