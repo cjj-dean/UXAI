@@ -112,7 +112,7 @@ ${annotationHints}
 
   const standardizedIntent = expandJson.standardizedIntent ?? expandJson.standardized_intent ?? expandJson
   const returnValue = {
-    standardized_intent: standardizedIntent.id ? standardizedIntent : null,
+    standardized_intent: (standardizedIntent as any).id ? standardizedIntent : null,
     current_step: "intent_expand"
   }
 
