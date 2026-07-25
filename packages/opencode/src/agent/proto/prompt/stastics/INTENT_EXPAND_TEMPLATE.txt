@@ -17,7 +17,7 @@
     {
       "id": "body", "name": "主体区域",  /* 🔴 不可改 */
       "layout": "horizontal",  /* 🔴 不可改 */
-      "layoutDescription": "左侧固定宽度侧边栏,右侧自适应主内容区",
+      "layoutDescription": "左侧固定宽度侧边栏(如有aside),右侧主内容区",
       "children": [
         {
           "id": "aside", "name": "侧边栏",  /* 🔵 可选，必须是叶子节点，不能有children */
@@ -66,10 +66,10 @@
 - 🟡 可改：具体内容，根据用户意图填充
 - 🔵 可选：根据页面蓝图决定是否需要该区域
 - 🟢 main内容区：以下所有内容均可根据用户意图自由修改和填充
-- body下必须包含main，可选包含aside；aside在左侧，main在中间
+- body下只能有aside(可选)和main(必须)，禁止放其他节点；aside在左侧，main在中间
 - footer放在root的children里，与header、body并列，在body下方；footer必须是叶子节点，不能有children
 - infoBar必须放在root的children里，与header、body并列，不能放到body下
-- main下分为mainContent（核心内容）和rightPanel（右侧面板，可选）；rightPanel必须放在main的children里，不能放到body下
+- **rightPanel必须放在main的children里，禁止放在body下（CRITICAL）**：rightPanel是main的子节点，与mainContent并列
 - layout 字段表示布局方向，可选值为 "horizontal"（水平排列）或 "vertical"（垂直排列），必须根据子节点的实际排列方向决定
 - layoutDescription 字段说明子元素的详细布局方式，如 "两端对齐,左侧搜索框右侧操作按钮"、"左中右三栏布局"、"横向等宽等距排布"、"左侧固定宽度右侧自适应" 等。根据实际布局方式填写，没有则为空
 - containerType 字段表示容器类型，可选值为 "Region"（独立区块，渲染为Section组件）或 "Card"（卡片容器，渲染为Card组件），不设则默认为普通div
