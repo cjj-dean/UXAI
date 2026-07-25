@@ -10,7 +10,7 @@ interface TreeNode {
   description?: string
   annotations?: string[]
   style?: string
-  isRegion?: boolean
+  containerType?: "Region" | "Card" | ""
   children?: TreeNode[]
   itemTemplate?: any
   data?: any[]
@@ -69,7 +69,8 @@ function finishEdit() {
 function toggleIsRegion(id: string) {
   const node = findNode(localData.value, id)
   if (node) {
-    node.isRegion = !node.isRegion
+    const current = node.containerType ?? ""
+    node.containerType = current === "" ? "Region" : current === "Region" ? "Card" : ""
   }
 }
 </script>
@@ -90,7 +91,7 @@ function toggleIsRegion(id: string) {
         @start-edit="startEdit"
         @finish-edit="finishEdit"
         @update:edit-value="(v: string) => editValue = v"
-        @toggle-is-region="toggleIsRegion"
+        @cycle-container-type="toggleIsRegion"
       />
     </div>
     <div class="flex gap-3 mt-5">

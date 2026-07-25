@@ -1,5 +1,5 @@
 import { F as openBlock, M as onMounted, _ as createVNode, ot as ref, p as createElementBlock, v as defineComponent } from "./runtime-core.esm-bundler-DGgENxrj.js";
-import { d as provideA2UI, i as Renderer_default, n as __vitePreload } from "./index-BEyd7BaU.js";
+import { d as provideA2UI, i as Renderer_default, n as __vitePreload } from "./index-CE0uWY-N.js";
 //#region src/views/CustomPage.vue?vue&type=script&setup=true&lang.ts
 var _hoisted_1 = { class: "flex flex-col h-screen overflow-auto bg-gray-50" };
 var _hoisted_2 = {

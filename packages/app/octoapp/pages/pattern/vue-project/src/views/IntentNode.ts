@@ -6,21 +6,14 @@ interface TreeNode {
   id: string
   name: string
   layout?: string
+  layoutDescription?: string
   description?: string
-  annotations?: string[]
   style?: string
-  isRegion?: boolean
+  containerType?: "Region" | "Card" | ""
   children?: TreeNode[]
   itemTemplate?: any
   data?: any[]
   [key: string]: any
-}
-
-function annotationTagType(a: string): "primary" | "success" | "warning" | "info" | "danger" {
-  if (a === "独立区块" || a.startsWith("独立区块")) return "primary"
-  if (a.startsWith("宽度") || a.startsWith("高度")) return "success"
-  if (a === "水平排列" || a === "垂直排列") return "warning"
-  return "info"
 }
 
 const IntentNode = defineComponent({
@@ -32,7 +25,7 @@ const IntentNode = defineComponent({
     editValue: { type: String, default: "" },
     depth: { type: Number, default: 0 },
   },
-  emits: ["startEdit", "finishEdit", "update:editValue", "toggleIsRegion"],
+  emits: ["startEdit", "finishEdit", "update:editValue", "cycleContainerType"],
   setup(props, { emit }) {
     const collapsed = ref(false)
     const hasChildren = computed(() => (props.node.children?.length ?? 0) > 0 || !!props.node.itemTemplate)
@@ -80,6 +73,10 @@ const IntentNode = defineComponent({
         infoTags.push(h(ElTag, { size: "small", type: "info", effect: "plain" }, () => props.node.layout!))
       }
 
+      if (props.node.layoutDescription) {
+        infoTags.push(h(ElTag, { size: "small", type: "warning", effect: "plain" }, () => props.node.layoutDescription!))
+      }
+
       if (props.node.style && !isEditingStyle.value) {
         infoTags.push(h("span", {
           class: "text-xs cursor-pointer hover:opacity-80 transition-opacity",
@@ -90,16 +87,11 @@ const IntentNode = defineComponent({
         infoTags.push(h(ElInput, {
           modelValue: props.editValue,
           size: "small",
-          style: { width: "120px" },
+          style: { width: "180px" },
           "onUpdate:modelValue": (v: string) => emit("update:editValue", v),
           onBlur: () => emit("finishEdit"),
           onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") emit("finishEdit") },
         }))
-      }
-
-      for (const a of props.node.annotations ?? []) {
-        const label = a.length > 20 ? a.substring(0, 20) + "…" : a
-        infoTags.push(h(ElTag, { size: "small", type: annotationTagType(a), effect: "light" }, () => label))
       }
 
       const descEl = props.node.description
@@ -124,15 +116,19 @@ const IntentNode = defineComponent({
           )
         : null
 
-      const regionBtn = h("span", {
+      const containerTypeMap: Record<string, { label: string; class: string }> = {
+        Region: { label: "Region", class: "bg-[var(--el-color-primary-light-9)] text-[var(--el-color-primary)] hover:bg-[var(--el-color-primary-light-7)]" },
+        Card: { label: "Card", class: "bg-[var(--el-color-success-light-9)] text-[var(--el-color-success)] hover:bg-[var(--el-color-success-light-7)]" },
+      }
+      const ct = props.node.containerType
+      const ctInfo = ct && containerTypeMap[ct]
+      const containerBtn = h("span", {
         class: [
           "text-xs px-2 py-0.5 rounded cursor-pointer select-none transition-all flex-shrink-0",
-          props.node.isRegion
-            ? "bg-[var(--el-color-danger-light-9)] text-[var(--el-color-danger)] hover:bg-[var(--el-color-danger-light-7)]"
-            : "text-[var(--el-text-color-placeholder)] hover:text-[var(--el-color-primary)] hover:bg-[var(--el-fill-color)]",
+          ctInfo ? ctInfo.class : "text-[var(--el-text-color-placeholder)] hover:text-[var(--el-color-primary)] hover:bg-[var(--el-fill-color)]",
         ],
-        onClick: () => emit("toggleIsRegion", props.node.id),
-      }, props.node.isRegion ? "独立区块 ✓" : "设为独立区块")
+        onClick: () => emit("cycleContainerType", props.node.id),
+      }, ctInfo ? `${ctInfo.label} ✓` : "容器类型")
 
       const row = h("div", {
         class: "flex items-start py-2 pr-3 hover:bg-[var(--el-fill-color)] transition-colors border-b border-[var(--el-border-color-lighter)] last:border-b-0",
@@ -143,7 +139,7 @@ const IntentNode = defineComponent({
           h("div", { class: "flex items-center gap-2 flex-wrap" }, infoTags),
           descEl,
         ]),
-        regionBtn,
+        containerBtn,
       ])
 
       children.push(row)
@@ -160,7 +156,7 @@ const IntentNode = defineComponent({
               onStartEdit: (...args: [string, string, string]) => emit("startEdit", args[0], args[1], args[2]),
               onFinishEdit: () => emit("finishEdit"),
               onUpdateEditValue: (v: string) => emit("update:editValue", v),
-              onToggleIsRegion: (id: string) => emit("toggleIsRegion", id),
+              onCycleContainerType: (id: string) => emit("cycleContainerType", id),
             })
           )
         }
@@ -183,7 +179,7 @@ const IntentNode = defineComponent({
             onStartEdit: (...args: [string, string, string]) => emit("startEdit", args[0], args[1], args[2]),
             onFinishEdit: () => emit("finishEdit"),
             onUpdateEditValue: (v: string) => emit("update:editValue", v),
-            onToggleIsRegion: (id: string) => emit("toggleIsRegion", id),
+            onCycleContainerType: (id: string) => emit("cycleContainerType", id),
           })
         )
       }

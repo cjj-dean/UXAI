@@ -66,12 +66,12 @@ function buildAnnotationHintsMessage(text: string): string {
   const lines: string[] = ["\n\n[程序化解析的{{}}标注（CRITICAL，必须严格遵守）:] =================================="]
   for (const h of hints) {
     if (h.type === "wrap") {
-      lines.push(`- {{${h.annotation}：...}} 是包裹标记：必须创建一个父节点，设置 isRegion:true, annotations:["${h.annotation}"], style:"${h.annotation}"，包裹内的所有内容作为该父节点的children。禁止将包裹内容拆分到多个节点`)
+      lines.push(`- {{${h.annotation}：...}} 是包裹标记：必须创建一个父节点，设置 containerType:"Region"，包裹内的所有内容作为该父节点的children。禁止将包裹内容拆分到多个节点`)
       if (h.nestedAnnotations && h.nestedAnnotations.length > 0) {
-        lines.push(`  包裹内嵌套标注：${h.nestedAnnotations.map(a => `{{${a}}}`).join(", ")} — 这些标注保留在对应的子节点上`)
+        lines.push(`  包裹内嵌套标注：${h.nestedAnnotations.map(a => `{{${a}}}`).join(", ")} — 这些标注对应的style关键词保留在对应的子节点上`)
       }
     } else {
-      lines.push(`- {{${h.annotation}}} 是紧跟标记：在标注紧跟的节点上设置 annotations:["${h.annotation}"]${h.annotation === "独立区块" ? ", isRegion:true, style:\"独立区块\"" : ""}`)
+      lines.push(`- {{${h.annotation}}} 是紧跟标记：在标注紧跟的节点上设置 containerType:"Region"`)
     }
   }
   lines.push("- 禁止省略、改写或丢失任何标注")

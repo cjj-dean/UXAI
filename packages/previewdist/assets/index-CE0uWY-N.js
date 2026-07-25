@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-24dkRQ14.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-Dc-O-ot0.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-C9UGjxGo.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-DFRqFBKP.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-BzDdEKjl.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-BUa068LI.js"])))=>i.map(i=>d[i]);
 import { i as __toESM, n as __exportAll, r as __require, t as __commonJSMin } from "./chunk-DQdmOO5m.js";
 import { $ as effectScope, A as onBeforeUpdate, At as isPromise, B as resolveDirective, Bt as normalizeStyle$1, C as inject, Ct as isArray$8, D as onActivated, Dt as isObject$8, E as nextTick, Et as isModelListener, F as openBlock, Ft as looseEqual, G as useAttrs$1, H as resolveTransitionHooks, Ht as toHandlerKey, I as provide, It as looseIndexOf, J as warn$1, K as useSlots, L as renderList, Lt as looseToNumber$1, M as onMounted, Mt as isSpecialBooleanAttr, N as onUnmounted, Nt as isString$3, O as onBeforeMount, Ot as isOn, P as onUpdated, Pt as isSymbol$1, Q as withDirectives, R as renderSlot, Rt as normalizeClass, S as h$1, St as invokeArrayFns, T as mergeProps, Tt as isFunction$3, U as setTransitionHooks, Ut as toNumber$1, V as resolveDynamicComponent, Vt as toDisplayString, W as toHandlers, X as watchEffect, Y as watch, Z as withCtx, _ as createVNode$1, _t as capitalize$1, a as Teleport, at as readonly, b as getTransitionRawChildren, bt as hyphenate$1, c as cloneVNode, ct as shallowRef, d as createBlock, dt as toRefs, et as getCurrentScope, f as createCommentVNode, ft as toValue$1, g as createTextVNode, gt as camelize$1, h as createSlots, ht as NOOP, i as Fragment, it as reactive, j as onDeactivated, jt as isSet$1, k as onBeforeUnmount, kt as isPlainObject$1, l as computed, lt as toRaw, m as createRenderer, mt as unref, n as BaseTransitionPropsValidators, nt as markRaw, o as Text, ot as ref, p as createElementBlock, pt as triggerRef, q as useTransitionState, r as Comment, rt as onScopeDispose, s as callWithAsyncErrorHandling, st as shallowReactive, t as BaseTransition, tt as isRef, u as createBaseVNode, ut as toRef, v as defineComponent, vt as extend$2, w as isVNode, wt as isDate, x as guardReactiveProps, xt as includeBooleanAttr, y as getCurrentInstance, yt as hasOwn$1, z as resolveComponent, zt as normalizeProps } from "./runtime-core.esm-bundler-DGgENxrj.js";
 //#region \0vite/modulepreload-polyfill.js
@@ -253102,12 +253102,6 @@ function createRouter(options) {
 }
 //#endregion
 //#region src/views/IntentNode.ts
-function annotationTagType(a) {
-	if (a === "独立区块" || a.startsWith("独立区块")) return "primary";
-	if (a.startsWith("宽度") || a.startsWith("高度")) return "success";
-	if (a === "水平排列" || a === "垂直排列") return "warning";
-	return "info";
-}
 var IntentNode = defineComponent({
 	name: "IntentNode",
 	props: {
@@ -253136,7 +253130,7 @@ var IntentNode = defineComponent({
 		"startEdit",
 		"finishEdit",
 		"update:editValue",
-		"toggleIsRegion"
+		"cycleContainerType"
 	],
 	setup(props, { emit }) {
 		const collapsed = ref(false);
@@ -253193,6 +253187,11 @@ var IntentNode = defineComponent({
 				type: "info",
 				effect: "plain"
 			}, () => props.node.layout));
+			if (props.node.layoutDescription) infoTags.push(h$1(ElTag, {
+				size: "small",
+				type: "warning",
+				effect: "plain"
+			}, () => props.node.layoutDescription));
 			if (props.node.style && !isEditingStyle.value) infoTags.push(h$1("span", {
 				class: "text-xs cursor-pointer hover:opacity-80 transition-opacity",
 				style: { color: "var(--el-color-warning)" },
@@ -253201,21 +253200,13 @@ var IntentNode = defineComponent({
 			else if (isEditingStyle.value) infoTags.push(h$1(ElInput, {
 				modelValue: props.editValue,
 				size: "small",
-				style: { width: "120px" },
+				style: { width: "180px" },
 				"onUpdate:modelValue": (v) => emit("update:editValue", v),
 				onBlur: () => emit("finishEdit"),
 				onKeydown: (e) => {
 					if (e.key === "Enter") emit("finishEdit");
 				}
 			}));
-			for (const a of props.node.annotations ?? []) {
-				const label = a.length > 20 ? a.substring(0, 20) + "…" : a;
-				infoTags.push(h$1(ElTag, {
-					size: "small",
-					type: annotationTagType(a),
-					effect: "light"
-				}, () => label));
-			}
 			const descEl = props.node.description ? h$1("div", {
 				class: "mt-1 leading-relaxed",
 				style: {
@@ -253237,10 +253228,22 @@ var IntentNode = defineComponent({
 					if (e.key === "Enter" && e.ctrlKey) emit("finishEdit");
 				}
 			})) : null;
-			const regionBtn = h$1("span", {
-				class: ["text-xs px-2 py-0.5 rounded cursor-pointer select-none transition-all flex-shrink-0", props.node.isRegion ? "bg-[var(--el-color-danger-light-9)] text-[var(--el-color-danger)] hover:bg-[var(--el-color-danger-light-7)]" : "text-[var(--el-text-color-placeholder)] hover:text-[var(--el-color-primary)] hover:bg-[var(--el-fill-color)]"],
-				onClick: () => emit("toggleIsRegion", props.node.id)
-			}, props.node.isRegion ? "独立区块 ✓" : "设为独立区块");
+			const containerTypeMap = {
+				Region: {
+					label: "Region",
+					class: "bg-[var(--el-color-primary-light-9)] text-[var(--el-color-primary)] hover:bg-[var(--el-color-primary-light-7)]"
+				},
+				Card: {
+					label: "Card",
+					class: "bg-[var(--el-color-success-light-9)] text-[var(--el-color-success)] hover:bg-[var(--el-color-success-light-7)]"
+				}
+			};
+			const ct = props.node.containerType;
+			const ctInfo = ct && containerTypeMap[ct];
+			const containerBtn = h$1("span", {
+				class: ["text-xs px-2 py-0.5 rounded cursor-pointer select-none transition-all flex-shrink-0", ctInfo ? ctInfo.class : "text-[var(--el-text-color-placeholder)] hover:text-[var(--el-color-primary)] hover:bg-[var(--el-fill-color)]"],
+				onClick: () => emit("cycleContainerType", props.node.id)
+			}, ctInfo ? `${ctInfo.label} ✓` : "容器类型");
 			const row = h$1("div", { class: "flex items-start py-2 pr-3 hover:bg-[var(--el-fill-color)] transition-colors border-b border-[var(--el-border-color-lighter)] last:border-b-0" }, [
 				h$1("div", { style: {
 					width: indent + 8 + "px",
@@ -253251,7 +253254,7 @@ var IntentNode = defineComponent({
 					class: "flex-1 min-w-0",
 					style: { marginLeft: "8px" }
 				}, [h$1("div", { class: "flex items-center gap-2 flex-wrap" }, infoTags), descEl]),
-				regionBtn
+				containerBtn
 			]);
 			children.push(row);
 			if (!collapsed.value && props.node.children) for (const child of props.node.children) children.push(h$1(IntentNode, {
@@ -253263,7 +253266,7 @@ var IntentNode = defineComponent({
 				onStartEdit: (...args) => emit("startEdit", args[0], args[1], args[2]),
 				onFinishEdit: () => emit("finishEdit"),
 				onUpdateEditValue: (v) => emit("update:editValue", v),
-				onToggleIsRegion: (id) => emit("toggleIsRegion", id)
+				onCycleContainerType: (id) => emit("cycleContainerType", id)
 			}));
 			if (!collapsed.value && props.node.itemTemplate) {
 				children.push(h$1("div", {
@@ -253282,7 +253285,7 @@ var IntentNode = defineComponent({
 					onStartEdit: (...args) => emit("startEdit", args[0], args[1], args[2]),
 					onFinishEdit: () => emit("finishEdit"),
 					onUpdateEditValue: (v) => emit("update:editValue", v),
-					onToggleIsRegion: (id) => emit("toggleIsRegion", id)
+					onCycleContainerType: (id) => emit("cycleContainerType", id)
 				}));
 			}
 			return h$1("div", children);
@@ -253342,7 +253345,10 @@ var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 		}
 		function toggleIsRegion(id) {
 			const node = findNode(localData.value, id);
-			if (node) node.isRegion = !node.isRegion;
+			if (node) {
+				const current = node.containerType ?? "";
+				node.containerType = current === "" ? "Region" : current === "Region" ? "Card" : "";
+			}
 		}
 		return (_ctx, _cache) => {
 			return openBlock(), createElementBlock("div", _hoisted_1$1, [
@@ -253362,7 +253368,7 @@ var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 					onStartEdit: startEdit,
 					onFinishEdit: finishEdit,
 					"onUpdate:editValue": _cache[0] || (_cache[0] = (v) => editValue.value = v),
-					onToggleIsRegion: toggleIsRegion
+					onCycleContainerType: toggleIsRegion
 				}, null, 8, [
 					"node",
 					"editing-id",
@@ -253493,7 +253499,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-BfoqJ0tO.js");
+						const { default: testData } = await import("./data-Du8ske0t.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -253529,17 +253535,17 @@ var router = createRouter({
 		{
 			path: "/intent-test",
 			name: "IntentTest",
-			component: () => __vitePreload(() => import("./IntentTestPage-24dkRQ14.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./IntentTestPage-DFRqFBKP.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-Dc-O-ot0.js"), __vite__mapDeps([2,1,3]))
+			component: () => __vitePreload(() => import("./ExplorerPage-BzDdEKjl.js"), __vite__mapDeps([2,1,3]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-C9UGjxGo.js"), __vite__mapDeps([4,1]))
+			component: () => __vitePreload(() => import("./CustomPage-BUa068LI.js"), __vite__mapDeps([4,1]))
 		}
 	]
 });

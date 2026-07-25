@@ -1,22 +1,43 @@
-# Annotations 字段 — 通用规则
+# Style 字段 — 通用规则
 
-蓝图中节点的 `annotations` 字符串数组字段，用于原样保留用户意图中 `{{...}}` 标注的语义约束。
+蓝图中节点的 `style` 字符串字段，只包含纯样式关键词（布局方向放 layout 字段）。
 
-## 标注值与语义
+## 样式关键词
 
-| annotation | 含义 | 组件选择 | 样式 |
+| style 关键词 | 含义 | 样式 |
+|---|---|---|
+| `宽度Npx` / `固定宽度Npx` | 固定宽度约束 | w-[Npx] shrink-0 |
+| `高度Npx` / `固定高度Npx` | 固定高度约束 | h-[Npx] |
+| `横向等宽等距排布` | 子元素等宽等距 | flex flex-row gap-* |
+
+## 布局方向（layout 字段）
+
+| layout | 含义 | 样式 |
+|---|---|---|
+| `horizontal` | 子元素水平排列 | flex flex-row |
+| `vertical` | 子元素垂直排列 | flex flex-col |
+
+## 布局方式（layoutDescription 字段）
+
+| layoutDescription 示例 | 含义 | 样式 |
+|---|---|---|
+| 横向等宽等距排布 | 子元素等宽等距 | flex flex-row gap-* flex-1 |
+| 两端对齐,左侧...右侧... | 左右两端分布 | flex flex-row justify-between |
+| 左中右三栏布局 | 三栏布局 | flex flex-row |
+| 左侧固定宽度,右侧自适应 | 侧边栏+主内容 | flex flex-row，左侧 shrink-0，右侧 flex-1 |
+| 左侧自适应,右侧固定宽度 | 主内容+右侧面板 | flex flex-row，左侧 flex-1，右侧 shrink-0 |
+
+## 容器类型（containerType 字段，不在 style 中）
+
+| containerType | 含义 | 组件选择 | 样式 |
 |---|---|---|---|
-| `独立区块` | 页面中的独立视觉区块 | `Section` | 内置 bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]，不可手动添加 |
-| `卡片` | 卡片容器 | `Card` | bg-surface-container-highest + shadow-sm + rounded-xl + p-* |
-| `二级卡片` | 卡片内的嵌套子卡片 | `Card` | bg-surface-variant + rounded-[16px]，不用 shadow |
-| `水平排列` | 子元素水平排列 | 同节点类型 | flex flex-row |
-| `垂直排列` | 子元素垂直排列 | 同节点类型 | flex flex-col |
-| `宽度Npx` | 固定宽度约束 | 同节点类型 | w-[Npx] shrink-0 |
+| `Region` | 独立视觉区块 | `Section` | 内置 bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem]，不可手动添加 |
+| `Card` | 卡片容器 | `Card` | bg-surface-container-highest + shadow-sm + rounded-xl + p-* |
 
 ## 通用原则
 
-1. annotations 中的值必须原样保留，任何 agent 禁止省略、改写或合并
-2. 一个节点可以有多个 annotation（如 `["独立区块", "卡片"]`）
-3. `独立区块` 等同于 `isRegion: true`，两者必须同时出现
-4. 下游 agent 在选择组件和样式时，必须优先遵循 annotations 的约束，而非自行推断
-5. 新增标注类型时，必须在此表中补充对应的语义和组件映射
+1. style 中的多个关键词用逗号分隔，如 "固定宽度500px,横向等宽等距排布"
+2. 不使用 annotations 字段
+3. 布局方向信息放 layout 字段，不放 style
+4. 禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"），容器类型的样式由组件自动提供
+5. 下游 agent 在选择组件和样式时，必须优先遵循 containerType、layout 和 style 的约束，而非自行推断

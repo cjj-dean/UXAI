@@ -703,6 +703,13 @@ function PatternContent() {
         setPhase("intent")
         try {
           const confirmedIntent = await waitForIntentConfirm()
+          const desktopApi = (window as unknown as {
+            api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
+          }).api
+          if (desktopApi?.writeFileBuffer) {
+            const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+            await desktopApi.writeFileBuffer(`${wfDir}/intent_confirmed.json`, new TextEncoder().encode(JSON.stringify(confirmedIntent, null, 2)).buffer)
+          }
           // step2: 用户确认后继续后续流程
           await create_json_new_step2(stepCtx, confirmedIntent, onFinshed)
         } catch {

@@ -53,9 +53,8 @@ function getChildNodes(node: any): any[] {
 function resolveComponent(node: any): string {
   const id = node.id ?? ""
   if (id in SHELL_COMPONENT_MAP) return SHELL_COMPONENT_MAP[id]
-  if (node.isRegion === true) return "Section"
-  const annotations: string[] = node.annotations ?? []
-  if (annotations.includes("卡片") || annotations.includes("二级卡片")) return "Card"
+  if (node.containerType === "Region") return "Section"
+  if (node.containerType === "Card") return "Card"
   return "div"
 }
 
@@ -70,9 +69,9 @@ function addSlotElement(node: any, elements: any[]) {
     props: { className: "" },
     children: childNodes.map((c: any) => c.id),
     layout: node.layout ?? "",
+    layoutDescription: node.layoutDescription ?? "",
     style: node.style ?? "",
-    isRegion: node.isRegion === true,
-    annotations: node.annotations ?? [],
+    containerType: node.containerType ?? "",
     needsClassName: true,
   })
 }
@@ -100,9 +99,9 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     props: { className: needsClassName ? "" : className },
     children: [] as string[],
     layout: node.layout ?? "",
+    layoutDescription: node.layoutDescription ?? "",
     style: node.style ?? "",
-    isRegion: node.isRegion === true,
-    annotations: node.annotations ?? [],
+    containerType: node.containerType ?? "",
     needsClassName,
   }
 
@@ -116,7 +115,7 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
     slots.push({ section_id: id, element_id: id, id_prefix: deriveIdPrefix(id) })
   } else if (id === "main") {
     const childNodes = getChildNodes(node)
-    const nonRegionChildren = childNodes.filter((c: any) => !c.isRegion)
+    const nonRegionChildren = childNodes.filter((c: any) => !c.containerType)
     if (childNodes.length === 1 && nonRegionChildren.length === 1 && getChildNodes(nonRegionChildren[0]).length > 0) {
       const grandChildren = getChildNodes(nonRegionChildren[0])
       element.children = grandChildren.map((gc: any) => gc.id)
@@ -205,9 +204,9 @@ export default async function planner_new_create(input: PlannerNewCreateInput) {
   const nodeDetails = needsClassNameNodes.map(el => {
     const parts = [`id: ${el.id}`, `component: ${el.component}`]
     if (el.layout) parts.push(`layout: ${el.layout}`)
+    if (el.layoutDescription) parts.push(`layoutDescription: ${el.layoutDescription}`)
     if (el.style) parts.push(`style: ${el.style}`)
-    if (el.isRegion) parts.push("isRegion: true")
-    if (el.annotations?.length) parts.push(`annotations: [${el.annotations.join(", ")}]`)
+    if (el.containerType) parts.push(`containerType: ${el.containerType}`)
     if (el.children.length > 0) parts.push(`children: [${el.children.join(", ")}]`)
     if (el.id === "aside") parts.push(`基础样式已固定: ${ASIDE_BASE_CLASSNAME}，只需补充宽度`)
     return parts.join(", ")
@@ -228,14 +227,12 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 - layout "horizontal" → flex flex-row
 - layout "vertical" → flex flex-col
 - layout "grid" → grid
-- annotations中的"水平排列" → flex flex-row（优先于 layout 属性）
-- annotations中的"垂直排列" → flex flex-col（优先于 layout 属性）
+- layoutDescription "横向等宽等距排布" → flex flex-row，每个子元素加 flex-1 min-w-0
+- layoutDescription "两端对齐" → flex flex-row justify-between
+- layoutDescription "左侧固定宽度,右侧自适应" → 左侧 shrink-0，右侧 flex-1 min-w-0
+- layoutDescription "左侧自适应,右侧固定宽度" → 左侧 flex-1 min-w-0，右侧 shrink-0
 - style中的"固定宽度54px" → w-[54px] shrink-0
 - style中的"固定高度300px" → h-[300px]
-- style中的"独立区块" → Section组件自带bg/shadow/rounded/padding，不要手动添加这些，只需添加布局方向和gap
-- annotations中的"二级卡片" → Card组件 + bg-surface-variant rounded-[16px]，不用shadow
-- annotations中的"宽度Npx"（如"宽度400px"） → w-[Npx] shrink-0
-- style中的"横向等宽等距排布" → 父容器 flex flex-row，每个子元素加 flex-1 min-w-0
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出
@@ -279,10 +276,10 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 
   for (const el of elements) {
     delete el.layout
+    delete el.layoutDescription
     delete el.style
-    delete el.isRegion
+    delete el.containerType
     delete el.needsClassName
-    if (!el.annotations?.length) delete el.annotations
   }
 
   const layoutPlanner = {
@@ -307,6 +304,6 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
   }
 
   logAgentParsed(`direct-${Date.now().toString(36)}`, returnValue)
-  console.log("----- 新布局规划Agent结果（后处理后）：", JSON.stringify({ elements: elements.map(e => ({ id: e.id, component: e.component, className: e.props.className, annotations: e.annotations })), slots }))
+  console.log("----- 新布局规划Agent结果（后处理后）：", JSON.stringify({ elements: elements.map(e => ({ id: e.id, component: e.component, className: e.props.className })), slots }))
   return returnValue
 }
