@@ -71,6 +71,11 @@ function fixChildFlex(childId: string, map: Record<string, any>, required: strin
   }
 }
 
+const CONTAINER_TYPE_MAP: Record<string, string> = {
+  Region: "Section",
+  Card: "Card",
+}
+
 export const fixIntentCompliance: Fixer = (json) => {
   const fixes: string[] = []
   const intentNodes = json.intentNodes
@@ -86,6 +91,14 @@ export const fixIntentCompliance: Fixer = (json) => {
     const clsTokens = tokens(cls)
     const fixParts: string[] = []
     let newCls = cls
+
+    if (intentNode.containerType && CONTAINER_TYPE_MAP[intentNode.containerType]) {
+      const expected = CONTAINER_TYPE_MAP[intentNode.containerType]
+      if (elem.component !== expected) {
+        elem.component = expected
+        fixParts.push(`containerType:${intentNode.containerType} → component 改为 ${expected}`)
+      }
+    }
 
     if (intentNode.layout && LAYOUT_DIR_MAP[intentNode.layout]) {
       const required = LAYOUT_DIR_MAP[intentNode.layout]
