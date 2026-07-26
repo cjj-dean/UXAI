@@ -238,6 +238,7 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出
 - 固定宽度的侧边面板加 shrink-0
 - 参考兄弟节点关系：与固定宽度兄弟并列时，当前节点需要 flex-1 填充剩余空间
+- overflow-y-auto 仅用于 main，其他节点禁止添加
 
 输出格式：{ "id1": "className1", "id2": "className2", ... }
 只输出JSON对象，不要输出任何其他内容。`
