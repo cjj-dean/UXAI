@@ -19,6 +19,8 @@ export const fixRedundantClass: Fixer = (json) => {
       for (const cid of elem.children) {
         if (typeof cid === "string") pmap[cid] = elem
       }
+    } else if (elem.children && typeof elem.children === "object" && typeof (elem.children as any).componentId === "string") {
+      pmap[(elem.children as any).componentId] = elem
     }
   }
 
