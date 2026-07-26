@@ -84,7 +84,7 @@
 
 1. **style属性约束（CRITICAL）**：style优先使用以下枚举值，多个枚举值用逗号分隔；如果用户意图中的样式无法用枚举值表达，则直接使用用户的原始描述：
    - 尺寸类枚举：`width-Npx`（固定宽度）、`height-Npx`（固定高度）
-   - 外观类枚举：`rounded-bordered`（圆角+描边）、`rounded-bg`（圆角+背景）、`bordered`（描边/边框）、`shadow`（阴影）
+   - 外观类枚举：`rounded-bordered`（圆角+描边）、`rounded-bg`（圆角+背景）、`shadow`（阴影）
    - 示例：`"rounded-bordered,width-450px"`、`"height-300px,shadow"`、`"rounded-bg"`
    - 用户意图中出现的样式信息必须提取到style字段，禁止混入description
    - **{{}}包裹的样式相关内容（如{{高度300px}}、{{宽度54px}}）必须放到对应节点的style字段中**
