@@ -72,6 +72,13 @@
    - data 数组存放每项的具体数据，数组中每个对象的字段对应 itemTemplate 中用 {field} 占位的数据
    - data 中的字符串数据用｜分隔不同字段，／分隔多组数据
    - 例：7个设备列表项，每项都是"图标+标题"左侧和"数值+标签"右侧，只有具体设备名和数值不同 → 必须用 itemTemplate
+5. **layoutDescription 枚举约束（CRITICAL）**：layoutDescription 只能取以下枚举值，禁止自行创造其他值：
+   - `default`：默认布局，无特殊布局方式
+   - `justify-between`：两端对齐
+   - `three-column`：左中右三栏布局
+   - `equal-width`：子元素等宽等距排布
+   - `left-fixed`：左侧固定宽度，右侧自适应
+   - `right-fixed`：右侧固定宽度，左侧自适应
 
 ### 关键规则
 

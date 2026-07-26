@@ -24,10 +24,11 @@ const IntentNode = defineComponent({
     editingField: { type: String, default: "" },
     editValue: { type: String, default: "" },
     depth: { type: Number, default: 0 },
+    maxExpandDepth: { type: Number, default: 5 },
   },
   emits: ["startEdit", "finishEdit", "update:editValue", "cycleContainerType"],
   setup(props, { emit }) {
-    const collapsed = ref(false)
+    const collapsed = ref(props.depth >= props.maxExpandDepth)
     const hasChildren = computed(() => (props.node.children?.length ?? 0) > 0 || !!props.node.itemTemplate)
     const isEditingName = computed(() => props.editingId === props.node.id && props.editingField === "name")
     const isEditingDesc = computed(() => props.editingId === props.node.id && props.editingField === "description")
@@ -153,6 +154,7 @@ const IntentNode = defineComponent({
               editingField: props.editingField,
               editValue: props.editValue,
               depth: props.depth + 1,
+              maxExpandDepth: props.maxExpandDepth,
               onStartEdit: (...args: [string, string, string]) => emit("startEdit", args[0], args[1], args[2]),
               onFinishEdit: () => emit("finishEdit"),
               onUpdateEditValue: (v: string) => emit("update:editValue", v),
@@ -176,6 +178,7 @@ const IntentNode = defineComponent({
             editingField: props.editingField,
             editValue: props.editValue,
             depth: props.depth + 2,
+            maxExpandDepth: props.maxExpandDepth,
             onStartEdit: (...args: [string, string, string]) => emit("startEdit", args[0], args[1], args[2]),
             onFinishEdit: () => emit("finishEdit"),
             onUpdateEditValue: (v: string) => emit("update:editValue", v),

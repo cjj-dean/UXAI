@@ -234,16 +234,7 @@ ${Object.entries(FIXED_CLASSNAMES).filter(([id]) => elements.some(el => el.id ==
 aside: ${ASIDE_BASE_CLASSNAME}（宽度待补充）
 main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.children?.find((c: any) => c.id === "body")?.children?.find((c: any) => c.id === "main")?.layout === "horizontal" ? "flex flex-row" : "flex flex-col"}
 
-规则：
-- layout "horizontal" → flex flex-row
-- layout "vertical" → flex flex-col
-- layout "grid" → grid
-- layoutDescription "横向等宽等距排布" → flex flex-row，每个子元素加 flex-1 min-w-0
-- layoutDescription "两端对齐" → flex flex-row justify-between
-- layoutDescription "左侧固定宽度,右侧自适应" → 左侧 shrink-0，右侧 flex-1 min-w-0
-- layoutDescription "左侧自适应,右侧固定宽度" → 左侧 flex-1 min-w-0，右侧 shrink-0
-- style中的"固定宽度54px" → w-[54px] shrink-0
-- style中的"固定高度300px" → h-[300px]
+规则（详见 system prompt 中的 FIELD_CONSUMPTION_RULES）：
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出

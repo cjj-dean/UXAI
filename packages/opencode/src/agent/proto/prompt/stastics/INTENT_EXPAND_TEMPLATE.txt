@@ -6,7 +6,7 @@
     {
       "id": "header", "name": "顶部导航",  /* 🔴 不可改，必须是叶子节点，不能有children，用description描述内容 */
       "layout": "horizontal",  /* 🔴 不可改 */
-      "layoutDescription": "左中右布局,左侧Logo,中部导航菜单,右侧操作区",
+      "layoutDescription": "three-column",
       "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
     },
     {
@@ -17,7 +17,7 @@
     {
       "id": "body", "name": "主体区域",  /* 🔴 不可改 */
       "layout": "horizontal",  /* 🔴 不可改 */
-      "layoutDescription": "左侧固定宽度侧边栏(如有aside),右侧主内容区",
+      "layoutDescription": "left-fixed",
       "children": [
         {
           "id": "aside", "name": "侧边栏",  /* 🔵 可选，必须是叶子节点，不能有children */
@@ -71,7 +71,7 @@
 - infoBar必须放在root的children里，与header、body并列，不能放到body下
 - **rightPanel必须放在main的children里，禁止放在body下（CRITICAL）**：rightPanel是main的子节点，与mainContent并列
 - layout 字段表示布局方向，可选值为 "horizontal"（水平排列）或 "vertical"（垂直排列），必须根据子节点的实际排列方向决定
-- layoutDescription 字段说明子元素的详细布局方式，如 "两端对齐,左侧搜索框右侧操作按钮"、"左中右三栏布局"、"横向等宽等距排布"、"左侧固定宽度右侧自适应" 等。根据实际布局方式填写，没有则为空
+- layoutDescription 字段表示子元素的详细布局方式，只能取以下枚举值：`default`（默认）、`justify-between`（两端对齐）、`three-column`（左中右三栏）、`equal-width`（等宽等距排布）、`left-fixed`（左侧固定右侧自适应）、`right-fixed`（右侧固定左侧自适应）。禁止使用其他值
 - containerType 字段表示容器类型，可选值为 "Region"（独立区块，渲染为Section组件）或 "Card"（卡片容器，渲染为Card组件），不设则默认为普通div
 - 用户意图中 `{{独立区块}}` 表示该节点是独立区块，需要设置 containerType:"Region"。例如："左侧区域{{独立区块}}"表示左侧区域节点的containerType为Region
 - style 字段只包含纯样式关键词，如 "固定宽度500px,固定高度300px" 等。布局方向和布局方式信息放 layout 和 layoutDescription 字段，不放 style。禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"）
@@ -92,7 +92,7 @@
   "itemTemplate": {
     "id": "deviceItem", "name": "设备项",
     "layout": "horizontal",
-    "layoutDescription": "两端对齐,左侧基础信息,右侧数据指标",
+      "layoutDescription": "justify-between",
     "children": [
       { "id": "itemLeft", "name": "左侧信息", "description": "彩色方形图标+文本标题{title}" },
       { "id": "itemRight", "name": "右侧数据", "layout": "horizontal", "description": "2组数据:{value1} {label1} / {value2} {label2}" }
@@ -116,7 +116,7 @@
     {
       "id": "dataOverview", "name": "数据概览区",
       "layout": "horizontal",
-      "layoutDescription": "横向等宽等距排布",
+      "layoutDescription": "equal-width",
       "children": [
         {
           "id": "termTypeCard", "name": "终端类型{{独立区块}}",
@@ -162,7 +162,7 @@
         {
           "id": "termUserToolbar", "name": "工具栏",
           "layout": "horizontal",
-          "layoutDescription": "两端对齐,左侧搜索框+高级搜索按钮,右侧操作按钮组",
+          "layoutDescription": "justify-between",
           "description": "左侧:定宽搜索输入框(内含搜索图标+placeholder请输入搜索内容)+带向上折叠箭头的高级搜索文本按钮,右侧:带下拉箭头的立即扫描按钮+IP/MAC解绑按钮+IP/MAC绑定按钮+已守护列表按钮+已限速列表按钮+刷新图标"
         },
         {

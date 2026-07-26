@@ -1,6 +1,6 @@
 # Style 字段 — 通用规则
 
-蓝图中节点的 `style` 字符串字段，只包含纯样式关键词（布局方向放 layout 字段）。
+蓝图中节点的 `style` 字符串字段，只包含纯样式关键词（布局方向放 layout 字段，布局方式放 layoutDescription 字段）。
 
 ## 样式关键词
 
@@ -8,7 +8,6 @@
 |---|---|---|
 | `宽度Npx` / `固定宽度Npx` | 固定宽度约束 | w-[Npx] shrink-0 |
 | `高度Npx` / `固定高度Npx` | 固定高度约束 | h-[Npx] |
-| `横向等宽等距排布` | 子元素等宽等距 | flex flex-row gap-* |
 
 ## 布局方向（layout 字段）
 
@@ -17,15 +16,16 @@
 | `horizontal` | 子元素水平排列 | flex flex-row |
 | `vertical` | 子元素垂直排列 | flex flex-col |
 
-## 布局方式（layoutDescription 字段）
+## 布局方式（layoutDescription 字段，枚举值）
 
-| layoutDescription 示例 | 含义 | 样式 |
+| layoutDescription 枚举值 | 含义 | 样式 |
 |---|---|---|
-| 横向等宽等距排布 | 子元素等宽等距 | flex flex-row gap-* flex-1 |
-| 两端对齐,左侧...右侧... | 左右两端分布 | flex flex-row justify-between |
-| 左中右三栏布局 | 三栏布局 | flex flex-row |
-| 左侧固定宽度,右侧自适应 | 侧边栏+主内容 | flex flex-row，左侧 shrink-0，右侧 flex-1 |
-| 左侧自适应,右侧固定宽度 | 主内容+右侧面板 | flex flex-row，左侧 flex-1，右侧 shrink-0 |
+| `default` | 默认布局 | 无额外处理 |
+| `justify-between` | 两端对齐 | flex flex-row justify-between |
+| `three-column` | 左中右三栏布局 | flex flex-row |
+| `equal-width` | 子元素等宽等距排布 | flex flex-row，每个子元素加 flex-1 min-w-0 |
+| `left-fixed` | 左侧固定宽度，右侧自适应 | flex flex-row，左侧 shrink-0，右侧 flex-1 |
+| `right-fixed` | 右侧固定宽度，左侧自适应 | flex flex-row，左侧 flex-1，右侧 shrink-0 |
 
 ## 容器类型（containerType 字段，不在 style 中）
 
@@ -36,8 +36,8 @@
 
 ## 通用原则
 
-1. style 中的多个关键词用逗号分隔，如 "固定宽度500px,横向等宽等距排布"
+1. style 中的多个关键词用逗号分隔，如 "固定宽度500px,固定高度300px"
 2. 不使用 annotations 字段
-3. 布局方向信息放 layout 字段，不放 style
+3. 布局方向信息放 layout 字段，布局方式放 layoutDescription 字段，不放 style
 4. 禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"），容器类型的样式由组件自动提供
 5. 下游 agent 在选择组件和样式时，必须优先遵循 containerType、layout 和 style 的约束，而非自行推断

@@ -6,7 +6,7 @@
 
 ## 1. containerType — 组件选择（HIGHEST PRIORITY）
 
-| containerType | 组件 | 内置样式 | 约束> |
+| containerType | 组件 | 内置样式 | 约束 |
 |---|---|---|---|
 | `Region` | `Section` | bg-surface-container-highest + shadow-sm + rounded-xl + p-[1.5rem] | 不可手动添加内置样式；className 仅写布局类（flex/gap/overflow） |
 | `Card` | `Card` | bg-surface-container-highest + shadow-sm + rounded-xl + p-* | 同上 |
@@ -21,14 +21,16 @@
 
 ## 2. layoutDescription — 布局方式（HIGH PRIORITY）
 
-| layoutDescription | 转换规则 |
-|---|---|
-| `横向等宽等距排布` | 父容器已是 flex-row，**每个子元素加 `flex-1 min-w-0`** |
-| `两端对齐` / `两端对齐,左侧...右侧...` | 父容器加 `justify-between` |
-| `左中右三栏布局` | 父容器加 flex-row |
-| `左侧固定宽度,右侧自适应` | 左侧 shrink-0，右侧 flex-1 min-w-0 |
-| `左侧自适应,右侧固定宽度` | 左侧 flex-1 min-w-0，右侧 shrink-0 |
-| `左侧N%右侧M%` | 左侧 w-[N%] shrink-0，右侧 flex-1 min-w-0 |
+layoutDescription 只能取以下枚举值（禁止自行创造其他值）：
+
+| 枚举值 | 含义 | 转换规则 |
+|---|---|---|
+| `default` | 默认布局，无特殊布局方式 | 无额外处理 |
+| `justify-between` | 两端对齐 | 父容器加 `justify-between` |
+| `three-column` | 左中右三栏布局 | 父容器加 flex-row |
+| `equal-width` | 子元素等宽等距排布 | 父容器已是 flex-row，**每个子元素加 `flex-1 min-w-0`**。若子元素通过模板绑定（`children: {path, componentId}`）渲染，则给模板元素加 `flex-1 min-w-0` |
+| `left-fixed` | 左侧固定宽度，右侧自适应 | 左侧 shrink-0，右侧 flex-1 min-w-0 |
+| `right-fixed` | 右侧固定宽度，左侧自适应 | 左侧 flex-1 min-w-0，右侧 shrink-0 |
 
 ---
 
