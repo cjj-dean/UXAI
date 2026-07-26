@@ -4,10 +4,16 @@
 
 ## 样式关键词
 
-| style 关键词 | 含义 | 样式 |
+style 优先使用枚举值，多个值用逗号分隔；无法用枚举表达的样式直接使用用户原始描述。
+
+| style 枚举值 | 含义 | 样式 |
 |---|---|---|
-| `宽度Npx` / `固定宽度Npx` | 固定宽度约束 | w-[Npx] shrink-0 |
-| `高度Npx` / `固定高度Npx` | 固定高度约束 | h-[Npx] |
+| `width-Npx` | 固定宽度约束 | w-[Npx] shrink-0 |
+| `height-Npx` | 固定高度约束 | h-[Npx] |
+| `rounded-bordered` | 圆角+描边 | rounded-lg border border-outline-variant |
+| `rounded-bg` | 圆角+背景 | rounded-xl bg-surface-container-highest |
+| `bordered` | 描边/边框 | border border-outline-variant |
+| `shadow` | 阴影 | shadow-sm |
 
 ## 布局方向（layout 字段）
 
@@ -36,7 +42,8 @@
 
 ## 通用原则
 
-1. style 中的多个关键词用逗号分隔，如 "固定宽度500px,固定高度300px"
+1. style 中的多个枚举值用逗号分隔，如 "rounded-bordered,width-450px"
+2. 无法用枚举表达的样式，直接使用用户原始描述
 2. 不使用 annotations 字段
 3. 布局方向信息放 layout 字段，布局方式放 layoutDescription 字段，不放 style
 4. 禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"），容器类型的样式由组件自动提供

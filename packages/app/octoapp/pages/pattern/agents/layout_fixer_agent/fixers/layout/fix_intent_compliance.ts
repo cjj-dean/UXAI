@@ -14,6 +14,38 @@ const LAYOUT_DESC_MAP: Record<string, { parent?: string[]; child?: string[] }> =
 
 const FLEX_SIZE_RE = /^(?:flex-1|shrink-0|w-\[|min-w-|min-h-)/
 
+const STYLE_ENUM_MAP: Record<string, string[]> = {
+  "rounded-bordered": ["rounded-lg", "border", "border-outline-variant"],
+  "rounded-bg": ["rounded-xl", "bg-surface-container-highest"],
+  "bordered": ["border", "border-outline-variant"],
+  "shadow": ["shadow-sm"],
+}
+
+const WIDTH_ENUM_RE = /^width-(\d+)px$/
+const HEIGHT_ENUM_RE = /^height-(\d+)px$/
+
+function parseStyle(style: string): string[] {
+  const result: string[] = []
+  const parts = style.split(",").map((s) => s.trim()).filter(Boolean)
+  for (const part of parts) {
+    if (STYLE_ENUM_MAP[part]) {
+      result.push(...STYLE_ENUM_MAP[part])
+      continue
+    }
+    const wMatch = part.match(WIDTH_ENUM_RE)
+    if (wMatch) {
+      result.push(`w-[${wMatch[1]}px]`, "shrink-0")
+      continue
+    }
+    const hMatch = part.match(HEIGHT_ENUM_RE)
+    if (hMatch) {
+      result.push(`h-[${hMatch[1]}px]`)
+      continue
+    }
+  }
+  return result
+}
+
 function hasAllTokens(clsTokens: string[], required: string[]): boolean {
   return required.every((r) => clsTokens.includes(r))
 }
@@ -121,6 +153,14 @@ export const fixIntentCompliance: Fixer = (json) => {
             fixChildFlex(childIds[1], map, ["shrink-0"], fixParts, `子元素(右)`)
           }
         }
+      }
+    }
+
+    if (intentNode.style) {
+      const required = parseStyle(intentNode.style)
+      if (required.length > 0 && !hasAllTokens(tokens(newCls), required)) {
+        newCls = addMissing(newCls, tokens(newCls), required)
+        fixParts.push(`style:${intentNode.style} → 补 ${required.join(" ")}`)
       }
     }
 

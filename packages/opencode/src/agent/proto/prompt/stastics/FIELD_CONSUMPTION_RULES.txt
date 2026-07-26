@@ -50,20 +50,21 @@ layoutDescription 只能取以下枚举值（禁止自行创造其他值）：
 
 ## 4. style — 纯样式约束（LOW PRIORITY）
 
-| style 关键词 | 转换规则 |
-|---|---|
-| `固定宽度Npx` / `宽度Npx` | w-[Npx] shrink-0 |
-| `固定高度Npx` / `高度Npx` | h-[Npx] |
-| `圆角` | rounded-xl |
-| `描边` / `边框` | border border-outline-variant |
-| `圆角描边边框` | rounded-lg border border-outline-variant |
-| `阴影` | shadow-sm |
+style 优先使用枚举值，多个值用逗号分隔；无法用枚举表达的样式直接使用用户原始描述。
+
+| style 枚举值 | 含义 | 转换规则 |
+|---|---|---|
+| `width-Npx` | 固定宽度 | w-[Npx] shrink-0 |
+| `height-Npx` | 固定高度 | h-[Npx] |
+| `rounded-bordered` | 圆角+描边 | rounded-lg border border-outline-variant |
+| `rounded-bg` | 圆角+背景 | rounded-xl bg-surface-container-highest |
+| `bordered` | 描边/边框 | border border-outline-variant |
+| `shadow` | 阴影 | shadow-sm |
 
 规则：
 - style 只包含纯样式关键词，布局方向放 layout，布局方式放 layoutDescription
-- style 中的多个关键词用逗号分隔
 - 禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"）
-- 其他语义描述必须转换为对应的 Tailwind className
+- 无法用枚举表达的样式，直接使用用户原始描述，由下游 agent 解析
 
 ---
 
