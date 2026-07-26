@@ -91,7 +91,7 @@ function buildHumanMessage(input: ModuleModifyInput): string {
     `[顶层布局和Slots]: ===============`,
     JSON.stringify(input.layoutPlanner),
     ``,
-    `[模块内部元素id前缀]: ===============`,
+    `[模块内部元素id前缀（蓝图中id原样保留，仅新增辅助元素以此开头）]: ===============`,
     input.idPrefix,
     ``,
     `[当前正在修改模块section_id]: ===============`,

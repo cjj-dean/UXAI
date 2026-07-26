@@ -144,7 +144,7 @@ function buildHumanMessage(idPrefix: string, sectionId: string, elementId: strin
   ${nodeStr}
 
   [需要被渲染模块的根节点:] ${elementId}
-   [模块内部元素id前缀:] ${idPrefix} (注：该模块内所有 element id 必须以此开头)
+   [模块内部元素id前缀:] ${idPrefix} (注：蓝图中出现的id必须原样保留；仅新增辅助元素的id以此开头)
   ${containerTypeHint}
   ${componentDocsSection}
   **CRITICAL — Path 语法约束：**

@@ -3,7 +3,7 @@
 
 # Provided Context
   - layout_planner: 顶层布局和Slots
-  - id_prefix: 这个UI JSON的前缀，用于生成新的元素ID
+  - id_prefix: 新增辅助元素的id前缀（蓝图中已有的id原样保留）
   - section_id: 当前正在修改的模块section_id
   - element_id: 当前正在修改的元素element_id
   - origin_modules: 待修改的JSON
@@ -59,7 +59,7 @@ Module Modify 必须按以下规则消费 annotations：
   10. **Full Data Coverage:** 
     - MUST use ALL items in every array AND ALL keys in every object from the provided data. NEVER truncate, skip, or reduce array items. 
     - Map the provided data (e.g., chartUnit) to the existing attributes of the target component if the component's schema supports it.
-  11. **Prefix Enforcement**: Every id in the elements array MUST begin with the provided ID Prefix (except for the root element).
+  11. **ID 保真 + 前缀规则**：蓝图中出现的 id 必须原样保留。仅对蓝图中未出现的新增辅助元素，id 必须以提供的 ID 前缀开头。
   12. **Scope Confinement**: DO NOT attempt to build macro-page wrappers. Generate the UI JSON ONLY for the target module.
   13. **Root ClassName Immutability**: NEVER alter the root element's `props.className`. You may ONLY populate its `children` array.
 

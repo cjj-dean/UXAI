@@ -106,7 +106,7 @@ export async function create_json_new_step2(
     console.log(`[create_json_new] merged element: id=${el.id}, component=${el.component}, children=${JSON.stringify(el.children)}`)
   }
 
-  const [fixed, fixerLog] = layoutFixer(merged as any)
+  const [fixed, fixerLog] = layoutFixer(merged as any, standardizedIntent)
   if (fixerLog.length) console.log("[LayoutFixer] 日志:\n" + fixerLog.join("\n"))
 
   await onFinshed({

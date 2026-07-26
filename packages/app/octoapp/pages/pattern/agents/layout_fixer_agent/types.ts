@@ -2,6 +2,14 @@ export type A2UIJson = {
   rootId?: string
   elements: A2UIElement[]
   state?: Record<string, any>
+  intentNodes?: Record<string, IntentNode>
+}
+
+export type IntentNode = {
+  layout?: string
+  layoutDescription?: string
+  style?: string
+  containerType?: string
 }
 
 export type A2UIElement = {

@@ -30,9 +30,7 @@ function buildSlotsFromSections(sections: Array<any>): Array<{ section_id: strin
 }
 
 function deriveIdPrefix(sectionId: string): string {
-  const parts = sectionId.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
-  if (parts.length === 1) return parts[0].slice(0, 4)
-  return parts.map((p) => p.slice(0, 2)).join("").slice(0, 6)
+  return sectionId
 }
 
 export default async function create_json(inputCtx: ProtoCreateJsonInput, onFinshed: (finalJson: any) => Promise<void>){

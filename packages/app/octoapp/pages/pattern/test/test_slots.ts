@@ -15,9 +15,7 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
 const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "dialog", "drawer"])
 
 function deriveIdPrefix(id: string): string {
-  const parts = id.replace(/([A-Z])/g, "_$1").toLowerCase().split(/[_-]+/).filter(Boolean)
-  if (parts.length === 1) return parts[0].slice(0, 4)
-  return parts.map((p) => p.slice(0, 2)).join("").slice(0, 6)
+  return id
 }
 
 function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren: string[], isUnderMain: boolean = false) {
