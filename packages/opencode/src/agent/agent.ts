@@ -31,6 +31,7 @@ import {
   PROMPT_PROTO_COMPONENT_LOOKUP,
   PROMPT_INTENT_EXPAND,
   PROMPT_INTENT_REGION_CHECK,
+  PROMPT_INTENT_FIELD_CHECK,
   PROMPT_PLANNER_NEW_CREATE,
 } from "./proto"
 import { Permission } from "@/permission"
@@ -377,6 +378,18 @@ export const layer = Layer.effect(
             name: "intent_region_check",
             description: "Validates isRegion markers in standardized intent against user input.",
             prompt: PROMPT_INTENT_REGION_CHECK,
+            permission: Permission.fromConfig({
+              "*": "deny",
+            }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.0,
+          },
+          intent_field_check: {
+            name: "intent_field_check",
+            description: "Validates style, layout, layoutDescription, containerType fields in standardized intent against user input.",
+            prompt: PROMPT_INTENT_FIELD_CHECK,
             permission: Permission.fromConfig({
               "*": "deny",
             }),

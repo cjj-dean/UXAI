@@ -1,4 +1,5 @@
 import intent_expand from "../agents/intent_expand"
+import intent_field_check from "../agents/intent_field_check"
 import planner_new_create from "../agents/planner_new_create"
 import proto_module_create from "../agents/proto_module_create"
 import proto_component_lookup from "../agents/proto_component_lookup"
@@ -23,8 +24,11 @@ export async function create_json_new_step1(inputCtx: CreateJsonNewInput) {
   const ctx = { ...inputCtx, userInput: normalizedInput }
 
   const expandResult = await intent_expand(ctx)
-  const standardizedIntent = expandResult.standardized_intent
+  let standardizedIntent = expandResult.standardized_intent
   if (!standardizedIntent) throw new Error("----- intent_expand did not return standardizedIntent -----")
+
+  const fieldCheckResult = await intent_field_check({ ...ctx, standardizedIntent })
+  standardizedIntent = fieldCheckResult.standardized_intent
 
   return { expandResult, standardizedIntent, ctx }
 }
