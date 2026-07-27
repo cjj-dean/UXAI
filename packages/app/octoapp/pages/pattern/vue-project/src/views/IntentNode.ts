@@ -1,6 +1,5 @@
 import { defineComponent, ref, computed, h, type PropType, type VNode } from "vue"
 import { ElTag } from "element-plus"
-import { ElInput } from "element-plus"
 
 interface TreeNode {
   id: string
@@ -52,11 +51,10 @@ const IntentNode = defineComponent({
             style: { lineHeight: "22px" },
             onDblclick: () => emit("startEdit", props.node.id, "name", props.node.name),
           }, props.node.name)
-        : h(ElInput, {
-            modelValue: props.editValue,
-            size: "small",
-            style: { width: "160px" },
-            "onUpdate:modelValue": (v: string) => emit("update:editValue", v),
+        : h("input", {
+            value: props.editValue,
+            style: { width: "160px", fontSize: "13px", padding: "2px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none" },
+            onInput: (e: Event) => emit("update:editValue", (e.target as HTMLInputElement).value),
             onBlur: () => emit("finishEdit"),
             onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") emit("finishEdit") },
           })
@@ -85,11 +83,10 @@ const IntentNode = defineComponent({
           onDblclick: () => emit("startEdit", props.node.id, "style", props.node.style || ""),
         }, props.node.style))
       } else if (isEditingStyle.value) {
-        infoTags.push(h(ElInput, {
-          modelValue: props.editValue,
-          size: "small",
-          style: { width: "180px" },
-          "onUpdate:modelValue": (v: string) => emit("update:editValue", v),
+        infoTags.push(h("input", {
+          value: props.editValue,
+          style: { width: "180px", fontSize: "12px", padding: "2px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none" },
+          onInput: (e: Event) => emit("update:editValue", (e.target as HTMLInputElement).value),
           onBlur: () => emit("finishEdit"),
           onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") emit("finishEdit") },
         }))
@@ -105,12 +102,10 @@ const IntentNode = defineComponent({
                   class: "cursor-pointer hover:text-[var(--el-text-color-primary)] transition-colors",
                   onDblclick: () => emit("startEdit", props.node.id, "description", props.node.description || ""),
                 }, props.node.description)
-              : h(ElInput, {
-                  modelValue: props.editValue,
-                  type: "textarea",
-                  size: "small",
-                  autosize: { minRows: 2 },
-                  "onUpdate:modelValue": (v: string) => emit("update:editValue", v),
+              : h("textarea", {
+                  value: props.editValue,
+                  style: { width: "100%", fontSize: "12px", padding: "4px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none", resize: "vertical", minHeight: "40px" },
+                  onInput: (e: Event) => emit("update:editValue", (e.target as HTMLTextAreaElement).value),
                   onBlur: () => emit("finishEdit"),
                   onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter" && (e as KeyboardEvent).ctrlKey) emit("finishEdit") },
                 })
