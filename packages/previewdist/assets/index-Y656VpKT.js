@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-irlke-M5.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-kjIjniGL.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-CbLg1qBs.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/IntentTestPage-Bk5HZX1D.js","assets/runtime-core.esm-bundler-DGgENxrj.js","assets/ExplorerPage-DxtnggJ_.js","assets/ExplorerPage-DqD1rBK4.css","assets/CustomPage-BIwU38AT.js"])))=>i.map(i=>d[i]);
 import { i as __toESM, n as __exportAll, r as __require, t as __commonJSMin } from "./chunk-DQdmOO5m.js";
 import { $ as effectScope, A as onBeforeUpdate, At as isPromise, B as resolveDirective, Bt as normalizeStyle$1, C as inject, Ct as isArray$8, D as onActivated, Dt as isObject$8, E as nextTick, Et as isModelListener, F as openBlock, Ft as looseEqual, G as useAttrs$1, H as resolveTransitionHooks, Ht as toHandlerKey, I as provide, It as looseIndexOf, J as warn$1, K as useSlots, L as renderList, Lt as looseToNumber$1, M as onMounted, Mt as isSpecialBooleanAttr, N as onUnmounted, Nt as isString$3, O as onBeforeMount, Ot as isOn, P as onUpdated, Pt as isSymbol$1, Q as withDirectives, R as renderSlot, Rt as normalizeClass, S as h$1, St as invokeArrayFns, T as mergeProps, Tt as isFunction$3, U as setTransitionHooks, Ut as toNumber$1, V as resolveDynamicComponent, Vt as toDisplayString, W as toHandlers, X as watchEffect, Y as watch, Z as withCtx, _ as createVNode$1, _t as capitalize$1, a as Teleport, at as readonly, b as getTransitionRawChildren, bt as hyphenate$1, c as cloneVNode, ct as shallowRef, d as createBlock, dt as toRefs, et as getCurrentScope, f as createCommentVNode, ft as toValue$1, g as createTextVNode, gt as camelize$1, h as createSlots, ht as NOOP, i as Fragment, it as reactive, j as onDeactivated, jt as isSet$1, k as onBeforeUnmount, kt as isPlainObject$1, l as computed, lt as toRaw, m as createRenderer, mt as unref, n as BaseTransitionPropsValidators, nt as markRaw, o as Text, ot as ref, p as createElementBlock, pt as triggerRef, q as useTransitionState, r as Comment, rt as onScopeDispose, s as callWithAsyncErrorHandling, st as shallowReactive, t as BaseTransition, tt as isRef, u as createBaseVNode, ut as toRef, v as defineComponent, vt as extend$2, w as isVNode, wt as isDate, x as guardReactiveProps, xt as includeBooleanAttr, y as getCurrentInstance, yt as hasOwn$1, z as resolveComponent, zt as normalizeProps } from "./runtime-core.esm-bundler-DGgENxrj.js";
 //#region \0vite/modulepreload-polyfill.js
@@ -253142,7 +253142,28 @@ var IntentNode = defineComponent({
 		const isEditingName = computed(() => props.editingId === props.node.id && props.editingField === "name");
 		const isEditingDesc = computed(() => props.editingId === props.node.id && props.editingField === "description");
 		const isEditingStyle = computed(() => props.editingId === props.node.id && props.editingField === "style");
+		const localInput = ref("");
+		let lastEditId = "";
+		function handleStartEdit(id, field, value) {
+			localInput.value = value ?? "";
+			lastEditId = id + ":" + field;
+			emit("startEdit", id, field, value);
+		}
+		function handleInput(e) {
+			const v = e.target.value;
+			localInput.value = v;
+			emit("update:editValue", v);
+		}
+		function handleFinishEdit() {
+			emit("update:editValue", localInput.value);
+			emit("finishEdit");
+		}
 		return () => {
+			const currentEditKey = props.editingId + ":" + props.editingField;
+			if (currentEditKey !== lastEditId && props.editingId) {
+				localInput.value = props.editValue;
+				lastEditId = currentEditKey;
+			}
 			const indent = props.depth * 32;
 			const children = [];
 			const expandIcon = hasChildren.value ? h$1("span", {
@@ -253166,15 +253187,21 @@ var IntentNode = defineComponent({
 			const nameEl = !isEditingName.value ? h$1("span", {
 				class: "text-sm font-medium cursor-pointer hover:text-[var(--el-color-primary)] transition-colors",
 				style: { lineHeight: "22px" },
-				onDblclick: () => emit("startEdit", props.node.id, "name", props.node.name)
-			}, props.node.name) : h$1(ElInput, {
-				modelValue: props.editValue,
-				size: "small",
-				style: { width: "160px" },
-				"onUpdate:modelValue": (v) => emit("update:editValue", v),
-				onBlur: () => emit("finishEdit"),
+				onDblclick: () => handleStartEdit(props.node.id, "name", props.node.name)
+			}, props.node.name) : h$1("input", {
+				value: localInput.value,
+				style: {
+					width: "160px",
+					fontSize: "13px",
+					padding: "2px 6px",
+					border: "1px solid var(--el-border-color)",
+					borderRadius: "4px",
+					outline: "none"
+				},
+				onInput: handleInput,
+				onBlur: handleFinishEdit,
 				onKeydown: (e) => {
-					if (e.key === "Enter") emit("finishEdit");
+					if (e.key === "Enter") handleFinishEdit();
 				}
 			});
 			const infoTags = [];
@@ -253194,21 +253221,29 @@ var IntentNode = defineComponent({
 			if (props.node.layoutDescription) infoTags.push(h$1(ElTag, {
 				size: "small",
 				type: "warning",
-				effect: "plain"
+				effect: "plain",
+				class: "cursor-pointer",
+				onDblclick: () => handleStartEdit(props.node.id, "layoutDescription", props.node.layoutDescription || "")
 			}, () => props.node.layoutDescription));
 			if (props.node.style && !isEditingStyle.value) infoTags.push(h$1("span", {
 				class: "text-xs cursor-pointer hover:opacity-80 transition-opacity",
 				style: { color: "var(--el-color-warning)" },
-				onDblclick: () => emit("startEdit", props.node.id, "style", props.node.style || "")
+				onDblclick: () => handleStartEdit(props.node.id, "style", props.node.style || "")
 			}, props.node.style));
-			else if (isEditingStyle.value) infoTags.push(h$1(ElInput, {
-				modelValue: props.editValue,
-				size: "small",
-				style: { width: "180px" },
-				"onUpdate:modelValue": (v) => emit("update:editValue", v),
-				onBlur: () => emit("finishEdit"),
+			else if (isEditingStyle.value) infoTags.push(h$1("input", {
+				value: localInput.value,
+				style: {
+					width: "180px",
+					fontSize: "12px",
+					padding: "2px 6px",
+					border: "1px solid var(--el-border-color)",
+					borderRadius: "4px",
+					outline: "none"
+				},
+				onInput: handleInput,
+				onBlur: handleFinishEdit,
 				onKeydown: (e) => {
-					if (e.key === "Enter") emit("finishEdit");
+					if (e.key === "Enter") handleFinishEdit();
 				}
 			}));
 			const descEl = props.node.description ? h$1("div", {
@@ -253220,16 +253255,23 @@ var IntentNode = defineComponent({
 				}
 			}, !isEditingDesc.value ? h$1("span", {
 				class: "cursor-pointer hover:text-[var(--el-text-color-primary)] transition-colors",
-				onDblclick: () => emit("startEdit", props.node.id, "description", props.node.description || "")
-			}, props.node.description) : h$1(ElInput, {
-				modelValue: props.editValue,
-				type: "textarea",
-				size: "small",
-				autosize: { minRows: 2 },
-				"onUpdate:modelValue": (v) => emit("update:editValue", v),
-				onBlur: () => emit("finishEdit"),
+				onDblclick: () => handleStartEdit(props.node.id, "description", props.node.description || "")
+			}, props.node.description) : h$1("textarea", {
+				value: localInput.value,
+				style: {
+					width: "100%",
+					fontSize: "12px",
+					padding: "4px 6px",
+					border: "1px solid var(--el-border-color)",
+					borderRadius: "4px",
+					outline: "none",
+					resize: "vertical",
+					minHeight: "40px"
+				},
+				onInput: handleInput,
+				onBlur: handleFinishEdit,
 				onKeydown: (e) => {
-					if (e.key === "Enter" && e.ctrlKey) emit("finishEdit");
+					if (e.key === "Enter" && e.ctrlKey) handleFinishEdit();
 				}
 			})) : null;
 			const containerTypeMap = {
@@ -253314,7 +253356,7 @@ var _hoisted_3$1 = { class: "flex gap-3 mt-5" };
 var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 	__name: "IntentTreePage",
 	props: { data: {} },
-	emits: ["confirm", "regenerate"],
+	emits: ["confirm"],
 	setup(__props, { emit: __emit }) {
 		const props = __props;
 		const emit = __emit;
@@ -253348,6 +253390,7 @@ var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 			if (node) node[editingField.value] = editValue.value;
 			editingId.value = null;
 			editingField.value = "";
+			editValue.value = "";
 		}
 		function toggleIsRegion(id) {
 			const node = findNode(localData.value, id);
@@ -253358,13 +253401,13 @@ var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 		}
 		return (_ctx, _cache) => {
 			return openBlock(), createElementBlock("div", _hoisted_1$1, [
-				_cache[5] || (_cache[5] = createBaseVNode("div", { class: "mb-5" }, [createBaseVNode("div", {
+				_cache[3] || (_cache[3] = createBaseVNode("div", { class: "mb-5" }, [createBaseVNode("div", {
 					class: "text-lg font-bold",
 					style: { "color": "var(--el-text-color-primary)" }
-				}, "意图确认"), createBaseVNode("div", {
+				}, "意图编辑"), createBaseVNode("div", {
 					class: "mt-1 text-xs",
 					style: { "color": "var(--el-text-color-secondary)" }
-				}, "双击节点名称、描述或样式可编辑，确认后将执行后续生成流程")], -1)),
+				}, "双击节点名称、描述或样式可编辑，修改完成后点击\"重新执行\"将以修改后的意图重新生成页面")], -1)),
 				createBaseVNode("div", _hoisted_2$1, [createVNode$1(unref(IntentNode), {
 					node: localData.value,
 					"editing-id": editingId.value,
@@ -253385,10 +253428,7 @@ var IntentTreePage_default = /* @__PURE__ */ defineComponent({
 					type: "primary",
 					onClick: _cache[1] || (_cache[1] = ($event) => emit("confirm", localData.value))
 				}, {
-					default: withCtx(() => [..._cache[3] || (_cache[3] = [createTextVNode("确认并继续", -1)])]),
-					_: 1
-				}), createVNode$1(unref(ElButton), { onClick: _cache[2] || (_cache[2] = ($event) => emit("regenerate")) }, {
-					default: withCtx(() => [..._cache[4] || (_cache[4] = [createTextVNode("重新生成", -1)])]),
+					default: withCtx(() => [..._cache[2] || (_cache[2] = [createTextVNode("重新执行", -1)])]),
 					_: 1
 				})])
 			]);
@@ -253498,9 +253538,6 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				payload: plain
 			}, "*");
 		}
-		function handleIntentRegenerate() {
-			window.parent.postMessage({ type: "INTENT_REGENERATE" }, "*");
-		}
 		onMounted(async () => {
 			window.addEventListener("message", handleMessage);
 			if (window.self !== window.top) window.parent.postMessage({ type: "A2UI_READY" }, "*");
@@ -253509,7 +253546,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 				if (fetchFile) applyA2UIJson(await (await fetch("./" + fetchFile, { cache: "no-store" })).json());
 				else {
 					const { default: testData } = await __vitePreload(async () => {
-						const { default: testData } = await import("./data-D4n6AugH.js");
+						const { default: testData } = await import("./data-BunWNeIm.js");
 						return { default: testData };
 					}, []);
 					applyA2UIJson(JSON.parse(JSON.stringify(testData)));
@@ -253526,8 +253563,7 @@ var PreviewPage_default = /* @__PURE__ */ defineComponent({
 		return (_ctx, _cache) => {
 			return openBlock(), createElementBlock("div", _hoisted_1, [mode.value === "intent" && intentData.value ? (openBlock(), createElementBlock("div", _hoisted_2, [createVNode$1(IntentTreePage_default, {
 				data: intentData.value,
-				onConfirm: handleIntentConfirm,
-				onRegenerate: handleIntentRegenerate
+				onConfirm: handleIntentConfirm
 			}, null, 8, ["data"])])) : currentContent.value ? (openBlock(), createElementBlock("div", _hoisted_3, [createVNode$1(Renderer_default, { surfaceId })])) : (openBlock(), createElementBlock("div", _hoisted_4, [loading.value ? (openBlock(), createElementBlock("span", _hoisted_5, "加载中...")) : (openBlock(), createElementBlock("span", _hoisted_6, "暂无预览内容"))]))]);
 		};
 	}
@@ -253545,17 +253581,17 @@ var router = createRouter({
 		{
 			path: "/intent-test",
 			name: "IntentTest",
-			component: () => __vitePreload(() => import("./IntentTestPage-irlke-M5.js"), __vite__mapDeps([0,1]))
+			component: () => __vitePreload(() => import("./IntentTestPage-Bk5HZX1D.js"), __vite__mapDeps([0,1]))
 		},
 		{
 			path: "/explorer",
 			name: "Explorer",
-			component: () => __vitePreload(() => import("./ExplorerPage-kjIjniGL.js"), __vite__mapDeps([2,1,3]))
+			component: () => __vitePreload(() => import("./ExplorerPage-DxtnggJ_.js"), __vite__mapDeps([2,1,3]))
 		},
 		{
 			path: "/custom",
 			name: "Custom",
-			component: () => __vitePreload(() => import("./CustomPage-CbLg1qBs.js"), __vite__mapDeps([4,1]))
+			component: () => __vitePreload(() => import("./CustomPage-BIwU38AT.js"), __vite__mapDeps([4,1]))
 		}
 	]
 });
