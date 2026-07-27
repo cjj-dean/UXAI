@@ -582,6 +582,7 @@ function PatternContent() {
       }
 
       setStandardizedIntentData(data)
+      sendIntentTree(data)
 
       let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog, intentExpand }: any) => {
         const debug = getDebugSnapshot()
