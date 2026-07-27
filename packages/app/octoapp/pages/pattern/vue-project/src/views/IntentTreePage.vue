@@ -23,7 +23,6 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "confirm", data: TreeNode): void
-  (e: "regenerate"): void
 }>()
 
 const editingId = ref<string | null>(null)
@@ -78,8 +77,8 @@ function toggleIsRegion(id: string) {
 <template>
   <div class="p-6 max-w-3xl mx-auto">
     <div class="mb-5">
-      <div class="text-lg font-bold" style="color: var(--el-text-color-primary)">意图确认</div>
-      <div class="mt-1 text-xs" style="color: var(--el-text-color-secondary)">双击节点名称、描述或样式可编辑，确认后将执行后续生成流程</div>
+      <div class="text-lg font-bold" style="color: var(--el-text-color-primary)">意图编辑</div>
+      <div class="mt-1 text-xs" style="color: var(--el-text-color-secondary)">双击节点名称、描述或样式可编辑，修改完成后点击"重新执行"将以修改后的意图重新生成页面</div>
     </div>
     <div class="rounded-lg overflow-hidden" style="border: 1px solid var(--el-border-color-lighter); background: var(--el-bg-color)">
       <IntentNode
@@ -95,8 +94,7 @@ function toggleIsRegion(id: string) {
       />
     </div>
     <div class="flex gap-3 mt-5">
-      <ElButton type="primary" @click="emit('confirm', localData)">确认并继续</ElButton>
-      <ElButton @click="emit('regenerate')">重新生成</ElButton>
+      <ElButton type="primary" @click="emit('confirm', localData)">重新执行</ElButton>
     </div>
   </div>
 </template>

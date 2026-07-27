@@ -232,7 +232,7 @@ function PatternContent() {
           // 恢复历史版本状态并推送到预览
           const dir = patternHistoryDir()
           if (dir) {
-            void loadCurrentPatternState(dir, id).then((state) => {
+            void loadCurrentPatternState(dir, id).then(async (state) => {
               if (!state || params.id !== id) return
               if (state.lastIntent) setLastIntent(state.lastIntent)
               if (state.lastPlanner) setLastPlanner(state.lastPlanner)
@@ -252,6 +252,18 @@ function PatternContent() {
                   })()
                 const mergedJson = detectA2UIJson(JSON.stringify(a2ui))
                 if (mergedJson) sendToPreview(mergedJson)
+              }
+              const desktopApi = (window as unknown as {
+                api?: { readFileBuffer?: (path: string) => Promise<ArrayBuffer | null> }
+              }).api
+              if (desktopApi?.readFileBuffer) {
+                try {
+                  const buf = await desktopApi.readFileBuffer(`${dir}/workflow/${id}/intent_confirmed.json`)
+                  if (buf) {
+                    const intentData = JSON.parse(new TextDecoder().decode(buf))
+                    if (intentData?.id) previewApi.sendIntentTree(intentData)
+                  }
+                } catch {}
               }
               if (state.directCallTimings?.length) setDirectCallTimings(state.directCallTimings)
               if (state.directCallReasonings && Object.keys(state.directCallReasonings).length > 0) setDirectCallReasonings(state.directCallReasonings)
@@ -412,6 +424,7 @@ function PatternContent() {
   const [isDragOver, setIsDragOver] = createSignal(false)
   const [selectedDesignSystem, setSelectedDesignSystem] = createSignal<string | null>(null)
   const [lastIntent, setLastIntent] = createSignal<Record<string, unknown> | null>(null)
+  const [standardizedIntentData, setStandardizedIntentData] = createSignal<any>(null)
   const [lastPlanner, setLastPlanner] = createSignal<Record<string, unknown> | null>(null)
   const [lastModules, setLastModules] = createSignal<Array<Record<string, unknown>>>([])
   const [versions, setVersions] = createSignal<VersionEntry[]>([])
@@ -522,30 +535,101 @@ function PatternContent() {
     previewApi.setViewMode("intent")
   }
 
-  const [pendingIntentConfirm, setPendingIntentConfirm] = createSignal<{ resolve: (data: any) => void; reject: () => void } | null>(null)
+  previewApi.onIntentConfirm = async (data: any) => {
+    console.log("[Pattern] onIntentConfirm, re-running step2 with modified intent")
+    const sid = params.id
+    if (!sid || sending()) return
 
-  previewApi.onIntentConfirm = (data: any) => {
-    const pending = pendingIntentConfirm()
-    console.log("[Pattern] onIntentConfirm, pending:", !!pending)
-    if (pending) {
-      setPendingIntentConfirm(null)
-      pending.resolve(data)
+    setSending(true)
+    try {
+      const mk = activeModelKey()!
+      const intentCtx = {
+        sdk: sdk,
+        sync: sync,
+        modelKey: mk,
+        rootSession: sid,
+        userInput: "",
+        onSessionCreated: (childID: string) => {
+          if (params.id !== sid) return
+          setChildSessionIDs((prev) => [...prev, childID])
+        },
+        onDirectCallTiming: (timing: { agent: string; startTime: number; endTime?: number }) => {
+          if (params.id !== sid) return
+          setDirectCallTimings((prev) => {
+            if (timing.endTime != null) {
+              const idx = prev.findIndex((t) => t.agent === timing.agent && t.startTime === timing.startTime && t.endTime == null)
+              if (idx >= 0) {
+                const next = [...prev]
+                next[idx] = timing
+                return next
+              }
+            }
+            return [...prev, timing]
+          })
+        },
+        onReasoningDelta: (agent: string, delta: string) => {
+          if (params.id !== sid) return
+          setDirectCallReasonings((prev) => ({ ...prev, [agent]: (prev[agent] ?? "") + delta }))
+        },
+      }
+
+      const desktopApi = (window as unknown as {
+        api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
+      }).api
+      if (desktopApi?.writeFileBuffer) {
+        const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+        await desktopApi.writeFileBuffer(`${wfDir}/intent_confirmed.json`, new TextEncoder().encode(JSON.stringify(data, null, 2)).buffer)
+      }
+
+      setStandardizedIntentData(data)
+
+      let onFinshed = async ({ pageIntent, layoutPlanner, modulesJson, pageJson, fixerLog, plannerValidateLog, intentExpand }: any) => {
+        const debug = getDebugSnapshot()
+        if (desktopApi?.writeFileBuffer) {
+          const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+          const encoder = new TextEncoder()
+          if (fixerLog?.length) await desktopApi.writeFileBuffer(`${wfDir}/fixer.log`, encoder.encode(fixerLog.join("\n")).buffer)
+          if (plannerValidateLog?.length) await desktopApi.writeFileBuffer(`${wfDir}/planner_validate.log`, encoder.encode(plannerValidateLog.join("\n")).buffer)
+          if (pageJson) await desktopApi.writeFileBuffer(`${wfDir}/merged.json`, encoder.encode(JSON.stringify(pageJson, null, 2)).buffer)
+          if (debug) await desktopApi.writeFileBuffer(`${wfDir}/debug.json`, encoder.encode(JSON.stringify(debug, null, 2)).buffer)
+          if (layoutPlanner) await desktopApi.writeFileBuffer(`${wfDir}/planner_new.md`, encoder.encode(formatPlannerNewMd(layoutPlanner)).buffer)
+          if (modulesJson?.length) await desktopApi.writeFileBuffer(`${wfDir}/modules.md`, encoder.encode(formatModulesMd(modulesJson)).buffer)
+        }
+        const dir = patternHistoryDir()
+        if (dir) {
+          const vid = await appendPatternVersion(dir, sid, {
+            lastIntent: pageIntent ?? intentExpand,
+            lastPlanner: layoutPlanner,
+            lastModules: modulesJson,
+            mergedA2UI: pageJson as unknown as Record<string, unknown>,
+            directCallTimings: directCallTimings(),
+            directCallReasonings: directCallReasonings(),
+            debug,
+          }, "重新执行")
+          if (params.id === sid) {
+            setVersions((prev) => [...prev, { id: vid, createdAt: Date.now(), summary: "重新执行" }])
+            setCurrentVersionId(vid)
+            clearDebugLog()
+          }
+        }
+        if (params.id !== sid) return
+        if (pageJson) sendToPreview(pageJson)
+        setLastIntent(pageIntent ?? intentExpand)
+        setLastPlanner(layoutPlanner)
+        setLastModules(modulesJson)
+        previewApi.setViewMode("intent")
+      }
+
+      await create_json_new_step2(intentCtx, data, onFinshed)
+    } catch (err) {
+      console.error("[Pattern] re-run step2 failed", err)
+    } finally {
+      if (params.id === sid) setSending(false)
     }
   }
 
   previewApi.onIntentRegenerate = () => {
-    const pending = pendingIntentConfirm()
-    console.log("[Pattern] onIntentRegenerate, pending:", !!pending)
-    if (pending) {
-      setPendingIntentConfirm(null)
-      pending.reject()
-    }
-  }
-
-  function waitForIntentConfirm(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      setPendingIntentConfirm({ resolve, reject })
-    })
+    console.log("[Pattern] onIntentRegenerate - no longer used")
   }
 
   async function handleSubmit() {
@@ -698,24 +782,23 @@ function PatternContent() {
         // 将 intent 结果发送到 iframe 渲染层级树
         sendIntentTree(standardizedIntent)
 
-        // 等待用户确认
-        setPhase("intent")
-        try {
-          const confirmedIntent = await waitForIntentConfirm()
-          const desktopApi = (window as unknown as {
-            api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
-          }).api
-          if (desktopApi?.writeFileBuffer) {
-            const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
-            await desktopApi.writeFileBuffer(`${wfDir}/intent_confirmed.json`, new TextEncoder().encode(JSON.stringify(confirmedIntent, null, 2)).buffer)
-          }
-          // step2: 用户确认后继续后续流程
-          await create_json_new_step2(stepCtx, confirmedIntent, onFinshed)
-        } catch {
-          // 用户点了重新生成，重新执行 step1
-          setSending(false)
-          return
+        // 保存 intent 以便后续重新执行
+        setLastIntent(expandResult)
+        setStandardizedIntentData(standardizedIntent)
+
+        const desktopApi = (window as unknown as {
+          api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
+        }).api
+        if (desktopApi?.writeFileBuffer) {
+          const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
+          await desktopApi.writeFileBuffer(`${wfDir}/intent_confirmed.json`, new TextEncoder().encode(JSON.stringify(standardizedIntent, null, 2)).buffer)
         }
+
+        // 直接继续 step2，不等待用户确认
+        await create_json_new_step2(stepCtx, standardizedIntent, onFinshed)
+
+        // 流程完成后切换到意图视图
+        previewApi.setViewMode("intent")
       }
 
       const genDuration = ((performance.now() - genStartTime)/1000).toFixed(0)

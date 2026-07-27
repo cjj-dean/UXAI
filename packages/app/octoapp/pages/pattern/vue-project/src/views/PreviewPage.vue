@@ -102,10 +102,6 @@ function handleIntentConfirm(data: any) {
   window.parent.postMessage({ type: "INTENT_CONFIRM", payload: plain }, "*")
 }
 
-function handleIntentRegenerate() {
-  window.parent.postMessage({ type: "INTENT_REGENERATE" }, "*")
-}
-
 onMounted(async () => {
   window.addEventListener("message", handleMessage)
 
@@ -142,7 +138,6 @@ onUnmounted(() => {
       <IntentTreePage
         :data="intentData"
         @confirm="handleIntentConfirm"
-        @regenerate="handleIntentRegenerate"
       />
     </div>
     <div v-else-if="currentContent" class="w-full h-full">
