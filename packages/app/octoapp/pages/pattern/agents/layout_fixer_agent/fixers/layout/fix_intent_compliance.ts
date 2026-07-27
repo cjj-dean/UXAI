@@ -16,8 +16,6 @@ const FLEX_SIZE_RE = /^(?:flex-1|shrink-0|w-\[|min-w-|min-h-)/
 
 const STYLE_ENUM_MAP: Record<string, string[]> = {
   "rounded-bordered": ["rounded-lg", "border", "border-outline-variant"],
-  "rounded-bg": ["rounded-xl", "bg-surface-container-highest"],
-  "shadow": ["shadow-sm"],
 }
 
 const WIDTH_ENUM_RE = /^width-(\d+)px$/
