@@ -33,7 +33,33 @@ const IntentNode = defineComponent({
     const isEditingDesc = computed(() => props.editingId === props.node.id && props.editingField === "description")
     const isEditingStyle = computed(() => props.editingId === props.node.id && props.editingField === "style")
 
+    const localInput = ref("")
+    let lastEditId = ""
+
+    function handleStartEdit(id: string, field: string, value: string) {
+      localInput.value = value ?? ""
+      lastEditId = id + ":" + field
+      emit("startEdit", id, field, value)
+    }
+
+    function handleInput(e: Event) {
+      const v = (e.target as HTMLInputElement | HTMLTextAreaElement).value
+      localInput.value = v
+      emit("update:editValue", v)
+    }
+
+    function handleFinishEdit() {
+      emit("update:editValue", localInput.value)
+      emit("finishEdit")
+    }
+
     return () => {
+      const currentEditKey = props.editingId + ":" + props.editingField
+      if (currentEditKey !== lastEditId && props.editingId) {
+        localInput.value = props.editValue
+        lastEditId = currentEditKey
+      }
+
       const indent = props.depth * 32
       const children: VNode[] = []
 
@@ -49,14 +75,14 @@ const IntentNode = defineComponent({
         ? h("span", {
             class: "text-sm font-medium cursor-pointer hover:text-[var(--el-color-primary)] transition-colors",
             style: { lineHeight: "22px" },
-            onDblclick: () => emit("startEdit", props.node.id, "name", props.node.name),
+            onDblclick: () => handleStartEdit(props.node.id, "name", props.node.name),
           }, props.node.name)
         : h("input", {
-            value: props.editValue,
+            value: localInput.value,
             style: { width: "160px", fontSize: "13px", padding: "2px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none" },
-            onInput: (e: Event) => emit("update:editValue", (e.target as HTMLInputElement).value),
-            onBlur: () => emit("finishEdit"),
-            onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") emit("finishEdit") },
+            onInput: handleInput,
+            onBlur: handleFinishEdit,
+            onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") handleFinishEdit() },
           })
 
       const infoTags: VNode[] = []
@@ -73,22 +99,26 @@ const IntentNode = defineComponent({
       }
 
       if (props.node.layoutDescription) {
-        infoTags.push(h(ElTag, { size: "small", type: "warning", effect: "plain" }, () => props.node.layoutDescription!))
+        infoTags.push(h(ElTag, {
+          size: "small", type: "warning", effect: "plain",
+          class: "cursor-pointer",
+          onDblclick: () => handleStartEdit(props.node.id, "layoutDescription", props.node.layoutDescription || ""),
+        }, () => props.node.layoutDescription!))
       }
 
       if (props.node.style && !isEditingStyle.value) {
         infoTags.push(h("span", {
           class: "text-xs cursor-pointer hover:opacity-80 transition-opacity",
           style: { color: "var(--el-color-warning)" },
-          onDblclick: () => emit("startEdit", props.node.id, "style", props.node.style || ""),
+          onDblclick: () => handleStartEdit(props.node.id, "style", props.node.style || ""),
         }, props.node.style))
       } else if (isEditingStyle.value) {
         infoTags.push(h("input", {
-          value: props.editValue,
+          value: localInput.value,
           style: { width: "180px", fontSize: "12px", padding: "2px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none" },
-          onInput: (e: Event) => emit("update:editValue", (e.target as HTMLInputElement).value),
-          onBlur: () => emit("finishEdit"),
-          onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") emit("finishEdit") },
+          onInput: handleInput,
+          onBlur: handleFinishEdit,
+          onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter") handleFinishEdit() },
         }))
       }
 
@@ -97,18 +127,18 @@ const IntentNode = defineComponent({
             class: "mt-1 leading-relaxed",
             style: { fontSize: "12px", color: "var(--el-text-color-secondary)", paddingLeft: "4px" },
           },
-            !isEditingDesc.value
-              ? h("span", {
-                  class: "cursor-pointer hover:text-[var(--el-text-color-primary)] transition-colors",
-                  onDblclick: () => emit("startEdit", props.node.id, "description", props.node.description || ""),
-                }, props.node.description)
-              : h("textarea", {
-                  value: props.editValue,
-                  style: { width: "100%", fontSize: "12px", padding: "4px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none", resize: "vertical", minHeight: "40px" },
-                  onInput: (e: Event) => emit("update:editValue", (e.target as HTMLTextAreaElement).value),
-                  onBlur: () => emit("finishEdit"),
-                  onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter" && (e as KeyboardEvent).ctrlKey) emit("finishEdit") },
-                })
+          !isEditingDesc.value
+            ? h("span", {
+                class: "cursor-pointer hover:text-[var(--el-text-color-primary)] transition-colors",
+                onDblclick: () => handleStartEdit(props.node.id, "description", props.node.description || ""),
+              }, props.node.description)
+            : h("textarea", {
+                value: localInput.value,
+                style: { width: "100%", fontSize: "12px", padding: "4px 6px", border: "1px solid var(--el-border-color)", borderRadius: "4px", outline: "none", resize: "vertical", minHeight: "40px" },
+                onInput: handleInput,
+                onBlur: handleFinishEdit,
+                onKeydown: (e: Event) => { if ((e as KeyboardEvent).key === "Enter" && (e as KeyboardEvent).ctrlKey) handleFinishEdit() },
+              })
           )
         : null
 

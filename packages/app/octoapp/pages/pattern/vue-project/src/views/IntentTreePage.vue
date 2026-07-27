@@ -27,7 +27,7 @@ const emit = defineEmits<{
 
 const editingId = ref<string | null>(null)
 const editingField = ref<string>("")
-const editValue = ref("")
+const editValue = ref<string>("")
 const localData = ref<TreeNode>(JSON.parse(JSON.stringify(props.data)))
 
 watch(() => props.data, (newData) => {
@@ -63,6 +63,7 @@ function finishEdit() {
   }
   editingId.value = null
   editingField.value = ""
+  editValue.value = ""
 }
 
 function toggleIsRegion(id: string) {
