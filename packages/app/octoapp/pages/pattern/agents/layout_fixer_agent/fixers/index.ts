@@ -38,6 +38,7 @@ import { fixInvalidPaths } from "./component"
 import { fixDialogClass } from "./component"
 import { fixRedundantLoopWrapper } from "./layout"
 import { fixAsideWidth } from "./layout"
+import { fixPropsChildren } from "./layout"
 import { fixSlotComponents } from "./component"
 import { fixStepsFullWidth } from "./component"
 import { fixPatStackedBar } from "./component"
@@ -87,5 +88,6 @@ export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "tab_content", fn: fixTabContent },
   { name: "border_box", fn: fixBorderBox },
   { name: "aside_width", fn: fixAsideWidth },
+  { name: "props_children", fn: fixPropsChildren },
   { name: "inline_component_stretch", fn: fixInlineComponentStretch },
 ]
