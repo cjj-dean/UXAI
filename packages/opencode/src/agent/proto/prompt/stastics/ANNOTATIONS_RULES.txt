@@ -10,7 +10,7 @@ style 优先使用枚举值，多个值用逗号分隔；无法用枚举表达�
 |---|---|---|
 | `width-Npx` | 固定宽度约束 | w-[Npx] shrink-0 |
 | `height-Npx` | 固定高度约束 | h-[Npx] |
-| `rounded-bordered` | 圆角+描边 | rounded-lg border border-outline-variant |
+| `bordered` | 描边 | border border-outline-variant |
 
 ## 布局方向（layout 字段）
 
@@ -39,7 +39,7 @@ style 优先使用枚举值，多个值用逗号分隔；无法用枚举表达�
 
 ## 通用原则
 
-1. style 中的多个枚举值用逗号分隔，如 "rounded-bordered,width-450px"
+1. style 中的多个枚举值用逗号分隔，如 "bordered,width-450px"
 2. 无法用枚举表达的样式，直接使用用户原始描述
 2. 不使用 annotations 字段
 3. 布局方向信息放 layout 字段，布局方式放 layoutDescription 字段，不放 style

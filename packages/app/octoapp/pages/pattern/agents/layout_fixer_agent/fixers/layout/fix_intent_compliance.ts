@@ -15,7 +15,7 @@ const LAYOUT_DESC_MAP: Record<string, { parent?: string[]; child?: string[] }> =
 const FLEX_SIZE_RE = /^(?:flex-1|shrink-0|w-\[|min-w-|min-h-)/
 
 const STYLE_ENUM_MAP: Record<string, string[]> = {
-  "rounded-bordered": ["rounded-lg", "border", "border-outline-variant"],
+  "bordered": ["rounded-lg", "border", "border-outline-variant", "p-[1rem]"],
 }
 
 const WIDTH_ENUM_RE = /^width-(\d+)px$/
@@ -62,11 +62,18 @@ function fixChildFlex(childId: string, map: Record<string, any>, required: strin
   if (!child) return
   const cls = getClassName(child)
   const toks = tokens(cls)
-  if (hasFlexSizeToken(toks)) return
-  if (!hasAllTokens(toks, required)) {
-    setClassName(child, addMissing(cls, toks, required))
+  if (hasFlexSizeToken(toks) && !toks.includes("w-full")) return
+  let newCls = cls
+  if (toks.includes("w-full") && required.includes("flex-1")) {
+    newCls = cls.replace(/\bw-full\b/, "flex-1")
+    fixParts.push(`${label} ${childId} → w-full 替换为 flex-1`)
+  }
+  const newToks = tokens(newCls)
+  if (!hasAllTokens(newToks, required)) {
+    newCls = addMissing(newCls, newToks, required)
     fixParts.push(`${label} ${childId} → 补 ${required.join(" ")}`)
   }
+  setClassName(child, newCls)
 }
 
 const CONTAINER_TYPE_MAP: Record<string, string> = {
@@ -113,7 +120,7 @@ export const fixIntentCompliance: Fixer = (json) => {
           newCls = addMissing(newCls, tokens(newCls), desc.parent)
           fixParts.push(`layoutDescription:${intentNode.layoutDescription} → 补 ${desc.parent.join(" ")}`)
         }
-        if (desc.child) {
+        if (desc.child && intentNode.layout === "horizontal") {
           const childIds = Array.isArray(elem.children)
             ? elem.children.filter((c: any) => typeof c === "string")
             : []
