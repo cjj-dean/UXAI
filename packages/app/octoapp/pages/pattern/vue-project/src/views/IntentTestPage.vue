@@ -2,7 +2,7 @@
 import IntentTreePage from "./IntentTreePage.vue"
 import { ref } from "vue"
 
-const mockIntent = {
+const mockIntent: any = {
   id: "root",
   name: "根节点",
   layout: "vertical",
@@ -11,25 +11,28 @@ const mockIntent = {
       id: "header",
       name: "顶部导航",
       layout: "horizontal",
-      description: "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警。右侧依次排列：搜索图标、用户头像。"
+      layoutDescription: "three-column",
+      description: "左侧为系统Logo与名称：DataMaster Pro。中部为横向排列的导航菜单。右侧依次排列：搜索图标、用户头像。"
     },
     {
       id: "infoBar",
       name: "信息栏",
       layout: "horizontal",
+      layoutDescription: "justify-between",
       description: "左侧为全局页面标题文字'网络运行总览'。右侧显示文本标签'实时'及刷新时间。"
     },
     {
       id: "body",
       name: "主体区域",
       layout: "horizontal",
+      layoutDescription: "left-fixed",
       children: [
         {
           id: "aside",
           name: "侧边栏",
-          style: "固定宽度54px",
+          style: "width-54px",
           layout: "vertical",
-          description: "左侧菜单栏是缩略版的菜单栏，采用纵向纯图标排布，上方模块垂直排布8个功能图标。"
+          description: "左侧菜单栏，采用纵向纯图标排布，8个功能图标。"
         },
         {
           id: "main",
@@ -45,28 +48,30 @@ const mockIntent = {
                   id: "dataOverview",
                   name: "数据概览区",
                   layout: "horizontal",
-                  style: "横向等宽等距排布",
+                  layoutDescription: "equal-width",
                   children: [
                     {
                       id: "termTypeCard",
-                      name: "终端类型{{独立区块}}",
-                      isRegion: true,
-                      style: "独立区块,固定高度300px",
-                      description: "标题:终端类型,标题下方环形图+图例,中心垂直排布大字号数字12及文本总数,数据:手机33.33%,家居设备33.33%,平板16.67%,其他16.67%"
+                      name: "终端类型",
+                      containerType: "Region",
+                      style: "rounded-bg,height-300px",
+                      layout: "vertical",
+                      description: "标题:终端类型,标题下方环形图+图例,中心数字12及总数"
                     },
                     {
                       id: "accessTypeCard",
-                      name: "接入类型{{独立区块}}",
-                      isRegion: true,
-                      style: "独立区块,固定高度300px",
-                      description: "标题:接入类型,结构与终端类型卡片一致,中心数字12及总数,数据:有线66.66%,无线33.34%"
+                      name: "接入类型",
+                      containerType: "Card",
+                      style: "rounded-bg,shadow",
+                      layout: "vertical",
+                      description: "标题:接入类型,结构与终端类型卡片一致,数据:有线66.66%,无线33.34%"
                     }
                   ]
                 },
                 {
                   id: "termUserMgmt",
-                  name: "终端用户管理{{独立区块}}",
-                  style: "独立区块",
+                  name: "终端用户管理",
+                  style: "rounded-bordered",
                   layout: "vertical",
                   children: [
                     {
@@ -78,12 +83,13 @@ const mockIntent = {
                       id: "termUserToolbar",
                       name: "工具栏",
                       layout: "horizontal",
-                      description: "左右两端对齐,左侧:搜索输入框+高级搜索按钮,右侧:立即扫描按钮+刷新图标"
+                      layoutDescription: "justify-between",
+                      description: "左侧:搜索输入框+高级搜索按钮,右侧:立即扫描按钮+刷新图标"
                     },
                     {
                       id: "termUserTable",
                       name: "终端用户表格",
-                      description: "核心数据表格,18列:全选复选框/终端名称/IP地址/MAC地址/厂商/在线时长/接入时间/上行速率/下行速率/流量消耗/操作"
+                      description: "核心数据表格,18列:全选复选框/终端名称/IP地址/MAC地址等"
                     }
                   ]
                 }
@@ -92,19 +98,21 @@ const mockIntent = {
             {
               id: "rightPanel",
               name: "右侧面板",
-              style: "固定宽度500px",
+              style: "width-450px",
               layout: "vertical",
-              children: []
+              containerType: "Region",
+              children: [
+                {
+                  id: "rightOverview",
+                  name: "概览面板",
+                  layout: "vertical",
+                  description: "设备在线数统计，堆叠条形图"
+                }
+              ]
             }
           ]
         }
       ]
-    },
-    {
-      id: "footer",
-      name: "底部操作栏",
-      layout: "horizontal",
-      description: "底部显示版权信息和技术支持联系方式。"
     }
   ]
 }

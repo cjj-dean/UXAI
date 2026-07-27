@@ -38,7 +38,7 @@ function parseStyle(style: string): string[] {
     }
     const hMatch = part.match(HEIGHT_ENUM_RE)
     if (hMatch) {
-      result.push(`h-[${hMatch[1]}px]`)
+      result.push(`h-[${hMatch[1]}px]`, "shrink-0")
       continue
     }
   }

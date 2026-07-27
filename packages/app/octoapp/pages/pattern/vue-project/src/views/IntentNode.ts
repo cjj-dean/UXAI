@@ -1,5 +1,8 @@
 import { defineComponent, ref, computed, h, type PropType, type VNode } from "vue"
-import { ElTag } from "element-plus"
+import { ElTag, ElSelect, ElOption } from "element-plus"
+import { ChevronRight, X } from "lucide-vue-next"
+
+const LAYOUT_DESC_OPTIONS = ["default", "justify-between", "three-column", "equal-width", "left-fixed", "right-fixed"]
 
 interface TreeNode {
   id: string
@@ -25,7 +28,7 @@ const IntentNode = defineComponent({
     depth: { type: Number, default: 0 },
     maxExpandDepth: { type: Number, default: 5 },
   },
-  emits: ["startEdit", "finishEdit", "update:editValue", "cycleContainerType"],
+  emits: ["startEdit", "finishEdit", "update:editValue", "cycleContainerType", "deleteNode"],
   setup(props, { emit }) {
     const collapsed = ref(props.depth >= props.maxExpandDepth)
     const hasChildren = computed(() => (props.node.children?.length ?? 0) > 0 || !!props.node.itemTemplate)
@@ -34,11 +37,16 @@ const IntentNode = defineComponent({
     const isEditingStyle = computed(() => props.editingId === props.node.id && props.editingField === "style")
 
     const localInput = ref("")
+    const hovered = ref(false)
     let lastEditId = ""
+    let editingNodeId = ""
+    let editingNodeField = ""
 
     function handleStartEdit(id: string, field: string, value: string) {
       localInput.value = value ?? ""
       lastEditId = id + ":" + field
+      editingNodeId = id
+      editingNodeField = field
       emit("startEdit", id, field, value)
     }
 
@@ -49,8 +57,7 @@ const IntentNode = defineComponent({
     }
 
     function handleFinishEdit() {
-      emit("update:editValue", localInput.value)
-      emit("finishEdit")
+      emit("finishEdit", editingNodeId, editingNodeField, localInput.value)
     }
 
     return () => {
@@ -64,11 +71,12 @@ const IntentNode = defineComponent({
       const children: VNode[] = []
 
       const expandIcon = hasChildren.value
-        ? h("span", {
-            class: "cursor-pointer select-none text-gray-400 hover:text-gray-600 transition-colors",
-            style: { width: "16px", height: "16px", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "10px", flexShrink: 0 },
+        ? h(ChevronRight, {
+            size: 16,
+            class: "cursor-pointer select-none text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0",
+            style: { transition: "transform 0.15s", transform: collapsed.value ? "none" : "rotate(90deg)" },
             onClick: () => { collapsed.value = !collapsed.value },
-          }, collapsed.value ? "▶" : "▼")
+          })
         : h("span", { style: { width: "16px", flexShrink: 0 } })
 
       const nameEl = !isEditingName.value
@@ -87,31 +95,27 @@ const IntentNode = defineComponent({
 
       const infoTags: VNode[] = []
 
-      infoTags.push(h("span", {
-        class: "text-xs font-mono px-1.5 py-0.5 rounded",
-        style: { backgroundColor: "var(--el-fill-color-light)", color: "var(--el-text-color-secondary)" },
-      }, props.node.id))
-
       infoTags.push(nameEl)
 
       if (props.node.layout) {
         infoTags.push(h(ElTag, { size: "small", type: "info", effect: "plain" }, () => props.node.layout!))
       }
 
-      if (props.node.layoutDescription) {
-        infoTags.push(h(ElTag, {
-          size: "small", type: "warning", effect: "plain",
-          class: "cursor-pointer",
-          onDblclick: () => handleStartEdit(props.node.id, "layoutDescription", props.node.layoutDescription || ""),
-        }, () => props.node.layoutDescription!))
+      if (props.node.layoutDescription !== undefined) {
+        infoTags.push(h(ElSelect, {
+          modelValue: props.node.layoutDescription,
+          size: "small",
+          style: { width: "140px" },
+          "onUpdate:modelValue": (v: string) => emit("finishEdit", props.node.id, "layoutDescription", v),
+        }, () => LAYOUT_DESC_OPTIONS.map(o => h(ElOption, { label: o, value: o }))))
       }
 
       if (props.node.style && !isEditingStyle.value) {
-        infoTags.push(h("span", {
-          class: "text-xs cursor-pointer hover:opacity-80 transition-opacity",
-          style: { color: "var(--el-color-warning)" },
+        infoTags.push(h(ElTag, {
+          size: "small", type: "primary", effect: "plain",
+          class: "cursor-pointer",
           onDblclick: () => handleStartEdit(props.node.id, "style", props.node.style || ""),
-        }, props.node.style))
+        }, () => props.node.style!))
       } else if (isEditingStyle.value) {
         infoTags.push(h("input", {
           value: localInput.value,
@@ -156,8 +160,17 @@ const IntentNode = defineComponent({
         onClick: () => emit("cycleContainerType", props.node.id),
       }, ctInfo ? `${ctInfo.label} ✓` : "容器类型")
 
+      const deleteBtn = h(X, {
+        size: 16,
+        class: "cursor-pointer text-gray-400 hover:text-red-500 flex-shrink-0",
+        style: { marginLeft: "4px", opacity: hovered.value ? 1 : 0, transition: "opacity 0.15s" },
+        onClick: (e: Event) => { e.stopPropagation(); emit("deleteNode", props.node.id) },
+      })
+
       const row = h("div", {
         class: "flex items-start py-2 pr-3 hover:bg-[var(--el-fill-color)] transition-colors border-b border-[var(--el-border-color-lighter)] last:border-b-0",
+        onMouseenter: () => { hovered.value = true },
+        onMouseleave: () => { hovered.value = false },
       }, [
         h("div", { style: { width: indent + 8 + "px", flexShrink: 0 } }),
         expandIcon,
@@ -166,6 +179,7 @@ const IntentNode = defineComponent({
           descEl,
         ]),
         containerBtn,
+        deleteBtn,
       ])
 
       children.push(row)
@@ -181,9 +195,10 @@ const IntentNode = defineComponent({
               depth: props.depth + 1,
               maxExpandDepth: props.maxExpandDepth,
               onStartEdit: (...args: [string, string, string]) => emit("startEdit", args[0], args[1], args[2]),
-              onFinishEdit: () => emit("finishEdit"),
+              onFinishEdit: (id: string, field: string, value: string) => emit("finishEdit", id, field, value),
               onUpdateEditValue: (v: string) => emit("update:editValue", v),
               onCycleContainerType: (id: string) => emit("cycleContainerType", id),
+              onDeleteNode: (id: string) => emit("deleteNode", id),
             })
           )
         }
@@ -208,6 +223,7 @@ const IntentNode = defineComponent({
             onFinishEdit: () => emit("finishEdit"),
             onUpdateEditValue: (v: string) => emit("update:editValue", v),
             onCycleContainerType: (id: string) => emit("cycleContainerType", id),
+            onDeleteNode: (id: string) => emit("deleteNode", id),
           })
         )
       }

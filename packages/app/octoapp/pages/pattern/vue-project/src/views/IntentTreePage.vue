@@ -55,11 +55,10 @@ function findNode(node: TreeNode, id: string): TreeNode | null {
   return null
 }
 
-function finishEdit() {
-  if (!editingId.value) return
-  const node = findNode(localData.value, editingId.value)
+function finishEdit(id: string, field: string, value: string) {
+  const node = findNode(localData.value, id)
   if (node) {
-    ;(node as any)[editingField.value] = editValue.value
+    ;(node as any)[field] = value
   }
   editingId.value = null
   editingField.value = ""
@@ -72,6 +71,32 @@ function toggleIsRegion(id: string) {
     const current = node.containerType ?? ""
     node.containerType = current === "" ? "Region" : current === "Region" ? "Card" : ""
   }
+}
+
+function deleteNodeFromTree(parent: TreeNode, id: string): boolean {
+  if (parent.children) {
+    const idx = parent.children.findIndex(c => c.id === id)
+    if (idx >= 0) {
+      parent.children.splice(idx, 1)
+      return true
+    }
+    for (const c of parent.children) {
+      if (deleteNodeFromTree(c, id)) return true
+    }
+  }
+  if (parent.itemTemplate) {
+    if (parent.itemTemplate.id === id) {
+      parent.itemTemplate = undefined
+      return true
+    }
+    if (deleteNodeFromTree(parent.itemTemplate, id)) return true
+  }
+  return false
+}
+
+function handleDeleteNode(id: string) {
+  if (localData.value.id === id) return
+  deleteNodeFromTree(localData.value, id)
 }
 </script>
 
@@ -92,6 +117,7 @@ function toggleIsRegion(id: string) {
         @finish-edit="finishEdit"
         @update:edit-value="(v: string) => editValue = v"
         @cycle-container-type="toggleIsRegion"
+        @delete-node="handleDeleteNode"
       />
     </div>
     <div class="flex gap-3 mt-5">
