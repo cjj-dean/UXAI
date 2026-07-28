@@ -1,5 +1,5 @@
 import { extractJson } from '../../utils/json_parser'
-import { runChildSession } from '../run_child_session'
+import { directLLMCall } from '../../utils/direct_llm_call'
 import { logAgentParsed } from "../../utils/persist"
 
 const AGENT_NAME = "intent_field_check"
@@ -58,7 +58,10 @@ function applyFixes(intent: any, fixes: any[]): any {
   if (!Array.isArray(fixes) || fixes.length === 0) return intent
   const fixMap = new Map<string, any>()
   for (const f of fixes) {
-    if (f && f.id) fixMap.set(f.id, f)
+    if (f && f.id) {
+      const existing = fixMap.get(f.id)
+      fixMap.set(f.id, existing ? { ...existing, ...f } : f)
+    }
   }
   const clone = JSON.parse(JSON.stringify(intent))
   function walk(node: any) {
@@ -67,7 +70,7 @@ function applyFixes(intent: any, fixes: any[]): any {
     if (fix) {
       for (const key of ["style", "layout", "layoutDescription", "containerType"]) {
         if (fix[key] !== undefined) {
-          if (fix[key] === null) {
+          if (fix[key] === null || fix[key] === "") {
             delete node[key]
           } else {
             node[key] = fix[key]
@@ -87,7 +90,7 @@ function applyFixes(intent: any, fixes: any[]): any {
 }
 
 export default async function intent_field_check(input: IntentFieldCheckInput) {
-  const { sdk, sync, modelKey, rootSession, userInput, standardizedIntent, onSessionCreated } = input
+  const { sdk, modelKey, rootSession, userInput, standardizedIntent, onDirectCallTiming, onReasoningDelta } = input
 
   const programIssues = validateNodes(standardizedIntent)
 
@@ -97,29 +100,31 @@ ${userInput}
 [intent_expand生成的标准化JSON:] ==================================
 ${JSON.stringify(standardizedIntent, null, 2)}
 
-请校验上述JSON中每个节点的 style、layout、layoutDescription、containerType 字段是否符合规则，输出需要修正的节点。`
+请校验上述JSON中每个节点的 style 和 containerType 字段是否符合规则，输出需要修正的节点。`
 
   console.log("----- 字段校验Agent开始执行 -----")
   const startTime = Date.now()
+  onDirectCallTiming?.({ agent: AGENT_NAME, startTime })
 
-  const result = await runChildSession({
-    sync,
+  const result = await directLLMCall({
     modelKey,
-    onSessionCreated,
-    agent: AGENT_NAME,
-    client: sdk.client,
-    prompt: humanMessage,
-    directory: sdk.directory,
-    parentSessionID: rootSession
+    agentName: AGENT_NAME,
+    humanMessage,
+    noThinking: false,
+    workflowId: rootSession,
+    workDir: sdk.directory,
+    onReasoningDelta,
   })
 
-  console.log("----- 字段校验Agent运行结束，耗时：", (Date.now() - startTime) / 1000, 's -----')
+  const latencyMs = Date.now() - startTime
+  onDirectCallTiming?.({ agent: AGENT_NAME, startTime, endTime: Date.now() })
+  console.log("----- 字段校验Agent运行结束，耗时：", latencyMs / 1000, 's -----')
 
   const llmFixes = extractJson(result.text)
   const allFixes = [...programIssues.map((i) => ({ id: i.id, ...i.fields })), ...(Array.isArray(llmFixes) ? llmFixes : [])]
 
   const fixedIntent = applyFixes(standardizedIntent, allFixes)
 
-  logAgentParsed(result.childSessionId, { llmFixes, programIssues, fixedIntent, current_step: "intent_field_check" })
+  logAgentParsed(`direct-${Date.now().toString(36)}`, { llmFixes, programIssues, fixedIntent, current_step: "intent_field_check" })
   return { standardized_intent: fixedIntent, llmFixes, programIssues, current_step: "intent_field_check" }
 }

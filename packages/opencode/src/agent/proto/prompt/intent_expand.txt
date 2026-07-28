@@ -106,6 +106,7 @@
 11. **{{}}标注保留（CRITICAL）**：用户意图中用 `{{...}}` 标注的内容是结构/语义约束标记，必须在标准化JSON中完整保留。
      - `{{独立区块}}` → 该节点设置 containerType:"Region"
      - `{{独立区块：...}}` → 创建父节点 containerType:"Region"，包裹内所有内容作为children
+     - `{{卡片}}` → 该节点设置 containerType:"Card"
      - `{{水平排列}}` → 该节点 layout:"horizontal"
      - `{{垂直排列}}` → 该节点 layout:"vertical"
      - `{{宽度Npx}}` → 该节点 style 中加入 "固定宽度Npx"

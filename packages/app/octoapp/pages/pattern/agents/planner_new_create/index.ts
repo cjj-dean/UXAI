@@ -235,6 +235,7 @@ main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.ch
 规则（详见 system prompt 中的 FIELD_CONSUMPTION_RULES）：
 - 有children的容器必须加 gap-[1rem]
 - 子元素间需要等分空间时，给子元素加 flex-1
+- **纵向（flex-col）父容器中，只有可滚动的内容区域才需要 flex-1，标题/标签栏/工具栏等固定高度的小元素禁止加 flex-1**
 - flex-1 的子元素必须加 min-w-0（横向）或 min-h-0（纵向）防止溢出
 - 固定宽度的侧边面板加 shrink-0
 - 参考兄弟节点关系：与固定宽度兄弟并列时，当前节点需要 flex-1 填充剩余空间

@@ -1,6 +1,7 @@
 import type { Fixer } from "../types"
 
 import { fixIntentCompliance } from "./layout"
+import { fixVerticalFlex1 } from "./layout"
 import { fixOrphanElements } from "./layout"
 import { fixGreedyWidth } from "./layout"
 import { fixElevationNesting } from "./layout"
@@ -48,6 +49,7 @@ import { fixInlineComponentStretch } from "./component"
 
 export const ALL_FIXERS: { name: string; fn: Fixer }[] = [
   { name: "intent_compliance", fn: fixIntentCompliance },
+  { name: "vertical_flex1", fn: fixVerticalFlex1 },
   { name: "dialog_class", fn: fixDialogClass },
   { name: "hidden_class", fn: fixHiddenClass },
   { name: "orphan_elements", fn: fixOrphanElements },
