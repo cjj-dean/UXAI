@@ -120,7 +120,7 @@ ${JSON.stringify(standardizedIntent, null, 2)}
   onDirectCallTiming?.({ agent: AGENT_NAME, startTime, endTime: Date.now() })
   console.log("----- 字段校验Agent运行结束，耗时：", latencyMs / 1000, 's -----')
 
-  const llmFixes = extractJson(result.text)
+  const llmFixes = extractJson(result.text) as any
   const allFixes = [...programIssues.map((i) => ({ id: i.id, ...i.fields })), ...(Array.isArray(llmFixes) ? llmFixes : [])]
 
   const fixedIntent = applyFixes(standardizedIntent, allFixes)

@@ -1,5 +1,5 @@
 // 从 AI 返回的字符串中提取 JSON
-export function extractJson(text: string): Record<string, unknown> | any[] | null {
+export function extractJson(text: string): Record<string, unknown> | null {
   if (!text || !text.trim()) return null
 
   text = text.replace(/[\u201C\u201D\u201E\u2018\u2019]/g, '"')
@@ -61,28 +61,28 @@ function extractTopLevelJsons(text: string): string[] {
   return results
 }
 
-function tryParse(raw: string): Record<string, unknown> | any[] | null {
+function tryParse(raw: string): Record<string, unknown> | null {
   try {
     let parsed = JSON.parse(raw.trim())
-    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> | any[] : null
+    return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   try {
     let repaired = repairUnescapedQuotes(raw)
     let parsed = JSON.parse(repaired.trim())
-    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> | any[] : null
+    return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   try {
     let balanced = repairBracketBalance(raw.trim())
     let parsed = JSON.parse(balanced)
-    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> | any[] : null
+    return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   try {
     let fixed = repairExtraBrackets(raw.trim())
     let parsed = JSON.parse(fixed)
-    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> | any[] : null
+    return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   return null
