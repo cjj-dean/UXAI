@@ -32,6 +32,7 @@ import {
   PROMPT_INTENT_EXPAND,
   PROMPT_INTENT_REGION_CHECK,
   PROMPT_INTENT_FIELD_CHECK,
+  PROMPT_INTENT_REGION_INFER,
   PROMPT_PLANNER_NEW_CREATE,
 } from "./proto"
 import { Permission } from "@/permission"
@@ -390,6 +391,18 @@ export const layer = Layer.effect(
             name: "intent_field_check",
             description: "Validates style, layout, layoutDescription, containerType fields in standardized intent against user input.",
             prompt: PROMPT_INTENT_FIELD_CHECK,
+            permission: Permission.fromConfig({
+              "*": "deny",
+            }),
+            options: {},
+            mode: "primary",
+            native: false,
+            temperature: 0.0,
+          },
+          intent_region_infer: {
+            name: "intent_region_infer",
+            description: "Infers which nodes should have containerType Region based on visual independence principles.",
+            prompt: PROMPT_INTENT_REGION_INFER,
             permission: Permission.fromConfig({
               "*": "deny",
             }),

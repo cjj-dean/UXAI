@@ -1,5 +1,6 @@
 import intent_expand from "../agents/intent_expand"
 import intent_field_check from "../agents/intent_field_check"
+import intent_region_infer from "../agents/intent_region_infer"
 import planner_new_create from "../agents/planner_new_create"
 import proto_module_create from "../agents/proto_module_create"
 import proto_component_lookup from "../agents/proto_component_lookup"
@@ -27,8 +28,16 @@ export async function create_json_new_step1(inputCtx: CreateJsonNewInput) {
   let standardizedIntent = expandResult.standardized_intent
   if (!standardizedIntent) throw new Error("----- intent_expand did not return standardizedIntent -----")
 
-  const fieldCheckResult = await intent_field_check({ ...ctx, standardizedIntent })
-  standardizedIntent = fieldCheckResult.standardized_intent
+  const hasStructuredAnnotation = normalizedInput.includes("{{独立区块")
+  if (hasStructuredAnnotation) {
+    console.log("----- 检测到{{独立区块}}标注，执行字段校验 -----")
+    const fieldCheckResult = await intent_field_check({ ...ctx, standardizedIntent })
+    standardizedIntent = fieldCheckResult.standardized_intent
+  } else {
+    console.log("----- 用户意图粗糙，执行Region推断 -----")
+    const regionInferResult = await intent_region_infer({ ...ctx, standardizedIntent })
+    standardizedIntent = regionInferResult.standardized_intent
+  }
 
   return { expandResult, standardizedIntent, ctx }
 }

@@ -21,6 +21,7 @@ import _PROMPT_PROTO_COMPONENT_LOOKUP from "./prompt/proto_component_lookup.txt"
 import _PROMPT_INTENT_EXPAND from "./prompt/intent_expand.txt"
 import _PROMPT_INTENT_REGION_CHECK from "./prompt/intent_region_check.txt"
 import _PROMPT_INTENT_FIELD_CHECK from "./prompt/intent_field_check.txt"
+import _PROMPT_INTENT_REGION_INFER from "./prompt/intent_region_infer.txt"
 
 const data = {
   COMPONENTS_CATALOG,
@@ -54,3 +55,4 @@ export const PROMPT_PROTO_COMPONENT_LOOKUP = formatPrompt(_PROMPT_PROTO_COMPONEN
 export const PROMPT_INTENT_EXPAND = formatPrompt(_PROMPT_INTENT_EXPAND)
 export const PROMPT_INTENT_REGION_CHECK = formatPrompt(_PROMPT_INTENT_REGION_CHECK)
 export const PROMPT_INTENT_FIELD_CHECK = formatPrompt(_PROMPT_INTENT_FIELD_CHECK)
+export const PROMPT_INTENT_REGION_INFER = formatPrompt(_PROMPT_INTENT_REGION_INFER)
