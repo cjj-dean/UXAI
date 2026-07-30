@@ -4,6 +4,7 @@ export const fixFlexMinHeight: Fixer = (json) => {
   const fixes: string[] = []
 
   for (const elem of json.elements) {
+    if (elem.id === "body") continue
     const toks = tokens(getClassName(elem))
     if (!toks.includes("min-h-0")) continue
 

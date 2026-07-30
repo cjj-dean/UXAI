@@ -17,6 +17,7 @@ export const fixVerticalFlex1: Fixer = (json) => {
     for (const cid of childIds) {
       const child = map[cid]
       if (!child) continue
+      if (child.id === "body") continue
       const childCls = getClassName(child)
       const childToks = tokens(childCls)
       if (!childToks.includes("flex-1")) continue
