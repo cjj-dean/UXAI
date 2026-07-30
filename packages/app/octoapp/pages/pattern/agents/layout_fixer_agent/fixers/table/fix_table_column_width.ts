@@ -39,7 +39,7 @@ const MIN_W_RE = /min-w-\[(\d+)px\]/
 /** 估算非文本单元格的内容宽度（含组件开销） */
 function estimateCellWidth(cell: A2UIElement, rows: any[], map: Record<string, A2UIElement>): number {
   let width = 0
-  const cls = (cell.props?.className as string) ?? ""
+  const cls = (typeof cell.props?.className === "string" ? cell.props.className : "") 
 
   // 1) 解析 min-w-[Npx]
   const mw = cls.match(MIN_W_RE)
