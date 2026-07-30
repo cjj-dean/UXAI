@@ -52,6 +52,33 @@ function validateRegionNesting(intent: any): { intent: any; fixes: string[] } {
   const clone = JSON.parse(JSON.stringify(intent))
   const fixes: string[] = []
 
+  function flattenAllCardChildren(node: any) {
+    if (!node || !node.id) return
+    if (!Array.isArray(node.children)) return
+
+    if (node.containerType === "Region") {
+      const childCts = node.children
+        .filter((c: any) => typeof c === "object")
+        .map((c: any) => c.containerType ?? null)
+      if (childCts.length >= 2 && childCts.every((ct: string | null) => ct === "Card")) {
+        delete node.containerType
+        for (const child of node.children) {
+          if (typeof child === "object" && child.containerType === "Card") {
+            child.containerType = "Region"
+          }
+        }
+        fixes.push(`[${node.id}] Region直接子元素全是Card(≥2)，去掉外层Region，内部Card改为Region`)
+      }
+    }
+
+    if (node.itemTemplate) flattenAllCardChildren(node.itemTemplate)
+    for (const child of node.children) {
+      if (typeof child === "object") flattenAllCardChildren(child)
+    }
+  }
+
+  flattenAllCardChildren(clone)
+
   function walk(node: any, parentContainerType: string | null) {
     if (!node || !node.id) return
     const ct = node.containerType ?? null
