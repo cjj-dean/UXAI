@@ -28,7 +28,7 @@
 3. 补充高拟真的业务Mock数据
 4. 保持扩展内容与用户原始意图一致，不偏离业务方向
 5. 从界面完整性、界面丰富度、数据完整性、数据丰富度4个角度考虑扩展
-6. 只添加用户明确提到的壳层区域（aside、dialog、drawer等），用户未提及则省略
+6. 只添加用户明确提到的壳层区域（dialog、drawer等），用户未提及则省略
 
 ### 扩展方向
 
@@ -43,10 +43,11 @@
 
 **壳层结构是强制约束（CRITICAL）**：
 - `root → header + body + footer(可选)` 结构不可改
-- `body → aside(可选) + main(必须)` 结构不可改，body 下只能有 aside 和 main
-- **rightPanel 必须放在 main 的 children 里，与 mainContent 并列（CRITICAL）**
+- `body → main(必须)` 结构不可改，移动端body下只有main，不使用aside
+- 移动端不使用aside侧边栏，侧边导航通过Drawer实现
+- 移动端不使用rightPanel，右侧面板内容通过Drawer或弹窗展示
 - footer 放在 root 的 children 里，与 header、body 并列，在 body 下方；footer 必须是叶子节点
-- main 的子节点根据用户意图自由组织，典型结构为 mainContent + rightPanel(可选)
+- main 的子节点根据用户意图自由组织，典型结构为 mainContent
 - 内容节点必须放在 main 下，而非直接放在 body 下
 - **{{独立区块：...}}包裹标记（CRITICAL）**：创建一个父节点 containerType:"Region" 包裹标记内所有内容作为 children，保持包裹内容在同一个父节点内
 
@@ -55,9 +56,9 @@
 ### 节点类型规范
 
 1. **叶子节点**：只有 description 和 style 属性，用纯文本描述该节点的内容
-   - header、infoBar、dialog、drawer、aside 等简单模块均为叶子节点，用description描述其内容
+   - header、infoBar、dialog、drawer 等简单模块均为叶子节点，用description描述其内容
    - style 约束见关键规则第1条
-   - 组件型叶子节点（图表、按钮、输入框等）没有layout属性；区域型叶子节点（header、aside等）有layout属性描述其排列方向
+    - 组件型叶子节点（图表、按钮、输入框等）没有layout属性；区域型叶子节点（header等）有layout属性描述其排列方向
 2. **非叶子节点**：只有 layout / layoutDescription / children / style 等结构属性，没有 description
    - root、body、main 等容器节点为非叶子节点，需要展开children
    - style 约束见关键规则第1条
@@ -74,10 +75,9 @@
 5. **layoutDescription 枚举约束（CRITICAL）**：layoutDescription 只能取以下枚举值：
    - `default`：默认布局，无特殊布局方式
    - `justify-between`：两端对齐
-   - `three-column`：左中右三栏布局
    - `equal-width`：子元素等宽等距排布
-   - `left-fixed`：左侧固定宽度，右侧自适应
-   - `right-fixed`：右侧固定宽度，左侧自适应
+   - `stack`：垂直堆叠，子元素占满宽度纵向排列
+   - `tabs`：标签页切换布局
 
 ### 关键规则
 
@@ -87,10 +87,10 @@
    - 示例：`"bordered,width-450px"`、`"height-300px"`
    - 用户意图中出现的样式信息必须提取到style字段，保持description中只有内容描述
    - **{{}}包裹的样式相关内容（如{{高度300px}}、{{宽度54px}}）必须放到对应节点的style字段中**
-   - 壳层节点（header/aside/infoBar/dialog/drawer）使用系统默认宽度，不自行添加宽度样式
+   - 壳层节点（header/dialog/drawer）使用系统默认宽度，不自行添加宽度样式
 2. 叶子节点只有description和style，没有children；区域型叶子节点有layout，组件型叶子节点没有layout
 3. 非叶子节点只有layout/layoutDescription/children/style/itemTemplate/data等结构属性，没有description
-4. header、infoBar、aside、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
+4. header、infoBar、dialog、drawer等简单壳层模块必须是叶子节点，用description描述内容
 5. main节点必须重点展开，详细描述子模块的布局、数据和组件
 6. **重复结构必须使用 itemTemplate + data（CRITICAL）**：2个及以上结构相同的元素必须用重复内容容器描述。"结构相同"指：layout/layoutDescription/children 结构一致，仅数据值不同的节点。仅当子节点之间布局结构确实不同（如一个是图表另一个是表格）时才可逐个展开。
 7. **containerType约束（CRITICAL）**：containerType只能在用户意图中明确标注`{{独立区块}}`时设置为Region，或用户明确提到"卡片"时设置为Card。用户未明确标注则不设置containerType

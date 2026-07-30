@@ -56,7 +56,7 @@ export const fixContainerFlex: Fixer = (json) => {
     if (!hasDisplay && !hasGap) {
       if (elem.component === "header") {
         const gapCls = pickGap(childComps)
-        const additions = ["flex", "flex-row", gapCls]
+        const additions = ["flex", "flex-row", "items-center", gapCls]
         setClassName(elem, `${cls} ${additions.join(" ")}`.trim())
         fixes.push(`[${elem.id}](${elem.component}) header 缺少横向布局: 补充 ${additions.join(" ")}`)
       } else {

@@ -17,7 +17,7 @@ type IntentFieldCheckInput = {
 }
 
 const VALID_LAYOUT = new Set(["horizontal", "vertical", "grid"])
-const VALID_LAYOUT_DESC = new Set(["default", "justify-between", "three-column", "equal-width", "left-fixed", "right-fixed"])
+const VALID_LAYOUT_DESC = new Set(["default", "justify-between", "equal-width", "stack", "tabs", "three-column", "left-fixed", "right-fixed"])
 const VALID_STYLE = /^(?:width-\d+px|height-\d+px|bordered)$/
 
 function collectNodes(node: any, out: { id: string; node: any }[]) {

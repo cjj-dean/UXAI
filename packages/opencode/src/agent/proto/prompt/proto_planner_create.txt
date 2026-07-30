@@ -8,32 +8,28 @@ These rules override ALL other instructions in this prompt. Violating them is a 
 Each section MUST map to a DIFFERENT `element_id` in the `slots` array. Two sections sharing the same `element_id` causes data loss — the second module overwrites the first. If multiple sections belong in the same visual zone, create separate sibling container elements inside that zone, each with its own unique id, and assign one per section.
 
 ## Planner Template (HIGHEST PRIORITY — 布局模板，最高优先级)
-Your output MUST strictly follow the shell layout template below. Only adjust the optional parts (aside, dialog, drawer, main children, slots) according to the blueprint. The template's element IDs, component types, className values, and nesting structure are MANDATORY — do NOT deviate from them unless the blueprint explicitly requires adding/removing optional parts.
+Your output MUST strictly follow the shell layout template below. Only adjust the optional parts (dialog, drawer, main children, slots) according to the blueprint. The template's element IDs, component types, className values, and nesting structure are MANDATORY — do NOT deviate from them unless the blueprint explicitly requires adding/removing optional parts.
 
 {PLANNER_TEMPLATE}
 
-## Page Shell Structure (CRITICAL — 页面的壳层结构必须遵循以下规则)
+## Page Shell Structure (CRITICAL — 移动端页面的壳层结构必须遵循以下规则)
 - 页面**必须**有一个 <header> 和一个 <main>。
-- 如果同时有 <aside>（侧边栏），<aside> 和 <main> **必须**被包裹在一个 <div> 容器中。这个容器位于 <header> 下方。
-- 无 aside 时：root → header, main
-- 有 aside 时：root → header, bodyWrapper（div, flex-row）
-- bodyWrapper 的 children 为：aside, main
+- 移动端布局：root → header, body(vertical), main；不使用aside侧边栏
+- 侧边导航通过Drawer组件实现，不在壳层中创建aside节点
 
 
-## Shell Layout — Header & Sidebar Persistence (CRITICAL)
-When the page has BOTH a header (top navigation bar) AND a sidebar (side menu/navigation):
-1. **Header pinned:** The header MUST stay fixed at the top — it MUST NOT scroll away with page content.
-2. **Sidebar full-height通栏:** The sidebar MUST start directly below the header and extend to the bottom of the viewport, forming a full-height column.
-3. **Only main scrolls:** ONLY the main content area scrolls — it is the ONLY element allowed to have `overflow-y-auto`. Header, sidebar, and all other containers MUST NOT have vertical scrollbars.
+## Shell Layout — Mobile Layout Rules (CRITICAL)
+移动端页面布局遵循以下规则：
+1. **Header sticky:** The header MUST stay fixed at the top — it MUST NOT scroll away with page content.
+2. **Only main scrolls:** ONLY the main content area scrolls — it is the ONLY element allowed to have `overflow-y-auto`.
 
-Implementation — use `h-screen` + `overflow-hidden` on root (NOT `min-h-screen`):
-- **Root:** `flex flex-col h-screen overflow-hidden`
-- **Header** (component `"header"`): `shrink-0` (pinned, never scrolls)
-- **Body** (wraps sidebar + main): `flex flex-row flex-1 min-h-0 overflow-hidden`
-  - **Sidebar** (component `"aside"`): `shrink-0 overflow-hidden` (content clipped, NO independent scrollbar — only mainContent scrolls)
-  - **Main content area** (component `"main"`, id MUST be `mainContent`): `flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0` (the ONLY zone that scrolls page content, fixed 2rem inner padding)
+Implementation — use `min-h-screen` on root:
+- **Root:** `flex flex-col min-h-screen`
+- **Header** (component `"header"`): `shrink-0 sticky top-0 z-50`
+- **Body** (wraps main): `flex flex-col flex-1 min-h-0 overflow-hidden`
+  - **Main content area** (component `"main"`, id MUST be `mainContent`): `flex-1 overflow-y-auto p-[1rem] flex flex-col gap-[1rem] min-w-0` (the ONLY zone that scrolls page content)
 
-When the page has ONLY a header and NO sidebar: use `min-h-screen` on root and `sticky top-0 z-50` on the header (component `"header"`). The main content area (component `"main"`, id MUST be `mainContent`) MUST use `p-[2rem]` inner padding.
+When the page has a Drawer (侧边导航): use Drawer component, NOT aside. Drawer is triggered by header menu icon.
 
 ## containerType 消费规则（HIGHEST PRIORITY）
 {ANNOTATIONS_RULES}
@@ -53,10 +49,9 @@ Planner 必须按以下规则消费 containerType：
 
 - When you DO use Section: its className is for LAYOUT ONLY (`flex flex-col`, `gap-[1rem]`, `flex-1`, `overflow-y-auto`). Do NOT add bg-*, shadow-*, rounded-*, or p-* — they are built-in.
 - Use semantic HTML tags for SHELL STRUCTURAL elements ONLY (not for content/card containers):
-  - Header zone → component `"header"`
-  - Sidebar zone → component `"aside"`
-  - Main content zone → component `"main"`
-  - These semantic tags replace `"div"` ONLY for the top-level shell structural containers. All other containers (body wrappers, content slots, inner cards) remain `"div"`.
+   - Header zone → component `"header"`
+   - Main content zone → component `"main"`
+   - These semantic tags replace `"div"` ONLY for the top-level shell structural containers. All other containers (body wrappers, content slots, inner cards) remain `"div"`.
 - NEVER nest a Section inside another Section.
 - NEVER nest a Section inside a `<div>` that has `bg-surface-container-highest` in className (double elevation).
 
@@ -149,12 +144,12 @@ Spacing between content blocks is controlled by the PARENT container's className
 - The parent container holding multiple children MUST set `gap-[1rem]` in className (maps to spacing.section).
 - Children MUST NOT use `margin-*`, `mt-*`, `mb-*`, `ml-*`, `mr-*` for spacing. ALL inter-block spacing comes from the parent's `gap-[1rem]`.
 - Do NOT use any gap value other than `gap-[1rem]`. No `gap-2`, `gap-4`, `gap-8`, etc.
-- Page outer padding: use `p-[2rem]` (maps to spacing.page) on the outermost content container.
+- Page outer padding: use `p-[1rem]` (移动端) on the outermost content container.
 
 ### 5.3 Background Hierarchy on Shell
 - **Root (Level 0):** `bg-surface-container-lowest` — the page canvas. No shadow.
-- **Shell structural elements (header, sidebar):** MUST use semantic tags (`"header"`, `"aside"`) with `bg-surface-container-highest shadow-sm` in className — these are persistent UI chrome that need elevated surfaces.
-- **Content slot parents:** `"div"` by default. If a section's constraint says `container:Section`, the slot parent becomes `Section` component (with built-in bg/shadow/rounded/padding). Otherwise, slot parents are plain `"div"` with NO bg-* or shadow-*. (Note: `"header"`/`"aside"`/`"main"` semantic tags are ONLY for shell structural containers, NOT for content slots.)
+- **Shell structural elements (header):** MUST use semantic tags (`"header"`) with `bg-surface-container-highest shadow-sm` in className — these are persistent UI chrome that need elevated surfaces.
+- **Content slot parents:** `"div"` by default. If a section's constraint says `container:Section`, the slot parent becomes `Section` component (with built-in bg/shadow/rounded/padding). Otherwise, slot parents are plain `"div"` with NO bg-* or shadow-*. (Note: `"header"`/`"main"` semantic tags are ONLY for shell structural containers, NOT for content slots.)
 - Do NOT combine shadow with border on any element (per Design System Section 2.4).
 
 ### 5.4 Container Alignment

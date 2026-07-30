@@ -19,24 +19,21 @@ const SHELL_COMPONENT_MAP: Record<string, string> = {
   header: "header",
   infoBar: "div",
   body: "div",
-  aside: "aside",
   main: "main",
   footer: "div",
   dialog: "Dialog",
   drawer: "Drawer",
 }
 
-const SHELL_SLOT_IDS = new Set(["header", "infoBar", "aside", "footer", "dialog", "drawer"])
+const SHELL_SLOT_IDS = new Set(["header", "infoBar", "footer", "dialog", "drawer"])
 
 const FIXED_CLASSNAMES: Record<string, string> = {
-  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
-  infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
-  footer: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-end items-center px-[1.5rem] py-[0.75rem]",
-  body: "flex flex-row flex-1 min-h-0 overflow-hidden",
-  root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
+  header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[56px] px-[1rem]",
+  infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1rem] py-[0.5rem]",
+  footer: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-end items-center px-[1rem] py-[0.75rem]",
+  body: "flex flex-col flex-1 min-h-0 overflow-hidden",
+  root: "flex flex-col min-h-screen bg-surface-container-lowest",
 }
-
-const ASIDE_BASE_CLASSNAME = "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col"
 
 function deriveIdPrefix(id: string): string {
   return id
@@ -82,14 +79,12 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
   const component = resolveComponent(node)
 
   let className = FIXED_CLASSNAMES[id] ?? ""
-  if (id === "aside") {
-    className = ASIDE_BASE_CLASSNAME
-  } else if (id === "main") {
+  if (id === "main") {
     const layoutDir = node.layout === "horizontal" ? "flex flex-row" : "flex flex-col"
-    className = `flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${layoutDir}`
+    className = `flex-1 overflow-y-auto p-[1rem] gap-[1rem] min-w-0 ${layoutDir}`
   }
 
-  const needsClassName = id === "aside" || (!(id in FIXED_CLASSNAMES) && id !== "main")
+  const needsClassName = !(id in FIXED_CLASSNAMES) && id !== "main"
 
   const element: any = {
     id,
@@ -104,9 +99,9 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
   }
 
   if (component === "Dialog") {
-    element.props = { ...element.props, title: "", width: "50%" }
+    element.props = { ...element.props, title: "", width: "90%" }
   } else if (component === "Drawer") {
-    element.props = { ...element.props, title: "", direction: "rtl", size: "30%" }
+    element.props = { ...element.props, title: "", direction: "btt", size: "80%" }
   }
 
   if (SHELL_SLOT_IDS.has(id)) {
@@ -161,11 +156,7 @@ function applyClassNames(elements: any[], classMap: Record<string, string>) {
     const className = classMap[el.id]
     if (!className) continue
     if (el.id in FIXED_CLASSNAMES || el.id === "main") continue
-    if (el.id === "aside") {
-      el.props.className = `${ASIDE_BASE_CLASSNAME} ${className}`.trim()
-    } else {
-      el.props.className = className
-    }
+    el.props.className = className
   }
 }
 
@@ -217,7 +208,7 @@ export default async function planner_new_create(input: PlannerNewCreateInput) {
     if (el.style) parts.push(`style: ${el.style}`)
     if (el.containerType) parts.push(`containerType: ${el.containerType}`)
     if (el.children.length > 0) parts.push(`children: [${el.children.join(", ")}]`)
-    if (el.id === "aside") parts.push(`基础样式已固定: ${ASIDE_BASE_CLASSNAME}，只需补充宽度`)
+    if (el.id === "aside") parts.push(`移动端不使用aside，如需侧边导航请使用Drawer`)
     return parts.join(", ")
   })
 
@@ -229,8 +220,7 @@ ${siblingInfo.length > 0 ? siblingInfo.join("\n") : "（无）"}
 
 [已固定的 className:] ==================================
 ${Object.entries(FIXED_CLASSNAMES).filter(([id]) => elements.some(el => el.id === id)).map(([id, cn]) => `${id}: ${cn}`).join("\n")}
-aside: ${ASIDE_BASE_CLASSNAME}（宽度待补充）
-main: flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0 ${standardizedIntent.children?.find((c: any) => c.id === "body")?.children?.find((c: any) => c.id === "main")?.layout === "horizontal" ? "flex flex-row" : "flex flex-col"}
+main: flex-1 overflow-y-auto p-[1rem] gap-[1rem] min-w-0 ${standardizedIntent.children?.find((c: any) => c.id === "body")?.children?.find((c: any) => c.id === "main")?.layout === "horizontal" ? "flex flex-row" : "flex flex-col"}
 
 规则（详见 system prompt 中的 FIELD_CONSUMPTION_RULES）：
 - 有children的容器必须加 gap-[1rem]

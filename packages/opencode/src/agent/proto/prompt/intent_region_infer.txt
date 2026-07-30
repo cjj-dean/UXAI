@@ -15,7 +15,7 @@ containerType:"Region" 表示该节点是一个独立视觉区块，渲染为 Se
 
 ### 不能设为 Region 的情况
 
-1. **壳层节点**：root、header、infoBar、body、aside、main、footer、dialog、drawer
+1. **壳层节点**：root、header、infoBar、body、main、footer、dialog、drawer
 2. **纯工具栏/标题行**：非独立视觉区块
 3. **Region 不可嵌套**：如果父节点已是 Region，子节点不能再设 Region
 4. **叶子节点**：只有 description 的节点不设 Region（它自身没有 children 需要包裹）

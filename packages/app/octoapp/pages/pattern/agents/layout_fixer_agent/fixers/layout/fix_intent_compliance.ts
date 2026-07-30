@@ -8,8 +8,9 @@ const LAYOUT_DIR_MAP: Record<string, string[]> = {
 
 const LAYOUT_DESC_MAP: Record<string, { parent?: string[]; child?: string[] }> = {
   "justify-between": { parent: ["justify-between"] },
-  "three-column": { parent: ["flex", "flex-row"] },
   "equal-width": { parent: ["flex", "flex-row"], child: ["flex-1", "min-w-0"] },
+  "stack": { parent: ["flex", "flex-col"], child: ["w-full"] },
+  "tabs": { parent: ["flex", "flex-col"] },
 }
 
 const FLEX_SIZE_RE = /^(?:flex-1|shrink-0|w-\[|min-w-|min-h-)/
@@ -154,20 +155,21 @@ export const fixIntentCompliance: Fixer = (json) => {
       }
 
       if (intentNode.layoutDescription === "left-fixed" || intentNode.layoutDescription === "right-fixed") {
-        if (!tokens(newCls).includes("flex-row")) {
-          newCls = addMissing(newCls, tokens(newCls), ["flex", "flex-row"])
-          fixParts.push(`layoutDescription:${intentNode.layoutDescription} → 补 flex flex-row`)
+        if (!tokens(newCls).includes("flex-col")) {
+          newCls = addMissing(newCls, tokens(newCls), ["flex", "flex-col"])
+          fixParts.push(`layoutDescription:${intentNode.layoutDescription} → 移动端降级为flex-col垂直堆叠`)
         }
         const childIds = Array.isArray(elem.children)
           ? elem.children.filter((c: any) => typeof c === "string")
           : []
-        if (childIds.length >= 2) {
-          if (intentNode.layoutDescription === "left-fixed") {
-            fixChildFlex(childIds[0], map, ["shrink-0"], fixParts, `子元素(左)`)
-            fixChildFlex(childIds[1], map, ["flex-1", "min-w-0"], fixParts, `子元素(右)`)
-          } else {
-            fixChildFlex(childIds[0], map, ["flex-1", "min-w-0"], fixParts, `子元素(左)`)
-            fixChildFlex(childIds[1], map, ["shrink-0"], fixParts, `子元素(右)`)
+        for (const cid of childIds) {
+          const child = map[cid]
+          if (!child) continue
+          const childCls = getClassName(child)
+          const childToks = tokens(childCls)
+          if (!childToks.includes("w-full")) {
+            setClassName(child, `${childCls} w-full`.trim())
+            fixParts.push(`子元素 ${cid} → 补 w-full（移动端垂直堆叠）`)
           }
         }
       }

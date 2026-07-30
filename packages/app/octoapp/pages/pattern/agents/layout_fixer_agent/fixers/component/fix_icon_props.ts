@@ -56,10 +56,10 @@ const fix_icon_props: Fixer = (json): [A2UIJson, string[]] => {
     const currentCls = typeof p.className === "string" ? p.className : ""
     if (!SIZE_RE.test(currentCls)) {
       const ctx = detectContext(el, map, parentOf)
-      const sizeCls = ctx === "header" ? "w-5 h-5"
-        : ctx === "sidebar" ? "w-5 h-5"
-        : ctx === "table" ? "w-4 h-4"
-        : "w-4 h-4"
+      const sizeCls = ctx === "header" ? "w-6 h-6"
+        : ctx === "sidebar" ? "w-6 h-6"
+        : ctx === "table" ? "w-5 h-5"
+        : "w-5 h-5"
       p.className = (currentCls + " " + sizeCls).trim()
       modified = true
     }

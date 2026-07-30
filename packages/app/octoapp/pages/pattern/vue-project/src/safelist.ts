@@ -8,7 +8,7 @@ export const safelist = [
   "mx-page", "my-page", "m-page", "p-page", "px-page", "py-page", "gap-page",
   "mx-section", "my-section", "m-section", "p-section", "px-section", "py-section", "gap-section",
   "p-[0_2rem]", "p-[1.5rem]", "p-[2rem]", "p-[1rem]", "p-[0.5rem]",
-  "h-[220px]", "h-[300px]", "h-[3rem]", "h-[400px]", "h-[500px]", "h-[180px]", "h-[250px]",
+  "h-[220px]", "h-[300px]", "h-[56px]", "h-[400px]", "h-[500px]", "h-[180px]", "h-[250px]",
   "w-[54px]", "w-[140px]", "w-[250px]", "w-[64px]", "w-[128px]", "w-[200px]", "w-[300px]", "w-[420px]",
   "z-[1]", "z-[10]", "z-[100]", "z-[9999]",
   "rounded-[8px]", "rounded-[6px]", "rounded-[4px]", "rounded-[12px]",

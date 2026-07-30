@@ -36,16 +36,15 @@ function buildSkeleton(node: any, elements: any[], slots: any[], parentChildren:
       : "div"
 
   const FIXED_CLASSNAMES: Record<string, string> = {
-    header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[48px] px-[1.5rem]",
-    infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1.5rem] py-[0.5rem]",
-    aside: "shrink-0 overflow-hidden bg-surface-container-highest shadow-sm flex flex-col justify-between h-full",
-    body: "flex flex-row flex-1 min-h-0 overflow-hidden",
-    root: "flex flex-col h-screen overflow-hidden bg-surface-container-lowest",
+    header: "shrink-0 bg-surface-container-highest shadow-sm flex flex-row justify-between items-center h-[56px] px-[1rem]",
+    infoBar: "shrink-0 bg-surface-container-highest flex flex-row justify-between items-center px-[1rem] py-[0.5rem]",
+    body: "flex flex-col flex-1 min-h-0 overflow-hidden",
+    root: "flex flex-col min-h-screen bg-surface-container-lowest",
   }
 
   let className = FIXED_CLASSNAMES[id] ?? ""
   if (id === "main") {
-    className = "flex-1 overflow-y-auto p-[2rem] gap-[1rem] min-w-0"
+    className = "flex-1 overflow-y-auto p-[1rem] gap-[1rem] min-w-0"
   }
 
   const element: any = {

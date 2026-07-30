@@ -25,10 +25,9 @@ style 优先使用枚举值，多个值用逗号分隔；无法用枚举表达�
 |---|---|---|
 | `default` | 默认布局 | 无额外处理 |
 | `justify-between` | 两端对齐 | flex flex-row justify-between |
-| `three-column` | 左中右三栏布局 | flex flex-row |
 | `equal-width` | 子元素等宽等距排布 | flex flex-row，每个子元素加 flex-1 min-w-0 |
-| `left-fixed` | 左侧固定宽度，右侧自适应 | flex flex-row，左侧 shrink-0，右侧 flex-1 |
-| `right-fixed` | 右侧固定宽度，左侧自适应 | flex flex-row，左侧 flex-1，右侧 shrink-0 |
+| `stack` | 垂直堆叠，子元素占满宽度纵向排列 | flex flex-col，每个子元素加 w-full |
+| `tabs` | 标签页切换布局 | flex flex-col |
 
 ## 容器类型（containerType 字段，不在 style 中）
 

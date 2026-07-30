@@ -2,7 +2,7 @@ import { defineComponent, ref, computed, h, type PropType, type VNode } from "vu
 import { ElTag, ElSelect, ElOption } from "element-plus"
 import { ChevronRight, X } from "lucide-vue-next"
 
-const LAYOUT_DESC_OPTIONS = ["default", "justify-between", "three-column", "equal-width", "left-fixed", "right-fixed"]
+const LAYOUT_DESC_OPTIONS = ["default", "justify-between", "equal-width", "stack", "tabs"]
 
 interface TreeNode {
   id: string

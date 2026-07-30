@@ -14,6 +14,7 @@ type CreateJsonNewInput = {
   modelKey: any
   rootSession: string
   userInput: string
+  viewport?: "mobile" | "desktop"
   onDirectCallTiming?: (timing: { agent: string; startTime: number; endTime?: number }) => void
   onReasoningDelta?: (agent: string, delta: string) => void
 }

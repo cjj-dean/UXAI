@@ -24,31 +24,15 @@ export const fixThreeColCenter: Fixer = (json) => {
       .map((c: string) => map[c])
     if (childElems.length !== 3) continue
 
-    const [left, middle, right] = childElems
-    const middleToks = tokens(getClassName(middle))
-
-    if (!hasFixedWidth(middle) || hasFlex1(middleToks)) continue
-
-    const leftCls = getClassName(left)
-    const leftToks = tokens(leftCls)
-    const rightCls = getClassName(right)
-    const rightToks = tokens(rightCls)
-
-    if (hasFlex1(leftToks) && hasFlex1(rightToks)) continue
-
-    const changes: string[] = []
-    if (!hasFlex1(leftToks)) {
-      setClassName(left, `${leftCls} flex-1`.trim())
-      changes.push(`左栏[${left.id}] 补充 flex-1`)
+    setClassName(elem, cls.replace(/flex-row/, "flex-col"))
+    for (const child of childElems) {
+      const childCls = getClassName(child)
+      const childToks = tokens(childCls)
+      if (!childToks.includes("w-full")) {
+        setClassName(child, `${childCls} w-full`.trim())
+      }
     }
-    if (!hasFlex1(rightToks)) {
-      const rightClsNew = rightToks.includes("justify-end") ? `${rightCls} flex-1` : `${rightCls} flex-1 justify-end`
-      setClassName(right, rightClsNew.trim())
-      changes.push(`右栏[${right.id}] 补充 flex-1 justify-end`)
-    }
-    if (changes.length) {
-      fixes.push(`[${elem.id}](${elem.component}) 三栏居中布局: ${changes.join(", ")}`)
-    }
+    fixes.push(`[${elem.id}](${elem.component}) 三栏布局移动端降级为垂直堆叠`)
   }
 
   return [json, fixes]

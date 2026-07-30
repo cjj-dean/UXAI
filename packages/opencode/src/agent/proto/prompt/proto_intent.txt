@@ -12,7 +12,7 @@
 
 2. **结构性全局组件是 section**：
    - 顶部导航栏 (`header`) → 独立 section，id **必须**为 `header`（不可使用 topNav、navbar 等其他 id）
-   - 侧边栏 (`aside`) → 独立 section，id **必须**为 `aside`（不可使用 sidebar、leftSidebar 等其他 id）
+    - 侧边栏导航 → 通过Drawer组件实现，当用户原文说"侧边栏"/"侧边菜单"/"侧滑菜单"时，使用drawer section（id必须为`drawer`），不创建aside section
    - 弹窗/居中悬浮框 (`dialog`) → 独立 section，id **必须**为 `dialog`（不可使用 detailPanelDialog、modal 等其他 id）。**仅当用户原文说"弹窗"/"对话框"/"模态框"/"居中弹出"时使用此 id**
    - 抽屉/侧滑面板 (`drawer`) → 独立 section，id **必须**为 `drawer`（不可使用 sideDrawer、detailDrawer 等其他 id）。**当用户原文说"抽屉"/"侧边滑出"/"右侧面板"/"侧滑"/"从侧边滑出"时必须使用此 id，绝不能用 dialog**
     - **关键区分**：dialog 是居中弹出的模态框，drawer 是从屏幕边缘侧滑出的面板。两者绝不能混用！当用户说"抽屉"时 id 必须是 `drawer`，当用户说"弹窗"时 id 必须是 `dialog`。即使用户同时提到"弹窗"和"抽屉"，也要分别生成 id 为 `dialog` 和 `drawer` 的两个独立 section
@@ -338,7 +338,7 @@
 
   - **通用图片类:** 统一使用 `https://fpoimg.com/{width}x{height}?gradient={hex_start},{hex_end}&text_color={text_hex}&text=IMAGE` 来生成占位图，按场景选择尺寸、渐变色(不要使用灰、白)和文字，例如：
 
-    - 封面/Banner (`1920x600`): `https://fpoimg.com/1920x600?gradient=FF512F,DD2476&text_color=ffffff&text=IMAGE`
+    - 封面/Banner (`375x200`): `https://fpoimg.com/375x200?gradient=FF512F,DD2476&text_color=ffffff&text=IMAGE`
 
     - 卡片缩略图 (`800x600`): `https://fpoimg.com/800x600?gradient=00C6FF,0072FF&text_color=ffffff&text=IMAGE`
 

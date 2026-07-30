@@ -13,7 +13,7 @@ You MUST NOT change any hierarchy, nesting, or parent-child relationships from t
 ## 2. 非叶子节点：生成 className
 For each non-leaf node, generate a Tailwind `className` following {FIELD_CONSUMPTION_RULES}.
 - Every container with children MUST include `gap-[1rem]` alongside flex/grid
-- Shell structural elements use semantic components: header → `"header"`, aside → `"aside"`, main → `"main"`
+- Shell structural elements use semantic components: header → `"header"`, main → `"main"`
 
 ## 3. 叶子节点：创建 slot parent
 For each leaf node, create a slot parent element with:
@@ -27,8 +27,8 @@ Each leaf node MUST map to a DIFFERENT `element_id` in slots. Two leaf nodes sha
 
 ## 5. Page Shell Structure (CRITICAL)
 - Page MUST have a `<header>` and a `<main>`
-- If there is an `<aside>`, it and `<main>` MUST be wrapped in a `<div>` container below `<header>`
-- Header pinned at top, sidebar full-height, only main scrolls
+- Mobile layout: root → header, body(vertical), main; no aside sidebar
+- Only main scrolls, header is sticky
 
 ## containerType 消费规则（HIGHEST PRIORITY）
 {FIELD_CONSUMPTION_RULES}
@@ -60,8 +60,8 @@ You MUST output a strictly valid JSON object:
 - Every container with children MUST declare ONE primary layout direction: `flex flex-col` or `flex flex-row`
 - Parent containers holding multiple children MUST set `gap-[1rem]`
 - Children MUST NOT use `margin-*` for spacing
-- Root: `flex flex-col h-screen overflow-hidden bg-surface-container-lowest`
+- Root: `flex flex-col min-h-screen bg-surface-container-lowest`
 - Header: `shrink-0 bg-surface-container-highest shadow-sm`
-- Body: `flex flex-row flex-1 min-h-0 overflow-hidden`
-- Main: `flex-1 overflow-y-auto p-[2rem] flex flex-col gap-[1rem] min-w-0`
+- Body: `flex flex-col flex-1 min-h-0 overflow-hidden`
+- Main: `flex-1 overflow-y-auto p-[1rem] flex flex-col gap-[1rem] min-w-0`
 </rules>

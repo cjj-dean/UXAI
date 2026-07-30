@@ -204,10 +204,10 @@ Key props:
 `
 
 export const DESKTOP_DESIGN_SYSTEM = `
-# Design System (1920x1080)
+# Design System (375x812 Mobile)
 
 ## 0. 设计原则
-页面采用1920*1080的宽度。
+页面采用375*812的宽度（移动端视口）。
 
 ## 1. Design Token
 所有页面元素使用Tailwind，并且在前端Tailwind extend中实现了如下扩展，你可以使用下列属性：
@@ -380,13 +380,10 @@ To indicate semantic states (error, warning, success, info), apply the respectiv
   - 仅长文本列（如描述、URL、名称）才设置 \`minWidth\`，短内容列（如状态、标签、操作、图标）不设 minWidth。
   - 禁止给所有列都加 width。
 
-### Side Navigation
-- **Surface:** Use \`surface-container-highest\` as the base background.
-- **Size:** Use 15.5rem for the default width. use 3rem for the collapsed bar width.
-
 ### Header Navigation
 - **Surface:** Use \`surface-container-highest\` as the base background.
-- **Size:** Use 3rem as height.
+- **Size:** Use 56px as height.
+- **Padding:** Use px-[1rem] as horizontal padding.
 
 ### 边框和分割线
 - border-base 的使用限制：border-base 仅可用于扁平、无海拔 (无 shadow) 的元素外壳。例如：默认表单输入框、卡片内部嵌套的次级扁平区块、空状态占位图。
@@ -428,16 +425,30 @@ Encourage the proactive use of icons to establish visual anchors. Icon shape is 
 `
 
 export const MOBILE_DESIGN_SYSTEM = `
-# Mobile Design System
+# Mobile Design System (375x812)
+
+## 0. 设计原则
+页面采用375*812的宽度（移动端视口）。
 
 ## Component Rules
-- Section padding: 3rem, Page padding: 4rem
-- Larger touch targets (min 44px)
-- Simplified component set (12 components)
+- Section padding: 1rem, Page padding: 1rem
+- Larger touch targets (min 44px / w-11 h-11)
+- Simplified component set
+- 移动端不使用aside侧边栏，侧边导航通过Drawer实现
+- 移动端不使用rightPanel，右侧面板内容通过Drawer或弹窗展示
+- 页面采用垂直堆叠布局，避免横向多列排布
 
 ## Color Tokens
-- Same palette as Desktop but with larger spacing
+- Same palette as Desktop
 - Charts: restricted color array
+
+## Layout
+- Root: flex flex-col min-h-screen (NOT h-screen)
+- Header: shrink-0 sticky top-0 z-50, h-[56px] px-[1rem]
+- Body: flex flex-col flex-1 min-h-0 overflow-hidden (NOT flex-row)
+- Main: flex-1 overflow-y-auto p-[1rem] flex flex-col gap-[1rem] min-w-0
+- Dialog: width 90%
+- Drawer: direction btt, size 80%
 `
 
 export const CARD_EXAMPLE = `{

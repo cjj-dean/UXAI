@@ -6,38 +6,25 @@
     {
       "id": "header", "name": "顶部导航",  /* 🔴 不可改，必须是叶子节点，不能有children，用description描述内容 */
       "layout": "horizontal",  /* 🔴 不可改 */
-      "layoutDescription": "three-column",
-      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+      "layoutDescription": "justify-between",
+      "description": "左侧返回箭头+页面标题。右侧为操作图标按钮。"
     },
     {
       "id": "infoBar", "name": "信息栏",  /* 🔵 可选，必须是叶子节点，不能有children，必须放在root下，不能放到body下 */
       "layout": "horizontal",
-      "description": "左侧为系统Logo与名称，文本为：DataMaster Pro。中部为横向排列的导航菜单，依次为：概览、资源管理、监控、告警、日志、报表、安全、设置。其中"资源管理"处于选中状态。右侧依次排列：搜索图标、用户头像及用户名admin、帮助图标。"
+      "description": ""
     },
     {
       "id": "body", "name": "主体区域",  /* 🔴 不可改 */
-      "layout": "horizontal",  /* 🔴 不可改 */
-      "layoutDescription": "left-fixed",
+      "layout": "vertical",  /* 🔴 不可改，移动端body为垂直布局 */
       "children": [
         {
-          "id": "aside", "name": "侧边栏",  /* 🔵 可选，必须是叶子节点，不能有children */
-          "style": "width-54px",  /* 🟡 可改 */
+          "id": "main", "name": "主内容区域",  /* 🔴 id不可改，必须存在 */
           "layout": "vertical",
-          "description": "左侧菜单栏是缩略版的菜单栏，采用纵向纯图标排布，上方模块垂直排布 8 个功能图标，其中第 5 个终端设备图标处于高亮选中状态。在最下方垂直排布 2 个功能图标。"
-        },
-        {
-          "id": "main", "name": "主内容区域",  /* 🔴 id不可改，必须存在；rightPanel必须作为main的子节点，不能放到body下 */
-          "layout": "horizontal",
           "children": [
             {
               "id": "mainContent", "name": "主内容",  /* 🟢 main的核心内容区 */
               "layout": "vertical",  /* 🟡 可改：根据子节点排列方向决定，子节点左右排列用horizontal，上下排列用vertical */
-              "children": []  /* 🟢 可改 */
-            },
-            {
-              "id": "rightPanel", "name": "右侧面板",  /* 🔵 可选：当用户意图包含右侧面板/侧边信息时使用 */
-              "style": "固定宽度500px",  /* 🟡 可改 */
-              "layout": "vertical",
               "children": []  /* 🟢 可改 */
             }
           ]
@@ -66,12 +53,12 @@
 - 🟡 可改：具体内容，根据用户意图填充
 - 🔵 可选：根据页面蓝图决定是否需要该区域
 - 🟢 main内容区：以下所有内容均可根据用户意图自由修改和填充
-- body下只能有aside(可选)和main(必须)，禁止放其他节点；aside在左侧，main在中间
+- body下只能有main(必须)，禁止放其他节点；移动端不使用aside侧边栏，侧边导航通过Drawer实现
 - footer放在root的children里，与header、body并列，在body下方；footer必须是叶子节点，不能有children
 - infoBar必须放在root的children里，与header、body并列，不能放到body下
-- **rightPanel必须放在main的children里，禁止放在body下（CRITICAL）**：rightPanel是main的子节点，与mainContent并列
+- 移动端不使用rightPanel，右侧面板内容通过Drawer或弹窗展示
 - layout 字段表示布局方向，可选值为 "horizontal"（水平排列）或 "vertical"（垂直排列），必须根据子节点的实际排列方向决定
-- layoutDescription 字段表示子元素的详细布局方式，只能取以下枚举值：`default`（默认）、`justify-between`（两端对齐）、`three-column`（左中右三栏）、`equal-width`（等宽等距排布）、`left-fixed`（左侧固定右侧自适应）、`right-fixed`（右侧固定左侧自适应）。禁止使用其他值
+- layoutDescription 字段表示子元素的详细布局方式，只能取以下枚举值：`default`（默认）、`justify-between`（两端对齐）、`equal-width`（等宽等距排布）、`stack`（垂直堆叠，子元素占满宽度纵向排列）、`tabs`（标签页切换布局）。禁止使用其他值
 - containerType 字段表示容器类型，可选值为 "Region"（独立区块，渲染为Section组件）或 "Card"（卡片容器，渲染为Card组件），不设则默认为普通div
 - 用户意图中 `{{独立区块}}` 表示该节点是独立区块，需要设置 containerType:"Region"。例如："左侧区域{{独立区块}}"表示左侧区域节点的containerType为Region
 - style 字段只包含纯样式关键词，如 "固定宽度500px,固定高度300px" 等。布局方向和布局方式信息放 layout 和 layoutDescription 字段，不放 style。禁止在 style 中重复 containerType 的信息（如不要放"独立区块"、"卡片"）
@@ -121,34 +108,22 @@
         {
           "id": "termTypeCard", "name": "终端类型{{独立区块}}",
           "containerType": "Region",
-          "style": "固定高度300px",
+          "style": "height-300px",
           "description": "标题:终端类型,标题下方环形图+图例,中心垂直排布大字号数字12及文本总数,数据:手机33.33%,家居设备33.33%,平板16.67%,其他16.67%"
         },
         {
           "id": "accessTypeCard", "name": "接入类型{{独立区块}}",
           "containerType": "Region",
-          "style": "固定高度300px",
+          "style": "height-300px",
           "description": "标题:接入类型,结构与终端类型卡片一致,中心数字12及总数,数据:有线66.66%,无线33.34%"
-        },
-        {
-          "id": "termTrafficCard", "name": "终端流量使用{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:终端流量使用,标题右侧带?提示图标,右上角Top5 dropdown选择器,标题下方Top5图表,数据:iphone12 1869MB,oppo 1016MB,mate70 664MB,iphone16 167MB,ipad 167MB,MAC地址用虚拟数据占位"
-        },
-        {
-          "id": "appTrafficCard", "name": "应用流量使用{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:应用流量使用,标题右侧带?提示图标,结构与终端流量使用相同,数据:微信1869MB,支付宝1016MB,抖音664MB,淘宝167MB,微博167MB"
-        },
-        {
-          "id": "termOnlineCard", "name": "终端在线时长{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:终端在线时长,基础垂直柱状图,纵轴标题终端数刻度0/20/40/60/80/100,横轴标签小于1h/1-3h/3-6h/6-8h/大于8h,5根高度不同的垂直柱子"
         }
       ]
+    },
+    {
+      "id": "termTrafficCard", "name": "终端流量使用{{独立区块}}",
+      "containerType": "Region",
+      "style": "height-300px",
+      "description": "标题:终端流量使用,标题右侧带?提示图标,右上角Top5 dropdown选择器,标题下方Top5图表,数据:iphone12 1869MB,oppo 1016MB,mate70 664MB,iphone16 167MB,ipad 167MB,MAC地址用虚拟数据占位"
     },
     {
       "id": "termUserMgmt", "name": "终端用户管理{{独立区块}}",
@@ -163,51 +138,11 @@
           "id": "termUserToolbar", "name": "工具栏",
           "layout": "horizontal",
           "layoutDescription": "justify-between",
-          "description": "左侧:定宽搜索输入框(内含搜索图标+placeholder请输入搜索内容)+带向上折叠箭头的高级搜索文本按钮,右侧:带下拉箭头的立即扫描按钮+IP/MAC解绑按钮+IP/MAC绑定按钮+已守护列表按钮+已限速列表按钮+刷新图标"
+          "description": "左侧:搜索输入框(内含搜索图标+placeholder请输入搜索内容),右侧:立即扫描按钮+刷新图标"
         },
         {
-          "id": "accessTypeCard", "name": "接入类型{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:接入类型,结构与终端类型卡片一致,中心数字12及总数,数据:有线66.66%,无线33.34%"
-        },
-        {
-          "id": "termTrafficCard", "name": "终端流量使用{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:终端流量使用,标题右侧带?提示图标,右上角Top5 dropdown选择器,标题下方Top5图表,数据:iphone12 1869MB,oppo 1016MB,mate70 664MB,iphone16 167MB,ipad 167MB,MAC地址用虚拟数据占位"
-        },
-        {
-          "id": "appTrafficCard", "name": "应用流量使用{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:应用流量使用,标题右侧带?提示图标,结构与终端流量使用相同,数据:微信1869MB,支付宝1016MB,抖音664MB,淘宝167MB,微博167MB"
-        },
-        {
-          "id": "termOnlineCard", "name": "终端在线时长{{独立区块}}",
-          "containerType": "Region",
-          "style": "固定高度300px",
-          "description": "标题:终端在线时长,基础垂直柱状图,纵轴标题终端数刻度0/20/40/60/80/100,横轴标签小于1h/1-3h/3-6h/6-8h/大于8h,5根高度不同的垂直柱子"
-        }
-      ]
-    },
-    {
-      "id": "termUserMgmt", "name": "终端用户管理{{独立区块}}",
-      "containerType": "Region",
-      "layout": "vertical",
-      "children": [
-        {
-          "id": "termUserTitle", "name": "模块标题",
-          "description": "独立大标题:终端用户"
-        },
-        {
-          "id": "termUserToolbar", "name": "工具栏",
-          "layout": "horizontal",
-          "description": "左右两端对齐,左侧:定宽搜索输入框(内含搜索图标+placeholder请输入搜索内容)+带向上折叠箭头的高级搜索文本按钮,右侧:带下拉箭头的立即扫描按钮+IP/MAC解绑按钮+IP/MAC绑定按钮+已守护列表按钮+已限速列表按钮+刷新图标"
-        },
-        {
-          "id": "termUserTable", "name": "终端用户表格",
-          "description": "核心数据表格,18列:全选复选框/终端名称(品牌Logo图标+超链接)/终端类型/IP地址/MAC地址/VLAN/厂商/型号/系统/在线时长/接入时间/上行速率(向上箭头图标)/下行速率(向下箭头图标)/流量消耗/接入设备/守护(盾牌状态图标)/连接/操作(编辑铅笔+链接图标),8行数据,示例行:图标+huawei/手机/192.168.1.1/0O:E0:FC:.../204/oppo/Intel(R)/Windows 10/9min/2022-07-.../3.30Kbps↑/4.61Kbps↓/3.4GB/android/图标+守护中/Wifi_xxx"
+          "id": "termUserTable", "name": "终端用户列表",
+          "description": "核心数据列表,每项显示:终端名称/类型/IP地址/MAC地址/在线时长/接入设备/操作按钮,8行数据"
         }
       ]
     }
