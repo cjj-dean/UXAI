@@ -67,20 +67,30 @@ function tryParse(raw: string): Record<string, unknown> | null {
     return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
+  const cleaned = raw.replace(/[\x00-\x1f]/g, (c) => {
+    const code = c.charCodeAt(0)
+    return code === 0x0a ? "\\n" : code === 0x0d ? "\\r" : code === 0x09 ? "\\t" : ""
+  })
+
   try {
-    let repaired = repairUnescapedQuotes(raw)
+    let parsed = JSON.parse(cleaned.trim())
+    return parsed && typeof parsed === "object" ? parsed : null
+  } catch { }
+
+  try {
+    let repaired = repairUnescapedQuotes(cleaned)
     let parsed = JSON.parse(repaired.trim())
     return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   try {
-    let balanced = repairBracketBalance(raw.trim())
+    let balanced = repairBracketBalance(cleaned.trim())
     let parsed = JSON.parse(balanced)
     return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
 
   try {
-    let fixed = repairExtraBrackets(raw.trim())
+    let fixed = repairExtraBrackets(cleaned.trim())
     let parsed = JSON.parse(fixed)
     return parsed && typeof parsed === "object" ? parsed : null
   } catch { }
