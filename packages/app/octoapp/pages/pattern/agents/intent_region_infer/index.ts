@@ -103,6 +103,26 @@ function validateRegionNesting(intent: any): { intent: any; fixes: string[] } {
   }
 
   walk(clone, null)
+
+  function stripBorderedOnRegion(node: any) {
+    if (!node || !node.id) return
+    if (node.containerType === "Region" && node.style) {
+      const parts = String(node.style).split(",").map((s: string) => s.trim()).filter(Boolean)
+      if (parts.includes("bordered")) {
+        node.style = parts.filter((p: string) => p !== "bordered").join(",") || undefined
+        fixes.push(`[${node.id}] Region节点移除bordered`)
+      }
+    }
+    if (node.itemTemplate) stripBorderedOnRegion(node.itemTemplate)
+    if (Array.isArray(node.children)) {
+      for (const child of node.children) {
+        if (typeof child === "object") stripBorderedOnRegion(child)
+      }
+    }
+  }
+
+  stripBorderedOnRegion(clone)
+
   return { intent: clone, fixes }
 }
 
