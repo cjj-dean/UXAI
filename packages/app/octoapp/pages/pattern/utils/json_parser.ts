@@ -96,7 +96,9 @@ function tryParse(raw: string): Record<string, unknown> | null {
 }
 
 function stripControlChars(text: string): string {
-  return text.replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "")
+  let cleaned = text.replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "")
+  cleaned = cleaned.replace(/\\(?!["\\/bfnrtu])/g, "\\\\")
+  return cleaned
 }
 
 function repairBracketBalance(text: string): string {
