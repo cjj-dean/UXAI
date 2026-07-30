@@ -39,7 +39,34 @@ export async function create_json_new_step1(inputCtx: CreateJsonNewInput) {
     standardizedIntent = regionInferResult.standardized_intent
   }
 
+  standardizedIntent = removeEmptyShellNodes(standardizedIntent)
+
   return { expandResult, standardizedIntent, ctx }
+}
+
+function removeEmptyShellNodes(intent: any): any {
+  if (!intent || !intent.children) return intent
+  const clone = JSON.parse(JSON.stringify(intent))
+
+  function walk(node: any) {
+    if (!node || !Array.isArray(node.children)) return
+    for (const child of node.children) {
+      if (typeof child === "object") walk(child)
+    }
+    node.children = node.children.filter((child: any) => {
+      if (typeof child !== "object") return true
+      if (child.id !== "dialog" && child.id !== "drawer") return true
+      const hasContent = (child.description && child.description.trim()) || (Array.isArray(child.children) && child.children.length > 0)
+      if (!hasContent) {
+        console.log(`[removeEmptyShellNodes] 移除空${child.id}节点`)
+        return false
+      }
+      return true
+    })
+  }
+
+  walk(clone)
+  return clone
 }
 
 export async function create_json_new_step2(
