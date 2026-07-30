@@ -48,6 +48,37 @@ function applyRegionFixes(intent: any, fixes: { id: string; containerType?: stri
   return clone
 }
 
+function validateRegionNesting(intent: any): { intent: any; fixes: string[] } {
+  const clone = JSON.parse(JSON.stringify(intent))
+  const fixes: string[] = []
+
+  function walk(node: any, parentContainerType: string | null) {
+    if (!node || !node.id) return
+    const ct = node.containerType ?? null
+
+    if (ct === "Region" && parentContainerType === "Region") {
+      node.containerType = "Card"
+      fixes.push(`[${node.id}] Region嵌套在Region内，降级为Card`)
+    }
+
+    if (ct === "Card" && parentContainerType !== "Region") {
+      node.containerType = "Region"
+      fixes.push(`[${node.id}] Card不在Region内，提级为Region`)
+    }
+
+    const effectiveCt = node.containerType ?? ct
+    if (node.itemTemplate) walk(node.itemTemplate, effectiveCt)
+    if (Array.isArray(node.children)) {
+      for (const child of node.children) {
+        if (typeof child === "object") walk(child, effectiveCt)
+      }
+    }
+  }
+
+  walk(clone, null)
+  return { intent: clone, fixes }
+}
+
 export default async function intent_region_infer(input: IntentRegionInferInput) {
   const { sdk, modelKey, rootSession, userInput, standardizedIntent, onDirectCallTiming, onReasoningDelta } = input
 
@@ -82,6 +113,11 @@ ${JSON.stringify(standardizedIntent, null, 2)}
 
   const fixedIntent = applyRegionFixes(standardizedIntent, regionFixes)
 
-  logAgentParsed(`direct-${Date.now().toString(36)}`, { regionFixes, fixedIntent, current_step: "intent_region_infer" })
-  return { standardized_intent: fixedIntent, regionFixes, current_step: "intent_region_infer" }
+  const { intent: validatedIntent, fixes: nestingFixes } = validateRegionNesting(fixedIntent)
+  if (nestingFixes.length > 0) {
+    console.log("[intent_region_infer] Region嵌套校验:", nestingFixes.join("; "))
+  }
+
+  logAgentParsed(`direct-${Date.now().toString(36)}`, { regionFixes, nestingFixes, fixedIntent: validatedIntent, current_step: "intent_region_infer" })
+  return { standardized_intent: validatedIntent, regionFixes, nestingFixes, current_step: "intent_region_infer" }
 }
