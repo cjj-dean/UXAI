@@ -33,6 +33,7 @@ import proto_module_create from "./agents/proto_module_create"
 // import { getDesignMap, readDesignFile } from "./design/load_design"
 
 import { create_json_new_step1, create_json_new_step2 } from './workflow/create_json_new'
+import create_json_direct from './workflow/create_json_direct'
 import modify_json_ai from './workflow/modify_json_ai'
 import { handleModifyElement as runQuickModify, type QuickModifyContext, type ModifyElementData } from './workflow/modify_json_quick'
 
@@ -439,7 +440,7 @@ function PatternContent() {
     return `${home}/.octo/design/history`;
   })
 
-  const hasContent = () => !!(params.id && userMessages().length > 0)
+  const hasContent = () => !!(params.id && (userMessages().length > 0 || hasPreviewContent() || pendingPreviewData()))
   const sessionMessagesLoaded = () => !params.id || sessionSynced()
 
   // 从预览页选中元素后触发的修改回调
@@ -776,30 +777,9 @@ function PatternContent() {
           showToast({ title: (modifyResult as any).reply })
         }
       }else{
-        // 首次创建页面 — step1: intent_expand
-        const step1Result = await create_json_new_step1(intentCtx)
-        const { expandResult, standardizedIntent, ctx: stepCtx } = step1Result
-
-        // 将 intent 结果发送到 iframe 渲染层级树
-        sendIntentTree(standardizedIntent)
-
-        // 保存 intent 以便后续重新执行
-        setLastIntent(expandResult)
-        setStandardizedIntentData(standardizedIntent)
-
-        const desktopApi = (window as unknown as {
-          api?: { writeFileBuffer?: (path: string, buffer: ArrayBuffer) => Promise<void> }
-        }).api
-        if (desktopApi?.writeFileBuffer) {
-          const wfDir = `${sdk.directory}/pattern/workflow/${sid}`
-          await desktopApi.writeFileBuffer(`${wfDir}/intent_confirmed.json`, new TextEncoder().encode(JSON.stringify(standardizedIntent, null, 2)).buffer)
-        }
-
-        // 直接继续 step2，不等待用户确认
-        await create_json_new_step2(stepCtx, standardizedIntent, onFinshed)
-
-        // 流程完成后切换到意图视图
-        previewApi.setViewMode("intent")
+        // 直接工作流：用户意图 → module_create 单次生成 → 直接渲染
+        await create_json_direct(intentCtx, onFinshed)
+        previewApi.setViewMode("preview")
       }
 
       const genDuration = ((performance.now() - genStartTime)/1000).toFixed(0)

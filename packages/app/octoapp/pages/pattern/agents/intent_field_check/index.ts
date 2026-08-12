@@ -110,7 +110,7 @@ ${JSON.stringify(standardizedIntent, null, 2)}
     modelKey,
     agentName: AGENT_NAME,
     humanMessage,
-    noThinking: false,
+    noThinking: true,
     workflowId: rootSession,
     workDir: sdk.directory,
     onReasoningDelta,

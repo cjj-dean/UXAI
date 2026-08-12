@@ -49,6 +49,7 @@ export default async function proto_module_create(input: ProtoModuleCreateInput)
     modelKey,
     agentName: AGENT_NAME,
     humanMessage,
+    noThinking: true,
     workflowId: rootSession,
     workDir: sdk.directory,
     onReasoningDelta,
